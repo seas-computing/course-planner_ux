@@ -1,0 +1,4091 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>CSS Grid Course Planner</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="googlebot" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="https://www.seas.harvard.edu/favicon.ico">
+
+        <!-- Required Bootstrap meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+              crossorigin="anonymous">
+
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+        <style type="text/css">
+            /*This sets the margin and padding of every HTML element to zero and the box-sizing: border-box; declaration changes the box model by ensuring that the padding and border of an element no longer increases its width.*/
+            html {
+                font-size: 62.5%;
+                box-sizing: border-box;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+
+            *, *::before, *::after {
+                margin: 0;
+                padding: 0;
+                box-sizing: inherit;
+            }
+
+            dd {
+                margin-bottom: -4px;
+            }
+
+            dt {
+                font-size: 1.2em;
+                padding: 0px;
+            }
+
+            /*Styles for each course area*/
+            .area-ac_bac {
+                width: 100%;
+                height: 100%;
+                background-color: #42668a;
+                border-radius: 3px;
+                border: 1px solid #6facea;
+                text-align: center;
+                color: #fff;
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+
+            dt.area-ac {
+                border-bottom: 1px solid #6facea;
+            }
+
+            .area-am_bac {
+                width: 100%;
+                height: 100%;
+                background-color: #54428a;
+                border-radius: 3px;
+                border: 1px solid #8f70ec;
+                text-align: center;
+                color: #fff;
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+
+            dt.area-am {
+                border-bottom: 1px solid #8f70ec;
+            }
+
+            .area-ap_bac {
+                width: 100%;
+                height: 100%;
+                background-color: #8a428a;
+                border-radius: 3px;
+                border: 1px solid #df6adf;
+                text-align: center;
+                color: #fff;
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+
+            dt.area-ap {
+                border-bottom: 1px solid #df6adf;
+            }
+
+            .area-be_bac {
+                width: 100%;
+                height: 100%;
+                background-color: #8a4254;
+                border-radius: 3px;
+                border: 1px solid #e36c8a;
+                text-align: center;
+                color: #fff;
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+
+            dt.area-be {
+                border-bottom: 1px solid #e36c8a;
+            }
+
+            .area-cs_bac {
+                width: 100%;
+                height: 100%;
+                background-color: #8a6642;
+                border-radius: 3px;
+                border: 1px solid #ffbc79;
+                text-align: center;
+                color: #fff;
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+
+            dt.area-cs {
+                border-bottom: 1px solid #ffbc79;
+            }
+
+            .area-es_bac {
+                width: 100%;
+                height: 100%;
+                background-color: #788a42;
+                border-radius: 3px;
+                border: 1px solid #b7d364;
+                text-align: center;
+                color: #fff;
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+
+            dt.area-es {
+                border-bottom: 1px solid #b7d364;
+            }
+
+            .area-ese_bac {
+                width: 100%;
+                height: 100%;
+                background-color: #428a42;
+                border-radius: 3px;
+                border: 1px solid #70ec70;
+                text-align: center;
+                color: #fff;
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+
+            dt.area-ese {
+                border-bottom: 1px solid #70ec70;
+            }
+
+            .area-sem_bac {
+                width: 100%;
+                height: 100%;
+                background-color: #428a78;
+                border-radius: 3px;
+                border: 1px solid #72f0d0;
+                text-align: center;
+                color: #fff;
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+
+            dt.area-sem {
+                border-bottom: 1px solid #72f0d0;
+            }
+
+            /*Style for each course*/
+            .button-course {
+                width: 100%;
+                background-color: transparent;
+                border: 0px solid transparent;
+                font-size: .8em;
+                color: #fff;
+                text-align: left;
+            }
+
+            .button-course:hover {
+                background-color: rgba(255, 255, 255, .3);
+            }
+
+            /*Style for tooltips*/
+             .tooltip.show p {
+                text-align:left;
+             }
+            /*Sidebar*/
+
+            .sidenav {
+                height: 100%;
+                width: 0;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #eee;
+                overflow-x: hidden;
+                transition: 0.5s;
+                margin-top: -5em;
+            }
+
+            .sideNav-column {
+                padding-left: .5em;
+            }
+
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .sidenav a:hover {
+                color: #f1f1f1;
+            }
+
+            @media screen and (max-height: 450px) {
+                .sidenav {
+                    padding: 2em;
+                }
+            }
+
+            /*Amending Bootstrap styles*/
+            .nav-link {
+                font-size: 1.4rem;
+            }
+
+            .nav-tabs {
+                margin-bottom: -2.5em;
+                margin-left: -31em;
+            }
+
+            .nav-pills {
+                margin-top: 6.5em;
+                margin-left: 6em;
+            }
+
+            .nav-item {
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+
+            img {
+                width: 20%;
+            }
+
+            h2 {
+                font-size: 1.5em;
+                margin-left: 2em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            .form-group {
+                 padding: 1em;
+            }
+
+            /*CSS Grid*/
+
+            #outer-grid {
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 1em;
+                margin-top: 1em;
+            }
+
+            /*Reset to absolutely center the calendar on the page and give it a border and width.*/
+            /*CSS Grid*/
+            .calendar {
+                display: grid;
+                grid-template-columns: repeat(39, 1fr);
+                grid-auto-rows: 2.3%;
+                grid-template-rows: repeat(42);
+                grid-gap: 0em;
+                padding: 0em;
+                width: 100vw;
+                height: 120vh;
+            }
+
+            /*CSS Grid - horizontal rulers*/
+            .rule-9 {
+                grid-row: 2;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: 1;
+                z-index: -1;
+                margin-left: 2.7em;
+            }
+
+            .rule-9_15 {
+                grid-row: 3;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-9_30 {
+                grid-row: 4;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-9_45 {
+                grid-row: 5;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-10 {
+                grid-row: 6;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: 1;
+                z-index: -1;
+                margin-left: 2.7em;
+            }
+
+            .rule-10_15 {
+                grid-row: 7;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-10_30 {
+                grid-row: 8;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-10_45 {
+                grid-row: 9;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-11 {
+                grid-row: 10;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: 1;
+                z-index: -1;
+                margin-left: 2.7em;
+            }
+
+            .rule-11_15 {
+                grid-row: 11;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-11_30 {
+                grid-row: 12;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-11_45 {
+                grid-row: 13;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-12 {
+                grid-row: 14;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: 1;
+                z-index: -1;
+                margin-left: 2.7em;
+            }
+
+            .rule-12_15 {
+                grid-row: 15;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-12_30 {
+                grid-row: 16;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-12_45 {
+                grid-row: 17;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-1 {
+                grid-row: 18;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: 1;
+                z-index: -1;
+                margin-left: 2.7em;
+            }
+
+            .rule-1_15 {
+                grid-row: 19;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-1_30 {
+                grid-row: 20;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-1_45 {
+                grid-row: 21;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-2 {
+                grid-row: 22;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: 1;
+                z-index: -1;
+                margin-left: 2.7em;
+            }
+
+            .rule-2_15 {
+                grid-row: 23;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-2_30 {
+                grid-row: 24;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-2_45 {
+                grid-row: 25;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-3 {
+                grid-row: 26;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: 1;
+                z-index: -1;
+                margin-left: 2.7em;
+            }
+
+            .rule-3_15 {
+                grid-row: 27;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-3_30 {
+                grid-row: 28;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-3_45 {
+                grid-row: 29;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-4 {
+                grid-row: 30;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: 1;
+                z-index: -1;
+                margin-left: 2.7em;
+            }
+
+            .rule-4_15 {
+                grid-row: 31;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-4_30 {
+                grid-row: 32;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-4_45 {
+                grid-row: 33;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-5 {
+                grid-row: 34;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: 1;
+                z-index: -1;
+                margin-left: 2.7em;
+            }
+
+            .rule-5_15 {
+                grid-row: 35;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-5_30 {
+                grid-row: 36;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-5_45 {
+                grid-row: 37;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-6 {
+                grid-row: 38;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: 1;
+                z-index: -1;
+                margin-left: 2.7em;
+            }
+
+            .rule-6_15 {
+                grid-row: 39;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-6_30 {
+                grid-row: 40;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-6_45 {
+                grid-row: 41;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: .5;
+                z-index: -1;
+                margin-left: 2em;
+            }
+
+            .rule-7 {
+                grid-row: 42;
+                grid-column: 1 / 47;
+                border-bottom: 1px solid #ccc;
+                opacity: 1;
+                z-index: -1;
+                margin-left: 2.7em;
+            }
+
+            /*CSS Grid - column headers*/
+            .day-head_monday {
+                grid-row: 1 / 44;
+                grid-column: 2 / 8;
+                border: 1px solid #ccc;
+                padding: .25em;
+                text-align: center;
+            }
+
+            .day-head_tuesday {
+                grid-row: 1 / 44;
+                grid-column: 8 / 17;
+                border: 1px solid #ccc;
+                padding: .25em;
+                text-align: center;
+            }
+
+            .day-head_wednesday {
+                grid-row: 1 / 44;
+                grid-column: 17 / 24;
+                border: 1px solid #ccc;
+                padding: .25em;
+                text-align: center;
+            }
+
+            .day-head_thursday {
+                grid-row: 1 / 44;
+                grid-column: 24 / 32;
+                border: 1px solid #ccc;
+                padding: .25em;
+                text-align: center;
+            }
+
+            .day-head_friday {
+                grid-row: 1 / 44;
+                grid-column: 32 / 40;
+                border: 1px solid #ccc;
+                padding: .25em;
+                text-align: center;
+            }
+
+            /*CSS Grid - row hours*/
+            .hour-head_9am {
+                grid-row: 2 / 3;
+                grid-column: 1;
+                margin-top: .6em;
+            }
+
+            .hour-head_10am {
+                grid-row: 6;
+                grid-column: 1;
+                margin-top: .6em;
+            }
+
+            .hour-head_11am {
+                grid-row: 10;
+                grid-column: 1;
+                margin-top: .6em;
+            }
+
+            .hour-head_12pm {
+                grid-row: 14;
+                grid-column: 1;
+                margin-top: .6em;
+            }
+
+            .hour-head_1pm {
+                grid-row: 18;
+                grid-column: 1;
+                margin-top: .6em;
+            }
+
+            .hour-head_2pm {
+                grid-row: 22;
+                grid-column: 1;
+                margin-top: .6em;
+            }
+
+            .hour-head_3pm {
+                grid-row: 26;
+                grid-column: 1;
+                margin-top: .6em;
+            }
+
+            .hour-head_4pm {
+                grid-row: 30;
+                grid-column: 1;
+                margin-top: .6em;
+            }
+
+            .hour-head_5pm {
+                grid-row: 34;
+                grid-column: 1;
+                margin-top: .6em;
+            }
+
+            .hour-head_6pm {
+                grid-row: 38;
+                grid-column: 1;
+                margin-top: .6em;
+            }
+
+            .hour-head_7pm {
+                grid-row: 42;
+                grid-column: 1;
+                margin-top: .6em;
+            }
+
+            /*CSS Grid - courses*/
+
+            /*CSS Grid - column Monday/9am*/
+            .area-cs-mon-9 {
+                grid-row: 3 / 8;
+                grid-column: 2 / 3;
+            }
+
+            .area-ese-mon-9 {
+                grid-row: 3 / 8;
+                grid-column: 3 / 4;
+            }
+
+            .area-es-mon-9 {
+                grid-row: 3 / 14;
+                grid-column: 4 / 5;
+            }
+
+            /*CSS Grid - column Monday/10am*/
+            .area-es-mon-10 {
+                grid-row: 7 / 19;
+                grid-column: 5 / 6;
+            }
+
+            /*CSS Grid - column Monday/10:30am*/
+            .area-am-mon-1030 {
+                grid-row: 9 / 14;
+                grid-column: 2 / 3;
+            }
+
+            .area-cs-mon-1030 {
+                grid-row: 9 / 14;
+                grid-column: 3 / 4;
+            }
+
+            .area-es-mon-1030 {
+                grid-row: 9 / 14;
+                grid-column: 6 / 7;
+            }
+
+            /*CSS Grid - column Monday/12pm*/
+            .area-am-mon-12 {
+                grid-row: 15 / 20;
+                grid-column: 2 / 3;
+            }
+
+            .area-cs-mon-12 {
+                grid-row: 15 / 20;
+                grid-column: 3 / 4;
+            }
+
+            .area-es-mon-12 {
+                grid-row: 15 / 20;
+                grid-column: 4 / 5;
+            }
+
+            .area-sem-mon-12 {
+                grid-row: 15 / 20;
+                grid-column: 6 / 7;
+            }
+
+            .area-es-mon-12_245 {
+                grid-row: 15 / 26;
+                grid-column: 7 / 8;
+            }
+
+            /*CSS Grid - column Monday/1:30pm*/
+            .area-ac-mon-130 {
+                grid-row: 21 / 26;
+                grid-column: 2 / 3;
+            }
+
+            .area-am-mon-130 {
+                grid-row: 21 / 26;
+                grid-column: 3 / 4;
+            }
+
+            .area-cs-mon-130 {
+                grid-row: 21 / 26;
+                grid-column: 4 / 5;
+            }
+
+            .area-es-mon-130 {
+                grid-row: 21 / 26;
+                grid-column: 5 / 6;
+            }
+
+            .area-sem-mon-130 {
+                grid-row: 21 / 26;
+                grid-column: 6 / 7;
+            }
+
+            /*CSS Grid - column Monday/3pm*/
+            .area-am-mon-3 {
+                grid-row: 27 / 32;
+                grid-column: 2 / 3;
+            }
+
+            .area-ap-mon-3 {
+                grid-row: 27 / 32;
+                grid-column: 3 / 4;
+            }
+
+            .area-be-mon-3 {
+                grid-row: 27 / 32;
+                grid-column: 4 / 5;
+            }
+
+            .area-ac-mon-3 {
+                grid-row: 27 / 32;
+                grid-column: 5 / 6;
+            }
+
+            .area-es-mon-3 {
+                grid-row: 27 / 32;
+                grid-column: 6 / 7;
+            }
+
+            .area-es-mon-3_545 {
+                grid-row: 27 / 38;
+                grid-column: 7 / 8;
+            }
+
+            /*CSS Grid - column Monday/5pm*/
+            .area-cs-mon-5 {
+                grid-row: 35 / 43;
+                grid-column: 2 / 3;
+            }
+
+            /*CSS Grid - column Monday/6pm*/
+            .area-am-mon-6 {
+                grid-row: 38 / 42;
+                grid-column: 2 / 3;
+            }
+
+            /*CSS Grid - column Monday/7pm*/
+            .area-am-mon-7 {
+                grid-row: 42;
+                grid-column: 2 / 3;
+            }
+
+            /*CSS Grid - column Tuesday/9am*/
+            .area-am-tue-9 {
+                grid-row: 3 / 8;
+                grid-column: 8 / 9;
+            }
+
+            .area-ap-tue-9 {
+                grid-row: 3 / 8;
+                grid-column: 9 / 10;
+            }
+
+            .area-be-tue-9 {
+                grid-row: 3 / 8;
+                grid-column: 10 / 11;
+            }
+
+            .area-cs-tue-9 {
+                grid-row: 3 / 8;
+                grid-column: 11 / 12;
+            }
+
+            .area-es-tue-9 {
+                grid-row: 3 / 8;
+                grid-column: 12 / 13;
+            }
+
+            .area-ese-tue-9 {
+                grid-row: 3 / 8;
+                grid-column: 13 / 14;
+            }
+
+            .area-ac-tue-9_1145 {
+                grid-row: 3 / 14;
+                grid-column: 14 / 15;
+            }
+
+            .area-ap-tue-9_1145 {
+                grid-row: 3 / 14;
+                grid-column: 15 / 16;
+            }
+
+            .area-es-tue-9_1145 {
+                grid-row: 3 / 14;
+                grid-column: 16 / 17;
+            }
+
+            /*CSS Grid - column Tuesday/10:30am*/
+            .area-am-tue-1030 {
+                grid-row: 9 / 14;
+                grid-column: 8 / 9;
+            }
+
+            .area-ap-tue-1030 {
+                grid-row: 9 / 14;
+                grid-column: 9 / 10;
+            }
+
+            .area-cs-tue-1030 {
+                grid-row: 9 / 14;
+                grid-column: 10 / 11;
+            }
+
+            .area-es-tue-1030 {
+                grid-row: 9 / 14;
+                grid-column: 11 / 12;
+            }
+
+            .area-ese-tue-1030 {
+                grid-row: 9 / 14;
+                grid-column: 12 / 13;
+            }
+
+            /*CSS Grid - column Tuesday/12pm*/
+            .area-ac-tue-12 {
+                grid-row: 15 / 20;
+                grid-column: 8 / 9;
+            }
+
+            .area-am-tue-12 {
+                grid-row: 15 / 20;
+                grid-column: 9 / 10;
+            }
+
+            .area-ap-tue-12 {
+                grid-row: 15 / 20;
+                grid-column: 10 / 11;
+            }
+
+            .area-be-tue-12 {
+                grid-row: 15 / 20;
+                grid-column: 11 / 12;
+            }
+
+            .area-cs-tue-12 {
+                grid-row: 15 / 20;
+                grid-column: 12 / 13;
+            }
+
+            .area-es-tue-12 {
+                grid-row: 15 / 20;
+                grid-column: 13 / 14;
+            }
+
+            .area-ese-tue-12 {
+                grid-row: 15 / 20;
+                grid-column: 14 / 15;
+            }
+
+            .area-am-tue-12_245 {
+                grid-row: 15 / 26;
+                grid-column: 15 / 16;
+            }
+
+            /*CSS Grid - column Tuesday/1:30pm*/
+            .area-am-tue-130 {
+                grid-row: 21 / 26;
+                grid-column: 8 / 9;
+            }
+
+            .area-be-tue-130 {
+                grid-row: 21 / 26;
+                grid-column: 9 / 10;
+            }
+
+            .area-cs-tue-130 {
+                grid-row: 21 / 26;
+                grid-column: 10 / 11;
+            }
+
+            .area-es-tue-130 {
+                grid-row: 21 / 26;
+                grid-column: 11 / 12;
+            }
+
+            .area-ese-tue-130 {
+                grid-row: 21 / 26;
+                grid-column: 12 / 13;
+            }
+
+            .area-es-tue-130_545 {
+                grid-row: 21 / 38;
+                grid-column: 13 / 14;
+            }
+
+            /*CSS Grid - column Tuesday/3:00pm*/
+            .area-be-tue-3 {
+                grid-row: 27 / 32;
+                grid-column: 8 / 9;
+            }
+
+            .area-es-tue-3 {
+                grid-row: 27 / 38;
+                grid-column: 9 / 10;
+            }
+
+            /*CSS Grid - column Tuesday/5:00pm*/
+            .area-be-tue-5 {
+                grid-row: 35 / 43;
+                grid-column: 8 / 9;
+            }
+
+            /*CSS Grid - column Wednesday/9am*/
+            .area-am-wed-9 {
+                grid-row: 3 / 8;
+                grid-column: 17 / 18;
+            }
+
+            .area-cs-wed-9 {
+                grid-row: 3 / 8;
+                grid-column: 18 / 19;
+            }
+
+            .area-ese-wed-9 {
+                grid-row: 3 / 8;
+                grid-column: 19 / 20;
+            }
+
+            .area-es-wed-9 {
+                grid-row: 3 / 14;
+                grid-column: 20 / 21;
+            }
+
+            /*CSS Grid - column Wednesday/10:30am*/
+            .area-am-wed-1030 {
+                grid-row: 9 / 14;
+                grid-column: 17 / 18;
+            }
+
+            .area-ap-wed-1030 {
+                grid-row: 9 / 14;
+                grid-column: 18 / 19;
+            }
+
+            .area-cs-wed-1030 {
+                grid-row: 9 / 14;
+                grid-column: 19 / 20;
+            }
+
+            .area-es-wed-1030 {
+                grid-row: 9 / 14;
+                grid-column: 21 / 22;
+            }
+
+            /*CSS Grid - column Wednesday/12:00pm*/
+            .area-am-wed-12 {
+                grid-row: 15 / 20;
+                grid-column: 17 / 18;
+            }
+
+            .area-cs-wed-12 {
+                grid-row: 15 / 20;
+                grid-column: 18 / 19;
+            }
+
+            .area-es-wed-12 {
+                grid-row: 15 / 20;
+                grid-column: 19 / 20;
+            }
+
+            .area-sem-wed-12 {
+                grid-row: 15 / 20;
+                grid-column: 20 / 21;
+            }
+
+            .area-es-wed-12_245 {
+                grid-row: 15 / 26;
+                grid-column: 21 / 22;
+            }
+
+            /*CSS Grid - column Wednesday/1:30pm*/
+            .area-ac-wed-130 {
+                grid-row: 21 / 26;
+                grid-column: 17 / 18;
+            }
+
+            .area-am-wed-130 {
+                grid-row: 21 / 26;
+                grid-column: 18 / 19;
+            }
+
+            .area-ap-wed-130 {
+                grid-row: 21 / 26;
+                grid-column: 19 / 20;
+            }
+
+            .area-cs-wed-130 {
+                grid-row: 21 / 26;
+                grid-column: 20 / 21;
+            }
+
+            .area-es-wed-130 {
+                grid-row: 21 / 26;
+                grid-column: 22 / 23;
+            }
+
+            .area-es-wed-130_545 {
+                grid-row: 21 / 38;
+                grid-column: 23 / 24;
+            }
+
+            /*CSS Grid - column Wednesday/3:00pm*/
+            .area-am-wed-3 {
+                grid-row: 27 / 32;
+                grid-column: 17 / 18;
+            }
+
+            .area-ap-wed-3 {
+                grid-row: 27 / 32;
+                grid-column: 18 / 19;
+            }
+
+            .area-be-wed-3 {
+                grid-row: 27 / 32;
+                grid-column: 19 / 20;
+            }
+
+            .area-cs-wed-3 {
+                grid-row: 27 / 32;
+                grid-column: 20 / 21;
+            }
+
+            .area-es-wed-3 {
+                grid-row: 27 / 32;
+                grid-column: 21 / 22;
+            }
+
+            .area-es-wed-3_545 {
+                grid-row: 27 / 38;
+                grid-column: 22 / 23;
+            }
+
+            /*CSS Grid - column Wednesday/4:30pm*/
+            .area-sem-wed-430 {
+                grid-row: 33 / 38;
+                grid-column: 17 / 18;
+            }
+
+            /*CSS Grid - column Thursday/9am*/
+            .area-am-thu-9 {
+                grid-row: 3 / 8;
+                grid-column: 24 / 25;
+            }
+
+            .area-ap-thu-9 {
+                grid-row: 3 / 8;
+                grid-column: 25 / 26;
+            }
+
+            .area-be-thu-9 {
+                grid-row: 3 / 8;
+                grid-column: 26 / 27;
+            }
+
+            .area-cs-thu-9 {
+                grid-row: 3 / 8;
+                grid-column: 27 / 28;
+            }
+
+            .area-es-thu-9 {
+                grid-row: 3 / 8;
+                grid-column: 28 / 29;
+            }
+
+            .area-ese-thu-9 {
+                grid-row: 3 / 8;
+                grid-column: 29 / 30;
+            }
+
+            .area-ac-thu-9 {
+                grid-row: 3 / 14;
+                grid-column: 30 / 31;
+            }
+
+            .area-ap-thu-9_1145 {
+                grid-row: 3 / 14;
+                grid-column: 31 / 32;
+            }
+
+            /*CSS Grid - column Thursday/10:30am*/
+            .area-am-thu-1030 {
+                grid-row: 9 / 14;
+                grid-column: 24 / 25;
+            }
+
+            .area-ap-thu-1030 {
+                grid-row: 9 / 14;
+                grid-column: 25 / 26;
+            }
+
+            .area-be-thu-1030 {
+                grid-row: 9 / 14;
+                grid-column: 26 / 27;
+            }
+
+            .area-cs-thu-1030 {
+                grid-row: 9 / 14;
+                grid-column: 27 / 28;
+            }
+
+            .area-ese-thu-1030 {
+                grid-row: 9 / 14;
+                grid-column: 28 / 29;
+            }
+
+            /*CSS Grid - column Thursday/12:00pm*/
+            .area-ac-thu-12 {
+                grid-row: 15 / 20;
+                grid-column: 24 / 25;
+            }
+
+            .area-am-thu-12 {
+                grid-row: 15 / 20;
+                grid-column: 25 / 26;
+            }
+
+            .area-ap-thu-12 {
+                grid-row: 15 / 20;
+                grid-column: 26 / 27;
+            }
+
+            .area-be-thu-12 {
+                grid-row: 15 / 20;
+                grid-column: 27 / 28;
+            }
+
+            .area-cs-thu-12 {
+                grid-row: 15 / 20;
+                grid-column: 28 / 29;
+            }
+
+            .area-es-thu-12 {
+                grid-row: 15 / 20;
+                grid-column: 29 / 30;
+            }
+
+            .area-ese-thu-12 {
+                grid-row: 15 / 20;
+                grid-column: 30 / 31;
+            }
+
+            /*CSS Grid - column Thursday/1:30pm*/
+            .area-am-thu-130 {
+                grid-row: 21 / 26;
+                grid-column: 24 / 25;
+            }
+
+            .area-be-thu-130 {
+                grid-row: 21 / 26;
+                grid-column: 25 / 26;
+            }
+
+            .area-cs-thu-130 {
+                grid-row: 21 / 26;
+                grid-column: 26 / 27;
+            }
+
+            .area-es-thu-130 {
+                grid-row: 21 / 26;
+                grid-column: 27 / 28;
+            }
+
+            .area-ese-thu-130 {
+                grid-row: 21 / 26;
+                grid-column: 28 / 29;
+            }
+
+            .area-es-thu-130_545 {
+                grid-row: 21 / 38;
+                grid-column: 29 / 30;
+            }
+
+            /*CSS Grid - column Thursday/3:00pm*/
+            .area-be-thu-3 {
+                grid-row: 27 / 32;
+                grid-column: 24 / 25;
+            }
+
+            .area-sem-thu-3 {
+                grid-row: 27 / 32;
+                grid-column: 25 / 26;
+            }
+
+            .area-sem2-thu-3 {
+                grid-row: 27 / 32;
+                grid-column: 26 / 27;
+            }
+
+            .area-ac-thu-3 {
+                grid-row: 27 / 38;
+                grid-column: 27 / 28;
+            }
+
+            /*CSS Grid - column Thursday/4:30pm*/
+            .area-sem-thu-430 {
+                grid-row: 33 / 38;
+                grid-column: 24 / 25;
+            }
+
+            /*CSS Grid - column Friday/9am*/
+            .area-am-fri-9 {
+                grid-row: 3 / 8;
+                grid-column: 32 / 33;
+            }
+
+            .area-es-fri-9 {
+                grid-row: 3 / 8;
+                grid-column: 33 / 34;
+            }
+
+            .area-cs-fri-9 {
+                grid-row: 3 / 14;
+                grid-column: 34 / 35;
+            }
+
+            .area-ese-fri-9 {
+                grid-row: 6 /14;
+                grid-column: 35 / 36;
+            }
+
+            /*CSS Grid - column Friday/10:30am*/
+            .area-am-fri-1030 {
+                grid-row: 9 / 14;
+                grid-column: 32 / 33;
+            }
+
+            .area-ap-fri-1030 {
+                grid-row: 9 / 14;
+                grid-column: 33 / 34;
+            }
+
+            .area-cs-fri-1030 {
+                grid-row: 9 / 14;
+                grid-column: 36 / 37;
+            }
+
+            .area-es-fri-1030 {
+                grid-row: 9 / 14;
+                grid-column: 37 / 38;
+            }
+
+            /*CSS Grid - column Friday/12:00pm*/
+            .area-cs-fri-12 {
+                grid-row: 15 / 20;
+                grid-column: 32 / 33;
+            }
+
+            .area-sem-fri-12 {
+                grid-row: 15 / 20;
+                grid-column: 33 / 34;
+            }
+
+            .area-am-fri-12 {
+                grid-row: 15 / 26;
+                grid-column: 34 / 35;
+            }
+
+            /*CSS Grid - column Friday/1:30pm*/
+            .area-am-fri-130 {
+                grid-row: 21 / 26;
+                grid-column: 32 / 33;
+            }
+
+            .area-ap-fri-130 {
+                grid-row: 21 / 26;
+                grid-column: 33 / 34;
+            }
+
+            .area-es-fri-130 {
+                grid-row: 21 / 26;
+                grid-column: 35 / 36;
+            }
+
+            .area-sem-fri-130 {
+                grid-row: 21 / 26;
+                grid-column: 36 / 37;
+            }
+
+            .area-sem-fri-130_430 {
+                grid-row: 21 / 33;
+                grid-column: 37 / 38;
+            }
+
+            .area-es-fri-130_430 {
+                grid-row: 21 / 33;
+                grid-column: 38 / 39;
+            }
+
+            .area-es-fri-130_545 {
+                grid-row: 21 / 38;
+                grid-column: 39 / 40;
+            }
+
+            /*CSS Grid - column Friday/3:00pm*/
+            .area-sem-fri-3 {
+                grid-row: 27 / 32;
+                grid-column: 32 / 33;
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <span class="navbar-brand">
+                <img src="http://alexsb.github.io/mu-8/img/harvard.png">
+                <h2 class="navbar-text mr-auto">
+                    SEAS Course Planning
+                </h2>
+            </span>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Faculty</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Schedule</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">4 Year Plan</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!--Catalog prefixes-->
+        <div>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <span class="nav-link" style="margin-right: 3em; cursor: pointer;" onclick="openNav()">
+                        Filters
+                        <i class="far fa-arrow-alt-circle-right"></i>
+                    </span>
+                </li>
+                <li class="nav-item" style="margin-top: .6em;">
+                    <h3>
+                        Show/hide catalog prefixes
+                    </h3>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn ac-btn" id="ac-primary" onmousedown="myFunction()" onmouseup="toggle()" href="#example">AC</button>
+                </li>
+
+                <style>
+                    .ac-btn {
+                        color: #fff;
+                        background-color: #42668a;
+                        border-color: #007bff;
+                    }
+                    .ac-primary {
+                        color: #fff;
+                        background-color: #42668a;
+                        border-color: #007bff;
+                    }
+                    .ac-outline-primary{
+                        color: #42668a;
+                        background-color: transparent;
+                        background-image: none;
+                        border-color: #42668a;
+                    }
+
+                    .toggle-content {
+                        display: block;
+                    }
+
+                    .toggle-content.is-visible {
+                        display: none;
+                    }
+                </style>
+
+                <script>
+
+                    function toggle(selector) {
+                        var nodes = document.querySelectorAll(selector),
+                            node,
+                            styleProperty = function (a, b) {
+                                return window.getComputedStyle ? window.getComputedStyle(a).getPropertyValue(b) : a.currentStyle[b];
+                            };
+
+                        [].forEach.call(nodes, function (a, b) {
+                            node = a;
+
+                            node.style.opacity = styleProperty(node, 'opacity') === '1' ? '0.4' : '1';
+                        });
+
+                    }
+
+                    document.getElementById('ac-primary').onclick = function () {
+                        toggle('.area-ac_bac');
+                    };
+
+                    function myFunction() {
+                        var element = document.getElementById("ac-primary");
+                        element.classList.toggle("ac-outline-primary");
+                    }
+
+                </script>
+
+                <li class="nav-item">
+                    <button type="button" class="btn am-btn" id="am-primary" onmousedown="myFunctionAM()" onmouseup="toggleAM()" href="#example">AM</button>
+                </li>
+
+                <style>
+                    .am-btn {
+                        color: #fff;
+                        background-color: #54428a;
+                        border-color: #007bff;
+                    }
+                    .am-primary {
+                        color: #fff;
+                        background-color: #54428a;
+                        border-color: #007bff;
+                    }
+                    .am-outline-primary{
+                        color: #54428a;
+                        background-color: transparent;
+                        background-image: none;
+                        border-color: #54428a;
+                    }
+
+                    .toggleAM-content {
+                        display: block;
+                    }
+
+                    .toggleAM-content.is-visible {
+                        display: none;
+                    }
+                </style>
+
+                <script>
+
+                    document.getElementById('am-primary').onclick = function () {
+                        toggle('.area-am_bac');
+                    };
+
+                    function myFunctionAM() {
+                        var element = document.getElementById("am-primary");
+                        element.classList.toggle("am-outline-primary");
+                    }
+
+                </script>
+
+                <li class="nav-item">
+                    <button type="button" class="btn ap-btn" id="ap-primary" onmousedown="myFunctionAP()" onmouseup="toggleAP()" href="#example">AP</button>
+                </li>
+
+                <style>
+                    .ap-btn {
+                        color: #fff;
+                        background-color: #8a428a;
+                        border-color: #8a428a;
+                    }
+                    .ap-primary {
+                        color: #fff;
+                        background-color: #8a428a;
+                        border-color: #8a428a;
+                    }
+                    .ap-outline-primary{
+                        color: #8a428a;
+                        background-color: transparent;
+                        background-image: none;
+                        border-color: #8a428a;
+                    }
+
+                    .toggleAP-content {
+                        display: block;
+                    }
+
+                    .toggleAP-content.is-visible {
+                        display: none;
+                    }
+                </style>
+
+                <script>
+
+                    document.getElementById('ap-primary').onclick = function () {
+                        toggle('.area-ap_bac');
+                    };
+
+                    function myFunctionAP() {
+                        var element = document.getElementById("ap-primary");
+                        element.classList.toggle("ap-outline-primary");
+                    }
+
+                </script>
+
+                <li class="nav-item">
+                    <button type="button" class="btn be-btn" id="be-primary" onmousedown="myFunctionBE()" onmouseup="toggleBE()" href="#example">BE</button>
+                </li>
+
+                <style>
+                    .be-btn {
+                        color: #fff;
+                        background-color: #8a4254;
+                        border-color: #8a4254;
+                    }
+                    .be-primary {
+                        color: #fff;
+                        background-color: #8a4254;
+                        border-color: #8a4254;
+                    }
+                    .be-outline-primary{
+                        color: #8a4254;
+                        background-color: transparent;
+                        background-image: none;
+                        border-color: #8a4254;
+                    }
+
+                    .toggleBE-content {
+                        display: block;
+                    }
+
+                    .toggleBE-content.is-visible {
+                        display: none;
+                    }
+                </style>
+
+                <script>
+
+                    document.getElementById('be-primary').onclick = function () {
+                        toggle('.area-be_bac');
+                    };
+
+                    function myFunctionBE() {
+                        var element = document.getElementById("be-primary");
+                        element.classList.toggle("be-outline-primary");
+                    }
+
+                </script>
+
+                <li class="nav-item">
+                    <button type="button" class="btn cs-btn" id="cs-primary" onmousedown="myFunctionCS()" onmouseup="toggleCS()" href="#example">CS</button>
+                </li>
+
+                <style>
+                    .cs-btn {
+                        color: #fff;
+                        background-color: #8a6642;
+                        border-color: #8a6642;
+                    }
+                    .cs-primary {
+                        color: #fff;
+                        background-color: #8a6642;
+                        border-color: #8a6642;
+                    }
+                    .cs-outline-primary{
+                        color: #8a6642;
+                        background-color: transparent;
+                        background-image: none;
+                        border-color: #8a6642;
+                    }
+
+                    .toggleCS-content {
+                        display: block;
+                    }
+
+                    .toggleCS-content.is-visible {
+                        display: none;
+                    }
+                </style>
+
+                <script>
+
+                    document.getElementById('cs-primary').onclick = function () {
+                        toggle('.area-cs_bac');
+                    };
+
+                    function myFunctionCS() {
+                        var element = document.getElementById("cs-primary");
+                        element.classList.toggle("cs-outline-primary");
+                    }
+
+                </script>
+
+                <li class="nav-item">
+                    <button type="button" class="btn es-btn" id="es-primary" onmousedown="myFunctionES()" onmouseup="toggleES()" href="#example">ES</button>
+                </li>
+
+                <style>
+                    .es-btn {
+                        color: #fff;
+                        background-color: #788a42;
+                        border-color: #788a42;
+                    }
+                    .es-primary {
+                        color: #fff;
+                        background-color: #788a42;
+                        border-color: #788a42;
+                    }
+                    .es-outline-primary{
+                        color: #788a42;
+                        background-color: transparent;
+                        background-image: none;
+                        border-color: #788a42;
+                    }
+
+                    .toggleES-content {
+                        display: block;
+                    }
+
+                    .toggleES-content.is-visible {
+                        display: none;
+                    }
+                </style>
+
+                <script>
+
+                    document.getElementById('es-primary').onclick = function () {
+                        toggle('.area-es_bac');
+                    };
+
+                    function myFunctionES() {
+                        var element = document.getElementById("es-primary");
+                        element.classList.toggle("es-outline-primary");
+                    }
+
+                </script>
+
+                <li class="nav-item">
+                    <button type="button" class="btn ese-btn" id="ese-primary" onmousedown="myFunctionESE()" onmouseup="toggleESE()" href="#example">ESE</button>
+                </li>
+
+                <style>
+                    .ese-btn {
+                        color: #fff;
+                        background-color: #428a42;
+                        border-color: #428a42;
+                    }
+                    .ese-outline-primary {
+                        color: #fff;
+                        background-color: #428a42;
+                        border-color: #428a42;
+                    }
+                    .ese-outline-primary{
+                        color: #428a42;
+                        background-color: transparent;
+                        background-image: none;
+                        border-color: #428a42;
+                    }
+
+                    .toggleESE-content {
+                        display: block;
+                    }
+
+                    .toggleESE-content.is-visible {
+                        display: none;
+                    }
+                </style>
+
+                <script>
+
+                    document.getElementById('ese-primary').onclick = function () {
+                        toggle('.area-ese_bac');
+                    };
+
+                    function myFunctionESE() {
+                        var element = document.getElementById("ese-primary");
+                        element.classList.toggle("ese-outline-primary");
+                    }
+
+                </script>
+
+                <li class="nav-item">
+                    <button type="button" class="btn sem-btn" id="sem-primary" onmousedown="myFunctionSEM()" onmouseup="toggleSEM()" href="#example">Seminar</button>
+                </li>
+
+                <style>
+                    .sem-btn {
+                        color: #fff;
+                        background-color: #428a78;
+                        border-color: #428a78;
+                    }
+                    .sem-outline-primary {
+                        color: #fff;
+                        background-color: #428a78;
+                        border-color: #428a78;
+                    }
+                    .sem-outline-primary{
+                        color: #428a78;
+                        background-color: transparent;
+                        background-image: none;
+                        border-color: #428a78;
+                    }
+
+                    .toggleSEM-content {
+                        display: block;
+                    }
+
+                    .toggleSEM-content.is-visible {
+                        display: none;
+                    }
+                </style>
+
+                <script>
+
+                    document.getElementById('sem-primary').onclick = function () {
+                        toggle('.area-sem_bac');
+                    };
+
+                    function myFunctionSEM() {
+                        var element = document.getElementById("sem-primary");
+                        element.classList.toggle("sem-outline-primary");
+                    }
+
+                </script>
+
+            </ul>
+        </div>
+
+
+        <div id="outer-grid">
+
+            <!--Sidenav filters-->
+            <div class="sideNav-column">
+                <div id="mySidenav" class="sidenav" style="white-space: nowrap;">
+                    <div>
+                        <a href="javascript:void(0)" onclick="closeNav()" style="color: #212529; font-size: 1.4rem; margin-top: .4em; margin-left: 3.1em;">
+                            Filters
+                            <i class="far fa-arrow-alt-circle-left ml-auto"></i>
+                        </a>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="filterCampus"><h3>Campus</h3></label>
+                            <select class="form-control" id="filterCampus">
+                                <option>Allston</option>
+                                <option>MD</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterRoom"><h3>Room</h3></label>
+                            <input type="text" class="form-control" id="filterRoom" placeholder="dynamic search">
+                        </div>
+                        <div class="form-group">
+                            <label for="filterSemester"><h3>Semester</h3></label>
+                            <select class="form-control" id="filterSemester">
+                                <option value="string:Fall 2010" label="Fall 2010">Fall 2010</option>
+                                <option value="string:Spring 2011" label="Spring 2011">Spring 2011</option>
+                                <option value="string:Fall 2011" label="Fall 2011">Fall 2011</option>
+                                <option value="string:Spring 2012" label="Spring 2012">Spring 2012</option>
+                                <option value="string:Fall 2012" label="Fall 2012">Fall 2012</option>
+                                <option value="string:Spring 2013" label="Spring 2013">Spring 2013</option>
+                                <option value="string:Fall 2013" label="Fall 2013">Fall 2013</option>
+                                <option value="string:Spring 2014" label="Spring 2014">Spring 2014</option>
+                                <option value="string:Fall 2014" label="Fall 2014">Fall 2014</option>
+                                <option value="string:Spring 2015" label="Spring 2015">Spring 2015</option>
+                                <option value="string:Fall 2015" label="Fall 2015">Fall 2015</option>
+                                <option value="string:Spring 2016" label="Spring 2016">Spring 2016</option>
+                                <option value="string:Fall 2016" label="Fall 2016">Fall 2016</option>
+                                <option value="string:Spring 2017" label="Spring 2017">Spring 2017</option>
+                                <option value="string:Fall 2017" label="Fall 2017">Fall 2017</option>
+                                <option value="string:Spring 2018" label="Spring 2018">Spring 2018</option>
+                                <option value="string:Fall 2018" label="Fall 2018">Fall 2018</option>
+                                <option value="string:Spring 2019" label="Spring 2019" selected="selected">Spring 2019</option>
+                                <option value="string:Fall 2019" label="Fall 2019">Fall 2019</option>
+                                <option value="string:Spring 2020" label="Spring 2020">Spring 2020</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterStatus"><h3>Undergraduate Status</h3></label>
+                            <select class="form-control" id="filterStatus">
+                                <option>Both</option>
+                                <option>Undergraduate</option>
+                                <option>Graduate</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Calendar -->
+            <div class="calendar">
+
+                <h3 class="day-head_monday">
+                    Monday
+                </h3>
+                <div class="rule-9"></div>
+                <div class="rule-9_15"></div>
+                <div class="rule-9_30"></div>
+                <div class="rule-9_45"></div>
+
+                <h3 class="hour-head_9am">
+                    9am
+                </h3>
+                <!--Monday-9:00am-->
+                <div class="area-cs-mon-9 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course" data-toggle="tooltip" data-html="true" title="" id="myparagraph">
+                                181
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                265
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-mon-9 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                166
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-9 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                022
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="rule-10"></div>
+                <div class="rule-10_15"></div>
+                <div class="rule-10_30"></div>
+                <div class="rule-10_45"></div>
+
+                <h3 class="hour-head_10am">
+                    10am
+                </h3>
+                <!--Monday-10:00am-->
+                <div class="area-am-mon-1030 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                021
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                012B
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-mon-1030 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                191
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                208
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                260r
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                287
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-10 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                256
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-1030 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                051
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                156
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                123
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                177
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                237
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                277
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="rule-11"></div>
+                <div class="rule-11_15"></div>
+                <div class="rule-11_30"></div>
+                <div class="rule-11_45"></div>
+
+                <h3 class="hour-head_11am">
+                    11am
+                </h3>
+
+                <div class="rule-12"></div>
+                <div class="rule-12_15"></div>
+                <div class="rule-12_30"></div>
+                <div class="rule-12_45"></div>
+
+                <h3 class="hour-head_12pm">
+                    12pm
+                </h3>
+                <!--Monday-12:00pm-->
+                <div class="area-am-mon-12 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                203
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-mon-12 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                020
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                124
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-12 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                054
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                112
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-mon-12 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                CRC
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-12_245 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                096
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="rule-1"></div>
+                <div class="rule-1_15"></div>
+                <div class="rule-1_30"></div>
+                <div class="rule-1_45"></div>
+
+                <h3 class="hour-head_1pm">
+                    1pm
+                </h3>
+                <!--Monday-1:00pm-->
+                <div class="area-ac-mon-130 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                209b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-am-mon-130 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                108
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-mon-130 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                020
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                109b
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                245
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                271
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-130 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                054
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                112
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-mon-130 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                Theory of Comp
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="rule-2"></div>
+                <div class="rule-2_15"></div>
+                <div class="rule-2_30"></div>
+                <div class="rule-2_45"></div>
+
+                <h3 class="hour-head_2pm">
+                    2pm
+                </h3>
+
+                <div class="rule-3"></div>
+                <div class="rule-3_15"></div>
+                <div class="rule-3_30"></div>
+                <div class="rule-3_45"></div>
+
+                <h3 class="hour-head_3pm">
+                    3pm
+                </h3>
+                <!--Monday-3:00pm-->
+                <div class="area-am-mon-3 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                221
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-mon-3 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                218
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                291
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-mon-3 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                129
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ac-mon-3 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                144r
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                161
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                244r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-3 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                023
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                128
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-3_545 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                024
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                026
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="rule-4"></div>
+                <div class="rule-4_15"></div>
+                <div class="rule-4_30"></div>
+                <div class="rule-4_45"></div>
+
+                <h3 class="hour-head_4pm">
+                    4pm
+                </h3>
+
+                <div class="rule-5"></div>
+                <div class="rule-5_15"></div>
+                <div class="rule-5_30"></div>
+                <div class="rule-5_45"></div>
+
+                <h3 class="hour-head_5pm">
+                    5pm
+                </h3>
+                <!--Monday-3:00pm-->
+                <div class="area-cs-mon-5 area-cs_bac">
+                    <dl>
+                        <dt class="area-am">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                090nbr
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="rule-6"></div>
+                <div class="rule-6_15"></div>
+                <div class="rule-6_30"></div>
+                <div class="rule-6_45"></div>
+
+                <h3 class="hour-head_6pm">
+                    6pm
+                </h3>
+
+                <div class="rule-7"></div>
+
+                <h3 class="hour-head_7pm">
+                    7pm
+                </h3>
+
+                <h3 class="day-head_tuesday">
+                    Tuesday
+                </h3>
+                <!--Tuesday-9am-->
+                <div class="area-am-tue-9 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                050
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-tue-9 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                292
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-tue-9 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                130
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-tue-9 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                236r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-9 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                183
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                249
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-tue-9 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                109
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ac-tue-9_1145 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                290r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-tue-9_1145 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                050b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-9_1145 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                028
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Tuesday-10:30am-->
+                <div class="area-am-tue-1030 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                107
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                120
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                231
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-tue-1030 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                295b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-tue-1030 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                001
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                051
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229cr
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                252r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-1030 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                151
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                201
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-tue-1030 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                006
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Tuesday-12pm-->
+                <div class="area-ac-tue-12 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                221
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                275
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-am-tue-12 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                202
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-tue-12 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                275
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-tue-12 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                191
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-tue-12 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                179
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-12 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                150
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                170
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-tue-12 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                133
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-am-tue-12_245 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                217
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Tuesday-1:30pm-->
+                <div class="area-am-tue-130 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                115
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-tue-130 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                125
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-tue-130 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                141
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                152
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                205
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229br
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-130 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                115
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                120
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                203
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                230
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-tue-130 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                136
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-130_545 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                153
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Tuesday-3:000pm-->
+                <div class="area-be-tue-3 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                128
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-3 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                095r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Tuesday-5:000pm-->
+                <div class="area-be-tue-5 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                090nar
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <h3 class="day-head_wednesday">
+                    Wednesday
+                </h3>
+                <h3 class="hour-head_9am">
+                    9am
+                </h3>
+                <!--Wednesday-9am-->
+                <div class="area-am-wed-9 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                22
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-wed-9 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                181
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                265
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-wed-9 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                166
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-9 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                022
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Wednesday-10:30am-->
+                <div class="area-am-wed-1030 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                021
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                021b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-wed-1030 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                216
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-wed-1030 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                191
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                260
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                287
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-1030 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                051
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                123
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                156
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                237
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Wednesday-12:00pm-->
+                <div class="area-am-wed-12 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                203
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-wed-12 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                020
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                124
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-12 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                054
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                112
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                294cfr
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-wed-12 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                CIQM
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-12_245 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                096
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Wednesday-1:30pm-->
+                <div class="area-ac-wed-130 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                209b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-am-wed-130 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                108
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-wed-130 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                296
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-wed-130 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                109b
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                145
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                245
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                271
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-130 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                221
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                239
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                240
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-130_545 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                153
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Wednesday-3pm-->
+                <div class="area-am-wed-3 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                221
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-wed-3 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                218
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-wed-3 area-be_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                129
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-wed-3 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                144r
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                161
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                244r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-3 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                128
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-3_545 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                024
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Wednesday-4:30pm-->
+                <div class="area-sem-wed-430 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                Applied Mech.
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <h3 class="day-head_thursday">
+                    Thursday
+                </h3>
+                <h3 class="hour-head_9am">
+                    9am
+                </h3>
+                <!--Thursday-9:00am-->
+                <div class="area-am-thu-9 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                050
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-thu-9 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                292
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-thu-9 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                130
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-thu-9 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                236r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-thu-9 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                183
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                249
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-thu-9 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                109
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ac-thu-9 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                290r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-thu-9_1145 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                050b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Thursday-10:30am-->
+                <div class="area-am-thu-1030 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                107
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                120
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                231
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-thu-1030 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                295b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-thu-1030 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                001
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                051
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229cr
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                252r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-thu-1030 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                151
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                201
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-thu-1030 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                006
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Thursday-12:00pm-->
+                <div class="area-ac-thu-12 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                221
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                275
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-am-thu-12 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                202
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-thu-12 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                275
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-thu-12 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                291
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-thu-12 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                179
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-thu-12 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                150
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                170
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-thu-12 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                133
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Thursday-1:30pm-->
+                <div class="area-am-thu-130 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                115
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-thu-130 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                125
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-thu-130 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                141
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                152
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                205
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229br
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-thu-130 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                115
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                120
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                203
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                230
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-thu-130 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                136
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-thu-130_545 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                153
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Thursday-3:00pm-->
+                <div class="area-be-thu-3 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                128
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-thu-3 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                CR Coll.
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem2-thu-3 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                WAM
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ac-thu-3 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                297r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Thursday-4:30pm-->
+                <div class="area-sem-thu-430 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                Topics in BioE
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <h3 class="day-head_friday">
+                    Friday
+                </h3>
+                <h3 class="hour-head_9am">
+                    9am
+                </h3>
+                <!--Friday-9:00am-->
+                <div class="area-am-fri-9 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                225
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-fri-9 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                298r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-fri-9 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                189
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                282r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-fri-9 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                166
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Friday-10:30am-->
+                <div class="area-am-fri-1030 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                021
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                021b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-fri-1030 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                216
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-fri-1030 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                208
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-fri-1030 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                051
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                123
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Friday-12:00pm-->
+                <div class="area-cs-fri-12 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                020
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-fri-12 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                Atmos Chem
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-am-fri-12 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                216
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Friday-1:30pm-->
+                <div class="area-am-fri-130 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                108
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-fri-130 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                296
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-fri-130 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                231
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                240
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-fri-130 area-sem_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                IACS
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-fri-130_430 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                Theory Reading Group
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-fri-130_430 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                023
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-fri-130_545 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                153
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Friday-3:00pm-->
+                <div class="area-sem-fri-3 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                EE
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+            </div><!-- /calendar -->
+
+        </div>
+
+        <!-- Optional Bootsrap JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                crossorigin="anonymous"></script>
+
+        <!--Sidebar-->
+        <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "15em";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+
+        <!--Tooltip-->
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+
+            $("#myparagraph").tooltip({
+                html: true,
+                title: '<p><strong>CS 181</strong><br>9:00am - 10:15am</p>'
+            });
+        </script>
+
+    </body>
+</html>
