@@ -2077,11 +2077,8 @@ cursor: pointer;  text-decoration: underline; margin-left: 1em;">
                 <dt class="area-es">
                     ES
                 </dt>
-                <dd>
-                    <button type="button" class="button-course" data-placement="top"
-                            data-toggle="popover" title="ES 022"
-                            data-content="9am - 11:45am <br> Room: MD 203"
-                            data-html="true"
+                <dd class="es022popover">
+                    <button type="button" class="button-course trigger" id="es-btn_0221"
                             onclick="myFunctionESbtn()">
                         022
                      </button>
@@ -2102,6 +2099,7 @@ cursor: pointer;  text-decoration: underline; margin-left: 1em;">
         <script>
             function myFunctionESbtn() {
                 var element = document.getElementById("es-btn_022");
+                // var element = document.querySelectorAll('.button-course')
                 element.classList.toggle("es-btn_highlight");
             }
         </script>
@@ -3065,11 +3063,18 @@ cursor: pointer;  text-decoration: underline; margin-left: 1em;">
                 <dt class="area-es">
                     ES
                 </dt>
-                <dd>
-                    <button type="button" class="button-course" id="es-btn_022">
+                <dd class="es022popover">
+                    <button type="button" class="button-course trigger" id="es-btn_022"
+                            onclick="myFunctionESbtn2()">
                         022
-                    </button>
+                     </button>
                 </dd>
+                <script>
+                    function myFunctionESbtn2() {
+                        var element = document.getElementById("es-btn_0221");
+                        element.classList.toggle("es-btn_highlight");
+                    }
+                </script>
             </dl>
         </div>
         <!--Wednesday-10:30am-->
@@ -4203,6 +4208,17 @@ cursor: pointer;  text-decoration: underline; margin-left: 1em;">
     })
     $("[data-toggle=popover]")
         .popover({html: true})
+
+    $('.es022popover').popover({
+      title: "ES 022",
+      content: "9am - 11:45am <br> Room: MD 203",
+      html: true,
+      placement: 'top'
+    });
+
+    $('.trigger').click(function(){
+      $('.es022popover').popover('toggle');
+    });
 
 </script>
 
