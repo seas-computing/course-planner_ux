@@ -2169,16 +2169,123 @@ cursor: pointer;  text-decoration: underline; margin-left: 1em;">
                 </dd>
             </dl>
         </div>
-        <div class="area-es-mon-1030 area-es_bac">
+        
+<!-- Adding a style that is the duplicate of ES but with a different name, which will not be called when the opacity is changed in all other styles  -->
+        <style>
+                .area-es_on_bac {
+                    width: 100%;
+                    height: 100%;
+                    background-color: #788a42;
+                    border-radius: 3px;
+                    border: 1px solid #b7d364;
+                    text-align: center;
+                    color: #fff;
+                    padding-left: 3px;
+                    padding-right: 3px;
+                }
+                .button-course_on {
+                    width: 100%;
+                    background-color: #788a42;
+                    border: 0px solid transparent;
+                    font-size: .8em;
+                    color: #fff;
+                    text-align: left;
+                }
+                </style>
+
+
+<!-- Adding the above class to all the areas that contain 051 -->
+        <div class="area-es-mon-1030 area-es_on_bac">
             <dl>
                 <dt class="area-es">
                     ES
                 </dt>
+
+
+                <!-- Adding button-course_on class to all the instances of ES 051 so that the opacity toggle won't affect them -->
                 <dd>
-                    <button type="button" class="button-course">
-                        051
-                    </button>
-                </dd>
+                        <button type="button" class="button-course_on" id="es-primary2" onmousedown="toggle_popover()" onmouseup="toggle()"
+                        href="#example" style="position: relative;">
+                            051
+<!-- ES 051 pop-over -->
+                            <div class="popover bs-popover-top" role="tooltip" x-placement="top"
+                            style="position: absolute; margin-top: -10.5em; margin-left: -.5em; width: 14em;">
+                                <div class="arrow" style="left: 5px;"></div>
+                                <h3 class="popover-header" style="color: #000">ES 051</h3>
+                                <div class="popover-body">Monday<br>10:30am - 11:45am <br> Room: MD 203</div>
+                            </div>
+                        </button>
+                    </dd>
+    
+            <style>
+    
+                .popover {
+                    opacity: 0;
+                }
+                
+                .toggle-content {
+                    display: block;
+                }
+    
+                .toggle-content.is-visible {
+                    display: none;
+                }
+    
+                .toggle_popover-content {
+                    display: block;
+                }
+
+                .toggle_popover-content.is-visible {
+                    display: none;
+                }
+            </style>
+    
+            <script>
+    
+                function toggle(selector) {
+                    var nodes = document.querySelectorAll(selector),
+                        node,
+                        styleProperty = function (a, b) {
+                            return window.getComputedStyle ? window.getComputedStyle(a).getPropertyValue(b) : a.currentStyle[b];
+                        };
+    
+                    [].forEach.call(nodes, function (a, b) {
+                        node = a;
+    
+                        node.style.opacity = styleProperty(node, 'opacity') === '1' ? '0.4' : '1';
+                    });
+    
+                }
+    
+                function toggle_popover(selector) {
+                    var nodes = document.querySelectorAll(selector),
+                        node,
+                        styleProperty = function (c, d) {
+                            return window.getComputedStyle ? window.getComputedStyle(c).getPropertyValue(d) : c.currentStyle[d];
+                        };
+
+                    [].forEach.call(nodes, function (c, d) {
+                        node = c;
+
+                        node.style.opacity = styleProperty(node, 'opacity') === '1' ? '0' : '1';
+                    });
+
+                }
+    
+                document.getElementById('es-primary2').onmouseup = function () {
+                    toggle('.area-ac_bac , .area-am_bac , .area-cs_bac , .area-ese_bac , .area-es_bac , .area-sem_bac , .area-ap_bac , .area-be_bac, .button-course');
+                };
+    
+                document.getElementById('es-primary2').onmousedown = function () {
+                    toggle_popover('.popover');
+                };
+    
+            </script>
+
+
+
+
+
                 <dd>
                     <button type="button" class="button-course">
                         156
@@ -3129,14 +3236,26 @@ cursor: pointer;  text-decoration: underline; margin-left: 1em;">
                 </dd>
             </dl>
         </div>
-        <div class="area-es-wed-1030 area-es_bac">
+
+
+        <!-- Adding the area-es_on_bac class to all the areas that contain 051 -->
+        <div class="area-es-wed-1030 area-es_on_bac">
             <dl>
                 <dt class="area-es">
                     ES
                 </dt>
+
+                <!-- Adding button-course_on class to all the instances of ES 051 so that the opacity toggle won't affect them -->
                 <dd>
-                    <button type="button" class="button-course">
+                    <button type="button" class="button-course_on" style="position: relative;">
                         051
+<!-- ES 051 pop-over -->
+                            <div class="popover bs-popover-top" role="tooltip" x-placement="top"
+                            style="position: absolute; margin-top: -10.5em; margin-left: -1em; width: 14em;">
+                                <div class="arrow" style="left: 5px;"></div>
+                                <h3 class="popover-header" style="color: #000">ES 051</h3>
+                                <div class="popover-body">Wednesday<br>10:30am - 11:45am <br> Room: MD 203</div>
+                            </div>
                     </button>
                 </dd>
                 <dd>
@@ -3999,14 +4118,26 @@ cursor: pointer;  text-decoration: underline; margin-left: 1em;">
                 </dd>
             </dl>
         </div>
-        <div class="area-es-fri-1030 area-es_bac">
+
+
+<!-- Adding the area-es_on_bac class to all the areas that contain 051 -->
+        <div class="area-es-fri-1030 area-es_on_bac">
             <dl>
                 <dt class="area-es">
                     ES
                 </dt>
+
+<!-- Adding button-course_on class to all the instances of ES 051 so that the opacity toggle won't affect them -->
                 <dd>
-                    <button type="button" class="button-course">
+                    <button type="button" class="button-course_on" style="position: relative;">
                         051
+<!-- ES 051 pop-over -->
+                            <div class="popover bs-popover-top" role="tooltip" x-placement="top"
+                            style="position: absolute; margin-top: -10.5em; margin-left: -.5em; width: 14em;">
+                                <div class="arrow" style="left: 5px;"></div>
+                                <h3 class="popover-header" style="color: #000">ES 051</h3>
+                                <div class="popover-body">Friday<br>10:30am - 11:45am <br> Room: MD 203</div>
+                            </div>
                     </button>
                 </dd>
                 <dd>
