@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Faculty - Course Planner</title>
+    <title>Manage faculty - Course Planner</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
@@ -317,15 +317,6 @@
         .sidenav a:hover {
             font-size: 1.5em;
             color: #000;
-        }
-
-        .modal {
-            right: 18%;
-            left: -10%;
-        }
-
-        .modal-content {
-            width: 84em;
         }
 
         /*CSS Grid*/
@@ -1712,16 +1703,13 @@
             </span>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link" href="courses.html">Courses</a>
+            <a class="nav-link" href="manage_users.html">Manage Users</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#">Faculty</a>
+            <a class="nav-link" href="manage_courses.html">Manage Courses</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="schedule.html">Schedule</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="fourYearPlan.html">4 Year Plan</a>
+            <a class="nav-link active" href="#">Manage Faculty</a>
         </li>
     </ul>
 
@@ -1731,8 +1719,8 @@
             Name Surname
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="manage_users.html">Administration</a>
-                <a class="dropdown-item" href="#">Log out</a>
+            <a class="dropdown-item" href="schedule.html">Planning</a>
+            <a class="dropdown-item" href="#">Log out</a>
           </div>
         </li>
     </ul>
@@ -1741,21 +1729,100 @@
 <!--Catalog prefixes-->
 <div>
     <ul class="nav nav-pills">
-        <li class="nav-item">
-                    <span class="nav-link" style="margin-right: 3em; cursor: pointer;" onclick="openNav()">
-                        Settings
-                        <i class="far fa-arrow-alt-circle-right"></i>
-                    </span>
+        <li class="nav-item" hidden>
+            <span class="nav-link" style="margin-right: 3em; cursor: pointer;" onclick="openNav()">
+                Settings
+                <i class="far fa-arrow-alt-circle-right"></i>
+            </span>
         </li>
-
+        <li class="nav-item">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+                Create new faculty
+            </button>
+        </li>
     </ul>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-size: 1.25em;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create new faculty</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="radio" aria-label="Radio button for selectiong and existing area" name="areaChoice">
+                                </div>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option value="" class="" selected="selected">Select an area...</option>
+                                <option value="string:ACS" label="ACS">ACS</option>
+                                <option value="string:AM" label="AM">AM</option>
+                                <option value="string:AP" label="AP">AP</option>
+                                <option value="string:BE" label="BE">BE</option>
+                                <option value="string:CS" label="CS">CS</option>
+                                <option value="string:EE" label="EE">EE</option>
+                                <option value="string:ESE" label="ESE">ESE</option>
+                                <option value="string:General" label="General">General</option>
+                                <option value="string:MDE" label="MDE">MDE</option>
+                                <option value="string:MSMBA" label="MSMBA">MSMBA</option>
+                                <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
+                                <option value="string:SEM" label="SEM">SEM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <label for="createNewArea" hidden>Radio button for creating a new area</label>
+                                    <input type="radio" id="createNewArea" name="areaChoice">
+                                </div>
+                                <label for="createNewAreaName" hidden>Create new area</label>
+                                <input type="text" id="createNewAreaName" class="form-control" aria-label="Create new area" placeholder="Create new area" style="width: 20em;"> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="ccn">CCN</label>
+                        <input type="text" class="form-control" id="ccn" placeholder="">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="courseNumber">Course number</label>
+                        <input type="text" class="form-control" id="courseNumber" placeholder="e.g., AC209">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="courseTitle">Title</label>
+                        <input type="text" class="form-control" id="courseTitle" aria-describedby="firstName" placeholder="e.g., Data Science">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary mr-auto btn-lg" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Create</button>
+        </div>
+        </div>
+    </div>
+    </div>
 
 <div id="outer-grid">
 
     <!--Sidenav filters-->
-    <div class="sideNav-column">
+    <div class="sideNav-column" hidden>
         <div id="mySidenav" class="sidenav" style="white-space: nowrap;">
             <div>
                 <a href="javascript:void(0)" onclick="closeNav()"
@@ -1784,9 +1851,9 @@
     <!-- courses -->
     <div class="courses">
         <picture>
-            <source srcset="faculty_lg.png" media="(min-width: 1500px)">
-            <source srcset="faculty.png" media="(min-width: 700px)">
-            <img srcset="faculty.png" alt="…" style="width: 100%;">
+            <source srcset="manage_faculty.png" media="(min-width: 1500px)">
+            <source srcset="manage_faculty.png" media="(min-width: 700px)">
+            <img srcset="manage_faculty.png" alt="…" style="width: 100%; padding: 1em;">
         </picture>
     </div><!-- /courses -->
 
@@ -1826,16 +1893,12 @@
         html: true,
         title: '<p><strong>CS 181</strong><br>9:00am - 10:15am</p>'
     });
-</script>
-<!--Pop over for ES 022 and ESE 166, with HTML link -->
-<script>
+
     $(function () {
         $('[data-toggle="popover"]').popover()
     })
-    $("[data-toggle=popover]")
-        .popover({html: true})
-
 </script>
+
 
 
 </body>
