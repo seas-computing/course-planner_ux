@@ -319,6 +319,10 @@
             color: #000;
         }
 
+        .form-control {
+            font-size: 1.25rem;
+        }
+
         /*CSS Grid*/
 
         #outer-grid {
@@ -1754,60 +1758,118 @@
             </button>
         </div>
         <div class="modal-body">
-            <form>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <input type="radio" aria-label="Radio button for selectiong and existing area" name="areaChoice">
-                                </div>
-                            </div>
-                            <select class="custom-select" id="inputGroupSelect01">
-                                <option value="" class="" selected="selected">Select an area...</option>
-                                <option value="string:ACS" label="ACS">ACS</option>
-                                <option value="string:AM" label="AM">AM</option>
-                                <option value="string:AP" label="AP">AP</option>
-                                <option value="string:BE" label="BE">BE</option>
-                                <option value="string:CS" label="CS">CS</option>
-                                <option value="string:EE" label="EE">EE</option>
-                                <option value="string:ESE" label="ESE">ESE</option>
-                                <option value="string:General" label="General">General</option>
-                                <option value="string:MDE" label="MDE">MDE</option>
-                                <option value="string:MSMBA" label="MSMBA">MSMBA</option>
-                                <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
-                                <option value="string:SEM" label="SEM">SEM</option>
-                            </select>
-                        </div>
+            <form><div class="row">
+                    <div class="form-group col-6">
+
+                        <script type="text/javascript">
+                            function showfield(name){
+                                if(name=='Other')document.getElementById('div1').innerHTML='<label for="faculty_area_new" class="mt-4">Create a new area</label><input type="text" name="other" id="faculty_area_new" class="form-control" />';
+                                else document.getElementById('div1').innerHTML='';
+                            }
+                        </script>
+
+                        <label for="course_area">Area</label>
+                        <select class="form-control" id="course_area" onchange="showfield(this.options[this.selectedIndex].value)">
+                            <option>ACS</a>
+                            <option>AM</a>
+                            <option>AP</a>
+                            <option>BE</option>
+                            <option>CS</option>
+                            <option>EE</option>
+                            <option>ESE</option>
+                            <option>General</option>
+                            <option>MDE</option>
+                            <option>MSMBA</option>
+                            <option>Mat&amp;ME</option>
+                            <option>SEM</option>
+                            <option value="Other">New area</option>
+                        </select>
+                    <div id="div1"></div>
                     </div>
-                    <div class="col-6">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <label for="createNewArea" hidden>Radio button for creating a new area</label>
-                                    <input type="radio" id="createNewArea" name="areaChoice">
-                                </div>
-                                <label for="createNewAreaName" hidden>Create new area</label>
-                                <input type="text" id="createNewAreaName" class="form-control" aria-label="Create new area" placeholder="Create new area" style="width: 20em;"> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
                     <div class="form-group col-6">
                         <label for="ccn">CCN</label>
                         <input type="text" class="form-control" id="ccn" placeholder="">
                     </div>
-                    <div class="form-group col-6">
-                        <label for="courseNumber">Course number</label>
-                        <input type="text" class="form-control" id="courseNumber" placeholder="e.g., AC209">
+                </div>
+                <div class="row">
+                    <div class="form-group col-3">
+                        <label for="course">Course number</label>
+                        <input type="text" class="form-control" id="course" placeholder="e.g., AC209">
+                    </div>
+                    <div class="form-group col-9">
+                            <label for="courseTitle">Title</label>
+                            <input type="text" class="form-control" id="courseTitle" aria-describedby="firstName" placeholder="e.g., Data Science">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="form-group col">
-                        <label for="courseTitle">Title</label>
-                        <input type="text" class="form-control" id="courseTitle" aria-describedby="firstName" placeholder="e.g., Data Science">
+
+                        <div class="form-group col-6">
+                            <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+                            <script>
+                                $(document).ready(function(){
+                                    var next = 1;
+                                    $(".add-more").click(function(e){
+                                        e.preventDefault();
+                                        var addto = "#field" + next;
+                                        var addRemove = "#field" + (next);
+                                        next = next + 1;
+                                        var newIn = '<input autocomplete="off" class="form-control" style="width: 90%;" id="field' + next + '" name="field' + next + '" type="text">';
+                                        var newInput = $(newIn);
+                                        var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me ml-1 btn-sm"><i class="fas fa-minus"></i></button></div><div id="field">';
+                                        var removeButton = $(removeBtn);
+                                        $(addto).after(newInput);
+                                        $(addRemove).after(removeButton);
+                                        $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+                                        $("#count").val(next);  
+                                        
+                                            $('.remove-me').click(function(e){
+                                                e.preventDefault();
+                                                var fieldNum = this.id.charAt(this.id.length-1);
+                                                var fieldID = "#field" + fieldNum;
+                                                $(this).remove();
+                                                $(fieldID).remove();
+                                            });
+                                    });                                
+                                });
+                            </script>
+                            <input type="hidden" name="count" value="1" />
+                            <div class="control-group" id="fields">
+                                <label class="control-label" for="field1">Same as...</label>
+                                <div class="controls" id="profs"> 
+                                        <div id="field" class="input-group"><input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="Add 'Same As' course" data-items="8" /><div class="input-group-append"><button id="b1" class="btn btn-secondary add-more ml-1 btn-sm input-group-append" type="button"><i class="fas fa-plus"></i></button></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-check col-6">
+                            <label class="form-check-label mt-3" for="undergraduate">
+                                Undergraduate
+                            </label>
+                            <input class="form-check-input ml-3 mt-4" type="checkbox" id="undergraduate">
+                        </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group col-6">
+                        <label for="courseSEAS">In SEAS</label>
+                        <select class="form-control" id="courseSEAS">
+                            <option>Yes</a>
+                            <option>EPS</a>
+                            <option>No</option>
+                        </select>
                     </div>
+
+                    <div class="form-group col-6">
+                        <label for="termPattern">Term Pattern</label>
+                        <select class="form-control" id="termPattern">
+                            <option>Fall</a>
+                            <option>Spring</a>
+                            <option>Both</option>
+                        </select>
+                    </div>
+
                 </div>
             </form>
         </div>
