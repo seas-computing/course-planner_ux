@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Manage users - Course Planner</title>
+    <title>Manage users - SEAS Course Administration</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
@@ -245,6 +245,10 @@
             font-size: 1.4rem;
         }
 
+        a.nav-link_admin{
+            color: #2B5888;
+        }
+
         .nav-tabs {
             margin-bottom: -2.5em;
             margin-left: -131em;
@@ -262,6 +266,10 @@
 
         .navbar-brand img {
             width: 7%;
+        }
+        
+        .bg-light_admin {
+            background-color: #BBD6EC;
         }
 
         h2 {
@@ -1698,11 +1706,11 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light_admin fixed-top">
             <span class="navbar-brand">
                 <img src="H_SEAS_logo_RGB.png">
                 <h2 class="navbar-text mr-auto">
-                    SEAS Course Planning
+                    SEAS Course Administration
                 </h2>
             </span>
     <ul class="nav nav-tabs">
@@ -1710,10 +1718,10 @@
             <a class="nav-link active" href="#">Manage Users</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="manage_courses.html">Manage Courses</a>
+            <a class="nav-link nav-link_admin" href="manage_courses.html">Manage Courses</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="manage_faculty.html">Manage Faculty</a>
+            <a class="nav-link nav-link_admin" href="manage_faculty.html">Manage Faculty</a>
         </li>
     </ul>
 
