@@ -1797,9 +1797,11 @@
     <!-- courses -->
     <div class="courses">
         <picture>
-            <source srcset="courses_lg.png" media="(min-width: 1500px)">
-            <source srcset="courses.png" media="(min-width: 700px)">
-            <img srcset="courses.png" alt="…" style="width: 100%;">
+            <a data-toggle="modal" data-target="#courseModal">
+                <source srcset="courses_lg.png" media="(min-width: 1500px)">
+                <source srcset="courses.png" media="(min-width: 700px)">
+                <img srcset="courses.png" alt="…" style="width: 100%;">
+            </a>
         </picture>
     </div><!-- /courses -->
 
@@ -1886,6 +1888,54 @@
     </div> <!-- / Modal - New View -->
 
 </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModal" aria-hidden="true" style="font-size: 1.25em; right: 18%; left: 50%; top: 26em;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="width: 20em;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="courseModal">Edit AC 297r</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="width: 17em;">
+                <div class="row">
+                    <div class="col">Protopapas, Pavlos</div>
+                    <div class="col-1"><button type="button" class="btn btn-outline-secondary"><i class="fas fa-arrow-down"></i></button></div>
+                    <div class="col-1"><button type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button></div>
+                </div>
+                <div class="row" style="padding: .5em 0em .5em 1em; width: 20em;">
+                    <div class="col" style="border-bottom: solid 1px #eee;"></div>
+                </div>
+                <div class="row">
+                    <div class="col">Tanner, Christopher</div>
+                    <div class="col-1"><button type="button" class="btn btn-outline-secondary"><i class="fas fa-arrow-up"></i></button></div>
+                    <div class="col-1"><button type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button></div>
+                </div>
+                <div class="row" style="padding: .5em 0em .5em 1em; width: 20em;">
+                    <div class="col" style="border-bottom: solid 1px #eee;"></div>
+                </div>
+                <div class="row" style="width: 18.75em;">
+                    <div class="input-group ml-4">
+                        <input type="text" class="form-control" placeholder="Search for an instructor" aria-label="Search for an instructor" aria-describedby="button-addon2" style="width: 19em;">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary mr-auto btn-lg" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">OK</button>
+            </div>
+            </div>
+        </div>
+    </div>
 
 <!-- Optional Bootsrap JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
