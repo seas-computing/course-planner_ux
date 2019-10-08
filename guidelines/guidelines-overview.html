@@ -109,7 +109,7 @@
 
       </ul>
 
-      <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20191003</small></span>
+      <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20191008</small></span>
     </header>
 
     <div class="container-fluid">
@@ -131,17 +131,17 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="#github">
                     GitHub
                   </a>
                 </li>
                 <li>
-                  <a href="#">
-                    Prototypes
+                  <a href="#ux">
+                    User Experience
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a class="text-muted">
                     Accessibility
                   </a>
                 </li>
@@ -382,6 +382,7 @@
           </nav>
 
         </div>
+        <!-- / sidebar -->
 
         <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
           
@@ -459,7 +460,7 @@
             </li>
           </ul>
           <p>
-            The second area, Administration, allows to edit the following content:
+            The second area, Administration, manages the following content:
           </p>
           <ul>
             <li>
@@ -577,126 +578,72 @@
               </figure>
             </div><!-- / col -->
           </div><!-- / row -->
-
           <!-- / Intro -->
 
-          <h2 id="how-it-works">
-            <div>Content<a class="anchorjs-link " href="#how-it-works" aria-label="Anchor" data-anchorjs-icon="#"
-                style="padding-left: 0.375em;"></a></div>
+          <h2 id="github">
+            <div>GitHub<a class="anchorjs-link" href="#github" aria-label="Anchor" data-anchorjs-icon="#"
+                style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a></div>
           </h2>
-
-          <p class="text-muted">Examples of documentation:</p>
-
           <ul>
-            <li>Navbars require a wrapping <code class="highlighter-rouge">.navbar</code> with <code
-                class="highlighter-rouge">.navbar-expand{-sm|-md|-lg|-xl}</code> for responsive collapsing and <a
-                href="#color-schemes">color scheme</a> classes.</li>
-            <li>Navbars and their contents are fluid by default. Use <a href="#containers">optional containers</a> to
-              limit their horizontal width.</li>
-            <li>Use our <a href="/docs/4.1/utilities/spacing/">spacing</a> and <a
-                href="/docs/4.1/utilities/flex/">flex</a> utility classes for controlling spacing and alignment within
-              navbars.</li>
-            <li>Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior
-              depends on our Collapse JavaScript plugin.</li>
-            <li>Navbars are hidden by default when printing. Force them to be printed by adding <code
-                class="highlighter-rouge">.d-print</code> to the <code class="highlighter-rouge">.navbar</code>. See the
-              <a href="/docs/4.1/utilities/display/">display</a> utility class.</li>
-            <li>Ensure accessibility by using a <code class="highlighter-rouge">&lt;nav&gt;</code> element or, if using a
-              more generic element such as a <code class="highlighter-rouge">&lt;div&gt;</code>, add a <code
-                class="highlighter-rouge">role="navigation"</code> to every navbar to explicitly identify it as a landmark
-              region for users of assistive technologies.</li>
+            <li>
+              <a href="https://github.com/seas-computing/course-planner/projects/1">
+                Course planning kanban
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/seas-computing/course-planner/projects/2">
+                UI components
+              </a>
+            </li>
+            <li>
+              <a href="https://seas-computing.github.io/course-planner/">
+                Globals/course-planner
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/seas-computing/TEST_calendar-ux-styled/blob/master/src/client/components/calendar/Calendar.tsx">
+                seas-computing/TEST_calendar-ux-styled
+              </a>
+              <ul>
+                <li>
+                  <a href="https://seas-computing.github.io/TEST_calendar-ux-styled/docs/index.html">
+                    seas-computing.github.io/TEST_calendar-ux-styled/docs/index.html
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://github.com/seas-computing/course-planner_ux/tree/gh-pages">
+                  course-planner_ux
+              </a>
+              <ul>
+                <li>
+                  <a href="https://seas-computing.github.io/course-planner_ux/schedule.html">
+                    gh-pages prototype
+                  </a>
+                </li>
+              </ul>
+            </li>
           </ul>
+          <!-- / GitHub -->
 
-          <p class="text-muted">Example of interface detail:</p>
-
-          <div class="bd-example">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                  </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-              </div>
-            </nav>
-          </div>
-
-          <p class="text-muted">Example of code:</p>
-
-          <figure class="highlight">
-            <pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand-lg navbar-light bg-light"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Navbar<span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"navbar-toggler"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#navbarSupportedContent"</span> <span class="na">aria-controls=</span><span class="s">"navbarSupportedContent"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-label=</span><span class="s">"Toggle navigation"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"navbar-toggler-icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
-    <span class="nt">&lt;/button&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse navbar-collapse"</span> <span class="na">id=</span><span class="s">"navbarSupportedContent"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav mr-auto"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item active"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>(current)<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item dropdown"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"navbarDropdown"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
-            Dropdown
-          <span class="nt">&lt;/a&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">aria-labelledby=</span><span class="s">"navbarDropdown"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-divider"</span><span class="nt">&gt;&lt;/div&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link disabled"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Disabled<span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;/ul&gt;</span>
-      <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-inline my-2 my-lg-0"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control mr-sm-2"</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"Search"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-outline-success my-2 my-sm-0"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
-      <span class="nt">&lt;/form&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/nav&gt;</span></code></pre>
-          </figure>
+          <h2 id="ux">
+            <div>User Experience<a class="anchorjs-link" href="#ux" aria-label="Anchor" data-anchorjs-icon="#"
+                style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a></div>
+          </h2>
+          <ul>
+            <li>
+              <a href="https://rawgit.com/Harvard-University-iCommons/UX-Prototypes/master/evaluation/SEAS-coursePlanner/index.html">
+                Comparison study
+              </a>
+            </li>
+          </ul>
+          <!-- / User experience -->
 
         </main>
-
       </div><!-- / row flex-xl-nowrap -->
     </div><!-- / container-fluid -->
     
-    
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"></script>
@@ -710,7 +657,6 @@
       crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.1/assets/js/docs.min.js"></script>
-
 
   </body>
 
