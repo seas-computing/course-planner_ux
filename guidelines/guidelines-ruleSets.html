@@ -8,7 +8,9 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.3">
 
-    <title>Content - SEAS Course Planning - Interaction guidelines</title>
+    <title>Rule sets - SEAS Course Planning - Interaction guidelines</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/components/navbar/">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/components/navbar/">
 
@@ -30,20 +32,11 @@
     <meta name="theme-color" content="#563d7c">
 
     <!-- Icon library at https://fontawesome.com/icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+          integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
     <!-- Amending Bootstrap styles -->
     <style>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -118,7 +111,7 @@
 
         </ul>
 
-        <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20191003</small></span>
+        <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20191018</small></span>
     </header>
 
     <div class="container-fluid">
@@ -127,7 +120,8 @@
             <!-- Links in this left-hand sidebar take to other web pages -->
             <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
 
-                <nav class="collapse bd-links" id="bd-docs-nav">
+                <!-- Removing collapse while offline -->
+                <nav class=" bd-links" id="bd-docs-nav">
 
                     <div class="bd-toc-item">
                         <a class="bd-toc-link" href="guidelines-overview.html">
@@ -141,33 +135,34 @@
                         </a>
                     </div>
 
-                    <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="guidelines-rulesets.html">
+                    <div class="bd-toc-item active">
+                        <a class="bd-toc-link" href="#rulsets">
                             Rule sets
                         </a>
-                    </div>
-
-                    <div class="bd-toc-item active">
-                        <a class="bd-toc-link" href="#">
-                            Content
-                        </a>
-                        <ul class="nav bd-sidenav">
+                        <!-- Removing nav bd-sidenav while offline -->
+                        <ul class="">
                             <li>
-                                <a href="/#">
-                                    Typography
+                                <a href="#calendar">
+                                    Calendar
                                 </a>
                             </li>
                             <li>
-                                <a href="/#">
-                                    Code
+                                <a href="#dropdown">
+                                    Drop downs
                                 </a>
                             </li>
                             <li>
-                                <a href="/#">
-                                    CSS Grid
+                                <a href="#link">
+                                    Links and buttons
                                 </a>
                             </li>
                         </ul>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-content.html">
+                            Content
+                        </a>
                     </div>
 
                     <div class="bd-toc-item">
@@ -212,29 +207,27 @@
 
             <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
 
-                <h2 id="theme">
+                <h2 id="rulsets">
                     <div>
-                        Content<a class="anchorjs-link" href="#content" aria-label="Anchor" data-anchorjs-icon="#"
-                                  style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                        Rule sets<a class="anchorjs-link" href="#rulsets" aria-label="Anchor" data-anchorjs-icon="#"
+                                    style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
                     </div>
                 </h2>
                 <p>
-                    Consistency in UI design is concerned with making sure elements in a user interface are uniform.
-                    They'll look and behave the same way.
-                    This helps constantly prove a user's assumptions about the user interface right,
-                    creating a sense of control, familiarity, and reliability.
-                    <!-- Source: https://careerfoundry.com/en/blog/ui-design/the-importance-of-consistency-in-ui-design/ -->
+                    Rule sets address patterns and exceptions.
+                    They improve productivity of implementation and they ensure consistency, which improves usability.
+                    <!-- Source:  -->
                 </p>
-                <!-- / Overview -->
+                <!-- / rulsets -->
 
-                <h2 id="layout">
+                <h2 id="calendar">
                     <div>
-                        Layout rules<a class="anchorjs-link" href="#layout" aria-label="Anchor" data-anchorjs-icon="#"
-                                       style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                        Calendar<a class="anchorjs-link" href="#calendar" aria-label="Anchor" data-anchorjs-icon="#"
+                                   style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
                     </div>
                 </h2>
 
-                <div class="row">
+                <div class="row mt-4">
                     <div class="col">
                         <h3>
                             Priority sequence
@@ -263,11 +256,12 @@
                         </ol>
                     </div>
                     <div class="col text-center">
-                        <img src="img/content_rule_2.png" class="rounded img-fluid" alt="schedule">
+                        <img src="img/ruleset-schedule_sequence.png" class="rounded img-fluid" alt="schedule">
                     </div>
-                </div>
+                </div><!-- / Priority sequence -->
 
-                <div class="row">
+
+                <div class="row mt-4">
                     <div class="col">
                         <h3>
                             "Automatic" sequence
@@ -275,29 +269,42 @@
                         <p>
                             According to the above priority sequence, courses would populate each time block in alphabetic order.
                         </p>
-
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-4">
                         <ol>
                             <li>Courses populate each time block in alphabetic order</li>
                             <li>Courses placement is affected only by the previous time block(s)</li>
                             <li>Courses placement is not affected by the following time block</li>
                         </ol>
+                    </div>
+                    <div class="col text-center">
+                        <img src="img/ruleset-schedule_auto.png" class="rounded img-fluid" alt="automatic sequence">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
                         <p>
                             This rule set doesn't make the best use of the space.
                         </p>
+                        <hr />
                     </div>
-                    <div class="col text-center">
-                        <img src="img/content_rule_a.png" class="rounded img-fluid" alt="automatic sequence">
-                    </div>
-                </div>
+                </div><!-- / Automatic sequence -->
 
-                <div class="row">
+                <div class="row mt-4">
                     <div class="col">
                         <h3>
                             "Logical" sequence
                         </h3>
                         <p>
-                            This approach adds rules that maximize the available space within a time block.
+                            These rules maximize the available space within a time block
+                            and improve the readability of courses by reducing visual inconsistency.
                         </p>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-4">
                         <ol>
                             <li>Courses populate each time block in alphabetic order</li>
                             <li>
@@ -311,11 +318,118 @@
                         </ol>
                     </div>
                     <div class="col text-center">
-                        <img src="img/content_rule_b.png" class="rounded img-fluid" alt="automatic sequence">
+                        <img src="img/ruleset-schedule_logic.png" class="rounded img-fluid" alt="logical sequence">
                     </div>
                 </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <hr />
+                    </div>
+                </div><!-- / Logical sequence -->
+                <!-- / calendar -->
 
-                <!-- / Layout -->
+                <h2 id="dropdown">
+                    <div>
+                        Drop downs<a class="anchorjs-link" href="#dropdown" aria-label="Anchor" data-anchorjs-icon="#"
+                                     style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
+
+                <div class="row mt-2">
+                    <div class="col-4">
+                        <ul>
+                            <li>Dropdowns are used for the selection of 3 or more options</li>
+                            <li>
+                                For two or less selections, use checkboxes or radio buttons
+                            </li>
+                            <li>
+                                Note that interfaces like toggle switches (url) are stylized radio buttons
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col text-center">
+                        <img src="img/ruleset-dropdown.png" class="rounded img-fluid" alt="drop downs, check boxes and input forms">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <hr />
+                    </div>
+                </div><!-- / Drop downs -->
+                <!-- / dropdown -->
+
+                <h2 id="link">
+                    <div>
+                        Links and buttons<a class="anchorjs-link" href="#link" aria-label="Anchor" data-anchorjs-icon="#"
+                                            style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
+
+                <div class="row mt-2">
+                    <div class="col-4">
+                        <p>
+                            When selecting a link, users expect to "jump" to content different of the current one (even though contextually the same)
+                        </p>
+                        <p>
+                            Use icons as and/or with buttons only when it helps to clarify any ambiguity, otherwsie the context and descriptive text are sufficient.
+                        </p>
+                        <ul>
+                            <li>
+                                Links are used to connect content areas
+                                <ul>
+                                    <li>Relative pages of content (same directory, project)</li>
+                                    <li>External pages of content</li>
+                                    <li>Content within the same page (anchor links)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col text-center">
+                        <img src="img/ruleset-link.png" class="rounded img-fluid" alt="text links and buttons">
+                    </div>
+                </div><!-- / link -->
+
+                <div class="row mt-2">
+                    <div class="col-4">
+                        <p>
+                            When selecting a button, users expect for some programmatic activity to take place and eventually display its results.
+                        </p>
+                        <p>
+                            Buttons should not to be used to emphasize liks.
+                        </p>
+                        <p>
+                            Use icons as and/or with buttons only when it helps to clarify any ambiguity, otherwsie the context and button label are sufficient.
+                        </p>
+                        <ul>
+                            <li>
+                                Buttons are used to "process" information or to trigger changes of the content
+                                <ul>
+                                    <li>Submit or cancel a selection or input text</li>
+                                    <li>Reveal hidden information*</li>
+                                    <li>Change the aspect of content (courses schedule)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="text-muted">
+                            * - It's open to discussion whether this should be an icon with the function of a link,
+                            since modals or side navs just reveal previously hidden content. But not in all cases.
+                            <br />
+                            Ultimately, these are "visual rules" based on "superficial" usability;
+                            whether of two simingly identical modal, one is streaming data from the back-end
+                            and doing all kind of processing to finally display the result, while the other just un-hide static information,
+                            to the user both are seen as the former.
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <img src="img/ruleset-button.png" class="rounded img-fluid" alt="text links and buttons">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <hr />
+                    </div>
+                </div><!-- / button -->
+                <!-- / links and buttons -->
 
             </main>
 

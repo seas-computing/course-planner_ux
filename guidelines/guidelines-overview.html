@@ -1,10 +1,10 @@
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
-      content="Documentation and examples for Bootstrap’s powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more, including support for our collapse plugin.">
+          content="Documentation and examples for Bootstrap’s powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more, including support for our collapse plugin.">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.3">
 
@@ -16,7 +16,7 @@
 
     <style class="anchorjs"></style>
     <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
     <!-- Documentation extras -->
@@ -31,638 +31,696 @@
 
     <!-- Icon library at https://fontawesome.com/icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
-      integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+          integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
     <!-- Amending Bootstrap styles -->
     <style>
-      .bg-light {
-        background-color: #ffffff !important;
-      }
 
-      .navbar-text h2 {
-        font-size: 1.25rem;
-      }
 
-      .bd-navbar .navbar-nav .nav-link {
-        padding-right: .5rem;
-        padding-left: .5rem;
-        color: #93a1ad;
-      }
 
-      .nav-item a:hover {
-        color: black !important;
-        cursor: pointer;
-      }
+
+        .bg-light {
+            background-color: #ffffff !important;
+        }
+
+        .navbar-text h2 {
+            font-size: 1.25rem;
+        }
+
+        .bd-navbar .navbar-nav .nav-link {
+            padding-right: .5rem;
+            padding-left: .5rem;
+            color: #93a1ad;
+        }
+
+        .nav-item a:hover {
+            color: black !important;
+            cursor: pointer;
+        }
     </style>
 
-  </head>
+</head>
 
-  <body>
+<body>
     <a id="skippy" class="sr-only sr-only-focusable" href="#content">
-      <div class="container">
-        <span class="skiplink-text">Skip to main content</span>
-      </div>
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
     </a>
 
     <header class="navbar navbar-expand navbar-light bg-light flex-column flex-md-row bd-navbar">
-      <a class="navbar-brand mr-0 mr-md-2" href="https://www.seas.harvard.edu/computing-office"
-        aria-label="SEAS Computing">
-        <img src="https://www.seas.harvard.edu/sites/default/files/images/H_SEAS_logo_RGB_1.jpg" alt="SEAS logo"
-          style="width: 10em; margin-right: 1em;">
-        <title>SEAS Course Planning - Interaction guidelines</title>
-      </a>
+        <a class="navbar-brand mr-0 mr-md-2" href="https://www.seas.harvard.edu/computing-office"
+           aria-label="SEAS Computing">
+            <img src="https://www.seas.harvard.edu/sites/default/files/images/H_SEAS_logo_RGB_1.jpg" alt="SEAS logo"
+                 style="width: 10em; margin-right: 1em;">
+            <title>SEAS Course Planning - Interaction guidelines</title>
+        </a>
 
-      <div class="navbar-nav-scroll">
-        <ul class="navbar-nav bd-navbar-nav flex-row">
-          <li class="nav-item">
-            <span class="navbar-text">
-              <h2>SEAS Course Planning - Interaction guidelines</h2>
-            </span>
-          </li>
+        <div class="navbar-nav-scroll">
+            <ul class="navbar-nav bd-navbar-nav flex-row">
+                <li class="nav-item">
+                    <span class="navbar-text">
+                        <h2>SEAS Course Planning - Interaction guidelines</h2>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item dropdown">
+                <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Other links
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                    <a class="dropdown-item active"
+                       href="https://seas-computing.github.io/course-planner_ux/guidelines.html">Guidelines</a>
+                    <a class="dropdown-item" href="https://github.com/seas-computing/course-planner/projects/1">Kanban</a>
+
+                    <a class="dropdown-item"
+                       href="https://seas-computing.github.io/course-planner_ux/schedule.html">Prototypes</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="https://planning.seas.harvard.edu/courses/app/#/schedule">Course planner</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link p-2 mt-1" href="https://github.com/seas-computing/course-planner_ux/tree/gh-pages/guidelines" rel="noopener"
+                   target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+
         </ul>
-      </div>
 
-      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-        <li class="nav-item dropdown">
-          <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Other links
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-            <a class="dropdown-item active"
-              href="https://seas-computing.github.io/course-planner_ux/guidelines.html">Guidelines</a>
-              <a class="dropdown-item" href="https://github.com/seas-computing/course-planner/projects/1">Kanban</a>
-
-            <a class="dropdown-item"
-              href="https://seas-computing.github.io/course-planner_ux/schedule.html">Prototypes</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="https://planning.seas.harvard.edu/courses/app/#/schedule">Course planner</a>
-          </div>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link p-2 mt-1" href="https://github.com/seas-computing/course-planner_ux/tree/gh-pages/guidelines" rel="noopener"
-            target="_blank" rel="noopener" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-
-      </ul>
-
-      <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20191008</small></span>
+        <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20191008</small></span>
     </header>
 
     <div class="container-fluid">
-      <div class="row flex-xl-nowrap">
+        <div class="row flex-xl-nowrap">
 
-        <!-- Links in this left-hand sidebar take to other web pages -->
-        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+            <!-- Links in this left-hand sidebar take to other web pages -->
+            <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
 
-          <nav class="collapse bd-links" id="bd-docs-nav">
+                <nav class="collapse bd-links" id="bd-docs-nav">
 
-            <div class="bd-toc-item active">
-              <a class="bd-toc-link" href="#overview">
-                Overview
-              </a>
-              <ul class="nav bd-sidenav">
-                <li>
-                  <a href="#intro">
-                    Introduction
-                  </a>
-                </li>
-                <li>
-                  <a href="#github">
-                    GitHub
-                  </a>
-                </li>
-                <li>
-                  <a href="#ux">
-                    User Experience
-                  </a>
-                </li>
-                <li>
-                  <a class="text-muted">
-                    Accessibility
-                  </a>
-                </li>
-              </ul>
+                    <div class="bd-toc-item active">
+                        <a class="bd-toc-link" href="#overview">
+                            Overview
+                        </a>
+                        <ul class="nav bd-sidenav">
+                            <li>
+                                <a href="#intro">
+                                    Introduction
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#github">
+                                    GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#ux">
+                                    User Experience
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-muted">
+                                    Accessibility
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-theme.html">
+                            Theme
+                        </a>
+                        <ul class="nav bd-sidenav">
+                            <li>
+                                <a href="/docs/4.1/layout/grid/">
+                                    Layout
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/layout/media-object/">
+                                    Color palette
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/layout/utilities-for-layout/">
+                                    Branding
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bd-toc-item active">
+                        <a class="bd-toc-link" href="guidelines-ruleSets.html">
+                            Rule sets
+                        </a>
+                        <ul class="nav bd-sidenav">
+                            <li>
+                                <a href="#calendar">
+                                    Calendar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#">
+                                    Drop downs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#">
+                                    Links
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-content.html">
+                            Content
+                        </a>
+                        <ul class="nav bd-sidenav">
+                            <li>
+                                <a href="/docs/4.1/content/typography/">
+                                    Typography
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/content/code/">
+                                    Code
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/content/tables/">
+                                    CSS Grid
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-components.html">
+                            Components
+                        </a>
+                        <ul class="nav bd-sidenav">
+                            <li>
+                                <a href="/docs/4.1/components/alerts/">
+                                    Alerts
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/badge/">
+                                    Badge
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/breadcrumb/">
+                                    Breadcrumb
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/buttons/">
+                                    Buttons
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/button-group/">
+                                    Button group
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/card/">
+                                    Card
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/collapse/">
+                                    Collapse
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/dropdowns/">
+                                    Dropdowns
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/forms/">
+                                    Forms
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/input-group/">
+                                    Input group
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/list-group/">
+                                    List group
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/modal/">
+                                    Modal
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/navs/">
+                                    Navs
+                                </a>
+                            </li>
+                            <li class="active bd-sidenav-active">
+                                <a href="/docs/4.1/components/navbar/">
+                                    Navbar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/pagination/">
+                                    Pagination
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/popovers/">
+                                    Popovers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/tooltips/">
+                                    Tooltips
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-architecture.html">
+                            Architecture
+                        </a>
+                        <ul class="nav bd-sidenav">
+                            <li>
+                                <a href="/docs/4.1/components/alerts/">
+                                    Loading
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/badge/">
+                                    Modality
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/breadcrumb/">
+                                    Preferences
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/components/buttons/">
+                                    Security
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-interaction.html">
+                            User interaction
+                        </a>
+                        <ul class="nav bd-sidenav">
+                            <li>
+                                <a href="/docs/4.1/utilities/borders/">
+                                    Login
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/utilities/clearfix/">
+                                    Navigation
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/utilities/close-icon/">
+                                    Data entry
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-system.html">
+                            System capabilities
+                        </a>
+                        <ul class="nav bd-sidenav">
+                            <li>
+                                <a href="/docs/4.1/extend/approach/">
+                                    Auto save
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/extend/icons/">
+                                    Notifications
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/extend/icons/">
+                                    Printing
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-visual.html">
+                            Visual Design
+                        </a>
+                        <ul class="nav bd-sidenav">
+                            <li>
+                                <a href="/docs/4.1/extend/approach/">
+                                    Animation
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/extend/icons/">
+                                    Color
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/extend/icons/">
+                                    Typography
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-branding.html">
+                            Branding and Images
+                        </a>
+                        <ul class="nav bd-sidenav">
+                            <li>
+                                <a href="/docs/4.1/about/overview/">
+                                    Logo
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/4.1/about/brand/">
+                                    Icons
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+
             </div>
+            <!-- / sidebar -->
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-theme.html">
-                Theme
-              </a>
-              <ul class="nav bd-sidenav">
-                <li>
-                  <a href="/docs/4.1/layout/grid/">
-                    Layout
-                  </a>
-                </li>
-                <li>
-                  <a href="/docs/4.1/layout/media-object/">
-                    Color palette
-                  </a>
-                </li>
-                <li>
-                  <a href="/docs/4.1/layout/utilities-for-layout/">
-                    Branding
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-content.html">
-                Content
-              </a>
-              <ul class="nav bd-sidenav">
-                <li>
-                  <a href="/docs/4.1/content/typography/">
-                    Typography
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/content/code/">
-                    Code
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/content/tables/">
-                    CSS Grid
-                  </a></li>
-              </ul>
-            </div>
+                <h2 id="overview">
+                    <div>
+                        Overview<a class="anchorjs-link" href="#overview" aria-label="Anchor" data-anchorjs-icon="#"
+                                   style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
+                <p>
+                    A library of components and interaction rules consists of all the designed and styled parts of an interface and how they behave.
+                </p>
+                <p>
+                    Libraries foster consistentcy and productivity for development but also for the usability of the product.
+                </p>
+                <p>
+                    A successful usability offers users:
+                    <ul>
+                        <li>
+                            Ease and competence in using the user interface during the first contact with the product.
+                        </li>
+                        <li>
+                            Familiarity with the user interface and how to use it on subsequent visits.
+                        </li>
+                        <li>
+                            Efficiency when completing tasks.
+                        </li>
+                    </ul>
+                </p>
+                <!-- / Overview -->
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-components.html">
-                Components
-              </a>
-              <ul class="nav bd-sidenav">
-                <li>
-                  <a href="/docs/4.1/components/alerts/">
-                    Alerts
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/badge/">
-                    Badge
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/breadcrumb/">
-                    Breadcrumb
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/buttons/">
-                    Buttons
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/button-group/">
-                    Button group
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/card/">
-                    Card
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/collapse/">
-                    Collapse
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/dropdowns/">
-                    Dropdowns
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/forms/">
-                    Forms
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/input-group/">
-                    Input group
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/list-group/">
-                    List group
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/modal/">
-                    Modal
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/navs/">
-                    Navs
-                  </a></li>
-                <li class="active bd-sidenav-active">
-                  <a href="/docs/4.1/components/navbar/">
-                    Navbar
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/pagination/">
-                    Pagination
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/popovers/">
-                    Popovers
-                  </a></li>
-                <li>
-                <li>
-                  <a href="/docs/4.1/components/tooltips/">
-                    Tooltips
-                  </a></li>
-              </ul>
-            </div>
+                <h2 id="intro">
+                    <div>
+                        Introduction<a class="anchorjs-link" href="#intro" aria-label="Anchor" data-anchorjs-icon="#"
+                                       style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-architecture.html">
-                Architecture
-              </a>
-              <ul class="nav bd-sidenav">
-                <li>
-                  <a href="/docs/4.1/components/alerts/">
-                    Loading
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/badge/">
-                    Modality
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/breadcrumb/">
-                    Preferences
-                  </a></li>
-                <li>
-                  <a href="/docs/4.1/components/buttons/">
-                    Security
-                  </a></li>
-              </ul>
-            </div>
+                <p>
+                    <a href="https://info.seas.harvard.edu/courses/#/multiYearPlan">
+                        Link to the current SEAS Course Planning
+                    </a>
+                </p>
+                <p>
+                    SEAS Course Planning has a public and a private interface.
+                </p>
+                <p>
+                    The public interface shows:
+                </p>
+                <ul>
+                    <li>
+                        Four year course plan
+                    </li>
+                    <li>
+                        Scheduled courses
+                    </li>
+                </ul>
+                <p>
+                    The private interface requires to login and it accesses two areas.
+                </p>
+                <p>
+                    The first area allows to edit the following content:
+                </p>
+                <ul>
+                    <li>
+                        Courses
+                    </li>
+                    <li>
+                        Faculty
+                    </li>
+                    <li>
+                        Schedule
+                    </li>
+                    <li>
+                        4 year plan
+                    </li>
+                    <li>
+                        Requests
+                    </li>
+                </ul>
+                <p>
+                    The second area, Administration, manages the following content:
+                </p>
+                <ul>
+                    <li>
+                        Manage users
+                    </li>
+                    <li>
+                        Manage courses
+                    </li>
+                    <li>
+                        Manage faculty
+                    </li>
+                </ul>
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-interaction.html">
-                User interaction
-              </a>
-              <ul class="nav bd-sidenav">
-                <li>
-                  <a href="/docs/4.1/utilities/borders/">
-                    Login
-                  </a>
-                </li>
-                <li>
-                  <a href="/docs/4.1/utilities/clearfix/">
-                    Navigation
-                  </a>
-                </li>
-                <li>
-                  <a href="/docs/4.1/utilities/close-icon/">
-                    Data entry
-                  </a>
-                </li>
-              </ul>
-            </div>
+                <h3 style=" font-size: 1.5rem;">Screen captures of the current interface</h3>
+                <h4 style=" font-size: 1.25rem;" class="mt-3">
+                    Public interface
+                </h4>
+                <div class="row">
+                    <div class="col">
+                        <figure>
+                            <a href="img/intro_fourYear.png">
+                                <img src="img/intro_fourYear.png" alt=" " class="img-fluid">
+                            </a>
+                            <figcaption class="text-muted">Four Year Plan</figcaption>
+                        </figure>
+                    </div><!-- / col -->
+                    <div class="col">
+                        <figure>
+                            <a href="img/intro_schedule.png">
+                                <img src="img/intro_schedule.png" alt=" " class="img-fluid">
+                            </a>
+                            <figcaption class="text-muted">Scheduled courses</figcaption>
+                        </figure>
+                    </div><!-- / col -->
+                    <div class="col">
+                        &nbsp;
+                    </div><!-- / col -->
+                </div><!-- / row -->
+                <h4 style=" font-size: 1.25rem;" class="mt-3">
+                    Private interface - edit content
+                </h4>
+                <div class="row">
+                    <div class="col">
+                        <figure>
+                            <a href="img/intro_private_courses.png.png">
+                                <img src="img/intro_private_courses.png" alt=" " class="img-fluid">
+                            </a>
+                            <figcaption class="text-muted">Courses</figcaption>
+                        </figure>
+                    </div><!-- / col -->
+                    <div class="col">
+                        <figure>
+                            <a href="img/intro_private_faculty.png">
+                                <img src="img/intro_private_faculty.png" alt=" " class="img-fluid">
+                            </a>
+                            <figcaption class="text-muted">Faculty</figcaption>
+                        </figure>
+                    </div><!-- / col -->
+                    <div class="col">
+                        &nbsp;
+                    </div><!-- / col -->
+                </div><!-- / row -->
+                <div class="row">
+                    <div class="col">
+                        <figure>
+                            <a href="img/intro_private_schedule.png">
+                                <img src="img/intro_private_schedule.png" alt=" " class="img-fluid">
+                            </a>
+                            <figcaption class="text-muted">Schedule</figcaption>
+                        </figure>
+                    </div><!-- / col -->
+                    <div class="col">
+                        <figure>
+                            <a href="img/intro_private_fouryear.png">
+                                <img src="img/intro_private_fouryear.png" alt=" " class="img-fluid">
+                            </a>
+                            <figcaption class="text-muted">4 year plan</figcaption>
+                        </figure>
+                    </div><!-- / col -->
+                    <div class="col">
+                        <figure>
+                            <a href="img/intro_private_request.png">
+                                <img src="img/intro_private_request.png" alt=" " class="img-fluid">
+                            </a>
+                            <figcaption class="text-muted">Requests</figcaption>
+                        </figure>
+                    </div><!-- / col -->
+                </div><!-- / row -->
+                <h4 style=" font-size: 1.25rem;" class="mt-3">
+                    Private interface - administration
+                </h4>
+                <div class="row">
+                    <div class="col">
+                        <figure>
+                            <a href="img/intro_private_manage_user.png">
+                                <img src="img/intro_private_manage_user.png" alt=" " class="img-fluid">
+                            </a>
+                            <figcaption class="text-muted">Manage users</figcaption>
+                        </figure>
+                    </div><!-- / col -->
+                    <div class="col">
+                        <figure>
+                            <a href="img/intro_private_manage_course.png">
+                                <img src="img/intro_private_manage_course.png" alt=" " class="img-fluid">
+                            </a>
+                            <figcaption class="text-muted">Manage courses</figcaption>
+                        </figure>
+                    </div><!-- / col -->
+                    <div class="col">
+                        <figure>
+                            <a href="img/intro_private_manage_faculty.png">
+                                <img src="img/intro_private_manage_faculty.png" alt=" " class="img-fluid">
+                            </a>
+                            <figcaption class="text-muted">Manage faculty</figcaption>
+                        </figure>
+                    </div><!-- / col -->
+                </div><!-- / row -->
+                <!-- / Intro -->
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-system.html">
-                System capabilities
-              </a>
-              <ul class="nav bd-sidenav">
-                <li>
-                  <a href="/docs/4.1/extend/approach/">
-                    Auto save
-                  </a>
-                </li>
-                <li>
-                  <a href="/docs/4.1/extend/icons/">
-                    Notifications
-                  </a>
-                </li>
-                <li>
-                  <a href="/docs/4.1/extend/icons/">
-                    Printing
-                  </a>
-                </li>
-              </ul>
-            </div>
+                <h2 id="github">
+                    <div>
+                        GitHub<a class="anchorjs-link" href="#github" aria-label="Anchor" data-anchorjs-icon="#"
+                                 style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
+                <ul>
+                    <li>
+                        <a href="https://github.com/seas-computing/course-planner/projects/1">
+                            Course planning kanban
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/seas-computing/course-planner/projects/2">
+                            UI components
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://seas-computing.github.io/course-planner/">
+                            Globals/course-planner
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/seas-computing/TEST_calendar-ux-styled/blob/master/src/client/components/calendar/Calendar.tsx">
+                            seas-computing/TEST_calendar-ux-styled
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="https://seas-computing.github.io/TEST_calendar-ux-styled/docs/index.html">
+                                    Jonathan's React interface
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://github.com/seas-computing/course-planner_ux/tree/gh-pages">
+                            course-planner_ux
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="https://seas-computing.github.io/course-planner_ux/schedule.html">
+                                    gh-pages prototype
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- / GitHub -->
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-visual.html">
-                Visual Design
-              </a>
-              <ul class="nav bd-sidenav">
-                <li>
-                  <a href="/docs/4.1/extend/approach/">
-                    Animation
-                  </a>
-                </li>
-                <li>
-                  <a href="/docs/4.1/extend/icons/">
-                    Color
-                  </a>
-                </li>
-                <li>
-                  <a href="/docs/4.1/extend/icons/">
-                    Typography
-                  </a>
-                </li>
-              </ul>
-            </div>
+                <h2 id="ux">
+                    <div>
+                        User Experience<a class="anchorjs-link" href="#ux" aria-label="Anchor" data-anchorjs-icon="#"
+                                          style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
+                <ul>
+                    <li>
+                        <a href="https://docs.google.com/document/d/1X6pRfW1b2X3EPa1tcNf0ns9OHqSbFPkI8EJNY_aXGQo/edit?usp=sharing">
+                            User testing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://rawgit.com/Harvard-University-iCommons/UX-Prototypes/master/evaluation/SEAS-coursePlanner/index.html">
+                            Comparison study
+                        </a>
+                    </li>
+                </ul>
+                <!-- / User experience -->
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-branding.html">
-                Branding and Images
-              </a>
-              <ul class="nav bd-sidenav">
-                <li>
-                  <a href="/docs/4.1/about/overview/">
-                    Logo
-                  </a>
-                </li>
-                <li>
-                  <a href="/docs/4.1/about/brand/">
-                    Icons
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-          </nav>
-
-        </div>
-        <!-- / sidebar -->
-
-        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-          
-          <h2 id="overview">
-            <div>Overview<a class="anchorjs-link" href="#overview" aria-label="Anchor" data-anchorjs-icon="#"
-                style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a></div>
-          </h2>
-          <p>
-            A library of components and interaction rules consists of all the designed and styled parts of an interface and how they behave.
-          </p>
-          <p>
-            Libraries foster consistentcy and productivity for development but also for the usability of the product.
-          </p>          
-          <p>
-            A successful usability offers users:
-            <ul>
-              <li>
-                  Ease and competence in using the user interface during the first contact with the product.
-              </li>
-              <li>
-                  Familiarity with the user interface and how to use it on subsequent visits.
-              </li>
-              <li>
-                  Efficiency when completing tasks.
-              </li>
-            </ul> 
-          </p>
-          <!-- / Overview -->
-
-          <h2 id="intro">
-            <div>Introduction<a class="anchorjs-link" href="#intro" aria-label="Anchor" data-anchorjs-icon="#"
-                style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a></div>
-          </h2>
-
-          <p>
-            <a href="https://info.seas.harvard.edu/courses/#/multiYearPlan">
-              Link to the current SEAS Course Planning
-            </a>
-          </p>
-          <p>
-            SEAS Course Planning has a public and a private interface. 
-          </p>
-          <p>
-            The public interface shows:
-          </p>
-          <ul>
-            <li>
-              Four year course plan
-            </li>
-            <li>
-              Scheduled courses
-            </li>
-          </ul>
-          <p>
-            The private interface requires to login and it accesses two areas.
-          </p>
-          <p>
-            The first area allows to edit the following content:
-          </p>
-          <ul>
-            <li>
-              Courses
-            </li>
-            <li>
-              Faculty
-            </li>
-            <li>
-              Schedule
-            </li>
-            <li>
-              4 year plan
-            </li>
-            <li>
-              Requests
-            </li>
-          </ul>
-          <p>
-            The second area, Administration, manages the following content:
-          </p>
-          <ul>
-            <li>
-              Manage users
-            </li>
-            <li>
-              Manage courses
-            </li>
-            <li>
-              Manage faculty
-            </li>
-          </ul>
-
-          <h3 style=" font-size: 1.5rem;">Screen captures of the current interface</h3>
-          <h4 style=" font-size: 1.25rem;" class="mt-3">
-            Public interface
-          </h4>
-          <div class="row">
-            <div class="col">
-              <figure>
-                <a href="img/intro_fourYear.png">
-                  <img src="img/intro_fourYear.png" alt=" " class="img-fluid">
-                </a>
-                <figcaption class="text-muted">Four Year Plan</figcaption>
-              </figure>
-            </div><!-- / col -->
-            <div class="col">
-              <figure>
-                <a href="img/intro_schedule.png">
-                  <img src="img/intro_schedule.png" alt=" " class="img-fluid">
-                </a>
-                <figcaption class="text-muted">Scheduled courses</figcaption>
-              </figure>
-            </div><!-- / col -->
-            <div class="col">
-              &nbsp;
-            </div><!-- / col -->
-          </div><!-- / row -->
-          <h4 style=" font-size: 1.25rem;" class="mt-3">
-            Private interface - edit content
-          </h4>
-          <div class="row">
-            <div class="col">
-              <figure>
-                <a href="img/intro_private_courses.png.png">
-                  <img src="img/intro_private_courses.png" alt=" " class="img-fluid">
-                </a>
-                <figcaption class="text-muted">Courses</figcaption>
-              </figure>
-            </div><!-- / col -->
-            <div class="col">
-              <figure>
-                <a href="img/intro_private_faculty.png">
-                  <img src="img/intro_private_faculty.png" alt=" " class="img-fluid">
-                </a>
-                <figcaption class="text-muted">Faculty</figcaption>
-              </figure>
-            </div><!-- / col -->
-            <div class="col">
-              &nbsp;
-            </div><!-- / col -->
-          </div><!-- / row -->
-          <div class="row">
-            <div class="col">
-              <figure>
-                <a href="img/intro_private_schedule.png">
-                  <img src="img/intro_private_schedule.png" alt=" " class="img-fluid">
-                </a>
-                <figcaption class="text-muted">Schedule</figcaption>
-              </figure>
-            </div><!-- / col -->
-            <div class="col">
-              <figure>
-                <a href="img/intro_private_fouryear.png">
-                  <img src="img/intro_private_fouryear.png" alt=" " class="img-fluid">
-                </a>
-                <figcaption class="text-muted">4 year plan</figcaption>
-              </figure>
-            </div><!-- / col -->
-            <div class="col">
-              <figure>
-                <a href="img/intro_private_request.png">
-                  <img src="img/intro_private_request.png" alt=" " class="img-fluid">
-                </a>
-                <figcaption class="text-muted">Requests</figcaption>
-              </figure>
-            </div><!-- / col -->
-          </div><!-- / row -->
-          <h4 style=" font-size: 1.25rem;" class="mt-3">
-            Private interface - administration
-          </h4>
-          <div class="row">
-            <div class="col">
-              <figure>
-                <a href="img/intro_private_manage_user.png">
-                  <img src="img/intro_private_manage_user.png" alt=" " class="img-fluid">
-                </a>
-                <figcaption class="text-muted">Manage users</figcaption>
-              </figure>
-            </div><!-- / col -->
-            <div class="col">
-              <figure>
-                <a href="img/intro_private_manage_course.png">
-                  <img src="img/intro_private_manage_course.png" alt=" " class="img-fluid">
-                </a>
-                <figcaption class="text-muted">Manage courses</figcaption>
-              </figure>
-            </div><!-- / col -->
-            <div class="col">
-              <figure>
-                <a href="img/intro_private_manage_faculty.png">
-                  <img src="img/intro_private_manage_faculty.png" alt=" " class="img-fluid">
-                </a>
-                <figcaption class="text-muted">Manage faculty</figcaption>
-              </figure>
-            </div><!-- / col -->
-          </div><!-- / row -->
-          <!-- / Intro -->
-
-          <h2 id="github">
-            <div>GitHub<a class="anchorjs-link" href="#github" aria-label="Anchor" data-anchorjs-icon="#"
-                style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a></div>
-          </h2>
-          <ul>
-            <li>
-              <a href="https://github.com/seas-computing/course-planner/projects/1">
-                Course planning kanban
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/seas-computing/course-planner/projects/2">
-                UI components
-              </a>
-            </li>
-            <li>
-              <a href="https://seas-computing.github.io/course-planner/">
-                Globals/course-planner
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/seas-computing/TEST_calendar-ux-styled/blob/master/src/client/components/calendar/Calendar.tsx">
-                seas-computing/TEST_calendar-ux-styled
-              </a>
-              <ul>
-                <li>
-                  <a href="https://seas-computing.github.io/TEST_calendar-ux-styled/docs/index.html">
-                    Jonathan's React interface
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="https://github.com/seas-computing/course-planner_ux/tree/gh-pages">
-                  course-planner_ux
-              </a>
-              <ul>
-                <li>
-                  <a href="https://seas-computing.github.io/course-planner_ux/schedule.html">
-                    gh-pages prototype
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <!-- / GitHub -->
-
-          <h2 id="ux">
-            <div>User Experience<a class="anchorjs-link" href="#ux" aria-label="Anchor" data-anchorjs-icon="#"
-                style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a></div>
-          </h2>
-          <ul>
-            <li>
-              <a href="https://docs.google.com/document/d/1X6pRfW1b2X3EPa1tcNf0ns9OHqSbFPkI8EJNY_aXGQo/edit?usp=sharing">
-                User testing
-              </a>
-            </li>
-            <li>
-              <a href="https://rawgit.com/Harvard-University-iCommons/UX-Prototypes/master/evaluation/SEAS-coursePlanner/index.html">
-                Comparison study
-              </a>
-            </li>
-          </ul>
-          <!-- / User experience -->
-
-        </main>
-      </div><!-- / row flex-xl-nowrap -->
+            </main>
+        </div><!-- / row flex-xl-nowrap -->
     </div><!-- / container-fluid -->
-    
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 
     <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
     <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"></script>
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.1/assets/js/docs.min.js"></script>
 
-  </body>
+</body>
 
 </html>

@@ -1,10 +1,10 @@
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
-      content="Documentation and examples for Bootstrap’s powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more, including support for our collapse plugin.">
+          content="Documentation and examples for Bootstrap’s powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more, including support for our collapse plugin.">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.3">
 
@@ -16,7 +16,7 @@
 
     <style class="anchorjs"></style>
     <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
     <!-- Documentation extras -->
@@ -35,254 +35,270 @@
     <!-- Amending Bootstrap styles -->
     <style>
 
-      .bg-light {
-          background-color: #ffffff!important;
-      }
-      
-      .navbar-text h2 {
-        font-size: 1.25rem;
-      }
+        .bg-light {
+            background-color: #ffffff !important;
+        }
 
-    .bd-navbar .navbar-nav .nav-link {
-      padding-right: .5rem;
-      padding-left: .5rem;
-      color: #93a1ad;
-    }
+        .navbar-text h2 {
+            font-size: 1.25rem;
+        }
 
-    .nav-item a:hover {
-      color: black !important;
-      cursor: pointer;
-    }
+        .bd-navbar .navbar-nav .nav-link {
+            padding-right: .5rem;
+            padding-left: .5rem;
+            color: #93a1ad;
+        }
+
+        .nav-item a:hover {
+            color: black !important;
+            cursor: pointer;
+        }
     </style>
-    
-  </head>
 
-  <body>
+</head>
+
+<body>
     <a id="skippy" class="sr-only sr-only-focusable" href="#content">
-      <div class="container">
-        <span class="skiplink-text">Skip to main content</span>
-      </div>
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
     </a>
 
     <header class="navbar navbar-expand navbar-light bg-light flex-column flex-md-row bd-navbar">
-      <a class="navbar-brand mr-0 mr-md-2" href="https://www.seas.harvard.edu/computing-office" aria-label="SEAS Computing">
-        <img src="https://www.seas.harvard.edu/sites/default/files/images/H_SEAS_logo_RGB_1.jpg" alt="SEAS logo" style="width: 10em; margin-right: 1em;">  
-        <title>SEAS Course Planning - Interaction guidelines</title>
-      </a>
+        <a class="navbar-brand mr-0 mr-md-2" href="https://www.seas.harvard.edu/computing-office" aria-label="SEAS Computing">
+            <img src="https://www.seas.harvard.edu/sites/default/files/images/H_SEAS_logo_RGB_1.jpg" alt="SEAS logo" style="width: 10em; margin-right: 1em;">
+            <title>SEAS Course Planning - Interaction guidelines</title>
+        </a>
 
-      <div class="navbar-nav-scroll">
-        <ul class="navbar-nav bd-navbar-nav flex-row">
-          <li class="nav-item">
-              <span class="navbar-text">
-                  <h2>SEAS Course Planning - Interaction guidelines</h2>
-              </span>
-          </li>
+        <div class="navbar-nav-scroll">
+            <ul class="navbar-nav bd-navbar-nav flex-row">
+                <li class="nav-item">
+                    <span class="navbar-text">
+                        <h2>SEAS Course Planning - Interaction guidelines</h2>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item dropdown">
+                <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Other links
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                    <a class="dropdown-item active" href="https://seas-computing.github.io/course-planner_ux/guidelines.html">Guidelines</a>
+                    <a class="dropdown-item" href="https://github.com/seas-computing/course-planner/projects/1">Kanban</a>
+                    <a class="dropdown-item" href="https://seas-computing.github.io/course-planner_ux/schedule.html">Prototypes</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="https://planning.seas.harvard.edu/courses/app/#/schedule">Course planner</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link p-2 mt-1" href="https://github.com/seas-computing/course-planner_ux/tree/gh-pages/guidelines" rel="noopener"
+                   aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+
         </ul>
-      </div>
 
-      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-        <li class="nav-item dropdown">
-          <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Other links
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-            <a class="dropdown-item active" href="https://seas-computing.github.io/course-planner_ux/guidelines.html">Guidelines</a>
-            <a class="dropdown-item" href="https://github.com/seas-computing/course-planner/projects/1">Kanban</a>
-            <a class="dropdown-item" href="https://seas-computing.github.io/course-planner_ux/schedule.html">Prototypes</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="https://planning.seas.harvard.edu/courses/app/#/schedule">Course planner</a>
-          </div>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link p-2 mt-1" href="https://github.com/seas-computing/course-planner_ux/tree/gh-pages/guidelines" rel="noopener"
-            aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-
-      </ul>
-
-      <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20191010</small></span>
+        <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20191010</small></span>
     </header>
 
     <div class="container-fluid">
-      <div class="row flex-xl-nowrap">
-        
-        <!-- Links in this left-hand sidebar take to other web pages -->
-        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+        <div class="row flex-xl-nowrap">
 
-          <nav class="collapse bd-links" id="bd-docs-nav">
-            
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-overview.html">
-                Overview
-              </a>
+            <!-- Links in this left-hand sidebar take to other web pages -->
+            <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+
+                <nav class="collapse bd-links" id="bd-docs-nav">
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-overview.html">
+                            Overview
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item active">
+                        <a class="bd-toc-link" href="#theme">
+                            Theme
+                        </a>
+                        <ul class="nav bd-sidenav">
+                            <li>
+                                <a href="#layout">
+                                    Layout
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#palette">
+                                    Color palette
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#brand">
+                                    Branding
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-rulesets.html">
+                            Rule sets
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-content.html">
+                            Content
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-components.html">
+                            Components
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-architecture.html">
+                            Architecture
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-interaction.html">
+                            User interaction
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-system.html">
+                            System capabilities
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-visual.html">
+                            Visual Design
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-branding.html">
+                            Branding and Images
+                        </a>
+                    </div>
+
+                </nav>
+
             </div>
 
-            <div class="bd-toc-item active">
-              <a class="bd-toc-link" href="#theme">
-                Theme
-              </a>
-              <ul class="nav bd-sidenav">
-                <li>
-                  <a href="#layout">
-                    Layout
-                  </a>
-                </li>
-                <li>
-                  <a href="#palette">
-                    Color palette
-                  </a>
-                </li>
-                <li>
-                  <a href="#brand">
-                    Branding
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-content.html">
-                Content
-              </a>
-            </div>
+                <h2 id="theme">
+                    <div>
+                        Theme<a class="anchorjs-link" href="#theme" aria-label="Anchor" data-anchorjs-icon="#"
+                                style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
+                <p>
+                    Consistency in UI design is concerned with making sure elements in a user interface are uniform.
+                    They'll look and behave the same way.
+                    This helps constantly prove a user's assumptions about the user interface right,
+                    creating a sense of control, familiarity, and reliability.
+                    <!-- Source: https://careerfoundry.com/en/blog/ui-design/the-importance-of-consistency-in-ui-design/ -->
+                </p>
+                <!-- / Overview -->
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-components.html">
-                Components
-              </a>
-            </div>
+                <h2 id="layout">
+                    <div>
+                        Layout<a class="anchorjs-link" href="#layout" aria-label="Anchor" data-anchorjs-icon="#"
+                                 style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-architecture.html">
-                Architecture
-              </a>
-            </div>
+                <div class="text-center">
+                    <img src="img/theme-layout_1.png" class="rounded img-fluid" alt="general layout of content areas">
+                </div>
+                <!-- / Layout -->
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-interaction.html">
-                User interaction
-              </a>
-            </div>
+                <h2 id="palette">
+                    <div>
+                        Color palette<a class="anchorjs-link" href="#palette" aria-label="Anchor" data-anchorjs-icon="#"
+                                        style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-system.html">
-                System capabilities
-              </a>
-            </div>
+                <p>
+                    The color palette is inherited from
+                    <a href="https://getbootstrap.com/docs/4.1/utilities/colors/">
+                        Bootstrap
+                    </a>
+                    for the general interface and contextual classes (success, primary, warning, etc.)
+                </p>
+                <p>
+                    When choosing foreground and background colors (e.g.: text label of a color button),
+                    they should be tested for suifficient visual contrast using tools like
+                    <a href="https://webaim.org/resources/contrastchecker/">
+                        WebAIM Contrast Checker
+                    </a>.
+                </p>
 
-            <div class="bd-toc-item">
-              <a class="bd-toc-link" href="guidelines-visual.html">
-                Visual Design
-              </a>
-            </div>
+                <div class="text-center">
+                    <figure class="figure">
+                        <img src="img/theme-palette_1.png" class="figure-img img-fluid rounded border border-secondary" alt="Screen capture of schedule, courses and administration.">
+                        <figcaption class="figure-caption">Color of interface and elements in Schedule and Courses and Administration.</figcaption>
+                    </figure>
+                </div>
+                <!-- / Palette -->
 
-            <div class="bd-toc-item">
-                <a class="bd-toc-link" href="guidelines-branding.html">
-                  Branding and Images
-              </a>
-            </div>
+                <h2 id="brand">
+                    <div>
+                        Branding<a class="anchorjs-link" href="#brand" aria-label="Anchor" data-anchorjs-icon="#"
+                                   style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
+                <p>
+                    Branding related elements follow the
+                    <a href="https://www.seas.harvard.edu/office-communications/brand-style-guide/color-palette">
+                        SEAS identity guidelines
+                    </a>.
+                </p>
+                <p>
+                    Currently, only one logo is used throughout the interface.
+                </p>
 
-          </nav>
+                <div class="bd-example text-center">
+                    <figure class="figure">
+                        <img src="img/H_SEAS_logo_RGB_1.jpg" class="figure-img img-fluid" alt="SEAS RGB logo">
+                        <figcaption class="figure-caption">SEAS RGB logo.</figcaption>
+                    </figure>
+                </div>
+                <!-- / Branding -->
 
-        </div>
-        
-        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-          
-          <h2 id="theme">
-            <div>Theme<a class="anchorjs-link" href="#theme" aria-label="Anchor" data-anchorjs-icon="#"
-                style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a></div>
-          </h2>
-          <p>
-            Consistency in UI design is concerned with making sure elements in a user interface are uniform. 
-            They'll look and behave the same way. 
-            This helps constantly prove a user's assumptions about the user interface right, 
-            creating a sense of control, familiarity, and reliability.
-            <!-- Source: https://careerfoundry.com/en/blog/ui-design/the-importance-of-consistency-in-ui-design/ -->
-          </p>
-          <!-- / Overview -->
+            </main>
 
-          <h2 id="layout">
-            <div>Layout<a class="anchorjs-link" href="#layout" aria-label="Anchor" data-anchorjs-icon="#"
-                style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a></div>
-          </h2>
-
-          <div class="text-center">
-            <img src="img/theme-layout_1.png" class="rounded img-fluid" alt="general layout of content areas">
-          </div>
-          <!-- / Layout -->
-
-          <h2 id="palette">
-            <div>Color palette<a class="anchorjs-link" href="#palette" aria-label="Anchor" data-anchorjs-icon="#"
-                style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a></div>
-          </h2>
-
-          <p>
-            The color palette is inherited from
-            <a href="https://getbootstrap.com/docs/4.1/utilities/colors/">
-              Bootstrap
-            </a>
-            for the general interface and contextual classes (success, primary, warning, etc.)
-          </p>
-          <p>
-            When choosing foreground and background colors (e.g.: text label of a color button), 
-            they should be tested for suifficient visual contrast using tools like
-            <a href="https://webaim.org/resources/contrastchecker/">
-              WebAIM Contrast Checker</a>.
-          </p>
-
-          <div class="text-center">
-              <figure class="figure">
-                <img src="img/theme-palette_1.png" class="figure-img img-fluid rounded border border-secondary" alt="Screen capture of schedule, courses and administration.">
-                <figcaption class="figure-caption">Color of interface and elements in Schedule and Courses and Administration.</figcaption>
-              </figure>
-          </div>
-          <!-- / Palette -->
-
-          <h2 id="brand">
-              <div>Branding<a class="anchorjs-link" href="#brand" aria-label="Anchor" data-anchorjs-icon="#"
-                  style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a></div>
-            </h2>
-            <p>
-              Branding related elements follow the
-              <a href="https://www.seas.harvard.edu/office-communications/brand-style-guide/color-palette">
-                SEAS identity guidelines</a>.
-            </p>
-            <p>
-              Currently, only one logo is used throughout the interface.
-            </p>
-  
-            <div class="bd-example text-center">
-                <figure class="figure">
-                  <img src="img/H_SEAS_logo_RGB_1.jpg" class="figure-img img-fluid" alt="SEAS RGB logo">
-                  <figcaption class="figure-caption">SEAS RGB logo.</figcaption>
-                </figure>
-            </div>
-            <!-- / Branding -->
-
-        </main>
-
-      </div><!-- / row flex-xl-nowrap -->
+        </div><!-- / row flex-xl-nowrap -->
     </div><!-- / container-fluid -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 
     <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
     <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"></script>
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.1/assets/js/docs.min.js"></script>
 
 
-  </body>
+</body>
 
 </html>
