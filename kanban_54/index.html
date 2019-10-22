@@ -1,8 +1,8 @@
-<!-- Current UI code from https://planning.seas.harvard.edu/courses/app/#/courses -->
+<!-- Proposed UI code from https://planning.seas.harvard.edu/courses/app/#/courses -->
 
-<!-- Table headers -->
+<!-- Deleting Times column header from table headers. Changing column width percentage. -->
 <div class="row">
-    <div class="cell col_area" ng-style="courseColumns.getColumnStyle('area');" style="width: 5.405%;">
+    <div class="cell col_area" ng-style="courseColumns.getColumnStyle('area');" style="width: 6%;">
         <div class="label">Area</div>
         <div class="filter"><select ng-model="filterCourses.data.area" ng-options="a for a in allCourseAreas"
                 class="ng-pristine ng-untouched ng-valid">
@@ -21,14 +21,14 @@
                 <option value="string:SEM" label="SEM">SEM</option>
             </select></div>
     </div>
-    <div class="cell col_courseNumber" ng-style="courseColumns.getColumnStyle('courseNumber');" style="width: 8.108%;">
+    <div class="cell col_courseNumber" ng-style="courseColumns.getColumnStyle('courseNumber');" style="width: 8%;">
         <div class="label">Course</div>
         <div class="filter">
             <div class="filterInput"><input type="text" ng-model="filterCourses.data.courseNumber"
                     class="ng-pristine ng-untouched ng-valid"></div>
         </div>
     </div>
-    <div class="cell col_title" ng-style="courseColumns.getColumnStyle('title');" style="width: 13.514%;">
+    <div class="cell col_title" ng-style="courseColumns.getColumnStyle('title');" style="width: 18%;">
         <div class="label">Title</div>
         <div class="filter">
             <div class="filterInput"><input type="text" ng-model="filterCourses.data.title"
@@ -72,7 +72,7 @@
             </select></div>
     </div>
     <div class="cell col_instructors ng-scope" ng-style="courseColumns.getColumnStyle('semester.instructors');"
-        style="width: 16.216%;">
+        style="width: 12%;">
         <div class="label">Instructors</div>
         <div class="filter">
             <div class="filterInput leftAlign"><input type="text" ng-model="filterCourses.data['instructors'+term]"
@@ -80,7 +80,7 @@
         </div>
     </div>
     <div class="cell col_room ng-scope" ng-style="courseColumns.getColumnStyle('semester.room');"
-        style="width: 8.108%;">
+        style="width: 20%;">
         <div class="label">Room</div>
         <div class="filter">
             <div class="filterInput leftAlign"><input type="text" ng-model="filterCourses.data['room'+term]"
@@ -109,20 +109,20 @@
             </select></div>
     </div>
     <div class="cell col_instructors ng-scope" ng-style="courseColumns.getColumnStyle('semester.instructors');"
-        style="width: 16.216%;">
+        style="width: 12%;">
         <div class="label">Instructors</div>
         <div class="filter">
             <div class="filterInput leftAlign"><input type="text" ng-model="filterCourses.data['instructors'+term]"
                     class="ng-pristine ng-untouched ng-valid"></div>
         </div>
     </div>
-    <div class="cell col_times ng-scope" ng-style="courseColumns.getColumnStyle('semester.times');"
-        style="width: 10.811%;">
-        <div class="label">Times</div>
-        <div class="filter"></div>
-    </div>
+<!-- Deleting Times column header from table headers-->
+
+
+
+
     <div class="cell col_room ng-scope" ng-style="courseColumns.getColumnStyle('semester.room');"
-        style="width: 8.108%;">
+        style="width: 20%;">
         <div class="label">Room</div>
         <div class="filter">
             <div class="filterInput leftAlign"><input type="text" ng-model="filterCourses.data['room'+term]"
@@ -142,19 +142,19 @@
         style="width: 0%; display: none;">
         <div class="label">Notes</div>
     </div>
-    <div class="cell col_detail" ng-style="courseColumns.getColumnStyle('detail');" style="width: 2.703%;">
+    <div class="cell col_detail" ng-style="courseColumns.getColumnStyle('detail');" style="width: 4%;">
         <div class="label">Detail</div>
     </div>
 </div>
 
-<!-- AM ES 115 row -->
+<!-- Removing Times cell from AM ES 115 row and changing column width percentage. -->
 <div class="row ng-scope" ng-repeat="c in courses | filter: filterCourses.filter">
     <div class="cell col_area ng-binding" ng-bind="c.area" ng-style="courseColumns.getColumnStyle('area');"
-        style="background: rgba(66, 66, 138, 0.7); width: 5.405%;">AM</div>
+        style="background: rgba(66, 66, 138, 0.7); width: 6%;">AM</div>
     <div class="cell col_courseNumber ng-binding" ng-bind="c.courseNumber"
-        ng-style="courseColumns.getColumnStyle('courseNumber');" style="width: 8.108%;">ES 115</div>
+        ng-style="courseColumns.getColumnStyle('courseNumber');" style="width: 8%;">ES 115</div>
     <div class="cell col_title ng-binding" ng-bind="c.title" ng-style="courseColumns.getColumnStyle('title');"
-        style="width: 13.514%;">Mathematical Modeling</div>
+        style="width: 18%;">Mathematical Modeling</div>
     <div class="cell col_sameAs" ng-style="courseColumns.getColumnStyle('sameAs');" style="width: 0%; display: none;">
         <!-- ngRepeat: s in c.sameAs | orderBy: ['courseNumber'] -->
         <div ng-repeat="s in c.sameAs | orderBy: ['courseNumber']" ng-bind="s.courseNumber" class="ng-binding ng-scope">
@@ -175,38 +175,41 @@
         <!-- ngIf: offeredState.expanded -->
     </div>
     <div class="cell col_instructors ng-scope" ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
-        ng-style="courseColumns.getColumnStyle('semester.instructors');" style="width: 16.216%;">
+        ng-style="courseColumns.getColumnStyle('semester.instructors');" style="width: 12%;">
         <!-- ngIf: !c.isRetiredDuringSemester(editYear.selected, term); -->
         <ul ng-if="!c.isRetiredDuringSemester(editYear.selected, term);" class="ng-scope">
             <!-- ngIf: getInstructors(c, term).length === 0 && isEditable.instructors(c, term); -->
             <!-- ngRepeat: i in getInstructors(c, term) -->
             <li ng-repeat="i in getInstructors(c, term)" class="ng-binding ng-scope">Mahadevan, Lakshminarayanan
                 <!-- ngIf: isEditable.instructors(c, term); -->
+
+<!-- Replacing arrows and add buttons with edit button -->
                 <div class="actions ng-scope" ng-if="isEditable.instructors(c, term);">
-                    <div class="orderUp disabled" title="Move instructor up." ng-class="{'disabled':$first}"
-                        ng-click="changeInstructorOrder($first, c, term, i, -1);"></div>
-                    <div class="orderDown disabled" title="Move instructor down." ng-class="{'disabled':$last}"
-                        ng-click="changeInstructorOrder($last, c, term, i, 1);"></div>
-                    <div class="remove" title="Remove instructor." ng-click="removeInstructor(c, term, i);"></div>
-                    <!-- ngIf: $last -->
-                    <div class="add ng-scope" title="Add new instructor." ng-if="$last"
-                        ng-click="instructorSearch.show(c._id, term);"></div><!-- end ngIf: $last -->
+                    <div class="actions singleAction">
+                        <div class="editRoomButton" title="Add new instructor." ng-click="instructorSearch.show(c._id, term);"></div>
+                    </div>
                 </div><!-- end ngIf: isEditable.instructors(c, term); -->
             </li><!-- end ngRepeat: i in getInstructors(c, term) -->
+            <li ng-repeat="i in getInstructors(c, term)" class="ng-binding ng-scope">Capasso, Federico
+                    <!-- ngIf: isEditable.instructors(c, term); -->
+                </li>
+            <li ng-repeat="i in getInstructors(c, term)" class="ng-binding ng-scope">Kozinsky, Boris
+                    <!-- ngIf: isEditable.instructors(c, term); -->
+                </li>
         </ul><!-- end ngIf: !c.isRetiredDuringSemester(editYear.selected, term); -->
         <!-- ngIf: instructorSearch.isVisibleFor(c._id, term); -->
     </div>
-    <div class="cell col_times ng-binding ng-scope"
-        ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
-        ng-style="courseColumns.getColumnStyle('semester.times');" style="width: 10.811%;">
-        <!-- ngIf: isEditable.times(c, term); -->
-        <div class="editTimesButton ng-scope" ng-if="isEditable.times(c, term);" ng-click="editTimes.show(c, term);">
-        </div><!-- end ngIf: isEditable.times(c, term); -->
-        <!-- ngIf: editTimes.isVisibleFor(c._id, term); -->
-    </div>
+<!-- Deleting Times cells -->
+
+
+
+
+
+
+
     <div class="cell col_room ng-binding ng-scope"
         ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
-        ng-style="courseColumns.getColumnStyle('semester.room');" style="width: 8.108%;">
+        ng-style="courseColumns.getColumnStyle('semester.room');" style="width: 20%;">
         <!-- ngIf: isEditable.room(c, term); -->
         <div class="editRoomButton ng-scope" ng-if="isEditable.room(c, term);" ng-click="editRoom.show(c, term);"></div>
         <!-- end ngIf: isEditable.room(c, term); -->
@@ -235,28 +238,29 @@
         <!-- ngIf: offeredState.expanded -->
     </div>
     <div class="cell col_instructors ng-scope" ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
-        ng-style="courseColumns.getColumnStyle('semester.instructors');" style="width: 16.216%;">
+        ng-style="courseColumns.getColumnStyle('semester.instructors');" style="width: 12%;">
         <!-- ngIf: !c.isRetiredDuringSemester(editYear.selected, term); -->
         <ul ng-if="!c.isRetiredDuringSemester(editYear.selected, term);" class="ng-scope">
             <!-- ngIf: getInstructors(c, term).length === 0 && isEditable.instructors(c, term); -->
             <li ng-if="getInstructors(c, term).length === 0 &amp;&amp; isEditable.instructors(c, term);"
                 class="ng-scope">
                 <div class="actions singleAction">
-                    <div class="add" title="Add new instructor." ng-click="instructorSearch.show(c._id, term);"></div>
+<!-- Changing add icon to edit icon  --> 
+                    <div class="editRoomButton" title="Add new instructor." ng-click="instructorSearch.show(c._id, term);"></div>
                 </div>
             </li><!-- end ngIf: getInstructors(c, term).length === 0 && isEditable.instructors(c, term); -->
             <!-- ngRepeat: i in getInstructors(c, term) -->
         </ul><!-- end ngIf: !c.isRetiredDuringSemester(editYear.selected, term); -->
         <!-- ngIf: instructorSearch.isVisibleFor(c._id, term); -->
     </div>
-    <div class="cell col_times ng-binding ng-scope"
-        ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
-        ng-style="courseColumns.getColumnStyle('semester.times');" style="width: 10.811%;">
-        <!-- ngIf: isEditable.times(c, term); -->
-        <div class="editTimesButton ng-scope" ng-if="isEditable.times(c, term);" ng-click="editTimes.show(c, term);">
-        </div><!-- end ngIf: isEditable.times(c, term); -->
-        <!-- ngIf: editTimes.isVisibleFor(c._id, term); -->
-    </div>
+<!-- Deleting Times column header from table headers-->
+
+
+
+
+
+
+
     <div class="cell col_room ng-binding ng-scope"
         ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
         ng-style="courseColumns.getColumnStyle('semester.room');" style="width: 8.108%;">
@@ -282,7 +286,7 @@
         <div class="editNotesButton" ng-click="editNotes.show(c);"><i class="fa fa-sticky-note"
                 ng-class="'fa-sticky-note'+(c.notes?'':'-o')"></i></div><!-- ngIf: editNotes.isVisibleFor(c._id); -->
     </div>
-    <div class="cell col_detail" ng-style="courseColumns.getColumnStyle('detail');" style="width: 2.703%;">
+    <div class="cell col_detail" ng-style="courseColumns.getColumnStyle('detail');" style="width: 4%;">
         <div class="detailButton" ng-click="$state.go('app.features.courses.courseDetail', { id: c._id });"><i
                 class="fa fa-folder-open"></i></div>
     </div>
