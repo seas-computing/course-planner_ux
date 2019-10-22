@@ -1,0 +1,289 @@
+<!-- Current UI code from https://planning.seas.harvard.edu/courses/app/#/courses -->
+
+<!-- Table headers -->
+<div class="row">
+    <div class="cell col_area" ng-style="courseColumns.getColumnStyle('area');" style="width: 5.405%;">
+        <div class="label">Area</div>
+        <div class="filter"><select ng-model="filterCourses.data.area" ng-options="a for a in allCourseAreas"
+                class="ng-pristine ng-untouched ng-valid">
+                <option value="string:All" label="All" selected="selected">All</option>
+                <option value="string:ACS" label="ACS">ACS</option>
+                <option value="string:AM" label="AM">AM</option>
+                <option value="string:AP" label="AP">AP</option>
+                <option value="string:BE" label="BE">BE</option>
+                <option value="string:CS" label="CS">CS</option>
+                <option value="string:EE" label="EE">EE</option>
+                <option value="string:ESE" label="ESE">ESE</option>
+                <option value="string:General" label="General">General</option>
+                <option value="string:MDE" label="MDE">MDE</option>
+                <option value="string:MSMBA" label="MSMBA">MSMBA</option>
+                <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
+                <option value="string:SEM" label="SEM">SEM</option>
+            </select></div>
+    </div>
+    <div class="cell col_courseNumber" ng-style="courseColumns.getColumnStyle('courseNumber');" style="width: 8.108%;">
+        <div class="label">Course</div>
+        <div class="filter">
+            <div class="filterInput"><input type="text" ng-model="filterCourses.data.courseNumber"
+                    class="ng-pristine ng-untouched ng-valid"></div>
+        </div>
+    </div>
+    <div class="cell col_title" ng-style="courseColumns.getColumnStyle('title');" style="width: 13.514%;">
+        <div class="label">Title</div>
+        <div class="filter">
+            <div class="filterInput"><input type="text" ng-model="filterCourses.data.title"
+                    class="ng-pristine ng-untouched ng-valid"></div>
+        </div>
+    </div>
+    <div class="cell col_sameAs" ng-style="courseColumns.getColumnStyle('sameAs');" style="width: 0%; display: none;">
+        <div class="label">Same As</div>
+        <div class="filter"></div>
+    </div>
+    <div class="cell col_isSEAS" ng-style="courseColumns.getColumnStyle('isSEAS');" style="width: 0%; display: none;">
+        <div class="label">Is SEAS?</div>
+        <div class="filter"><select ng-model="filterCourses.data.isSEAS" ng-options="o for o in isSEASFilterOptions"
+                class="ng-pristine ng-untouched ng-valid">
+                <option value="string:All" label="All" selected="selected">All</option>
+                <option value="string:Yes" label="Yes">Yes</option>
+                <option value="string:EPS" label="EPS">EPS</option>
+                <option value="string:No" label="No">No</option>
+            </select></div>
+    </div>
+    <div class="cell col_isUndergraduate" ng-style="courseColumns.getColumnStyle('isUndergraduate');"
+        style="width: 0%; display: none;">
+        <div class="label">Is Undergrad?</div>
+        <div class="filter"><select ng-model="filterCourses.data.isUndergraduate"
+                ng-options="o for o in isUndergraduateFilterOptions" class="ng-pristine ng-untouched ng-valid">
+                <option value="string:All" label="All" selected="selected">All</option>
+                <option value="string:Yes" label="Yes">Yes</option>
+                <option value="string:No" label="No">No</option>
+            </select></div>
+    </div><!-- ngRepeat: term in ['Fall','Spring'] -->
+    <div class="cell col_offered ng-scope" ng-style="courseColumns.getColumnStyle('semester.offeredStatus');"
+        ng-repeat-start="term in ['Fall','Spring']" style="width: 0%; display: none;">
+        <div class="label">Offered</div>
+        <div class="filter"><select ng-model="filterCourses.data['offered'+term]"
+                ng-options="o for o in offeredStatusFilterOptions" class="ng-pristine ng-untouched ng-valid">
+                <option value="string:All" label="All" selected="selected">All</option>
+                <option value="string:"></option>
+                <option value="string:Yes" label="Yes">Yes</option>
+                <option value="string:No" label="No">No</option>
+                <option value="string:Retire" label="Retire">Retire</option>
+            </select></div>
+    </div>
+    <div class="cell col_instructors ng-scope" ng-style="courseColumns.getColumnStyle('semester.instructors');"
+        style="width: 16.216%;">
+        <div class="label">Instructors</div>
+        <div class="filter">
+            <div class="filterInput leftAlign"><input type="text" ng-model="filterCourses.data['instructors'+term]"
+                    class="ng-pristine ng-untouched ng-valid"></div>
+        </div>
+    </div>
+    <div class="cell col_room ng-scope" ng-style="courseColumns.getColumnStyle('semester.room');"
+        style="width: 8.108%;">
+        <div class="label">Room</div>
+        <div class="filter">
+            <div class="filterInput leftAlign"><input type="text" ng-model="filterCourses.data['room'+term]"
+                    class="ng-pristine ng-untouched ng-valid"></div>
+        </div>
+    </div>
+    <div class="cell col_enrollment ng-scope" ng-repeat-end=""
+        ng-style="courseColumns.getColumnStyle('semester.enrollment');" style="width: 0%; display: none;">
+        <div class="label">Enrollment</div>
+        <div class="enrollmentCells">
+            <div>Pre</div>
+            <div>Study Card</div>
+            <div>Actual</div>
+        </div>
+    </div><!-- end ngRepeat: term in ['Fall','Spring'] -->
+    <div class="cell col_offered ng-scope" ng-style="courseColumns.getColumnStyle('semester.offeredStatus');"
+        ng-repeat-start="term in ['Fall','Spring']" style="width: 0%; display: none;">
+        <div class="label">Offered</div>
+        <div class="filter"><select ng-model="filterCourses.data['offered'+term]"
+                ng-options="o for o in offeredStatusFilterOptions" class="ng-pristine ng-untouched ng-valid">
+                <option value="string:All" label="All" selected="selected">All</option>
+                <option value="string:"></option>
+                <option value="string:Yes" label="Yes">Yes</option>
+                <option value="string:No" label="No">No</option>
+                <option value="string:Retire" label="Retire">Retire</option>
+            </select></div>
+    </div>
+    <div class="cell col_instructors ng-scope" ng-style="courseColumns.getColumnStyle('semester.instructors');"
+        style="width: 16.216%;">
+        <div class="label">Instructors</div>
+        <div class="filter">
+            <div class="filterInput leftAlign"><input type="text" ng-model="filterCourses.data['instructors'+term]"
+                    class="ng-pristine ng-untouched ng-valid"></div>
+        </div>
+    </div>
+    <div class="cell col_times ng-scope" ng-style="courseColumns.getColumnStyle('semester.times');"
+        style="width: 10.811%;">
+        <div class="label">Times</div>
+        <div class="filter"></div>
+    </div>
+    <div class="cell col_room ng-scope" ng-style="courseColumns.getColumnStyle('semester.room');"
+        style="width: 8.108%;">
+        <div class="label">Room</div>
+        <div class="filter">
+            <div class="filterInput leftAlign"><input type="text" ng-model="filterCourses.data['room'+term]"
+                    class="ng-pristine ng-untouched ng-valid"></div>
+        </div>
+    </div>
+    <div class="cell col_enrollment ng-scope" ng-repeat-end=""
+        ng-style="courseColumns.getColumnStyle('semester.enrollment');" style="width: 0%; display: none;">
+        <div class="label">Enrollment</div>
+        <div class="enrollmentCells">
+            <div>Pre</div>
+            <div>Study Card</div>
+            <div>Actual</div>
+        </div>
+    </div><!-- end ngRepeat: term in ['Fall','Spring'] -->
+    <div class="cell col_notes" ng-repeat-end="" ng-style="courseColumns.getColumnStyle('notes');"
+        style="width: 0%; display: none;">
+        <div class="label">Notes</div>
+    </div>
+    <div class="cell col_detail" ng-style="courseColumns.getColumnStyle('detail');" style="width: 2.703%;">
+        <div class="label">Detail</div>
+    </div>
+</div>
+
+<!-- AM ES 115 row -->
+<div class="row ng-scope" ng-repeat="c in courses | filter: filterCourses.filter">
+    <div class="cell col_area ng-binding" ng-bind="c.area" ng-style="courseColumns.getColumnStyle('area');"
+        style="background: rgba(66, 66, 138, 0.7); width: 5.405%;">AM</div>
+    <div class="cell col_courseNumber ng-binding" ng-bind="c.courseNumber"
+        ng-style="courseColumns.getColumnStyle('courseNumber');" style="width: 8.108%;">ES 115</div>
+    <div class="cell col_title ng-binding" ng-bind="c.title" ng-style="courseColumns.getColumnStyle('title');"
+        style="width: 13.514%;">Mathematical Modeling</div>
+    <div class="cell col_sameAs" ng-style="courseColumns.getColumnStyle('sameAs');" style="width: 0%; display: none;">
+        <!-- ngRepeat: s in c.sameAs | orderBy: ['courseNumber'] -->
+        <div ng-repeat="s in c.sameAs | orderBy: ['courseNumber']" ng-bind="s.courseNumber" class="ng-binding ng-scope">
+            AM 115</div><!-- end ngRepeat: s in c.sameAs | orderBy: ['courseNumber'] -->
+    </div>
+    <div class="cell col_isSEAS ng-binding" ng-bind="c.isSEAS" ng-style="courseColumns.getColumnStyle('isSEAS');"
+        style="width: 0%; display: none;">Yes</div>
+    <div class="cell col_isUndergraduate ng-binding" ng-bind="c.isUndergraduate ? 'Yes' : 'No'"
+        ng-style="courseColumns.getColumnStyle('isUndergraduate');" style="width: 0%; display: none;">Yes</div>
+    <!-- ngRepeat: term in ['Fall','Spring'] -->
+    <div class="cell col_offered ng-binding ng-scope yes" ng-repeat-start="term in ['Fall','Spring']"
+        ng-class="getOfferedStatus(c, term).toLowerCase();" ng-init="offeredState = { expanded: false };"
+        ng-mouseleave="offeredState.expanded = false;"
+        ng-style="courseColumns.getColumnStyle('semester.offeredStatus');" style="width: 0%; display: none;">Yes
+        <!-- ngIf: isEditable.offeredStatus(c, term); -->
+        <div class="editOfferedStatusButton ng-scope" ng-if="isEditable.offeredStatus(c, term);"
+            ng-click="offeredState.expanded = true;"></div><!-- end ngIf: isEditable.offeredStatus(c, term); -->
+        <!-- ngIf: offeredState.expanded -->
+    </div>
+    <div class="cell col_instructors ng-scope" ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
+        ng-style="courseColumns.getColumnStyle('semester.instructors');" style="width: 16.216%;">
+        <!-- ngIf: !c.isRetiredDuringSemester(editYear.selected, term); -->
+        <ul ng-if="!c.isRetiredDuringSemester(editYear.selected, term);" class="ng-scope">
+            <!-- ngIf: getInstructors(c, term).length === 0 && isEditable.instructors(c, term); -->
+            <!-- ngRepeat: i in getInstructors(c, term) -->
+            <li ng-repeat="i in getInstructors(c, term)" class="ng-binding ng-scope">Mahadevan, Lakshminarayanan
+                <!-- ngIf: isEditable.instructors(c, term); -->
+                <div class="actions ng-scope" ng-if="isEditable.instructors(c, term);">
+                    <div class="orderUp disabled" title="Move instructor up." ng-class="{'disabled':$first}"
+                        ng-click="changeInstructorOrder($first, c, term, i, -1);"></div>
+                    <div class="orderDown disabled" title="Move instructor down." ng-class="{'disabled':$last}"
+                        ng-click="changeInstructorOrder($last, c, term, i, 1);"></div>
+                    <div class="remove" title="Remove instructor." ng-click="removeInstructor(c, term, i);"></div>
+                    <!-- ngIf: $last -->
+                    <div class="add ng-scope" title="Add new instructor." ng-if="$last"
+                        ng-click="instructorSearch.show(c._id, term);"></div><!-- end ngIf: $last -->
+                </div><!-- end ngIf: isEditable.instructors(c, term); -->
+            </li><!-- end ngRepeat: i in getInstructors(c, term) -->
+        </ul><!-- end ngIf: !c.isRetiredDuringSemester(editYear.selected, term); -->
+        <!-- ngIf: instructorSearch.isVisibleFor(c._id, term); -->
+    </div>
+    <div class="cell col_times ng-binding ng-scope"
+        ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
+        ng-style="courseColumns.getColumnStyle('semester.times');" style="width: 10.811%;">
+        <!-- ngIf: isEditable.times(c, term); -->
+        <div class="editTimesButton ng-scope" ng-if="isEditable.times(c, term);" ng-click="editTimes.show(c, term);">
+        </div><!-- end ngIf: isEditable.times(c, term); -->
+        <!-- ngIf: editTimes.isVisibleFor(c._id, term); -->
+    </div>
+    <div class="cell col_room ng-binding ng-scope"
+        ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
+        ng-style="courseColumns.getColumnStyle('semester.room');" style="width: 8.108%;">
+        <!-- ngIf: isEditable.room(c, term); -->
+        <div class="editRoomButton ng-scope" ng-if="isEditable.room(c, term);" ng-click="editRoom.show(c, term);"></div>
+        <!-- end ngIf: isEditable.room(c, term); -->
+        <!-- ngIf: editRoom.isVisibleFor(c._id, term); -->
+    </div>
+    <div class="cell col_enrollment ng-scope" ng-repeat-end=""
+        ng-style="courseColumns.getColumnStyle('semester.enrollment');" style="width: 0%; display: none;">
+        <div class="enrollmentCells">
+            <div ng-style="{background:getEnrollmentBackground(getEnrollment(c, term).pre)}" class="ng-binding"></div>
+            <div ng-style="{background:getEnrollmentBackground(getEnrollment(c, term).studyCard)}" class="ng-binding">
+            </div>
+            <div ng-style="{background:getEnrollmentBackground(getEnrollment(c, term).actual)}" class="ng-binding">
+            </div>
+        </div><!-- ngIf: isEditable.enrollment(c, term); -->
+        <div class="editEnrollmentButton ng-scope" ng-if="isEditable.enrollment(c, term);"
+            ng-click="editEnrollment.show(c, term);"></div><!-- end ngIf: isEditable.enrollment(c, term); -->
+        <!-- ngIf: editEnrollment.isVisibleFor(c._id, term); -->
+    </div><!-- end ngRepeat: term in ['Fall','Spring'] -->
+    <div class="cell col_offered ng-binding ng-scope" ng-repeat-start="term in ['Fall','Spring']"
+        ng-class="getOfferedStatus(c, term).toLowerCase();" ng-init="offeredState = { expanded: false };"
+        ng-mouseleave="offeredState.expanded = false;"
+        ng-style="courseColumns.getColumnStyle('semester.offeredStatus');" style="width: 0%; display: none;">
+        <!-- ngIf: isEditable.offeredStatus(c, term); -->
+        <div class="editOfferedStatusButton ng-scope" ng-if="isEditable.offeredStatus(c, term);"
+            ng-click="offeredState.expanded = true;"></div><!-- end ngIf: isEditable.offeredStatus(c, term); -->
+        <!-- ngIf: offeredState.expanded -->
+    </div>
+    <div class="cell col_instructors ng-scope" ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
+        ng-style="courseColumns.getColumnStyle('semester.instructors');" style="width: 16.216%;">
+        <!-- ngIf: !c.isRetiredDuringSemester(editYear.selected, term); -->
+        <ul ng-if="!c.isRetiredDuringSemester(editYear.selected, term);" class="ng-scope">
+            <!-- ngIf: getInstructors(c, term).length === 0 && isEditable.instructors(c, term); -->
+            <li ng-if="getInstructors(c, term).length === 0 &amp;&amp; isEditable.instructors(c, term);"
+                class="ng-scope">
+                <div class="actions singleAction">
+                    <div class="add" title="Add new instructor." ng-click="instructorSearch.show(c._id, term);"></div>
+                </div>
+            </li><!-- end ngIf: getInstructors(c, term).length === 0 && isEditable.instructors(c, term); -->
+            <!-- ngRepeat: i in getInstructors(c, term) -->
+        </ul><!-- end ngIf: !c.isRetiredDuringSemester(editYear.selected, term); -->
+        <!-- ngIf: instructorSearch.isVisibleFor(c._id, term); -->
+    </div>
+    <div class="cell col_times ng-binding ng-scope"
+        ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
+        ng-style="courseColumns.getColumnStyle('semester.times');" style="width: 10.811%;">
+        <!-- ngIf: isEditable.times(c, term); -->
+        <div class="editTimesButton ng-scope" ng-if="isEditable.times(c, term);" ng-click="editTimes.show(c, term);">
+        </div><!-- end ngIf: isEditable.times(c, term); -->
+        <!-- ngIf: editTimes.isVisibleFor(c._id, term); -->
+    </div>
+    <div class="cell col_room ng-binding ng-scope"
+        ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
+        ng-style="courseColumns.getColumnStyle('semester.room');" style="width: 8.108%;">
+        <!-- ngIf: isEditable.room(c, term); -->
+        <div class="editRoomButton ng-scope" ng-if="isEditable.room(c, term);" ng-click="editRoom.show(c, term);"></div>
+        <!-- end ngIf: isEditable.room(c, term); -->
+        <!-- ngIf: editRoom.isVisibleFor(c._id, term); -->
+    </div>
+    <div class="cell col_enrollment ng-scope" ng-repeat-end=""
+        ng-style="courseColumns.getColumnStyle('semester.enrollment');" style="width: 0%; display: none;">
+        <div class="enrollmentCells">
+            <div ng-style="{background:getEnrollmentBackground(getEnrollment(c, term).pre)}" class="ng-binding"></div>
+            <div ng-style="{background:getEnrollmentBackground(getEnrollment(c, term).studyCard)}" class="ng-binding">
+            </div>
+            <div ng-style="{background:getEnrollmentBackground(getEnrollment(c, term).actual)}" class="ng-binding">
+            </div>
+        </div><!-- ngIf: isEditable.enrollment(c, term); -->
+        <div class="editEnrollmentButton ng-scope" ng-if="isEditable.enrollment(c, term);"
+            ng-click="editEnrollment.show(c, term);"></div><!-- end ngIf: isEditable.enrollment(c, term); -->
+        <!-- ngIf: editEnrollment.isVisibleFor(c._id, term); -->
+    </div><!-- end ngRepeat: term in ['Fall','Spring'] -->
+    <div class="cell col_notes" ng-style="courseColumns.getColumnStyle('notes');" style="width: 0%; display: none;">
+        <div class="editNotesButton" ng-click="editNotes.show(c);"><i class="fa fa-sticky-note"
+                ng-class="'fa-sticky-note'+(c.notes?'':'-o')"></i></div><!-- ngIf: editNotes.isVisibleFor(c._id); -->
+    </div>
+    <div class="cell col_detail" ng-style="courseColumns.getColumnStyle('detail');" style="width: 2.703%;">
+        <div class="detailButton" ng-click="$state.go('app.features.courses.courseDetail', { id: c._id });"><i
+                class="fa fa-folder-open"></i></div>
+    </div>
+</div>
