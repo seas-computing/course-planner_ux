@@ -211,6 +211,16 @@
         ng-class="{retire:c.isRetiredDuringSemester(editYear.selected, term)}"
         ng-style="courseColumns.getColumnStyle('semester.room');" style="width: 20%;">
         <!-- ngIf: isEditable.room(c, term); -->
+<!-- Adding time and room information -->
+        <div style="float:left;margin-right: 0.25em;font-size: .85em;width: 56%;">
+            Mo. 1:30pm-2:45pm 🅐</div>
+        <div style="font-size: .85em;width: 90%;">
+            Geological Museum 105</div>
+        <div style="border-bottom: 1px solid rgba(0,0,0,.075);"></div>
+        <div style="float:left;margin-right: 0.25em;font-size: .85em;width: 56%;">
+            We. 1:30pm-2:45pm 🅐</div>
+        <div style="font-size: .85em;width: 90%;">
+            Geological Museum 105</div>
         <div class="editRoomButton ng-scope" ng-if="isEditable.room(c, term);" ng-click="editRoom.show(c, term);"></div>
         <!-- end ngIf: isEditable.room(c, term); -->
         <!-- ngIf: editRoom.isVisibleFor(c._id, term); -->
