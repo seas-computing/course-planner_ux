@@ -1706,41 +1706,46 @@
 </head>
 <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light_admin fixed-top">
-                <span class="navbar-brand">
-                <img src="H_SEAS_logo_RGB.png">
-                <h2 class="navbar-text mr-auto">
-                    SEAS Course Administration
-                </h2>
-            </span>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link nav-link_admin" href="manage_users.html">Manage Users</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link nav-link_admin" href="manage_courses.html">Manage Courses</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="#">Manage Faculty</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link nav-link_admin" href="schedule.html">Log out</a>
-        </li>
-    </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light_admin fixed-top">
+        <span class="navbar-brand">
+            <img src="H_SEAS_logo_RGB.png">
+            <h2 class="navbar-text mr-auto">
+                SEAS Course Administration
+            </h2>
+        </span>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link nav-link_admin" href="manage_users.html">Manage Users</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-link_admin" href="manage_courses.html">Manage Courses</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Manage Faculty</a>
+            </li>
+        </ul>
     
-<!-- Replaced this drop down with the new Nav item - Login -->
-    <ul class="navbar-nav ml-auto" hidden>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Name Surname
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="schedule.html">Planning</a>
-            <option>Log out</a>
-          </div>
-        </li>
-    </ul>
-</nav>
+        <!-- Right align Login/Logout link -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link nav-link_admin" href="schedule.html">Log out</a>
+            </li>
+        </ul>
+    
+        <!-- Replaced this drop down with the new Nav item - Login -->
+        <ul class="navbar-nav ml-auto" hidden>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Name Surname
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="schedule.html">Planning</a>
+                <option>Log out</a>
+            </div>
+            </li>
+        </ul>
+
+    </nav>
 
 <!--Catalog prefixes-->
 <div>
