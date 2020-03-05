@@ -1705,6 +1705,165 @@
 			display: none;
         }
     </style>
+
+    <!-- Mark-one styles -->
+    <style>
+    /* style for table */
+    .coIxkm-amended {
+        border-collapse: collapse;
+        width: 95%;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(152, 152, 152);
+        border-image: initial;
+        margin: 1em 2em 1em 1em;
+        padding: 5px 10px;
+    }
+
+    .iRtSxQ {
+        background-color: rgb(209, 209, 209);
+    }
+
+    .jQECIl {
+        background: rgb(254, 254, 254);
+    }
+
+    .jQECIl th {
+        background-color: rgb(209, 209, 209);
+    }
+
+    .cbrsHS {
+        font-weight: 600;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(152, 152, 152);
+        border-image: initial;
+    }
+
+    .jxSeiZ {
+        overflow: scroll;
+    }
+
+    .cjgueY {
+        background: rgb(236, 236, 236);
+    }
+
+    .bqnYPo {
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.9em;
+        border-left: 2px solid rgb(152, 152, 152);
+        border-right: 2px solid rgb(152, 152, 152);
+        padding: 3px;
+    }
+
+    /* negative: light class for background of "no" table cell */
+    .bCEQJv {
+        margin-top: 10px;
+        color: rgb(24, 24, 24);
+        background: rgb(255, 143, 156);
+        padding: 3px;  /* Decreasing padding */
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.9em;
+        border-left: 2px solid rgb(152, 152, 152);
+        border-right: 2px solid rgb(152, 152, 152);
+    }
+
+    /* negative: dark class for font color of "no" table cell */
+    .no {
+        color: rgb(237, 27, 42);
+        font-weight: 900;
+    }
+
+    table {
+        display: table;
+        border-collapse: separate;
+        border-spacing: 2px;
+        border-color: grey;
+        font-size: 16px;
+        font-weight: 400;
+        }
+
+    thead {
+        display: table-header-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+
+    /* Define the hover highlight color for the table row */
+    .hoverTable tr:hover {
+          background-color: #d1d1d1;
+    }
+
+    th {
+        display: table-cell;
+        vertical-align: inherit;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: top;
+    }
+
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    td {
+        display: table-cell;
+        vertical-align: inherit; 
+    }
+    </style>
+
+    <!-- Simulating Mark-One styles -->
+    <style>
+
+        td.acs {
+            background: #CB252D; /* Darker SEAS academic color to allow enough accessible contrast on lighter version */
+            color: white;
+        }
+
+        td.acs-light {
+            background: #CB252DE6;
+            color: white;
+        }
+
+        td.am {
+            background: #4EADAB;
+            color: black;
+        }
+
+        td.am-light {
+            background: #4EADABCC;
+            color: black;
+        }
+
+        td.ap {
+            background: #CEDB51;
+            color: black;
+        }
+
+        td.ap-light {
+            background: #CEDB51CC;
+            color: black;
+        }
+
+        input {
+            margin-bottom: .25em;
+        }
+
+        .iconLink { color: #4e88c7; } /* Primary button color - info: medium */
+        .iconLink:hover { color: #084161; } /* Primary highlight color - info: dark */
+
+        .iconLink_content { color: #4db848; } /* Positive button color to indicate the presence of content - positive: medium */
+        .iconLink_content:hover { color: #178717; } /* Positive highlight color - positive: dark */
+    </style>
+
 </head>
 <body>
 
@@ -1822,13 +1981,335 @@
 
     <!-- courses -->
     <div class="courses">
-        <picture>
-            <a data-toggle="modal" data-target="#courseModal">
-                <source srcset="courses_lg.png" media="(min-width: 1500px)">
-                <source srcset="courses.png" media="(min-width: 700px)">
-                <img srcset="courses.png" alt="…" style="width: 100%;">
-            </a>
-        </picture>
+        <!-- Table from Mark-One -->
+        <table class="sc-dnqmqq coIxkm-amended hoverTable">
+            <thead class="sc-gqjmRU iRtSxQ">
+                <tr class="sc-gZMcBi jQECIl">
+                    <th scope="col" class="sc-VigVT cbrsHS">
+                        Area
+                        <br>
+                        <select>
+                            <option value="string:All" label="All" selected="selected">All</option>
+                            <option value="string:ACS" label="ACS">ACS</option>
+                            <option value="string:AM" label="AM">AM</option>
+                            <option value="string:AP" label="AP">AP</option>
+                            <option value="string:BE" label="BE">BE</option>
+                            <option value="string:CS" label="CS">CS</option>
+                            <option value="string:EE" label="EE">EE</option>
+                            <option value="string:ESE" label="ESE">ESE</option>
+                            <option value="string:General" label="General">General</option>
+                            <option value="string:MDE" label="MDE">MDE</option>
+                            <option value="string:MSMBA" label="MSMBA">MSMBA</option>
+                            <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
+                            <option value="string:SEM" label="SEM">SEM</option>
+                        </select>
+                    </th>
+                    <th scope="col" class="sc-VigVT cbrsHS">
+                        Course
+                        <br>
+                        <input type="text">
+                    </th>
+                    <th scope="col" class="sc-VigVT cbrsHS">
+                        Is SEAS?
+                        <br>
+                        <select>
+                            <option value="string:All" label="All" selected="selected">All</option>
+                            <option value="string:Yes" label="Yes">Yes</option>
+                            <option value="string:EPS" label="EPS">EPS</option>
+                            <option value="string:No" label="No">No</option>
+                        </select>
+                    </th>
+                    <th scope="col" class="sc-VigVT cbrsHS">
+                        Offered
+                        <br>
+                        <select>
+                            <option value="string:All" label="All" selected="selected">All</option>
+                            <option value="string:"></option>
+                            <option value="string:Yes" label="Yes">Yes</option>
+                            <option value="string:No" label="No">No</option>
+                            <option value="string:Retire" label="Retire">Retire</option>
+                        </select>
+                    </th>
+                    <th scope="col" class="sc-VigVT cbrsHS">
+                        Instructors
+                        <br>
+                        <input type="text">
+                    </th>
+                    <th scope="col" class="sc-VigVT cbrsHS">
+                        Offered
+                        <br>
+                        <select>
+                            <option value="string:All" label="All" selected="selected">All</option>
+                            <option value="string:"></option>
+                            <option value="string:Yes" label="Yes">Yes</option>
+                            <option value="string:No" label="No">No</option>
+                            <option value="string:Retire" label="Retire">Retire</option>
+                        </select>
+                    </th>
+                    <th scope="col" class="sc-VigVT cbrsHS">
+                        Instructors
+                        <br>
+                        <input type="text">
+                    </th>
+                    <th scope="col" class="sc-VigVT cbrsHS">Notes</th>
+                    <th scope="col" class="sc-VigVT cbrsHS">Detail</th>
+                </tr>
+            </thead>
+            <tbody class="sc-jTzLTM jxSeiZ">
+                <tr class="sc-gZMcBi cjgueY">
+                    <td class="sc-iwsKbI bqnYPo acs">ACS</td>
+                    <td class="sc-iwsKbI bqnYPo">AC 209a</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">
+                        Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-sticky-note"></i>
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="sc-gZMcBi jQECIl">
+                    <td class="sc-iwsKbI bqnYPo acs-light">ACS</td>
+                    <td class="sc-iwsKbI bqnYPo">AC 209b</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">
+                        Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink_content">
+                            <i class="fas fa-sticky-note"></i>
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink_content">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="sc-gZMcBi cjgueY">
+                    <td class="sc-iwsKbI bqnYPo acs">ACS</td>
+                    <td class="sc-iwsKbI bqnYPo">AC 221</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo no">No</td>
+                    <td class="sc-iwsKbI bqnYPo">
+                        Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-sticky-note"></i>
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="sc-gZMcBi jQECIl">
+                    <td class="sc-iwsKbI bqnYPo am-light">AM</td>
+                    <td class="sc-iwsKbI bqnYPo">AM 010</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">
+                        Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo no">No</td>
+                    <td class="sc-iwsKbI bqnYPo">Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-sticky-note"></i>
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="sc-gZMcBi cjgueY">
+                    <td class="sc-iwsKbI bqnYPo am">AM</td>
+                    <td class="sc-iwsKbI bqnYPo">AM 021a</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-kGXeez bCEQJv">No</td>
+                    <td class="sc-iwsKbI bqnYPo">
+                        Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-sticky-note"></i>
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="sc-gZMcBi jQECIl">
+                    <td class="sc-iwsKbI bqnYPo am-light">AM</td>
+                    <td class="sc-iwsKbI bqnYPo">AM 021b</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">
+                        Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-kGXeez bCEQJv">No</td>
+                    <td class="sc-iwsKbI bqnYPo">Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-sticky-note"></i>
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="sc-gZMcBi cjgueY">
+                    <td class="sc-iwsKbI bqnYPo ap">AP</td>
+                    <td class="sc-iwsKbI bqnYPo">AC 275</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">
+                        Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-sticky-note"></i>
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="sc-gZMcBi jQECIl">
+                    <td class="sc-iwsKbI bqnYPo ap-light">AP</td>
+                    <td class="sc-iwsKbI bqnYPo">AP 050a</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">
+                        Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-sticky-note"></i>
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="sc-gZMcBi cjgueY">
+                    <td class="sc-iwsKbI bqnYPo ap">AP</td>
+                    <td class="sc-iwsKbI bqnYPo">AP 050b</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">
+                        Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo">Yes</td>
+                    <td class="sc-iwsKbI bqnYPo">Name Surname
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-sticky-note"></i>
+                        </a>
+                    </td>
+                    <td class="sc-iwsKbI bqnYPo text-center">
+                        <a href="#" class="iconLink">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div><!-- /courses -->
 
     <!-- Modal - Default -->
@@ -1994,7 +2475,7 @@
         </div>
     </div>
 
-<!-- Optional Bootsrap JavaScript -->
+<!-- Optional Bootstrap JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -2029,6 +2510,7 @@
         title: '<p><strong>CS 181</strong><br>9:00am - 10:15am</p>'
     });
 </script>
+
 <!--Pop over for ES 022 and ESE 166, with HTML link -->
 <script>
     $(function () {
@@ -2038,6 +2520,10 @@
         .popover({html: true})
 
 </script>
+
+<!-- Mark-One JavaScript -->
+<script src="https://seas-computing.github.io/mark-one/assets~main5f947c6db2fbbe4cd0f0.js"></script>
+<script src="https://seas-computing.github.io/mark-one/build/bundle.2043da72.js"></script>
 
 
 </body>
