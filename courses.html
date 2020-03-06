@@ -78,7 +78,8 @@
             z-index: 1;
             top: 0;
             left: 0;
-            background-color: #eee;
+            background-color: #fff;
+            border-right: 1px solid #ccc;
             overflow-x: hidden;
             transition: 0.5s;
             margin-top: -5em;
@@ -443,6 +444,27 @@
     font-weight: 400;
     }
 
+    /* button - primary */
+    .bADMLE {
+        color: rgb(254, 254, 254);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: rgb(78, 136, 199);
+        padding: 5px 10px;
+        display: block;
+        width: 100%;
+    }
+
+    .bADMLE:hover { background: rgb(8, 65, 97); } /* Primary highlight color - info: dark */
+
+    /* Drop down */
+    .kFoNgS {
+        color: rgb(24, 24, 24);
+        width: 100%;
+        margin-bottom: .5em;
+    }
+
 
     </style>
 
@@ -582,7 +604,7 @@
         <div id="mySidenav" class="sidenav" style="white-space: nowrap;">
             <div>
                 <a href="javascript:void(0)" onclick="closeNav()"
-                   style="color: #212529; font-size: 1.4rem; margin-top: .4em; margin-left: .9em;">
+                   style="font-size: 1.4rem; margin-top: .4em; margin-left: .9em;">
                    Settings
                     <i class="far fa-arrow-alt-circle-left ml-auto"></i>
                 </a>
@@ -590,28 +612,20 @@
             <form>
                 <div class="form-group">
                     <h3>Courses report <i class="fas fa-download"></i></h3>
-                    <button type="button" class="btn btn-outline-primary btn-lg btn-block">
-                        Download
-                    </button>
+                    <button class="sc-bdVaJa bADMLE">Download</button>
                 </div>
                 <div class="form-group">
                     <h3>Customized view <i class="fas fa-columns"></i></h3>
-                    <div class="dropdown">
-                        <button class="btn btn-outline-primary btn-lg dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Default
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#defaultModal">Default</a>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myViewModal">My view</a>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#newViewModal">New view</a>
-                        </div>
-                    </div>
+                    <select name="views" class="sc-bwzfXH kFoNgS">
+                        <option value="default">Default</option>
+                        <option value="myview">My view</option>
+                        <option value="newview">New view</option>
+                    </select>
+                    <button class="sc-bdVaJa bADMLE">Submit</button>
                 </div>
                 <div class="form-group">
                     <h3>Retired courses <i class="far fa-calendar-times"></i></h3>
-                    <button type="button" class="btn btn-outline-primary btn-lg btn-block">
-                        Show
-                    </button>
+                    <button class="sc-bdVaJa bADMLE">Show</button>
                 </div>
             </form>
         </div>
