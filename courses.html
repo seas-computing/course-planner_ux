@@ -541,6 +541,7 @@
 
         input {
             margin-bottom: .25em;
+            width: 90%;
         }
 
         .iconLink { color: #4e88c7; } /* Primary button color - info: medium */
@@ -553,6 +554,12 @@
             border: 0;
             border-top: 1px solid rgba(0,0,0,.1);
             width: 90%; 
+        }
+
+        textarea {
+            overflow: auto;
+            resize: vertical;
+            padding: .25em;
         }
 
     </style>
@@ -795,7 +802,7 @@
                         </a>
                     </td>
                     <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" class="bADMLE-icon">
+                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
                             <i class="far fa-sticky-note"></i>
                         </a>
                     </td>
@@ -829,7 +836,7 @@
                         </a>
                     </td>
                     <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" class="bADMLE-icon" title="AC 209 associated with ...">
+                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
                             <i class="fas fa-sticky-note"></i>
                         </a>
                     </td>
@@ -857,7 +864,7 @@
                         </a>
                     </td>
                     <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" class="bADMLE-icon">
+                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
                             <i class="far fa-sticky-note"></i>
                         </a>
                     </td>
@@ -885,7 +892,7 @@
                         </a>
                     </td>
                     <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" class="bADMLE-icon">
+                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
                             <i class="far fa-sticky-note"></i>
                         </a>
                     </td>
@@ -913,7 +920,7 @@
                         </a>
                     </td>
                     <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" class="bADMLE-icon">
+                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
                             <i class="fas fa-sticky-note"></i>
                         </a>
                     </td>
@@ -941,7 +948,7 @@
                         </a>
                     </td>
                     <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" class="bADMLE-icon">
+                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
                             <i class="far fa-sticky-note"></i>
                         </a>
                     </td>
@@ -969,7 +976,7 @@
                         </a>
                     </td>
                     <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" class="bADMLE-icon">
+                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
                             <i class="fas fa-sticky-note"></i>
                         </a>
                     </td>
@@ -997,7 +1004,7 @@
                         </a>
                     </td>
                     <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" class="bADMLE-icon">
+                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
                             <i class="far fa-sticky-note"></i>
                         </a>
                     </td>
@@ -1025,8 +1032,8 @@
                         </a>
                     </td>
                     <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" class="bADMLE-icon">
-                            <i class="fas fa-sticky-note"></i>
+                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
+                            <i class="far fa-sticky-note"></i>
                         </a>
                     </td>
                     <td class="sc-iwsKbI bqnYPo text-center">
@@ -1129,8 +1136,6 @@
 
 </div>
 
-
-
 <!-- Modal for Courses -->
 <div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModal" aria-hidden="true" style="font-size: 1.25em; right: 18%; left: 40%; top: 16em;">
     <div class="modal-dialog" role="document">
@@ -1197,9 +1202,31 @@
                 <button type="button" class="kxWoHZ mr-auto" data-dismiss="modal">Cancel</button>
                 <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">OK</button>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Notes -->
+<div class="modal fade" id="courseModal2" tabindex="-1" role="dialog" aria-labelledby="courseModal2" aria-hidden="true" style="font-size: 1.25em; right: 18%; left: 40%; top: 16em;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="width: 20em;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="courseModal2">Notes for AC 297r</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="width: 17em;">
+                <textarea id="courseNotes" rows="4" cols="34">Same as CS 109a, STATS 121a.</textarea>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="kxWoHZ mr-auto" data-dismiss="modal">Cancel</button>
+                <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">OK</button>
             </div>
         </div>
     </div>
+</div>
 
 <!-- Optional Bootstrap JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -1223,28 +1250,6 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
-</script>
-
-<!--Tooltip for CS 181-->
-<script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-
-    $("#myparagraph").tooltip({
-        html: true,
-        title: '<p><strong>CS 181</strong><br>9:00am - 10:15am</p>'
-    });
-</script>
-
-<!--Pop over for ES 022 and ESE 166, with HTML link -->
-<script>
-    $(function () {
-        $('[data-toggle="popover"]').popover()
-    })
-    $("[data-toggle=popover]")
-        .popover({html: true})
-
 </script>
 
 <!-- Mark-One JavaScript -->
