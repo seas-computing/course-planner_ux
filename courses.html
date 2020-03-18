@@ -29,7 +29,6 @@
     <style type="text/css">
         /*This sets the margin and padding of every HTML element to zero and the box-sizing: border-box; declaration changes the box model by ensuring that the padding and border of an element no longer increases its width.*/
         html {
-            font-size: 62.5%;
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         }
@@ -112,7 +111,7 @@
 
         /*Amending Bootstrap styles*/
         .nav-link {
-            font-size: 1.4rem;
+            font-size: 1em;
         }
 
         .nav-tabs {
@@ -121,7 +120,7 @@
         }
 
         .nav-pills {
-            margin-top: 2.9em;
+            margin-top: 2.05em;
             margin-left: 3em;
             position: absolute;
         }
@@ -693,18 +692,17 @@
         <div id="mySidenav" class="sidenav" style="white-space: nowrap;">
             <div>
                 <a href="javascript:void(0)" onclick="closeNav()"
-                   style="font-size: 1.4rem; margin-top: .4em; margin-left: .9em;">
-                   Settings
+                style="font-size: 1em; margin-top: .05em; margin-left: 2.5em;">
+                    Settings
                     <i class="far fa-arrow-alt-circle-left ml-auto"></i>
                 </a>
             </div>
             <form>
                 <div class="form-group">
-                    <h3>Courses report <i class="fas fa-download"></i></h3>
-                    <button class="sc-bdVaJa bADMLE">Download</button>
+                    <button class="sc-bdVaJa bADMLE">Download courses report</button>
                 </div>
                 <div class="form-group">
-                    <h3>Customized view <i class="fas fa-columns"></i></h3>
+                    <h3>Customized view</h3>
                     <select name="views" class="sc-bwzfXH kFoNgS">
                         <option value="default">Default</option>
                         <option value="myview">My view</option>
@@ -713,8 +711,7 @@
                     <button class="sc-bdVaJa bADMLE">Submit</button>
                 </div>
                 <div class="form-group">
-                    <h3>Retired courses <i class="far fa-calendar-times"></i></h3>
-                    <button class="sc-bdVaJa bADMLE">Show</button>
+                    <button class="sc-bdVaJa bADMLE">Show retired courses</button>
                 </div>
             </form>
         </div>
@@ -1101,7 +1098,7 @@
     </div><!-- /courses -->
 
 <!-- Modal for Courses -->
-<div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModal" aria-hidden="true" style="font-size: 1.25em; right: 18%; left: 40%; top: 16em;">
+<div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModal" aria-hidden="true" style="font-size: 1.25em; right: 25%; left: 31%; top: 7em;">
     <div class="modal-dialog" role="document">
         <div class="modal-content" style="width: 20em;">
             <div class="modal-header">
@@ -1171,7 +1168,7 @@
 </div>
 
 <!-- Modal for Notes -->
-<div class="modal fade" id="courseModal2" tabindex="-1" role="dialog" aria-labelledby="courseModal2" aria-hidden="true" style="font-size: 1.25em; right: 18%; left: 40%; top: 16em;">
+<div class="modal fade" id="courseModal2" tabindex="-1" role="dialog" aria-labelledby="courseModal2" aria-hidden="true" style="font-size: 1.25em; right: 18%; left: 23%; top: 7em;">
     <div class="modal-dialog" role="document">
         <div class="modal-content" style="width: 20em;">
             <div class="modal-header">
@@ -1194,11 +1191,11 @@
 </div>
 
 <!-- Modal for Details -->
-<div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="font-size: 1.25em; right: 18%; left: 10%; top: 10em;">
+<div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="font-size: 1em; right: 18%; left: 0%; top: 2em;">
     <div class="modal-dialog" role="document">
         <div class="modal-content" style="width: 50em;">
             <div class="modal-header">
-                <h2 class="modal-title" id="courseModal3">AC 209a - Data Science 1: Introduction to Data Science</h2>
+                <h2 class="modal-title" id="courseModal3">Details for AC 209a - Data Science 1: Introduction to Data Science</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
                     <span aria-hidden="true">&times;</span>
                 </button>
