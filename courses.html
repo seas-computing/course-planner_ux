@@ -4,1433 +4,1430 @@
 <!doctype html>
 
 <html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Courses - Course Planner</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="googlebot" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="https://www.seas.harvard.edu/favicon.ico">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Courses - Course Planner</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="googlebot" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="https://www.seas.harvard.edu/favicon.ico">
 
-    <!-- Required Bootstrap meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Required Bootstrap meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-          crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous">
 
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-    <style type="text/css">
-        /*This sets the margin and padding of every HTML element to zero and the box-sizing: border-box; declaration changes the box model by ensuring that the padding and border of an element no longer increases its width.*/
-        html {
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        }
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: inherit;
-        }
-
-        dd {
-            margin-bottom: -4px;
-            font-size: 1.2em;
-			align: left;
-        }
-
-        dt {
-            font-size: 1.2em;
-            padding: 0px;
-        }
-
-        /*Style for each course*/
-        .button-course {
-            width: 100%;
-            background-color: transparent;
-            border: 0px solid transparent;
-            font-size: .8em;
-            color: #fff;
-            text-align: left;
-        }
-
-        .button-course:hover {
-            background-color: rgba(255, 255, 255, .3);
-        }
-
-        /*Style for tooltips*/
-        .tooltip.show p {
-            text-align: left;
-        }
-
-        /*Sidebar*/
-
-        .sidenav {
-            height: 100%;
-            width: 0;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #fff;
-            border-right: 1px solid #ccc;
-            overflow-x: hidden;
-            transition: 0.5s;
-            margin-top: -5em;
-        }
-
-        .sideNav-column {
-            padding-left: .5em;
-            margin-top: 6em;
-            z-index: 1000;
-        }
-
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding: 2em;
+        <style type="text/css">
+            /*This sets the margin and padding of every HTML element to zero and the box-sizing: border-box; declaration changes the box model by ensuring that the padding and border of an element no longer increases its width.*/
+            html {
+                box-sizing: border-box;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             }
-        }
 
-        /*Amending Bootstrap styles*/
-        .nav-link {
-            font-size: 1em;
-        }
+            *, *::before, *::after {
+                margin: 0;
+                padding: 0;
+                box-sizing: inherit;
+            }
 
-        .nav-tabs {
-            margin-bottom: -0.5em;
-            margin-left: -176em;
-        }
+            dd {
+                margin-bottom: -4px;
+                font-size: 1.2em;
+                align: left;
+            }
 
-        .nav-pills {
-            margin-top: 2.05em;
-            margin-left: 3em;
-            position: absolute;
-        }
+            dt {
+                font-size: 1.2em;
+                padding: 0px;
+            }
 
-        .nav-item {
-            padding-left: 1em;
-            padding-right: 1em;
-        }
+            /*Style for each course*/
+            .button-course {
+                width: 100%;
+                background-color: transparent;
+                border: 0px solid transparent;
+                font-size: .8em;
+                color: #fff;
+                text-align: left;
+            }
 
-        .navbar-brand img {
-            width: 7%;
-        }
+            .button-course:hover {
+                background-color: rgba(255, 255, 255, .3);
+            }
 
-        .bg-light {
-        background-color: #ffffff!important;
-        height: 8.6em;
-        }
+            /*Style for tooltips*/
+            .tooltip.show p {
+                text-align: left;
+            }
 
-        h2 {
-            font-size: 1.5em;
-            /* margin-left: 2em; */
-        }
+            /*Sidebar*/
 
-        h3 {
-            font-size: 1.2em;
-        }
+            .sidenav {
+                height: 100%;
+                width: 0;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #fff;
+                border-right: 1px solid #ccc;
+                overflow-x: hidden;
+                transition: 0.5s;
+                margin-top: -5em;
+            }
 
-        .form-group {
-            padding: 1em;
-        }
+            .sideNav-column {
+                padding-left: .5em;
+                margin-top: 6em;
+                z-index: 1000;
+            }
 
-        .popover-header {
-            padding: .5rem .75rem;
-            margin-bottom: 0;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: inherit;
-            background-color: #f7f7f7;
-            border-bottom: 1px solid #ebebeb;
-            border-top-left-radius: calc(.3rem - 1px);
-            border-top-right-radius: calc(.3rem - 1px);
-        }
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
 
-        .popover-body {
-            padding: .5rem .75rem;
-            color: #212529;
-            font-size: 1.1rem;
-        }
+            .sidenav a:hover {
+                color: #f1f1f1;
+            }
 
-        .dropdown-item {
-        font-size: 1.4rem;
-        color: #007bff;
-        }
+            @media screen and (max-height: 450px) {
+                .sidenav {
+                    padding: 2em;
+                }
+            }
 
-        #navbarDropdownMenuLink {
-        color: #007bff;
-        }
+            /*Amending Bootstrap styles*/
+            .nav-link {
+                font-size: 1em;
+            }
 
-        .img-fluid {
-            max-width: 98%;
-            margin-top: -1em;
-        }
+            .nav-tabs {
+                margin-bottom: -0.5em;
+                margin-left: -176em;
+            }
 
-        .sidenav a {
-            font-size: 1.5em;
+            .nav-pills {
+                margin-top: 2.05em;
+                margin-left: 3em;
+                position: absolute;
+            }
+
+            .nav-item {
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+
+            .navbar-brand img {
+                width: 7%;
+            }
+
+            .bg-light {
+            background-color: #ffffff!important;
+            height: 8.6em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+                /* margin-left: 2em; */
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            .form-group {
+                padding: 1em;
+            }
+
+            .popover-header {
+                padding: .5rem .75rem;
+                margin-bottom: 0;
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: inherit;
+                background-color: #f7f7f7;
+                border-bottom: 1px solid #ebebeb;
+                border-top-left-radius: calc(.3rem - 1px);
+                border-top-right-radius: calc(.3rem - 1px);
+            }
+
+            .popover-body {
+                padding: .5rem .75rem;
+                color: #212529;
+                font-size: 1.1rem;
+            }
+
+            .dropdown-item {
+            font-size: 1.4rem;
             color: #007bff;
-        }
+            }
 
-        .sidenav a:hover {
-            font-size: 1.5em;
-            color: #000;
-        }
+            #navbarDropdownMenuLink {
+            color: #007bff;
+            }
 
-        .modal {
-            right: 18%;
-            left: -10%;
-        }
+            .img-fluid {
+                max-width: 98%;
+                margin-top: -1em;
+            }
 
-        .modal-content {
-            width: 84em;
-        }
+            .sidenav a {
+                font-size: 1.5em;
+                color: #007bff;
+            }
 
-        /*CSS Grid*/
+            .sidenav a:hover {
+                font-size: 1.5em;
+                color: #000;
+            }
 
-        #outer-grid {
-            display: grid;
-            grid-template-rows: 1fr;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 1em;
-            margin-top: 1em;
-        }
+            .modal {
+                right: 18%;
+                left: -10%;
+            }
 
-        /*Reset to absolutely center the calendar on the page and give it a border and width.*/
-        /*CSS Grid*/
-        .courses {
-            padding: 0em;
-            width: 100vw;
-            height: 120vh;
-        }
-    </style>
+            .modal-content {
+                width: 84em;
+            }
 
-    <!-- Mark-one styles -->
-    <style>
-    /* style for table */
-    .coIxkm-amended {
-        border-collapse: collapse;
-        width: 95%;
-        border-width: 2px;
-        border-style: solid;
-        border-color: rgb(152, 152, 152);
-        border-image: initial;
-        margin: 1em 2em 1em 1em;
-        padding: 5px 10px;
-    }
+            /*CSS Grid*/
 
-    .iRtSxQ {
-        background-color: rgb(209, 209, 209);
-    }
+            #outer-grid {
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 1em;
+                margin-top: 1em;
+            }
 
-    .jQECIl {
-        background: rgb(254, 254, 254);
-    }
+            /*Reset to absolutely center the calendar on the page and give it a border and width.*/
+            /*CSS Grid*/
+            .courses {
+                padding: 0em;
+                width: 100vw;
+                height: 120vh;
+            }
+        </style>
 
-    .jQECIl th {
-        background-color: rgb(209, 209, 209);
-    }
-
-    .cbrsHS {
-        font-weight: 600;
-        border-width: 2px;
-        border-style: solid;
-        border-color: rgb(152, 152, 152);
-        border-image: initial;
-    }
-
-    .jxSeiZ {
-        overflow: scroll;
-    }
-
-    .cjgueY {
-        background: rgb(236, 236, 236);
-    }
-
-    .bqnYPo {
-        font-family: "Roboto Mono", monospace;
-        font-size: 0.9em;
-        border-left: 2px solid rgb(152, 152, 152);
-        border-right: 2px solid rgb(152, 152, 152);
-        padding: 3px;
-    }
-
-    /* negative: light class for background of "no" table cell */
-    .bCEQJv {
-        margin-top: 10px;
-        color: rgb(24, 24, 24);
-        background: rgb(255, 143, 156);
-        padding: 3px;  /* Decreasing padding */
-        font-family: "Roboto Mono", monospace;
-        font-size: 0.9em;
-        border-left: 2px solid rgb(152, 152, 152);
-        border-right: 2px solid rgb(152, 152, 152);
-    }
-
-    /* negative: dark class for font color of "no" table cell */
-    .no {
-        color: rgb(237, 27, 42);
-        font-weight: 900;
-    }
-
-    table {
-        display: table;
-        border-collapse: separate;
-        border-spacing: 2px;
-        border-color: grey;
-        font-size: 16px;
-        font-weight: 400;
-        }
-
-    thead {
-        display: table-header-group;
-        vertical-align: middle;
-        border-color: inherit;
-    }
-
-    tr {
-        display: table-row;
-        vertical-align: inherit;
-        border-color: inherit;
-    }
-
-    /* Define the hover highlight color for the table row */
-    .hoverTable tr:hover {
-          background-color: #d1d1d1;
-    }
-
-    th {
-        display: table-cell;
-        vertical-align: inherit;
-        font-weight: bold;
-        text-align: center;
-        vertical-align: top;
-    }
-
-    tbody {
-        display: table-row-group;
-        vertical-align: middle;
-        border-color: inherit;
-    }
-
-    td {
-        display: table-cell;
-        vertical-align: inherit; 
-    }
-
-
-    /* style for nav */
-    nav {
-        display: block;
-        font-size: 16px;
-        font-weight: 400;
-    }
-
-    .hhGZXE {
-        background-color: transparent;
-        border-collapse: collapse;
-        display: flex;
-        flex-wrap: wrap;
-        list-style-type: none;
-        border-bottom: 1px solid rgb(24, 24, 24);
-    }
-
-    ul {
-        /* display: block; */
-        /* list-style-type: disc; */
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        padding-inline-start: 40px;
-    }
-
-    .icrnXS {
-        margin-bottom: -1px;
-        padding: 0px 1em;
-    }
-
-    .icrnXS-first {
-        margin-bottom: -1px;
-        padding: 0px 1em;
-        margin-left: 7em;
-    }
-
-    li {
-        display: list-item;
-        text-align: -webkit-match-parent;
-    }
-
-    .kzaudT {
-        color: rgb(24, 24, 24);
-        display: inline-block;
-        background: transparent;
-        border-width: 1px 1px 1px;
-        border-style: solid solid none;
-        border-color: transparent transparent transparent;
-        border-image: initial;
-        border-bottom: none;
-        padding: 0.5rem 1rem;
-    }
-
-    /* active tab */
-    .bWbWht {
-        color: rgb(24, 24, 24);
-        display: inline-block;
-        background: rgb(254, 254, 254);
-        border-width: 1px;
-        border-style: solid;
-        border-color: rgb(24, 24, 24) rgb(24, 24, 24) transparent;
-        border-image: initial;
-        border-bottom: 1px solid transparent;
-        padding: 0.5rem 1rem;
-    }
-
-    /* header */
-    .bsLcFZ {
-        align-items: flex-end;
-        background-color: transparent;
-        box-shadow: rgba(0, 0, 0, 0.28) 0px 4px 8px;
-        display: flex;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        width: 100%;
-        padding: 15px 10px;
-    }
-
-    .bSvdsU {
-        align-self: stretch;
-        background-image: url(53adae7….svg);
-        background-size: contain;
-        color: transparent;
-        display: inline-block;
-        font-size: 0px;
-        line-height: 0;
-        width: 175px;
-        min-width: 100px;
-        height: 50px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        margin: 0px 10px;
-    }
-
-    .eEciP {
-        font-size: 1.66em;
-        font-family: "Open Sans", sans-serif;
-        font-weight: 400;
-        grid-column-end: span 4;
-    }
-
-    header {
-    font-size: 16px;
-    font-weight: 400;
-    }
-
-    /* button - primary */
-    .bADMLE {
-        color: rgb(254, 254, 254);
-        cursor: pointer;
-        font-size: 1em;
-        font-weight: 400;
-        background: rgb(78, 136, 199); /* Primary button idle color - info: medium */
-        padding: 5px 10px;
-        border: 0px solid #fff;
-    }
-
-    .bADMLE:hover { background: rgb(8, 65, 97); } /* Primary button highlight color - info: dark */
-
-    /* button icon - primary */
-    .bADMLE-icon {
-        color: rgb(78, 136, 199); /* Primary button icon idle color - info: medium */
-        cursor: pointer;
-        font-size: 1em;
-        font-weight: 400;
-        padding: 5px 10px;
-    }
-
-    .bADMLE-icon:hover { color: rgb(8, 65, 97); } /* Primary button icon highlight color - info: dark */
-
-    /* button - secondary */
-    .kxWoHZ {
-        color: rgb(24, 24, 24);
-        cursor: pointer;
-        font-size: 1em;
-        font-weight: 400;
-        background: rgb(209, 209, 209); /* Secondary button idle color - background: medium */
-        padding: 5px 10px;
-        border: 0px solid #fff;
-    }
-
-    .kxWoHZ:hover { 
-        color: rgb(254, 254, 254);
-        background: rgb(147, 161, 173); /* Secondary button highlight color - background: dark */
-    }
-
-    /* button - danger */
-    .csuYJy {
-        color: rgb(254, 254, 254);
-        cursor: pointer;
-        font-size: 1em;
-        font-weight: 400;
-        background: rgb(237, 27, 42); /* Danger button idle color - negative: dark */
-        padding: 5px 10px;
-        border: 0px solid #fff;
-    }
-
-    .csuYJy:hover { background: rgb(165, 28, 48); } /* Danger button highlight color - backgrond: accent */
-
-    .lijgtc { /* positive: light */
-        margin-top: 10px;
-        color: rgb(24, 24, 24);
-        background: rgb(129, 233, 129);
-        /* padding: 15px; */
-        }
-
-/* button icon - danger */
-    .csuYJy-icon { /* Danger button icon idle color - negative: dark */
-        margin-top: 10px;
-        color: rgb(237, 27, 42);
-        padding: 15px;
-    }
-
-    .csuYJy-icon:hover {  /* Danger button icon highlight color - background: accent */
-        color: rgb(165, 28, 48);
-    }
-
-    .button-icon {
-        margin-top: 0px;
-        display: inline-block;
-        font-weight: 400;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        padding: .375rem .75rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        border-radius: .25rem;
-        border: solid 0 #fff;
-    }
-
-    /* Drop down */
-    .kFoNgS {
-        color: rgb(24, 24, 24);
-        margin-bottom: .5em;
-    }
-
-
-    </style>
-
-    <!-- Simulating Mark-One styles -->
-    <style>
-
-        /* Course colors */
-        td.acs {
-            background: rgba(203, 37, 45, 0.80); /* SEAS academic color with light transparency for the row hover effect */
-            color: white;
-        }
-
-        td.am {
-            background: rgba(78, 173, 171, 0.80); /* SEAS academic color with light transparency for the row hover effect */
-            color: black;
-        }
-
-        td.ap {
-            background: rgba(206, 219, 81, 0.80); /* SEAS academic color with light transparency for the row hover effect */
-            color: black;
-        }
-
-        input {
-            margin-bottom: .25em;
-            width: 90%;
-        }
-
-        .iconLink { color: #4e88c7; } /* Primary button color - info: medium */
-        .iconLink:hover { color: #084161; } /* Primary highlight color - info: dark */
-
-        hr {
-            FONT-WEIGHT: 500;
-            margin-top: .5rem;
-            margin-bottom: .5rem;
-            border: 0;
-            border-top: 1px solid rgba(0,0,0,.1);
-            width: 90%; 
-        }
-
-        textarea {
-            overflow: auto;
-            resize: vertical;
-            padding: .25em;
-        }
-
-        .table-modal {
-            display: table;
+        <!-- Mark-one styles -->
+        <style>
+        /* style for table */
+        .coIxkm-amended {
             border-collapse: collapse;
-            border-spacing: 1px;
+            width: 95%;
+            border-width: 2px;
+            border-style: solid;
+            border-color: rgb(152, 152, 152);
+            border-image: initial;
+            margin: 1em 2em 1em 1em;
+            padding: 5px 10px;
+        }
+
+        .iRtSxQ {
+            background-color: rgb(209, 209, 209);
+        }
+
+        .jQECIl {
+            background: rgb(254, 254, 254);
+        }
+
+        .jQECIl th {
+            background-color: rgb(209, 209, 209);
+        }
+
+        .cbrsHS {
+            font-weight: 600;
+            border-width: 2px;
+            border-style: solid;
+            border-color: rgb(152, 152, 152);
+            border-image: initial;
+        }
+
+        .jxSeiZ {
+            overflow: scroll;
+        }
+
+        .cjgueY {
+            background: rgb(236, 236, 236);
+        }
+
+        .bqnYPo {
+            font-family: "Roboto Mono", monospace;
+            font-size: 0.9em;
+            border-left: 2px solid rgb(152, 152, 152);
+            border-right: 2px solid rgb(152, 152, 152);
+            padding: 3px;
+        }
+
+        /* negative: light class for background of "no" table cell */
+        .bCEQJv {
+            margin-top: 10px;
+            color: rgb(24, 24, 24);
+            background: rgb(255, 143, 156);
+            padding: 3px;  /* Decreasing padding */
+            font-family: "Roboto Mono", monospace;
+            font-size: 0.9em;
+            border-left: 2px solid rgb(152, 152, 152);
+            border-right: 2px solid rgb(152, 152, 152);
+        }
+
+        /* negative: dark class for font color of "no" table cell */
+        .no {
+            color: rgb(237, 27, 42);
+            font-weight: 900;
+        }
+
+        table {
+            display: table;
+            border-collapse: separate;
+            border-spacing: 2px;
             border-color: grey;
             font-size: 16px;
             font-weight: 400;
-            width: 100%;
+            }
+
+        thead {
+            display: table-header-group;
+            vertical-align: middle;
+            border-color: inherit;
         }
 
-        .table-modal .iRtSxQ {
-            background-color: rgb(255, 255, 182550);
-            border-width: 1px;
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
         }
 
-        .table-modal td {
-            border: 1px #ccc solid;
+        /* Define the hover highlight color for the table row */
+        .hoverTable tr:hover {
+            background-color: #d1d1d1;
+        }
+
+        th {
+            display: table-cell;
+            vertical-align: inherit;
+            font-weight: bold;
             text-align: center;
+            vertical-align: top;
         }
 
-    </style>
+        tbody {
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
 
-</head>
-<body>
-
-    <!-- Pre-Mark-One nav -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" hidden>
-        <span class="navbar-brand">
-            <img src="H_SEAS_logo_RGB.png">
-            <h2 class="navbar-text mr-auto">
-                SEAS Course Planning
-            </h2>
-        </span>
-        <ul class="nav nav-tabs" style="margin-top: 5em;">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Courses</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="courses-ncm.html">Non class meetings</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="faculty.html">Faculty</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="schedule.html">Schedule</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="fourYearPlan.html">4 Year Plan</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="manage_users.html">Manage Users</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="manage_courses.html">Manage Courses</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="manage_faculty.html">Manage Faculty</a>
-            </li>
-        </ul>
-    
-        <!-- Right align Login/Logout link -->
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
-            </li>
-        </ul>
-    
-        <!-- Replaced this drop down with the new Nav item - Login -->
-        <ul class="navbar-nav ml-auto" hidden>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Name Surname
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="manage_users.html">Administration</a>
-                <a class="dropdown-item" href="#">Log out</a>
-            </div>
-            </li>
-        </ul>
-
-    </nav>
-
-    <header class="sc-bxivhb bsLcFZ">
-        <a width="175px" href="#" height="50px" class="sc-ifAKCX bSvdsU"><img src="H_SEAS_logo_RGB.png" width="175px"></a>
-        <h1 class="sc-ckVGcZ eEciP">SEAS Course Planning</h1>
-        <div><a href="#">Log out</a></div>
-    </header>
-
-<!-- Left nav button -->
-<div>
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a href="#" class="nav-link" style="margin-right: 3em; cursor: pointer;" onclick="openNav()">
-                Settings
-                <i class="far fa-arrow-alt-circle-right"></i>
-            </a>
-        </li>
-
-    </ul>
-</div>
+        td {
+            display: table-cell;
+            vertical-align: inherit; 
+        }
 
 
-<div id="outer-grid">
+        /* style for nav */
+        nav {
+            display: block;
+            font-size: 16px;
+            font-weight: 400;
+        }
 
-    <!--Sidenav filters-->
-    <div class="sideNav-column">
-        <div id="mySidenav" class="sidenav" style="white-space: nowrap;">
-            <div>
-                <a href="javascript:void(0)" onclick="closeNav()"
-                style="font-size: 1em; margin-top: .05em; margin-left: 2.5em;">
-                    Settings
-                    <i class="far fa-arrow-alt-circle-left ml-auto"></i>
-                </a>
-            </div>
-            <form>
-                <div class="form-group">
-                    <button class="sc-bdVaJa bADMLE">Download courses report</button>
-                </div>
-                <div class="form-group">
-                    <h3>Customized view</h3>
-                    <select name="views" class="sc-bwzfXH kFoNgS">
-                        <option value="default">Default</option>
-                        <option value="myview">My view</option>
-                        <option value="newview">New view</option>
-                    </select>
-                    <button class="sc-bdVaJa bADMLE">Submit</button>
-                </div>
-                <div class="form-group">
-                    <button class="sc-bdVaJa bADMLE">Show retired courses</button>
-                </div>
-            </form>
-        </div>
-    </div>
+        .hhGZXE {
+            background-color: transparent;
+            border-collapse: collapse;
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            border-bottom: 1px solid rgb(24, 24, 24);
+        }
 
-    <!-- courses -->
-    <div class="courses">
+        ul {
+            /* display: block; */
+            /* list-style-type: disc; */
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
 
-        <nav>
-            <ul class="sc-bZQynM hhGZXE">
-                <li class="sc-htoDjs icrnXS-first">
-                    <div class="sc-gzVnrw bWbWht"><a href="#" class="sc-kgoBCf cuZvUJ">Courses</a></div>
+        .icrnXS {
+            margin-bottom: -1px;
+            padding: 0px 1em;
+        }
+
+        .icrnXS-first {
+            margin-bottom: -1px;
+            padding: 0px 1em;
+            margin-left: 7em;
+        }
+
+        li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+        }
+
+        .kzaudT {
+            color: rgb(24, 24, 24);
+            display: inline-block;
+            background: transparent;
+            border-width: 1px 1px 1px;
+            border-style: solid solid none;
+            border-color: transparent transparent transparent;
+            border-image: initial;
+            border-bottom: none;
+            padding: 0.5rem 1rem;
+        }
+
+        /* active tab */
+        .bWbWht {
+            color: rgb(24, 24, 24);
+            display: inline-block;
+            background: rgb(254, 254, 254);
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(24, 24, 24) rgb(24, 24, 24) transparent;
+            border-image: initial;
+            border-bottom: 1px solid transparent;
+            padding: 0.5rem 1rem;
+        }
+
+        /* header */
+        .bsLcFZ {
+            align-items: flex-end;
+            background-color: transparent;
+            box-shadow: rgba(0, 0, 0, 0.28) 0px 4px 8px;
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            width: 100%;
+            padding: 15px 10px;
+        }
+
+        .bSvdsU {
+            align-self: stretch;
+            background-image: url(53adae7….svg);
+            background-size: contain;
+            color: transparent;
+            display: inline-block;
+            font-size: 0px;
+            line-height: 0;
+            width: 175px;
+            min-width: 100px;
+            height: 50px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            margin: 0px 10px;
+        }
+
+        .eEciP {
+            font-size: 1.66em;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            grid-column-end: span 4;
+        }
+
+        header {
+        font-size: 16px;
+        font-weight: 400;
+        }
+
+        /* button - primary */
+        .bADMLE {
+            color: rgb(254, 254, 254);
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 400;
+            background: rgb(78, 136, 199); /* Primary button idle color - info: medium */
+            padding: 5px 10px;
+            border: 0px solid #fff;
+        }
+
+        .bADMLE:hover { background: rgb(8, 65, 97); } /* Primary button highlight color - info: dark */
+
+        /* button icon - primary */
+        .bADMLE-icon {
+            color: rgb(78, 136, 199); /* Primary button icon idle color - info: medium */
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 400;
+            padding: 5px 10px;
+        }
+
+        .bADMLE-icon:hover { color: rgb(8, 65, 97); } /* Primary button icon highlight color - info: dark */
+
+        /* button - secondary */
+        .kxWoHZ {
+            color: rgb(24, 24, 24);
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 400;
+            background: rgb(209, 209, 209); /* Secondary button idle color - background: medium */
+            padding: 5px 10px;
+            border: 0px solid #fff;
+        }
+
+        .kxWoHZ:hover { 
+            color: rgb(254, 254, 254);
+            background: rgb(147, 161, 173); /* Secondary button highlight color - background: dark */
+        }
+
+        /* button - danger */
+        .csuYJy {
+            color: rgb(254, 254, 254);
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 400;
+            background: rgb(237, 27, 42); /* Danger button idle color - negative: dark */
+            padding: 5px 10px;
+            border: 0px solid #fff;
+        }
+
+        .csuYJy:hover { background: rgb(165, 28, 48); } /* Danger button highlight color - backgrond: accent */
+
+        .lijgtc { /* positive: light */
+            margin-top: 10px;
+            color: rgb(24, 24, 24);
+            background: rgb(129, 233, 129);
+            /* padding: 15px; */
+            }
+
+    /* button icon - danger */
+        .csuYJy-icon { /* Danger button icon idle color - negative: dark */
+            margin-top: 10px;
+            color: rgb(237, 27, 42);
+            padding: 15px;
+        }
+
+        .csuYJy-icon:hover {  /* Danger button icon highlight color - background: accent */
+            color: rgb(165, 28, 48);
+        }
+
+        .button-icon {
+            margin-top: 0px;
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            border: solid 0 #fff;
+        }
+
+        /* Drop down */
+        .kFoNgS {
+            color: rgb(24, 24, 24);
+            margin-bottom: .5em;
+        }
+
+
+        </style>
+
+        <!-- Simulating Mark-One styles -->
+        <style>
+
+            /* Course colors */
+            td.acs {
+                background: rgba(203, 37, 45, 0.80); /* SEAS academic color with light transparency for the row hover effect */
+                color: white;
+            }
+
+            td.am {
+                background: rgba(78, 173, 171, 0.80); /* SEAS academic color with light transparency for the row hover effect */
+                color: black;
+            }
+
+            td.ap {
+                background: rgba(206, 219, 81, 0.80); /* SEAS academic color with light transparency for the row hover effect */
+                color: black;
+            }
+
+            input {
+                margin-bottom: .25em;
+                width: 90%;
+            }
+
+            .iconLink { color: #4e88c7; } /* Primary button color - info: medium */
+            .iconLink:hover { color: #084161; } /* Primary highlight color - info: dark */
+
+            hr {
+                FONT-WEIGHT: 500;
+                margin-top: .5rem;
+                margin-bottom: .5rem;
+                border: 0;
+                border-top: 1px solid rgba(0,0,0,.1);
+                width: 90%; 
+            }
+
+            textarea {
+                overflow: auto;
+                resize: vertical;
+                padding: .25em;
+            }
+
+            .table-modal {
+                display: table;
+                border-collapse: collapse;
+                border-spacing: 1px;
+                border-color: grey;
+                font-size: 16px;
+                font-weight: 400;
+                width: 100%;
+            }
+
+            .table-modal .iRtSxQ {
+                background-color: rgb(255, 255, 182550);
+                border-width: 1px;
+            }
+
+            .table-modal td {
+                border: 1px #ccc solid;
+                text-align: center;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <!-- Pre-Mark-One nav -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" hidden>
+            <span class="navbar-brand">
+                <img src="H_SEAS_logo_RGB.png">
+                <h2 class="navbar-text mr-auto">
+                    SEAS Course Planning
+                </h2>
+            </span>
+            <ul class="nav nav-tabs" style="margin-top: 5em;">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Courses</a>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw kzaudT"><a href="courses-ncm.html" class="sc-kgoBCf cuZvUJ">Non class meetings</a></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="courses-ncm.html">Non class meetings</a>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw kzaudT"><a href="faculty.html" class="sc-kgoBCf cuZvUJ">Faculty</a></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="faculty.html">Faculty</a>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw kzaudT"><a href="schedule.html" class="sc-kgoBCf cuZvUJ">Schedule</a></div>
+                <li class="nav-item">
+                    <a class="nav-link " href="schedule.html">Schedule</a>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw kzaudT"><a href="fourYearPlan.html" class="sc-kgoBCf cuZvUJ">4 Year Plan</a></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="fourYearPlan.html">4 Year Plan</a>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw kzaudT"><a href="manage_users.html" class="sc-kgoBCf cuZvUJ">Manage Users</a></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="manage_courses.html">Manage Courses</a>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw kzaudT"><a href="manage_courses.html" class="sc-kgoBCf cuZvUJ">Manage Courses</a></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="manage_faculty.html">Manage Faculty</a>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw kzaudT"><a href="manage_faculty.html" class="sc-kgoBCf cuZvUJ">Manage Faculty</a></div>
-                </li>   
             </ul>
+        
+            <!-- Right align Login/Logout link -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+            </ul>
+        
+            <!-- Replaced this drop down with the new Nav item - Login -->
+            <ul class="navbar-nav ml-auto" hidden>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Name Surname
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="manage_users.html">Administration</a>
+                    <a class="dropdown-item" href="#">Log out</a>
+                </div>
+                </li>
+            </ul>
+
         </nav>
-        <!-- Table from Mark-One -->
-        <table class="sc-dnqmqq coIxkm-amended hoverTable">
-            <thead class="sc-gqjmRU iRtSxQ">
-                <tr style="background-color: white;">
-                    <td colspan="3" style="border-top: 2px solid white; border-left: 2px solid white;">&nbsp;</td>
-                    <th colspan="2" scope="col" class="sc-VigVT cbrsHS">
-                        <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-left fa-lg"></i></button>
-                        Fall 2019
-                    </th>
-                    <th colspan="2" scope="col" class="sc-VigVT cbrsHS">
-                        Spring 2020
-                        <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-right fa-lg"></i></button>
-                    </th>
-                    <td colspan="2" style="border-top: 2px solid white; border-right: 2px solid white;">&nbsp;</td>
-                </tr>
-                <tr class="sc-gZMcBi jQECIl">
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Area
-                        <br>
-                        <select>
-                            <option value="string:All" label="All" selected="selected">All</option>
-                            <option value="string:ACS" label="ACS">ACS</option>
-                            <option value="string:AM" label="AM">AM</option>
-                            <option value="string:AP" label="AP">AP</option>
-                            <option value="string:BE" label="BE">BE</option>
-                            <option value="string:CS" label="CS">CS</option>
-                            <option value="string:EE" label="EE">EE</option>
-                            <option value="string:ESE" label="ESE">ESE</option>
-                            <option value="string:General" label="General">General</option>
-                            <option value="string:MDE" label="MDE">MDE</option>
-                            <option value="string:MSMBA" label="MSMBA">MSMBA</option>
-                            <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
-                            <option value="string:SEM" label="SEM">SEM</option>
-                        </select>
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Course
-                        <br>
-                        <input type="text">
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Is SEAS?
-                        <br>
-                        <select>
-                            <option value="string:All" label="All" selected="selected">All</option>
-                            <option value="string:Yes" label="Yes">Yes</option>
-                            <option value="string:EPS" label="EPS">EPS</option>
-                            <option value="string:No" label="No">No</option>
-                        </select>
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Offered
-                        <br>
-                        <select>
-                            <option value="string:All" label="All" selected="selected">All</option>
-                            <option value="string:"></option>
-                            <option value="string:Yes" label="Yes">Yes</option>
-                            <option value="string:No" label="No">No</option>
-                            <option value="string:Retire" label="Retire">Retire</option>
-                        </select>
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Instructors
-                        <br>
-                        <input type="text">
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Offered
-                        <br>
-                        <select>
-                            <option value="string:All" label="All" selected="selected">All</option>
-                            <option value="string:"></option>
-                            <option value="string:Yes" label="Yes">Yes</option>
-                            <option value="string:No" label="No">No</option>
-                            <option value="string:Retire" label="Retire">Retire</option>
-                        </select>
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Instructors
-                        <br>
-                        <input type="text">
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">Notes</th>
-                    <th scope="col" class="sc-VigVT cbrsHS">Detail</th>
-                </tr>
-            </thead>
-            <tbody class="sc-jTzLTM jxSeiZ">
-                <tr class="sc-gZMcBi cjgueY">
-                    <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                    <td class="sc-iwsKbI bqnYPo">AC 209a</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="far fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="fas fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi jQECIl">
-                    <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                    <td class="sc-iwsKbI bqnYPo">AC 209b</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                        <hr>
-                        Name Surname
-                        </a>
-                        <hr>
-                        Name Surname
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="fas fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi cjgueY">
-                    <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                    <td class="sc-iwsKbI bqnYPo">AC 221</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo no">No</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="far fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="fas fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi jQECIl">
-                    <td class="sc-iwsKbI bqnYPo am">AM</td>
-                    <td class="sc-iwsKbI bqnYPo">AM 010</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo no">No</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="far fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi cjgueY">
-                    <td class="sc-iwsKbI bqnYPo am">AM</td>
-                    <td class="sc-iwsKbI bqnYPo">AM 021a</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-kGXeez bCEQJv">No</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="fas fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi jQECIl">
-                    <td class="sc-iwsKbI bqnYPo am">AM</td>
-                    <td class="sc-iwsKbI bqnYPo">AM 021b</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-kGXeez bCEQJv">No</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="far fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi cjgueY">
-                    <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                    <td class="sc-iwsKbI bqnYPo">AC 275</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="fas fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi jQECIl">
-                    <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                    <td class="sc-iwsKbI bqnYPo">AP 050a</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="far fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi cjgueY"> 
-                    <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                    <td class="sc-iwsKbI bqnYPo">AP 050b</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="far fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div><!-- /courses -->
 
-<!-- Modal for Courses -->
-<div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModal" aria-hidden="true" style="font-size: 1.25em; right: 25%; left: 31%; top: 7em;">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 20em;">
-            <div class="modal-header">
-                <h5 class="modal-title" id="courseModal">Edit AC 297r</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body" style="width: 17em;">
-                <div class="row">
-                    <div class="col">Protopapas, Pavlos</div>
-                    <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-down fa-lg"></i></button></div>
-                    <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i class="fas fa-trash-alt fa-lg"></i></button></div>
-                </div>
-                <div class="row" style="padding: .5em 0em .5em 1em; width: 20em;">
-                    <div class="col" style="border-bottom: solid 1px #eee;"></div>
-                </div>
+        <header class="sc-bxivhb bsLcFZ">
+            <a width="175px" href="#" height="50px" class="sc-ifAKCX bSvdsU"><img src="H_SEAS_logo_RGB.png" width="175px"></a>
+            <h1 class="sc-ckVGcZ eEciP">SEAS Course Planning</h1>
+            <div><a href="#">Log out</a></div>
+        </header>
 
-                <div class="row">
-                    <div class="col">Rader, Kevin</div>
-                
-                    <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i
-                                class="fas fa-arrow-down fa-lg"></i></button></div>
-                    <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-up fa-lg"></i></button>
-                    </div>
-                    <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i class="fas fa-trash-alt fa-lg"></i></button>
-                    </div>
-                </div>
-                <div class="row" style="padding: .5em 0em .5em 1em; width: 20em;">
-                    <div class="col" style="border-bottom: solid 1px #eee;"></div>
-                </div>
-                <div class="row">
-                    <div class="col" style="text-decoration: line-through; color: red;">Succi, Sauro</div>
-                
-                    <div class="col-1"><button type="button" class="csuYJy-icon button-icon"><i class="fas fa-trash-alt fa-lg"></i></button></div>
-                </div>
-                <div class="row" style="padding: .5em 0em .5em 1em; width: 20em;">
-                    <div class="col" style="border-bottom: solid 1px #eee;"></div>
-                </div>
+    <!-- Left nav button -->
+    <div>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a href="#" class="nav-link" style="margin-right: 3em; cursor: pointer;" onclick="openNav()">
+                    Settings
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                </a>
+            </li>
 
-                <div class="row">
-                    <div class="col">Tanner, Christopher</div>
-                    <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-up fa-lg"></i></button></div>
-                    <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i class="far fa-trash-alt fa-lg"></i></button></div>
+        </ul>
+    </div>
+
+
+    <div id="outer-grid">
+
+        <!--Sidenav filters-->
+        <div class="sideNav-column">
+            <div id="mySidenav" class="sidenav" style="white-space: nowrap;">
+                <div>
+                    <a href="javascript:void(0)" onclick="closeNav()"
+                    style="font-size: 1em; margin-top: .05em; margin-left: 2.5em;">
+                        Settings
+                        <i class="far fa-arrow-alt-circle-left ml-auto"></i>
+                    </a>
                 </div>
-                <div class="row" style="padding: .5em 0em .5em 1em; width: 20em;">
-                    <div class="col" style="border-bottom: solid 1px #eee;"></div>
-                </div>
-                <div class="row" style="width: 18.75em;">
-                    <div class="input-group ml-4">
-                        <input type="text" class="form-control" placeholder="Search for an instructor" aria-label="Search for an instructor" aria-describedby="button-addon2" style="width: 19em;">
-                        <div class="input-group-append">
-                            <button class="bADMLE-icon button-icon" type="button" id="button-addon2">
-                                <i class="fas fa-search fa-lg"></i>
-                            </button>
-                        </div>
+                <form>
+                    <div class="form-group">
+                        <button class="sc-bdVaJa bADMLE">Download courses report</button>
                     </div>
-                </div>
-            </div>
-            
-            <div class="modal-footer">
-                <button type="button" class="kxWoHZ mr-auto" data-dismiss="modal">Cancel</button>
-                <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">OK</button>
+                    <div class="form-group">
+                        <h3>Customized view</h3>
+                        <select name="views" class="sc-bwzfXH kFoNgS">
+                            <option value="default">Default</option>
+                            <option value="myview">My view</option>
+                            <option value="newview">New view</option>
+                        </select>
+                        <button class="sc-bdVaJa bADMLE">Submit</button>
+                    </div>
+                    <div class="form-group">
+                        <button class="sc-bdVaJa bADMLE">Show retired courses</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
-</div>
 
-<!-- Modal for Notes -->
-<div class="modal fade" id="courseModal2" tabindex="-1" role="dialog" aria-labelledby="courseModal2" aria-hidden="true" style="font-size: 1.25em; right: 18%; left: 23%; top: 7em;">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 20em;">
-            <div class="modal-header">
-                <h5 class="modal-title" id="courseModal2">Notes for AC 297r</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body" style="width: 17em;">
-                <textarea id="courseNotes" rows="4" cols="34">Same as CS 109a, STATS 121a.</textarea>
-            </div>
-            
-            <div class="modal-footer">
-                <button type="button" class="kxWoHZ mr-auto" data-dismiss="modal">Cancel</button>
-                <button type="button" class="csuYJy mr-auto" data-dismiss="modal">Delete</button>
-                <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">OK</button>
-            </div>
-        </div>
-    </div>
-</div>
+        <!-- courses -->
+        <div class="courses">
 
-<!-- Modal for Detail -->
-<div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="font-size: 1em; right: 18%; left: 0%; top: 2em;">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 50em;">
-            <div class="modal-header">
-                <h2 class="modal-title" id="courseModal3">Detail for AC 209a - Data Science 1: Introduction to Data Science</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col">
-                        <h2>
-                            Course data
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p><strong>CCN:</strong></p>
-                        <p><strong>Same as:</strong> CS 109a, STATS 121a</p>
-                        <p><strong>Term pattern:</strong> Fall</p>
-                    </div>
-                    <div class="col">
-                        <p><strong>Is SEAS?:</strong> Yes</p>
-                        <p><strong>Is undergrad?:</strong> No</p>
-                        <p><strong>Notes:</strong> Same as CS 109a, STATS 121a</p>
-                    </div>
-                </div>
-                <h2>
-                    Course attributes
-                </h2>
-                <p><strong>None</strong></p>
-                <h2>
-                    Historical data
-                </h2>
-                <table class="sc-jTzLTM jxSeiZ table-modal">
-                    <thead class="sc-gqjmRU iRtSxQ">
-                        <td style="border-top: 2px solid white; border-left: 2px solid white;">&nbsp;</td>
-                        <th class="sc-VigVT cbrsHS">
+            <nav>
+                <ul class="sc-bZQynM hhGZXE">
+                    <li class="sc-htoDjs icrnXS-first">
+                        <div class="sc-gzVnrw bWbWht"><a href="#" class="sc-kgoBCf cuZvUJ">Courses</a></div>
+                    </li>
+                    <li class="sc-htoDjs icrnXS">
+                        <div class="sc-gzVnrw kzaudT"><a href="courses-ncm.html" class="sc-kgoBCf cuZvUJ">Non class meetings</a></div>
+                    </li>
+                    <li class="sc-htoDjs icrnXS">
+                        <div class="sc-gzVnrw kzaudT"><a href="faculty.html" class="sc-kgoBCf cuZvUJ">Faculty</a></div>
+                    </li>
+                    <li class="sc-htoDjs icrnXS">
+                        <div class="sc-gzVnrw kzaudT"><a href="schedule.html" class="sc-kgoBCf cuZvUJ">Schedule</a></div>
+                    </li>
+                    <li class="sc-htoDjs icrnXS">
+                        <div class="sc-gzVnrw kzaudT"><a href="fourYearPlan.html" class="sc-kgoBCf cuZvUJ">4 Year Plan</a></div>
+                    </li>
+                    <li class="sc-htoDjs icrnXS">
+                        <div class="sc-gzVnrw kzaudT"><a href="manage_users.html" class="sc-kgoBCf cuZvUJ">Manage Users</a></div>
+                    </li>
+                    <li class="sc-htoDjs icrnXS">
+                        <div class="sc-gzVnrw kzaudT"><a href="manage_courses.html" class="sc-kgoBCf cuZvUJ">Manage Courses</a></div>
+                    </li>
+                    <li class="sc-htoDjs icrnXS">
+                        <div class="sc-gzVnrw kzaudT"><a href="manage_faculty.html" class="sc-kgoBCf cuZvUJ">Manage Faculty</a></div>
+                    </li>   
+                </ul>
+            </nav>
+            <!-- Table from Mark-One -->
+            <table class="sc-dnqmqq coIxkm-amended hoverTable">
+                <thead class="sc-gqjmRU iRtSxQ">
+                    <tr style="background-color: white;">
+                        <td colspan="3" style="border-top: 2px solid white; border-left: 2px solid white;">&nbsp;</td>
+                        <th colspan="2" scope="col" class="sc-VigVT cbrsHS">
                             <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-left fa-lg"></i></button>
-                            Spring 2016
+                            Fall 2019
                         </th>
-                        <th class="sc-VigVT cbrsHS">
-                            Fall 2016
+                        <th colspan="2" scope="col" class="sc-VigVT cbrsHS">
+                            Spring 2020
                             <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-right fa-lg"></i></button>
                         </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th class="sc-VigVT cbrsHS">
-                                Pre-Enrollment
-                            </th>
-                            <td class="">&nbsp;</td>
-                            <td class="">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <th class="sc-VigVT cbrsHS">
-                                Enrollment Study
-                            </th>
-                            <td class="">&nbsp;</td>
-                            <td class="lijgtc">
-                                62
-                            </td>
-                        </tr>
-                        <tr>
-                            <th class="sc-VigVT cbrsHS">
-                                Enrollment Actual
-                            </th>
-                            <td class="">&nbsp;</td>
-                            <td class="lijgtc">
-                                51
-                            </td>
-                        </tr>
-                        <tr>
-                            <th class="sc-VigVT cbrsHS">
-                                Offered
-                            </th>
-                            <td class="">&nbsp;</td>
-                            <td class="lijgtc">
-                                Yes
-                            </td>
-                        </tr>
-                        <tr>
-                            <th class="sc-VigVT cbrsHS">
-                                Instructors
-                            </th>
-                            <td class="">&nbsp;</td>
-                            <td class="">
-                                Protopapas, Pavlos
-                                <br>
-                                Rader, Kevin
-                            </td>
-                        </tr>
-                        <tr>
-                            <th class="sc-VigVT cbrsHS">
-                                Times
-                            </th>
-                            <td class="">&nbsp;</td>
-                            <td class="">
-                                MW 1:00pm-2:30pm
-                            </td>
-                        </tr>
-                        <tr>
-                            <th class="sc-VigVT cbrsHS">
-                                Room
-                            </th>
-                            <td class="">&nbsp;</td>
-                            <td class="">&nbsp;</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="modal-footer">
-                <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>>
+                        <td colspan="2" style="border-top: 2px solid white; border-right: 2px solid white;">&nbsp;</td>
+                    </tr>
+                    <tr class="sc-gZMcBi jQECIl">
+                        <th scope="col" class="sc-VigVT cbrsHS">
+                            Area
+                            <br>
+                            <select>
+                                <option value="string:All" label="All" selected="selected">All</option>
+                                <option value="string:ACS" label="ACS">ACS</option>
+                                <option value="string:AM" label="AM">AM</option>
+                                <option value="string:AP" label="AP">AP</option>
+                                <option value="string:BE" label="BE">BE</option>
+                                <option value="string:CS" label="CS">CS</option>
+                                <option value="string:EE" label="EE">EE</option>
+                                <option value="string:ESE" label="ESE">ESE</option>
+                                <option value="string:General" label="General">General</option>
+                                <option value="string:MDE" label="MDE">MDE</option>
+                                <option value="string:MSMBA" label="MSMBA">MSMBA</option>
+                                <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
+                                <option value="string:SEM" label="SEM">SEM</option>
+                            </select>
+                        </th>
+                        <th scope="col" class="sc-VigVT cbrsHS">
+                            Course
+                            <br>
+                            <input type="text">
+                        </th>
+                        <th scope="col" class="sc-VigVT cbrsHS">
+                            Is SEAS?
+                            <br>
+                            <select>
+                                <option value="string:All" label="All" selected="selected">All</option>
+                                <option value="string:Yes" label="Yes">Yes</option>
+                                <option value="string:EPS" label="EPS">EPS</option>
+                                <option value="string:No" label="No">No</option>
+                            </select>
+                        </th>
+                        <th scope="col" class="sc-VigVT cbrsHS">
+                            Offered
+                            <br>
+                            <select>
+                                <option value="string:All" label="All" selected="selected">All</option>
+                                <option value="string:"></option>
+                                <option value="string:Yes" label="Yes">Yes</option>
+                                <option value="string:No" label="No">No</option>
+                                <option value="string:Retire" label="Retire">Retire</option>
+                            </select>
+                        </th>
+                        <th scope="col" class="sc-VigVT cbrsHS">
+                            Instructors
+                            <br>
+                            <input type="text">
+                        </th>
+                        <th scope="col" class="sc-VigVT cbrsHS">
+                            Offered
+                            <br>
+                            <select>
+                                <option value="string:All" label="All" selected="selected">All</option>
+                                <option value="string:"></option>
+                                <option value="string:Yes" label="Yes">Yes</option>
+                                <option value="string:No" label="No">No</option>
+                                <option value="string:Retire" label="Retire">Retire</option>
+                            </select>
+                        </th>
+                        <th scope="col" class="sc-VigVT cbrsHS">
+                            Instructors
+                            <br>
+                            <input type="text">
+                        </th>
+                        <th scope="col" class="sc-VigVT cbrsHS">Notes</th>
+                        <th scope="col" class="sc-VigVT cbrsHS">Detail</th>
+                    </tr>
+                </thead>
+                <tbody class="sc-jTzLTM jxSeiZ">
+                    <tr class="sc-gZMcBi cjgueY">
+                        <td class="sc-iwsKbI bqnYPo acs">ACS</td>
+                        <td class="sc-iwsKbI bqnYPo">AC 209a</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">
+                            Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
+                                <i class="far fa-sticky-note"></i>
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
+                                <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="sc-gZMcBi jQECIl">
+                        <td class="sc-iwsKbI bqnYPo acs">ACS</td>
+                        <td class="sc-iwsKbI bqnYPo">AC 209b</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">
+                            Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                            <hr>
+                            Name Surname
+                            </a>
+                            <hr>
+                            Name Surname
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
+                                <i class="fas fa-sticky-note"></i>
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
+                                <i class="far fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="sc-gZMcBi cjgueY">
+                        <td class="sc-iwsKbI bqnYPo acs">ACS</td>
+                        <td class="sc-iwsKbI bqnYPo">AC 221</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo no">No</td>
+                        <td class="sc-iwsKbI bqnYPo">
+                            Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
+                                <i class="far fa-sticky-note"></i>
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
+                                <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="sc-gZMcBi jQECIl">
+                        <td class="sc-iwsKbI bqnYPo am">AM</td>
+                        <td class="sc-iwsKbI bqnYPo">AM 010</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">
+                            Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo no">No</td>
+                        <td class="sc-iwsKbI bqnYPo">Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
+                                <i class="far fa-sticky-note"></i>
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
+                                <i class="far fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="sc-gZMcBi cjgueY">
+                        <td class="sc-iwsKbI bqnYPo am">AM</td>
+                        <td class="sc-iwsKbI bqnYPo">AM 021a</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-kGXeez bCEQJv">No</td>
+                        <td class="sc-iwsKbI bqnYPo">
+                            Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
+                                <i class="fas fa-sticky-note"></i>
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
+                                <i class="far fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="sc-gZMcBi jQECIl">
+                        <td class="sc-iwsKbI bqnYPo am">AM</td>
+                        <td class="sc-iwsKbI bqnYPo">AM 021b</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">
+                            Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-kGXeez bCEQJv">No</td>
+                        <td class="sc-iwsKbI bqnYPo">Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
+                                <i class="far fa-sticky-note"></i>
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
+                                <i class="far fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="sc-gZMcBi cjgueY">
+                        <td class="sc-iwsKbI bqnYPo ap">AP</td>
+                        <td class="sc-iwsKbI bqnYPo">AC 275</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">
+                            Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
+                                <i class="fas fa-sticky-note"></i>
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
+                                <i class="far fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="sc-gZMcBi jQECIl">
+                        <td class="sc-iwsKbI bqnYPo ap">AP</td>
+                        <td class="sc-iwsKbI bqnYPo">AP 050a</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">
+                            Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
+                                <i class="far fa-sticky-note"></i>
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
+                                <i class="far fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="sc-gZMcBi cjgueY"> 
+                        <td class="sc-iwsKbI bqnYPo ap">AP</td>
+                        <td class="sc-iwsKbI bqnYPo">AP 050b</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">
+                            Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo">Yes</td>
+                        <td class="sc-iwsKbI bqnYPo">Name Surname
+                            <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                                <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
+                                <i class="far fa-sticky-note"></i>
+                            </a>
+                        </td>
+                        <td class="sc-iwsKbI bqnYPo text-center">
+                            <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
+                                <i class="far fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!-- /courses -->
 
-
-<!-- Modal - Default -->
-        
-    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit "Default" view</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div>
-                        <img src="courses_modal.png" alt="Screen capture of table">
+        <!-- Modal for Courses -->
+        <div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModal" aria-hidden="true" style="font-size: 1.25em; right: 25%; left: 31%; top: 7em;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="width: 20em;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="courseModal">Edit AC 297r</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </div>
-                <div class="alert alert-danger text-center mr-3 ml-3" role="alert">
-                    Are you shure you want to delete this view?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger mx-auto" data-dismiss="modal">Delete this view</button>
-                    <button type="button" class="btn btn-primary ml-auto" data-dismiss="modal">Save</button>
-                </div>
-            </div>
-        </div>
-    </div> <!-- / Modal - Default -->
+                    <div class="modal-body" style="width: 17em;">
+                        <div class="row">
+                            <div class="col">Protopapas, Pavlos</div>
+                            <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-down fa-lg"></i></button></div>
+                            <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i class="fas fa-trash-alt fa-lg"></i></button></div>
+                        </div>
+                        <div class="row" style="padding: .5em 0em .5em 1em; width: 20em;">
+                            <div class="col" style="border-bottom: solid 1px #eee;"></div>
+                        </div>
 
-    <!-- Modal - My View -->
-        
-    <div class="modal fade" id="myViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit "My view"</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div>
-                        <img src="courses_modal.png" alt="Screen capture of table">
-                    </div>
-                </div>
-                <div class="alert alert-danger text-center mr-3 ml-3" role="alert">
-                    Are you shure you want to delete this view?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger mx-auto" data-dismiss="modal">Delete this view</button>
-                    <button type="button" class="btn btn-primary ml-auto" data-dismiss="modal">Save</button>
-                </div>
-            </div>
-        </div>
-    </div> <!-- / Modal - My View -->
-
-    <!-- Modal - New View -->
-        
-    <div class="modal fade" id="newViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create new view</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group row">
-                            <label for="newViewName" class="col-sm-2 col-form-label text-right">Name of new view</label>
-                            <div class="col-sm-4">
-                                <input type="password" class="form-control" id="newViewName" placeholder="Name of new view">
+                        <div class="row">
+                            <div class="col">Rader, Kevin</div>
+                        
+                            <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i
+                                        class="fas fa-arrow-down fa-lg"></i></button></div>
+                            <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-up fa-lg"></i></button>
+                            </div>
+                            <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i class="fas fa-trash-alt fa-lg"></i></button>
                             </div>
                         </div>
-                    </form>
-                    <div>
-                        <img src="courses_modal.png" alt="Screen capture of table">
+                        <div class="row" style="padding: .5em 0em .5em 1em; width: 20em;">
+                            <div class="col" style="border-bottom: solid 1px #eee;"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col" style="text-decoration: line-through; color: red;">Succi, Sauro</div>
+                        
+                            <div class="col-1"><button type="button" class="csuYJy-icon button-icon"><i class="fas fa-trash-alt fa-lg"></i></button></div>
+                        </div>
+                        <div class="row" style="padding: .5em 0em .5em 1em; width: 20em;">
+                            <div class="col" style="border-bottom: solid 1px #eee;"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">Tanner, Christopher</div>
+                            <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-up fa-lg"></i></button></div>
+                            <div class="col-1"><button type="button" class="bADMLE-icon button-icon"><i class="far fa-trash-alt fa-lg"></i></button></div>
+                        </div>
+                        <div class="row" style="padding: .5em 0em .5em 1em; width: 20em;">
+                            <div class="col" style="border-bottom: solid 1px #eee;"></div>
+                        </div>
+                        <div class="row" style="width: 18.75em;">
+                            <div class="input-group ml-4">
+                                <input type="text" class="form-control" placeholder="Search for an instructor" aria-label="Search for an instructor" aria-describedby="button-addon2" style="width: 19em;">
+                                <div class="input-group-append">
+                                    <button class="bADMLE-icon button-icon" type="button" id="button-addon2">
+                                        <i class="fas fa-search fa-lg"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Create</button>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="kxWoHZ mr-auto" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">OK</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div> <!-- / Modal - New View -->
 
-</div>
+        <!-- Modal for Notes -->
+        <div class="modal fade" id="courseModal2" tabindex="-1" role="dialog" aria-labelledby="courseModal2" aria-hidden="true" style="font-size: 1.25em; right: 18%; left: 23%; top: 7em;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="width: 20em;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="courseModal2">Notes for AC 297r</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="width: 17em;">
+                        <textarea id="courseNotes" rows="4" cols="34">Same as CS 109a, STATS 121a.</textarea>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="kxWoHZ mr-auto" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="csuYJy mr-auto" data-dismiss="modal">Delete</button>
+                        <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!-- Optional Bootstrap JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+        <!-- Modal for Detail -->
+        <div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="font-size: 1em; right: 18%; left: 0%; top: 2em;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="width: 50em;">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="courseModal3">Detail for AC 209a - Data Science 1: Introduction to Data Science</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <h2>
+                                    Course data
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p><strong>CCN:</strong></p>
+                                <p><strong>Same as:</strong> CS 109a, STATS 121a</p>
+                                <p><strong>Term pattern:</strong> Fall</p>
+                            </div>
+                            <div class="col">
+                                <p><strong>Is SEAS?:</strong> Yes</p>
+                                <p><strong>Is undergrad?:</strong> No</p>
+                                <p><strong>Notes:</strong> Same as CS 109a, STATS 121a</p>
+                            </div>
+                        </div>
+                        <h2>
+                            Course attributes
+                        </h2>
+                        <p><strong>None</strong></p>
+                        <h2>
+                            Historical data
+                        </h2>
+                        <table class="sc-jTzLTM jxSeiZ table-modal">
+                            <thead class="sc-gqjmRU iRtSxQ">
+                                <td style="border-top: 2px solid white; border-left: 2px solid white;">&nbsp;</td>
+                                <th class="sc-VigVT cbrsHS">
+                                    <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-left fa-lg"></i></button>
+                                    Spring 2016
+                                </th>
+                                <th class="sc-VigVT cbrsHS">
+                                    Fall 2016
+                                    <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-right fa-lg"></i></button>
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="sc-VigVT cbrsHS">
+                                        Pre-Enrollment
+                                    </th>
+                                    <td class="">&nbsp;</td>
+                                    <td class="">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <th class="sc-VigVT cbrsHS">
+                                        Enrollment Study
+                                    </th>
+                                    <td class="">&nbsp;</td>
+                                    <td class="lijgtc">
+                                        62
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="sc-VigVT cbrsHS">
+                                        Enrollment Actual
+                                    </th>
+                                    <td class="">&nbsp;</td>
+                                    <td class="lijgtc">
+                                        51
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="sc-VigVT cbrsHS">
+                                        Offered
+                                    </th>
+                                    <td class="">&nbsp;</td>
+                                    <td class="lijgtc">
+                                        Yes
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="sc-VigVT cbrsHS">
+                                        Instructors
+                                    </th>
+                                    <td class="">&nbsp;</td>
+                                    <td class="">
+                                        Protopapas, Pavlos
+                                        <br>
+                                        Rader, Kevin
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="sc-VigVT cbrsHS">
+                                        Times
+                                    </th>
+                                    <td class="">&nbsp;</td>
+                                    <td class="">
+                                        MW 1:00pm-2:30pm
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="sc-VigVT cbrsHS">
+                                        Room
+                                    </th>
+                                    <td class="">&nbsp;</td>
+                                    <td class="">&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!--Sidebar-->
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "20em";
-    }
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-</script>
+        <!-- Modal - Default -->
+                
+            <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit "Default" view</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <img src="courses_modal.png" alt="Screen capture of table">
+                            </div>
+                        </div>
+                        <div class="alert alert-danger text-center mr-3 ml-3" role="alert">
+                            Are you shure you want to delete this view?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-danger mx-auto" data-dismiss="modal">Delete this view</button>
+                            <button type="button" class="btn btn-primary ml-auto" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- / Modal - Default -->
 
-<!-- Mark-One JavaScript -->
-<script src="https://seas-computing.github.io/mark-one/assets~main5f947c6db2fbbe4cd0f0.js"></script>
-<script src="https://seas-computing.github.io/mark-one/build/bundle.2043da72.js"></script>
+            <!-- Modal - My View -->
+                
+            <div class="modal fade" id="myViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit "My view"</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <img src="courses_modal.png" alt="Screen capture of table">
+                            </div>
+                        </div>
+                        <div class="alert alert-danger text-center mr-3 ml-3" role="alert">
+                            Are you shure you want to delete this view?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-danger mx-auto" data-dismiss="modal">Delete this view</button>
+                            <button type="button" class="btn btn-primary ml-auto" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- / Modal - My View -->
+
+            <!-- Modal - New View -->
+                
+            <div class="modal fade" id="newViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Create new view</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group row">
+                                    <label for="newViewName" class="col-sm-2 col-form-label text-right">Name of new view</label>
+                                    <div class="col-sm-4">
+                                        <input type="password" class="form-control" id="newViewName" placeholder="Name of new view">
+                                    </div>
+                                </div>
+                            </form>
+                            <div>
+                                <img src="courses_modal.png" alt="Screen capture of table">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Create</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- / Modal - New View -->
+
+        </div>
+
+        <!-- Optional Bootstrap JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                crossorigin="anonymous"></script>
+
+        <!--Sidebar-->
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "20em";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
+
+        <!-- Mark-One JavaScript -->
+        <script src="https://seas-computing.github.io/mark-one/assets~main5f947c6db2fbbe4cd0f0.js"></script>
+        <script src="https://seas-computing.github.io/mark-one/build/bundle.2043da72.js"></script>
 
 
-</body>
+    </body>
 </html>
