@@ -1,1967 +1,1138 @@
-<!--This version uses opacity to filter courses -->
-<!-- Room view - data from https://registrar.fas.harvard.edu/archived-course-meeting-locations-reports -->
-<!--Added overflow: scroll; to all room instances-->
+
+
+
 <!doctype html>
 
 <html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Manage faculty - SEAS Course Administration</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="googlebot" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="https://www.seas.harvard.edu/favicon.ico">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Manage courses - Course Planner</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="googlebot" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="https://www.seas.harvard.edu/favicon.ico">
 
-    <!-- Required Bootstrap meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Required Bootstrap meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-          crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous">
 
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-    <style type="text/css">
-        /*This sets the margin and padding of every HTML element to zero and the box-sizing: border-box; declaration changes the box model by ensuring that the padding and border of an element no longer increases its width.*/
-        html {
-            font-size: 62.5%;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        }
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: inherit;
-        }
-
-        dd {
-            margin-bottom: -4px;
-            font-size: 1.2em;
-			align: left;
-        }
-
-        dt {
-            font-size: 1.2em;
-            padding: 0px;
-        }
-
-        /*Styles for each course area*/
-        .area-ac_bac {
-            width: 100%;
-            height: 100%;
-            background-color: #42668a;
-            border-radius: 3px;
-            border: 1px solid #6facea;
-            text-align: left;
-            color: #fff;
-            padding-left: 3px;
-            padding-right: 3px;
-        }
-
-        dt.area-ac {
-            border-bottom: 1px solid #6facea;
-            text-align: center;
-        }
-
-        .area-am_bac {
-            width: 100%;
-            height: 100%;
-            background-color: #54428a;
-            border-radius: 3px;
-            border: 1px solid #8f70ec;
-            text-align: left;
-            color: #fff;
-            padding-left: 3px;
-            padding-right: 3px;
-        }
-
-        dt.area-am {
-            border-bottom: 1px solid #8f70ec;
-            text-align: center;
-        }
-
-        .area-ap_bac {
-            width: 100%;
-            height: 100%;
-            background-color: #8a428a;
-            border-radius: 3px;
-            border: 1px solid #df6adf;
-            text-align: left;
-            color: #fff;
-            padding-left: 3px;
-            padding-right: 3px;
-        }
-
-        dt.area-ap {
-            border-bottom: 1px solid #df6adf;
-        }
-
-        .area-be_bac {
-            width: 100%;
-            height: 100%;
-            background-color: #8a4254;
-            border-radius: 3px;
-            border: 1px solid #e36c8a;
-            text-align: center;
-            color: #fff;
-            padding-left: 3px;
-            padding-right: 3px;
-        }
-
-        dt.area-be {
-            border-bottom: 1px solid #e36c8a;
-        }
-
-        .area-cs_bac {
-            width: 100%;
-            height: 100%;
-            background-color: #8a6642;
-            border-radius: 3px;
-            border: 1px solid #ffbc79;
-            text-align: left;
-            color: #fff;
-            padding-left: 3px;
-            padding-right: 3px;
-        }
-
-        dt.area-cs {
-            border-bottom: 1px solid #ffbc79;
-            text-align: center;
-        }
-
-        .area-es_bac {
-            width: 100%;
-            height: 100%;
-            background-color: #788a42;
-            border-radius: 3px;
-            border: 1px solid #b7d364;
-            text-align: left;
-            color: #fff;
-            padding-left: 3px;
-            padding-right: 3px;
-        }
-
-        dt.area-es {
-            border-bottom: 1px solid #b7d364;
-            text-align: center;
-        }
-
-        .area-ese_bac {
-            width: 100%;
-            height: 100%;
-            background-color: #428a42;
-            border-radius: 3px;
-            border: 1px solid #70ec70;
-            text-align: center;
-            color: #fff;
-            padding-left: 3px;
-            padding-right: 3px;
-        }
-
-        dt.area-ese {
-            border-bottom: 1px solid #70ec70;
-        }
-
-        .area-sem_bac {
-            width: 100%;
-            height: 100%;
-            background-color: #428a78;
-            border-radius: 3px;
-            border: 1px solid #72f0d0;
-            text-align: center;
-            color: #fff;
-            padding-left: 3px;
-            padding-right: 3px;
-        }
-
-        dt.area-sem {
-            border-bottom: 1px solid #72f0d0;
-        }
-
-        /*Style for each course*/
-        .button-course {
-            width: 100%;
-            background-color: transparent;
-            border: 0px solid transparent;
-            font-size: .8em;
-            color: #fff;
-            text-align: left;
-        }
-
-        .button-course:hover {
-            background-color: rgba(255, 255, 255, .3);
-        }
-
-        /*Style for tooltips*/
-        .tooltip.show p {
-            text-align: left;
-        }
-
-        /*Sidebar*/
-
-        .sidenav {
-            height: 100%;
-            width: 0;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #eee;
-            overflow-x: hidden;
-            transition: 0.5s;
-            margin-top: -5em;
-        }
-
-        .sideNav-column {
-            padding-left: .5em;
-        }
-
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding: 2em;
+        <style type="text/css">
+            /*This sets the margin and padding of every HTML element to zero and the box-sizing: border-box; declaration changes the box model by ensuring that the padding and border of an element no longer increases its width.*/
+            html {
+                box-sizing: border-box;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             }
-        }
 
-        /*Amending Bootstrap styles*/
-        .nav-link {
-            font-size: 1.4rem;
-        }
+            *, *::before, *::after {
+                margin: 0;
+                padding: 0;
+                box-sizing: inherit;
+            }
 
-        a.nav-link_admin{
-            color: #2B5888;
-        }
+            dd {
+                margin-bottom: -4px;
+                font-size: 1.2em;
+                align: left;
+            }
 
-        .nav-tabs {
-            margin-bottom: -0.5em;
-            margin-left: -176em;
-        }
+            dt {
+                font-size: 1.2em;
+                padding: 0px;
+            }
 
-        .nav-pills {
-            margin-top: 9.5em;
-            margin-left: 3em;
-        }
+            /*Style for each course*/
+            .button-course {
+                width: 100%;
+                background-color: transparent;
+                border: 0px solid transparent;
+                font-size: .8em;
+                color: #fff;
+                text-align: left;
+            }
 
-        .nav-item {
-            padding-left: 1em;
-            padding-right: 1em;
-        }
+            .button-course:hover {
+                background-color: rgba(255, 255, 255, .3);
+            }
 
-        .navbar-brand img {
-            width: 7%;
-        }
+            /*Style for tooltips*/
+            .tooltip.show p {
+                text-align: left;
+            }
 
-        .bg-light_admin {
-            background-color: #BBD6EC;
+            /*Sidebar*/
+
+            .sidenav {
+                height: 100%;
+                width: 0;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #fff;
+                border-right: 1px solid #ccc;
+                overflow-x: hidden;
+                transition: 0.5s;
+                margin-top: -5em;
+            }
+
+            .sideNav-column {
+                padding-left: .5em;
+                margin-top: 6em;
+                z-index: 1000;
+            }
+
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .sidenav a:hover {
+                color: #f1f1f1;
+            }
+
+            @media screen and (max-height: 450px) {
+                .sidenav {
+                    padding: 2em;
+                }
+            }
+
+            /* Amending Bootstrap styles */
+            .nav-link {
+                font-size: 1em;
+            }
+
+            .nav-tabs {
+                margin-bottom: -0.5em;
+                margin-left: -176em;
+            }
+
+            .nav-pills {
+                margin-top: 2.05em;
+                margin-left: 0em;
+                position: absolute;
+            }
+
+            .nav-item {
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+
+            .navbar-brand img {
+                width: 7%;
+            }
+
+            .bg-light {
+            background-color: #ffffff!important;
             height: 8.6em;
-        }
+            }
 
-        h2 {
-            font-size: 1.5em;
-            margin-left: 2em;
-        }
+            h2 {
+                font-size: 1.5em;
+                /* margin-left: 2em; */
+            }
 
-        h3 {
-            font-size: 1.2em;
-        }
+            h3 {
+                font-size: 1.2em;
+            }
 
-        .form-group {
-            padding: 1em;
-        }
+            .form-group {
+                padding: 1em;
+            }
 
-        .popover-header {
-            padding: .5rem .75rem;
-            margin-bottom: 0;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: inherit;
-            background-color: #f7f7f7;
-            border-bottom: 1px solid #ebebeb;
-            border-top-left-radius: calc(.3rem - 1px);
-            border-top-right-radius: calc(.3rem - 1px);
-        }
+            .popover-header {
+                padding: .5rem .75rem;
+                margin-bottom: 0;
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: inherit;
+                background-color: #f7f7f7;
+                border-bottom: 1px solid #ebebeb;
+                border-top-left-radius: calc(.3rem - 1px);
+                border-top-right-radius: calc(.3rem - 1px);
+            }
 
-        .popover-body {
-            padding: .5rem .75rem;
-            color: #212529;
-            font-size: 1.1rem;
-        }
+            .popover-body {
+                padding: .5rem .75rem;
+                color: #212529;
+                font-size: 1.1rem;
+            }
 
-        .dropdown-item {
-        font-size: 1.4rem;
-        color: #007bff;
-        }
-
-        #navbarDropdownMenuLink {
-        color: #007bff;
-        }
-
-        .img-fluid {
-            max-width: 98%;
-            margin-top: -1em;
-        }
-
-        .sidenav a {
-            font-size: 1.5em;
+            .dropdown-item {
+            font-size: 1.4rem;
             color: #007bff;
+            }
+
+            #navbarDropdownMenuLink {
+            color: #007bff;
+            }
+
+            .img-fluid {
+                max-width: 98%;
+                margin-top: -1em;
+            }
+
+            .sidenav a {
+                font-size: 1.5em;
+                color: #007bff;
+            }
+
+            .sidenav a:hover {
+                font-size: 1.5em;
+                color: #000;
+            }
+
+            .modal {
+                right: 10%;
+                left: 10%;
+            }
+
+            .modal-content {
+                width: 34em;
+            }
+
+            .modal input {
+                width: 100%;
+                padding-left: .5em;
+            }
+
+            /*CSS Grid*/
+
+            #outer-grid {
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 1em;
+                margin-top: 1em;
+            }
+
+            /*Reset to absolutely center the calendar on the page and give it a border and width.*/
+            /*CSS Grid*/
+            .courses {
+                padding: 0em;
+                width: 100vw;
+                height: 120vh;
+            }
+        </style>
+
+        <!-- Mark-one styles -->
+        <style>
+        /* style for table */
+        .coIxkm-amended {
+            border-collapse: collapse;
+            width: 95%;
+            border-width: 2px;
+            border-style: solid;
+            border-color: rgb(152, 152, 152);
+            border-image: initial;
+            margin: 1em 2em 1em 1em;
+            padding: 5px 10px;
         }
 
-        .sidenav a:hover {
-            font-size: 1.5em;
-            color: #000;
+        .iRtSxQ {
+            background-color: rgb(209, 209, 209);
         }
 
-        .form-control {
-            font-size: 1.25rem;
+        .jQECIl {
+            background: rgb(254, 254, 254);
         }
 
-        /*CSS Grid*/
-
-        #outer-grid {
-            display: grid;
-            grid-template-rows: 1fr;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 1em;
-            margin-top: 1em;
+        .jQECIl th {
+            background-color: rgb(209, 209, 209);
+            padding: 0 .5em 0 .5em; /* adding side padding to table headers */
         }
 
-        /*Reset to absolutely center the calendar on the page and give it a border and width.*/
-        /*CSS Grid*/
-        .courses {
-            padding: 0em;
-            width: 100vw;
-            height: 120vh;
+        .cbrsHS {
+            font-weight: 600;
+            border-width: 2px;
+            border-style: solid;
+            border-color: rgb(152, 152, 152);
+            border-image: initial;
         }
 
-        .calendar {
-            display: grid;
-            grid-template-columns: repeat(39, 1fr);
-            grid-auto-rows: 2.3%;
-            grid-template-rows: repeat(42);
-            grid-gap: 0em;
-            padding: 0em;
-            width: 100vw;
-            height: 120vh;
+        .jxSeiZ {
+            overflow: scroll;
         }
 
-        /*CSS Grid - horizontal rulers*/
-        .rule-9 {
-            grid-row: 2;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: 1;
-            z-index: -1;
-            margin-left: 2.7em;
+        .cjgueY {
+            background: rgb(236, 236, 236);
         }
 
-        .rule-9_15 {
-            grid-row: 3;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
+        .bqnYPo {
+            font-family: "Roboto Mono", monospace;
+            font-size: 0.9em;
+            border-left: 2px solid rgb(152, 152, 152);
+            border-right: 2px solid rgb(152, 152, 152);
+            padding: 3px;
         }
 
-        .rule-9_30 {
-            grid-row: 4;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
+        /* negative: light class for background of "no" table cell */
+        .bCEQJv {
+            margin-top: 10px;
+            color: rgb(24, 24, 24);
+            background: rgb(255, 143, 156);
+            padding: 3px;  /* Decreasing padding */
+            font-family: "Roboto Mono", monospace;
+            font-size: 0.9em;
+            border-left: 2px solid rgb(152, 152, 152);
+            border-right: 2px solid rgb(152, 152, 152);
         }
 
-        .rule-9_45 {
-            grid-row: 5;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
+        /* negative: dark class for font color of "no" table cell */
+        .no {
+            color: rgb(237, 27, 42);
+            font-weight: 900;
         }
 
-        .rule-10 {
-            grid-row: 6;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: 1;
-            z-index: -1;
-            margin-left: 2.7em;
+        table {
+            display: table;
+            border-collapse: separate;
+            border-spacing: 2px;
+            border-color: grey;
+            font-size: 16px;
+            font-weight: 400;
+            }
+
+        thead {
+            display: table-header-group;
+            vertical-align: middle;
+            border-color: inherit;
         }
 
-        .rule-10_15 {
-            grid-row: 7;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
         }
 
-        .rule-10_30 {
-            grid-row: 8;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
+        /* Define the hover highlight color for the table row */
+        .hoverTable tr:hover {
+            background-color: #d1d1d1;
         }
 
-        .rule-10_45 {
-            grid-row: 9;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-11 {
-            grid-row: 10;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: 1;
-            z-index: -1;
-            margin-left: 2.7em;
-        }
-
-        .rule-11_15 {
-            grid-row: 11;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-11_30 {
-            grid-row: 12;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-11_45 {
-            grid-row: 13;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-12 {
-            grid-row: 14;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: 1;
-            z-index: -1;
-            margin-left: 2.7em;
-        }
-
-        .rule-12_15 {
-            grid-row: 15;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-12_30 {
-            grid-row: 16;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-12_45 {
-            grid-row: 17;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-1 {
-            grid-row: 18;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: 1;
-            z-index: -1;
-            margin-left: 2.7em;
-        }
-
-        .rule-1_15 {
-            grid-row: 19;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-1_30 {
-            grid-row: 20;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-1_45 {
-            grid-row: 21;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-2 {
-            grid-row: 22;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: 1;
-            z-index: -1;
-            margin-left: 2.7em;
-        }
-
-        .rule-2_15 {
-            grid-row: 23;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-2_30 {
-            grid-row: 24;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-2_45 {
-            grid-row: 25;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-3 {
-            grid-row: 26;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: 1;
-            z-index: -1;
-            margin-left: 2.7em;
-        }
-
-        .rule-3_15 {
-            grid-row: 27;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-3_30 {
-            grid-row: 28;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-3_45 {
-            grid-row: 29;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-4 {
-            grid-row: 30;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: 1;
-            z-index: -1;
-            margin-left: 2.7em;
-        }
-
-        .rule-4_15 {
-            grid-row: 31;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-4_30 {
-            grid-row: 32;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-4_45 {
-            grid-row: 33;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-5 {
-            grid-row: 34;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: 1;
-            z-index: -1;
-            margin-left: 2.7em;
-        }
-
-        .rule-5_15 {
-            grid-row: 35;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-5_30 {
-            grid-row: 36;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-5_45 {
-            grid-row: 37;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-6 {
-            grid-row: 38;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: 1;
-            z-index: -1;
-            margin-left: 2.7em;
-        }
-
-        .rule-6_15 {
-            grid-row: 39;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-6_30 {
-            grid-row: 40;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-6_45 {
-            grid-row: 41;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: .5;
-            z-index: -1;
-            margin-left: 2em;
-        }
-
-        .rule-7 {
-            grid-row: 42;
-            grid-column: 1 / 47;
-            border-bottom: 1px solid #ccc;
-            opacity: 1;
-            z-index: -1;
-            margin-left: 2.7em;
-        }
-
-        /*CSS Grid - column headers*/
-        .day-head_monday {
-            grid-row: 1 / 44;
-            grid-column: 2 / 8;
-            border: 1px solid #ccc;
-            padding: .25em;
+        th {
+            display: table-cell;
+            vertical-align: inherit;
+            font-weight: bold;
             text-align: center;
+            vertical-align: top;
+            margin: 0 3px 0 3px;
+            white-space: nowrap;
+            padding: 0 3px 0 3px;
         }
 
-        .day-head_tuesday {
-            grid-row: 1 / 44;
-            grid-column: 8 / 17;
-            border: 1px solid #ccc;
-            padding: .25em;
+        tbody {
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+
+        td {
+            display: table-cell;
+            vertical-align: inherit; 
+        }
+
+
+        /* style for nav */
+        nav {
+            display: block;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .hhGZXE {
+            background-color: transparent;
+            border-collapse: collapse;
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            border-bottom: 1px solid rgb(24, 24, 24);
+        }
+
+        ul {
+            /* display: block; */
+            /* list-style-type: disc; */
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
+
+        .icrnXS {
+            margin-bottom: -1px;
+            padding: 0px 1em;
+        }
+
+        .icrnXS-first {
+            margin-bottom: -1px;
+            padding: 0px 1em;
+            margin-left: 7em;
+        }
+
+        li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+        }
+
+        .kzaudT {
+            color: rgb(24, 24, 24);
+            display: inline-block;
+            background: transparent;
+            border-width: 1px 1px 1px;
+            border-style: solid solid none;
+            border-color: transparent transparent transparent;
+            border-image: initial;
+            border-bottom: none;
+            padding: 0.5rem 1rem;
+        }
+
+        /* active tab */
+        .bWbWht {
+            color: rgb(24, 24, 24);
+            display: inline-block;
+            background: rgb(254, 254, 254);
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(24, 24, 24) rgb(24, 24, 24) transparent;
+            border-image: initial;
+            border-bottom: 1px solid transparent;
+            padding: 0.5rem 1rem;
+        }
+
+        /* header */
+        .bsLcFZ {
+            align-items: flex-end;
+            background-color: transparent;
+            box-shadow: rgba(0, 0, 0, 0.28) 0px 4px 8px;
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            width: 100%;
+            padding: 15px 10px;
+        }
+
+        .bSvdsU {
+            align-self: stretch;
+            background-image: url(53adae7….svg);
+            background-size: contain;
+            color: transparent;
+            display: inline-block;
+            font-size: 0px;
+            line-height: 0;
+            width: 175px;
+            min-width: 100px;
+            height: 50px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            margin: 0px 10px;
+        }
+
+        .eEciP {
+            font-size: 1.66em;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            grid-column-end: span 4;
+        }
+
+        header {
+        font-size: 16px;
+        font-weight: 400;
+        }
+
+        /* button - primary */
+        .bADMLE {
+            color: rgb(254, 254, 254);
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 400;
+            background: rgb(78, 136, 199); /* Primary button idle color - info: medium */
+            padding: 5px 10px;
+            border: 0px solid #fff;
+        }
+
+        .bADMLE:hover { background: rgb(8, 65, 97); } /* Primary button highlight color - info: dark */
+
+        /* button icon - primary */
+        .bADMLE-icon {
+            color: rgb(78, 136, 199); /* Primary button icon idle color - info: medium */
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 400;
+            /* padding: 5px 10px; */
+        }
+
+        .bADMLE-icon:hover { color: rgb(8, 65, 97); } /* Primary button icon highlight color - info: dark */
+
+        /* button - secondary */
+        .kxWoHZ {
+            color: rgb(24, 24, 24);
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 400;
+            background: rgb(209, 209, 209); /* Secondary button idle color - background: medium */
+            padding: 5px 10px;
+            border: 0px solid #fff;
+            margin-right: auto!important; /* Secondary button left align */
+
+        }
+
+        .kxWoHZ:hover { 
+            color: rgb(254, 254, 254);
+            background: rgb(147, 161, 173); /* Secondary button highlight color - background: dark */
+        }
+
+        /* button - danger */
+        .csuYJy {
+            color: rgb(254, 254, 254);
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 400;
+            background: rgb(237, 27, 42); /* Danger button idle color - negative: dark */
+            padding: 5px 10px;
+            border: 0px solid #fff;
+        }
+
+        .csuYJy:hover { background: rgb(165, 28, 48); } /* Danger button highlight color - backgrond: accent */
+
+        .lijgtc { /* positive: light */
+            margin-top: 10px;
+            color: rgb(24, 24, 24);
+            background: rgb(129, 233, 129);
+            /* padding: 15px; */
+            }
+
+        /* button icon - danger */
+        .csuYJy-icon { /* Danger button icon idle color - negative: dark */
+            margin-top: 10px;
+            color: rgb(237, 27, 42);
+            padding: 15px;
+        }
+
+        .csuYJy-icon:hover {  /* Danger button icon highlight color - background: accent */
+            color: rgb(165, 28, 48);
+        }
+
+
+        .button-icon {
+            margin-top: 0px;
+            display: inline-block;
+            font-weight: 400;
             text-align: center;
-        }
-
-        .day-head_wednesday {
-            grid-row: 1 / 44;
-            grid-column: 17 / 24;
-            border: 1px solid #ccc;
-            padding: .25em;
-            text-align: center;
-        }
-
-        .day-head_thursday {
-            grid-row: 1 / 44;
-            grid-column: 24 / 32;
-            border: 1px solid #ccc;
-            padding: .25em;
-            text-align: center;
-        }
-
-        .day-head_friday {
-            grid-row: 1 / 44;
-            grid-column: 32 / 40;
-            border: 1px solid #ccc;
-            padding: .25em;
-            text-align: center;
-        }
-
-        /*CSS Grid - row hours*/
-        .hour-head_9am {
-            grid-row: 2 / 3;
-            grid-column: 1;
-            margin-top: .6em;
-        }
-
-        .hour-head_10am {
-            grid-row: 6;
-            grid-column: 1;
-            margin-top: .6em;
-        }
-
-        .hour-head_11am {
-            grid-row: 10;
-            grid-column: 1;
-            margin-top: .6em;
-        }
-
-        .hour-head_12pm {
-            grid-row: 14;
-            grid-column: 1;
-            margin-top: .6em;
-        }
-
-        .hour-head_1pm {
-            grid-row: 18;
-            grid-column: 1;
-            margin-top: .6em;
-        }
-
-        .hour-head_2pm {
-            grid-row: 22;
-            grid-column: 1;
-            margin-top: .6em;
-        }
-
-        .hour-head_3pm {
-            grid-row: 26;
-            grid-column: 1;
-            margin-top: .6em;
-        }
-
-        .hour-head_4pm {
-            grid-row: 30;
-            grid-column: 1;
-            margin-top: .6em;
-        }
-
-        .hour-head_5pm {
-            grid-row: 34;
-            grid-column: 1;
-            margin-top: .6em;
-        }
-
-        .hour-head_6pm {
-            grid-row: 38;
-            grid-column: 1;
-            margin-top: .6em;
-        }
-
-        .hour-head_7pm {
-            grid-row: 42;
-            grid-column: 1;
-            margin-top: .6em;
-        }
-
-        /*CSS Grid - courses*/
-
-        /*CSS Grid - column Monday/9am*/
-        .area-cs-mon-9 {
-            grid-row: 3 / 8;
-            /*grid-column: 2 / 3;*/
-			grid-column: 2 / 8;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        .area-ese-mon-9 {
-            grid-row: 3 / 8;
-            grid-column: 3 / 4;
-			display: none;
-        }
-
-        .area-es-mon-9 {
-            grid-row: 3 / 14;
-            grid-column: 4 / 5;
-			display: none;
-        }
-
-        /*CSS Grid - column Monday/10am*/
-        .area-es-mon-10 {
-            grid-row: 7 / 19;
-            grid-column: 5 / 6;
-			display: none;
-        }
-
-        /*CSS Grid - column Monday/10:30am*/
-        .area-am-mon-1030 {
-            grid-row: 9 / 14;
-            grid-column: 2 / 3;
-			display: none;
-        }
-
-        .area-cs-mon-1030 {
-            grid-row: 9 / 14;
-            /*grid-column: 3 / 4;*/
-            grid-column: 2 / 8;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        .area-es-mon-1030 {
-            grid-row: 9 / 14;
-            grid-column: 6 / 7;
-			display: none;
-        }
-
-        /*CSS Grid - column Monday/12pm*/
-        .area-am-mon-12 {
-            grid-row: 15 / 20;
-            grid-column: 2 / 3;
-			display: none;
-        }
-
-        .area-cs-mon-12 {
-            grid-row: 15 / 20;
-            grid-column: 3 / 4;
-			display: none;
-        }
-
-        .area-es-mon-12 {
-            grid-row: 15 / 20;
-			grid-column: 4 / 5;
-			display: none;
-        }
-
-        .area-sem-mon-12 {
-            grid-row: 15 / 20;
-            grid-column: 6 / 7;
-			display: none;
-        }
-
-        .area-es-mon-12_245 {
-            grid-row: 15 / 26;
-            /*grid-column: 7 / 8;*/
-			grid-column: 2 / 8;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        /*CSS Grid - column Monday/1:30pm*/
-        .area-ac-mon-130 {
-            grid-row: 21 / 26;
-            grid-column: 2 / 3;
-			display: none;
-        }
-
-        .area-am-mon-130 {
-            grid-row: 21 / 26;
-            grid-column: 3 / 4;
-			display: none;
-        }
-
-        .area-cs-mon-130 {
-            grid-row: 21 / 26;
-            grid-column: 4 / 5;
-			display: none;
-        }
-
-        .area-es-mon-130 {
-            grid-row: 21 / 26;
-            grid-column: 5 / 6;
-			display: none;
-        }
-
-        .area-sem-mon-130 {
-            grid-row: 21 / 26;
-            grid-column: 6 / 7;
-			display: none;
-        }
-
-        /*CSS Grid - column Monday/3pm*/
-        .area-cs-mon-3 {
-            grid-row: 27 / 32;
-            grid-column: 2 / 8;
-        }
-		
-        .area-am-mon-3 {
-            grid-row: 27 / 32;
-            grid-column: 2 / 3;
-			display: none;
-        }
-
-        .area-ap-mon-3 {
-            grid-row: 27 / 32;
-            grid-column: 3 / 4;
-			display: none;
-        }
-
-        .area-be-mon-3 {
-            grid-row: 27 / 32;
-            grid-column: 4 / 5;
-			display: none;
-        }
-
-        .area-ac-mon-3 {
-            grid-row: 27 / 32;
-            grid-column: 5 / 6;
-			display: none;
-        }
-
-        .area-es-mon-3 {
-            grid-row: 27 / 32;
-            grid-column: 6 / 7;
-			display: none;
-        }
-
-        .area-es-mon-3_545 {
-            grid-row: 27 / 38;
-            grid-column: 7 / 8;
-			display: none;
-        }
-
-        /*CSS Grid - column Monday/5pm*/
-        .area-cs-mon-5 {
-            grid-row: 35 / 43;
-            grid-column: 2 / 3;
-			display: none;
-        }
-
-        /*CSS Grid - column Monday/6pm*/
-        .area-am-mon-6 {
-            grid-row: 38 / 42;
-            grid-column: 2 / 3;
-			display: none;
-        }
-
-        /*CSS Grid - column Monday/7pm*/
-        .area-am-mon-7 {
-            grid-row: 42;
-            grid-column: 2 / 3;
-			display: none;
-        }
-
-        /*CSS Grid - column Tuesday/9am*/
-        .area-am-tue-9 {
-            grid-row: 3 / 8;
-            grid-column: 8 / 9;
-			display: none;
-        }
-
-        .area-ap-tue-9 {
-            grid-row: 3 / 8;
-            grid-column: 9 / 10;
-			display: none;
-        }
-
-        .area-be-tue-9 {
-            grid-row: 3 / 8;
-            grid-column: 10 / 11;
-			display: none;
-        }
-
-        .area-cs-tue-9 {
-            grid-row: 3 / 8;
-            grid-column: 11 / 12;
-			display: none;
-        }
-
-        .area-es-tue-9 {
-            grid-row: 3 / 8;
-            grid-column: 12 / 13;
-			display: none;
-        }
-
-        .area-ese-tue-9 {
-            grid-row: 3 / 8;
-            grid-column: 13 / 14;
-			display: none;
-        }
-
-        .area-ac-tue-9_1145 {
-            grid-row: 3 / 14;
-            grid-column: 14 / 15;
-			display: none;
-        }
-
-        .area-ap-tue-9_1145 {
-            grid-row: 3 / 14;
-            grid-column: 15 / 16;
-			display: none;
-        }
-
-        .area-es-tue-9_1145 {
-            grid-row: 3 / 14;
-            grid-column: 16 / 17;
-			display: none;
-        }
-
-        /*CSS Grid - column Tuesday/10:30am*/
-        .area-am-tue-1030 {
-            grid-row: 9 / 14;
-            grid-column: 8 / 9;
-			display: none;
-        }
-
-        .area-ap-tue-1030 {
-            grid-row: 9 / 14;
-            grid-column: 9 / 10;
-			display: none;
-        }
-
-        .area-cs-tue-1030 {
-            grid-row: 9 / 14;
-            grid-column: 10 / 11;
-			display: none;
-        }
-
-        .area-es-tue-1030 {
-            grid-row: 9 / 14;
-            grid-column: 11 / 12;
-			display: none;
-        }
-
-        .area-ese-tue-1030 {
-            grid-row: 9 / 14;
-            grid-column: 12 / 13;
-			display: none;
-        }
-
-        /*CSS Grid - column Tuesday/12pm*/
-        .area-ac-tue-12 {
-            grid-row: 15 / 20;
-            grid-column: 8 / 9;
-			display: none;
-        }
-
-        .area-am-tue-12 {
-            grid-row: 15 / 20;
-            grid-column: 9 / 10;
-			display: none;
-        }
-
-        .area-ap-tue-12 {
-            grid-row: 15 / 20;
-            grid-column: 10 / 11;
-			display: none;
-        }
-
-        .area-be-tue-12 {
-            grid-row: 15 / 20;
-            grid-column: 11 / 12;
-			display: none;
-        }
-
-        .area-cs-tue-12 {
-            grid-row: 15 / 20;
-            grid-column: 12 / 13;
-			display: none;
-        }
-
-        .area-es-tue-12 {
-            grid-row: 15 / 20;
-            grid-column: 13 / 14;
-			display: none;
-        }
-
-        .area-ese-tue-12 {
-            grid-row: 15 / 20;
-            grid-column: 14 / 15;
-			display: none;
-        }
-
-        .area-am-tue-12_245 {
-            grid-row: 15 / 26;
-            grid-column: 15 / 16;
-			display: none;
-        }
-
-        /*CSS Grid - column Tuesday/1:30pm*/
-        .area-am-tue-130 {
-            grid-row: 21 / 26;
-            grid-column: 8 / 9;
-			display: none;
-        }
-
-        .area-be-tue-130 {
-            grid-row: 21 / 26;
-            grid-column: 9 / 10;
-			display: none;
-        }
-
-        .area-cs-tue-130 {
-            grid-row: 21 / 26;
-            grid-column: 10 / 11;
-			display: none;
-        }
-
-        .area-es-tue-130 {
-            grid-row: 21 / 26;
-            grid-column: 11 / 12;
-			display: none;
-        }
-
-        .area-ese-tue-130 {
-            grid-row: 21 / 26;
-            grid-column: 12 / 13;
-			display: none;
-        }
-
-        .area-es-tue-130_545 {
-            grid-row: 21 / 38;
-            grid-column: 13 / 14;
-			display: none;
-        }
-
-        /*CSS Grid - column Tuesday/3:00pm*/
-        .area-be-tue-3 {
-            grid-row: 27 / 32;
-            grid-column: 8 / 9;
-			display: none;
-        }
-
-        .area-es-tue-3 {
-            grid-row: 27 / 38;
-            /*grid-column: 9 / 10;*/
-			grid-column: 8 / 17;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        /*CSS Grid - column Tuesday/5:00pm*/
-        .area-be-tue-5 {
-            grid-row: 35 / 43;
-            grid-column: 8 / 9;
-			display: none;
-        }
-
-        /*CSS Grid - column Wednesday/9am*/
-        .area-am-wed-9 {
-            grid-row: 3 / 8;
-            grid-column: 17 / 18;
-			display: none;
-        }
-
-        .area-cs-wed-9 {
-            grid-row: 3 / 8;
-            /*grid-column: 18 / 19;*/
-			grid-column: 17 / 24;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        .area-ese-wed-9 {
-            grid-row: 3 / 8;
-            grid-column: 18 / 20;
-			display: none;
-        }
-
-        .area-es-wed-9 {
-            grid-row: 3 / 14;
-            grid-column: 20 / 21;
-			display: none;
-        }
-
-        /*CSS Grid - column Wednesday/10:30am*/
-        .area-am-wed-1030 {
-            grid-row: 9 / 14;
-            grid-column: 17 / 18;
-			display: none;
-        }
-
-        .area-ap-wed-1030 {
-            grid-row: 9 / 14;
-            grid-column: 18 / 19;
-			display: none;
-        }
-
-        .area-cs-wed-1030 {
-            grid-row: 9 / 14;
-            /*grid-column: 19 / 20;*/
-            grid-column: 17 / 24;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        .area-es-wed-1030 {
-            grid-row: 9 / 14;
-            grid-column: 21 / 22;
-			display: none;
-        }
-
-        /*CSS Grid - column Wednesday/12:00pm*/
-        .area-am-wed-12 {
-            grid-row: 15 / 20;
-            grid-column: 17 / 18;
-			display: none;
-        }
-
-        .area-cs-wed-12 {
-            grid-row: 15 / 20;
-            grid-column: 18 / 19;
-			display: none;
-        }
-
-        .area-es-wed-12 {
-            grid-row: 15 / 20;
-            grid-column: 19 / 20;
-			display: none;
-        }
-
-        .area-sem-wed-12 {
-            grid-row: 15 / 20;
-            grid-column: 20 / 21;
-			display: none;
-        }
-
-        .area-es-wed-12_245 {
-            grid-row: 15 / 26;
-            /*grid-column: 21 / 22;*/
-            grid-column: 17 / 24;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        /*CSS Grid - column Wednesday/1:30pm*/
-        .area-ac-wed-130 {
-            grid-row: 21 / 26;
-            grid-column: 17 / 18;
-			display: none;
-        }
-
-        .area-am-wed-130 {
-            grid-row: 21 / 26;
-            grid-column: 18 / 19;
-			display: none;
-        }
-
-        .area-ap-wed-130 {
-            grid-row: 21 / 26;
-            grid-column: 19 / 20;
-			display: none;
-        }
-
-        .area-cs-wed-130 {
-            grid-row: 21 / 26;
-            grid-column: 20 / 21;
-			display: none;
-        }
-
-        .area-es-wed-130 {
-            grid-row: 21 / 26;
-            grid-column: 22 / 23;
-			display: none;
-        }
-
-        .area-es-wed-130_545 {
-            grid-row: 21 / 38;
-            grid-column: 23 / 24;
-			display: none;
-        }
-
-        /*CSS Grid - column Wednesday/3:00pm*/
-        .area-am-wed-3 {
-            grid-row: 27 / 32;
-            grid-column: 17 / 18;
-			display:none;
-        }
-
-        .area-ap-wed-3 {
-            grid-row: 27 / 32;
-            grid-column: 18 / 19;
-			display:none;
-        }
-
-        .area-be-wed-3 {
-            grid-row: 27 / 32;
-            grid-column: 19 / 20;
-			display:none;
-        }
-
-        .area-cs-wed-3 {
-            grid-row: 27 / 32;
-            /*grid-column: 20 / 21;*/
-			grid-column: 17 / 24;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        .area-es-wed-3 {
-            grid-row: 27 / 32;
-            grid-column: 21 / 22;
-			display:none;
-        }
-
-        .area-es-wed-3_545 {
-            grid-row: 27 / 38;
-            grid-column: 22 / 23;
-			display:none;
-        }
-
-        /*CSS Grid - column Wednesday/4:30pm*/
-        .area-sem-wed-430 {
-            grid-row: 33 / 38;
-            grid-column: 17 / 18;
-			display: none;
-        }
-
-        /*CSS Grid - column Thursday/9am*/
-        .area-am-thu-9 {
-            grid-row: 3 / 8;
-            grid-column: 24 / 25;
-			display: none;
-        }
-
-        .area-ap-thu-9 {
-			grid-row: 3 / 8;
-            grid-column: 25 / 26;
-			display: none;
-        }
-
-        .area-be-thu-9 {
-            grid-row: 3 / 8;
-            grid-column: 26 / 27;
-			display: none;
-        }
-
-        .area-cs-thu-9 {
-            grid-row: 3 / 8;
-            grid-column: 27 / 28;
-			display: none;
-        }
-
-        .area-es-thu-9 {
-            grid-row: 3 / 8;
-            grid-column: 28 / 29;
-			display: none;
-        }
-
-        .area-ese-thu-9 {
-            grid-row: 3 / 8;
-            grid-column: 29 / 30;
-			display: none;
-        }
-
-        .area-ac-thu-9 {
-            grid-row: 3 / 14;
-            grid-column: 30 / 31;
-			display: none;
-        }
-
-        .area-ap-thu-9_1145 {
-            grid-row: 3 / 14;
-            /*grid-column: 31 / 32;*/
-            grid-column: 24 / 32;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        /*CSS Grid - column Thursday/10:30am*/
-        .area-am-thu-1030 {
-            grid-row: 9 / 14;
-            grid-column: 24 / 25;
-			display: none;
-        }
-
-        .area-ap-thu-1030 {
-            grid-row: 9 / 14;
-            grid-column: 25 / 26;
-			display: none;
-        }
-
-        .area-be-thu-1030 {
-            grid-row: 9 / 14;
-            grid-column: 26 / 27;
-			display: none;
-        }
-
-        .area-cs-thu-1030 {
-            grid-row: 9 / 14;
-            grid-column: 27 / 28;
-			display: none;
-        }
-
-        .area-ese-thu-1030 {
-            grid-row: 9 / 14;
-            grid-column: 28 / 29;
-			display: none;
-        }
-
-        /*CSS Grid - column Thursday/12:00pm*/
-        .area-ac-thu-12 {
-            grid-row: 15 / 20;
-            grid-column: 24 / 25;
-			display: none;
-        }
-
-        .area-am-thu-12 {
-            grid-row: 15 / 20;
-            grid-column: 25 / 26;
-			display: none;
-        }
-
-        .area-ap-thu-12 {
-            grid-row: 15 / 20;
-            grid-column: 26 / 27;
-			display: none;
-        }
-
-        .area-be-thu-12 {
-            grid-row: 15 / 20;
-            grid-column: 27 / 28;
-			display: none;
-        }
-
-        .area-cs-thu-12 {
-            grid-row: 15 / 20;
-            /*grid-column: 28 / 29;*/
-			grid-column: 24 / 32;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        .area-es-thu-12 {
-            grid-row: 15 / 20;
-            grid-column: 29 / 30;
-			display: none;
-        }
-
-        .area-ese-thu-12 {
-            grid-row: 15 / 20;
-            grid-column: 30 / 31;
-			display: none;
-        }
-
-        /*CSS Grid - column Thursday/1:30pm*/
-        .area-am-thu-130 {
-            grid-row: 21 / 26;
-            /*grid-column: 24 / 25;*/
-			grid-column: 24 / 28;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        .area-be-thu-130 {
-            grid-row: 21 / 26;
-            grid-column: 25 / 26;
-			display: none;
-        }
-
-        .area-cs-thu-130 {
-            grid-row: 21 / 26;
-            grid-column: 26 / 27;
-			display: none;
-        }
-
-        .area-es-thu-130 {
-            grid-row: 21 / 26;
-            /*grid-column: 27 / 28;*/
-            grid-column: 28 / 32;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        .area-ese-thu-130 {
-            grid-row: 21 / 26;
-            grid-column: 28 / 29;
-			display: none;
-        }
-
-        .area-es-thu-130_545 {
-            grid-row: 21 / 38;
-            grid-column: 29 / 30;
-			display: none;
-        }
-
-        /*CSS Grid - column Thursday/3:00pm*/
-        .area-be-thu-3 {
-            grid-row: 27 / 32;
-            grid-column: 24 / 25;
-			display: none;
-        }
-
-        .area-sem-thu-3 {
-            grid-row: 27 / 32;
-            grid-column: 25 / 26;
-			display: none;
-        }
-
-        .area-sem2-thu-3 {
-            grid-row: 27 / 32;
-            grid-column: 26 / 27;
-			display: none;
-        }
-
-        .area-ac-thu-3 {
-            grid-row: 27 / 38;
-			grid-column: 27 / 28;
-			display: none;
-        }
-
-        /*CSS Grid - column Thursday/4:30pm*/
-        .area-sem-thu-430 {
-            grid-row: 33 / 38;
-            grid-column: 24 / 25;
-			display: none;
-        }
-
-        /*CSS Grid - column Friday/9am*/
-        .area-am-fri-9 {
-            grid-row: 3 / 8;
-            grid-column: 32 / 33;
-			display: none;
-        }
-
-        .area-es-fri-9 {
-            grid-row: 3 / 8;
-            grid-column: 33 / 34;
-			display: none;
-        }
-
-        .area-cs-fri-9 {
-            grid-row: 3 / 14;
-            /*grid-column: 34 / 35;*/
-			grid-column: 32 / 40;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        .area-ese-fri-9 {
-            grid-row: 6 /14;
-            grid-column: 35 / 36;
-			display: none;
-        }
-
-        /*CSS Grid - column Friday/10:30am*/
-        .area-am-fri-1030 {
-            grid-row: 9 / 14;
-            grid-column: 32 / 33;
-			display: none;
-        }
-
-        .area-ap-fri-1030 {
-            grid-row: 9 / 14;
-            grid-column: 33 / 34;
-			display: none;
-        }
-
-        .area-cs-fri-1030 {
-            grid-row: 9 / 14;
-            grid-column: 36 / 37;
-			display: none;
-        }
-
-        .area-es-fri-1030 {
-            grid-row: 9 / 14;
-            grid-column: 37 / 38;
-			display: none;
-        }
-
-        /*CSS Grid - column Friday/12:00pm*/
-        .area-cs-fri-12 {
-            grid-row: 15 / 20;
-            grid-column: 32 / 33;
-			display: none;
-        }
-
-        .area-sem-fri-12 {
-            grid-row: 15 / 20;
-            grid-column: 33 / 34;
-			display: none;
-        }
-
-        .area-am-fri-12 {
-            grid-row: 15 / 26;
-            grid-column: 34 / 35;
-			display: none;
-        }
-
-        /*CSS Grid - column Friday/1:30pm*/
-        .area-am-fri-130 {
-            grid-row: 21 / 26;
-            /*grid-column: 32 / 33;*/
-			grid-column: 32 / 40;
-            /*adding overscroll*/
-            overflow: scroll;
-        }
-
-        .area-ap-fri-130 {
-            grid-row: 21 / 26;
-            grid-column: 33 / 34;
-			display: none;
-        }
-
-        .area-es-fri-130 {
-            grid-row: 21 / 26;
-            grid-column: 35 / 36;
-			display: none;
-        }
-
-        .area-sem-fri-130 {
-            grid-row: 21 / 26;
-            grid-column: 36 / 37;
-			display: none;
-        }
-
-        .area-sem-fri-130_430 {
-            grid-row: 21 / 33;
-            grid-column: 37 / 38;
-			display: none;
-        }
-
-        .area-es-fri-130_430 {
-            grid-row: 21 / 33;
-            grid-column: 38 / 39;
-			display: none;
-        }
-
-        .area-es-fri-130_545 {
-            grid-row: 21 / 38;
-            grid-column: 39 / 40;
-			display: none;
-        }
-
-        /*CSS Grid - column Friday/3:00pm*/
-        .area-sem-fri-3 {
-            grid-row: 27 / 32;
-            grid-column: 32 / 33;
-			display: none;
-        }
-    </style>
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light_admin fixed-top">
-        <span class="navbar-brand">
-            <img src="H_SEAS_logo_RGB.png">
-            <h2 class="navbar-text mr-auto">
-                SEAS Course Planning
-            </h2>
-        </span>
-        <ul class="nav nav-tabs" style="margin-top: 5em;">
-            <li class="nav-item">
-                <a class="nav-link " href="courses.html">Courses</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="courses-ncm.html">Non class meetings</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="faculty.html">Faculty</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="schedule.html">Schedule</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="fourYearPlan.html">4 Year Plan</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="manage_users.html">Manage Users</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="manage_courses.html">Manage Courses</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="">Manage Faculty</a>
-            </li>
-        </ul>
-    
-        <!-- Right align Login/Logout link -->
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
-            </li>
-        </ul>
-
-    </nav>
-
-<!--Catalog prefixes-->
-<div>
-    <ul class="nav nav-pills">
-        <li class="nav-item" hidden>
-            <span class="nav-link" style="margin-right: 3em; cursor: pointer;" onclick="openNav()">
-                Settings
-                <i class="far fa-arrow-alt-circle-right"></i>
-            </span>
-        </li>
-        <li class="nav-item">
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
-                Create new faculty
-            </button>
-        </li>
-    </ul>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-size: 1.25em;">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Create new faculty</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            border: solid 0 #fff;
+        }
+
+        /* Drop down */
+        .kFoNgS {
+            color: rgb(24, 24, 24);
+            margin-bottom: .5em;
+        }
+
+
+        </style>
+
+        <!-- Simulating Mark-One styles -->
+        <style>
+
+            /* Course colors */
+            td.acs {
+                background: rgba(203, 37, 45, 0.80); /* SEAS academic color with light transparency for the row hover effect */
+                color: white;
+            }
+
+            td.am {
+                background: rgba(78, 173, 171, 0.80); /* SEAS academic color with light transparency for the row hover effect */
+                color: black;
+            }
+
+            td.ap {
+                background: rgba(206, 219, 81, 0.80); /* SEAS academic color with light transparency for the row hover effect */
+                color: black;
+            }
+
+            input {
+                margin-bottom: .25em;
+                width: 90%;
+            }
+
+            input::placeholder {
+                padding-left: .5em;
+            }
+
+            .iconLink { color: #4e88c7; } /* Primary button color - info: medium */
+            .iconLink:hover { color: #084161; } /* Primary highlight color - info: dark */
+
+            hr {
+                FONT-WEIGHT: 500;
+                margin-top: .5rem;
+                margin-bottom: .5rem;
+                border: 0;
+                border-top: 1px solid rgba(0,0,0,.1);
+                width: 90%; 
+            }
+
+            textarea {
+                overflow: auto;
+                resize: vertical;
+                padding: .25em;
+            }
+
+            .table-modal {
+                display: table;
+                border-collapse: collapse;
+                border-spacing: 1px;
+                border-color: grey;
+                font-size: 16px;
+                font-weight: 400;
+                width: 100%;
+            }
+
+            .table-modal .iRtSxQ {
+                background-color: rgb(255, 255, 182550);
+                border-width: 1px;
+            }
+
+            .table-modal td {
+                border: 1px #ccc solid;
+                text-align: center;
+            }
+
+        </style>
+
+        <!-- Styles that should be added to Mark-One -->
+        <style>
+            #roomTimeLocation:after {
+                display: block;
+                height: 0px;
+                clear: both;
+                float: none;
+            }
+                #roomTimeLocation div {
+                float: left;
+                word-break: break-all;
+                padding: 0 3px 0 3px;
+            }
+                #date {
+                width: 40%;
+                font-size: .85em;
+            }
+                #campus {
+                width: 20%;
+            }
+                #room {
+                width: 40%;
+                font-size: .85em;
+            }
+
+                .roomSelect {
+                font-size: .8em
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <header class="sc-bxivhb bsLcFZ">
+            <a width="175px" href="#" height="50px" class="sc-ifAKCX bSvdsU"><img src="H_SEAS_logo_RGB.png" width="175px"></a>
+            <h1 class="sc-ckVGcZ eEciP">SEAS Course Planning</h1>
+            <div><a href="#">Log out</a></div>
+        </header>
+
+        <!-- Left nav button -->
+        <div>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <button type="button" class="sc-bdVaJa bADMLE" data-toggle="modal" data-target="#exampleModal">
+                        Create new faculty
+                    </button>
+                </li>
+            </ul>
         </div>
-        <div class="modal-body">
-            <form>
-                <div class="row">
-                    <div class="form-group col-6">
 
-                        <script type="text/javascript">
-                            function showfield(name){
-                                if(name=='Other')document.getElementById('div1').innerHTML='<label for="faculty_area_new" class="mt-4">Create a new area</label><input type="text" name="other" id="faculty_area_new" class="form-control" />';
-                                else document.getElementById('div1').innerHTML='';
-                            }
-                        </script>
+         <div id="outer-grid">
 
-                        <label for="faculty_area">Area</label>
-                        <select class="form-control" id="faculty_area" onchange="showfield(this.options[this.selectedIndex].value)">
-                            <option>ACS</a>
-                            <option>AM</a>
-                            <option>AP</a>
-                            <option>BE</option>
-                            <option>CS</option>
-                            <option>EE</option>
-                            <option>ESE</option>
-                            <option>General</option>
-                            <option>MDE</option>
-                            <option>MSMBA</option>
-                            <option>Mat&amp;ME</option>
-                            <option>SEM</option>
-                            <option value="Other">New area</option>
-                        </select>
-                    <div id="div1"></div>
-                    </div>
-                    <div class="form-group col-6">
-                        <label for="huid">HUID</label>
-                        <input type="text" class="form-control" id="huid" placeholder="">
-                    </div>
+            <!-- courses -->
+            <div class="courses">
+
+                <!-- Mark-One nav -->
+                <nav>
+                    <ul class="sc-bZQynM hhGZXE">
+                        <li class="sc-htoDjs icrnXS-first">
+                            <div class="sc-gzVnrw kzaudT"><a href="courses.html" class="sc-kgoBCf cuZvUJ">Courses</a></div>
+                        </li>
+                        <li class="sc-htoDjs icrnXS">
+                            <div class="sc-gzVnrw kzaudT"><a href="faculty.html" class="sc-kgoBCf cuZvUJ">Non class meetings</a></div>
+                        </li>
+                        <li class="sc-htoDjs icrnXS">
+                            <div class="sc-gzVnrw kzaudT"><a href="faculty.html" class="sc-kgoBCf cuZvUJ">Faculty</a></div>
+                        </li>
+                        <li class="sc-htoDjs icrnXS">
+                            <div class="sc-gzVnrw kzaudT"><a href="schedule.html" class="sc-kgoBCf cuZvUJ">Schedule</a></div>
+                        </li>
+                        <li class="sc-htoDjs icrnXS">
+                            <div class="sc-gzVnrw kzaudT"><a href="fourYearPlan.html" class="sc-kgoBCf cuZvUJ">4 Year Plan</a></div>
+                        </li>
+                        <!-- <li class="sc-htoDjs icrnXS">
+                            <div class="sc-gzVnrw kzaudT"><a href="manage_users.html" class="sc-kgoBCf cuZvUJ">Manage Users</a></div>
+                        </li> -->
+                        <li class="sc-htoDjs icrnXS">
+                            <div class="sc-gzVnrw kzaudT"><a href="manage_courses.html" class="sc-kgoBCf cuZvUJ">Manage Courses</a></div>
+                        </li>   
+                        <li class="sc-htoDjs icrnXS">
+                            <div class="sc-gzVnrw bWbWht"><a href="#" class="sc-kgoBCf cuZvUJ">Manage Faculty</a></div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Table from Mark-One -->
+                <table class="sc-dnqmqq coIxkm-amended hoverTable">
+                    <thead class="sc-gqjmRU iRtSxQ">
+
+                        <tr class="sc-gZMcBi jQECIl">
+                            <th scope="col" class="sc-VigVT cbrsHS">
+                                Area
+                                <br>
+                                <select>
+                                    <option value="string:All" label="All" selected="selected">All</option>
+                                    <option value="string:ACS" label="ACS">ACS</option>
+                                    <option value="string:AM" label="AM">AM</option>
+                                    <option value="string:AP" label="AP">AP</option>
+                                    <option value="string:BE" label="BE">BE</option>
+                                    <option value="string:CS" label="CS">CS</option>
+                                    <option value="string:EE" label="EE">EE</option>
+                                    <option value="string:ESE" label="ESE">ESE</option>
+                                    <option value="string:General" label="General">General</option>
+                                    <option value="string:MDE" label="MDE">MDE</option>
+                                    <option value="string:MSMBA" label="MSMBA">MSMBA</option>
+                                    <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
+                                    <option value="string:SEM" label="SEM">SEM</option>
+                                </select>
+                            </th>
+                            <th scope="col" class="sc-VigVT cbrsHS">
+                                HUID
+                                <br>
+                                <input type="text">
+                            </th>
+                            <th scope="col" class="sc-VigVT cbrsHS">
+                                Last name
+                                <br>
+                                <input type="text">
+                            </th>
+                            <th scope="col" class="sc-VigVT cbrsHS">
+                                First name
+                                <br>
+                                <input type="text">
+                            </th>
+                            <th scope="col" class="sc-VigVT cbrsHS">
+                                Edit
+                            </th>
+                        </tr>
+
+                    </thead>
+                    <tbody class="sc-jTzLTM jxSeiZ">
+
+                        <tr class="sc-gZMcBi cjgueY">
+                            <td class="sc-iwsKbI bqnYPo acs">ACS</td>
+                            <td class="sc-iwsKbI bqnYPo">12345678</td>
+                            <td class="sc-iwsKbI bqnYPo">lastName</td>
+                            <td class="sc-iwsKbI bqnYPo">firstName</td>
+                            <td class="sc-iwsKbI bqnYPo text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
+                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr class="sc-gZMcBi jQECIl">
+                            <td class="sc-iwsKbI bqnYPo acs">ACS</td>
+                            <td class="sc-iwsKbI bqnYPo">12345678</td>
+                            <td class="sc-iwsKbI bqnYPo">lastName</td>
+                            <td class="sc-iwsKbI bqnYPo">firstName</td>
+                            <td class="sc-iwsKbI bqnYPo text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
+                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr class="sc-gZMcBi cjgueY">
+                            <td class="sc-iwsKbI bqnYPo acs">ACS</td>
+                            <td class="sc-iwsKbI bqnYPo">12345678</td>
+                            <td class="sc-iwsKbI bqnYPo">lastName</td>
+                            <td class="sc-iwsKbI bqnYPo">firstName</td>
+                            <td class="sc-iwsKbI bqnYPo text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
+                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr class="sc-gZMcBi jQECIl">
+                            <td class="sc-iwsKbI bqnYPo am">AM</td>
+                            <td class="sc-iwsKbI bqnYPo">12345678</td>
+                            <td class="sc-iwsKbI bqnYPo">lastName</td>
+                            <td class="sc-iwsKbI bqnYPo">firstName</td>
+                            <td class="sc-iwsKbI bqnYPo text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
+                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr class="sc-gZMcBi cjgueY">
+                            <td class="sc-iwsKbI bqnYPo am">AM</td>
+                            <td class="sc-iwsKbI bqnYPo">12345678</td>
+                            <td class="sc-iwsKbI bqnYPo">lastName</td>
+                            <td class="sc-iwsKbI bqnYPo">firstName</td>
+                            <td class="sc-iwsKbI bqnYPo text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
+                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr class="sc-gZMcBi jQECIl">
+                            <td class="sc-iwsKbI bqnYPo am">AM</td>
+                            <td class="sc-iwsKbI bqnYPo">12345678</td>
+                            <td class="sc-iwsKbI bqnYPo">lastName</td>
+                            <td class="sc-iwsKbI bqnYPo">firstName</td>
+                            <td class="sc-iwsKbI bqnYPo text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
+                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr class="sc-gZMcBi cjgueY">
+                            <td class="sc-iwsKbI bqnYPo ap">AP</td>
+                            <td class="sc-iwsKbI bqnYPo">12345678</td>
+                            <td class="sc-iwsKbI bqnYPo">lastName</td>
+                            <td class="sc-iwsKbI bqnYPo">firstName</td>
+                            <td class="sc-iwsKbI bqnYPo text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
+                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr class="sc-gZMcBi jQECIl">
+                            <td class="sc-iwsKbI bqnYPo ap">AP</td>
+                            <td class="sc-iwsKbI bqnYPo">12345678</td>
+                            <td class="sc-iwsKbI bqnYPo">lastName</td>
+                            <td class="sc-iwsKbI bqnYPo">firstName</td>
+                            <td class="sc-iwsKbI bqnYPo text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
+                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr class="sc-gZMcBi cjgueY"> 
+                            <td class="sc-iwsKbI bqnYPo ap">AP</td>
+                            <td class="sc-iwsKbI bqnYPo">12345678</td>
+                            <td class="sc-iwsKbI bqnYPo">lastName</td>
+                            <td class="sc-iwsKbI bqnYPo">firstName</td>
+                            <td class="sc-iwsKbI bqnYPo text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
+                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div><!-- /courses -->
+
+        <!-- Manage courses modal - Create new facultu -->
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create new faculty</h5>
                 </div>
-                <div class="row">
-                    <div class="form-group col-6">
-                        <label for="nameFirst">First name</label>
-                        <input type="text" class="form-control" id="nameFirst" placeholder="">
-                    </div>
-                    <div class="form-group col-6">
-                        <label for="nameLast">Last name</label>
-                        <input type="text" class="form-control" id="nameLast" placeholder="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-6">
-                        <label for="faculty_category">Category</label>
-                        <select class="form-control" id="faculty_category">
-                            <option>Ladder</a>
-                            <option>Non-ladder</a>
-                            <option>Non-SEAS ladder</option>
-                        </select>
-                    </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-6">
 
-                    <div class="form-group col-6">
-                        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-                        <script>
-                            $(document).ready(function(){
-                                var next = 1;
-                                $(".add-more").click(function(e){
-                                    e.preventDefault();
-                                    var addto = "#field" + next;
-                                    var addRemove = "#field" + (next);
-                                    next = next + 1;
-                                    var newIn = '<input autocomplete="off" class="form-control" style="width: 90%;" id="field' + next + '" name="field' + next + '" type="text">';
-                                    var newInput = $(newIn);
-                                    var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me ml-1 btn-sm"><i class="fas fa-minus"></i></button></div><div id="field">';
-                                    var removeButton = $(removeBtn);
-                                    $(addto).after(newInput);
-                                    $(addRemove).after(removeButton);
-                                    $("#field" + next).attr('data-source',$(addto).attr('data-source'));
-                                    $("#count").val(next);  
-                                    
-                                        $('.remove-me').click(function(e){
-                                            e.preventDefault();
-                                            var fieldNum = this.id.charAt(this.id.length-1);
-                                            var fieldID = "#field" + fieldNum;
-                                            $(this).remove();
-                                            $(fieldID).remove();
-                                        });
-                                });                                
-                            });
-                        </script>
-                        <input type="hidden" name="count" value="1" />
-                        <div class="control-group" id="fields">
-                            <label class="control-label" for="field1">Joint with...</label>
-                            <div class="controls" id="profs"> 
-                                    <div id="field" class="input-group"><input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="Add 'Joint With' entry" data-items="8" /><div class="input-group-append"><button id="b1" class="btn btn-secondary add-more ml-1 btn-sm input-group-append" type="button"><i class="fas fa-plus"></i></button></div></div>
+                                <script type="text/javascript">
+                                    function showfield(name){
+                                        if(name=='Other')document.getElementById('div1').innerHTML='<label for="faculty_area_new" class="mt-4">Create a new area</label><input type="text" name="other" id="faculty_area_new" class="form-control" />';
+                                        else document.getElementById('div1').innerHTML='';
+                                    }
+                                </script>
+
+                                <label for="course_area">Area</label>
+                                <br>
+                                <select class="sc-bwzfXH kFoNgS" id="course_area" onchange="showfield(this.options[this.selectedIndex].value)">
+                                    <option>&nbsp;</option>
+                                    <option>ACS</option>
+                                    <option>AM</option>
+                                    <option>AP</option>
+                                    <option>BE</option>
+                                    <option>CS</option>
+                                    <option>EE</option>
+                                    <option>ESE</option>
+                                    <option>General</option>
+                                    <option>MDE</option>
+                                    <option>MSMBA</option>
+                                    <option>Mat&amp;ME</option>
+                                    <option>SEM</option>
+                                </select>
+                                <div id="div1"></div>
+                            </div>
+                            <div class="col-6">
+                                <label for="course">HUID</label>
+                                <br>
+                                <input type="text" id="course" placeholder="e.g., 12345678">
                             </div>
                         </div>
+                        <div class="row">
+                            <hr>
+                            <div class="col-12">
+                                <label for="firstName">First name</label>
+                                <br>
+                                <input type="text" id="firstName" aria-describedby="firstName" placeholder="e.g., First Name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <hr>
+                            <div class="col-12">
+                                <label for="lasttName">Last name</label>
+                                <br>
+                                <input type="text" id="lasttName" aria-describedby="lasttName" placeholder="e.g., Last Name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <hr>
+                            <div class="col-4">
+                                <label for="facultyCategory">Category</label>
+                                <br>
+                                <select id="facultyCategory">
+                                    <option>&nbsp;</option>
+                                    <option>Ladder</option>
+                                    <option>Non-ladder</option>
+                                    <option>Non-SEAS ladder</option>
+                                </select>
+                            </div>
+                            <div class="col-8">
+                                <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+                                <script>
+                                    $(document).ready(function(){
+                                        var next = 1;
+                                        $(".add-more").click(function(e){
+                                            e.preventDefault();
+                                            var addto = "#field" + next;
+                                            var addRemove = "#field" + (next);
+                                            next = next + 1;
+                                            var newIn = '<input autocomplete="off" class="form-control" style="width: 50%;" id="field' + next + '" name="field' + next + '" type="text">';
+                                            var newInput = $(newIn);
+                                            var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me ml-1 btn-sm"><i class="fas fa-minus"></i></button></div><div id="field">';
+                                            var removeButton = $(removeBtn);
+                                            $(addto).after(newInput);
+                                            $(addRemove).after(removeButton);
+                                            $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+                                            $("#count").val(next);  
+                                            
+                                                $('.remove-me').click(function(e){
+                                                    e.preventDefault();
+                                                    var fieldNum = this.id.charAt(this.id.length-1);
+                                                    var fieldID = "#field" + fieldNum;
+                                                    $(this).remove();
+                                                    $(fieldID).remove();
+                                                });
+                                        });                                
+                                    });
+                                </script>
+                                <input type="hidden" name="count" value="1" />
+                                <div class="control-group" id="fields">
+                                    <label class="control-label" for="field1">Same as...</label>
+                                    <div class="controls" id="profs"> 
+                                            <div id="field" class="input-group"><input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="Add 'Join with' entry" data-items="8" /><div class="input-group-append"><button id="b1" class="btn btn-secondary add-more ml-1 btn-sm input-group-append" type="button"><i class="fas fa-plus"></i></button></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                     </div>
-
+                    <div class="modal-footer">
+                        <button type="button" class="sc-bdVaJa kxWoHZ" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">Create</button>
+                    </div>
                 </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary mr-auto btn-lg" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Create</button>
-        </div>
-        </div>
-    </div>
-    </div>
-
-<div id="outer-grid">
-
-    <!--Sidenav filters-->
-    <div class="sideNav-column" hidden>
-        <div id="mySidenav" class="sidenav" style="white-space: nowrap;">
-            <div>
-                <a href="javascript:void(0)" onclick="closeNav()"
-                   style="color: #212529; font-size: 1.4rem; margin-top: .4em; margin-left: .9em;">
-                   Settings
-                    <i class="far fa-arrow-alt-circle-left ml-auto"></i>
-                </a>
             </div>
-            <form>
-                <div class="form-group">
-                    <h3>Faculty report <i class="fas fa-download"></i></h3>
-                    <button type="button" class="btn btn-outline-primary btn-lg btn-block">
-                        Download
-                    </button>
-                </div>
-                <div class="form-group">
-                    <h3> "No Longer Active" Faculty <i class="fas fa-users"></i></h3>
-                    <button type="button" class="btn btn-outline-primary btn-lg btn-block">
-                        Show
-                    </button>
-                </div>
-            </form>
         </div>
-    </div>
 
-    <!-- courses -->
-    <div class="courses">
-        <picture>
-            <source srcset="manage_faculty.png" media="(min-width: 1500px)">
-            <source srcset="manage_faculty.png" media="(min-width: 700px)">
-            <img srcset="manage_faculty.png" alt="…" style="width: 100%; padding: 1em;">
-        </picture>
-    </div><!-- /courses -->
+        <!-- Manage courses modal - Edit faculty -->
 
-</div>
+        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit faculty</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-6">
 
-<!-- Optional Bootsrap JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+                                <script type="text/javascript">
+                                    function showfield(name){
+                                        if(name=='Other')document.getElementById('div1').innerHTML='<label for="faculty_area_new" class="mt-4">Create a new area</label><input type="text" name="other" id="faculty_area_new" class="form-control" />';
+                                        else document.getElementById('div1').innerHTML='';
+                                    }
+                                </script>
 
-<!--Sidebar-->
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "20em";
-    }
+                                <label for="course_area">Area</label>
+                                <br>
+                                <select class="sc-bwzfXH kFoNgS" id="course_area" onchange="showfield(this.options[this.selectedIndex].value)">
+                                    <option>ACS</option>
+                                    <option>AM</option>
+                                    <option>AP</option>
+                                    <option>BE</option>
+                                    <option>CS</option>
+                                    <option>EE</option>
+                                    <option>ESE</option>
+                                    <option>General</option>
+                                    <option>MDE</option>
+                                    <option>MSMBA</option>
+                                    <option>Mat&amp;ME</option>
+                                    <option>SEM</option>
+                                </select>
+                                <div id="div1"></div>
+                            </div>
+                            <div class="col-6">
+                                <label for="course">HUID</label>
+                                <br>
+                                <input type="text" id="course" placeholder="e.g., 12345678" value="12345678">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <hr>
+                            <div class="col-12">
+                                <label for="firstName">First name</label>
+                                <br>
+                                <input type="text" id="firstName" aria-describedby="firstName" placeholder="e.g., First Name" value="firstName">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <hr>
+                            <div class="col-12">
+                                <label for="lasttName">Last name</label>
+                                <br>
+                                <input type="text" id="lasttName" aria-describedby="lasttName" placeholder="e.g., Last Name" value="lastName">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <hr>
+                            <div class="col-4">
+                                <label for="facultyCategory">Category</label>
+                                <br>
+                                <select id="facultyCategory">
+                                    <option>Ladder</option>
+                                    <option selected>Non-ladder</option>
+                                    <option>Non-SEAS ladder</option>
+                                </select>
+                            </div>
+                            <div class="col-8">
+                                <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+                                <script>
+                                    $(document).ready(function(){
+                                        var next = 1;
+                                        $(".add-more").click(function(e){
+                                            e.preventDefault();
+                                            var addto = "#field" + next;
+                                            var addRemove = "#field" + (next);
+                                            next = next + 1;
+                                            var newIn = '<input autocomplete="off" class="form-control" style="width: 50%;" id="field' + next + '" name="field' + next + '" type="text">';
+                                            var newInput = $(newIn);
+                                            var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me ml-1 btn-sm"><i class="fas fa-minus"></i></button></div><div id="field">';
+                                            var removeButton = $(removeBtn);
+                                            $(addto).after(newInput);
+                                            $(addRemove).after(removeButton);
+                                            $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+                                            $("#count").val(next);  
+                                            
+                                                $('.remove-me').click(function(e){
+                                                    e.preventDefault();
+                                                    var fieldNum = this.id.charAt(this.id.length-1);
+                                                    var fieldID = "#field" + fieldNum;
+                                                    $(this).remove();
+                                                    $(fieldID).remove();
+                                                });
+                                        });                                
+                                    });
+                                </script>
+                                <input type="hidden" name="count" value="1" />
+                                <div class="control-group" id="fields">
+                                    <label class="control-label" for="field1">Join with...</label>
+                                    <div class="controls" id="profs"> 
+                                            <div id="field" class="input-group"><input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="Add 'Join with' entry" data-items="8" /><div class="input-group-append"><button id="b1" class="btn btn-secondary add-more ml-1 btn-sm input-group-append" type="button"><i class="fas fa-plus"></i></button></div></div>
+                                    </div>
+                                </div>
+                            </div>
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-</script>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="sc-bdVaJa kxWoHZ" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">Save</button>
+                </div>
+                </div>
+            </div>
+        </div>
 
-<!--Tooltip for CS 181-->
-<script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
+        <!-- Optional Bootstrap JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                crossorigin="anonymous"></script>
 
-    $("#myparagraph").tooltip({
-        html: true,
-        title: '<p><strong>CS 181</strong><br>9:00am - 10:15am</p>'
-    });
+        <!--Sidebar-->
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "20em";
+            }
 
-    $(function () {
-        $('[data-toggle="popover"]').popover()
-    })
-</script>
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
 
+        <!-- Mark-One JavaScript -->
+        <script src="https://seas-computing.github.io/mark-one/assets~main5f947c6db2fbbe4cd0f0.js"></script>
+        <script src="https://seas-computing.github.io/mark-one/build/bundle.2043da72.js"></script>
 
-
-</body>
+    </body>
 </html>
