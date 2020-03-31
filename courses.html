@@ -78,7 +78,7 @@
                 top: 0;
                 left: 0;
                 background-color: #fff;
-                border-right: 1px solid #ccc;
+                border-right: 1px solid #007bff;
                 overflow-x: hidden;
                 transition: 0.5s;
                 margin-top: -5em;
@@ -94,13 +94,14 @@
                 padding: 8px 8px 8px 32px;
                 text-decoration: none;
                 font-size: 25px;
-                color: #818181;
+                color: #007bff;
                 display: block;
                 transition: 0.3s;
             }
 
             .sidenav a:hover {
-                color: #f1f1f1;
+                color: rgb(8, 65, 97);
+                text-decoration: underline;
             }
 
             @media screen and (max-height: 450px) {
@@ -114,6 +115,16 @@
                 font-size: 1em;
             }
 
+            .nav-link a {
+                color: #007bff;
+                text-decoration: none;
+            }   
+
+            .nav-link a:hover {
+                color: rgb(8, 65, 97);
+                text-decoration: underline;
+            }   
+
             .nav-tabs {
                 margin-bottom: -0.5em;
                 margin-left: -176em;
@@ -121,7 +132,7 @@
 
             .nav-pills {
                 margin-top: 2.05em;
-                margin-left: 3em;
+                margin-left: 1em;
                 position: absolute;
             }
 
@@ -129,6 +140,16 @@
                 padding-left: 1em;
                 padding-right: 1em;
             }
+
+            .nav-item a {
+                color: #007bff;
+                text-decoration: none;
+            }   
+
+            .nav-item a:hover {
+                color: rgb(8, 65, 97);
+                text-decoration: underline;
+            }   
 
             .navbar-brand img {
                 width: 7%;
@@ -191,7 +212,8 @@
 
             .sidenav a:hover {
                 font-size: 1.5em;
-                color: #000;
+                color: rgb(8, 65, 97);
+                text-decoration: underline;
             }
 
             .modal {
@@ -350,6 +372,7 @@
             flex-wrap: wrap;
             list-style-type: none;
             border-bottom: 1px solid rgb(24, 24, 24);
+            margin-left: 10em;
         }
 
         ul {
@@ -370,7 +393,7 @@
         .icrnXS-first {
             margin-bottom: -1px;
             padding: 0px 1em;
-            margin-left: 7em;
+            margin-left: -1em;
         }
 
         li {
@@ -608,60 +631,6 @@
     </head>
     <body>
 
-        <!-- Pre-Mark-One nav -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" hidden>
-            <span class="navbar-brand">
-                <img src="H_SEAS_logo_RGB.png">
-                <h2 class="navbar-text mr-auto">
-                    SEAS Course Planning
-                </h2>
-            </span>
-            <ul class="nav nav-tabs" style="margin-top: 5em;">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="courses-ncm.html">Non class meetings</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="faculty.html">Faculty</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="schedule.html">Schedule</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="fourYearPlan.html">4 Year Plan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="manage_courses.html">Manage Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="manage_faculty.html">Manage Faculty</a>
-                </li>
-            </ul>
-        
-            <!-- Right align Login/Logout link -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
-                </li>
-            </ul>
-        
-            <!-- Replaced this drop down with the new Nav item - Login -->
-            <ul class="navbar-nav ml-auto" hidden>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Name Surname
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="manage_users.html">Administration</a>
-                    <a class="dropdown-item" href="#">Log out</a>
-                </div>
-                </li>
-            </ul>
-
-        </nav>
-
         <header class="sc-bxivhb bsLcFZ">
             <a width="175px" href="#" height="50px" class="sc-ifAKCX bSvdsU"><img src="H_SEAS_logo_RGB.png" width="175px"></a>
             <h1 class="sc-ckVGcZ eEciP">SEAS Course Planning</h1>
@@ -689,7 +658,7 @@
             <div id="mySidenav" class="sidenav" style="white-space: nowrap;">
                 <div>
                     <a href="javascript:void(0)" onclick="closeNav()"
-                    style="font-size: 1em; margin-top: .05em; margin-left: 2.5em;">
+                    style="font-size: 1em; margin-top: .05em; margin-left: .5em;">
                         Settings
                         <i class="far fa-arrow-alt-circle-left ml-auto"></i>
                     </a>
@@ -738,10 +707,10 @@
                         <div class="sc-gzVnrw kzaudT"><a href="manage_users.html" class="sc-kgoBCf cuZvUJ">Manage Users</a></div>
                     </li> -->
                     <li class="sc-htoDjs icrnXS">
-                        <div class="sc-gzVnrw kzaudT"><a href="manage_courses.html" class="sc-kgoBCf cuZvUJ">Manage Courses</a></div>
+                        <div class="sc-gzVnrw kzaudT"><a href="manage_courses.html" class="sc-kgoBCf cuZvUJ">Courses Admin</a></div>
                     </li>
                     <li class="sc-htoDjs icrnXS">
-                        <div class="sc-gzVnrw kzaudT"><a href="manage_faculty.html" class="sc-kgoBCf cuZvUJ">Manage Faculty</a></div>
+                        <div class="sc-gzVnrw kzaudT"><a href="manage_faculty.html" class="sc-kgoBCf cuZvUJ">Faculty Admin</a></div>
                     </li>   
                 </ul>
             </nav>
@@ -1416,7 +1385,7 @@
         <!--Sidebar-->
         <script>
             function openNav() {
-                document.getElementById("mySidenav").style.width = "20em";
+                document.getElementById("mySidenav").style.width = "14em";
             }
 
             function closeNav() {
