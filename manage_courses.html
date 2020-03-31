@@ -78,7 +78,7 @@
                 top: 0;
                 left: 0;
                 background-color: #fff;
-                border-right: 1px solid #ccc;
+                border-right: 1px solid #007bff;
                 overflow-x: hidden;
                 transition: 0.5s;
                 margin-top: -5em;
@@ -94,13 +94,14 @@
                 padding: 8px 8px 8px 32px;
                 text-decoration: none;
                 font-size: 25px;
-                color: #818181;
+                color: #007bff;
                 display: block;
                 transition: 0.3s;
             }
 
             .sidenav a:hover {
-                color: #f1f1f1;
+                color: rgb(8, 65, 97);
+                text-decoration: underline;
             }
 
             @media screen and (max-height: 450px) {
@@ -109,10 +110,20 @@
                 }
             }
 
-            /* Amending Bootstrap styles */
+            /*Amending Bootstrap styles*/
             .nav-link {
                 font-size: 1em;
             }
+
+            .nav-link a {
+                color: #007bff;
+                text-decoration: none;
+            }   
+
+            .nav-link a:hover {
+                color: rgb(8, 65, 97);
+                text-decoration: underline;
+            }   
 
             .nav-tabs {
                 margin-bottom: -0.5em;
@@ -120,8 +131,7 @@
             }
 
             .nav-pills {
-                margin-top: 2.05em;
-                margin-left: 0em;
+                margin-top: 2.5em;
                 position: absolute;
             }
 
@@ -129,6 +139,16 @@
                 padding-left: 1em;
                 padding-right: 1em;
             }
+
+            .nav-item a {
+                color: #007bff;
+                text-decoration: none;
+            }   
+
+            .nav-item a:hover {
+                color: rgb(8, 65, 97);
+                text-decoration: underline;
+            }   
 
             .navbar-brand img {
                 width: 7%;
@@ -191,7 +211,8 @@
 
             .sidenav a:hover {
                 font-size: 1.5em;
-                color: #000;
+                color: rgb(8, 65, 97);
+                text-decoration: underline;
             }
 
             .modal {
@@ -224,333 +245,329 @@
                 padding: 0em;
                 width: 100vw;
                 height: 120vh;
+                margin-top: 4em;
             }
         </style>
 
         <!-- Mark-one styles -->
         <style>
-        /* style for table */
-        .coIxkm-amended {
-            border-collapse: collapse;
-            width: 95%;
-            border-width: 2px;
-            border-style: solid;
-            border-color: rgb(152, 152, 152);
-            border-image: initial;
-            margin: 1em 2em 1em 1em;
-            padding: 5px 10px;
-        }
-
-        .iRtSxQ {
-            background-color: rgb(209, 209, 209);
-        }
-
-        .jQECIl {
-            background: rgb(254, 254, 254);
-        }
-
-        .jQECIl th {
-            background-color: rgb(209, 209, 209);
-            padding: 0 .5em 0 .5em; /* adding side padding to table headers */
-        }
-
-        .cbrsHS {
-            font-weight: 600;
-            border-width: 2px;
-            border-style: solid;
-            border-color: rgb(152, 152, 152);
-            border-image: initial;
-        }
-
-        .jxSeiZ {
-            overflow: scroll;
-        }
-
-        .cjgueY {
-            background: rgb(236, 236, 236);
-        }
-
-        .bqnYPo {
-            font-family: "Roboto Mono", monospace;
-            font-size: 0.9em;
-            border-left: 2px solid rgb(152, 152, 152);
-            border-right: 2px solid rgb(152, 152, 152);
-            padding: 3px;
-        }
-
-        /* negative: light class for background of "no" table cell */
-        .bCEQJv {
-            margin-top: 10px;
-            color: rgb(24, 24, 24);
-            background: rgb(255, 143, 156);
-            padding: 3px;  /* Decreasing padding */
-            font-family: "Roboto Mono", monospace;
-            font-size: 0.9em;
-            border-left: 2px solid rgb(152, 152, 152);
-            border-right: 2px solid rgb(152, 152, 152);
-        }
-
-        /* negative: dark class for font color of "no" table cell */
-        .no {
-            color: rgb(237, 27, 42);
-            font-weight: 900;
-        }
-
-        table {
-            display: table;
-            border-collapse: separate;
-            border-spacing: 2px;
-            border-color: grey;
+            /* style for table */
+            .coIxkm-amended {
+                border-collapse: collapse;
+                width: 95%;
+                border-width: 2px;
+                border-style: solid;
+                border-color: rgb(152, 152, 152);
+                border-image: initial;
+                margin: 1em 2em 1em 1em;
+                padding: 5px 10px;
+            }
+    
+            .iRtSxQ {
+                background-color: rgb(209, 209, 209);
+            }
+    
+            .jQECIl {
+                background: rgb(254, 254, 254);
+            }
+    
+            .jQECIl th {
+                background-color: rgb(209, 209, 209);
+            }
+    
+            .cbrsHS {
+                font-weight: 600;
+                border-width: 2px;
+                border-style: solid;
+                border-color: rgb(152, 152, 152);
+                border-image: initial;
+            }
+    
+            .jxSeiZ {
+                overflow: scroll;
+            }
+    
+            .cjgueY {
+                background: rgb(236, 236, 236);
+            }
+    
+            .bqnYPo {
+                font-family: "Roboto Mono", monospace;
+                font-size: 0.9em;
+                border-left: 2px solid rgb(152, 152, 152);
+                border-right: 2px solid rgb(152, 152, 152);
+                padding: 3px;
+            }
+    
+            /* negative: light class for background of "no" table cell */
+            .bCEQJv {
+                margin-top: 10px;
+                color: rgb(24, 24, 24);
+                background: rgb(255, 143, 156);
+                padding: 3px;  /* Decreasing padding */
+                font-family: "Roboto Mono", monospace;
+                font-size: 0.9em;
+                border-left: 2px solid rgb(152, 152, 152);
+                border-right: 2px solid rgb(152, 152, 152);
+            }
+    
+            /* negative: dark class for font color of "no" table cell */
+            .no {
+                color: rgb(237, 27, 42);
+                font-weight: 900;
+            }
+    
+            table {
+                display: table;
+                border-collapse: separate;
+                border-spacing: 2px;
+                border-color: grey;
+                font-size: 16px;
+                font-weight: 400;
+                }
+    
+            thead {
+                display: table-header-group;
+                vertical-align: middle;
+                border-color: inherit;
+            }
+    
+            tr {
+                display: table-row;
+                vertical-align: inherit;
+                border-color: inherit;
+            }
+    
+            /* Define the hover highlight color for the table row */
+            .hoverTable tr:hover {
+                background-color: #d1d1d1;
+            }
+    
+            th {
+                display: table-cell;
+                vertical-align: inherit;
+                font-weight: bold;
+                text-align: center;
+                vertical-align: top;
+            }
+    
+            tbody {
+                display: table-row-group;
+                vertical-align: middle;
+                border-color: inherit;
+            }
+    
+            td {
+                display: table-cell;
+                vertical-align: inherit; 
+            }
+    
+    
+            /* style for nav */
+            nav {
+                display: block;
+                font-size: 16px;
+                font-weight: 400;
+                position: absolute;
+                margin-left: 15em;
+                width: 60em;
+            }
+    
+            .hhGZXE {
+                background-color: transparent;
+                border-collapse: collapse;
+                display: flex;
+                flex-wrap: wrap;
+                list-style-type: none;
+                border-bottom: 1px solid rgb(24, 24, 24);
+            }
+    
+            ul {
+                /* display: block; */
+                /* list-style-type: disc; */
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 40px;
+            }
+    
+            .icrnXS {
+                margin-bottom: -1px;
+            }
+    
+            .icrnXS-first {
+                margin-bottom: -1px;
+                padding: 0px 1em;
+                margin-left: -1em;
+            }
+    
+            li {
+                display: list-item;
+                text-align: -webkit-match-parent;
+            }
+    
+            .kzaudT {
+                color: rgb(24, 24, 24);
+                display: inline-block;
+                background: transparent;
+                border-width: 1px 1px 1px;
+                border-style: solid solid none;
+                border-color: transparent transparent transparent;
+                border-image: initial;
+                border-bottom: none;
+                padding: 0.5rem 1rem;
+            }
+    
+            /* active tab */
+            .bWbWht {
+                color: rgb(24, 24, 24);
+                display: inline-block;
+                background: rgb(254, 254, 254);
+                border-width: 1px;
+                border-style: solid;
+                border-color: rgb(24, 24, 24) rgb(24, 24, 24) transparent;
+                border-image: initial;
+                border-bottom: 1px solid transparent;
+                padding: 0.5rem 1rem;
+            }
+    
+            /* header */
+            .bsLcFZ {
+                align-items: flex-end;
+                background-color: transparent;
+                box-shadow: rgba(0, 0, 0, 0.28) 0px 4px 8px;
+                display: flex;
+                -webkit-box-pack: justify;
+                justify-content: space-between;
+                width: 100%;
+                padding: 15px 10px;
+            }
+    
+            .bSvdsU {
+                align-self: stretch;
+                background-image: url(53adae7….svg);
+                background-size: contain;
+                color: transparent;
+                display: inline-block;
+                font-size: 0px;
+                line-height: 0;
+                width: 175px;
+                min-width: 100px;
+                height: 50px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                margin: 0px 10px;
+            }
+    
+            .eEciP {
+                font-size: 1.66em;
+                font-family: "Open Sans", sans-serif;
+                font-weight: 400;
+                grid-column-end: span 4;
+            }
+    
+            header {
             font-size: 16px;
             font-weight: 400;
             }
-
-        thead {
-            display: table-header-group;
-            vertical-align: middle;
-            border-color: inherit;
-        }
-
-        tr {
-            display: table-row;
-            vertical-align: inherit;
-            border-color: inherit;
-        }
-
-        /* Define the hover highlight color for the table row */
-        .hoverTable tr:hover {
-            background-color: #d1d1d1;
-        }
-
-        th {
-            display: table-cell;
-            vertical-align: inherit;
-            font-weight: bold;
-            text-align: center;
-            vertical-align: top;
-            margin: 0 3px 0 3px;
-            white-space: nowrap;
-            padding: 0 3px 0 3px;
-        }
-
-        tbody {
-            display: table-row-group;
-            vertical-align: middle;
-            border-color: inherit;
-        }
-
-        td {
-            display: table-cell;
-            vertical-align: inherit; 
-        }
-
-
-        /* style for nav */
-        nav {
-            display: block;
-            font-size: 16px;
-            font-weight: 400;
-        }
-
-        .hhGZXE {
-            background-color: transparent;
-            border-collapse: collapse;
-            display: flex;
-            flex-wrap: wrap;
-            list-style-type: none;
-            border-bottom: 1px solid rgb(24, 24, 24);
-        }
-
-        ul {
-            /* display: block; */
-            /* list-style-type: disc; */
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
-            padding-inline-start: 40px;
-        }
-
-        .icrnXS {
-            margin-bottom: -1px;
-            padding: 0px 1em;
-        }
-
-        .icrnXS-first {
-            margin-bottom: -1px;
-            padding: 0px 1em;
-            margin-left: 7em;
-        }
-
-        li {
-            display: list-item;
-            text-align: -webkit-match-parent;
-        }
-
-        .kzaudT {
-            color: rgb(24, 24, 24);
-            display: inline-block;
-            background: transparent;
-            border-width: 1px 1px 1px;
-            border-style: solid solid none;
-            border-color: transparent transparent transparent;
-            border-image: initial;
-            border-bottom: none;
-            padding: 0.5rem 1rem;
-        }
-
-        /* active tab */
-        .bWbWht {
-            color: rgb(24, 24, 24);
-            display: inline-block;
-            background: rgb(254, 254, 254);
-            border-width: 1px;
-            border-style: solid;
-            border-color: rgb(24, 24, 24) rgb(24, 24, 24) transparent;
-            border-image: initial;
-            border-bottom: 1px solid transparent;
-            padding: 0.5rem 1rem;
-        }
-
-        /* header */
-        .bsLcFZ {
-            align-items: flex-end;
-            background-color: transparent;
-            box-shadow: rgba(0, 0, 0, 0.28) 0px 4px 8px;
-            display: flex;
-            -webkit-box-pack: justify;
-            justify-content: space-between;
-            width: 100%;
-            padding: 15px 10px;
-        }
-
-        .bSvdsU {
-            align-self: stretch;
-            background-image: url(53adae7….svg);
-            background-size: contain;
-            color: transparent;
-            display: inline-block;
-            font-size: 0px;
-            line-height: 0;
-            width: 175px;
-            min-width: 100px;
-            height: 50px;
-            background-position: center center;
-            background-repeat: no-repeat;
-            margin: 0px 10px;
-        }
-
-        .eEciP {
-            font-size: 1.66em;
-            font-family: "Open Sans", sans-serif;
-            font-weight: 400;
-            grid-column-end: span 4;
-        }
-
-        header {
-        font-size: 16px;
-        font-weight: 400;
-        }
-
-        /* button - primary */
-        .bADMLE {
-            color: rgb(254, 254, 254);
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 400;
-            background: rgb(78, 136, 199); /* Primary button idle color - info: medium */
-            padding: 5px 10px;
-            border: 0px solid #fff;
-        }
-
-        .bADMLE:hover { background: rgb(8, 65, 97); } /* Primary button highlight color - info: dark */
-
-        /* button icon - primary */
-        .bADMLE-icon {
-            color: rgb(78, 136, 199); /* Primary button icon idle color - info: medium */
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 400;
-            /* padding: 5px 10px; */
-        }
-
-        .bADMLE-icon:hover { color: rgb(8, 65, 97); } /* Primary button icon highlight color - info: dark */
-
-        /* button - secondary */
-        .kxWoHZ {
-            color: rgb(24, 24, 24);
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 400;
-            background: rgb(209, 209, 209); /* Secondary button idle color - background: medium */
-            padding: 5px 10px;
-            border: 0px solid #fff;
-            margin-right: auto!important; /* Secondary button left align */
-
-        }
-
-        .kxWoHZ:hover { 
-            color: rgb(254, 254, 254);
-            background: rgb(147, 161, 173); /* Secondary button highlight color - background: dark */
-        }
-
-        /* button - danger */
-        .csuYJy {
-            color: rgb(254, 254, 254);
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 400;
-            background: rgb(237, 27, 42); /* Danger button idle color - negative: dark */
-            padding: 5px 10px;
-            border: 0px solid #fff;
-        }
-
-        .csuYJy:hover { background: rgb(165, 28, 48); } /* Danger button highlight color - backgrond: accent */
-
-        .lijgtc { /* positive: light */
-            margin-top: 10px;
-            color: rgb(24, 24, 24);
-            background: rgb(129, 233, 129);
-            /* padding: 15px; */
+    
+            /* button - primary */
+            .bADMLE {
+                color: rgb(254, 254, 254);
+                cursor: pointer;
+                font-size: 1em;
+                font-weight: 400;
+                background: rgb(78, 136, 199); /* Primary button idle color - info: medium */
+                padding: 5px 10px;
+                border: 0px solid #fff;
             }
-
+    
+            .bADMLE:hover { background: rgb(8, 65, 97); } /* Primary button highlight color - info: dark */
+    
+            /* button icon - primary */
+            .bADMLE-icon {
+                color: rgb(78, 136, 199); /* Primary button icon idle color - info: medium */
+                cursor: pointer;
+                font-size: 1em;
+                font-weight: 400;
+                padding: 5px 10px;
+            }
+    
+            .bADMLE-icon:hover { color: rgb(8, 65, 97); } /* Primary button icon highlight color - info: dark */
+    
+            /* button - secondary */
+            .kxWoHZ {
+                color: rgb(24, 24, 24);
+                cursor: pointer;
+                font-size: 1em;
+                font-weight: 400;
+                background: rgb(209, 209, 209); /* Secondary button idle color - background: medium */
+                padding: 5px 10px;
+                border: 0px solid #fff;
+            }
+    
+            .kxWoHZ:hover { 
+                color: rgb(254, 254, 254);
+                background: rgb(147, 161, 173); /* Secondary button highlight color - background: dark */
+            }
+    
+            /* button - danger */
+            .csuYJy {
+                color: rgb(254, 254, 254);
+                cursor: pointer;
+                font-size: 1em;
+                font-weight: 400;
+                background: rgb(237, 27, 42); /* Danger button idle color - negative: dark */
+                padding: 5px 10px;
+                border: 0px solid #fff;
+            }
+    
+            .csuYJy:hover { background: rgb(165, 28, 48); } /* Danger button highlight color - backgrond: accent */
+    
+            .lijgtc { /* positive: light */
+                margin-top: 10px;
+                color: rgb(24, 24, 24);
+                background: rgb(129, 233, 129);
+                /* padding: 15px; */
+                }
+    
         /* button icon - danger */
-        .csuYJy-icon { /* Danger button icon idle color - negative: dark */
-            margin-top: 10px;
-            color: rgb(237, 27, 42);
-            padding: 15px;
-        }
-
-        .csuYJy-icon:hover {  /* Danger button icon highlight color - background: accent */
-            color: rgb(165, 28, 48);
-        }
-
-
-        .button-icon {
-            margin-top: 0px;
-            display: inline-block;
-            font-weight: 400;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            padding: .375rem .75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            border-radius: .25rem;
-            border: solid 0 #fff;
-        }
-
-        /* Drop down */
-        .kFoNgS {
-            color: rgb(24, 24, 24);
-            margin-bottom: .5em;
-        }
-
-
+            .csuYJy-icon { /* Danger button icon idle color - negative: dark */
+                margin-top: 10px;
+                color: rgb(237, 27, 42);
+                padding: 15px;
+            }
+    
+            .csuYJy-icon:hover {  /* Danger button icon highlight color - background: accent */
+                color: rgb(165, 28, 48);
+            }
+    
+            .button-icon {
+                margin-top: 0px;
+                display: inline-block;
+                font-weight: 400;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                padding: .375rem .75rem;
+                font-size: 1rem;
+                line-height: 1.5;
+                border-radius: .25rem;
+                border: solid 0 #fff;
+            }
+    
+            /* Drop down */
+            .kFoNgS {
+                color: rgb(24, 24, 24);
+                margin-bottom: .5em;
+            }
+    
+    
         </style>
 
         <!-- Simulating Mark-One styles -->
@@ -673,9 +690,6 @@
 
          <div id="outer-grid">
 
-            <!-- courses -->
-            <div class="courses">
-
                 <!-- Mark-One nav -->
                 <nav>
                     <ul class="sc-bZQynM hhGZXE">
@@ -698,13 +712,16 @@
                             <div class="sc-gzVnrw kzaudT"><a href="manage_users.html" class="sc-kgoBCf cuZvUJ">Manage Users</a></div>
                         </li> -->
                         <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw bWbWht"><a href="#" class="sc-kgoBCf cuZvUJ">Manage Courses</a></div>
+                            <div class="sc-gzVnrw bWbWht"><a href="#" class="sc-kgoBCf cuZvUJ">Courses Admin</a></div>
                         </li>
                         <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="manage_faculty.html" class="sc-kgoBCf cuZvUJ">Manage Faculty</a></div>
+                            <div class="sc-gzVnrw kzaudT"><a href="manage_faculty.html" class="sc-kgoBCf cuZvUJ">Faculty Admin</a></div>
                         </li>   
                     </ul>
                 </nav>
+
+            <!-- courses -->
+            <div class="courses">
 
                 <!-- Table from Mark-One -->
                 <table class="sc-dnqmqq coIxkm-amended hoverTable">
