@@ -1,0 +1,498 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="Documentation and examples for Bootstrap’s powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more, including support for our collapse plugin.">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.3">
+
+    <title>Rule sets - SEAS Course Planning - Interaction guidelines</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/components/navbar/">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/components/navbar/">
+
+    <!-- Bootstrap core CSS -->
+
+    <style class="anchorjs"></style>
+    <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+    <!-- Documentation extras -->
+
+    <link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+
+    <link href="https://getbootstrap.com/docs/4.1/assets/css/docs.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="icon" href="https://www.seas.harvard.edu/favicon.ico">
+    <meta name="theme-color" content="#563d7c">
+
+    <!-- Icon library at https://fontawesome.com/icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+          integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+    <!-- Amending Bootstrap styles -->
+    <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .bg-light {
+            background-color: #ffffff !important;
+        }
+
+        .navbar-text h2 {
+            font-size: 1.25rem;
+        }
+
+        .bd-navbar .navbar-nav .nav-link {
+            padding-right: .5rem;
+            padding-left: .5rem;
+            color: #93a1ad;
+        }
+
+        .nav-item a:hover {
+            color: black !important;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
+    </a>
+
+    <header class="navbar navbar-expand navbar-light bg-light flex-column flex-md-row bd-navbar">
+        <a class="navbar-brand mr-0 mr-md-2" href="https://www.seas.harvard.edu/computing-office" aria-label="SEAS Computing">
+            <img src="https://www.seas.harvard.edu/sites/default/files/images/H_SEAS_logo_RGB_1.jpg" alt="SEAS logo" style="width: 10em; margin-right: 1em;">
+            <title>SEAS Course Planning - Interaction guidelines</title>
+        </a>
+
+        <div class="navbar-nav-scroll">
+            <ul class="navbar-nav bd-navbar-nav flex-row">
+                <li class="nav-item">
+                    <span class="navbar-text">
+                        <h2>SEAS Course Planning - Interaction guidelines</h2>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item dropdown">
+                <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Other links
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                    <a class="dropdown-item active" href="https://seas-computing.github.io/course-planner_ux/guidelines.html">Guidelines</a>
+                    <a class="dropdown-item" href="https://github.com/seas-computing/course-planner/projects/1">Kanban</a>
+                    <a class="dropdown-item" href="https://seas-computing.github.io/course-planner_ux/schedule.html">Prototypes</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="https://planning.seas.harvard.edu/courses/app/#/schedule">Course planner</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link p-2 mt-1" href="https://github.com/seas-computing/course-planner_ux/tree/gh-pages/guidelines" trel="noopener"
+                   aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+
+        </ul>
+
+        <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20191028</small></span>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row flex-xl-nowrap">
+
+            <!-- Links in this left-hand sidebar take to other web pages -->
+            <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+
+                <nav class="collapse bd-links" id="bd-docs-nav">
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-overview.html">
+                            Overview
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-theme.html">
+                            Theme
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item active">
+                        <a class="bd-toc-link" href="#rulsets">
+                            Rule sets
+                        </a>
+                        <ul class="nav bd-sidenav">
+                            <li>
+                                <a href="#calendar">
+                                    Calendar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#dropdown">
+                                    Drop downs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#link">
+                                    Links and buttons
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-content.html">
+                            Content
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-components.html">
+                            Components
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-architecture.html">
+                            Architecture
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-interaction.html">
+                            User interaction
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-system.html">
+                            System capabilities
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-visual.html">
+                            Visual Design
+                        </a>
+                    </div>
+
+                    <div class="bd-toc-item">
+                        <a class="bd-toc-link" href="guidelines-branding.html">
+                            Branding and Images
+                        </a>
+                    </div>
+
+                </nav>
+
+            </div>
+
+            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+
+                <h2 id="rulsets">
+                    <div>
+                        Rule sets<a class="anchorjs-link" href="#rulsets" aria-label="Anchor" data-anchorjs-icon="#"
+                                    style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
+                <p>
+                    Rule sets address patterns and exceptions.
+                    They improve productivity of implementation and they ensure consistency, which improves usability.
+                    <!-- Source:  -->
+                </p>
+                <!-- / rulsets -->
+
+                <h2 id="calendar">
+                    <div>
+                        Calendar<a class="anchorjs-link" href="#calendar" aria-label="Anchor" data-anchorjs-icon="#"
+                                   style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
+
+                <div class="row mt-4">
+                    <div class="col">
+                        <h3>
+                            Priority sequence
+                        </h3>
+                        <ol>
+                            <li>Day of the week</li>
+                            <li>
+                                First hour block
+                                <ol>
+                                    <li>Courses of first hour block</li>
+                                </ol>
+                            </li>
+                            <li>
+                                Second hour block
+                                <ol>
+                                    <li>Courses of second hour block (on any available space non occupied by the courses of the previous hour block)</li>
+                                </ol>
+                            </li>
+                            <li>
+                                Third hour block
+                                <ol>
+                                    <li>Courses of third hour block (on any available space non occupied by the courses of the previous hour block)</li>
+                                </ol>
+                            </li>
+                            <li>Etc.</li>
+                        </ol>
+                    </div>
+                    <div class="col text-center">
+                        <img src="img/ruleset-schedule_sequence.png" class="rounded img-fluid border" alt="schedule">
+                    </div>
+                </div><!-- / Priority sequence -->
+
+
+                <div class="row mt-4">
+                    <div class="col">
+                        <h3>
+                            "Automatic" sequence
+                        </h3>
+                        <p>
+                            According to the above priority sequence, courses would populate each time block in alphabetical order.
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-4">
+                        <ol>
+                            <li>Courses populate each time block in alphabetical order</li>
+                            <li>Courses placement is affected only by the previous time block(s)</li>
+                            <li>Courses placement is not affected by the following time block</li>
+                        </ol>
+                    </div>
+                    <div class="col text-center">
+                        <figure class="figure">
+                            <img src="img/ruleset-schedule_auto.png" class="figure-img img-fluid rounded" alt="">
+                            <figcaption class="figure-caption">The course blocks are listed alphabetically and numerically</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <p>
+                            This rule set doesn't make the best use of the space.
+                        </p>
+                        <hr />
+                    </div>
+                </div><!-- / Automatic sequence -->
+
+                <div class="row mt-4">
+                    <div class="col">
+                        <h3>
+                            "Logical" sequence
+                        </h3>
+                        <p>
+                            These rules maximize the available space within a time block
+                            and improve the readability of courses by reducing visual inconsistency.
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-4">
+                        <ol>
+                            <li>Courses populate each time block in alphabetical order</li>
+                            <li>
+                                <strong>Courses populate each time block in order of length</strong>
+                                <ol>
+                                    <li><strong>Courses with the greater length are placed as last within each time block</strong></li>
+                                </ol>
+                            </li>
+                            <li>Courses placement is affected only form the previous time block(s)</li>
+                            <li>Courses placement is not affected by the following time block</li>
+                        </ol>
+                    </div>
+                    <div class="col text-center">
+                        <figure class="figure">
+                            <img src="img/ruleset-schedule_logic.png" class="figure-img img-fluid rounded" alt="">
+                            <figcaption class="figure-caption">The course blocks that follow this new rule are highlighted in "Sequence 2"</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <hr />
+                    </div>
+                </div><!-- / Logical sequence -->
+                <!-- / calendar -->
+
+                <h2 id="dropdown">
+                    <div>
+                        Drop downs<a class="anchorjs-link" href="#dropdown" aria-label="Anchor" data-anchorjs-icon="#"
+                                     style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
+
+                <div class="row mt-2">
+                    <div class="col-4">
+                        <ul>
+                            <li>Dropdowns are used for the selection of 3 or more options</li>
+                            <li>
+                                For two or less selections, use checkboxes or radio buttons
+                            </li>
+                            <li>
+                                Note that interfaces like 
+                                <a href="https://www.bootstraptoggle.com/">
+                                    toggle switches
+                                </a>
+                                are stylized radio buttons
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col text-center">
+                        <figure class="figure">
+                            <img src="img/ruleset-dropdown.png" class="figure-img img-fluid rounded border" alt="">
+                            <figcaption class="figure-caption">Detail of the selection and input forms in the left panel of Schedule</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <hr />
+                    </div>
+                </div><!-- / Drop downs -->
+                <!-- / dropdown -->
+
+                <h2 id="link">
+                    <div>
+                        Links and buttons<a class="anchorjs-link" href="#link" aria-label="Anchor" data-anchorjs-icon="#"
+                                            style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                    </div>
+                </h2>
+
+                <div class="row mt-2">
+                    <div class="col-4">
+                        <p>
+                            When selecting a link, users expect to "jump" to content different than the current one (even though contextually the same).
+                        </p>
+                        <p>
+                            Use icons with text labels or as links only when they helps to clarify ambiguities.
+                            Otherwise the context and descriptive text are sufficient.
+                        </p>
+                        <p>
+                            Links are used to connect content areas:
+                            <ul>
+                                <li>Relative pages of content (same directory, project)</li>
+                                <li>External pages of content</li>
+                                <li>Content within the same page (anchor links)</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="col text-center">
+                        <figure class="figure mb-4">
+                            <img src="img/ruleset-link.png" class="figure-img img-fluid rounded border" alt="">
+                            <figcaption class="figure-caption">Detail of the tab and drop down links in Schedule</figcaption>
+                        </figure>
+                    </div>
+                </div><!-- / link -->
+
+                <div class="row mt-2">
+                    <div class="col">
+                        <hr />
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-4">
+                        <p>
+                            When selecting a button, users expect for some programmatic activity to take place and eventually display its results.
+                        </p>
+                        <p>
+                            Buttons should not to be used to emphasize links.
+                        </p>
+                        <p>
+                            Use icons as buttons or with buttons only when it helps to clarify ambiguities.
+                            Otherwise the context and button label are sufficient.
+                        </p>
+                        <p>
+                            Buttons are used to "process" information or to trigger changes of the content
+                            <ul>
+                                <li>Submit or cancel a selection or input text</li>
+                                <li>Reveal hidden information*</li>
+                                <li>Change the aspect of content (courses schedule)</li>
+                            </ul>
+                        </p>
+                        <div class="text-muted">
+                            * - It's open to discussion whether this should be an icon with the function of a link,
+                            since modals or side navs just reveal previously hidden content. But not in all cases.
+                            <br />
+                            Ultimately, these are "visual rules" based on "superficial" usability;
+                            the user is exposed to the same experience whether the action of one button streams data from the back-end
+                            and doing all kind of processing to finally display the result, while another just un-hides static information.
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <figure class="figure mb-4">
+                            <img src="img/ruleset-button.png" class="figure-img img-fluid rounded border" alt="">
+                            <figcaption class="figure-caption">Detail of the Settings left panel of the Course interface</figcaption>
+                        </figure>
+                        <figure class="figure mb-4 mt-4">
+                            <img src="img/ruleset-button_2.png" class="figure-img img-fluid rounded border" alt="">
+                            <figcaption class="figure-caption">Detail of the show/hide buttons in the Schedule interface</figcaption>
+                        </figure>
+                        <figure class="figure mt-4">
+                            <img src="img/ruleset-button_3.png" class="figure-img img-fluid rounded border" alt="">
+                            <figcaption class="figure-caption">Detail of the "Create new user" button in the admin Mange Users interface</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <hr />
+                    </div>
+                </div><!-- / button -->
+                <!-- / links and buttons -->
+
+            </main>
+
+        </div><!-- / row flex-xl-nowrap -->
+    </div><!-- / container-fluid -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/docs.min.js"></script>
+
+
+</body>
+
+</html>
