@@ -33,33 +33,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
           integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
-    <!-- Amending Bootstrap styles -->
-    <style>
-
-
-
-
-
-
-        .bg-light {
-            background-color: #ffffff !important;
-        }
-
-        .navbar-text h2 {
-            font-size: 1.25rem;
-        }
-
-        .bd-navbar .navbar-nav .nav-link {
-            padding-right: .5rem;
-            padding-left: .5rem;
-            color: #93a1ad;
-        }
-
-        .nav-item a:hover {
-            color: black !important;
-            cursor: pointer;
-        }
-    </style>
+    <!-- CSS for design guidelines -->
+    <link rel="stylesheet" href="css/guideline.css">
 
 </head>
 
@@ -75,15 +50,13 @@
            aria-label="SEAS Computing">
             <img src="https://www.seas.harvard.edu/sites/default/files/images/H_SEAS_logo_RGB_1.jpg" alt="SEAS logo"
                  style="width: 10em; margin-right: 1em;">
-            <title>SEAS Course Planning - Interaction guidelines</title>
+            <title>SEAS Mark One library of visual components</title>
         </a>
 
         <div class="navbar-nav-scroll">
             <ul class="navbar-nav bd-navbar-nav flex-row">
                 <li class="nav-item">
-                    <span class="navbar-text">
-                        <h2>SEAS Course Planning - Interaction guidelines</h2>
-                    </span>
+                    <h2>SEAS Mark One library of visual components</h2>
                 </li>
             </ul>
         </div>
@@ -95,12 +68,9 @@
                     Other links
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-                    <a class="dropdown-item active"
-                       href="https://seas-computing.github.io/course-planner_ux/guidelines.html">Guidelines</a>
-                    <a class="dropdown-item" href="https://github.com/seas-computing/course-planner/projects/1">Kanban</a>
-
-                    <a class="dropdown-item"
-                       href="https://seas-computing.github.io/course-planner_ux/schedule.html">Prototypes</a>
+                    <a class="dropdown-item" href="https://seas-computing.github.io/mark-one/#/Overview">Mark One Style Guide</a>
+                    <a class="dropdown-item" href="https://github.com/seas-computing/course-planner/projects/2">Kanban</a>
+                    <a class="dropdown-item" href="https://seas-computing.github.io/course-planner_ux/schedule.html">Prototypes</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="https://planning.seas.harvard.edu/courses/app/#/schedule">Course planner</a>
                 </div>
@@ -115,7 +85,7 @@
 
         </ul>
 
-        <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20191008</small></span>
+        <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20200401</small></span>
     </header>
 
     <div class="container-fluid">
@@ -147,7 +117,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="text-muted">
+                                <a href="#access">
                                     Accessibility
                                 </a>
                             </li>
@@ -438,166 +408,215 @@
 
             <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
 
-                <h2 id="overview">
+                <section id="overview">
                     <div>
-                        Overview<a class="anchorjs-link" href="#overview" aria-label="Anchor" data-anchorjs-icon="#"
-                                   style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                        <h2>
+                            Overview<a class="anchorjs-link" href="#overview" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                        </h2>
                     </div>
-                </h2>
-                <p>
-                    A library of components and interaction rules consists of all the designed and styled parts of an interface and how they behave.
-                </p>
-                <p>
-                    Libraries foster consistentcy and productivity for development but also for the usability of the product.
-                </p>
-                <p>
-                    A successful usability offers users:
-                    <ul>
-                        <li>
-                            Ease and competence in using the user interface during the first contact with the product.
-                        </li>
-                        <li>
-                            Familiarity with the user interface and how to use it on subsequent visits.
-                        </li>
-                        <li>
-                            Efficiency when completing tasks.
-                        </li>
-                    </ul>
-                </p>
+                    <p>
+                        A library of components and interaction rules consists of all the designed and styled parts of an interface and how they behave.
+                    </p>
+                    <p>
+                        Libraries foster consistentcy and productivity for development but also for the usability of the product.
+                    </p>
+                    <p>
+                        A successful usability offers users:
+                        <ul>
+                            <li>
+                                Ease and competence in using the user interface during the first contact with the product.
+                            </li>
+                            <li>
+                                Familiarity with the user interface and how to use it on subsequent visits.
+                            </li>
+                            <li>
+                                Efficiency when completing tasks.
+                            </li>
+                        </ul>
+                    </p>
+                </section>
                 <!-- / Overview -->
 
-                <h2 id="intro">
+                <section id="intro">
                     <div>
-                        Introduction<a class="anchorjs-link" href="#intro" aria-label="Anchor" data-anchorjs-icon="#"
-                                       style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                        <h2>
+                            Introduction<a class="anchorjs-link" href="#intro" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                        </h2>
                     </div>
-                </h2>
 
-                <p>
-                    <a href="https://info.seas.harvard.edu/courses/#/multiYearPlan">
-                        Link to the current SEAS Course Planning
-                    </a>
-                </p>
-                <p>
-                    SEAS Course Planning has a public and a private interface.
-                </p>
-                <p>
-                    The public interface shows:
-                </p>
-                <ul>
-                    <li>
-                        Four year course plan
-                    </li>
-                    <li>
-                        Scheduled courses
-                    </li>
-                </ul>
-                <p>
-                    The private interface requires to login and it accesses two areas.
-                </p>
-                <p>
-                    The first area allows to edit the following content:
-                </p>
-                <ul>
-                    <li>
-                        Courses
-                    </li>
-                    <li>
-                        Faculty
-                    </li>
-                    <li>
-                        Schedule
-                    </li>
-                    <li>
-                        4 year plan
-                    </li>
-                    <li>
-                        Requests
-                    </li>
-                </ul>
-                <p>
-                    The second area, Administration, manages the following content:
-                </p>
-                <ul>
-                    <li>
-                        Manage users
-                    </li>
-                    <li>
-                        Manage courses
-                    </li>
-                    <li>
-                        Manage faculty
-                    </li>
-                </ul>
+                    <p>
+                        <a href="https://info.seas.harvard.edu/courses/#/multiYearPlan">
+                            Link to the current SEAS Course Planning
+                        </a>
+                    </p>
+                    <p>
+                        SEAS Course Planning has a public and a private interface.
+                    </p>
+                    <p>
+                        The public interface shows:
+                    </p>
+                    <ul>
+                        <li>
+                            Four year course plan
+                        </li>
+                        <li>
+                            Scheduled courses
+                        </li>
+                    </ul>
+                    <p>
+                        The private interface requires to login and it accesses two areas.
+                    </p>
+                    <p>
+                        The first area allows to edit the following content:
+                    </p>
+                    <ul>
+                        <li>
+                            Courses
+                        </li>
+                        <li>
+                            Faculty
+                        </li>
+                        <li>
+                            Schedule
+                        </li>
+                        <li>
+                            4 year plan
+                        </li>
+                        <li>
+                            Requests
+                        </li>
+                    </ul>
+                    <p>
+                        The second area, Administration, manages the following content:
+                    </p>
+                    <ul>
+                        <li>
+                            Manage users
+                        </li>
+                        <li>
+                            Manage courses
+                        </li>
+                        <li>
+                            Manage faculty
+                        </li>
+                    </ul>
+                </section>
 
-                <h2 id="github">
+                <section id="github">
                     <div>
-                        GitHub<a class="anchorjs-link" href="#github" aria-label="Anchor" data-anchorjs-icon="#"
-                                 style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                        <h2>
+                            GitHub<a class="anchorjs-link" href="#github" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                        </h2>
                     </div>
-                </h2>
-                <ul>
-                    <li>
-                        <a href="https://github.com/seas-computing/course-planner/projects/1">
-                            Course planning kanban
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/seas-computing/course-planner/projects/2">
-                            UI components
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://seas-computing.github.io/course-planner/">
-                            Globals/course-planner
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/seas-computing/TEST_calendar-ux-styled/blob/master/src/client/components/calendar/Calendar.tsx">
-                            seas-computing/TEST_calendar-ux-styled
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="https://seas-computing.github.io/TEST_calendar-ux-styled/docs/index.html">
-                                    Jonathan's React interface
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="https://github.com/seas-computing/course-planner_ux/tree/gh-pages">
-                            course-planner_ux
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="https://seas-computing.github.io/course-planner_ux/schedule.html">
-                                    gh-pages prototype
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/seas-computing/course-planner/projects/1">
+                                Course planning kanban
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/seas-computing/course-planner/projects/2">
+                                UI components
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://seas-computing.github.io/course-planner/">
+                                Globals/course-planner
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/seas-computing/TEST_calendar-ux-styled/blob/master/src/client/components/calendar/Calendar.tsx">
+                                seas-computing/TEST_calendar-ux-styled
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="https://seas-computing.github.io/TEST_calendar-ux-styled/docs/index.html">
+                                        Jonathan's React interface
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://github.com/seas-computing/course-planner_ux/tree/gh-pages">
+                                course-planner_ux
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="https://seas-computing.github.io/course-planner_ux/schedule.html">
+                                        gh-pages prototype
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
                 <!-- / GitHub -->
 
-                <h2 id="ux">
+                <section id="ux">
                     <div>
-                        User Experience<a class="anchorjs-link" href="#ux" aria-label="Anchor" data-anchorjs-icon="#"
-                                          style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                        <h2>
+                            User Experience<a class="anchorjs-link" href="#ux" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"><i class="fas fa-link fa-xs"></i></a>
+                        </h2>
                     </div>
-                </h2>
-                <ul>
-                    <li>
-                        <a href="https://docs.google.com/document/d/1X6pRfW1b2X3EPa1tcNf0ns9OHqSbFPkI8EJNY_aXGQo/edit?usp=sharing">
-                            User testing
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://rawgit.com/Harvard-University-iCommons/UX-Prototypes/master/evaluation/SEAS-coursePlanner/index.html">
-                            Comparison study
-                        </a>
-                    </li>
-                </ul>
+                    <ul>
+                        <li>
+                            <a href="https://docs.google.com/document/d/1X6pRfW1b2X3EPa1tcNf0ns9OHqSbFPkI8EJNY_aXGQo/edit?usp=sharing">
+                                User testing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://rawgit.com/Harvard-University-iCommons/UX-Prototypes/master/evaluation/SEAS-coursePlanner/index.html">
+                                Comparison study
+                            </a>
+                        </li>
+                    </ul>
+                </section>
                 <!-- / User experience -->
+
+                <section id="access">
+                    <div>
+                        <h2>
+                            Accessibility<a class="anchorjs-link" href="#access" aria-label="Anchor" data-anchorjs-icon="#"><i class="fas fa-link fa-xs"></i></a>
+                        </h2>
+                    </div>
+                    <p>
+                        Harvard’s Digital Accessibility Policy establishes standards for accessibility for the University’s websites and web-based applications. 
+                        It is designed to increase access to digital content and enhance the usability of the University’s online presence.
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="https://accessibility.huit.harvard.edu/faqs">
+                                Harvard University Digital Accessibility
+                            </a>
+                        </li>
+                        <li>
+                            Accessibility tools
+                            <ul>
+                                <li>
+                                    <a href="https://webaim.org/resources/contrastchecker/">
+                                        WebAIM Contrast Checker
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://siteimprove.com/en-us/core-platform/integrations/browser-extensions/">
+                                        Siteimprove Accessibility Checker
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en">
+                                        CromeVox browser extension
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://chrome.google.com/webstore/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla?hl=en">
+                                        Web Disability Simulator
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <!-- / Accessibility -->
 
             </main>
         </div><!-- / row flex-xl-nowrap -->

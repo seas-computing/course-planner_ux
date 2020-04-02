@@ -32,389 +32,423 @@
     <!-- Icon library at https://fontawesome.com/icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
-    <!-- Amending Bootstrap styles -->
-    <style>
+    <!-- Mark-One CSS -->
+    <link rel="stylesheet" href="css/mark-one.css">
 
-        .bg-light {
-            background-color: #ffffff !important;
-        }
-
-        .navbar-text h2 {
-            font-size: 1.25rem;
-        }
-
-        .bd-navbar .navbar-nav .nav-link {
-            padding-right: .5rem;
-            padding-left: .5rem;
-            color: #93a1ad;
-        }
-
-        .nav-item a:hover {
-            color: black !important;
-            cursor: pointer;
-        }
-    </style>
+    <!-- CSS for design guidelines -->
+    <link rel="stylesheet" href="css/guideline.css">
 
 </head>
 
-<body>
-    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-
-    <header class="navbar navbar-expand navbar-light bg-light flex-column flex-md-row bd-navbar">
-        <a class="navbar-brand mr-0 mr-md-2" href="https://www.seas.harvard.edu/computing-office" aria-label="SEAS Computing">
-            <img src="https://www.seas.harvard.edu/sites/default/files/images/H_SEAS_logo_RGB_1.jpg" alt="SEAS logo" style="width: 10em; margin-right: 1em;">
-            <title>SEAS Course Planning - Interaction guidelines</title>
+    <body>
+        <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+            <div class="container">
+                <span class="skiplink-text">Skip to main content</span>
+            </div>
         </a>
 
-        <div class="navbar-nav-scroll">
-            <ul class="navbar-nav bd-navbar-nav flex-row">
-                <li class="nav-item">
-                    <span class="navbar-text">
-                        <h2>SEAS Course Planning - Interaction guidelines</h2>
-                    </span>
-                </li>
-            </ul>
-        </div>
-
-        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-            <li class="nav-item dropdown">
-                <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Other links
+        <header class="navbar navbar-expand navbar-light bg-light flex-column flex-md-row bd-navbar">
+            <a class="navbar-brand mr-0 mr-md-2" href="https://www.seas.harvard.edu/computing-office"
+            aria-label="SEAS Computing">
+                <img src="https://www.seas.harvard.edu/sites/default/files/images/H_SEAS_logo_RGB_1.jpg" alt="SEAS logo"
+                    style="width: 10em; margin-right: 1em;">
+                    <title>SEAS Mark One library of visual components</title>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-                    <a class="dropdown-item active" href="https://seas-computing.github.io/course-planner_ux/guidelines.html">Guidelines</a>
-                    <a class="dropdown-item" href="https://github.com/seas-computing/course-planner/projects/1">Kanban</a>
-                    <a class="dropdown-item" href="https://seas-computing.github.io/course-planner_ux/schedule.html">Prototypes</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="https://planning.seas.harvard.edu/courses/app/#/schedule">Course planner</a>
+        
+                <div class="navbar-nav-scroll">
+                    <ul class="navbar-nav bd-navbar-nav flex-row">
+                        <li class="nav-item">
+                            <h2>SEAS Mark One library of visual components</h2>
+                        </li>
+                    </ul>
                 </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link p-2 mt-1" href="https://github.com/seas-computing/course-planner_ux/tree/gh-pages/guidelines" rel="noopener"
-                   aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-
-        </ul>
-
-        <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20191003</small></span>
-    </header>
-
-    <div class="container-fluid">
-        <div class="row flex-xl-nowrap">
-
-            <!-- Links in this left-hand sidebar take to other web pages -->
-            <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
-
-                <nav class="collapse bd-links" id="bd-docs-nav">
-
-                    <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="guidelines-overview.html">
-                            Overview
+        
+                <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+                    <li class="nav-item dropdown">
+                        <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Other links
                         </a>
-                    </div>
-
-                    <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="guidelines-theme.html">
-                            Theme
-                        </a>
-                    </div>
-
-                    <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="guidelines-rulesets.html">
-                            Rule sets
-                        </a>
-                    </div>
-
-                    <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="guidelines-content.html">
-                            Content
-                        </a>
-
-                    </div>
-
-                    <div class="bd-toc-item active">
-                        <a class="bd-toc-link" href="#">
-                            Components
-                        </a>
-                        <ul class="nav bd-sidenav">
-                            <li>
-                                <a href="#">
-                                    Alerts
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Badge
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Breadcrumb
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Buttons
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Button group
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Card - Room view
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Collapse
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Dropdowns
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Forms
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Input group
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    List group
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Modal
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Navs
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Navbar
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Pagination
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Popovers
-                                </a>
-                            </li>
-                            <li>
-                            <li>
-                                <a href="#">
-                                    Tooltips
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="guidelines-architecture.html">
-                            Architecture
-                        </a>
-                    </div>
-
-                    <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="guidelines-interaction.html">
-                            User interaction
-                        </a>
-                    </div>
-
-                    <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="guidelines-system.html">
-                            System capabilities
-                        </a>
-                    </div>
-
-                    <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="guidelines-visual.html">
-                            Visual Design
-                        </a>
-                    </div>
-
-                    <div class="bd-toc-item">
-                        <a class="bd-toc-link" href="guidelines-branding.html">
-                            Branding and Images
-                        </a>
-                    </div>
-
-                </nav>
-
-            </div>
-
-            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-                <h1 class="bd-title" id="content">Components</h1>
-                <p class="bd-lead">
-                    Nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura,
-                    ché la diritta via era smarrita. A
-                    hi quanto a dir qual era è cosa dura esta selva selvaggia e ...
-                </p>
-
-                <h2 id="how-it-works">
-                    <div>
-                        Content<a class="anchorjs-link " href="#how-it-works" aria-label="Anchor" data-anchorjs-icon="#"
-                                  style="padding-left: 0.375em;"></a>
-                    </div>
-                </h2>
-
-                <p class="text-muted">Examples of documentation:</p>
-
-                <ul>
-                    <li>
-                        Navbars require a wrapping <code class="highlighter-rouge">.navbar</code> with <code class="highlighter-rouge">.navbar-expand{-sm|-md|-lg|-xl}</code> for responsive collapsing and <a href="#color-schemes">color scheme</a> classes.
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                            <a class="dropdown-item" href="https://seas-computing.github.io/mark-one/#/Overview">Mark One Style Guide</a>
+                            <a class="dropdown-item" href="https://github.com/seas-computing/course-planner/projects/2">Kanban</a>
+                            <a class="dropdown-item" href="https://seas-computing.github.io/course-planner_ux/schedule.html">Prototypes</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="https://planning.seas.harvard.edu/courses/app/#/schedule">Course planner</a>
+                        </div>
                     </li>
-                    <li>
-                        Navbars and their contents are fluid by default. Use <a href="#containers">optional containers</a> to
-                        limit their horizontal width.
-                    </li>
-                    <li>
-                        Use our <a href="/docs/4.1/utilities/spacing/">spacing</a> and <a href="/docs/4.1/utilities/flex/">flex</a> utility classes for controlling spacing and alignment within
-                        navbars.
-                    </li>
-                    <li>
-                        Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior
-                        depends on our Collapse JavaScript plugin.
-                    </li>
-                    <li>
-                        Navbars are hidden by default when printing. Force them to be printed by adding <code class="highlighter-rouge">.d-print</code> to the <code class="highlighter-rouge">.navbar</code>. See the
-                        <a href="/docs/4.1/utilities/display/">display</a> utility class.
-                    </li>
-                    <li>
-                        Ensure accessibility by using a <code class="highlighter-rouge">&lt;nav&gt;</code> element or, if using a
-                        more generic element such as a <code class="highlighter-rouge">&lt;div&gt;</code>, add a <code class="highlighter-rouge">role="navigation"</code> to every navbar to explicitly identify it as a landmark
-                        region for users of assistive technologies.
-                    </li>
+        
                 </ul>
 
-                <p class="text-muted">Example of interface detail:</p>
+            <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20200403</small></span>
+        </header>
 
-                <div class="bd-example">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="#">Navbar</a>
-                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                                aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
 
-                        <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <!-- Links in this left-hand sidebar take to other web pages -->
+                <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+
+                    <nav class="collapse bd-links" id="bd-docs-nav">
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="guidelines-overview.html">
+                                Overview
+                            </a>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="guidelines-theme.html">
+                                Theme
+                            </a>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="guidelines-rulesets.html">
+                                Rule sets
+                            </a>
+                        </div>
+
+                        <div class="bd-toc-item" hidden>
+                            <a class="bd-toc-link" href="guidelines-content.html">
+                                Content
+                            </a>
+
+                        </div>
+
+                        <div class="bd-toc-item active">
+                            <a class="bd-toc-link" href="#">
+                                Components
+                            </a>
+                            <ul class="nav bd-sidenav">
+                                <li>
+                                    <a href="#button">
+                                        Buttons
+                                    </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false">
+                                <li>
+                                    <a href="#">
                                         Dropdown
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled" href="#">Disabled</a>
+                                <li>
+                                    <a href="#">
+                                        Icon
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Breadcrumb
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Forms
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Input group
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        List group
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Modal
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Navs
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Navbar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Pagination
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Popovers
+                                    </a>
+                                </li>
+                                <li>
+                                <li>
+                                    <a href="#">
+                                        Tooltips
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Layout
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Header</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Logo</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">PageBody</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Tables
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Table</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">TableBody</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">TableCell</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">TableHead</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">TableHeadingCell</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">TableRow</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Tabs
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                TabList
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                TabListItem
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Theme
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                GlobalCSS
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                MarkOneWrapper
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
-                            <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </form>
                         </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="guidelines-architecture.html">
+                                Architecture
+                            </a>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="guidelines-interaction.html">
+                                User interaction
+                            </a>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="guidelines-system.html">
+                                System capabilities
+                            </a>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="guidelines-visual.html">
+                                Visual Design
+                            </a>
+                        </div>
+
+                        <div class="bd-toc-item">
+                            <a class="bd-toc-link" href="guidelines-branding.html">
+                                Branding and Images
+                            </a>
+                        </div>
+
                     </nav>
+
                 </div>
 
-                <p class="text-muted">Example of code:</p>
+                <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
 
-                <figure class="highlight">
-                    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand-lg navbar-light bg-light"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Navbar<span class="nt">&lt;/a&gt;</span>
-                    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"navbar-toggler"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#navbarSupportedContent"</span> <span class="na">aria-controls=</span><span class="s">"navbarSupportedContent"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-label=</span><span class="s">"Toggle navigation"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"navbar-toggler-icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
-                    <span class="nt">&lt;/button&gt;</span>
+                    <section id="overview">
+                        <div>
+                            <h2>
+                                Components<a class="anchorjs-link" href="#overview" aria-label="Anchor" data-anchorjs-icon="#"><i class="fas fa-link fa-xs"></i></a>
+                            </h2>
+                        </div>
+                        <p>
+                            Users are navigated via interface with a number of interactive elements such buttons, switches, links, tabs, bars, menus, fields and the like.
+                        </p>
+                        <p>
+                            Navigation could be generally defined as the set of actions and techniques guiding users throughout the app or website, enabling them to fulfill their goals and successfully interact with the product. The aspect of efficient navigation has a great impact on setting positive user experience: users start using apps or websites with particular aims and expectations, and that’s designers’ task to set the best and easiest route to solving users’ problems.
+                        </p>
+                        <div class="text-muted">
+                            <sup>Source: <a href="https://uxplanet.org/ui-ux-design-glossary-navigation-elements-b552130711c8">UX Planet</a></sup>
+                        </div>
+                    </section>
 
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse navbar-collapse"</span> <span class="na">id=</span><span class="s">"navbarSupportedContent"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav mr-auto"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item active"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>(current)<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
-                    <span class="nt">&lt;/li&gt;</span>
-                    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
-                    <span class="nt">&lt;/li&gt;</span>
-                    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item dropdown"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"navbarDropdown"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
-          Dropdown
-                    <span class="nt">&lt;/a&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">aria-labelledby=</span><span class="s">"navbarDropdown"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;</span>
-                    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-divider"</span><span class="nt">&gt;&lt;/div&gt;</span>
-                    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                    <span class="nt">&lt;/li&gt;</span>
-                    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link disabled"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Disabled<span class="nt">&lt;/a&gt;</span>
-                    <span class="nt">&lt;/li&gt;</span>
-                    <span class="nt">&lt;/ul&gt;</span>
-                    <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-inline my-2 my-lg-0"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control mr-sm-2"</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"Search"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-outline-success my-2 my-sm-0"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
-                    <span class="nt">&lt;/form&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/nav&gt;</span></code></pre>
-                </figure>
+                    <section id="button">
+                        <div>
+                            <h2>
+                                Button<a class="anchorjs-link" href="#button" aria-label="Anchor" data-anchorjs-icon="#"><i class="fas fa-link fa-xs"></i></a>
+                            </h2>
+                        </div>
+                        <p>
+                            <code>id="button*"</code> includes several predefined button styles, each serving its own semantic purpose.
+                        </p>
+                        <p>
+                            The color reference in the button labels, on both idle and hover states, relates to the Mark One 
+                            <a href="https://seas-computing.github.io/mark-one/#/Theme?id=background-colors">color palette</a>.
+                        </p>
 
-            </main>
+                        <div class="bd-example">
+                            <!-- Proposed code for https://seas-computing.github.io/mark-one/#basicbutton -->
+                        
+                        
+                            <div style="display: inline-block; text-align: center; margin-left: 1em;">
+                                <button id="buttonPrimaryDemo">
+                                    <span>Class info:medium</span>
+                                </button>
+                                <div class="text-muted">
+                                    Primary
+                                </div>
+                            </div>
+                        
+                            <div style="display: inline-block; text-align: center; margin-left: 1em;">
+                                <button id="buttonSecondaryDemo">
+                                    <span>Class background:medium</span>
+                                </button>
+                                <div class="text-muted">
+                                    Secondary (as Basic)
+                                </div>
+                            </div>
+                        
+                            <div style="display: inline-block; text-align: center; margin-left: 1em;">
+                                <button id="buttonDangerDemo">
+                                    <span>Class negative:dark</span>
+                                </button>
+                                <div class="text-muted">
+                                    Danger
+                                </div>
+                            </div>
 
-        </div><!-- / row flex-xl-nowrap -->
-    </div><!-- / container-fluid -->
+                        </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+                        <h3 class="text-muted">Examples of code for buttons:</h3>
 
-    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-    <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-    <script src="https://getbootstrap.com/docs/4.1/assets/js/docs.min.js"></script>
+                        <figure class="highlight">
+<pre>
+&lt;button id="<span class="text-danger">buttonPrimary</span>"&gt;
+    Class info:medium
+&lt;/button&gt;
+
+&lt;button id="<span class="text-danger">buttonSecondary</span>"&gt;
+    Class background:medium
+&lt;/button&gt;
+
+&lt;button id="<span class="text-danger">buttonDanger</span>"&gt;
+    Class negative:dark
+&lt;/button&gt;
+</pre>
+                        </figure>
+
+                        <h3 class="text-muted">Examples of accessible buttons:</h3>
+
+                        <figure class="highlight">
+<pre>
+<span class="text-success">&lt;!-- / Provide button labels that describe the purpose of a button,
+    since assistive technology is abitually used to
+    list just the buttons, outside their context --&gt;</span>
+
+<span class="text-success">&lt;!-- / Acessible button label --&gt;</span>
+&lt;button id="buttonPrimary"&gt;<span class="text-danger">Submit new faculty</span>&lt;/button&gt;
+
+<span class="text-success">&lt;!-- / Inacessible button label --&gt;</span>
+&lt;button id="buttonPrimary"&gt;<span class="text-danger">OK</span>&lt;/button&gt;
+</pre>
+                        </figure>
+
+                        <figure class="highlight">
+<pre>
+<span class="text-success">&lt;!-- / Ensure that all interactive elements are keyboard accessible.
+    Use tabindex for the correct tab sequence,
+    since usuallly the "Save" button is on the right
+    and the "Cancel" button is on the left --&gt;</span>
+&lt;button id="buttonPrimary" <span class="text-danger">tabindex="0"</span>&gt; 
+    Class info:medium
+&lt;/button&gt;
+</pre>
+                        </figure>
+
+                        <figure class="highlight">
+<pre>
+<span class="text-success">&lt;!-- / Allow to select the primary button (or function)
+    also by using the Enter key --&gt;</span>
+&lt;button id="buttonPrimary" <span class="text-danger">onkeypress="return keyHandler(e);"</span>&gt; 
+    Class info:medium
+&lt;/button&gt;
+</pre>
+                        </figure>
+                    </section>
+
+                </main>
+
+            </div><!-- / row flex-xl-nowrap -->
+        </div><!-- / container-fluid -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+
+        <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"
+                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                crossorigin="anonymous"></script>
+        <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+        <script src="https://getbootstrap.com/docs/4.1/assets/js/docs.min.js"></script>
 
 
-</body>
+
+        <!-- Mark-One JavaScript -->
+        <script src="https://seas-computing.github.io/mark-one/assets~main5f947c6db2fbbe4cd0f0.js"></script>
+        <script src="https://seas-computing.github.io/mark-one/build/bundle.2043da72.js"></script>
+
+
+
+    </body>
 
 </html>
