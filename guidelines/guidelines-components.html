@@ -134,7 +134,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="#icon">
                                         Icon
                                     </a>
                                 </li>
@@ -418,6 +418,81 @@
     also by using the Enter key --&gt;</span>
 &lt;button id="buttonPrimary" <span class="text-danger">onkeypress="return keyHandler(e);"</span>&gt; 
     Class info:medium
+&lt;/button&gt;
+</pre>
+                        </figure>
+                    </section>
+
+                    <section id="icon">
+                        <div>
+                            <h2>
+                                Icon<a class="anchorjs-link" href="#icon" aria-label="Anchor" data-anchorjs-icon="#"><i class="fas fa-link fa-xs"></i></a>
+                            </h2>
+                        </div>
+                        <p>
+                            <code>id="icon*"</code> includes several predefined color styles, each serving its own semantic purpose.
+                        </p>
+                        <p>
+                            The color reference, on both idle and hover states, relates to the Mark One 
+                            <a href="https://seas-computing.github.io/mark-one/#/Theme?id=background-colors">color palette</a>.
+                        </p>
+                        <p>
+                            <code>id="icon*"</code> can be used for either buttons or links.
+                        </p>
+
+                        <div class="bd-example">
+                            <!-- Proposed code for https://seas-computing.github.io/mark-one/#basicbutton -->
+                        
+                        
+                            <div style="display: inline-block; text-align: center; margin-left: 2em;">
+                                <button title="Edit account information" aria-label="Edit account information"  id="iconPrimary">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <div class="text-muted">
+                                    Primary
+                                </div>
+                            </div>
+                        
+                            <div style="display: inline-block; text-align: center; margin-left: 4em;">
+                                <a title="Edit account information" aria-label="Edit account information"  id="iconSecondary">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <div class="text-muted">
+                                    Secondary
+                                </div>
+                            </div>
+                        
+                            <div style="display: inline-block; text-align: center; margin-left: 4em;">
+                                <a title="Edit account information" aria-label="Edit account information"  id="iconDanger">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <div class="text-muted">
+                                    Danger
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <h3 class="text-muted">Examples of code for accessible active icons:</h3>
+
+                        <figure class="highlight">
+<pre>
+&lt;button title="Edit account information" <span class="text-success">&lt;!-- / Clear purpose of the button --&gt;</span>
+      aria-label="Edit account information"  
+      id="<span class="text-danger">iconPrimary</span>"&gt;
+    &lt;i class="fas fa-edit"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;a title="Show settings options" <span class="text-success">&lt;!-- / Clear purpose of the link --&gt;</span>
+      aria-label="Show settings options"  
+      id="<span class="text-danger">iconSecondary</span>"&gt;
+    Settings &lt;i class="far fa-arrow-alt-circle-right"&gt;&lt;/i&gt;
+&lt;/a&gt;
+
+&lt;button title="Remove faculty name" <span class="text-success">&lt;!-- / Clear purpose of the button --&gt;</span>
+      aria-label="Remove faculty name"  
+      id="<span class="text-danger">iconDanger</span>"&gt;
+    &lt;i class="fas fa-trash-alt fa-lg"&gt;&lt;/i&gt;
 &lt;/button&gt;
 </pre>
                         </figure>
