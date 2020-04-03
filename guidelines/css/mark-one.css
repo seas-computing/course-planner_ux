@@ -18,6 +18,7 @@
         grid-column-end: span 4;
     }
     
+/* *** BUttons *** */
 /* buttonPrimary and ID seelctor */
 /*#region
     /* buttonPrimary - Styles for interfaces */
@@ -206,6 +207,106 @@
         border: 1px solid rgb(165, 28, 48);
         content:"Class background:accent";
         width: 14em;
+    }
+
+/*#endregion*/
+
+
+/* *** Links *** */
+/* iconPrimary and ID seelctor */
+/*#region
+    /* iconPrimary - Styles for interfaces */
+    #iconPrimary {
+        color: rgb(78, 136, 199); /* Primary icon idle color - info: medium */
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        padding: 5px 10px;
+        background-color: none;
+        box-sizing: border-box;
+        margin: 0em;
+        border-width: 0px;
+        border-style: none;
+        border-color: none;
+        border-image: none;
+    }
+
+    #iconPrimary:hover {
+        color: rgb(8, 65, 97); /* Primary icon highlight color - info: dark */
+    }
+
+    
+    /* iconPrimary - Original style from Mark-One */
+    .bBYQtl {
+        color: rgb(209, 209, 209);
+        display: inline-block;
+        background: transparent;
+    }
+
+    .bBYQtl:hover { background: rgb(154, 166, 177); }
+
+/*#endregion*/
+
+/* iconSecondary and ID seelctor */
+/*#region
+    /* iconSecondary - Styles for interfaces */
+    #iconSecondary {
+        color: rgb(147, 161, 173); /* Secondary icon idle color - modified background: dark because unsufficient accessible color */
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        padding: 5px 10px;
+        background-color: none;
+        box-sizing: border-box;
+        margin: 0em;
+        border-width: 0px;
+        border-style: none;
+        border-color: none;
+        border-image: none;
+    }
+
+    #iconSecondary:hover {
+        color: rgb(79, 79, 109); /* Secondary icon highlight color - modified background: dark because unsufficient accessible color */
+    }
+
+    /* iconSecondary - Original style from Mark-One */
+    .kxWoHZ {
+        color: rgb(24, 24, 24);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: rgb(209, 209, 209); /* Secondary link idle color - background: medium */
+        padding: 5px 10px;
+        border: 0px solid #fff;
+    }
+
+    .kxWoHZ:hover { 
+        color: rgb(24, 24, 24);
+        background: rgb(147, 161, 173); /* Secondary link highlight color - background: dark */
+    }
+
+/*#endregion*/
+  
+/* iconDanger and ID seelctor */
+/*#region
+    /* iconDanger - Styles for interfaces */
+    #iconDanger {
+        color: rgb(237, 27, 42); /* Danger icon idle color - negative:dark */
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        padding: 5px 10px;
+        background-color: none;
+        box-sizing: border-box;
+        margin: 0em;
+        border-width: 0px;
+        border-style: none;
+        border-color: none;
+        border-image: none;
+    }
+
+    #iconDanger:hover {
+        color: rgb(165, 28, 48); /* Danger icon highlight color - background:accent */
     }
 
 /*#endregion*/
