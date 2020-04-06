@@ -80,7 +80,7 @@
         
                 </ul>
 
-            <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20200403</small></span>
+            <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20200406</small></span>
         </header>
 
         <div class="container-fluid">
@@ -129,7 +129,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="#dropdown">
                                         Dropdown
                                     </a>
                                 </li>
@@ -423,6 +423,53 @@
                         </figure>
                     </section>
 
+                    <section id="dropdown" hidden>
+                        <div>
+                            <h2>
+                                Dropdown<a class="anchorjs-link" href="#dropdown" aria-label="Anchor" data-anchorjs-icon="#"><i class="fas fa-link fa-xs"></i></a>
+                            </h2>
+                        </div>
+                        <p>
+                            <code>id="icon*"</code> includes several predefined color styles, each serving its own semantic purpose.
+                        </p>
+                        <p>
+                            The color reference, on both idle and hover states, relates to the Mark One 
+                            <a href="https://seas-computing.github.io/mark-one/#/Theme?id=background-colors">color palette</a>.
+                        </p>
+                        <p>
+                            <code>id="icon*"</code> can be used for both buttons or links.
+                        </p>
+
+                        <div class="bd-example">
+                            <!-- Proposed code for https://seas-computing.github.io/mark-one/#/Dropdown -->
+                        
+                            <select name="semesters" class="dropdown">
+                                <option value="all">All</option>
+                                <option value="fall">Fall</option>
+                                <option value="spring">Spring</option>
+                            </select>
+
+                        </div>
+
+                        <h3 class="text-muted">Examples of code for accessible active icons:</h3>
+
+                        <figure class="highlight">
+<pre>
+&lt;button title="Edit account information" <span class="text-success">&lt;!-- / Clear purpose of the button --&gt;</span>
+      aria-label="Edit account information"  
+      id="<span class="text-danger">iconPrimary</span>"&gt;
+    &lt;i class="fas fa-edit"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;select name="semesters" id="<span class="text-danger">dropdown</span>"&gt;
+      &lt;option value="all"&gt;All&lt;/option&gt;
+      &lt;option value="fall"&gt;Fall&lt;/option&gt;
+      &lt;option value="spring"&gt;Spring&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+                        </figure>
+                    </section>
+
                     <section id="icon">
                         <div>
                             <h2>
@@ -437,11 +484,11 @@
                             <a href="https://seas-computing.github.io/mark-one/#/Theme?id=background-colors">color palette</a>.
                         </p>
                         <p>
-                            <code>id="icon*"</code> can be used for either buttons or links.
+                            <code>id="icon*"</code> can be used for both buttons or links.
                         </p>
 
                         <div class="bd-example">
-                            <!-- Proposed code for https://seas-computing.github.io/mark-one/#basicbutton -->
+                            <!-- Proposed code for https://seas-computing.github.io/mark-one/#/Icons -->
                         
                         
                             <div style="display: inline-block; text-align: center; margin-left: 2em;">
@@ -455,7 +502,7 @@
                         
                             <div style="display: inline-block; text-align: center; margin-left: 4em;">
                                 <a title="Edit account information" aria-label="Edit account information"  id="iconSecondary">
-                                    <i class="fas fa-edit"></i>
+                                    <i class="far fa-arrow-alt-circle-right"></i>
                                 </a>
                                 <div class="text-muted">
                                     Secondary
@@ -464,7 +511,7 @@
                         
                             <div style="display: inline-block; text-align: center; margin-left: 4em;">
                                 <a title="Edit account information" aria-label="Edit account information"  id="iconDanger">
-                                    <i class="fas fa-edit"></i>
+                                    <i class="fas fa-trash-alt"></i>
                                 </a>
                                 <div class="text-muted">
                                     Danger
@@ -492,7 +539,7 @@
 &lt;button title="Remove faculty name" <span class="text-success">&lt;!-- / Clear purpose of the button --&gt;</span>
       aria-label="Remove faculty name"  
       id="<span class="text-danger">iconDanger</span>"&gt;
-    &lt;i class="fas fa-trash-alt fa-lg"&gt;&lt;/i&gt;
+    &lt;i class="fas fa-trash-alt"&gt;&lt;/i&gt;
 &lt;/button&gt;
 </pre>
                         </figure>
