@@ -47,7 +47,7 @@
             </div>
         </a>
 
-        <header class="navbar navbar-expand navbar-light bg-light flex-column flex-md-row bd-navbar">
+        <nav class="navbar navbar-expand navbar-light bg-light flex-column flex-md-row bd-navbar">
             <a class="navbar-brand mr-0 mr-md-2" href="https://www.seas.harvard.edu/computing-office"
             aria-label="SEAS Computing">
                 <img src="https://www.seas.harvard.edu/sites/default/files/images/H_SEAS_logo_RGB_1.jpg" alt="SEAS logo"
@@ -81,7 +81,7 @@
                 </ul>
 
             <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20200406</small></span>
-        </header>
+            </nav>
 
         <div class="container-fluid">
             <div class="row flex-xl-nowrap">
@@ -139,12 +139,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="#layout">
                                         Layout
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="#">Header</a>
+                                            <a href="#head">Header</a>
                                         </li>
                                         <li>
                                             <a href="#">Logo</a>
@@ -320,11 +320,16 @@
                     </section>
 
                     <section id="button">
-                        <div>
+                        <div class="border-top">
                             <h2>
                                 Button<a class="anchorjs-link" href="#button" aria-label="Anchor" data-anchorjs-icon="#"><i class="fas fa-link fa-xs"></i></a>
                             </h2>
                         </div>
+                        
+                        <!-- Link to Mark One Style Guide -->
+                        <p>
+                            <a href="https://seas-computing.github.io/mark-one/#/Button" class="badge badge-info">Button in Mark One Style Guide</a>
+                        </p>
                         <p>
                             <code>id="button*"</code> includes several predefined button styles, each serving its own semantic purpose.
                         </p>
@@ -423,59 +428,156 @@
                         </figure>
                     </section>
 
-                    <section id="dropdown" hidden>
-                        <div>
+                    <section id="dropdown">
+                        <div class="border-top">
                             <h2>
                                 Dropdown<a class="anchorjs-link" href="#dropdown" aria-label="Anchor" data-anchorjs-icon="#"><i class="fas fa-link fa-xs"></i></a>
                             </h2>
                         </div>
+                        
+                        <!-- Link to Mark One Style Guide -->
                         <p>
-                            <code>id="icon*"</code> includes several predefined color styles, each serving its own semantic purpose.
+                            <a href="https://seas-computing.github.io/mark-one/#/Dropdown" class="badge badge-info">Dropdown in Mark One Style Guide</a>
                         </p>
                         <p>
-                            The color reference, on both idle and hover states, relates to the Mark One 
-                            <a href="https://seas-computing.github.io/mark-one/#/Theme?id=background-colors">color palette</a>.
-                        </p>
-                        <p>
-                            <code>id="icon*"</code> can be used for both buttons or links.
+                            <code>id="dropdown"</code> for <code>select</code> menus is contained in a <code>div</code> to avoid conflict with the form <code>id</code>.
                         </p>
 
                         <div class="bd-example">
                             <!-- Proposed code for https://seas-computing.github.io/mark-one/#/Dropdown -->
                         
-                            <select name="semesters" class="dropdown">
-                                <option value="all">All</option>
-                                <option value="fall">Fall</option>
-                                <option value="spring">Spring</option>
-                            </select>
+                            <div id="dropdownNolabel">
+                                <label for="semesters">Select semester</label>
+                                <select name="semesters">
+                                    <option value="all">All</option>
+                                    <option value="fall">Fall</option>
+                                    <option value="spring">Spring</option>
+                                </select>
+                            </div>
 
                         </div>
 
-                        <h3 class="text-muted">Examples of code for accessible active icons:</h3>
+                        <h3 class="text-muted">Example of code for accessible <code>select</code> menu with visible <code>label</code>:</h3>
 
                         <figure class="highlight">
 <pre>
-&lt;button title="Edit account information" <span class="text-success">&lt;!-- / Clear purpose of the button --&gt;</span>
-      aria-label="Edit account information"  
-      id="<span class="text-danger">iconPrimary</span>"&gt;
-    &lt;i class="fas fa-edit"&gt;&lt;/i&gt;
-&lt;/button&gt;
+&lt;div id="<span class="text-danger">dropdown</span>"&gt;
+<span class="text-success">&lt;!-- / Provide labels to identify all form controls --&gt;</span>
+    &lt;label for="semesters"&gt;Select semester&lt;/label&gt;
+    &lt;select name="semesters" id="semesters"&gt;
+        &lt;option value="all"&gt;All&lt;/option&gt;
+        &lt;option value="fall"&gt;Fall&lt;/option&gt;
+        &lt;option value="spring"&gt;Spring&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+</pre>
+                        </figure>
 
-&lt;select name="semesters" id="<span class="text-danger">dropdown</span>"&gt;
-      &lt;option value="all"&gt;All&lt;/option&gt;
-      &lt;option value="fall"&gt;Fall&lt;/option&gt;
-      &lt;option value="spring"&gt;Spring&lt;/option&gt;
+                        <h3 class="text-muted">Example of code for accessible <code>select</code> menu with hidden <code>label</code>:</h3>
+
+                        <figure class="highlight">
+<pre>
+&lt;div id="<span class="text-danger">dropdownNolabel</span>"&gt;
+<span class="text-success">&lt;!-- / Provide labels to identify all form controls --&gt;</span>
+    &lt;label for="semesters"&gt;Choose the semester&lt;/label&gt;
+    &lt;select name="semesters" id="semesters"&gt;
+        &lt;option value="all"&gt;All&lt;/option&gt;
+        &lt;option value="fall"&gt;Fall&lt;/option&gt;
+        &lt;option value="spring"&gt;Spring&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+</pre>
+                        </figure>
+
+                        <h3 class="text-muted"><code>optgroup</code> can improve the accessibility of a <code>select</code> menu with groups of options:</h3>
+                        <p>
+                            Note that <code>optgroup</code> is not fully supported by some user agents and screen readers, 
+                            so it should not be relied on to present vital category information. 
+                            In cases where <code>optgroup</code> is not supported, it is simply ignored.
+                        </p>
+                            
+                        <p>
+                            Do not confuse the <code>label</code> attribute of the <code>optgroup</code> element with the <code>label</code> element. 
+                            They are very different things.
+                        </p>
+                        
+                        <p class="text-muted">Source: <a href="https://webaim.org/techniques/forms/controls#select">WebAIM <span style="display: none;">Creating Accessible Forms</span></a></p>
+
+                        <div class="bd-example">
+                            <!-- Reference from https://webaim.org/techniques/forms/controls#select -->
+                        
+                            <div id="dropdown">
+                                <label for="favcity2">Choose your favorite city</label>
+                                <select id="favcity2" name="favcity2">
+                                    <optgroup label="Asia">
+                                        <option value="3">Delhi</option>
+                                        <option value="4">Hong Kong</option>
+                                        <option value="8">Mumbai</option>
+                                        <option value="11">Tokyo</option>
+                                    </optgroup>
+                                    <optgroup label="Europe">
+                                        <option value="1">Amsterdam</option>
+                                        <option value="5">London</option>
+                                        <option value="7">Moscow</option>
+                                    </optgroup>
+                                    <optgroup label="North America">
+                                        <option value="6">Los Angeles</option>
+                                        <option value="9">New York</option>
+                                    </optgroup>
+                                    <optgroup label="South America">
+                                        <option value="2">Buenos Aires</option>
+                                        <option value="10">Sao Paulo</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <figure class="highlight">
+<pre>
+&lt;label for="favcity2"&gt;Choose your favorite city&lt;/label&gt;
+&lt;select id="favcity2" name="favcity2"&gt;
+    &lt;<span class="text-danger">optgroup</span> label="Asia"&gt;
+        &lt;option value="3"&gt;Delhi&lt;/option&gt;
+        &lt;option value="4"&gt;Hong Kong&lt;/option&gt;
+        &lt;option value="8"&gt;Mumbai&lt;/option&gt;
+        &lt;option value="11"&gt;Tokyo&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;<span class="text-danger">optgroup</span> label="Europe"&gt;
+        &lt;option value="1"&gt;Amsterdam&lt;/option&gt;
+        &lt;option value="5"&gt;London&lt;/option&gt;
+        &lt;option value="7"&gt;Moscow&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;<span class="text-danger">optgroup</span> label="North America"&gt;
+        &lt;option value="6"&gt;Los Angeles&lt;/option&gt;
+        &lt;option value="9"&gt;New York&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;<span class="text-danger">optgroup</span> label="South America"&gt;
+        &lt;option value="2"&gt;Buenos Aires&lt;/option&gt;
+        &lt;option value="10"&gt;Sao Paulo&lt;/option&gt;
+    &lt;/optgroup&gt;
 &lt;/select&gt;
 </pre>
                         </figure>
+
+                        <h3>Accessible labels</h3>
+                        <p>
+                            In general, placing labels above the form fields helps reduce horizontal scrolling for people with low vision and mobile device users. However, the usefulness of this approach depends on other design aspects, such as the proximity of other nearby form fields and content, and needs to be assessed individually. The aim should be to maintain a close and distinct visual relationship between the label and the form control.
+                        </p>
+                        <p class="text-muted">Source: <a href="https://www.w3.org/WAI/tutorials/forms/labels/#visual-position-of-label-text">W3C <span style="display: none;">Visual position of label text</span></a></p>
                     </section>
 
                     <section id="icon">
-                        <div>
+                        <div class="border-top">
                             <h2>
                                 Icon<a class="anchorjs-link" href="#icon" aria-label="Anchor" data-anchorjs-icon="#"><i class="fas fa-link fa-xs"></i></a>
                             </h2>
                         </div>
+                        
+                        <!-- Link to Mark One Style Guide -->
+                        <p>
+                            <a href="https://seas-computing.github.io/mark-one/#/Icons" class="badge badge-info">Icon in Mark One Style Guide</a>
+                        </p>
                         <p>
                             <code>id="icon*"</code> includes several predefined color styles, each serving its own semantic purpose.
                         </p>
@@ -543,6 +645,98 @@
 &lt;/button&gt;
 </pre>
                         </figure>
+                    </section>
+
+                    <section id="layout">
+                        <div class="border-top">
+                            <h2>
+                                Layout<a class="anchorjs-link" href="#layout" aria-label="Anchor" data-anchorjs-icon="#"><i class="fas fa-link fa-xs"></i></a>
+                            </h2>
+                            <p>
+                                For many designers, the fun and engaging parts of the site will come from reusable content elements – like photo galleries, videos, quotes, events, or news lists. But there will also be plenty of pages that need to convey a lot of information. Content layouts provide containers for all of these elements.
+                            </p>
+                            
+                            <p class="text-muted">Source: <a href="https://www.scu.edu/web-design/content-layouts/">SCU <span style="display: none;">Content Layouts</span></a></p>
+                        </div>
+
+                        <section id="head">
+                            <div>
+                                <h3>
+                                    Header<a class="anchorjs-link" href="#head" aria-label="Anchor" data-anchorjs-icon="#"><i class="fas fa-link fa-xs"></i></a>
+                                </h3>
+                                
+                                <!-- Link to Mark One Style Guide -->
+                                <p>
+                                    <a href="https://seas-computing.github.io/mark-one/#/Layout?id=header" class="badge badge-info">Header in Mark One Style Guide</a>
+                                </p>
+                                <p>
+                                    A website header is the area is one of the most valuable areas of your website. It runs across the top of the page and appears on every page of your website, except on sales or landing pages templates that have it removed.
+                                </p>
+                                <p>
+                                    The purpose of your website header is to promote your brand and make your site instantly recognizable to those who are already familiar with you. For many businesses, the header is the perfect place to efficiently and effectively convey exactly what your site is about and what your business does.
+                                </p>
+                                <p class="text-muted">Source: <a href="https://www.bourncreative.com/how-to-design-a-website-header/">Bourn Creative <span style="display: none;">How To Design A Website Header (And What Should Go In It)</span></a></p>
+                            </div>
+                            <p>
+                                Section <code>header</code> provide styles for the image, <code>heading</code> and <code>div</code> elements.
+                            </p>
+
+                            <div class="bd-example">
+                                <!-- Proposed code for https://seas-computing.github.io/mark-one/#/Layout?id=header -->
+                            
+                                <header>
+                                    <a width="175px" href="#" height="50px" title="SEAS logo">
+                                        The Link Description
+                                    </a>
+                                    <h1>Application Title</h1>
+                                    <div>three</div>
+                                    <div>menu</div>
+                                    <div>items</div>
+                                </header>
+
+                            </div>
+
+                            <h3 class="text-muted">Examples of code for accessible <code>header</code>:</h3>
+
+                            <figure class="highlight">
+<pre>
+&lt;header id="<span class="text-danger">header</span>"&gt;
+    &lt;a width="175px" href="#" height="50px" title="SEAS logo"&gt;
+        The Link Description
+    &lt;/a&gt;
+    &lt;h1&gt;Application Title&lt;/h1&gt;
+    &lt;div&gt;three&lt;/div&gt;
+    &lt;div&gt;menu&lt;/div&gt;
+    &lt;div&gt;items&lt;/div&gt;
+&lt;/head
+</pre>
+                            </figure>
+
+                            <h3 class="text-muted">Examples of code for skip link</h3>
+                            <p>
+                                Provide a mechanism to bypass blocks of material that are repeated on multiple Web pages by skipping directly to the main content of the Web page. The first interactive item in the Web page is a link to the beginning of the main content. Activating the link sets focus beyond the other content to the main content. This technique is most useful when a Web page has one main content area, rather than a set of content areas that are equally important, and when there are not multiple navigation sections on the page.
+                            </p>
+                            <p class="text-muted">Source: <a href="https://www.w3.org/TR/WCAG20-TECHS/G1.html">W3C <span style="display: none;">Adding a link at the top of each page that goes directly to the main content area</span></a></p>
+
+                            <figure class="highlight">
+<pre>
+<span class="text-danger">&lt;a id="skip-nav" style="display: none;" href="#main-content"&gt;
+    Skip Navigation or Skip to Content
+&lt;/a&gt;</span>
+&lt;header id="header"&gt;
+    &lt;a width="175px" href="#" height="50px" title="SEAS logo"&gt;
+        The Link Description
+    &lt;/a&gt;
+    &lt;h1&gt;Application Title&lt;/h1&gt;
+    &lt;div&gt;three&lt;/div&gt;
+    &lt;div&gt;menu&lt;/div&gt;
+    &lt;div&gt;items&lt;/div&gt;
+&lt;/head
+</pre>
+                            </figure>
+
+                        </section>
+
                     </section>
 
                 </main>
