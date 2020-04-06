@@ -211,7 +211,6 @@
 
 /*#endregion*/
 
-
 /* *** Links *** */
 /* iconPrimary and ID seelctor */
 /*#region
@@ -319,6 +318,10 @@
         width: 100%;
     }
 
+    #dropdownNolabel label {
+        display: none;
+    }
+
     /* dropdown - Original style from Mark-One */
 
     .kFoNgS {
@@ -355,6 +358,85 @@
         border-style: solid;
         border-color: rgb(166, 166, 166);
         border-image: initial;
+    }
+
+/*#endregion*/
+
+/* header and ID seelctor */
+/*#region
+    /* header - Styles for interfaces */
+    header {
+        -webkit-box-align: baseline;
+        align-items: baseline;
+        background-color: transparent;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        width: 100%;
+        padding: 15px 10px;
+    }
+
+    header a:first-of-type {
+        align-self: stretch;
+        background-image: url(https://seas-computing.github.io/mark-one/53adae7e04b94384b103e6884cbad7ab.svg);
+        background-size: contain;
+        color: transparent;
+        display: inline-block;
+        font-size: 0px;
+        line-height: 0;
+        width: 175px;
+        min-width: 100px;
+        height: 50px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin: 0px 10px;
+    }
+
+    header h1 {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.66em;
+        font-weight: 400;
+        color: rgb(113, 113, 113);
+    }
+
+    header > div {
+        display: block;
+    }
+
+    /* header - Original style from Mark-One */
+    
+    .cxOGUM {
+        -webkit-box-align: baseline;
+        align-items: baseline;
+        background-color: transparent;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        width: 100%;
+        padding: 15px 10px;
+    }
+
+    .fSnoKZ {
+        align-self: stretch;
+        background-image: url(53adae7….svg);
+        background-size: contain;
+        color: transparent;
+        display: inline-block;
+        font-size: 0px;
+        line-height: 0;
+        width: 175px;
+        min-width: 100px;
+        height: 50px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin: 0px 10px;
+    }
+
+    .fOBfez {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.66em;
+        font-weight: 400;
+        color: rgb(113, 113, 113);
     }
 
 /*#endregion*/

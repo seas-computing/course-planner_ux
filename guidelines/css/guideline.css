@@ -18,6 +18,11 @@
         padding-left: 0.375em;
     }
 
+    .badge-info {
+        color: #fff;
+        background-color: #128091; /* Darker color with accessible contrast */
+    }
+
     .bd-example select {
         width:100%;
     }
