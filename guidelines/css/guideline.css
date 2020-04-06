@@ -18,6 +18,10 @@
         padding-left: 0.375em;
     }
 
+    .bd-example select {
+        width:100%;
+    }
+
     .bg-light {
         background-color: #ffffff !important;
     }
