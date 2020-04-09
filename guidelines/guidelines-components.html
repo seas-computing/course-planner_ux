@@ -80,7 +80,7 @@
         
                 </ul>
 
-            <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20200408</small></span>
+            <span class="navbar-text d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"><small>Last update: 20200409</small></span>
             </nav>
 
         <div class="container-fluid">
@@ -386,32 +386,28 @@
                         <div class="bd-example">
                             <!-- Proposed code for https://seas-computing.github.io/mark-one/#basicbutton -->
                         
-                        
-                            <div style="display: inline-block; text-align: center; margin-left: 1em;">
-                                <button id="buttonPrimaryDemo">
-                                    <span>Class info:medium</span>
-                                </button>
-                                <div class="text-muted">
+                            <div style="display: inline-block; text-align: center;">
+                                <button id="buttonPrimary">
                                     Primary
-                                </div>
+                                </button>
                             </div>
                         
                             <div style="display: inline-block; text-align: center; margin-left: 1em;">
-                                <button id="buttonSecondaryDemo">
-                                    <span>Class background:medium</span>
+                                <button id="buttonSecondary">
+                                    Secondary
                                 </button>
-                                <div class="text-muted">
-                                    Secondary (as Basic)
-                                </div>
+                            </div>
+
+                            <div style="display: inline-block; text-align: center; margin-left: 1em;">
+                                <button id="buttonInfo">
+                                    Info
+                                </button>
                             </div>
                         
                             <div style="display: inline-block; text-align: center; margin-left: 1em;">
-                                <button id="buttonDangerDemo">
-                                    <span>Class negative:dark</span>
-                                </button>
-                                <div class="text-muted">
+                                <button id="buttonDanger">
                                     Danger
-                                </div>
+                                </button>
                             </div>
 
                         </div>
@@ -421,15 +417,19 @@
                         <figure class="highlight">
 <pre>
 &lt;button id="<span class="text-danger">buttonPrimary</span>"&gt;
-    Class info:medium
+    Primary
 &lt;/button&gt;
 
 &lt;button id="<span class="text-danger">buttonSecondary</span>"&gt;
-    Class background:medium
+    SEcondary
+&lt;/button&gt;
+
+&lt;button id="<span class="text-danger">buttonInfo</span>"&gt;
+    Info
 &lt;/button&gt;
 
 &lt;button id="<span class="text-danger">buttonDanger</span>"&gt;
-    Class negative:dark
+    Danger
 &lt;/button&gt;
 </pre>
                         </figure>
@@ -456,8 +456,13 @@
     Use tabindex for the correct tab sequence,
     since usuallly the "Save" button is on the right
     and the "Cancel" button is on the left --&gt;</span>
-&lt;button id="buttonPrimary" <span class="text-danger">tabindex="0"</span>&gt; 
-    Class info:medium
+
+&lt;button id="buttonSecondary" <span class="text-danger">tabindex="2"</span>&gt; 
+    Cancel
+&lt;/button&gt;
+
+&lt;button id="buttonPrimary" <span class="text-danger">tabindex="1"</span>&gt; 
+    Save
 &lt;/button&gt;
 </pre>
                         </figure>
@@ -467,7 +472,7 @@
 <span class="text-success">&lt;!-- / Allow to select the primary button (or function)
     also by using the Enter key --&gt;</span>
 &lt;button id="buttonPrimary" <span class="text-danger">onkeypress="return keyHandler(e);"</span>&gt; 
-    Class info:medium
+    Submit new faculty
 &lt;/button&gt;
 </pre>
                         </figure>
@@ -609,7 +614,7 @@
                         <p>
                             In general, placing labels above the form fields helps reduce horizontal scrolling for people with low vision and mobile device users. However, the usefulness of this approach depends on other design aspects, such as the proximity of other nearby form fields and content, and needs to be assessed individually. The aim should be to maintain a close and distinct visual relationship between the label and the form control.
                         </p>
-                        <p class="text-muted">Source: <a href="https://www.w3.org/WAI/tutorials/forms/labels/#visual-position-of-label-text">W3C <span style="display: none;">Visual position of label text</span></a></p>
+                        <p class="text-muted">Source: <a href="https://www.w3.org/WAI/tutorials/forms/labels/#visual-position-of-label-text">W3C</a></p>
                     </section>
 
                     <section id="icon">
@@ -631,7 +636,7 @@
                             <a href="https://seas-computing.github.io/mark-one/#/Theme?id=background-colors">color palette</a>.
                         </p>
                         <p>
-                            <code>id="icon*"</code> can be used for both buttons or links.
+                            <code>id="icon*"</code> can be used for both buttons and links.
                         </p>
 
                         <div class="bd-example">
@@ -639,7 +644,7 @@
                         
                         
                             <div style="display: inline-block; text-align: center; margin-left: 2em;">
-                                <button title="Edit account information" aria-label="Edit account information"  id="iconPrimary">
+                                <button title="Edit faculty information" aria-label="Edit faculty information"  id="IconPrimary">
                                     <i class="fas fa-edit"></i>
                                 </button>
                                 <div class="text-muted">
@@ -648,7 +653,7 @@
                             </div>
                         
                             <div style="display: inline-block; text-align: center; margin-left: 4em;">
-                                <a title="Edit account information" aria-label="Edit account information"  id="iconSecondary">
+                                <a href="#" title="Open settings panel" aria-label="Open settings panel"  id="IconSecondary">
                                     <i class="far fa-arrow-alt-circle-right"></i>
                                 </a>
                                 <div class="text-muted">
@@ -657,7 +662,16 @@
                             </div>
                         
                             <div style="display: inline-block; text-align: center; margin-left: 4em;">
-                                <a title="Edit account information" aria-label="Edit account information"  id="iconDanger">
+                                <a href="#" title="Faculty notes" aria-label="Faculty notes"  id="IconInfo">
+                                    <i class="fas fas fa-sticky-note"></i>
+                                </a>
+                                <div class="text-muted">
+                                    Info
+                                </div>
+                            </div>
+                        
+                            <div style="display: inline-block; text-align: center; margin-left: 4em;">
+                                <a href="#" title="Delete faculty" aria-label="Delete faculty"  id="iconDanger">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                                 <div class="text-muted">
@@ -671,25 +685,38 @@
 
                         <figure class="highlight">
 <pre>
-&lt;button title="Edit account information" <span class="text-success">&lt;!-- / Clear purpose of the button --&gt;</span>
-      aria-label="Edit account information"  
+&lt;button title="Edit faculty information"
+      aria-label="Edit faculty information" <span class="text-success">&lt;!-- / Clear purpose of the button --&gt;</span>  
       id="<span class="text-danger">iconPrimary</span>"&gt;
     &lt;i class="fas fa-edit"&gt;&lt;/i&gt;
 &lt;/button&gt;
 
-&lt;a title="Show settings options" <span class="text-success">&lt;!-- / Clear purpose of the link --&gt;</span>
-      aria-label="Show settings options"  
+&lt;a title="Open settings panel"
+      aria-label="Open settings panel" <span class="text-success">&lt;!-- / Clear purpose of the link --&gt;</span>  
       id="<span class="text-danger">iconSecondary</span>"&gt;
     Settings &lt;i class="far fa-arrow-alt-circle-right"&gt;&lt;/i&gt;
 &lt;/a&gt;
 
-&lt;button title="Remove faculty name" <span class="text-success">&lt;!-- / Clear purpose of the button --&gt;</span>
-      aria-label="Remove faculty name"  
+&lt;a title="Faculty notes"
+      aria-label="Faculty notes"  
+      id="<span class="text-danger">iconInfo</span>"&gt;
+    Settings &lt;i class="fas fas fa-sticky-note"&gt;&lt;/i&gt;
+&lt;/a&gt;
+
+&lt;button title="Delete faculty"
+      aria-label="Delete faculty"  
       id="<span class="text-danger">iconDanger</span>"&gt;
     &lt;i class="fas fa-trash-alt"&gt;&lt;/i&gt;
 &lt;/button&gt;
 </pre>
                         </figure>
+
+                        <h3>Accesible links</h3>
+                        <h4>Provide a clear visual indication of focus</h4>
+                        <p>
+                            Use CSS to provide a clear visual indication of when links, buttons, and other active control receives focus, such as through a border line or change in text color or background color, or preferably a combination of those effects. The default browser focus effect is often not visually obvious enough, and sometimes those focus indications can be inadvertently suppressed when reset CSS files are used. For custom controls that aren’t natively focusable, such as divs or spans, use CSS to apply a visual focus effect because browsers will not provide any native indication.
+                        </p>
+                        <p class="text-muted">Source: <a href="https://accessibility.huit.harvard.edu/provide-logical-and-visible-focus-indication">Digital Accessibility</a></p>
                     </section>
 
                     <section id="layout">
