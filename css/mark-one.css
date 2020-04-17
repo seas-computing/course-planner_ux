@@ -1,0 +1,867 @@
+/* Mark-One styles */
+
+    
+html, body {
+    box-sizing: border-box;
+    color: rgb(24, 24, 24);
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 100%;
+    width: 100%;
+    background: rgb(254, 254, 254);
+    margin: 0px;
+    padding: 0px;
+}
+
+/* *** Buttons *** */
+
+.Button--leftAlign {
+    margin-right: auto!important;
+}
+
+.Button--rightAlign {
+    float: right!important;
+}
+
+/* Button--primary */
+/*#region
+    /* Renamed Mark One class.lgcYDB to Button--primary */
+    .Button--primary {
+        color: rgb(254, 254, 254);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: rgb(77, 184, 72);
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        padding: 5px 10px;
+    }
+
+    .Button--primary:hover {
+        background: rgb(23, 135, 23); /* Primary button hover color - positive: dark */
+    }
+
+/*#endregion*/
+  
+/* Button--secondary */
+/*#region
+
+    /* Mark One class .fzVqdc renamed to .Button--secondary */
+    .Button--secondary {
+        color: rgb(24, 24, 24);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: rgb(209, 209, 209);
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        padding: 5px 10px;
+    }
+
+    .Button--secondary:hover {
+        color: rgb(24, 24, 24);
+        background: rgb(147, 161, 173); /* Secondary button highlight color - background: dark */
+    }
+
+/*#endregion*/
+  
+/* Button--danger */
+/*#region
+    /* Renamed Mark One class.cZdTOQ to Button--danger */
+    .Button--danger {
+        color: rgb(254, 254, 254);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: rgb(255, 64, 64);
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        padding: 5px 10px;
+    }
+
+    .Button--danger:hover {
+        background: rgb(237, 27, 42); /* danger button hover color - negative: dark */
+    }
+
+/*#endregion*/
+  
+
+/* buttonInfo */
+/*#region
+    /* buttonInfo - Styles for interfaces */
+    #buttonInfo {
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: rgb(149, 181, 223); /* Info button idle color - info: light */
+        border: 1px solid rgb(78, 136, 199); /* Info button idle border color - info: medium */
+        padding: 5px 10px;
+    }
+
+    #buttonInfo:hover {
+        background: rgb(78, 136, 199); /* Info button highlight color - info: medium */
+        border: 1px solid rgb(78, 136, 199); /* Info button highlight border color - info: medium */
+    }
+
+
+    /* buttonInfo - Original style from Mark-One */
+    .bADMLE {
+        color: rgb(254, 254, 254);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: rgb(78, 136, 199); /* Info button idle color - info: medium */
+        padding: 5px 10px;
+        border: 0px solid #fff;
+        content:"Not Reply!";
+    }
+
+    .bADMLE:hover { background: rgb(8, 65, 97); } /* Primary button highlight color - info: dark */
+
+/*#endregion*/
+
+
+/* *** BorderlessButton *** */
+
+/* BorderlessButton--primary */
+/*#region
+
+    /* Renaming Mark One .feKiLD toBorderlessButton--primary */
+    .BorderlessButton--primary {
+        color: rgb(77, 184, 72);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: transparent;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        padding: 5px 10px;
+    }
+
+    .BorderlessButton--primary:hover {
+        color: rgb(23, 135, 23); /* Primary button highlight color - positive: dark */
+    }
+
+/*#endregion*/
+
+
+/* BorderlessButton--secondary */
+/*#region
+
+    /* Renaming Mark One .lfYlak toBorderlessButton--secondary */
+    .BorderlessButton--secondary {
+        color: rgb(209, 209, 209);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: transparent;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        padding: 5px 10px;
+    }
+
+    .BorderlessButton--secondary:hover {
+        color: rgb(147, 161, 173); /* Primary button highlight color - background: dark */
+    }
+
+/*#endregion*/
+
+/* BorderlessButton--info */
+/*#region
+
+/* Renaming Mark One .gYtdBB toBorderlessButton--secondary */
+    .BorderlessButton--info {
+        color: rgb(78, 136, 199);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: transparent;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        padding: 5px 10px;
+    }
+
+    .BorderlessButton--info:hover {
+        color: rgb(8, 65, 97); /* info button highlight color - info: dark */
+    }
+
+/*#endregion*/
+
+
+/* BorderlessButton--danger */
+/*#region
+
+/* Renaming Mark One .danger toBorderlessButton--danger */
+.BorderlessButton--danger {
+    color: rgb(255, 64, 64);
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    background: transparent;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 5px 10px;
+}
+
+.BorderlessButton--danger:hover {
+    color: rgb(165, 28, 48); /* danger button hover color - background: accent */
+}
+
+/*#endregion*/
+
+
+
+/* *** Link - icon *** */
+
+/* iconPrimary */
+/*#region
+    /* iconPrimary - Styles for interfaces */
+    #iconPrimary {
+        color: rgb(69, 165, 64); /* Primary icon link or button idle (accessible contrast) darkened color - info: medium */
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        padding: 5px 10px;
+        background-color: none;
+        box-sizing: border-box;
+        margin: 0em;
+        border-width: 0px;
+        border-style: none;
+        border-color: none;
+        border-image: none;
+    }
+
+    #iconPrimary:hover {
+        color: rgb(23, 135, 23); /* Primary icon link or button highlight color - positive: dark */
+    }
+
+    
+    /* iconPrimary - Original style from Mark-One */
+    .feKiLD {
+        color: rgb(77, 184, 72);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: transparent;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        padding: 5px 10px;
+    }
+
+    .feKiLD:hover { background: rgb(23, 135, 23); }
+
+/*#endregion*/
+
+/* iconSecondary */
+/*#region
+    /* iconSecondary - Styles for interfaces */
+    #iconSecondary {
+        color: rgb(133, 147, 163); /* Secondary icon link or button idle color - modified background: dark because unsufficient accessible color */
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        padding: 5px 10px;
+        background-color: none;
+        box-sizing: border-box;
+        margin: 0em;
+        border-width: 0px;
+        border-style: none;
+        border-color: none;
+        border-image: none;
+    }
+
+    #iconSecondary:hover {
+        color: rgb(79, 79, 109); /* Secondary icon link or button highlight color - modified background: dark because unsufficient accessible color */
+    }
+
+    /* iconSecondary - Original style from Mark-One */
+    .lfYlak {
+        color: rgb(209, 209, 209);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: transparent;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        padding: 5px 10px;
+    }
+
+    .lfYlak:hover { 
+        background: rgb(147, 161, 173); /* Secondary icon link highlight color - background: dark */
+    }
+
+/*#endregion*/
+
+/* iconInfo */
+/*#region
+    /* iconInfo - Styles for interfaces */
+    #iconInfo {
+        color: rgb(78, 136, 199); /* Info icon link or button idle color - info: medium */
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        padding: 5px 10px;
+        background-color: none;
+        box-sizing: border-box;
+        margin: 0em;
+        border-width: 0px;
+        border-style: none;
+        border-color: none;
+        border-image: none;
+    }
+
+    #iconInfo:hover {
+        color: rgb(8, 65, 97); /* Info icon link or button  highlight color - info: dark */
+    }
+
+    
+    /* iconLinkInfo - Original style from Mark-One */
+    .gYtdBB {
+        color: rgb(78, 136, 199);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: transparent;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        padding: 5px 10px;
+    }
+
+    .gYtdBB:hover { background: rgb(8, 65, 97); }
+
+/*#endregion*/
+ 
+/* iconDanger */
+/*#region
+    /* iconDanger - Styles for interfaces */
+    #iconDanger {
+        color: rgb(237, 27, 42); /* Danger icon link or button idle color - negative:dark */
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        padding: 5px 10px;
+        background-color: none;
+        box-sizing: border-box;
+        margin: 0em;
+        border-width: 0px;
+        border-style: none;
+        border-color: none;
+        border-image: none;
+    }
+
+    #iconDanger:hover {
+        color: rgb(165, 28, 48); /* Danger icon link or button highlight color - background:accent */
+    }
+
+    
+    /* iconDanger - Original style from Mark-One */
+    .fqrCeD {
+        color: rgb(255, 64, 64);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 400;
+        background: transparent;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        padding: 5px 10px;
+    }
+
+    .fqrCeD:hover { background: rgb(165, 28, 48); }
+
+/*#endregion*/
+
+/* *** Link - text *** */
+/*#region
+    /* Renaming Mark One class .hqCfVQ to .Link */
+    .Link {
+        color: rgb(78, 136, 199);
+        text-decoration: none;
+    }
+    .Link:visited {
+        color: rgb(78, 136, 199);
+        text-decoration: none;
+    }
+    .Link:hover {
+        color: rgb(8, 65, 97);
+        text-decoration: underline;
+    }
+/*#endregion*/
+
+/* *** Dropdown *** */
+/* Dropdown */
+/*#region
+    /* Renamed Mark One style from .kaGLJG to .Dropdown */
+    .Dropdown {
+        color: rgb(24, 24, 24);
+        width: 100%;
+    }
+    
+    select:not(:-internal-list-box) {
+        overflow: visible !important;
+    }
+
+    select {
+        -webkit-writing-mode: horizontal-tb !important;
+        text-rendering: auto;
+        color: -internal-light-dark-color(black, white);
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        -webkit-appearance: menulist;
+        box-sizing: border-box;
+        align-items: center;
+        white-space: pre;
+        -webkit-rtl-ordering: logical;
+        background-color: rgb(248, 248, 248);
+        cursor: default;
+        margin: 0em;
+        font: 400 11px system-ui;
+        border-radius: 5px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(166, 166, 166);
+        border-image: initial;
+    }
+
+/*#endregion*/
+
+/* *** TextInput *** */
+/* TextInput */
+/*#region
+    /* Renamed Mark One style from .duGBDl to .TextInput */
+    .TextInput {
+        width: 100%;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(24, 24, 24);
+        border-image: initial;
+        padding: 5px 0px 5px 5px;
+        grid-area: i / i / i / i;
+    }
+
+/*#endregion*/
+
+
+/* *** Header *** */
+/*#region
+    /* Renaming class .cxOGUM to class .Header */
+    .Header {
+        -webkit-box-align: baseline;
+        align-items: baseline;
+        background-color: transparent;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        width: 98%;
+        padding: 15px 10px;
+    }
+    /* Renaming class .fSnoKZ to class .Logo */
+
+    .Logo {
+        align-self: stretch;
+        background-image: url(https://seas-computing.github.io/mark-one/53adae7e04b94384b103e6884cbad7ab.svg);
+        background-size: contain;
+        color: transparent;
+        display: inline-block;
+        font-size: 0px;
+        line-height: 0;
+        width: 175px;
+        min-width: 100px;
+        height: 50px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin: 0px 10px;
+    }
+
+    /* Renaming Mark One class .fOBfez to .PageTitle */
+    .PageTitle {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.66em;
+        font-weight: 400;
+        color: rgb(113, 113, 113);
+    }
+
+/*#endregion*/
+
+
+/* *** Table *** */
+/*#region
+    /* Renaming Mark One class .htjfmC to .Table */
+    .Table {
+        border-collapse: collapse;
+        width: 100%;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(152, 152, 152);
+        border-image: initial;
+        padding: 5px 10px;
+    }
+
+    /* Renaming Mark One .kvdJXB to .TableHead */
+    .TableHead {
+        background-color: rgb(209, 209, 209);
+        text-align: center;
+    }
+
+    /* Renaming Mark One class .dmYApa to .TableRow */
+    .TableRow {
+        background: rgb(254, 254, 254);
+    }
+
+    /* Renaming Mark One class .igVtNA to .TableHeadingCell */
+    .TableRow th {
+        background-color: rgb(209, 209, 209);
+    }
+
+    .TableHeadingCell {
+        font-weight: 600;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(152, 152, 152);
+        border-image: initial;
+    }
+
+    /* Renaming Mark One class .heRFkv to .TableBody */
+    .TableBody {
+        overflow: scroll;
+    }
+
+    /* Renaming Mark One class .uuItf to .TableRowOdd */
+    .TableRowOdd {
+        background: rgb(236, 236, 236);
+    }
+
+    /* Renaming Mark One class .dmYApa to .TableRowEven */
+    .TableRowEven {
+        background: rgb(254, 254, 254);
+    }
+
+    /* Renaming Mark One class .kjoGlm to .TableCell */
+    .TableCell {
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.9em;
+        text-align: left;
+        border-left: 2px solid rgb(152, 152, 152);
+        border-right: 2px solid rgb(152, 152, 152);
+        padding: 5px;
+    }
+
+    /* Non existing Mark One class for Courses table header*/
+    .TableHeadingCell--blank__left {
+        border-width: 2px 0 0 2px;
+        border-style: solid;
+        border-color: rgb(255, 255, 255);
+        border-image: initial;
+        background-color: rgb(255, 255, 255);
+    }
+
+    /* Non existing Mark One class for Courses table header */
+    .TableHeadingCell--blank__right {
+        border-width: 2px 2px 0 0;
+        border-style: solid;
+        border-color: rgb(255, 255, 255);
+        border-image: initial;
+        background-color: rgb(255, 255, 255);
+    }
+
+    /* Non existing Mark One class for Courses table header */
+    .TableHeadingCell--nav {
+        font-weight: 600;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(152, 152, 152);
+        border-image: initial;
+        background-color: rgb(255, 255, 255);;
+    }
+    
+    /* Non existing Mark One class for Courses colors */
+    td.acs {
+        background: rgba(203, 37, 45, 0.80); /* SEAS academic color with light transparency for the row hover effect */
+        color: white;
+    }
+
+    td.am {
+        background: rgba(78, 173, 171, 0.80); /* SEAS academic color with light transparency for the row hover effect */
+        color: black;
+    }
+
+    td.ap {
+        background: rgba(206, 219, 81, 0.80); /* SEAS academic color with light transparency for the row hover effect */
+        color: black;
+    }
+
+    /* Define the hover highlight color for the table row */
+    .Table tr:hover {
+        background-color: #d1d1d1;
+    }
+
+    td.TableCell > .BorderlessButton--info {
+        margin-left: 23%;
+    }
+
+    td.TableCell > .BorderlessButton--right {
+        float: right;
+    }
+
+/*#endregion*/
+
+
+/* *** Header *** */
+/*#region
+    /* nav */
+    nav {
+        display: block;
+    }
+
+    /* ul */
+    /* Mark One class - .eYyXiM */
+    /* TabList */
+    
+    /* Renaming Mark One class .eYyXiM to .TabList */
+    .TabList {
+        background-color: transparent;
+        border-collapse: collapse;
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+        border-bottom: 1px solid rgb(24, 24, 24);
+    }
+
+    .TabList > li.TabActive {
+        color: rgb(24, 24, 24);
+        display: inline-block;
+        background: rgb(254, 254, 254);
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(24, 24, 24) rgb(24, 24, 24) transparent;
+        border-image: initial;
+        border-bottom: 1px solid transparent;
+        padding: 0.5rem 1rem;
+    }
+
+    ul {
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+
+    /* li */
+    /* Rename Mark One class .fjsRKO to .TabListItem*/
+    .TabListItem {
+        margin-bottom: -1px;
+        padding: 0px 1em;
+    }
+    
+    li {
+        display: list-item;
+        text-align: -webkit-match-parent;
+    }
+
+
+    /* Renaming Mark One class .befeVe to .TabItem*/
+    .TabItem {
+        color: rgb(24, 24, 24);
+        display: inline-block;
+        background: transparent;
+        border-width: 1px 1px 1px;
+        border-style: solid solid none;
+        border-color: transparent transparent transparent;
+        border-image: initial;
+        border-bottom: none;
+        padding: 0.5rem 1rem;
+    }
+
+    /* style for li.tabActive */
+    /* .biKshC {
+        color: rgb(24, 24, 24);
+        display: inline-block;
+        background: rgb(254, 254, 254);
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(24, 24, 24) rgb(24, 24, 24) transparent;
+        border-image: initial;
+        border-bottom: 1px solid transparent;
+        padding: 0.5rem 1rem;
+    } */
+
+    /* Renaming Mark One class .hqCfVQ to .StyledLink */
+    .StyledLink {
+        color: rgb(78, 136, 199);
+        text-decoration: none;
+    }
+    .StyledLink:visited {
+        color: rgb(78, 136, 199);
+        text-decoration: none;
+    }
+    .StyledLink:hover {
+        color: rgb(8, 65, 97);
+        text-decoration: underline;
+    }
+
+/*#endregion*/
+
+
+/* *** Modal *** */
+/*#region*/
+
+/* Non Mark One styles */
+
+.Table--noHover tr:hover {
+    background-color: #fff;
+}
+
+.Table--noHover tr {
+    background: rgb(254, 254, 254);
+    border-bottom: 1px solid #ccc;
+}
+
+.TextInput--modal {
+    width: 76%;
+    margin-left: 1em;
+}
+
+.TextInput--nolabel > label {
+    display: none;
+}
+
+/* Modals for Course tabs */
+
+/* Modal for instructors */
+
+
+.modal {
+    right: 18%;
+    left: -10%;
+}
+
+.modal-content {
+    width: 84em;
+}
+
+.table-modal {
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    border-color: grey;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.table-modal .iRtSxQ {
+    background-color: rgb(255, 255, 182550);
+    border-width: 1px;
+}
+
+.table-modal td {
+    border: 1px #ccc solid;
+    text-align: center;
+}
+
+/*#endregion*/
+
+/* *** Sliding Sidenav *** */
+/*#region*/
+    /* Not yet Mark One styles */
+
+    /*CSS Grid*/
+
+    #outer-grid {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        margin-top: 1em;
+    }
+
+    /*CSS Grid*/
+    .courses {
+        padding: 0em;
+        width: 100vw;
+        height: 120vh;
+    }
+
+    .Table--Sidebar {
+        width: 95%;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        border-right: 1px solid #007bff;
+        overflow-x: hidden;
+        transition: 0.5s;
+        margin-top: -9.6em;
+        margin-left: 1.1em;
+    }
+
+    .sideNav-column {
+        padding-left: .5em;
+        margin-top: 6em;
+        z-index: 1000;
+    }
+
+    .sidenav a:hover {
+        color: rgb(8, 65, 97);
+        text-decoration: underline;
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding: 2em;
+        }
+    }
+
+    .navSidenav {
+        margin-left: 10em;
+    }
+
+    .sideNav__Link {
+        margin-left: 1.6em;
+        margin-top: 0.3em;
+        position: absolute;
+        width: 8em;
+    }
+
+    .sideNav--inside__Link {
+        margin-left: 1.6em;
+        margin-top: .6em;
+    }
+
+/*#endregion*/
