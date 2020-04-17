@@ -832,8 +832,8 @@ html, body {
     }
 
     .sideNav-column {
-        padding-left: .5em;
         margin-top: 6em;
+        margin-left: -.5em;
         z-index: 1000;
     }
 
@@ -849,7 +849,7 @@ html, body {
     }
 
     .navSidenav {
-        margin-left: 10em;
+        margin-left: 11.5em;
     }
 
     .sideNav__Link {
