@@ -201,7 +201,6 @@ html, body {
 
 /*#endregion*/
 
-
 /* BorderlessButton--danger */
 /*#region
 
@@ -225,6 +224,16 @@ html, body {
 
 /*#endregion*/
 
+
+/* BorderlessButton--empty */
+/*#region
+
+/* Renaming Mark One .empty toBorderlessButton--danger */
+.BorderlessButton--empty {
+    margin-right: 2.3em;
+}
+
+/*#endregion*/
 
 
 /* *** Link - icon *** */
