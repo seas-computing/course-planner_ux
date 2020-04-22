@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 
 <html>
@@ -17,7 +15,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Bootstrap CSS -->
+        <!-- Mark One CSS -->
+        <link rel="stylesheet" href="css/mark-one.css">
+
+        <!-- Bootstrap CSS - just for the modal -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
             crossorigin="anonymous">
@@ -26,668 +27,79 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
             integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-        <style type="text/css">
-            /*This sets the margin and padding of every HTML element to zero and the box-sizing: border-box; declaration changes the box model by ensuring that the padding and border of an element no longer increases its width.*/
-            html {
-                box-sizing: border-box;
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            }
-
-            *, *::before, *::after {
-                margin: 0;
-                padding: 0;
-                box-sizing: inherit;
-            }
-
-            dd {
-                margin-bottom: -4px;
-                font-size: 1.2em;
-                align: left;
-            }
-
-            dt {
-                font-size: 1.2em;
-                padding: 0px;
-            }
-
-            /*Style for each course*/
-            .button-course {
-                width: 100%;
-                background-color: transparent;
-                border: 0px solid transparent;
-                font-size: .8em;
-                color: #fff;
-                text-align: left;
-            }
-
-            .button-course:hover {
-                background-color: rgba(255, 255, 255, .3);
-            }
-
-            /*Style for tooltips*/
-            .tooltip.show p {
-                text-align: left;
-            }
-
-            /*Sidebar*/
-
-            .sidenav {
-                height: 100%;
-                width: 0;
-                z-index: 1;
-                top: 0;
-                left: 0;
-                background-color: #fff;
-                border-right: 1px solid #ccc;
-                overflow-x: hidden;
-                transition: 0.5s;
-                margin-top: -5em;
-            }
-
-            .sideNav-column {
-                padding-left: .5em;
-                margin-top: 6em;
-                z-index: 1000;
-            }
-
-            .sidenav a {
-                padding: 8px 8px 8px 32px;
-                text-decoration: none;
-                font-size: 25px;
-                color: #818181;
-                display: block;
-                transition: 0.3s;
-            }
-
-            .sidenav a:hover {
-                color: #f1f1f1;
-            }
-
-            @media screen and (max-height: 450px) {
-                .sidenav {
-                    padding: 2em;
-                }
-            }
-
-            /*Amending Bootstrap styles*/
-            .nav-link {
-                font-size: 1em;
-            }
-
-            .nav-tabs {
-                margin-bottom: -0.5em;
-                margin-left: -176em;
-            }
-
-            .nav-pills {
-                margin-top: 2.05em;
-                margin-left: 3em;
-                position: absolute;
-            }
-
-            .nav-item {
-                padding-left: 1em;
-                padding-right: 1em;
-            }
-
-            .navbar-brand img {
-                width: 7%;
-            }
-
-            .bg-light {
-            background-color: #ffffff!important;
-            height: 8.6em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-                /* margin-left: 2em; */
-            }
-
-            h3 {
-                font-size: 1.2em;
-            }
-
-            .form-group {
-                padding: 1em;
-            }
-
-            .popover-header {
-                padding: .5rem .75rem;
-                margin-bottom: 0;
-                font-size: 1.5rem;
-                font-weight: bold;
-                color: inherit;
-                background-color: #f7f7f7;
-                border-bottom: 1px solid #ebebeb;
-                border-top-left-radius: calc(.3rem - 1px);
-                border-top-right-radius: calc(.3rem - 1px);
-            }
-
-            .popover-body {
-                padding: .5rem .75rem;
-                color: #212529;
-                font-size: 1.1rem;
-            }
-
-            .dropdown-item {
-            font-size: 1.4rem;
-            color: #007bff;
-            }
-
-            #navbarDropdownMenuLink {
-            color: #007bff;
-            }
-
-            .img-fluid {
-                max-width: 98%;
-                margin-top: -1em;
-            }
-
-            .sidenav a {
-                font-size: 1.5em;
-                color: #007bff;
-            }
-
-            .sidenav a:hover {
-                font-size: 1.5em;
-                color: #000;
-            }
-
-            .modal {
-                right: 18%;
-                left: -10%;
-            }
-
-            .modal-content {
-                width: 84em;
-            }
-
-            /*CSS Grid*/
-
-            #outer-grid {
-                display: grid;
-                grid-template-rows: 1fr;
-                grid-template-columns: 1fr 1fr;
-                grid-gap: 1em;
-                margin-top: 1em;
-            }
-
-            /*Reset to absolutely center the calendar on the page and give it a border and width.*/
-            /*CSS Grid*/
-            .courses {
-                padding: 0em;
-                width: 100vw;
-                height: 120vh;
-            }
-        </style>
-
-        <!-- Mark-one styles -->
-        <style>
-        /* style for table */
-        .coIxkm-amended {
-            border-collapse: collapse;
-            width: 95%;
-            border-width: 2px;
-            border-style: solid;
-            border-color: rgb(152, 152, 152);
-            border-image: initial;
-            margin: 1em 2em 1em 1em;
-            padding: 5px 10px;
-        }
-
-        .iRtSxQ {
-            background-color: rgb(209, 209, 209);
-        }
-
-        .jQECIl {
-            background: rgb(254, 254, 254);
-        }
-
-        .jQECIl th {
-            background-color: rgb(209, 209, 209);
-            padding: 0 3px 0 3px; /* adding side padding to table headers */
-        }
-
-        .cbrsHS {
-            font-weight: 600;
-            border-width: 2px;
-            border-style: solid;
-            border-color: rgb(152, 152, 152);
-            border-image: initial;
-        }
-
-        .jxSeiZ {
-            overflow: scroll;
-        }
-
-        .cjgueY {
-            background: rgb(236, 236, 236);
-        }
-
-        .bqnYPo {
-            font-family: "Roboto Mono", monospace;
-            font-size: 0.9em;
-            border-left: 2px solid rgb(152, 152, 152);
-            border-right: 2px solid rgb(152, 152, 152);
-            padding: 3px;
-        }
-
-        /* negative: light class for background of "no" table cell */
-        .bCEQJv {
-            margin-top: 10px;
-            color: rgb(24, 24, 24);
-            background: rgb(255, 143, 156);
-            padding: 3px;  /* Decreasing padding */
-            font-family: "Roboto Mono", monospace;
-            font-size: 0.9em;
-            border-left: 2px solid rgb(152, 152, 152);
-            border-right: 2px solid rgb(152, 152, 152);
-        }
-
-        /* negative: dark class for font color of "no" table cell */
-        .no {
-            color: rgb(237, 27, 42);
-            font-weight: 900;
-        }
-
-        table {
-            display: table;
-            border-collapse: separate;
-            border-spacing: 2px;
-            border-color: grey;
-            font-size: 16px;
-            font-weight: 400;
-            }
-
-        thead {
-            display: table-header-group;
-            vertical-align: middle;
-            border-color: inherit;
-        }
-
-        tr {
-            display: table-row;
-            vertical-align: inherit;
-            border-color: inherit;
-        }
-
-        /* Define the hover highlight color for the table row */
-        .hoverTable tr:hover {
-            background-color: #d1d1d1;
-        }
-
-        th {
-            display: table-cell;
-            vertical-align: inherit;
-            font-weight: bold;
-            text-align: center;
-            vertical-align: top;
-            margin: 0 3px 0 3px;
-            white-space: nowrap;
-            padding: 0 3px 0 3px;
-        }
-
-        tbody {
-            display: table-row-group;
-            vertical-align: middle;
-            border-color: inherit;
-        }
-
-        td {
-            display: table-cell;
-            vertical-align: inherit; 
-        }
-
-
-        /* style for nav */
-        nav {
-            display: block;
-            font-size: 16px;
-            font-weight: 400;
-        }
-
-        .hhGZXE {
-            background-color: transparent;
-            border-collapse: collapse;
-            display: flex;
-            flex-wrap: wrap;
-            list-style-type: none;
-            border-bottom: 1px solid rgb(24, 24, 24);
-        }
-
-        ul {
-            /* display: block; */
-            /* list-style-type: disc; */
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
-            padding-inline-start: 40px;
-        }
-
-        .icrnXS {
-            margin-bottom: -1px;
-            padding: 0px 1em;
-        }
-
-        .icrnXS-first {
-            margin-bottom: -1px;
-            padding: 0px 1em;
-            margin-left: 7em;
-        }
-
-        li {
-            display: list-item;
-            text-align: -webkit-match-parent;
-        }
-
-        .kzaudT {
-            color: rgb(24, 24, 24);
-            display: inline-block;
-            background: transparent;
-            border-width: 1px 1px 1px;
-            border-style: solid solid none;
-            border-color: transparent transparent transparent;
-            border-image: initial;
-            border-bottom: none;
-            padding: 0.5rem 1rem;
-        }
-
-        /* active tab */
-        .bWbWht {
-            color: rgb(24, 24, 24);
-            display: inline-block;
-            background: rgb(254, 254, 254);
-            border-width: 1px;
-            border-style: solid;
-            border-color: rgb(24, 24, 24) rgb(24, 24, 24) transparent;
-            border-image: initial;
-            border-bottom: 1px solid transparent;
-            padding: 0.5rem 1rem;
-        }
-
-        /* header */
-        .bsLcFZ {
-            align-items: flex-end;
-            background-color: transparent;
-            box-shadow: rgba(0, 0, 0, 0.28) 0px 4px 8px;
-            display: flex;
-            -webkit-box-pack: justify;
-            justify-content: space-between;
-            width: 100%;
-            padding: 15px 10px;
-        }
-
-        .bSvdsU {
-            align-self: stretch;
-            background-image: url(53adae7….svg);
-            background-size: contain;
-            color: transparent;
-            display: inline-block;
-            font-size: 0px;
-            line-height: 0;
-            width: 175px;
-            min-width: 100px;
-            height: 50px;
-            background-position: center center;
-            background-repeat: no-repeat;
-            margin: 0px 10px;
-        }
-
-        .eEciP {
-            font-size: 1.66em;
-            font-family: "Open Sans", sans-serif;
-            font-weight: 400;
-            grid-column-end: span 4;
-        }
-
-        header {
-        font-size: 16px;
-        font-weight: 400;
-        }
-
-        /* button - primary */
-        .bADMLE {
-            color: rgb(254, 254, 254);
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 400;
-            background: rgb(78, 136, 199); /* Primary button idle color - info: medium */
-            padding: 5px 10px;
-            border: 0px solid #fff;
-        }
-
-        .bADMLE:hover { background: rgb(8, 65, 97); } /* Primary button highlight color - info: dark */
-
-        /* button icon - primary */
-        .bADMLE-icon {
-            color: rgb(78, 136, 199); /* Primary button icon idle color - info: medium */
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 400;
-            /* padding: 5px 10px; */
-        }
-
-        .bADMLE-icon:hover { color: rgb(8, 65, 97); } /* Primary button icon highlight color - info: dark */
-
-        /* button - secondary */
-        .kxWoHZ {
-            color: rgb(24, 24, 24);
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 400;
-            background: rgb(209, 209, 209); /* Secondary button idle color - background: medium */
-            padding: 5px 10px;
-            border: 0px solid #fff;
-        }
-
-        .kxWoHZ:hover { 
-            color: rgb(254, 254, 254);
-            background: rgb(147, 161, 173); /* Secondary button highlight color - background: dark */
-        }
-
-        /* button - danger */
-        .csuYJy {
-            color: rgb(254, 254, 254);
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 400;
-            background: rgb(237, 27, 42); /* Danger button idle color - negative: dark */
-            padding: 5px 10px;
-            border: 0px solid #fff;
-        }
-
-        .csuYJy:hover { background: rgb(165, 28, 48); } /* Danger button highlight color - backgrond: accent */
-
-        .lijgtc { /* positive: light */
-            margin-top: 10px;
-            color: rgb(24, 24, 24);
-            background: rgb(129, 233, 129);
-            /* padding: 15px; */
-            }
-
-    /* button icon - danger */
-        .csuYJy-icon { /* Danger button icon idle color - negative: dark */
-            margin-top: 10px;
-            color: rgb(237, 27, 42);
-            padding: 15px;
-        }
-
-        .csuYJy-icon:hover {  /* Danger button icon highlight color - background: accent */
-            color: rgb(165, 28, 48);
-        }
-
-        .button-icon {
-            margin-top: 0px;
-            display: inline-block;
-            font-weight: 400;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            padding: .375rem .75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            border-radius: .25rem;
-            border: solid 0 #fff;
-        }
-
-        /* Drop down */
-        .kFoNgS {
-            color: rgb(24, 24, 24);
-            margin-bottom: .5em;
-        }
-
-
-        </style>
-
-        <!-- Simulating Mark-One styles -->
-        <style>
-
-            /* Course colors */
-            td.acs {
-                background: rgba(203, 37, 45, 0.80); /* SEAS academic color with light transparency for the row hover effect */
-                color: white;
-            }
-
-            td.am {
-                background: rgba(78, 173, 171, 0.80); /* SEAS academic color with light transparency for the row hover effect */
-                color: black;
-            }
-
-            td.ap {
-                background: rgba(206, 219, 81, 0.80); /* SEAS academic color with light transparency for the row hover effect */
-                color: black;
-            }
-
-            input {
-                margin-bottom: .25em;
-                width: 90%;
-            }
-
-            .iconLink { color: #4e88c7; } /* Primary button color - info: medium */
-            .iconLink:hover { color: #084161; } /* Primary highlight color - info: dark */
-
-            hr {
-                FONT-WEIGHT: 500;
-                margin-top: .5rem;
-                margin-bottom: .5rem;
-                border: 0;
-                border-top: 1px solid rgba(0,0,0,.1);
-                width: 90%; 
-            }
-
-            textarea {
-                overflow: auto;
-                resize: vertical;
-                padding: .25em;
-            }
-
-            .table-modal {
-                display: table;
-                border-collapse: collapse;
-                border-spacing: 1px;
-                border-color: grey;
-                font-size: 16px;
-                font-weight: 400;
-                width: 100%;
-            }
-
-            .table-modal .iRtSxQ {
-                background-color: rgb(255, 255, 182550);
-                border-width: 1px;
-            }
-
-            .table-modal td {
-                border: 1px #ccc solid;
-                text-align: center;
-            }
-
-        </style>
-
-        <!-- Styles that should be added to Mark-One -->
-        <style>
-            #roomTimeLocation:after {
-                display: block;
-                height: 0px;
-                clear: both;
-                float: none;
-            }
-                #roomTimeLocation div {
-                float: left;
-                word-break: break-all;
-                padding: 0 3px 0 3px;
-            }
-                #date {
-                width: 40%;
-                font-size: .85em;
-            }
-                #campus {
-                width: 20%;
-            }
-                #room {
-                width: 40%;
-                font-size: .85em;
-            }
-
-                .roomSelect {
-                font-size: .8em
-            }
-        </style>
-
     </head>
     <body>
-
-        <header class="sc-bxivhb bsLcFZ">
-            <a width="175px" href="#" height="50px" class="sc-ifAKCX bSvdsU"><img src="H_SEAS_logo_RGB.png" width="175px"></a>
-            <h1 class="sc-ckVGcZ eEciP">SEAS Course Planning</h1>
-            <div><a href="#">Log out</a></div>
+        <header class="Header"><a width="175px" href="#" height="50px" class="Logo">The Link
+                Description</a>
+            <h1 class="PageTitle">Course Planner</h1>
+            <div><a href="#" class="StyledLink">Logout</a></div>
         </header>
 
-        <!-- Left nav button -->
-        <div>
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <a href="#" class="nav-link" style="margin-right: 3em; cursor: pointer;" onclick="openNav()">
-                        Settings
-                        <i class="far fa-arrow-alt-circle-right"></i>
-                    </a>
-                </li>
-
-            </ul>
+        <!-- Sliding sidebar button -->
+        <div class="sideNav__Link">
+            <a href="#" class="Link sideNav__Link" onclick="openNav()">
+                Settings
+                <i class="far fa-arrow-alt-circle-right"></i>
+            </a>
         </div>
+            
+        <nav class="navSidenav">
+            <ul class="TabList">
+                <li class="TabListItem">
+                    <div class="TabItem"><a href="courses.html" class="StyledLink">Courses</a></div>
+                </li>
+                <li class="TabListItem TabActive">
+                    <div class=""><a href="#" class="StyledLink">Non class meetings</a></div>
+                </li>
+                <li class="sc-VigVT TabListItem">
+                    <div class="TabItem"><a href="faculty.html" class="StyledLink">Faculty</a></div>
+                </li>
+                <li class="sc-VigVT TabListItem">
+                    <div class="TabItem"><a href="schedule.html" class="StyledLink">Schedule</a></div>
+                </li>
+                <li class="sc-VigVT TabListItem">
+                    <div class="TabItem"><a href="fourYearPlan.html" class="StyledLink">4 Year Plan</a></div>
+                </li>
+                <li class="sc-VigVT TabListItem">
+                    <div class="TabItem"><a href="manage_courses.html" class="StyledLink">Courses Admin</a></div>
+                </li>
+                <li class="sc-VigVT TabListItem">
+                    <div class="TabItem"><a href="manage_faculty.html" class="StyledLink">Faculty Admin</a></div>
+                </li>
+            </ul>
+        </nav>
 
-         <div id="outer-grid">
+        <div id="outer-grid">
 
-            <!--Sidenav filters-->
+            <!--Sliding sidebar filters-->
             <div class="sideNav-column">
-                <div id="mySidenav" class="sidenav" style="white-space: nowrap;">
-                    <div>
-                        <a href="javascript:void(0)" onclick="closeNav()"
-                        style="font-size: 1em; margin-top: .05em; margin-left: 2.5em;">
+                <div id="mySidenav" class="sidenav">
+                    <div class="sideNav--ncm--inside__Link">
+                        <a href="javascript:void(0)" onclick="closeNav()" class="Link">
                             Settings
                             <i class="far fa-arrow-alt-circle-left ml-auto"></i>
                         </a>
                     </div>
                     <form>
-                        <div class="form-group">
-                            <button class="sc-bdVaJa bADMLE">Download courses report</button>
+                        <hr>
+                        <div>
+                            <button class="Button--secondary">Download courses report</button>
                         </div>
-                        <div class="form-group">
-                            <h3>Customized view</h3>
-                            <select name="views" class="sc-bwzfXH kFoNgS">
-                                <option value="default">Default</option>
-                                <option value="myview">My view</option>
-                                <option value="newview">New view</option>
-                            </select>
-                            <button class="sc-bdVaJa bADMLE">Submit</button>
+                        <hr>
+                        <div>
+                            <label for="views">Customized view</label>
+                            <div>
+                                <select id="views" name="views" class="Dropdown">
+                                    <option value="default">Default</option>
+                                    <option value="myview">My view</option>
+                                    <option value="newview">New view</option>
+                                </select>
+                            </div>
+                            <button class="Button--secondary">Submit</button>
                         </div>
-                        <div class="form-group">
-                            <button class="sc-bdVaJa bADMLE">Show retired courses</button>
+                        <hr>
+                        <div>
+                            <button class="Button--secondary">Show retired courses</button>
                         </div>
                     </form>
                 </div>
@@ -696,364 +108,335 @@
             <!-- courses -->
             <div class="courses">
 
-                <!-- Mark-One nav -->
-                <nav>
-                    <ul class="sc-bZQynM hhGZXE">
-                        <li class="sc-htoDjs icrnXS-first">
-                            <div class="sc-gzVnrw kzaudT"><a href="courses.html" class="sc-kgoBCf cuZvUJ">Courses</a></div>
-                        </li>
-                        <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw bWbWht"><a href="#" class="sc-kgoBCf cuZvUJ">Non class meetings</a></div>
-                        </li>
-                        <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="faculty.html" class="sc-kgoBCf cuZvUJ">Faculty</a></div>
-                        </li>
-                        <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="schedule.html" class="sc-kgoBCf cuZvUJ">Schedule</a></div>
-                        </li>
-                        <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="fourYearPlan.html" class="sc-kgoBCf cuZvUJ">4 Year Plan</a></div>
-                        </li>
-                        <!-- <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="manage_users.html" class="sc-kgoBCf cuZvUJ">Manage Users</a></div>
-                        </li> -->
-                        <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="manage_courses.html" class="sc-kgoBCf cuZvUJ">Manage Courses</a></div>
-                        </li>
-                        <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="manage_faculty.html" class="sc-kgoBCf cuZvUJ">Manage Faculty</a></div>
-                        </li>   
-                    </ul>
-                </nav>
+                <table class="Table Table--Sidebar">
 
-                <!-- Table from Mark-One -->
-                <table class="sc-dnqmqq coIxkm-amended hoverTable">
-                    <thead class="sc-gqjmRU iRtSxQ">
-
-                        <tr style="background-color: white;">
-                            <td colspan="3" style="border-top: 2px solid white; border-left: 2px solid white;">&nbsp;</td>
-                            <th colspan="2" scope="col" class="sc-VigVT cbrsHS">
-                                <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-left fa-lg"></i></button>
+                    <thead class="TableHead">
+                        <tr class="TableHeadingCell">
+                            <th scope="col" class="TableHeadingCell TableHeadingCell--blank__left" colspan="3">
+                            </th>
+                            <th scope="col" class="TableHeadingCell--nav" colspan="2">
+                                <button type="button" class="BorderlessButton--primary"><i class="fas fa-arrow-left"></i></button>
                                 Fall 2019
                             </th>
-                            <th colspan="2" scope="col" class="sc-VigVT cbrsHS">
+                            <th scope="col" class="TableHeadingCell--nav" colspan="2">
                                 Spring 2020
-                                <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-right fa-lg"></i></button>
+                                <button type="button" class="BorderlessButton--primary"><i class="fas fa-arrow-right"></i></button>
                             </th>
-                            <td style="border-top: 2px solid white; border-right: 2px solid white;">&nbsp;</td>
+                            <th scope="col" class="TableHeadingCell TableHeadingCell--blank__right">
+                            </th>
                         </tr>
-
-                        <tr class="sc-gZMcBi jQECIl">
-                            <th scope="col" class="sc-VigVT cbrsHS">
-                                Area
-                                <br>
-                                <select>
-                                    <option value="string:All" label="All" selected="selected">All</option>
-                                    <option value="string:ACS" label="ACS">ACS</option>
-                                    <option value="string:AM" label="AM">AM</option>
-                                    <option value="string:AP" label="AP">AP</option>
-                                    <option value="string:BE" label="BE">BE</option>
-                                    <option value="string:CS" label="CS">CS</option>
-                                    <option value="string:EE" label="EE">EE</option>
-                                    <option value="string:ESE" label="ESE">ESE</option>
-                                    <option value="string:General" label="General">General</option>
-                                    <option value="string:MDE" label="MDE">MDE</option>
-                                    <option value="string:MSMBA" label="MSMBA">MSMBA</option>
-                                    <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
-                                    <option value="string:SEM" label="SEM">SEM</option>
-                                </select>
+                        <tr class="TableHeadingCell">
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="semesters">Area</label>
+                                <div>
+                                    <select id="semesters" name="semesters" class="Dropdown">
+                                        <option value="string:All" label="All" selected="selected">All</option>
+                                        <option value="string:ACS" label="ACS">ACS</option>
+                                        <option value="string:AM" label="AM">AM</option>
+                                        <option value="string:AP" label="AP">AP</option>
+                                        <option value="string:BE" label="BE">BE</option>
+                                        <option value="string:CS" label="CS">CS</option>
+                                        <option value="string:EE" label="EE">EE</option>
+                                        <option value="string:ESE" label="ESE">ESE</option>
+                                        <option value="string:General" label="General">General</option>
+                                        <option value="string:MDE" label="MDE">MDE</option>
+                                        <option value="string:MSMBA" label="MSMBA">MSMBA</option>
+                                        <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
+                                        <option value="string:SEM" label="SEM">SEM</option>
+                                    </select>
+                                </div>
                             </th>
-                            <th scope="col" class="sc-VigVT cbrsHS">
-                                Course
-                                <br>
-                                <input type="text">
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="course">Course</label>
+                                <div>
+                                    <input id="course" name="course" type="text" class="TextInput" value="" placeholder="Filter by course">
+                                </div>
                             </th>
-                            <th scope="col" class="sc-VigVT cbrsHS">
-                                Title
-                                <br>
-                                <input type="text">
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="title">Title</label>
+                                <div>
+                                    <input id="title" name="title" type="text" class="TextInput" value="" placeholder="Filter by course title">
+                                </div>
                             </th>
-                            <th scope="col" class="sc-VigVT cbrsHS">
-                                Offered
-                                <br>
-                                <select>
-                                    <option value="string:All" label="All" selected="selected">All</option>
-                                    <option value="string:"></option>
-                                    <option value="string:Yes" label="Yes">Yes</option>
-                                    <option value="string:No" label="No">No</option>
-                                    <option value="string:Retire" label="Retire">Retire</option>
-                                </select>
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="offered">Offered</label>
+                                <div>
+                                    <select id="offered" name="offered" class="Dropdown">
+                                        <option value="string:All" label="All" selected="selected">All</option>
+                                        <option value="string:"></option>
+                                        <option value="string:Yes" label="Yes">Yes</option>
+                                        <option value="string:No" label="No">No</option>
+                                        <option value="string:Retire" label="Retire">Retire</option>
+                                    </select>
+                                </div>
                             </th>
-                            <th scope="col" class="sc-VigVT cbrsHS">
+                            <th scope="col" class="TableHeadingCell">
                                 Room
                             </th>
-                            <th scope="col" class="sc-VigVT cbrsHS">
-                                Offered
-                                <br>
-                                <select>
-                                    <option value="string:All" label="All" selected="selected">All</option>
-                                    <option value="string:"></option>
-                                    <option value="string:Yes" label="Yes">Yes</option>
-                                    <option value="string:No" label="No">No</option>
-                                    <option value="string:Retire" label="Retire">Retire</option>
-                                </select>
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="offered">Offered</label>
+                                <div>
+                                    <select id="offered" name="offered" class="Dropdown">
+                                        <option value="string:All" label="All" selected="selected">All</option>
+                                        <option value="string:"></option>
+                                        <option value="string:Yes" label="Yes">Yes</option>
+                                        <option value="string:No" label="No">No</option>
+                                        <option value="string:Retire" label="Retire">Retire</option>
+                                    </select>
+                                </div>
                             </th>
-                            <th scope="col" class="sc-VigVT cbrsHS">
+                            <th scope="col" class="TableHeadingCell">
                                 Room
                             </th>
-                            <th scope="col" class="sc-VigVT cbrsHS">Detail</th>
+                            <th scope="col" class="TableHeadingCell">Detail</th>
                         </tr>
-
                     </thead>
-                    <tbody class="sc-jTzLTM jxSeiZ">
+                    
+                    <tbody class="TableBody">
 
-                        <tr class="sc-gZMcBi cjgueY">
-                            <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                            <td class="sc-iwsKbI bqnYPo">AC 209a</td>
-                            <td class="sc-iwsKbI bqnYPo">Data Science 1: Introduction to Data Science</td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo">
-                                <div id="roomTimeLocation">
-                                    <div id="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div id`="campus">🅐</div>
-                                    <div id="room">Geological Museum 105</div>
+                        <tr class="TableRowOdd">
+                            <td class="TableCell acs">ACS</td>
+                            <td class="TableCell ">AC 209a</td>
+                            <td class="TableCell">Data Science 1: Introduction to Data Science</td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                
+                                <div class="roomTimeLocation">
+                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                    <div class`="campus">🅐</div>
+                                    <div class="room">Geological Museum 105</div>
+                                    <div class="icon">
+                                        <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                            <i class="fas fa-edit float-right"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit"></i>
                                 </a>
                             </td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                                </a>
-                            </td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                     <i class="fas fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
 
-                        <tr class="sc-gZMcBi jQECIl">
-                            <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                            <td class="sc-iwsKbI bqnYPo">AC 209b</td>
-                            <td class="sc-iwsKbI bqnYPo">Data Science 2: Advanced Topics in Data Science	</td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo">
-                                <div id="roomTimeLocation">
-                                    <div id="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div id`="campus">🅒</div>
-                                    <div id="room">Geological Museum 105</div>
+                        <tr class="TableRowEven">
+                            <td class="TableCell acs">ACS</td>
+                            <td class="TableCell ">AC 209b</td>
+                            <td class="TableCell">Data Science 2: Introduction to Data Science</td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                
+                                <div class="roomTimeLocation">
+                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                    <div class`="campus">🅒</div>
+                                    <div class="room">Geological Museum 105</div>
+                                    <div class="icon">
+                                        <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                            <i class="fas fa-edit float-right"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit"></i>
                                 </a>
                             </td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                                </a>
-                            </td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                                    <i class="fas fa-folder-open"></i>
-                                </a>
-                            </td>
-                        </tr>
-
-                        <tr class="sc-gZMcBi cjgueY">
-                            <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                            <td class="sc-iwsKbI bqnYPo">AC 221</td>
-                            <td class="sc-iwsKbI bqnYPo">Critical Thinking in Data Science	</td>
-                            <td class="sc-iwsKbI bqnYPo no">No</td>
-                            <td class="sc-iwsKbI bqnYPo">
-                                <div id="roomTimeLocation">
-                                    <div id="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div id`="campus">🅐</div>
-                                    <div id="room">Geological Museum 105</div>
-                                </div>
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                                </a>
-                            </td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                                </a>
-                            </td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                                    <i class="fas fa-folder-open"></i>
-                                </a>
-                            </td>
-                        </tr>
-
-                        <tr class="sc-gZMcBi jQECIl">
-                            <td class="sc-iwsKbI bqnYPo am">AM</td>
-                            <td class="sc-iwsKbI bqnYPo">AM 010</td>
-                            <td class="sc-iwsKbI bqnYPo">Computing for Science and Engineering</td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo">
-                                <div id="roomTimeLocation">
-                                    <div id="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div id`="campus">🅒</div>
-                                    <div id="room">Geological Museum 105</div>
-                                </div>
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                                </a>
-                            </td>
-                            <td class="sc-iwsKbI bqnYPo no">No</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                                </a>
-                            </td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                                    <i class="fas fa-folder-open"></i>
-                                </a>
-                            </td>
-                        </tr>
-
-                        <tr class="sc-gZMcBi cjgueY">
-                            <td class="sc-iwsKbI bqnYPo am">AM</td>
-                            <td class="sc-iwsKbI bqnYPo">AM 021a</td>
-                            <td class="sc-iwsKbI bqnYPo">Mathematical Methods in the Sciences</td>
-                            <td class="sc-kGXeez bCEQJv">No</td>
-                            <td class="sc-iwsKbI bqnYPo">
-                                <div id="roomTimeLocation">
-                                    <div id="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div id`="campus">🅐</div>
-                                    <div id="room">Geological Museum 105</div>
-                                </div>
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                                </a>
-                            </td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                                </a>
-                            </td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                                    <i class="fas fa-folder-open"></i>
-                                </a>
-                            </td>
-                        </tr>
-
-                        <tr class="sc-gZMcBi jQECIl">
-                            <td class="sc-iwsKbI bqnYPo am">AM</td>
-                            <td class="sc-iwsKbI bqnYPo">AM 021b</td>
-                            <td class="sc-iwsKbI bqnYPo">Mathematical Methods in the Sciences</td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo">
-                                <div id="roomTimeLocation">
-                                    <div id="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div id`="campus">🅒</div>
-                                    <div id="room">Geological Museum 105</div>
-                                </div>
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                                </a>
-                            </td>
-                            <td class="sc-kGXeez bCEQJv">No</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                                </a>
-                            </td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                     <i class="far fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
 
-                        <tr class="sc-gZMcBi cjgueY">
-                            <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                            <td class="sc-iwsKbI bqnYPo">AC 275</td>
-                            <td class="sc-iwsKbI bqnYPo">Computational Design of Materials</td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo">
-                                <div id="roomTimeLocation">
-                                    <div id="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div id`="campus">🅐</div>
-                                    <div id="room">Geological Museum 105</div>
+                        <tr class="TableRowOdd">
+                            <td class="TableCell acs">ACS</td>
+                            <td class="TableCell ">AC 221</td>
+                            <td class="TableCell">Critical Thinking in Data Science</td>
+                            <td class="TableCell">No</td>
+                            <td class="TableCell">
+                                
+                                <div class="roomTimeLocation">
+                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                    <div class`="campus">🅐</div>
+                                    <div class="room">Geological Museum 105</div>
+                                    <div class="icon">
+                                        <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                            <i class="fas fa-edit float-right"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit"></i>
                                 </a>
                             </td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                                </a>
-                            </td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal">
                                     <i class="fas fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
 
-                        <tr class="sc-gZMcBi jQECIl">
-                            <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                            <td class="sc-iwsKbI bqnYPo">AP 050a</td>
-                            <td class="sc-iwsKbI bqnYPo">Introduction to Computer Science</td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo">
-                                <div id="roomTimeLocation">
-                                    <div id="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div id`="campus">🅒</div>
-                                    <div id="room">Geological Museum 105</div>
+                        <tr class="TableRowEven">
+                            <td class="TableCell am">AM</td>
+                            <td class="TableCell ">AM 010</td>
+                            <td class="TableCell">Computing for Science and Engineering</td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                
+                                <div class="roomTimeLocation">
+                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                    <div class`="campus">🅒</div>
+                                    <div class="room">Geological Museum 105</div>
+                                    <div class="icon">
+                                        <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                            <i class="fas fa-edit float-right"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit"></i>
                                 </a>
                             </td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal">
+                                    <i class="far fa-folder-open"></i>
                                 </a>
                             </td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                        </tr>
+
+                        <tr class="TableRowOdd">
+                            <td class="TableCell acs">ACS</td>
+                            <td class="TableCell ">AC 021a</td>
+                            <td class="TableCell">Mathematical Methods in the Sciences</td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                
+                                <div class="roomTimeLocation">
+                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                    <div class`="campus">🅐</div>
+                                    <div class="room">Geological Museum 105</div>
+                                    <div class="icon">
+                                        <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                            <i class="fas fa-edit float-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="TableCell">No</td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal">
                                     <i class="fas fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
 
-                        <tr class="sc-gZMcBi cjgueY"> 
-                            <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                            <td class="sc-iwsKbI bqnYPo">AP 050b</td>
-                            <td class="sc-iwsKbI bqnYPo">Introduction to Computer Science (for concentrators unable to take in fall term)</td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo">
-                                <div id="roomTimeLocation">
-                                    <div id="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div id`="campus">🅐</div>
-                                    <div id="room">Geological Museum 105</div>
+                        <tr class="TableRowEven">
+                            <td class="TableCell ap">AP</td>
+                            <td class="TableCell ">AP 275</td>
+                            <td class="TableCell">Computational Design of Materials</td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                
+                                <div class="roomTimeLocation">
+                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                    <div class`="campus">🅐</div>
+                                    <div class="room">Geological Museum 105</div>
+                                    <div class="icon">
+                                        <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                            <i class="fas fa-edit float-right"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            </td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit"></i>
                                 </a>
                             </td>
-                            <td class="sc-iwsKbI bqnYPo">Yes</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal1" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal">
+                                    <i class="fas fa-folder-open"></i>
                                 </a>
                             </td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+                        </tr>
+
+                        <tr class="TableRowOdd">
+                            <td class="TableCell ap">AP</td>
+                            <td class="TableCell ">AP 050a</td>
+                            <td class="TableCell">Introduction to Computer Science</td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                
+                                <div class="roomTimeLocation">
+                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                    <div class`="campus">🅒</div>
+                                    <div class="room">Geological Museum 105</div>
+                                    <div class="icon">
+                                        <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                            <i class="fas fa-edit float-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal">
+                                    <i class="far fa-folder-open"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr class="TableRowEven">
+                            <td class="TableCell ap">AP</td>
+                            <td class="TableCell ">AC 050b</td>
+                            <td class="TableCell">Introduction to Computer Science (for concentrators unable to take in fall term)</td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                
+                                <div class="roomTimeLocation">
+                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                    <div class`="campus">🅐</div>
+                                    <div class="room">Geological Museum 105</div>
+                                    <div class="icon">
+                                        <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                            <i class="fas fa-edit float-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="TableCell">Yes</td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal">
                                     <i class="fas fa-folder-open"></i>
                                 </a>
                             </td>
@@ -1061,23 +444,23 @@
 
                     </tbody>
                 </table>
+
             </div><!-- /courses -->
 
             <!-- Modal for Room -->
-            <div class="modal fade" id="courseModal1" tabindex="-1" role="dialog" aria-labelledby="courseModal1" aria-hidden="true" style="font-size: 1em; right: 1%; left: -50%; top: 2em;">
+            <div class="modal fade" id="courseModal1" tabindex="-1" role="dialog" aria-labelledby="courseModal1" aria-hidden="true" style="right: 1%; left: -47%; top: 2em;">
                 <div class="modal-dialog" role="document">
-                    <div class="modal-content" style="width: 77em;">
+                    <div class="modal-content" style="width: 70em;">
                         <div class="modal-header">
-                            <h2 class="modal-title" id="courseModal1">Rooms for AC 209a - Data Science 1: Introduction to Data Science</h2>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                            <h5 class="modal-title" id="courseModal1">Rooms for AC 209a - Data Science 1: Introduction to Data Science</h5>
                         </div>
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-6 offset-md-6">
-                                    Filter by:
-                                    <input type="text">
+                                    <label for="filter">Filter by:</label>
+                                    <div>
+                                        <input id="filter" name="filter" type="text" class="TextInput" value="" placeholder="Filter by room">
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -1085,182 +468,189 @@
                             <!-- Interface with time and date -->
                             <div class="col">
                                 Meeting times for <strong>AC 209a</strong>
-                                <div class="border p-1 mt-3" style="height: 7.5em;">
+                                <div class="border p-1 mt-3" style="height: 8.7em;">
+
                                     <div class="roomSelect">
-                                        <select disabled>
-                                            <option value="string:monday" label="Monday" selected="selected">Monday</option>
-                                            <option value="string:tuesday" label="Tuesday">Tuesday</option>
-                                            <option value="string:wednesday" label="wednesday">Wednesday</option>
-                                            <option value="string:thursday" label="Thursday">Thursday</option>
-                                            <option value="string:friday" label="Friday">Friday</option>
-                                        </select>
-                                        <i class="far fa-clock text-muted"></i>
-                                        <select disabled>
-                                            <option value="string:hour" label="8:30AM-11:30AM" selected="selected">8:30AM-11:30AM</option>
-                                            <option value="string:hour" label="9:00AM-10:15AM">9:00AM-10:15AM</option>
-                                            <option value="string:hour" label=":00AM-11:45AM">9:00AM-11:45AM</option>
-                                            <option value="string:hour" label="10:30AM-11:45AM">10:30AM-11:45AM</option>
-                                            <option value="string:hour" label="2:00PM-1:15PM">12:00PM-1:15PM</option>
-                                            <option value="string:hour" label="1:15PM-2:30PMv">1:15PM-2:30PM</option>
-                                            <option value="string:hour" label="1:30PM-2:45PM">1:30PM-2:45PM</option>
-                                            <option value="string:hour" label="1:30PM-5:45PM">1:30PM-5:45PM</option>
-                                            <option value="string:hour" label="3:00PM-4:15PM">3:00PM-4:15PM</option>
-                                            <option value="string:hour" label="3:00PM-5:00PM">3:00PM-5:00PM</option>
-                                            <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
-                                            <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
-                                            <option value="string:hour" label="3:45PM-5:45PM">3:45PM-5:45PM</option>
-                                            <option value="string:hour" label="4:30PM-5:45PM">4:30PM-5:45PM</option>
-                                            <option value="string:hour" label="6:00PM-7:15PM">6:00PM-7:15PM</option>
-                                        </select>
-                                        <select disabled>
-                                            <option value="string:hour" label="8:30AM-11:30AM">8:30AM-11:30AM</option>
-                                            <option value="string:hour" label="9:00AM-10:15AM">9:00AM-10:15AM</option>
-                                            <option value="string:hour" label=":00AM-11:45AM">9:00AM-11:45AM</option>
-                                            <option value="string:hour" label="10:30AM-11:45AM" selected="selected">10:30AM-11:45AM</option>
-                                            <option value="string:hour" label="2:00PM-1:15PM">12:00PM-1:15PM</option>
-                                            <option value="string:hour" label="1:15PM-2:30PMv">1:15PM-2:30PM</option>
-                                            <option value="string:hour" label="1:30PM-2:45PM">1:30PM-2:45PM</option>
-                                            <option value="string:hour" label="1:30PM-5:45PM">1:30PM-5:45PM</option>
-                                            <option value="string:hour" label="3:00PM-4:15PM">3:00PM-4:15PM</option>
-                                            <option value="string:hour" label="3:00PM-5:00PM">3:00PM-5:00PM</option>
-                                            <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
-                                            <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
-                                            <option value="string:hour" label="3:45PM-5:45PM">3:45PM-5:45PM</option>
-                                            <option value="string:hour" label="4:30PM-5:45PM">4:30PM-5:45PM</option>
-                                            <option value="string:hour" label="6:00PM-7:15PM">6:00PM-7:15PM</option>
-                                        </select>
-                                        Geological Museum 105
-                                        <button type="button" class="sc-bdVaJa kxWoHZ">Edit</button>
+
+                                        <label for="dataone" hidden>Date of booked room</label>
+                                        <div class="roomSelect__date">
+                                            <select id="dataone" name="dataone" class="Dropdown Dropdown--disabled">
+                                                <option value="string:All" label="Monday">Monday</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="roomSelect__icon">
+                                            <i class="far fa-clock iconSecondary icon--disabled"></i>
+                                        </div>
+
+                                        <label for="timestartone" hidden>Time of booked room</label>
+                                        <div class="roomSelect__time">
+                                            <select id="timestartone" name="timestartone" class="Dropdown Dropdown--disabled">
+                                                <option value="string:All" label="8:30AM-11:30AM">8:30AM-11:30AM</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="roomSelect__room text--disabled">
+                                            Geological Museum 105
+                                        </div>
+
+                                        <div class="roomSelect__edit">
+                                            <button type="button" class="Button--secondary Button--rightAlign">Edit</button>
+                                        </div>
+
                                     </div>
 
                                     <div class="roomSelect">
-                                        <select>
-                                            <option value="string:monday" label="Monday" selected="selected">Monday</option>
-                                            <option value="string:tuesday" label="Tuesday">Tuesday</option>
-                                            <option value="string:wednesday" label="wednesday">Wednesday</option>
-                                            <option value="string:thursday" label="Thursday">Thursday</option>
-                                            <option value="string:friday" label="Friday">Friday</option>
-                                        </select>
-                                        <i class="far fa-clock"></i>
-                                        <select>
-                                            <option value="string:hour" label="8:30AM-11:30AM" selected="selected">8:30AM-11:30AM</option>
-                                            <option value="string:hour" label="9:00AM-10:15AM">9:00AM-10:15AM</option>
-                                            <option value="string:hour" label=":00AM-11:45AM">9:00AM-11:45AM</option>
-                                            <option value="string:hour" label="10:30AM-11:45AM">10:30AM-11:45AM</option>
-                                            <option value="string:hour" label="2:00PM-1:15PM">12:00PM-1:15PM</option>
-                                            <option value="string:hour" label="1:15PM-2:30PMv">1:15PM-2:30PM</option>
-                                            <option value="string:hour" label="1:30PM-2:45PM">1:30PM-2:45PM</option>
-                                            <option value="string:hour" label="1:30PM-5:45PM">1:30PM-5:45PM</option>
-                                            <option value="string:hour" label="3:00PM-4:15PM">3:00PM-4:15PM</option>
-                                            <option value="string:hour" label="3:00PM-5:00PM">3:00PM-5:00PM</option>
-                                            <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
-                                            <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
-                                            <option value="string:hour" label="3:45PM-5:45PM">3:45PM-5:45PM</option>
-                                            <option value="string:hour" label="4:30PM-5:45PM">4:30PM-5:45PM</option>
-                                            <option value="string:hour" label="6:00PM-7:15PM">6:00PM-7:15PM</option>
-                                        </select>
-                                        <select>
-                                            <option value="string:hour" label="8:30AM-11:30AM">8:30AM-11:30AM</option>
-                                            <option value="string:hour" label="9:00AM-10:15AM">9:00AM-10:15AM</option>
-                                            <option value="string:hour" label=":00AM-11:45AM">9:00AM-11:45AM</option>
-                                            <option value="string:hour" label="10:30AM-11:45AM" selected="selected">10:30AM-11:45AM</option>
-                                            <option value="string:hour" label="2:00PM-1:15PM">12:00PM-1:15PM</option>
-                                            <option value="string:hour" label="1:15PM-2:30PMv">1:15PM-2:30PM</option>
-                                            <option value="string:hour" label="1:30PM-2:45PM">1:30PM-2:45PM</option>
-                                            <option value="string:hour" label="1:30PM-5:45PM">1:30PM-5:45PM</option>
-                                            <option value="string:hour" label="3:00PM-4:15PM">3:00PM-4:15PM</option>
-                                            <option value="string:hour" label="3:00PM-5:00PM">3:00PM-5:00PM</option>
-                                            <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
-                                            <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
-                                            <option value="string:hour" label="3:45PM-5:45PM">3:45PM-5:45PM</option>
-                                            <option value="string:hour" label="4:30PM-5:45PM">4:30PM-5:45PM</option>
-                                            <option value="string:hour" label="6:00PM-7:15PM">6:00PM-7:15PM</option>
-                                        </select>
-                                        <button type="button" class="sc-bdVaJa bADMLE">Show rooms</button>
 
-                                        <div>
-                                            <button type="button" class="sc-bdVaJa bADMLE float-right mt-3 mr-4">Add new time</button>
+                                        <label for="dataone" hidden>Date of booked room</label>
+                                        <div class="roomSelect__date">
+                                            <select id="dataone" name="dataone" class="Dropdown">
+                                                <option value="string:All" label="Monday">Monday</option>
+                                                <option value="string:tuesday" label="Tuesday" selected>Tuesday</option>
+                                                <option value="string:wednesday" label="wednesday">Wednesday</option>
+                                                <option value="string:thursday" label="Thursday">Thursday</option>
+                                                <option value="string:friday" label="Friday">Friday</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="roomSelect__icon">
+                                            <i class="far fa-clock iconSecondary icon--disabled"></i>
+                                        </div>
+
+                                        <label for="timestartone" hidden>Time start of booked room</label>
+                                        <div class="roomSelect__time">
+                                            <select id="timestartone" name="timestartone" class="Dropdown">
+                                                <option value="string:All" label="8:30AM-11:30AM">8:30AM-11:30AM</option>
+                                                <option value="string:hour" label="9:00AM-10:15AM">9:00AM-10:15AM</option>
+                                                <option value="string:hour" label=":00AM-11:45AM">9:00AM-11:45AM</option>
+                                                <option value="string:hour" label="10:30AM-11:45AM" selected>10:30AM-11:45AM</option>
+                                                <option value="string:hour" label="2:00PM-1:15PM">12:00PM-1:15PM</option>
+                                                <option value="string:hour" label="1:15PM-2:30PMv">1:15PM-2:30PM</option>
+                                                <option value="string:hour" label="1:30PM-2:45PM">1:30PM-2:45PM</option>
+                                                <option value="string:hour" label="1:30PM-5:45PM">1:30PM-5:45PM</option>
+                                                <option value="string:hour" label="3:00PM-4:15PM">3:00PM-4:15PM</option>
+                                                <option value="string:hour" label="3:00PM-5:00PM">3:00PM-5:00PM</option>
+                                                <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
+                                                <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
+                                                <option value="string:hour" label="3:45PM-5:45PM">3:45PM-5:45PM</option>
+                                                <option value="string:hour" label="4:30PM-5:45PM">4:30PM-5:45PM</option>
+                                                <option value="string:hour" label="6:00PM-7:15PM">6:00PM-7:15PM</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="roomSelect__room">
+                                            &nbsp;
+                                        </div>
+
+                                        <div class="roomSelect__showroom">
+                                            <button type="button" class="Button--primary Button--rightAlign">Show rooms</button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="roomSelect">
+                                        <div class="roomSelect__addnewtime">
+                                            <button type="button" class="Button--secondary Button--rightAlign">Add new time</button>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                             
                             <!-- Table with rooms -->
                             <div class="col">
 
-                                <p class="text-center"><strong>Tuesday, 10:00AM to 11:00AM</strong></p>
+                                <p class="text-center"><strong>Tuesday, 10:30AM to 11:45AM</strong></p>
                                 
-                                <table class="sc-dnqmqq coIxkm-amended hoverTable">
-                                    <thead class="sc-gqjmRU iRtSxQ">
-                                        <tr style="background-color: white;">
-                                            <th scope="col" class="sc-VigVT cbrsHS">
+                                <table class="Table">
+
+                                    <thead class="TableHead">
+                                        <tr class="TableHeadingCell">
+                                            <th scope="col" class="TableHeadingCell">
                                                 Campus
-                                                <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-sort-alpha-up"></i></button>
+                                                <a type="button" class="BorderlessButton--secondary" href="#">
+                                                    <i class="fas fa-sort-alpha-up"></i>
+                                                </a>
                                             </th>
-                                            <th scope="col" class="sc-VigVT cbrsHS">
+                                            <th scope="col" class="TableHeadingCell">
                                                 Room
-                                                <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-sort-alpha-up"></i></button>
+                                                <a type="button" class="BorderlessButton--secondary" href="#">
+                                                    <i class="fas fa-sort-alpha-up"></i>
+                                                </a>
                                             </th>
-                                            <th scope="col" class="sc-VigVT cbrsHS">
+                                            <th scope="col" class="TableHeadingCell">
                                                 Capacity
-                                                <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-sort-numeric-up"></i></i></button>
+                                                <a type="button" class="BorderlessButton--secondary" href="#">
+                                                    <i class="fas fa-sort-alpha-up"></i>
+                                                </a>
                                             </th>
-                                            <th scope="col" class="sc-VigVT cbrsHS">
+                                            <th scope="col" class="TableHeadingCell">
                                                 Class
-                                                <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-sort-alpha-up"></i></button>
+                                                <a type="button" class="BorderlessButton--secondary" href="#">
+                                                    <i class="fas fa-sort-alpha-up"></i>
+                                                </a>
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody class="sc-jTzLTM jxSeiZ">
-
-                                        <tr class="sc-gZMcBi cjgueY">
-                                            <td class="sc-iwsKbI bqnYPo">Allston</td>
-                                            <td class="sc-iwsKbI bqnYPo">Geological Museum 201</td>
-                                            <td class="sc-iwsKbI bqnYPo">250</td>
-                                            <td class="sc-iwsKbI bqnYPo">AC 209a</td>
+                                    
+                                    <tbody class="TableBody">
+                
+                                        <tr class="TableRowOdd">
+                                            <td class="TableCell">Allston</td>
+                                            <td class="TableCell">Geological Museum 201</td>
+                                            <td class="TableCell">250</td>
+                                            <td class="TableCell">AC 209a</td>
                                         </tr>
-
-                                        <tr class="sc-gZMcBi jQECIl">
-                                            <td class="sc-iwsKbI bqnYPo">Allston</td>
-                                            <td class="sc-iwsKbI bqnYPo">Geological Museum 305</td>
-                                            <td class="sc-iwsKbI bqnYPo">35</td>
-                                            <td class="sc-iwsKbI bqnYPo">Available</td>
+                
+                                        <tr class="TableRowEven">
+                                            <td class="TableCell">Allston</td>
+                                            <td class="TableCell">Geological Museum 205</td>
+                                            <td class="TableCell">35</td>
+                                            <td class="TableCell">Available</td>
                                         </tr>
-
-                                        <tr class="sc-gZMcBi cjgueY">
-                                            <td class="sc-iwsKbI bqnYPo">Cambridge</td>
-                                            <td class="sc-iwsKbI bqnYPo">Harvard Hall 204</td>
-                                            <td class="sc-iwsKbI bqnYPo">75</td>
-                                            <td class="sc-iwsKbI bqnYPo">ESE 136</td>
+                
+                                        <tr class="TableRowOdd">
+                                            <td class="TableCell">Cambridge</td>
+                                            <td class="TableCell">Harvard Hall 204</td>
+                                            <td class="TableCell">75</td>
+                                            <td class="TableCell">ESE 136</td>
                                         </tr>
-
-                                        <tr class="sc-gZMcBi jQECIl">
-                                            <td class="sc-iwsKbI bqnYPo">Cambridge</td>
-                                            <td class="sc-iwsKbI bqnYPo">Harvard Hall 112</td>
-                                            <td class="sc-iwsKbI bqnYPo">75</td>
-                                            <td class="sc-iwsKbI bqnYPo">ES 115</td>
+                
+                                        <tr class="TableRowEven">
+                                            <td class="TableCell">Cambridge</td>
+                                            <td class="TableCell">Harvard Hall 112</td>
+                                            <td class="TableCell">75</td>
+                                            <td class="TableCell">ES 115</td>
                                         </tr>
-
-                                        <tr class="sc-gZMcBi cjgueY">
-                                            <td class="sc-iwsKbI bqnYPo">Cambridge</td>
-                                            <td class="sc-iwsKbI bqnYPo">NW B103</td>
-                                            <td class="sc-iwsKbI bqnYPo">25</td>
-                                            <td class="sc-iwsKbI bqnYPo">Available</td>
+                
+                                        <tr class="TableRowOdd">
+                                            <td class="TableCell">Cambridge</td>
+                                            <td class="TableCell">NW B103</td>
+                                            <td class="TableCell">25</td>
+                                            <td class="TableCell">Available</td>
                                         </tr>
-
-                                        <tr class="sc-gZMcBi jQECIl">
-                                            <td class="sc-iwsKbI bqnYPo">Cambridge</td>
-                                            <td class="sc-iwsKbI bqnYPo">P 100F</td>
-                                            <td class="sc-iwsKbI bqnYPo">125</td>
-                                            <td class="sc-iwsKbI bqnYPo">AM218</td>
+                
+                                        <tr class="TableRowEven">
+                                            <td class="TableCell">Cambridge</td>
+                                            <td class="TableCell">P 100F</td>
+                                            <td class="TableCell">125</td>
+                                            <td class="TableCell">AM 218</td>
                                         </tr>
-
                                     </tbody>
                                 </table>
                                 
+                                <!-- Amending Bootstrap styles -->
+                                <style>
+                                    .page-item.active .page-link {
+                                        z-index: 1;
+                                        color: #000;
+                                        background-color: rgb(209, 209, 209);
+                                        border-color: rgb(209, 209, 209);
+                                    }
+                                </style>
                                 <!-- Table pagination -->
                                 <nav aria-label="Page navigation example">
-                                    <ul class="pagination justify-content-center">
+                                    <ul class="pagination justify-content-center mt-3">
                                         <li class="page-item disabled">
                                         <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
                                         </li>
@@ -1277,19 +667,19 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="sc-bdVaJa kxWoHZ mr-auto" data-dismiss="modal">Close</button>
-                            <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">Book rooms</button>
+                            <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Close</button>
+                            <button type="button" class="Button--primary Button--rightAlign" data-dismiss="modal">Book rooms</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Modal for Detail -->
-            <div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="font-size: 1em; right: 18%; left: 0%; top: 2em;">
+            <div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModal" aria-hidden="true" style="font-size: 1em; right: 18%; left: 0%; top: 2em;">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content" style="width: 45em;">
                         <div class="modal-header">
-                            <h2 class="modal-title" id="courseModal3">Detail for AC 209a - Data Science 1: Introduction to Data Science</h2>
+                            <h2 class="modal-title" id="courseModal">Detail for AC 209a - Data Science 1: Introduction to Data Science</h2>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -1326,10 +716,10 @@
                                     <td style="border-top: 2px solid white; border-left: 2px solid white;">&nbsp;</td>
                                     <th class="sc-VigVT cbrsHS">
                                         <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-left fa-lg"></i></button>
-                                        Spring 2016
+                                        Fall 2016
                                     </th>
                                     <th class="sc-VigVT cbrsHS">
-                                        Fall 2016
+                                        Spring 2016
                                         <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-right fa-lg"></i></button>
                                     </th>
                                 </thead>
@@ -1406,128 +796,108 @@
                 </div>
             </div>
 
-        </div>
+            </div>
 
-        <!-- Modal for Detail -->
-        <div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModal" aria-hidden="true" style="font-size: 1em; right: 18%; left: 0%; top: 2em;">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content" style="width: 45em;">
-                    <div class="modal-header">
-                        <h2 class="modal-title" id="courseModal">Detail for AC 209a - Data Science 1: Introduction to Data Science</h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col">
-                                <h2>
-                                    Course data
-                                </h2>
-                            </div>
+            <!-- Modal for Detail -->
+            <div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="right: 18%; left: 13%; top: -1em;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" style="width: 40em;">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="courseModal3">Detail for AC 209a - Data Science 1: Introduction to Data Science</h5>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <p><strong>CCN:</strong></p>
-                                <p><strong>Same as:</strong> CS 109a, STATS 121a</p>
-                                <p><strong>Term pattern:</strong> Fall</p>
+                        <div class="modal-body">
+                            <h2>
+                                Course data
+                            </h2>
+                            <div class="row">
+                                <div class="col">
+                                    <p><strong>CCN:</strong></p>
+                                    <p><strong>Same as:</strong> CS 109a, STATS 121a</p>
+                                    <p><strong>Term pattern:</strong> Fall</p>
+                                </div>
+                                <div class="col">
+                                    <p><strong>Is SEAS?:</strong> Yes</p>
+                                    <p><strong>Is undergrad?:</strong> No</p>
+                                    <p><strong>Notes:</strong> Same as CS 109a, STATS 121a</p>
+                                </div>
                             </div>
-                            <div class="col">
-                                <p><strong>Is SEAS?:</strong> Yes</p>
-                                <p><strong>Is undergrad?:</strong> No</p>
-                                <p><strong>Notes:</strong> Same as CS 109a, STATS 121a</p>
+                            <div class="border-top">
+                                <strong>
+                                    Course attributes: 
+                                </strong>
+                                None
                             </div>
+                            <h2 class="border-top">
+                                Historical data
+                            </h2>
+
+                            <!-- Mark One table -->
+                            <table class="Table Table--noHover">
+                                <thead class="TableHead">
+                                    <tr class="TableHeadingCell">
+                                        <th scope="col" class="TableHeadingCell TableHeadingCell--blank__left">
+                                        </th>
+                                        <th scope="col" class="TableHeadingCell--nav">
+                                            <button type="button" class="BorderlessButton--primary"><i class="fas fa-arrow-left"></i></button>
+                                            Fall 2019
+                                        </th>
+                                        <th scope="col" class="TableHeadingCell--nav">
+                                            Spring 2020
+                                            <button type="button" class="BorderlessButton--primary"><i class="fas fa-arrow-right"></i></button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="TableBody">
+                                    <tr class="TableRowEven">
+                                        <th class="TableCell">Pre-Enrollment</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                    </tr>
+                                    <tr class="TableRowEven">
+                                        <th class="TableCell">Enrollment Study</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                        <td class="TableCell ">62</td>
+                                    </tr>
+                                    <tr class="TableRowEven">
+                                        <th class="TableCell">Enrollment Actual</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                        <td class="TableCell ">51</td>
+                                    </tr>
+                                    <tr class="TableRowEven">
+                                        <th class="TableCell">Offered</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                        <td class="TableCell ">Yes</td>
+                                    </tr>
+                                    <tr class="TableRowEven">
+                                        <th class="TableCell">Instructors</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                        <td class="TableCell ">
+                                            Protopapas, Pavlos
+                                            <br>
+                                            Rader, Kevin
+                                        </td>
+                                    </tr>
+                                    <tr class="TableRowEven">
+                                        <th class="TableCell">Times</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                        <td class="TableCell ">MW 1:00pm-2:30pm</td>
+                                    </tr>
+                                    <tr class="TableRowEven">
+                                        <th class="TableCell">Room</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <h2>
-                            Course attributes
-                        </h2>
-                        <p><strong>None</strong></p>
-                        <h2>
-                            Historical data
-                        </h2>
-                        <table class="sc-jTzLTM jxSeiZ table-modal">
-                            <thead class="sc-gqjmRU iRtSxQ">
-                                <td style="border-top: 2px solid white; border-left: 2px solid white;">&nbsp;</td>
-                                <th class="sc-VigVT cbrsHS">
-                                    <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-left fa-lg"></i></button>
-                                    Fall 2016
-                                </th>
-                                <th class="sc-VigVT cbrsHS">
-                                    Spring 2016
-                                    <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-right fa-lg"></i></button>
-                                </th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th class="sc-VigVT cbrsHS">
-                                        Pre-Enrollment
-                                    </th>
-                                    <td class="">&nbsp;</td>
-                                    <td class="">&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <th class="sc-VigVT cbrsHS">
-                                        Enrollment Study
-                                    </th>
-                                    <td class="">&nbsp;</td>
-                                    <td class="lijgtc">
-                                        62
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th class="sc-VigVT cbrsHS">
-                                        Enrollment Actual
-                                    </th>
-                                    <td class="">&nbsp;</td>
-                                    <td class="lijgtc">
-                                        51
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th class="sc-VigVT cbrsHS">
-                                        Offered
-                                    </th>
-                                    <td class="">&nbsp;</td>
-                                    <td class="lijgtc">
-                                        Yes
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th class="sc-VigVT cbrsHS">
-                                        Instructors
-                                    </th>
-                                    <td class="">&nbsp;</td>
-                                    <td class="">
-                                        Protopapas, Pavlos
-                                        <br>
-                                        Rader, Kevin
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th class="sc-VigVT cbrsHS">
-                                        Times
-                                    </th>
-                                    <td class="">&nbsp;</td>
-                                    <td class="">
-                                        MW 1:00pm-2:30pm
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th class="sc-VigVT cbrsHS">
-                                        Room
-                                    </th>
-                                    <td class="">&nbsp;</td>
-                                    <td class="">&nbsp;</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">Close</button>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="Button--primary" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
         <!-- Optional Bootstrap JavaScript -->
@@ -1546,7 +916,7 @@
         <!--Sidebar-->
         <script>
             function openNav() {
-                document.getElementById("mySidenav").style.width = "20em";
+                document.getElementById("mySidenav").style.width = "13em";
             }
 
             function closeNav() {

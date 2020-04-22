@@ -178,7 +178,6 @@
                                 </div>
                             </th>
                             <th scope="col" class="TableHeadingCell">
-                                Instructors
                                 <label for="instructors">Instructors</label>
                                 <div>
                                     <input id="instructors" name="instructors" type="text" class="TextInput" value="" placeholder="Filter by instructor">
@@ -197,7 +196,6 @@
                                 </div>
                             </th>
                             <th scope="col" class="TableHeadingCell">
-                                Instructors
                                 <label for="instructors">Instructors</label>
                                 <div>
                                     <input id="instructors" name="instructors" type="text" class="TextInput" value="" placeholder="Filter by instructor">
@@ -330,7 +328,7 @@
                             <td class="TableCell am">AM</td>
                             <td class="TableCell ">AM 021a</td>
                             <td class="TableCell ">Yes</td>
-                            <td class="sc-kGXeez bCEQJv">No</td>
+                            <td class="TableCell ">Yes</td>
                             <td class="TableCell ">
                                 Name Surname
                                 <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
@@ -365,7 +363,7 @@
                                     <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
                                 </a>
                             </td>
-                            <td class="sc-kGXeez bCEQJv">No</td>
+                            <td class="TableCell ">No</td>
                             <td class="TableCell ">Name Surname
                                 <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
                                     <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
@@ -627,20 +625,16 @@
             </div>
 
             <!-- Modal for Detail -->
-            <div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="right: 18%; left: 0%; top: -1em;">
+            <div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="right: 18%; left: 13%; top: -1em;">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content" style="width: 40em;">
                         <div class="modal-header">
                             <h5 class="modal-title" id="courseModal3">Detail for AC 209a - Data Science 1: Introduction to Data Science</h5>
                         </div>
                         <div class="modal-body">
-                            <div class="row">
-                                <div class="col">
-                                    <h4>
-                                        Course data
-                                    </h4>
-                                </div>
-                            </div>
+                            <h2>
+                                Course data
+                            </h2>
                             <div class="row">
                                 <div class="col">
                                     <p><strong>CCN:</strong></p>
@@ -653,19 +647,15 @@
                                     <p><strong>Notes:</strong> Same as CS 109a, STATS 121a</p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <h4>
-                                        Course attributes
-                                    </h4>
-                                </div>
-                                <div class="col">
-                                    <p><strong>None</p>
-                                </div>
+                            <div class="border-top">
+                                <strong>
+                                    Course attributes: 
+                                </strong>
+                                None
                             </div>
-                            <h4>
+                            <h2 class="border-top">
                                 Historical data
-                            </h4>
+                            </h2>
 
                             <!-- Mark One table -->
                             <table class="Table Table--noHover">
@@ -733,7 +723,6 @@
                     </div>
                 </div>
             </div>
-
 
             <!-- Modal - Default -->
             <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
