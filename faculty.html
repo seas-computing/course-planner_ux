@@ -1,1482 +1,450 @@
-<!--This version uses opacity to filter courses -->
-<!-- Room view - data from https://registrar.fas.harvard.edu/archived-course-meeting-locations-reports -->
-<!--Added overflow: scroll; to all room instances-->
+
 <!doctype html>
 
 <html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Faculty - Course Planner</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="googlebot" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="https://www.seas.harvard.edu/favicon.ico">
-
-    <!-- Required Bootstrap meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-          crossorigin="anonymous">
-
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
-    <style type="text/css">
-        /*This sets the margin and padding of every HTML element to zero and the box-sizing: border-box; declaration changes the box model by ensuring that the padding and border of an element no longer increases its width.*/
-        html {
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        }
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: inherit;
-        }
-
-        dd {
-            margin-bottom: -4px;
-            font-size: 1.2em;
-			align: left;
-        }
-
-        dt {
-            font-size: 1.2em;
-            padding: 0px;
-        }
-
-        /*Style for each course*/
-        .button-course {
-            width: 100%;
-            background-color: transparent;
-            border: 0px solid transparent;
-            font-size: .8em;
-            color: #fff;
-            text-align: left;
-        }
-
-        .button-course:hover {
-            background-color: rgba(255, 255, 255, .3);
-        }
-
-        /*Style for tooltips*/
-        .tooltip.show p {
-            text-align: left;
-        }
-
-        /*Sidebar*/
-
-        .sidenav {
-            height: 100%;
-            width: 0;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #fff;
-            border-right: 1px solid #ccc;
-            overflow-x: hidden;
-            transition: 0.5s;
-            margin-top: -5em;
-        }
-
-        .sideNav-column {
-            padding-left: .5em;
-            margin-top: 6em;
-            z-index: 1000;
-        }
-
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding: 2em;
-            }
-        }
-
-        /*Amending Bootstrap styles*/
-        .nav-link {
-            font-size: 1em;
-        }
-
-        .nav-tabs {
-            margin-bottom: -0.5em;
-            margin-left: -176em;
-        }
-
-        .nav-pills {
-            margin-top: 2.05em;
-            margin-left: 3em;
-            position: absolute;
-        }
-
-        .nav-item {
-            padding-left: 1em;
-            padding-right: 1em;
-        }
-
-        .navbar-brand img {
-            width: 7%;
-        }
-
-        .bg-light {
-        background-color: #ffffff!important;
-        height: 8.6em;
-        }
-
-        h2 {
-            font-size: 1.5em;
-            /* margin-left: 2em; */
-        }
-
-        h3 {
-            font-size: 1.2em;
-        }
-
-        .form-group {
-            padding: 1em;
-        }
-
-        .popover-header {
-            padding: .5rem .75rem;
-            margin-bottom: 0;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: inherit;
-            background-color: #f7f7f7;
-            border-bottom: 1px solid #ebebeb;
-            border-top-left-radius: calc(.3rem - 1px);
-            border-top-right-radius: calc(.3rem - 1px);
-        }
-
-        .popover-body {
-            padding: .5rem .75rem;
-            color: #212529;
-            font-size: 1.1rem;
-        }
-
-        .dropdown-item {
-        font-size: 1.4rem;
-        color: #007bff;
-        }
-
-        #navbarDropdownMenuLink {
-        color: #007bff;
-        }
-
-        .img-fluid {
-            max-width: 98%;
-            margin-top: -1em;
-        }
-
-        .sidenav a {
-            font-size: 1.5em;
-            color: #007bff;
-        }
-
-        .sidenav a:hover {
-            font-size: 1.5em;
-            color: #000;
-        }
-
-        .modal {
-            right: 18%;
-            left: -10%;
-        }
-
-        .modal-content {
-            width: 84em;
-        }
-
-        /*CSS Grid*/
-
-        #outer-grid {
-            display: grid;
-            grid-template-rows: 1fr;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 1em;
-            margin-top: 1em;
-        }
-
-        /*Reset to absolutely center the calendar on the page and give it a border and width.*/
-        /*CSS Grid*/
-        .faculty {
-            padding: 0em;
-            width: 100vw;
-            height: 120vh;
-        }
-    </style>
-
-    <!-- Mark-one styles -->
-    <style>
-    /* style for table */
-    .coIxkm-amended {
-        border-collapse: collapse;
-        width: 95%;
-        border-width: 2px;
-        border-style: solid;
-        border-color: rgb(152, 152, 152);
-        border-image: initial;
-        margin: 1em 2em 1em 1em;
-        padding: 5px 10px;
-    }
-
-    .iRtSxQ {
-        background-color: rgb(209, 209, 209);
-    }
-
-    .jQECIl {
-        background: rgb(254, 254, 254);
-    }
-
-    .jQECIl th {
-        background-color: rgb(209, 209, 209);
-        padding: 0 .5em 0 .5em;
-    }
-
-    .cbrsHS {
-        font-weight: 600;
-        border-width: 2px;
-        border-style: solid;
-        border-color: rgb(152, 152, 152);
-        border-image: initial;
-    }
-
-    .jxSeiZ {
-        overflow: scroll;
-    }
-
-    .cjgueY {
-        background: rgb(236, 236, 236);
-    }
-
-    .bqnYPo {
-        font-family: "Roboto Mono", monospace;
-        font-size: 0.9em;
-        border-left: 2px solid rgb(152, 152, 152);
-        border-right: 2px solid rgb(152, 152, 152);
-        padding: 3px;
-    }
-
-    /* negative: light class for background of "no" table cell */
-    .bCEQJv {
-        margin-top: 10px;
-        color: rgb(24, 24, 24);
-        background: rgb(255, 143, 156);
-        padding: 3px;  /* Decreasing padding */
-        font-family: "Roboto Mono", monospace;
-        font-size: 0.9em;
-        border-left: 2px solid rgb(152, 152, 152);
-        border-right: 2px solid rgb(152, 152, 152);
-    }
-
-    /* negative: dark class for font color of "no" table cell */
-    .no {
-        color: rgb(237, 27, 42);
-        font-weight: 900;
-    }
-
-    table {
-        display: table;
-        border-collapse: separate;
-        border-spacing: 2px;
-        border-color: grey;
-        font-size: 16px;
-        font-weight: 400;
-        }
-
-    thead {
-        display: table-header-group;
-        vertical-align: middle;
-        border-color: inherit;
-    }
-
-    tr {
-        display: table-row;
-        vertical-align: inherit;
-        border-color: inherit;
-    }
-
-    /* Define the hover highlight color for the table row */
-    .hoverTable tr:hover {
-          background-color: #d1d1d1;
-    }
-
-    th {
-        display: table-cell;
-        vertical-align: inherit;
-        font-weight: bold;
-        text-align: center;
-        vertical-align: top;
-    }
-
-    tbody {
-        display: table-row-group;
-        vertical-align: middle;
-        border-color: inherit;
-    }
-
-    td {
-        display: table-cell;
-        vertical-align: inherit; 
-    }
-
-
-    /* style for nav */
-    nav {
-        display: block;
-        font-size: 16px;
-        font-weight: 400;
-    }
-
-    .hhGZXE {
-        background-color: transparent;
-        border-collapse: collapse;
-        display: flex;
-        flex-wrap: wrap;
-        list-style-type: none;
-        border-bottom: 1px solid rgb(24, 24, 24);
-    }
-
-    ul {
-        /* display: block; */
-        /* list-style-type: disc; */
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        padding-inline-start: 40px;
-    }
-
-    .icrnXS {
-        margin-bottom: -1px;
-        padding: 0px 1em;
-    }
-
-    .icrnXS-first {
-        margin-bottom: -1px;
-        padding: 0px 1em;
-        margin-left: 7em;
-    }
-
-    li {
-        display: list-item;
-        text-align: -webkit-match-parent;
-    }
-
-    .kzaudT {
-        color: rgb(24, 24, 24);
-        display: inline-block;
-        background: transparent;
-        border-width: 1px 1px 1px;
-        border-style: solid solid none;
-        border-color: transparent transparent transparent;
-        border-image: initial;
-        border-bottom: none;
-        padding: 0.5rem 1rem;
-    }
-
-    /* active tab */
-    .bWbWht {
-        color: rgb(24, 24, 24);
-        display: inline-block;
-        background: rgb(254, 254, 254);
-        border-width: 1px;
-        border-style: solid;
-        border-color: rgb(24, 24, 24) rgb(24, 24, 24) transparent;
-        border-image: initial;
-        border-bottom: 1px solid transparent;
-        padding: 0.5rem 1rem;
-    }
-
-    /* header */
-    .bsLcFZ {
-        align-items: flex-end;
-        background-color: transparent;
-        box-shadow: rgba(0, 0, 0, 0.28) 0px 4px 8px;
-        display: flex;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        width: 100%;
-        padding: 15px 10px;
-    }
-
-    .bSvdsU {
-        align-self: stretch;
-        background-image: url(53adae7….svg);
-        background-size: contain;
-        color: transparent;
-        display: inline-block;
-        font-size: 0px;
-        line-height: 0;
-        width: 175px;
-        min-width: 100px;
-        height: 50px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        margin: 0px 10px;
-    }
-
-    .eEciP {
-        font-size: 1.66em;
-        font-family: "Open Sans", sans-serif;
-        font-weight: 400;
-        grid-column-end: span 4;
-    }
-
-    header {
-    font-size: 16px;
-    font-weight: 400;
-    }
-
-    /* button - primary */
-    .bADMLE {
-        color: rgb(254, 254, 254);
-        cursor: pointer;
-        font-size: 1em;
-        font-weight: 400;
-        background: rgb(78, 136, 199); /* Primary button idle color - info: medium */
-        padding: 5px 10px;
-        border: 0px solid #fff;
-    }
-
-    .bADMLE:hover { background: rgb(8, 65, 97); } /* Primary button highlight color - info: dark */
-
-    /* button icon - primary */
-    .bADMLE-icon {
-        color: rgb(78, 136, 199); /* Primary button icon idle color - info: medium */
-        cursor: pointer;
-        font-size: 1em;
-        font-weight: 400;
-        padding: 5px 10px;
-    }
-
-    .bADMLE-icon:hover { color: rgb(8, 65, 97); } /* Primary button icon highlight color - info: dark */
-
-    /* button - secondary */
-    .kxWoHZ {
-        color: rgb(24, 24, 24);
-        cursor: pointer;
-        font-size: 1em;
-        font-weight: 400;
-        background: rgb(209, 209, 209); /* Secondary button idle color - background: medium */
-        padding: 5px 10px;
-        border: 0px solid #fff;
-    }
-
-    .kxWoHZ:hover { 
-        color: rgb(254, 254, 254);
-        background: rgb(147, 161, 173); /* Secondary button highlight color - background: dark */
-    }
-
-    /* button - danger */
-    .csuYJy {
-        color: rgb(254, 254, 254);
-        cursor: pointer;
-        font-size: 1em;
-        font-weight: 400;
-        background: rgb(237, 27, 42); /* Danger button idle color - negative: dark */
-        padding: 5px 10px;
-        border: 0px solid #fff;
-    }
-
-    .csuYJy:hover { background: rgb(165, 28, 48); } /* Danger button highlight color - backgrond: accent */
-
-    .lijgtc { /* positive: light */
-        margin-top: 10px;
-        color: rgb(24, 24, 24);
-        background: rgb(129, 233, 129);
-        /* padding: 15px; */
-        }
-
-/* button icon - danger */
-    .csuYJy-icon { /* Danger button icon idle color - negative: dark */
-        margin-top: 10px;
-        color: rgb(237, 27, 42);
-        padding: 15px;
-    }
-
-    .csuYJy-icon:hover {  /* Danger button icon highlight color - background: accent */
-        color: rgb(165, 28, 48);
-    }
-
-    .button-icon {
-        margin-top: 0px;
-        display: inline-block;
-        font-weight: 400;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        padding: .375rem .75rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        border-radius: .25rem;
-        border: solid 0 #fff;
-    }
-
-    /* Drop down */
-    .kFoNgS {
-        color: rgb(24, 24, 24);
-        margin-bottom: .5em;
-    }
-
-
-    </style>
-
-    <!-- Simulating Mark-One styles -->
-    <style>
-
-        /* Course colors */
-        td.acs {
-            background: rgba(203, 37, 45, 0.80); /* SEAS academic color with light transparency for the row hover effect */
-            color: white;
-        }
-
-        td.am {
-            background: rgba(78, 173, 171, 0.80); /* SEAS academic color with light transparency for the row hover effect */
-            color: black;
-        }
-
-        td.ap {
-            background: rgba(206, 219, 81, 0.80); /* SEAS academic color with light transparency for the row hover effect */
-            color: black;
-        }
-
-        input {
-            margin-bottom: .25em;
-            width: 90%;
-        }
-
-        .iconLink { color: #4e88c7; } /* Primary button color - info: medium */
-        .iconLink:hover { color: #084161; } /* Primary highlight color - info: dark */
-
-        hr {
-            FONT-WEIGHT: 500;
-            margin-top: .5rem;
-            margin-bottom: .5rem;
-            border: 0;
-            border-top: 1px solid rgba(0,0,0,.1);
-            width: 90%; 
-        }
-
-        textarea {
-            overflow: auto;
-            resize: vertical;
-            padding: .25em;
-        }
-
-        select {
-            width: 90%;
-        }
-
-        .table-modal {
-            display: table;
-            border-collapse: collapse;
-            border-spacing: 1px;
-            border-color: grey;
-            font-size: 16px;
-            font-weight: 400;
-            width: 100%;
-        }
-
-        .table-modal .iRtSxQ {
-            background-color: rgb(255, 255, 182550);
-            border-width: 1px;
-        }
-
-        .table-modal td {
-            border: 1px #ccc solid;
-            text-align: center;
-        }
-
-    </style>
-
-</head>
-<body>
-
-    <!-- Pre-Mark-One nav -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" hidden>
-        <span class="navbar-brand">
-            <img src="H_SEAS_logo_RGB.png">
-            <h2 class="navbar-text mr-auto">
-                SEAS Course Planning
-            </h2>
-        </span>
-        <ul class="nav nav-tabs" style="margin-top: 5em;">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Courses</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="courses-ncm.html">Non class meetings</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="faculty.html">Faculty</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="schedule.html">Schedule</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="fourYearPlan.html">4 Year Plan</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="manage_users.html">Manage Users</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="manage_courses.html">Manage Courses</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="manage_faculty.html">Manage Faculty</a>
-            </li>
-        </ul>
-    
-        <!-- Right align Login/Logout link -->
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
-            </li>
-        </ul>
-    
-        <!-- Replaced this drop down with the new Nav item - Login -->
-        <ul class="navbar-nav ml-auto" hidden>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Name Surname
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="manage_users.html">Administration</a>
-                <a class="dropdown-item" href="#">Log out</a>
-            </div>
-            </li>
-        </ul>
-
-    </nav>
-
-    <header class="sc-bxivhb bsLcFZ">
-        <a width="175px" href="#" height="50px" class="sc-ifAKCX bSvdsU"><img src="H_SEAS_logo_RGB.png" width="175px"></a>
-        <h1 class="sc-ckVGcZ eEciP">SEAS Course Planning</h1>
-        <div><a href="#">Log out</a></div>
-    </header>
-
-<!-- Left nav button -->
-<div>
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a href="#" class="nav-link" style="margin-right: 3em; cursor: pointer;" onclick="openNav()">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Faculty - Course Planner</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="googlebot" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="https://www.seas.harvard.edu/favicon.ico">
+
+        <!-- Required Bootstrap meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Mark One CSS -->
+        <link rel="stylesheet" href="css/mark-one.css">
+
+        <!-- Bootstrap CSS - just for the modal -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous">
+
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <header class="Header"><a width="175px" href="#" height="50px" class="Logo">The Link
+                Description</a>
+            <h1 class="PageTitle">Course Planner</h1>
+            <div><a href="#" class="StyledLink">Logout</a></div>
+        </header>
+
+        <!-- Sliding sidebar button -->
+        <div class="sideNav__Link">
+            <a href="#" class="Link sideNav__Link" onclick="openNav()">
                 Settings
                 <i class="far fa-arrow-alt-circle-right"></i>
             </a>
-        </li>
-
-    </ul>
-</div>
-
-
-<div id="outer-grid">
-
-    <!--Sidenav filters-->
-    <div class="sideNav-column">
-        <div id="mySidenav" class="sidenav" style="white-space: nowrap;">
-            <div>
-                <a href="javascript:void(0)" onclick="closeNav()"
-                   style="font-size: 1em; margin-top: .05em; margin-left: 2.5em;">
-                   Settings
-                    <i class="far fa-arrow-alt-circle-left ml-auto"></i>
-                </a>
-            </div>
-            <form>
-                <div class="form-group">
-                    <button class="sc-bdVaJa bADMLE">Download faculty report</button>
-                </div>
-                <div class="form-group">
-                    <button class="sc-bdVaJa bADMLE">Show "No Longer Active" Faculty</button>
-                </div>
-            </form>
         </div>
-    </div>
-
-    <!-- faculty -->
-    <div class="faculty">
-
-        <nav>
-            <ul class="sc-bZQynM hhGZXE">
-                <li class="sc-htoDjs icrnXS-first">
-                    <div class="sc-gzVnrw kzaudT"><a href="courses.html" class="sc-kgoBCf cuZvUJ">Courses</a></div>
+            
+        <nav class="navSidenav">
+            <ul class="TabList">
+                <li class="TabListItem">
+                    <div class="TabItem"><a href="courses.html" class="StyledLink">Courses</a></div>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw kzaudT"><a href="courses-ncm.html" class="sc-kgoBCf cuZvUJ">Non class meetings</a></div>
+                <li class="TabListItem">
+                    <div class="TabItem"><a href="courses-ncm,html" class="StyledLink">Non class meetings</a></div>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw bWbWht"><a href="#" class="sc-kgoBCf cuZvUJ">Faculty</a></div>
+                <li class="TabListItem TabActive">
+                    <div class=""><a href="#" class="StyledLink">Faculty</a></div>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw kzaudT"><a href="schedule.html" class="sc-kgoBCf cuZvUJ">Schedule</a></div>
+                <li class="sc-VigVT TabListItem">
+                    <div class="TabItem"><a href="schedule.html" class="StyledLink">Schedule</a></div>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw kzaudT"><a href="fourYearPlan.html" class="sc-kgoBCf cuZvUJ">4 Year Plan</a></div>
+                <li class="sc-VigVT TabListItem">
+                    <div class="TabItem"><a href="fourYearPlan.html" class="StyledLink">4 Year Plan</a></div>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw kzaudT"><a href="manage_courses.html" class="sc-kgoBCf cuZvUJ">Manage Courses</a></div>
+                <li class="sc-VigVT TabListItem">
+                    <div class="TabItem"><a href="manage_courses.html" class="StyledLink">Courses Admin</a></div>
                 </li>
-                <li class="sc-htoDjs icrnXS">
-                    <div class="sc-gzVnrw kzaudT"><a href="manage_faculty.html" class="sc-kgoBCf cuZvUJ">Manage Faculty</a></div>
-                </li>   
+                <li class="sc-VigVT TabListItem">
+                    <div class="TabItem"><a href="manage_faculty.html" class="StyledLink">Faculty Admin</a></div>
+                </li>
             </ul>
         </nav>
-        <!-- Table from Mark-One -->
-        <table class="sc-dnqmqq coIxkm-amended hoverTable">
-            <thead class="sc-gqjmRU iRtSxQ">
-                <tr style="background-color: white;">
-                    <td colspan="5" style="border-top: 2px solid white; border-left: 2px solid white;">&nbsp;</td>
-                    <th colspan="2" scope="col" class="sc-VigVT cbrsHS">
-                        <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-left fa-lg"></i></button>
-                        Fall 2019
-                    </th>
-                    <th colspan="2" scope="col" class="sc-VigVT cbrsHS">
-                        Spring 2020
-                        <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-right fa-lg"></i></button>
-                    </th>
-                    <td style="border-top: 2px solid white; border-right: 2px solid white;">&nbsp;</td>
-                </tr>
-                <tr class="sc-gZMcBi jQECIl">
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Area
-                        <br>
-                        <select>
-                            <option value="string:All" label="All" selected="selected">All</option>
-                            <option value="string:ACS" label="ACS">ACS</option>
-                            <option value="string:AM" label="AM">AM</option>
-                            <option value="string:AP" label="AP">AP</option>
-                            <option value="string:BE" label="BE">BE</option>
-                            <option value="string:CS" label="CS">CS</option>
-                            <option value="string:EE" label="EE">EE</option>
-                            <option value="string:ESE" label="ESE">ESE</option>
-                            <option value="string:General" label="General">General</option>
-                            <option value="string:MDE" label="MDE">MDE</option>
-                            <option value="string:MSMBA" label="MSMBA">MSMBA</option>
-                            <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
-                            <option value="string:SEM" label="SEM">SEM</option>
-                        </select>
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Last name
-                        <br>
-                        <input type="text">
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        First name
-                        <br>
-                        <input type="text">
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Category
-                        <br>
-                        <select>
-                            <option value="string:All" label="All" selected="selected">All</option>
-                            <option value="string:"></option>
-                            <option value="string:Ladder" label="Ladder">Ladder</option>
-                            <option value="string:Non-Ladder" label="Non-Ladder">Non-Ladder</option>
-                            <option value="string:Non-SEAS Ladder" label="Non-SEAS Ladder">Non-SEAS Ladder</option>
-                        </select>
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Join with
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS" style="width: 14em;">
-                        Sabbatical/Leave
-                        <br>
-                        <select>
-                            <option value="string:All" label="All" selected="selected">All</option>
-                            <option value="string:"></option>
-                            <option value="string:Sabbatical" label="Sabbatical">Sabbatical</option>
-                            <option value="string:Sabbatical Eligible" label="Sabbatical Eligible">Sabbatical Eligible</option>
-                            <option value="string:Teaching Relief" label="Teaching Relief">Teaching Relief</option>
-                            <option value="string:Research Leave" label="Research Leave">Research Leave</option>
-                            <option value="string:Parental Leave" label="Parental Leave">Parental Leave</option>
-                            <option value="string:No Longer Active" label="No Longer Active">No Longer Active</option>
-                        </select>
-                        </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Courses
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS" style="width: 14em;">
-                        Sabbatical/Leave
-                        <br>
-                        <select>
-                            <option value="string:All" label="All" selected="selected">All</option>
-                            <option value="string:"></option>
-                            <option value="string:Sabbatical" label="Sabbatical">Sabbatical</option>
-                            <option value="string:Sabbatical Eligible" label="Sabbatical Eligible">Sabbatical Eligible</option>
-                            <option value="string:Teaching Relief" label="Teaching Relief">Teaching Relief</option>
-                            <option value="string:Research Leave" label="Research Leave">Research Leave</option>
-                            <option value="string:Parental Leave" label="Parental Leave">Parental Leave</option>
-                            <option value="string:No Longer Active" label="No Longer Active">No Longer Active</option>
-                        </select>
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">
-                        Courses
-                    </th>
-                    <th scope="col" class="sc-VigVT cbrsHS">Detail</th>
-                </tr>
-            </thead>
-            <tbody class="sc-jTzLTM jxSeiZ">
-                <tr class="sc-gZMcBi jQECIl">
-                    <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Surname
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">FirstName
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        Non-Ladder
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        PHYS (1 FTE SEAS)
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        Sabbatical Eligible
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        AM 101
-                        <br>
-                        ES 280 (Pre-Fall)
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        Sabbatical
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        AM 101
-                        <br>
-                        ES 280 (Pre-Fall)
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="fas fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi cjgueY">
-                    <td class="sc-iwsKbI bqnYPo am">AM</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Surname
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">FirstName
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        Non-Ladder
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        PHYS (1 FTE SEAS)
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        Sabbatical Eligible
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        AM 101
-                        <br>
-                        ES 280 (Pre-Fall)
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        Sabbatical
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        AM 101
-                        <br>
-                        ES 280 (Pre-Fall)
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="fas fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi jQECIl">
-                    <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Surname
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">FirstName
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        Non-Ladder
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        PHYS (1 FTE SEAS)
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        Sabbatical Eligible
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        AM 101
-                        <br>
-                        ES 280 (Pre-Fall)
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        Sabbatical
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        AM 101
-                        <br>
-                        ES 280 (Pre-Fall)
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="fas fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
 
+        <div id="outer-grid">
 
-            <tbody class="sc-jTzLTM jxSeiZ" hidden>
-                <tr class="sc-gZMcBi cjgueY">
-                    <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                    <td class="sc-iwsKbI bqnYPo">AC 209a</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Surname
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">FirstName
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
+            <!--Sliding sidebar filters-->
+            <div class="sideNav-column">
+                <div id="mySidenav" class="sidenav">
+                    <div class="sideNav--ncm--inside__Link">
+                        <a href="javascript:void(0)" onclick="closeNav()" class="Link">
+                            Settings
+                            <i class="far fa-arrow-alt-circle-left ml-auto"></i>
                         </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        Non-Ladder
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        PHYS (1 FTE SEAS)
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        Teaching Relief
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        AM 101
-                        <br>
-                        ES 280 (Pre-Fall)
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        Sabbatical
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        AM 101
-                        <br>
-                        ES 280 (Pre-Fall)
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi jQECIl">
-                    <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                    <td class="sc-iwsKbI bqnYPo">AC 209b</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                        <hr>
-                        Name Surname
-                        </a>
-                        <hr>
-                        Name Surname
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="fas fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi cjgueY">
-                    <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                    <td class="sc-iwsKbI bqnYPo">AC 221</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo no">No</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="far fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="fas fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi jQECIl">
-                    <td class="sc-iwsKbI bqnYPo am">AM</td>
-                    <td class="sc-iwsKbI bqnYPo">AM 010</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo no">No</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="far fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi cjgueY">
-                    <td class="sc-iwsKbI bqnYPo am">AM</td>
-                    <td class="sc-iwsKbI bqnYPo">AM 021a</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-kGXeez bCEQJv">No</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="fas fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi jQECIl">
-                    <td class="sc-iwsKbI bqnYPo am">AM</td>
-                    <td class="sc-iwsKbI bqnYPo">AM 021b</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-kGXeez bCEQJv">No</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="far fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi cjgueY">
-                    <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                    <td class="sc-iwsKbI bqnYPo">AC 275</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="fas fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi jQECIl">
-                    <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                    <td class="sc-iwsKbI bqnYPo">AP 050a</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="far fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="sc-gZMcBi cjgueY"> 
-                    <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                    <td class="sc-iwsKbI bqnYPo">AP 050b</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">
-                        Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo">Yes</td>
-                    <td class="sc-iwsKbI bqnYPo">Name Surname
-                        <a href="#" data-toggle="modal" data-target="#courseModal" class="bADMLE-icon">
-                            <i class="fas fa-edit float-right" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal2" class="bADMLE-icon">
-                            <i class="far fa-sticky-note"></i>
-                        </a>
-                    </td>
-                    <td class="sc-iwsKbI bqnYPo text-center">
-                        <a href="#" data-toggle="modal" data-target="#courseModal3" class="bADMLE-icon">
-                            <i class="far fa-folder-open"></i>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div><!-- /courses -->
-
-<!-- Modal for Sabbatical/Leave -->
-<div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModal" aria-hidden="true" style="font-size: 1.25em; right: 18%; left: 23%; top: 7em;">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 22em;">
-            <div class="modal-header">
-                <h5 class="modal-title" id="courseModal">Sabbatical/leave for Firstname Surname</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body" style="width: 22em; text-align: center;">
-                <select>
-                    <option value="string:Sabbatical" label="Sabbatical">Sabbatical</option>
-                    <option value="string:Sabbatical Eligible" label="Sabbatical Eligible" selected>Sabbatical Eligible</option>
-                    <option value="string:Teaching Relief" label="Teaching Relief">Teaching Relief</option>
-                    <option value="string:Research Leave" label="Research Leave">Research Leave</option>
-                    <option value="string:Parental Leave" label="Parental Leave">Parental Leave</option>
-                    <option value="string:No Longer Active" label="No Longer Active">No Longer Active</option>
-                </select>
-            </div>
-            
-            <div class="modal-footer">
-                <button type="button" class="kxWoHZ mr-auto" data-dismiss="modal">Cancel</button>
-                <button type="button" class="csuYJy mr-auto" data-dismiss="modal">Remove</button>
-                <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal for Faculty Detail -->
-<div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="font-size: 1em; right: 18%; left: 0%; top: 2em;">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 47em;">
-            <div class="modal-header">
-                <h2 class="modal-title" id="courseModal3">Detail for Surname, Firstname</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" hidden>
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h2>
-                    Faculty data
-                </h2>
-                <div class="row">
-                    <div class="col">
-                        <strong>Category:</strong> Ladder
                     </div>
-                    <div class="col">
-                        <strong>Joint With:</strong> PHYS (0.5 FTE SEAS)
-                    </div>
-                </div>
-                <hr>
-                <h2>
-                    Historical data
-                </h2>
-                <table class="sc-jTzLTM jxSeiZ table-modal">
-                    <thead class="sc-gqjmRU iRtSxQ">
-                        <td style="border-top: 2px solid white; border-left: 2px solid white;">&nbsp;</td>
-                        <th class="sc-VigVT cbrsHS">
-                            <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-left fa-lg"></i></button>
-                            Fall 2016
-                        </th>
-                        <th class="sc-VigVT cbrsHS">
-                            Spring 2017
-                            <button type="button" class="bADMLE-icon button-icon"><i class="fas fa-arrow-right fa-lg"></i></button>
-                        </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th class="sc-VigVT cbrsHS">
-                                Pre-Enrollment
-                            </th>
-                            <td class="">&nbsp;</td>
-                            <td class="">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <th class="sc-VigVT cbrsHS">
-                                Sabbatical / Leave
-                            </th>
-                            <td class="">&nbsp;</td>
-                            <td class="">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <th class="sc-VigVT cbrsHS">
-                                Courses
-                            </th>
-                            <td class="">&nbsp;</td>
-                            <td class="lijgtc">
-                                SCI-PHYUNV 027
-                                <br>
-                                ES 139
-                                <br>
-                                ES 239
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="modal-footer">
-                <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Modal - Default -->
-        
-    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit "Default" view</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div>
-                        <img src="courses_modal.png" alt="Screen capture of table">
-                    </div>
-                </div>
-                <div class="alert alert-danger text-center mr-3 ml-3" role="alert">
-                    Are you sure you want to delete this view?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger mx-auto" data-dismiss="modal">Delete this view</button>
-                    <button type="button" class="btn btn-primary ml-auto" data-dismiss="modal">Save</button>
-                </div>
-            </div>
-        </div>
-    </div> <!-- / Modal - Default -->
-
-    <!-- Modal - My View -->
-        
-    <div class="modal fade" id="myViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit "My view"</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div>
-                        <img src="courses_modal.png" alt="Screen capture of table">
-                    </div>
-                </div>
-                <div class="alert alert-danger text-center mr-3 ml-3" role="alert">
-                    Are you shure you want to delete this view?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger mx-auto" data-dismiss="modal">Delete this view</button>
-                    <button type="button" class="btn btn-primary ml-auto" data-dismiss="modal">Save</button>
-                </div>
-            </div>
-        </div>
-    </div> <!-- / Modal - My View -->
-
-    <!-- Modal - New View -->
-        
-    <div class="modal fade" id="newViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create new view</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
                     <form>
-                        <div class="form-group row">
-                            <label for="newViewName" class="col-sm-2 col-form-label text-right">Name of new view</label>
-                            <div class="col-sm-4">
-                                <input type="password" class="form-control" id="newViewName" placeholder="Name of new view">
-                            </div>
+                        <hr>
+                        <div>
+                            <button class="Button--secondary">Download faculty report</button>
+                        </div>
+                        <hr>
+                        <div>
+                            <button class="Button--secondary">Show "No longer active" faculty</button>
                         </div>
                     </form>
-                    <div>
-                        <img src="courses_modal.png" alt="Screen capture of table">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Create</button>
                 </div>
             </div>
+
+            <!-- courses -->
+            <div class="courses">
+
+                <table class="Table Table--Sidebar">
+
+                    <thead class="TableHead">
+                        <tr class="TableHeadingCell">
+                            <th scope="col" class="TableHeadingCell TableHeadingCell--blank__left" colspan="5">
+                            </th>
+                            <th scope="col" class="TableHeadingCell--nav" colspan="2">
+                                <button type="button" class="BorderlessButton--primary"><i class="fas fa-arrow-left"></i></button>
+                                Fall 2019
+                            </th>
+                            <th scope="col" class="TableHeadingCell--nav" colspan="2">
+                                Spring 2020
+                                <button type="button" class="BorderlessButton--primary"><i class="fas fa-arrow-right"></i></button>
+                            </th>
+                            <th scope="col" class="TableHeadingCell TableHeadingCell--blank__right">
+                            </th>
+                        </tr>
+                        <tr class="TableHeadingCell">
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="semesters">Area</label>
+                                <div>
+                                    <select id="semesters" name="semesters" class="Dropdown">
+                                        <option value="string:All" label="All" selected="selected">All</option>
+                                        <option value="string:ACS" label="ACS">ACS</option>
+                                        <option value="string:AM" label="AM">AM</option>
+                                        <option value="string:AP" label="AP">AP</option>
+                                        <option value="string:BE" label="BE">BE</option>
+                                        <option value="string:CS" label="CS">CS</option>
+                                        <option value="string:EE" label="EE">EE</option>
+                                        <option value="string:ESE" label="ESE">ESE</option>
+                                        <option value="string:General" label="General">General</option>
+                                        <option value="string:MDE" label="MDE">MDE</option>
+                                        <option value="string:MSMBA" label="MSMBA">MSMBA</option>
+                                        <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
+                                        <option value="string:SEM" label="SEM">SEM</option>
+                                    </select>
+                                </div>
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="surname">Last name</label>
+                                <div>
+                                    <input id="surname" name="surname" type="text" class="TextInput" value="" placeholder="Filter by last name">
+                                </div>
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="name">First name</label>
+                                <div>
+                                    <input id="name" name="name" type="text" class="TextInput" value="" placeholder="Filter by first name">
+                                </div>
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="category">Category</label>
+                                <div>
+                                    <select id="category" name="category" class="Dropdown">
+                                        <option value="string:All" label="All" selected="selected">All</option>
+                                        <option value="string:Ladder">Ladder</option>
+                                        <option value="string:Nonladder" label="Yes">Non-ladder</option>
+                                        <option value="string:Nonseasladder" label="No">Non-SEAS ladder</option>
+                                    </select>
+                                </div>
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Join with
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="sabbatical">Sabbatical leave</label>
+                                <div>
+                                    <select id="sabbatical" name="sabbatical" class="Dropdown">
+                                        <option value="string:">All</option>
+                                        <option value="string:Sabbatical" label="Sabbatical">Sabbatical</option>
+                                        <option value="string:Sabbatical Eligible" label="Sabbatical Eligible">Sabbatical Eligible</option>
+                                        <option value="string:Teaching Relief" label="Teaching Relief">Teaching Relief</option>
+                                        <option value="string:Research Leave" label="Research Leave">Research Leave</option>
+                                        <option value="string:Parental Leave" label="Parental Leave">Parental Leave</option>
+                                        <option value="string:No Longer Active" label="No Longer Active">No Longer Active</option>
+                                    </select>
+                                </div>
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Courses
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="sabbatical">Sabbatical leave</label>
+                                <div>
+                                    <select id="sabbatical" name="sabbatical" class="Dropdown">
+                                        <option value="string:">All</option>
+                                        <option value="string:Sabbatical" label="Sabbatical">Sabbatical</option>
+                                        <option value="string:Sabbatical Eligible" label="Sabbatical Eligible">Sabbatical Eligible</option>
+                                        <option value="string:Teaching Relief" label="Teaching Relief">Teaching Relief</option>
+                                        <option value="string:Research Leave" label="Research Leave">Research Leave</option>
+                                        <option value="string:Parental Leave" label="Parental Leave">Parental Leave</option>
+                                        <option value="string:No Longer Active" label="No Longer Active">No Longer Active</option>
+                                    </select>
+                                </div>
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Courses
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Detail
+                            </th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody class="TableBody">
+
+                        <tr class="TableRowOdd">
+                            <td class="TableCell acs">ACS</td>
+                            <td class="TableCell">LastName</td>
+                            <td class="TableCell">FirstName</td>
+                            <td class="TableCell">Non-ladder</td>
+                            <td class="TableCell">PHYS (1 FTE SEAS)</td>
+                            <td class="TableCell">
+                                Sabbatical Eligible
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
+                                    <i class="fas fa-edit float-right"></i>
+                                </a>
+                            </td>
+                            <td class="TableCell">
+                                AM 101
+                                <br>
+                                ES 280 (Pre-Fall)
+                            </td>
+                            <td class="TableCell">
+                                Sabbatical
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
+                                    <i class="fas fa-edit float-right"></i>
+                                </a>
+                            </td>
+                            <td class="TableCell">
+                                AM 101
+                                <br>
+                                ES 280 (Pre-Fall)
+                            </td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
+                                    <i class="fas fa-folder-open"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr class="TableRowEven">
+                            <td class="TableCell am">AM</td>
+                            <td class="TableCell">LastName</td>
+                            <td class="TableCell">FirstName</td>
+                            <td class="TableCell">Non-ladder</td>
+                            <td class="TableCell">PHYS (1 FTE SEAS)</td>
+                            <td class="TableCell">
+                                Sabbatical Eligible
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
+                                    <i class="fas fa-edit float-right"></i>
+                                </a>
+                            </td>
+                            <td class="TableCell">
+                                AM 101
+                                <br>
+                                ES 280 (Pre-Fall)
+                            </td>
+                            <td class="TableCell">
+                                Sabbatical
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
+                                    <i class="fas fa-edit float-right"></i>
+                                </a>
+                            </td>
+                            <td class="TableCell">
+                                AM 101
+                                <br>
+                                ES 280 (Pre-Fall)
+                            </td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
+                                    <i class="fas fa-folder-open"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr class="TableRowOdd">
+                            <td class="TableCell ap">AP</td>
+                            <td class="TableCell">LastName</td>
+                            <td class="TableCell">FirstName</td>
+                            <td class="TableCell">Non-ladder</td>
+                            <td class="TableCell">PHYS (1 FTE SEAS)</td>
+                            <td class="TableCell">
+                                Sabbatical Eligible
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
+                                    <i class="fas fa-edit float-right"></i>
+                                </a>
+                            </td>
+                            <td class="TableCell">
+                                AM 101
+                                <br>
+                                ES 280 (Pre-Fall)
+                            </td>
+                            <td class="TableCell">
+                                Sabbatical
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
+                                    <i class="fas fa-edit float-right"></i>
+                                </a>
+                            </td>
+                            <td class="TableCell">
+                                AM 101
+                                <br>
+                                ES 280 (Pre-Fall)
+                            </td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
+                                    <i class="fas fa-folder-open"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div><!-- /courses -->
+
+            <!-- Modal for Sabbatical/Leave -->
+            <div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModal" aria-hidden="true" style="font-size: 1.25em; right: 18%; left: 23%; top: 7em;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" style="width: 22em;">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="courseModal">Sabbatical/leave for Firstname Surname</h2>
+                        </div>
+                        <div class="modal-body" style="width: 22em; text-align: center;">
+
+                            <label for="sabbatical" hidden>Sabbatical leave</label>
+                            <select id="sabbatical" name="sabbatical" class="Dropdown">
+                                <option value="string:Sabbatical" label="Sabbatical">Sabbatical</option>
+                                <option value="string:Sabbatical Eligible" label="Sabbatical Eligible" selected>Sabbatical Eligible</option>
+                                <option value="string:Teaching Relief" label="Teaching Relief">Teaching Relief</option>
+                                <option value="string:Research Leave" label="Research Leave">Research Leave</option>
+                                <option value="string:Parental Leave" label="Parental Leave">Parental Leave</option>
+                                <option value="string:No Longer Active" label="No Longer Active">No Longer Active</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="Button--danger Button--leftAlign" data-dismiss="modal">Remove</button>
+                            <button type="button" class="Button--primary" data-dismiss="modal">Save leave</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for Faculty Detail -->
+            <!-- Modal for Detail -->
+            <div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="right: 18%; left: 13%; top: 5em;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" style="width: 40em;">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="courseModal3">Detail for Surname, Firstname</h2>
+                        </div>
+                        <div class="modal-body">
+                            <h2>
+                                Faculty data
+                            </h2>
+                            <div class="row">
+                                <div class="col">
+                                    <p><strong>Category:</strong> Ladder</p>
+                                </div>
+                                <div class="col">
+                                    <p><strong>Joint With:</strong> PHYS (0.5 FTE SEAS)</p>
+                                </div>
+                            </div>
+                            <h2 class="border-top">
+                                Historical data
+                            </h2>
+
+                            <!-- Mark One table -->
+                            <table class="Table Table--noHover">
+                                <thead class="TableHead">
+                                    <tr class="TableHeadingCell">
+                                        <th scope="col" class="TableHeadingCell TableHeadingCell--blank__left">
+                                        </th>
+                                        <th scope="col" class="TableHeadingCell--nav">
+                                            <button type="button" class="BorderlessButton--primary"><i class="fas fa-arrow-left"></i></button>
+                                            Fall 2019
+                                        </th>
+                                        <th scope="col" class="TableHeadingCell--nav">
+                                            Spring 2020
+                                            <button type="button" class="BorderlessButton--primary"><i class="fas fa-arrow-right"></i></button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="TableBody">
+                                    <tr class="TableRowEven">
+                                        <th class="TableCell">Pre-Enrollment</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                    </tr>
+                                    <tr class="TableRowEven">
+                                        <th class="TableCell">Sabbatical / Leave</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                    </tr>
+                                    <tr class="TableRowEven">
+                                        <th class="TableCell">Courses</td>
+                                        <td class="TableCell ">&nbsp;</td>
+                                        <td class="TableCell ">
+                                            SCI-PHYUNV 027
+                                            <br>
+                                            ES 139
+                                            <br>
+                                            ES 239
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="Button--primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-    </div> <!-- / Modal - New View -->
 
-</div>
+        <!-- Optional Bootstrap JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                crossorigin="anonymous"></script>
 
-<!-- Optional Bootstrap JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+        <!--Sidebar-->
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "13em";
+            }
 
-<!--Sidebar-->
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "20em";
-    }
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-</script>
-
-<!-- Mark-One JavaScript -->
-<script src="https://seas-computing.github.io/mark-one/assets~main5f947c6db2fbbe4cd0f0.js"></script>
-<script src="https://seas-computing.github.io/mark-one/build/bundle.2043da72.js"></script>
+        <!-- Mark-One JavaScript -->
+        <script src="https://seas-computing.github.io/mark-one/assets~main5f947c6db2fbbe4cd0f0.js"></script>
+        <script src="https://seas-computing.github.io/mark-one/build/bundle.2043da72.js"></script>
 
 
-</body>
+    </body>
 </html>
