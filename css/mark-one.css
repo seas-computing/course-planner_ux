@@ -647,6 +647,17 @@ html, body {
         float: right;
     }
 
+    /* Non Mark One style to narrow te width of a column */
+
+    .TableHeadingCell--20 {
+        font-weight: 600;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(152, 152, 152);
+        border-image: initial;
+        width: 20em;
+    }
+
 /*#endregion*/
 
 
