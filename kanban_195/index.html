@@ -1,11 +1,14 @@
 <!-- Kanban 195 - accessible tables - https://github.com/seas-computing/course-planner/projects/1#card-36202770 -->
 
-<!-- Table header and first row of current code -->
+<!-- Table header and first row of proposed code -->
 
 <table class="sc-AxmLO dMDDA">
+    <!-- The first 6 columns with no headers on the first row -->
     <colgroup span="6"></colgroup>
+    <!-- The two spanning Fall and Spring terms -->
     <colgroup span="7"></colgroup>
     <colgroup span="7"></colgroup>
+    <!-- Notes and details -->
     <colgroup span="2"></colgroup>
     <thead class="sc-fzpans iFEtHU">
         <tr>
@@ -44,22 +47,25 @@
             <th scope="col" rowspan="2" class="sc-fzplWN hFHMzV">Instructors</th>
             <th scope="col" rowspan="2" class="sc-fzplWN hFHMzV">Times</th>
             <th scope="col" rowspan="2" class="sc-fzplWN hFHMzV">Room</th>
-            <th scope="colgroup" colspan="3" class="sc-fzplWN hFHMzV">Enrollment</th>
+            <!-- scope="colgroup" removed from this spanning header because of conflict with above spanning header  -->
+            <th colspan="3" class="sc-fzplWN hFHMzV">Enrollment</th>
             <th scope="col" rowspan="2" class="sc-fzplWN hFHMzV">Offered</th>
             <th scope="col" rowspan="2" class="sc-fzplWN hFHMzV">Instructors</th>
             <th scope="col" rowspan="2" class="sc-fzplWN hFHMzV">Times</th>
             <th scope="col" rowspan="2" class="sc-fzplWN hFHMzV">Room</th>
-            <th scope="colgroup" colspan="3" class="sc-fzplWN hFHMzV">Enrollment</th>
+            <!-- scope="colgroup" removed from this spanning header because of conflict with above spanning header  -->
+            <th colspan="3" class="sc-fzplWN hFHMzV">Enrollment</th>
             <th scope="col" rowspan="2" class="sc-fzplWN hFHMzV">Notes</th>
             <th scope="col" rowspan="2" class="sc-fzplWN hFHMzV">Details</th>
         </tr>
         <tr class="sc-fzoLsD hEKuZc">
-            <th scope="colgroup" class="sc-fzplWN hFHMzV">Pre</th>
-            <th scope="colgroup" class="sc-fzplWN hFHMzV">Study</th>
-            <th scope="colgroup" class="sc-fzplWN hFHMzV">Actual</th>
-            <th scope="colgroup" class="sc-fzplWN hFHMzV">Pre</th>
-            <th scope="colgroup" class="sc-fzplWN hFHMzV">Study</th>
-            <th scope="colgroup" class="sc-fzplWN hFHMzV">Actual</th>
+            <!-- Changing colgroup to col -->
+            <th scope="col" class="sc-fzplWN hFHMzV">Pre</th>
+            <th scope="col" class="sc-fzplWN hFHMzV">Study</th>
+            <th scope="col" class="sc-fzplWN hFHMzV">Actual</th>
+            <th scope="col" class="sc-fzplWN hFHMzV">Pre</th>
+            <th scope="col" class="sc-fzplWN hFHMzV">Study</th>
+            <th scope="col" class="sc-fzplWN hFHMzV">Actual</th>
         </tr>
     </thead>
     <tbody class="sc-fznyAO cUxODz">
