@@ -13,6 +13,7 @@
 <link type=image/x-icon rel="shortcut icon"
     href="data:application/json;base64,eyJzdGF0dXNDb2RlIjo1MDAsIm1lc3NhZ2UiOiJJbnRlcm5hbCBzZXJ2ZXIgZXJyb3IifQ==">
 <link rel=canonical href=http://localhost:3000/courses/courses>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 
 <body>
@@ -24,6 +25,21 @@
                 
                 <main class="sc-AxhUy dQsIDC">
                     <div class=course-instance-table>
+                        <!-- Adding visually hidden previous and next term links -->
+                        <style>
+                            .visuallyHidden {
+                                border: 0; 
+                                clip: rect(0 0 0 0); 
+                                height: 1px; 
+                                margin: -1px;
+                                overflow: hidden;
+                                padding: 0;
+                                position: absolute;
+                                width: 1px;
+                            }
+                        </style>
+                        <a href="#" class="visuallyHidden">Previous term</a>
+                        <a href="#" class="visuallyHidden">Next term</a>
                         <table class="sc-AxmLO dMDDA">
                             <!-- Added closing tag to colgroup -->
                             <colgroup span=6></colgroup>
@@ -41,16 +57,10 @@
                                         <th style=opacity:0></th>
                                         <th style=opacity:0></th>
                                         <!-- Added aria-label to button -->
-                                        <th colspan=4 scope=colgroup><button class="sc-AxirZ dIwVzk" aria-label="Previous term"><svg
-                                                    aria-hidden=true focusable=false data-prefix=fas
-                                                    data-icon=arrow-left class="svg-inline--fa fa-arrow-left fa-w-14"
-                                                    role=img xmlns=http://www.w3.org/2000/svg viewBox="0 0 448 512">
-                                                    <path fill=currentColor
-                                                        d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z">
-                                                    </path>
-                                                </svg></button>Fall 2019</th>
+                                        <!-- Added aria-hidden="true" to both buttons to hide them from screen readers -->
+                                        <th colspan=4 scope=colgroup><button class="sc-AxirZ dIwVzk" aria-label="Previous term" aria-hidden="true"></button>Fall 2019</th>
                                         <!-- Added aria-label to button -->
-                                                <th colspan=4 scope=colgroup>Spring 2020<button class="sc-AxirZ dIwVzk" aria-label="Next term"><svg
+                                                <th colspan=4 scope=colgroup>Spring 2020<button class="sc-AxirZ dIwVzk" aria-label="Next term" aria-hidden="true"><svg
                                                     aria-hidden=true focusable=false data-prefix=fas
                                                     data-icon=arrow-right class="svg-inline--fa fa-arrow-right fa-w-14"
                                                     role=img xmlns=http://www.w3.org/2000/svg viewBox="0 0 448 512">
