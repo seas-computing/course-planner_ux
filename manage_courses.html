@@ -1,6 +1,6 @@
-
-
-
+<!--This version uses opacity to filter courses -->
+<!-- Room view - data from https://registrar.fas.harvard.edu/archived-course-meeting-locations-reports -->
+<!--Added overflow: scroll; to all room instances-->
 <!doctype html>
 
 <html>
@@ -17,7 +17,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Bootstrap CSS -->
+        <!-- Mark One CSS -->
+        <link rel="stylesheet" href="css/mark-one.css">
+
+        <!-- Bootstrap CSS - just for the modal -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
             crossorigin="anonymous">
@@ -26,1119 +29,461 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
             integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-        <style type="text/css">
-            /*This sets the margin and padding of every HTML element to zero and the box-sizing: border-box; declaration changes the box model by ensuring that the padding and border of an element no longer increases its width.*/
-            html {
-                box-sizing: border-box;
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            }
-
-            *, *::before, *::after {
-                margin: 0;
-                padding: 0;
-                box-sizing: inherit;
-            }
-
-            dd {
-                margin-bottom: -4px;
-                font-size: 1.2em;
-                align: left;
-            }
-
-            dt {
-                font-size: 1.2em;
-                padding: 0px;
-            }
-
-            /*Style for each course*/
-            .button-course {
-                width: 100%;
-                background-color: transparent;
-                border: 0px solid transparent;
-                font-size: .8em;
-                color: #fff;
-                text-align: left;
-            }
-
-            .button-course:hover {
-                background-color: rgba(255, 255, 255, .3);
-            }
-
-            /*Style for tooltips*/
-            .tooltip.show p {
-                text-align: left;
-            }
-
-            /*Sidebar*/
-
-            .sidenav {
-                height: 100%;
-                width: 0;
-                z-index: 1;
-                top: 0;
-                left: 0;
-                background-color: #fff;
-                border-right: 1px solid #007bff;
-                overflow-x: hidden;
-                transition: 0.5s;
-                margin-top: -5em;
-            }
-
-            .sideNav-column {
-                padding-left: .5em;
-                margin-top: 6em;
-                z-index: 1000;
-            }
-
-            .sidenav a {
-                padding: 8px 8px 8px 32px;
-                text-decoration: none;
-                font-size: 25px;
-                color: #007bff;
-                display: block;
-                transition: 0.3s;
-            }
-
-            .sidenav a:hover {
-                color: rgb(8, 65, 97);
-                text-decoration: underline;
-            }
-
-            @media screen and (max-height: 450px) {
-                .sidenav {
-                    padding: 2em;
-                }
-            }
-
-            /*Amending Bootstrap styles*/
-            .nav-link {
-                font-size: 1em;
-            }
-
-            .nav-link a {
-                color: #007bff;
-                text-decoration: none;
-            }   
-
-            .nav-link a:hover {
-                color: rgb(8, 65, 97);
-                text-decoration: underline;
-            }   
-
-            .nav-tabs {
-                margin-bottom: -0.5em;
-                margin-left: -176em;
-            }
-
-            .nav-pills {
-                margin-top: 2.5em;
-                position: absolute;
-            }
-
-            .nav-item {
-                padding-left: 1em;
-                padding-right: 1em;
-            }
-
-            .nav-item a {
-                color: #007bff;
-                text-decoration: none;
-            }   
-
-            .nav-item a:hover {
-                color: rgb(8, 65, 97);
-                text-decoration: underline;
-            }   
-
-            .navbar-brand img {
-                width: 7%;
-            }
-
-            .bg-light {
-            background-color: #ffffff!important;
-            height: 8.6em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-                /* margin-left: 2em; */
-            }
-
-            h3 {
-                font-size: 1.2em;
-            }
-
-            .form-group {
-                padding: 1em;
-            }
-
-            .popover-header {
-                padding: .5rem .75rem;
-                margin-bottom: 0;
-                font-size: 1.5rem;
-                font-weight: bold;
-                color: inherit;
-                background-color: #f7f7f7;
-                border-bottom: 1px solid #ebebeb;
-                border-top-left-radius: calc(.3rem - 1px);
-                border-top-right-radius: calc(.3rem - 1px);
-            }
-
-            .popover-body {
-                padding: .5rem .75rem;
-                color: #212529;
-                font-size: 1.1rem;
-            }
-
-            .dropdown-item {
-            font-size: 1.4rem;
-            color: #007bff;
-            }
-
-            #navbarDropdownMenuLink {
-            color: #007bff;
-            }
-
-            .img-fluid {
-                max-width: 98%;
-                margin-top: -1em;
-            }
-
-            .sidenav a {
-                font-size: 1.5em;
-                color: #007bff;
-            }
-
-            .sidenav a:hover {
-                font-size: 1.5em;
-                color: rgb(8, 65, 97);
-                text-decoration: underline;
-            }
-
-            .modal {
-                right: 10%;
-                left: 10%;
-            }
-
-            .modal-content {
-                width: 34em;
-            }
-
-            .modal input {
-                width: 100%;
-                padding-left: .5em;
-            }
-
-            /*CSS Grid*/
-
-            #outer-grid {
-                display: grid;
-                grid-template-rows: 1fr;
-                grid-template-columns: 1fr 1fr;
-                grid-gap: 1em;
-                margin-top: 1em;
-            }
-
-            /*Reset to absolutely center the calendar on the page and give it a border and width.*/
-            /*CSS Grid*/
-            .courses {
-                padding: 0em;
-                width: 100vw;
-                height: 120vh;
-                margin-top: 4em;
-            }
-        </style>
-
-        <!-- Mark-one styles -->
-        <style>
-            /* style for table */
-            .coIxkm-amended {
-                border-collapse: collapse;
-                width: 95%;
-                border-width: 2px;
-                border-style: solid;
-                border-color: rgb(152, 152, 152);
-                border-image: initial;
-                margin: 1em 2em 1em 1em;
-                padding: 5px 10px;
-            }
-    
-            .iRtSxQ {
-                background-color: rgb(209, 209, 209);
-            }
-    
-            .jQECIl {
-                background: rgb(254, 254, 254);
-            }
-    
-            .jQECIl th {
-                background-color: rgb(209, 209, 209);
-            }
-    
-            .cbrsHS {
-                font-weight: 600;
-                border-width: 2px;
-                border-style: solid;
-                border-color: rgb(152, 152, 152);
-                border-image: initial;
-            }
-    
-            .jxSeiZ {
-                overflow: scroll;
-            }
-    
-            .cjgueY {
-                background: rgb(236, 236, 236);
-            }
-    
-            .bqnYPo {
-                font-family: "Roboto Mono", monospace;
-                font-size: 0.9em;
-                border-left: 2px solid rgb(152, 152, 152);
-                border-right: 2px solid rgb(152, 152, 152);
-                padding: 3px;
-            }
-    
-            /* negative: light class for background of "no" table cell */
-            .bCEQJv {
-                margin-top: 10px;
-                color: rgb(24, 24, 24);
-                background: rgb(255, 143, 156);
-                padding: 3px;  /* Decreasing padding */
-                font-family: "Roboto Mono", monospace;
-                font-size: 0.9em;
-                border-left: 2px solid rgb(152, 152, 152);
-                border-right: 2px solid rgb(152, 152, 152);
-            }
-    
-            /* negative: dark class for font color of "no" table cell */
-            .no {
-                color: rgb(237, 27, 42);
-                font-weight: 900;
-            }
-    
-            table {
-                display: table;
-                border-collapse: separate;
-                border-spacing: 2px;
-                border-color: grey;
-                font-size: 16px;
-                font-weight: 400;
-                }
-    
-            thead {
-                display: table-header-group;
-                vertical-align: middle;
-                border-color: inherit;
-            }
-    
-            tr {
-                display: table-row;
-                vertical-align: inherit;
-                border-color: inherit;
-            }
-    
-            /* Define the hover highlight color for the table row */
-            .hoverTable tr:hover {
-                background-color: #d1d1d1;
-            }
-    
-            th {
-                display: table-cell;
-                vertical-align: inherit;
-                font-weight: bold;
-                text-align: center;
-                vertical-align: top;
-            }
-    
-            tbody {
-                display: table-row-group;
-                vertical-align: middle;
-                border-color: inherit;
-            }
-    
-            td {
-                display: table-cell;
-                vertical-align: inherit; 
-            }
-    
-    
-            /* style for nav */
-            nav {
-                display: block;
-                font-size: 16px;
-                font-weight: 400;
-                position: absolute;
-                margin-left: 15em;
-                width: 60em;
-            }
-    
-            .hhGZXE {
-                background-color: transparent;
-                border-collapse: collapse;
-                display: flex;
-                flex-wrap: wrap;
-                list-style-type: none;
-                border-bottom: 1px solid rgb(24, 24, 24);
-            }
-    
-            ul {
-                /* display: block; */
-                /* list-style-type: disc; */
-                margin-block-start: 1em;
-                margin-block-end: 1em;
-                margin-inline-start: 0px;
-                margin-inline-end: 0px;
-                padding-inline-start: 40px;
-            }
-    
-            .icrnXS {
-                margin-bottom: -1px;
-            }
-    
-            .icrnXS-first {
-                margin-bottom: -1px;
-                padding: 0px 1em;
-                margin-left: -1em;
-            }
-    
-            li {
-                display: list-item;
-                text-align: -webkit-match-parent;
-            }
-    
-            .kzaudT {
-                color: rgb(24, 24, 24);
-                display: inline-block;
-                background: transparent;
-                border-width: 1px 1px 1px;
-                border-style: solid solid none;
-                border-color: transparent transparent transparent;
-                border-image: initial;
-                border-bottom: none;
-                padding: 0.5rem 1rem;
-            }
-    
-            /* active tab */
-            .bWbWht {
-                color: rgb(24, 24, 24);
-                display: inline-block;
-                background: rgb(254, 254, 254);
-                border-width: 1px;
-                border-style: solid;
-                border-color: rgb(24, 24, 24) rgb(24, 24, 24) transparent;
-                border-image: initial;
-                border-bottom: 1px solid transparent;
-                padding: 0.5rem 1rem;
-            }
-    
-            /* header */
-            .bsLcFZ {
-                align-items: flex-end;
-                background-color: transparent;
-                box-shadow: rgba(0, 0, 0, 0.28) 0px 4px 8px;
-                display: flex;
-                -webkit-box-pack: justify;
-                justify-content: space-between;
-                width: 100%;
-                padding: 15px 10px;
-            }
-    
-            .bSvdsU {
-                align-self: stretch;
-                background-image: url(53adae7….svg);
-                background-size: contain;
-                color: transparent;
-                display: inline-block;
-                font-size: 0px;
-                line-height: 0;
-                width: 175px;
-                min-width: 100px;
-                height: 50px;
-                background-position: center center;
-                background-repeat: no-repeat;
-                margin: 0px 10px;
-            }
-    
-            .eEciP {
-                font-size: 1.66em;
-                font-family: "Open Sans", sans-serif;
-                font-weight: 400;
-                grid-column-end: span 4;
-            }
-    
-            header {
-            font-size: 16px;
-            font-weight: 400;
-            }
-    
-            /* button - primary */
-            .bADMLE {
-                color: rgb(254, 254, 254);
-                cursor: pointer;
-                font-size: 1em;
-                font-weight: 400;
-                background: rgb(78, 136, 199); /* Primary button idle color - info: medium */
-                padding: 5px 10px;
-                border: 0px solid #fff;
-            }
-    
-            .bADMLE:hover { background: rgb(8, 65, 97); } /* Primary button highlight color - info: dark */
-    
-            /* button icon - primary */
-            .bADMLE-icon {
-                color: rgb(78, 136, 199); /* Primary button icon idle color - info: medium */
-                cursor: pointer;
-                font-size: 1em;
-                font-weight: 400;
-                padding: 5px 10px;
-            }
-    
-            .bADMLE-icon:hover { color: rgb(8, 65, 97); } /* Primary button icon highlight color - info: dark */
-    
-            /* button - secondary */
-            .kxWoHZ {
-                color: rgb(24, 24, 24);
-                cursor: pointer;
-                font-size: 1em;
-                font-weight: 400;
-                background: rgb(209, 209, 209); /* Secondary button idle color - background: medium */
-                padding: 5px 10px;
-                border: 0px solid #fff;
-            }
-    
-            .kxWoHZ:hover { 
-                color: rgb(254, 254, 254);
-                background: rgb(147, 161, 173); /* Secondary button highlight color - background: dark */
-            }
-    
-            /* button - danger */
-            .csuYJy {
-                color: rgb(254, 254, 254);
-                cursor: pointer;
-                font-size: 1em;
-                font-weight: 400;
-                background: rgb(237, 27, 42); /* Danger button idle color - negative: dark */
-                padding: 5px 10px;
-                border: 0px solid #fff;
-            }
-    
-            .csuYJy:hover { background: rgb(165, 28, 48); } /* Danger button highlight color - backgrond: accent */
-    
-            .lijgtc { /* positive: light */
-                margin-top: 10px;
-                color: rgb(24, 24, 24);
-                background: rgb(129, 233, 129);
-                /* padding: 15px; */
-                }
-    
-        /* button icon - danger */
-            .csuYJy-icon { /* Danger button icon idle color - negative: dark */
-                margin-top: 10px;
-                color: rgb(237, 27, 42);
-                padding: 15px;
-            }
-    
-            .csuYJy-icon:hover {  /* Danger button icon highlight color - background: accent */
-                color: rgb(165, 28, 48);
-            }
-    
-            .button-icon {
-                margin-top: 0px;
-                display: inline-block;
-                font-weight: 400;
-                text-align: center;
-                white-space: nowrap;
-                vertical-align: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                padding: .375rem .75rem;
-                font-size: 1rem;
-                line-height: 1.5;
-                border-radius: .25rem;
-                border: solid 0 #fff;
-            }
-    
-            /* Drop down */
-            .kFoNgS {
-                color: rgb(24, 24, 24);
-                margin-bottom: .5em;
-            }
-    
-    
-        </style>
-
-        <!-- Simulating Mark-One styles -->
-        <style>
-
-            /* Course colors */
-            td.acs {
-                background: rgba(203, 37, 45, 0.80); /* SEAS academic color with light transparency for the row hover effect */
-                color: white;
-            }
-
-            td.am {
-                background: rgba(78, 173, 171, 0.80); /* SEAS academic color with light transparency for the row hover effect */
-                color: black;
-            }
-
-            td.ap {
-                background: rgba(206, 219, 81, 0.80); /* SEAS academic color with light transparency for the row hover effect */
-                color: black;
-            }
-
-            input {
-                margin-bottom: .25em;
-                width: 90%;
-            }
-
-            input::placeholder {
-                padding-left: .5em;
-            }
-
-            .iconLink { color: #4e88c7; } /* Primary button color - info: medium */
-            .iconLink:hover { color: #084161; } /* Primary highlight color - info: dark */
-
-            hr {
-                FONT-WEIGHT: 500;
-                margin-top: .5rem;
-                margin-bottom: .5rem;
-                border: 0;
-                border-top: 1px solid rgba(0,0,0,.1);
-                width: 90%; 
-            }
-
-            textarea {
-                overflow: auto;
-                resize: vertical;
-                padding: .25em;
-            }
-
-            .table-modal {
-                display: table;
-                border-collapse: collapse;
-                border-spacing: 1px;
-                border-color: grey;
-                font-size: 16px;
-                font-weight: 400;
-                width: 100%;
-            }
-
-            .table-modal .iRtSxQ {
-                background-color: rgb(255, 255, 182550);
-                border-width: 1px;
-            }
-
-            .table-modal td {
-                border: 1px #ccc solid;
-                text-align: center;
-            }
-
-        </style>
-
-        <!-- Styles that should be added to Mark-One -->
-        <style>
-            #roomTimeLocation:after {
-                display: block;
-                height: 0px;
-                clear: both;
-                float: none;
-            }
-                #roomTimeLocation div {
-                float: left;
-                word-break: break-all;
-                padding: 0 3px 0 3px;
-            }
-                #date {
-                width: 40%;
-                font-size: .85em;
-            }
-                #campus {
-                width: 20%;
-            }
-                #room {
-                width: 40%;
-                font-size: .85em;
-            }
-
-                .roomSelect {
-                font-size: .8em
-            }
-        </style>
-
     </head>
     <body>
-
-        <header class="sc-bxivhb bsLcFZ">
-            <a width="175px" href="#" height="50px" class="sc-ifAKCX bSvdsU"><img src="H_SEAS_logo_RGB.png" width="175px"></a>
-            <h1 class="sc-ckVGcZ eEciP">SEAS Course Planning</h1>
-            <div><a href="#">Log out</a></div>
+        <header class="Header"><a width="175px" href="#" height="50px" class="Logo">The Link
+                Description</a>
+            <h1 class="PageTitle">Course Planner</h1>
+            <div><a href="#" class="StyledLink">Logout</a></div>
         </header>
 
-        <!-- Left nav button -->
-        <div>
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <button type="button" class="sc-bdVaJa bADMLE" data-toggle="modal" data-target="#exampleModal">
-                        Create new course
-                    </button>
+        <!-- Sliding sidebar button -->
+        <div class="sideNav__Link">
+            <button type="button" class="Button--primary" data-toggle="modal" data-target="#exampleModal">
+                Create new course
+            </button>
+        </div>
+            
+        <nav class="navSidenav">
+            <ul class="TabList">
+                <li class="TabListItem">
+                    <div class="TabItem"><a href="courses.html" class="StyledLink">Courses</a></div>
+                </li>
+                <li class="TabListItem">
+                    <div class="TabItem"><a href="courses-ncm.html" class="StyledLink">Non class meetings</a></div>
+                </li>
+                <li class="TabListItem">
+                    <div class="TabItem"><a href="faculty.html" class="StyledLink">Faculty</a></div>
+                </li>
+                <li class="TabListItem">
+                    <div class="TabItem"><a href="schedule.html" class="StyledLink">Schedule</a></div>
+                </li>
+                <li class="TabListItem">
+                    <div class="TabItem"><a href="fourYearPlan.html" class="StyledLink">4 Year Plan</a></div>
+                </li>
+                <li class="TabListItem TabActive">
+                    <div class=""><a href="#" class="StyledLink">Courses Admin</a></div>
+                </li>
+                <li class="TabListItem">
+                    <div class="TabItem"><a href="manage_faculty.html" class="StyledLink">Faculty Admin</a></div>
                 </li>
             </ul>
-        </div>
+        </nav>
 
-         <div id="outer-grid">
-
-                <!-- Mark-One nav -->
-                <nav>
-                    <ul class="sc-bZQynM hhGZXE">
-                        <li class="sc-htoDjs icrnXS-first">
-                            <div class="sc-gzVnrw kzaudT"><a href="courses.html" class="sc-kgoBCf cuZvUJ">Courses</a></div>
-                        </li>
-                        <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="faculty.html" class="sc-kgoBCf cuZvUJ">Non class meetings</a></div>
-                        </li>
-                        <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="faculty.html" class="sc-kgoBCf cuZvUJ">Faculty</a></div>
-                        </li>
-                        <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="schedule.html" class="sc-kgoBCf cuZvUJ">Schedule</a></div>
-                        </li>
-                        <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="fourYearPlan.html" class="sc-kgoBCf cuZvUJ">4 Year Plan</a></div>
-                        </li>
-                        <!-- <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="manage_users.html" class="sc-kgoBCf cuZvUJ">Manage Users</a></div>
-                        </li> -->
-                        <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw bWbWht"><a href="#" class="sc-kgoBCf cuZvUJ">Courses Admin</a></div>
-                        </li>
-                        <li class="sc-htoDjs icrnXS">
-                            <div class="sc-gzVnrw kzaudT"><a href="manage_faculty.html" class="sc-kgoBCf cuZvUJ">Faculty Admin</a></div>
-                        </li>   
-                    </ul>
-                </nav>
+        <div id="outer-grid">
 
             <!-- courses -->
             <div class="courses">
 
-                <!-- Table from Mark-One -->
-                <table class="sc-dnqmqq coIxkm-amended hoverTable">
-                    <thead class="sc-gqjmRU iRtSxQ">
+                <!-- Mark One table -->
+                <table class="Table Table--Sidebar">
 
-                        <tr class="sc-gZMcBi jQECIl">
-                            <th scope="col" class="sc-VigVT cbrsHS">
-                                Area
-                                <br>
-                                <select>
-                                    <option value="string:All" label="All" selected="selected">All</option>
-                                    <option value="string:ACS" label="ACS">ACS</option>
-                                    <option value="string:AM" label="AM">AM</option>
-                                    <option value="string:AP" label="AP">AP</option>
-                                    <option value="string:BE" label="BE">BE</option>
-                                    <option value="string:CS" label="CS">CS</option>
-                                    <option value="string:EE" label="EE">EE</option>
-                                    <option value="string:ESE" label="ESE">ESE</option>
-                                    <option value="string:General" label="General">General</option>
-                                    <option value="string:MDE" label="MDE">MDE</option>
-                                    <option value="string:MSMBA" label="MSMBA">MSMBA</option>
-                                    <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
-                                    <option value="string:SEM" label="SEM">SEM</option>
-                                </select>
+                    <thead class="TableHead">
+                        <tr class="TableHeadingCell">
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="semesters">Area</label>
+                                <div>
+                                    <select id="semesters" name="semesters" class="Dropdown">
+                                        <option value="string:All" label="All" selected="selected">All</option>
+                                        <option value="string:ACS" label="ACS">ACS</option>
+                                        <option value="string:AM" label="AM">AM</option>
+                                        <option value="string:AP" label="AP">AP</option>
+                                        <option value="string:BE" label="BE">BE</option>
+                                        <option value="string:CS" label="CS">CS</option>
+                                        <option value="string:EE" label="EE">EE</option>
+                                        <option value="string:ESE" label="ESE">ESE</option>
+                                        <option value="string:General" label="General">General</option>
+                                        <option value="string:MDE" label="MDE">MDE</option>
+                                        <option value="string:MSMBA" label="MSMBA">MSMBA</option>
+                                        <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
+                                        <option value="string:SEM" label="SEM">SEM</option>
+                                    </select>
+                                </div>
                             </th>
-                            <th scope="col" class="sc-VigVT cbrsHS">
-                                Course
-                                <br>
-                                <input type="text">
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="course">Course</label>
+                                <div>
+                                    <input id="course" name="course" type="text" class="TextInput" value="" placeholder="Filter by course">
+                                </div>
                             </th>
-                            <th scope="col" class="sc-VigVT cbrsHS">
-                                Title
-                                <br>
-                                <input type="text">
+                            <th scope="col" class="TableHeadingCell">
+                                <label for="title">Title</label>
+                                <div>
+                                    <input id="title" name="title" type="text" class="TextInput" value="" placeholder="Filter by course title">
+                                </div>
                             </th>
-                            <th scope="col" class="sc-VigVT cbrsHS">
-                                Edit
-                            </th>
+                            <th scope="col" class="TableHeadingCell">Edit</th>
                         </tr>
-
                     </thead>
-                    <tbody class="sc-jTzLTM jxSeiZ">
-
-                        <tr class="sc-gZMcBi cjgueY">
-                            <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                            <td class="sc-iwsKbI bqnYPo">AC 209a</td>
-                            <td class="sc-iwsKbI bqnYPo">Data Science 1: Introduction to Data Science</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                    <tbody class="TableBody">
+                        <tr class="TableRowOdd">
+                            <td class="TableCell acs">ACS</td>
+                            <td class="TableCell ">AC 209a</td>
+                            <td class="TableCell ">Data Science 1: Introduction to Data Science</td>
+                            <td class="TableCell text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
+                                    <i class="far fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
-
-                        <tr class="sc-gZMcBi jQECIl">
-                            <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                            <td class="sc-iwsKbI bqnYPo">AC 209b</td>
-                            <td class="sc-iwsKbI bqnYPo">Data Science 2: Advanced Topics in Data Science</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        <tr class="TableRowEven">
+                            <td class="TableCell acs">ACS</td>
+                            <td class="TableCell ">AC 209b</td>
+                            <td class="TableCell ">Data Science 2: Advanced Topics in Data Science</td>
+                            <td class="TableCell text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
+                                    <i class="far fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
-
-                        <tr class="sc-gZMcBi cjgueY">
-                            <td class="sc-iwsKbI bqnYPo acs">ACS</td>
-                            <td class="sc-iwsKbI bqnYPo">AC 221</td>
-                            <td class="sc-iwsKbI bqnYPo">Critical Thinking in Data Science</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        <tr class="TableRowOdd">
+                            <td class="TableCell acs">ACS</td>
+                            <td class="TableCell ">AC 221</td>
+                            <td class="TableCell ">Critical Thinking in Data Science</td>
+                            <td class="TableCell text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
+                                    <i class="far fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
-
-                        <tr class="sc-gZMcBi jQECIl">
-                            <td class="sc-iwsKbI bqnYPo am">AM</td>
-                            <td class="sc-iwsKbI bqnYPo">AM 010</td>
-                            <td class="sc-iwsKbI bqnYPo">Computing for Science and Engineering</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        <tr class="TableRowEven">
+                            <td class="TableCell am">AM</td>
+                            <td class="TableCell ">AM 010</td>
+                            <td class="TableCell ">Computing for Science and Engineering</td>
+                            <td class="TableCell text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
+                                    <i class="far fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
-
-                        <tr class="sc-gZMcBi cjgueY">
-                            <td class="sc-iwsKbI bqnYPo am">AM</td>
-                            <td class="sc-iwsKbI bqnYPo">AM 021a</td>
-                            <td class="sc-iwsKbI bqnYPo">Mathematical Methods in the Sciences</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        <tr class="TableRowOdd">
+                            <td class="TableCell am">AM</td>
+                            <td class="TableCell ">AM 021a</td>
+                            <td class="TableCell ">Mathematical Methods in the Sciences</td>
+                            <td class="TableCell text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
+                                    <i class="far fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
-
-                        <tr class="sc-gZMcBi jQECIl">
-                            <td class="sc-iwsKbI bqnYPo am">AM</td>
-                            <td class="sc-iwsKbI bqnYPo">AM 021b</td>
-                            <td class="sc-iwsKbI bqnYPo">Mathematical Methods in the Sciences</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        <tr class="TableRowEven">
+                            <td class="TableCell am">AM</td>
+                            <td class="TableCell ">AM 021b</td>
+                            <td class="TableCell ">Mathematical Methods in the Sciences</td>
+                            <td class="TableCell text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
+                                    <i class="far fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
-
-                        <tr class="sc-gZMcBi cjgueY">
-                            <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                            <td class="sc-iwsKbI bqnYPo">AC 275</td>
-                            <td class="sc-iwsKbI bqnYPo">Computational Design of Materials</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        <tr class="TableRowOdd">
+                            <td class="TableCell ap">AP</td>
+                            <td class="TableCell ">AC 275</td>
+                            <td class="TableCell ">Computational Design of Materials</td>
+                            <td class="TableCell text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
+                                    <i class="far fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
-
-                        <tr class="sc-gZMcBi jQECIl">
-                            <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                            <td class="sc-iwsKbI bqnYPo">AP 050a</td>
-                            <td class="sc-iwsKbI bqnYPo">Introduction to Computer Science</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        <tr class="TableRowEven">
+                            <td class="TableCell ap">AP</td>
+                            <td class="TableCell ">AP 050a</td>
+                            <td class="TableCell ">Introduction to Computer Science</td>
+                            <td class="TableCell text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
+                                    <i class="far fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
-
-                        <tr class="sc-gZMcBi cjgueY"> 
-                            <td class="sc-iwsKbI bqnYPo ap">AP</td>
-                            <td class="sc-iwsKbI bqnYPo">AP 050b</td>
-                            <td class="sc-iwsKbI bqnYPo">Introduction to Computer Science (for concentrators unable to take in fall term)</td>
-                            <td class="sc-iwsKbI bqnYPo text-center">
-                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="bADMLE-icon">
-                                    <i class="fas fa-edit" style="margin-top: .15em;"></i> <!-- Adding top margin to align with other icons -->
+                        <tr class="TableRowOdd">
+                            <td class="TableCell ap">AP</td>
+                            <td class="TableCell ">AP 050b</td>
+                            <td class="TableCell ">Introduction to Computer Science (for concentrators unable to take in fall term)</td>
+                            <td class="TableCell text-center">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
+                                    <i class="far fa-folder-open"></i>
                                 </a>
                             </td>
                         </tr>
-
                     </tbody>
                 </table>
             </div><!-- /courses -->
 
-        <!-- Manage courses modal - Create new course -->
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create new course</h5>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="row">
-                            <div class="col-6">
-
-                                <script type="text/javascript">
-                                    function showfield(name){
-                                        if(name=='Other')document.getElementById('div1').innerHTML='<label for="faculty_area_new" class="mt-4">Create a new area</label><input type="text" name="other" id="faculty_area_new" class="form-control" />';
-                                        else document.getElementById('div1').innerHTML='';
-                                    }
-                                </script>
-
-                                <label for="course_area">Area</label>
-                                <br>
-                                <select class="sc-bwzfXH kFoNgS" id="course_area" onchange="showfield(this.options[this.selectedIndex].value)">
-                                    <option>&nbsp;</option>
-                                    <option>ACS</option>
-                                    <option>AM</option>
-                                    <option>AP</option>
-                                    <option>BE</option>
-                                    <option>CS</option>
-                                    <option>EE</option>
-                                    <option>ESE</option>
-                                    <option>General</option>
-                                    <option>MDE</option>
-                                    <option>MSMBA</option>
-                                    <option>Mat&amp;ME</option>
-                                    <option>SEM</option>
-                                    <option value="Other">New area</option>
-                                </select>
-                                <div id="div1"></div>
-                            </div>
-                            <div class="col-6">
-                                <label for="course">Course number</label>
-                                <br>
-                             <input type="text" id="course" placeholder="e.g., AC209">
-                        </div>
+            <!-- Manage courses modal - Create new course -->
+    
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true" style="font-size: 1em; right: 18%; left: 23%; top: 7em;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create new course</h5>
                     </div>
-                    <div class="row">
-                        <hr>
-                        <div class="col-12">
-                            <label for="courseTitle">Title</label>
-                            <br>
-                            <input type="text" id="courseTitle" aria-describedby="firstName" placeholder="e.g., Data Science">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <hr>
-                        <div class="col-8">
-                            <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-                            <script>
-                                $(document).ready(function(){
-                                    var next = 1;
-                                    $(".add-more").click(function(e){
-                                        e.preventDefault();
-                                        var addto = "#field" + next;
-                                        var addRemove = "#field" + (next);
-                                        next = next + 1;
-                                        var newIn = '<input autocomplete="off" class="form-control" style="width: 50%;" id="field' + next + '" name="field' + next + '" type="text">';
-                                        var newInput = $(newIn);
-                                        var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me ml-1 btn-sm"><i class="fas fa-minus"></i></button></div><div id="field">';
-                                        var removeButton = $(removeBtn);
-                                        $(addto).after(newInput);
-                                        $(addRemove).after(removeButton);
-                                        $("#field" + next).attr('data-source',$(addto).attr('data-source'));
-                                        $("#count").val(next);  
-                                        
-                                            $('.remove-me').click(function(e){
-                                                e.preventDefault();
-                                                var fieldNum = this.id.charAt(this.id.length-1);
-                                                var fieldID = "#field" + fieldNum;
-                                                $(this).remove();
-                                                $(fieldID).remove();
-                                            });
-                                    });                                
-                                });
-                            </script>
-                            <input type="hidden" name="count" value="1" />
-                            <div class="control-group" id="fields">
-                                <label class="control-label" for="field1">Same as...</label>
-                                <div class="controls" id="profs"> 
-                                        <div id="field" class="input-group"><input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="Add 'Same As' course" data-items="8" /><div class="input-group-append"><button id="b1" class="btn btn-secondary add-more ml-1 btn-sm input-group-append" type="button"><i class="fas fa-plus"></i></button></div></div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-6">
+    
+                                    <script type="text/javascript">
+                                        function showfield(name){
+                                            if(name=='Other')document.getElementById('div1').innerHTML='<label for="faculty_area_new" class="mt-4">Create a new area</label><input type="text" name="other" id="faculty_area_new" class="form-control" />';
+                                            else document.getElementById('div1').innerHTML='';
+                                        }
+                                    </script>
+    
+                                    <label for="course_area">Area</label>
+                                    <br>
+                                    <select class="Dropdown" id="course_area" onchange="showfield(this.options[this.selectedIndex].value)">
+                                        <option>&nbsp;</option>
+                                        <option>ACS</option>
+                                        <option>AM</option>
+                                        <option>AP</option>
+                                        <option>BE</option>
+                                        <option>CS</option>
+                                        <option>EE</option>
+                                        <option>ESE</option>
+                                        <option>General</option>
+                                        <option>MDE</option>
+                                        <option>MSMBA</option>
+                                        <option>Mat&amp;ME</option>
+                                        <option>SEM</option>
+                                        <option value="Other">New area</option>
+                                    </select>
+                                    <div id="div1"></div>
+                                </div>
+                                <div class="col-6">
+                                    <label for="course">Course number</label>
+                                    <div>
+                                        <input id="course" name="course" type="text" class="TextInput" value="" placeholder="e.g., AC209">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-4">
-                            <label for="undergraduate">
-                                Undergraduate
-                            </label>
-                            <br>
-                            <input type="checkbox" id="undergraduate">
-                        </div>
-
-                    </div>
-
-                        <div class="row">
-                            <hr>
-                            <div class="col-6">
-                                <label for="courseSEAS">In SEAS</label>
-                                <br>
-                                <select id="courseSEAS">
-                                    <option>Yes</a>
-                                    <option>EPS</a>
-                                    <option>No</option>
-                                </select>
-                            </div>
-
-                            <div class="fcol-6">
-                                <label for="termPattern">Term Pattern</label>
-                                <br>
-                                <select id="termPattern">
-                                    <option>Fall</a>
-                                    <option>Spring</a>
-                                    <option>Both</option>
-                                </select>
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="sc-bdVaJa kxWoHZ" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">Create</button>
-                </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Manage courses modal - Edit existing course -->
-
-        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit course</h5>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="row">
-                            <div class="col-6">
-
-                                <script type="text/javascript">
-                                    function showfield(name){
-                                        if(name=='Other')document.getElementById('div1').innerHTML='<label for="faculty_area_new" class="mt-4">Create a new area</label><input type="text" name="other" id="faculty_area_new" class="form-control" />';
-                                        else document.getElementById('div1').innerHTML='';
-                                    }
-                                </script>
-
-                                <label for="course_area">Area</label>
-                                <br>
-                                <select class="sc-bwzfXH kFoNgS" id="course_area" onchange="showfield(this.options[this.selectedIndex].value)">
-                                    <option>ACS</option>
-                                    <option>AM</option>
-                                    <option>AP</option>
-                                    <option>BE</option>
-                                    <option>CS</option>
-                                    <option>EE</option>
-                                    <option>ESE</option>
-                                    <option>General</option>
-                                    <option>MDE</option>
-                                    <option>MSMBA</option>
-                                    <option>Mat&amp;ME</option>
-                                    <option>SEM</option>
-                                    <option value="Other">New area</option>
-                                </select>
-                                <div id="div1"></div>
-                            </div>
-                            <div class="col-6">
-                                <label for="course">Course number</label>
-                                <br>
-                             <input type="text" id="course" placeholder="e.g., AC209" value="AC 207">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <hr>
-                        <div class="col-12">
-                            <label for="courseTitle">Title</label>
-                            <br>
-                            <input type="text" id="courseTitle" aria-describedby="firstName" placeholder="e.g., Data Science" value="Computational Foundations of Data Science">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <hr>
-                        <div class="col-8">
-                            <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-                            <script>
-                                $(document).ready(function(){
-                                    var next = 1;
-                                    $(".add-more").click(function(e){
-                                        e.preventDefault();
-                                        var addto = "#field" + next;
-                                        var addRemove = "#field" + (next);
-                                        next = next + 1;
-                                        var newIn = '<input autocomplete="off" class="form-control" style="width: 50%;" id="field' + next + '" name="field' + next + '" type="text">';
-                                        var newInput = $(newIn);
-                                        var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me ml-1 btn-sm"><i class="fas fa-minus"></i></button></div><div id="field">';
-                                        var removeButton = $(removeBtn);
-                                        $(addto).after(newInput);
-                                        $(addRemove).after(removeButton);
-                                        $("#field" + next).attr('data-source',$(addto).attr('data-source'));
-                                        $("#count").val(next);  
-                                        
-                                            $('.remove-me').click(function(e){
-                                                e.preventDefault();
-                                                var fieldNum = this.id.charAt(this.id.length-1);
-                                                var fieldID = "#field" + fieldNum;
-                                                $(this).remove();
-                                                $(fieldID).remove();
-                                            });
-                                    });                                
-                                });
-                            </script>
-                            <input type="hidden" name="count" value="1" />
-                            <div class="control-group" id="fields">
-                                <label class="control-label" for="field1">Same as...</label>
-                                <div class="controls" id="profs"> 
-                                        <div id="field" class="input-group"><input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="Add 'Same As' course" data-items="8" /><div class="input-group-append"><button id="b1" class="btn btn-secondary add-more ml-1 btn-sm input-group-append" type="button"><i class="fas fa-plus"></i></button></div></div>
+                            <div class="row">
+                                <hr>
+                                <div class="col-12">
+                                    <label for="courseTitle">Title</label>
+                                    <div>
+                                        <input id="courseTitle" name="courseTitle" type="text" class="TextInput" value="" placeholder="e.g., Data Science">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-4">
-                            <label for="undergraduate">
-                                Undergraduate
-                            </label>
-                            <br>
-                            <input type="checkbox" id="undergraduate">
-                        </div>
-
+                            <div class="row">
+                                <hr>
+                                <div class="col-8">
+                                    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+                                    <script>
+                                        $(document).ready(function(){
+                                            var next = 1;
+                                            $(".add-more").click(function(e){
+                                                e.preventDefault();
+                                                var addto = "#field" + next;
+                                                var addRemove = "#field" + (next);
+                                                next = next + 1;
+                                                var newIn = '<input autocomplete="off" class="form-control" style="width: 50%;" id="field' + next + '" name="field' + next + '" type="text">';
+                                                var newInput = $(newIn);
+                                                var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me ml-1 btn-sm"><i class="fas fa-minus"></i></button></div><div id="field">';
+                                                var removeButton = $(removeBtn);
+                                                $(addto).after(newInput);
+                                                $(addRemove).after(removeButton);
+                                                $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+                                                $("#count").val(next);  
+                                                
+                                                    $('.remove-me').click(function(e){
+                                                        e.preventDefault();
+                                                        var fieldNum = this.id.charAt(this.id.length-1);
+                                                        var fieldID = "#field" + fieldNum;
+                                                        $(this).remove();
+                                                        $(fieldID).remove();
+                                                    });
+                                            });                                
+                                        });
+                                    </script>
+                                    <input type="hidden" name="count" value="1" />
+                                    <div class="control-group" id="fields">
+                                        <label for="field1" class="control-label">Same as..</label>
+                                        <div class="controls" id="profs"> 
+                                                <div id="field" class="input-group"><input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="Add 'Same As' course" data-items="8" /><div class="input-group-append"><button id="b1" class="btn btn-secondary add-more ml-1 btn-sm input-group-append" type="button"><i class="fas fa-plus"></i></button></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-4">
+                                    <label for="undergraduate">Undergraduate</label>
+                                    <div>
+                                        <input id="undergraduate" name="courseTitle" type="checkbox">
+                                    </div>
+                                </div>
+        
+                            </div>
+                            <div class="row">
+                                <hr>
+                                <div class="col-6">
+                                    <label for="courseSEAS">In SEAS</label>
+                                    <br>
+                                    <select id="courseSEAS" class="Dropdown">
+                                        <option>Yes</a>
+                                        <option>EPS</a>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+    
+                                <div class="col-6">
+                                    <label for="termPattern">Term Pattern</label>
+                                    <br>
+                                    <select id="termPattern" class="Dropdown">
+                                        <option>Fall</a>
+                                        <option>Spring</a>
+                                        <option>Both</option>
+                                    </select>
+                                </div>
+    
+                            </div>
+                        </form>
                     </div>
-
-                        <div class="row">
-                            <hr>
-                            <div class="col-6">
-                                <label for="courseSEAS">In SEAS</label>
-                                <br>
-                                <select id="courseSEAS">
-                                    <option>Yes</a>
-                                    <option>EPS</a>
-                                    <option>No</option>
-                                </select>
-                            </div>
-
-                            <div class="fcol-6">
-                                <label for="termPattern">Term Pattern</label>
-                                <br>
-                                <select id="termPattern">
-                                    <option>Fall</a>
-                                    <option>Spring</a>
-                                    <option>Both</option>
-                                </select>
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="sc-bdVaJa kxWoHZ" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="sc-bdVaJa bADMLE" data-dismiss="modal">Create</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="Button--primary" data-dismiss="modal">Create</button>
+                    </div>
+                    </div>
                 </div>
             </div>
+    
+            <!-- Manage courses modal - Edit existing course -->
+    
+            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit course</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-6">
+    
+                                    <script type="text/javascript">
+                                        function showfield(name){
+                                            if(name=='Other')document.getElementById('div1').innerHTML='<label for="faculty_area_new" class="mt-4">Create a new area</label><input type="text" name="other" id="faculty_area_new" class="form-control" />';
+                                            else document.getElementById('div1').innerHTML='';
+                                        }
+                                    </script>
+    
+                                    <label for="course_area">Area</label>
+                                    <br>
+                                    <select class="Dropdown" id="course_area" onchange="showfield(this.options[this.selectedIndex].value)">
+                                        <option>&nbsp;</option>
+                                        <option selected>ACS</option>
+                                        <option>AM</option>
+                                        <option>AP</option>
+                                        <option>BE</option>
+                                        <option>CS</option>
+                                        <option>EE</option>
+                                        <option>ESE</option>
+                                        <option>General</option>
+                                        <option>MDE</option>
+                                        <option>MSMBA</option>
+                                        <option>Mat&amp;ME</option>
+                                        <option>SEM</option>
+                                        <option value="Other">New area</option>
+                                    </select>
+                                    <div id="div1"></div>
+                                </div>
+                                <div class="col-6">
+                                    <label for="course">Course number</label>
+                                    <div>
+                                        <input id="course" name="course" type="text" class="TextInput" value="AC 207" placeholder="e.g., AC209">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <hr>
+                                <div class="col-12">
+                                    <label for="courseTitle">Title</label>
+                                    <div>
+                                        <input id="courseTitle" name="courseTitle" type="text" class="TextInput" value="Computational Foundations of Data Science" placeholder="e.g., Data Science">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <hr>
+                                <div class="col-8">
+                                    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+                                    <script>
+                                        $(document).ready(function(){
+                                            var next = 1;
+                                            $(".add-more").click(function(e){
+                                                e.preventDefault();
+                                                var addto = "#field" + next;
+                                                var addRemove = "#field" + (next);
+                                                next = next + 1;
+                                                var newIn = '<input autocomplete="off" class="form-control" style="width: 50%;" id="field' + next + '" name="field' + next + '" type="text">';
+                                                var newInput = $(newIn);
+                                                var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me ml-1 btn-sm"><i class="fas fa-minus"></i></button></div><div id="field">';
+                                                var removeButton = $(removeBtn);
+                                                $(addto).after(newInput);
+                                                $(addRemove).after(removeButton);
+                                                $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+                                                $("#count").val(next);  
+                                                
+                                                    $('.remove-me').click(function(e){
+                                                        e.preventDefault();
+                                                        var fieldNum = this.id.charAt(this.id.length-1);
+                                                        var fieldID = "#field" + fieldNum;
+                                                        $(this).remove();
+                                                        $(fieldID).remove();
+                                                    });
+                                            });                                
+                                        });
+                                    </script>
+                                    <input type="hidden" name="count" value="1" />
+                                    <div class="control-group" id="fields">
+                                        <label for="field1" class="control-label">Same as..</label>
+                                        <div class="controls" id="profs"> 
+                                                <div id="field" class="input-group"><input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="Add 'Same As' course" data-items="8" /><div class="input-group-append"><button id="b1" class="btn btn-secondary add-more ml-1 btn-sm input-group-append" type="button"><i class="fas fa-plus"></i></button></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-4">
+                                    <label for="undergraduate">Undergraduate</label>
+                                    <div>
+                                        <input id="undergraduate" name="courseTitle" type="checkbox" checked>
+                                    </div>
+                                </div>
+        
+                            </div>
+                            <div class="row">
+                                <hr>
+                                <div class="col-6">
+                                    <label for="courseSEAS">In SEAS</label>
+                                    <br>
+                                    <select id="courseSEAS" class="Dropdown">
+                                        <option selected>Yes</a>
+                                        <option>EPS</a>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+    
+                                <div class="col-6">
+                                    <label for="termPattern">Term Pattern</label>
+                                    <br>
+                                    <select id="termPattern" class="Dropdown">
+                                        <option selected>Fall</a>
+                                        <option>Spring</a>
+                                        <option>Both</option>
+                                    </select>
+                                </div>
+    
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="Button--primary" data-dismiss="modal">Create</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- Optional Bootstrap JavaScript -->
@@ -1157,7 +502,7 @@
         <!--Sidebar-->
         <script>
             function openNav() {
-                document.getElementById("mySidenav").style.width = "20em";
+                document.getElementById("mySidenav").style.width = "13em";
             }
 
             function closeNav() {
@@ -1168,6 +513,7 @@
         <!-- Mark-One JavaScript -->
         <script src="https://seas-computing.github.io/mark-one/assets~main5f947c6db2fbbe4cd0f0.js"></script>
         <script src="https://seas-computing.github.io/mark-one/build/bundle.2043da72.js"></script>
+
 
     </body>
 </html>
