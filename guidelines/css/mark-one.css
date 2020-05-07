@@ -14,15 +14,22 @@ html, body {
     padding: 0px;
 }
 
+/* Button--*Align */
+/*#region
+    /* Renamed Mark One class.lgcYDB to Button--primary */
+    .Button--leftAlign {
+        margin-right: auto!important;
+    }
+    
+    .Button--rightAlign {
+        float: right!important;
+    }
+
+/*#endregion*/
+  
+
 /* *** Buttons *** */
 
-.Button--leftAlign {
-    margin-right: auto!important;
-}
-
-.Button--rightAlign {
-    float: right!important;
-}
 
 /* Button--primary */
 /*#region
@@ -201,7 +208,6 @@ html, body {
 
 /*#endregion*/
 
-
 /* BorderlessButton--danger */
 /*#region
 
@@ -225,6 +231,16 @@ html, body {
 
 /*#endregion*/
 
+
+/* BorderlessButton--empty */
+/*#region
+
+/* Renaming Mark One .empty toBorderlessButton--danger */
+.BorderlessButton--empty {
+    margin-right: 2.3em;
+}
+
+/*#endregion*/
 
 
 /* *** Link - icon *** */
@@ -631,6 +647,17 @@ html, body {
         float: right;
     }
 
+    /* Non Mark One style to narrow te width of a column */
+
+    .TableHeadingCell--20 {
+        font-weight: 600;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(152, 152, 152);
+        border-image: initial;
+        width: 20em;
+    }
+
 /*#endregion*/
 
 
@@ -681,7 +708,7 @@ html, body {
     /* Rename Mark One class .fjsRKO to .TabListItem*/
     .TabListItem {
         margin-bottom: -1px;
-        padding: 0px 1em;
+        padding: 0px .5em; /* Reducing changing from padding: 0px 1em; to padding: 0px .5em; to avoid wrapping on smaller displays */
     }
     
     li {
@@ -738,6 +765,23 @@ html, body {
 
 /* Non Mark One styles */
 
+.modal-body > h2 {
+    font-size: 1.2rem;
+}
+
+.modal-header > h2 {
+    font-size: 1.2rem;
+}
+
+/*#endregion*/
+
+
+
+/* *** Modal - Courses *** */
+/*#region*/
+
+/* Non Mark One styles */
+
 .Table--noHover tr:hover {
     background-color: #fff;
 }
@@ -755,8 +799,6 @@ html, body {
 .TextInput--nolabel > label {
     display: none;
 }
-
-/* Modals for Course tabs */
 
 /* Modal for instructors */
 
@@ -792,9 +834,10 @@ html, body {
 
 /*#endregion*/
 
+
 /* *** Sliding Sidenav *** */
 /*#region*/
-    /* Not yet Mark One styles */
+    /* Not Mark One styles */
 
     /*CSS Grid*/
 
@@ -832,8 +875,8 @@ html, body {
     }
 
     .sideNav-column {
-        padding-left: .5em;
         margin-top: 6em;
+        margin-left: -.5em;
         z-index: 1000;
     }
 
@@ -849,7 +892,7 @@ html, body {
     }
 
     .navSidenav {
-        margin-left: 10em;
+        margin-left: 11.5em;
     }
 
     .sideNav__Link {
@@ -862,6 +905,111 @@ html, body {
     .sideNav--inside__Link {
         margin-left: 1.6em;
         margin-top: .6em;
+    }
+/* Offset caused by highlightig the Non class meetings tab */
+    .sideNav--ncm--inside__Link {
+        margin-left: 2.6em;
+        margin-top: .6em;
+    }
+
+/*#endregion*/
+
+
+/* *** Non class meetings *** */
+/*#region*/
+    /* Not  Mark One styles */
+
+    .roomTimeLocation:after {
+        display: block;
+        height: 0px;
+        clear: both;
+        float: none;
+    }
+    .roomTimeLocation div {
+        float: left;
+        word-break: break-all;
+        padding: 0 3px 0 3px;
+    }
+    .date {
+        width: 40%;
+        font-size: .85em;
+    }
+    .campus {
+        width: 10%;
+    }
+    .room {
+        width: 40%;
+        font-size: .85em;
+    }
+    .icon {
+        width: 10%;
+    }
+    
+    .roomSelect {
+        font-size: .8em
+    }
+
+/*#endregion*/
+
+
+/* *** Modal - Non class meetings *** */
+/*#region*/
+    /* Not Mark One styles */
+    
+    .roomSelect {
+        padding: 6px 3px 6px 3px;
+        border-bottom: 1px solid #ddd;
+        height: 3.5em;
+    }
+    
+    .roomSelect:after {
+        display: block;
+        height: 0px;
+        clear: both;
+        float: none;
+    }
+    .roomSelect div {
+        float: left;
+        word-break: break-all;
+        padding: 0 3px 0 3px;
+    }
+    .roomSelect__date {
+        width: 15%;
+    }
+    .roomSelect__icon {
+        width: 3%;
+    }
+    .roomSelect__time {
+        width: 25%;
+    }
+    .roomSelect__room {
+        width: 35%;
+    }
+    .roomSelect__edit {
+        width: 22%;
+    }
+    .roomSelect__showroom {
+        width: 22%;
+    }
+    .roomSelect__addnewtime {
+        width: 100%;
+    }
+
+    /* Disabled state for forms, icons and text */
+    .Dropdown--disabled {
+        color: #707070;
+    }
+
+    .icon--disabled {
+        color: #757575;
+    }
+
+    .text--disabled {
+        color: #757575;
+    }
+
+    .border-top {
+        border-top: 1px solid #ddd
     }
 
 /*#endregion*/
