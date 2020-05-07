@@ -708,7 +708,7 @@ html, body {
     /* Rename Mark One class .fjsRKO to .TabListItem*/
     .TabListItem {
         margin-bottom: -1px;
-        padding: 0px 1em;
+        padding: 0px .5em; /* Reducing changing from padding: 0px 1em; to padding: 0px .5em; to avoid wrapping on smaller displays */
     }
     
     li {
@@ -899,11 +899,11 @@ html, body {
         margin-left: 1.6em;
         margin-top: 0.3em;
         position: absolute;
-        width: 8em;
+        width: 10em;
     }
 
     .sideNav--inside__Link {
-        margin-left: 1.6em;
+        margin-left: 2.6em;
         margin-top: .6em;
     }
 /* Offset caused by highlightig the Non class meetings tab */
