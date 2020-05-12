@@ -238,31 +238,24 @@
                             <div class="row">
                                 <div class="col-6">
     
-                                    <script type="text/javascript">
-                                        function showfield(name){
-                                            if(name=='Other')document.getElementById('div1').innerHTML='<label for="faculty_area_new" class="mt-4">Create a new area</label><input type="text" name="other" id="faculty_area_new" class="form-control" />';
-                                            else document.getElementById('div1').innerHTML='';
-                                        }
-                                    </script>
-    
                                     <label for="faculty_area">Area</label>
-                                    <br>
-                                    <select class="Dropdown" id="faculty_area" onchange="showfield(this.options[this.selectedIndex].value)">
-                                        <option>&nbsp;</option>
-                                        <option>ACS</option>
-                                        <option>AM</option>
-                                        <option>AP</option>
-                                        <option>BE</option>
-                                        <option>CS</option>
-                                        <option>EE</option>
-                                        <option>ESE</option>
-                                        <option>General</option>
-                                        <option>MDE</option>
-                                        <option>MSMBA</option>
-                                        <option>Mat&amp;ME</option>
-                                        <option>SEM</option>
-                                    </select>
-                                    <div id="div1"></div>
+                                    <div>
+                                        <select class="Dropdown" id="faculty_area">
+                                            <option>&nbsp;</option>
+                                            <option>ACS</option>
+                                            <option>AM</option>
+                                            <option>AP</option>
+                                            <option>BE</option>
+                                            <option>CS</option>
+                                            <option>EE</option>
+                                            <option>ESE</option>
+                                            <option>General</option>
+                                            <option>MDE</option>
+                                            <option>MSMBA</option>
+                                            <option>Mat&amp;ME</option>
+                                            <option>SEM</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-6">
                                     <label for="huid">HUID</label>
@@ -272,7 +265,6 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <hr>
                                 <div class="col-12">
                                     <label for="firstName">First name</label>
                                     <div>
@@ -281,7 +273,6 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <hr>
                                 <div class="col-12">
                                     <label for="lastName">Last name</label>
                                     <div>
@@ -290,8 +281,15 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <hr>
-                                <div class="col-4">
+                                <div class="col-12">
+                                    <label for="join">Join with...</label>
+                                    <div>
+                                        <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
                                     <label for="facultyCategory">Category</label>
                                     <div>
                                         <select id="facultyCategory" class="Dropdown">
@@ -300,12 +298,6 @@
                                             <option>Non-ladder</option>
                                             <option>Non-SEAS ladder</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="col-8">
-                                    <label for="join">Join with...</label>
-                                    <div>
-                                        <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry">
                                     </div>
                                 </div>
                             </div>
@@ -332,30 +324,23 @@
                             <div class="row">
                                 <div class="col-6">
     
-                                    <script type="text/javascript">
-                                        function showfield(name){
-                                            if(name=='Other')document.getElementById('div1').innerHTML='<label for="faculty_area_new" class="mt-4">Create a new area</label><input type="text" name="other" id="faculty_area_new" class="form-control" />';
-                                            else document.getElementById('div1').innerHTML='';
-                                        }
-                                    </script>
-    
                                     <label for="course_area">Area</label>
-                                    <br>
-                                    <select class="sc-bwzfXH kFoNgS" id="course_area" onchange="showfield(this.options[this.selectedIndex].value)">
-                                        <option>ACS</option>
-                                        <option>AM</option>
-                                        <option>AP</option>
-                                        <option>BE</option>
-                                        <option>CS</option>
-                                        <option>EE</option>
-                                        <option>ESE</option>
-                                        <option>General</option>
-                                        <option>MDE</option>
-                                        <option>MSMBA</option>
-                                        <option>Mat&amp;ME</option>
-                                        <option>SEM</option>
-                                    </select>
-                                    <div id="div1"></div>
+                                    <div>
+                                        <select class="sc-bwzfXH kFoNgS" id="course_area">
+                                            <option>ACS</option>
+                                            <option>AM</option>
+                                            <option>AP</option>
+                                            <option>BE</option>
+                                            <option>CS</option>
+                                            <option>EE</option>
+                                            <option>ESE</option>
+                                            <option>General</option>
+                                            <option>MDE</option>
+                                            <option>MSMBA</option>
+                                            <option>Mat&amp;ME</option>
+                                            <option>SEM</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-6">
                                     <label for="huid">HUID</label>
@@ -365,7 +350,6 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <hr>
                                 <div class="col-12">
                                     <label for="firstName">First name</label>
                                     <div>
@@ -374,7 +358,6 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <hr>
                                 <div class="col-12">
                                     <label for="surname">Last name</label>
                                     <div>
@@ -383,8 +366,15 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <hr>
-                                <div class="col-4">
+                                <div class="col-12">
+                                    <label for="join">Join with...</label>
+                                    <div>
+                                        <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
                                     <label for="facultyCategory">Category</label>
                                     <div>
                                         <select id="facultyCategory" class="Dropdown">
@@ -393,12 +383,6 @@
                                             <option selected>Non-ladder</option>
                                             <option>Non-SEAS ladder</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="col-8">
-                                    <label for="join">Join with...</label>
-                                    <div>
-                                        <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry">
                                     </div>
                                 </div>
                             </div>
