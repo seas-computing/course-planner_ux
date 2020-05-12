@@ -303,40 +303,9 @@
                                     </div>
                                 </div>
                                 <div class="col-8">
-                                    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-                                    <script>
-                                        $(document).ready(function(){
-                                            var next = 1;
-                                            $(".add-more").click(function(e){
-                                                e.preventDefault();
-                                                var addto = "#field" + next;
-                                                var addRemove = "#field" + (next);
-                                                next = next + 1;
-                                                var newIn = '<input autocomplete="off" class="form-control" style="width: 50%;" id="field' + next + '" name="field' + next + '" type="text">';
-                                                var newInput = $(newIn);
-                                                var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me ml-1 btn-sm"><i class="fas fa-minus"></i></button></div><div id="field">';
-                                                var removeButton = $(removeBtn);
-                                                $(addto).after(newInput);
-                                                $(addRemove).after(removeButton);
-                                                $("#field" + next).attr('data-source',$(addto).attr('data-source'));
-                                                $("#count").val(next);  
-                                                
-                                                    $('.remove-me').click(function(e){
-                                                        e.preventDefault();
-                                                        var fieldNum = this.id.charAt(this.id.length-1);
-                                                        var fieldID = "#field" + fieldNum;
-                                                        $(this).remove();
-                                                        $(fieldID).remove();
-                                                    });
-                                            });                                
-                                        });
-                                    </script>
-                                    <input type="hidden" name="count" value="1" />
-                                    <div class="control-group" id="fields">
-                                        <label class="control-label" for="field1">Same as...</label>
-                                        <div class="controls" id="profs"> 
-                                                <div id="field" class="input-group"><input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="Add 'Join with' entry" data-items="8" /><div class="input-group-append"><button id="b1" class="btn btn-secondary add-more ml-1 btn-sm input-group-append" type="button"><i class="fas fa-plus"></i></button></div></div>
-                                        </div>
+                                    <label for="join">Join with...</label>
+                                    <div>
+                                        <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry">
                                     </div>
                                 </div>
                             </div>
@@ -427,43 +396,11 @@
                                     </div>
                                 </div>
                                 <div class="col-8">
-                                    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-                                    <script>
-                                        $(document).ready(function(){
-                                            var next = 1;
-                                            $(".add-more").click(function(e){
-                                                e.preventDefault();
-                                                var addto = "#field" + next;
-                                                var addRemove = "#field" + (next);
-                                                next = next + 1;
-                                                var newIn = '<input autocomplete="off" class="form-control" style="width: 50%;" id="field' + next + '" name="field' + next + '" type="text">';
-                                                var newInput = $(newIn);
-                                                var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me ml-1 btn-sm"><i class="fas fa-minus"></i></button></div><div id="field">';
-                                                var removeButton = $(removeBtn);
-                                                $(addto).after(newInput);
-                                                $(addRemove).after(removeButton);
-                                                $("#field" + next).attr('data-source',$(addto).attr('data-source'));
-                                                $("#count").val(next);  
-                                                
-                                                    $('.remove-me').click(function(e){
-                                                        e.preventDefault();
-                                                        var fieldNum = this.id.charAt(this.id.length-1);
-                                                        var fieldID = "#field" + fieldNum;
-                                                        $(this).remove();
-                                                        $(fieldID).remove();
-                                                    });
-                                            });                                
-                                        });
-                                    </script>
-                                    <input type="hidden" name="count" value="1" class="TextInput" />
-                                    <div class="control-group" id="fields">
-                                        <label class="control-label" for="field1">Join with...</label>
-                                        <div class="controls" id="profs"> 
-                                                <div id="field" class="input-group"><input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="Add 'Join with' entry" data-items="8" /><div class="input-group-append"><button id="b1" class="btn btn-secondary add-more ml-1 btn-sm input-group-append" type="button"><i class="fas fa-plus"></i></button></div></div>
-                                        </div>
+                                    <label for="join">Join with...</label>
+                                    <div>
+                                        <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry">
                                     </div>
                                 </div>
-    
                             </div>
                         </form>
                     </div>
