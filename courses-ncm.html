@@ -34,16 +34,8 @@
             <h1 class="PageTitle">Course Planner</h1>
             <div><a href="#" class="StyledLink">Logout</a></div>
         </header>
-
-        <!-- Sliding sidebar button -->
-        <div class="sideNav__Link">
-            <a href="#" class="Link sideNav__Link" onclick="openNav()">
-                Settings
-                <i class="far fa-arrow-alt-circle-right"></i>
-            </a>
-        </div>
             
-        <nav class="navSidenav">
+        <nav class="ml-4">
             <ul class="TabList">
                 <li class="TabListItem">
                     <div class="TabItem"><a href="courses.html" class="StyledLink">Courses</a></div>
@@ -105,8 +97,33 @@
                 </div>
             </div>
 
+
+
+        <!-- Sliding sidebar button -->
+        <div class="sideNav__Link">
+            <a href="#" class="Link sideNav__Link mb-1" onclick="openNav()">
+                Settings
+                <i class="far fa-arrow-alt-circle-right"></i>
+            </a>
+        </div>
+
             <!-- courses -->
             <div class="courses">
+
+                <div class="align-center TextInput--nolabel mb-1">
+                    <label for="semesters">Academic year</label>
+                    <select id="semesters" name="semesters" class="Dropdown_nowidth">
+                        <option value="string:2020-2021" label="Fall 2020 - Spring 2021">Fall 2020 - Spring 2021</option>
+                        <option value="string:2019-2020" label="Fall 2019 - Spring 2020" selected="selected">Fall 2019 - Spring 2020</option>
+                        <option value="string:2018-2019" label="Fall 2018 - Spring 2019">Fall 2018 - Spring 2019</option>
+                        <option value="string:2017-2018" label="Fall 2017 - Spring 2018">Fall 2017 - Spring 2018</option>
+                        <option value="string:2016-2017" label="Fall 2016 - Spring 2017">Fall 2016 - Spring 2017</option>
+                        <option value="string:2015-2016" label="Fall 2015 - Spring 2016">Fall 2015 - Spring 2016</option>
+                        <option value="string:2014-2015" label="Fall 2014 - Spring 2015">Fall 2014 - Spring 2015</option>
+                        <option value="string:2013-2014" label="Fall 2013 - Spring 2014">Fall 2013 - Spring 2014</option>
+                    </select>
+                    <input type="submit" class="Button--primary Button--block" value="Show">
+                </div>
 
                 <table class="Table Table--Sidebar">
 
@@ -118,23 +135,17 @@
                     <col>
 
                     <thead class="TableHead">
-                        <tr class="TableHeadingCell">
-                            <td class="TableHeadingCell TableHeadingCell--blank__left">
-                            </td>
-                            <td class="TableHeadingCell TableHeadingCell--blank__left">
-                            </td>
-                            <td class="TableHeadingCell TableHeadingCell--blank__left">
-                            </td>
+                        <tr class="TableHeadingCell hidden" >
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <th scope="colgroup" class="TableHeadingCell--nav">
-                                <button type="button" class="BorderlessButton--primary"><i class="fas fa-arrow-left"></i></button>
                                 Fall 2019
                             </th>
                             <th scope="colgroup" class="TableHeadingCell--nav">
                                 Spring 2020
-                                <button type="button" class="BorderlessButton--primary"><i class="fas fa-arrow-right"></i></button>
                             </th>
-                            <td class="TableHeadingCell TableHeadingCell--blank__right">
-                            </td>
+                            <td></td>
                         </tr>
                         <tr class="TableHeadingCell">
                             <th scope="col" class="TableHeadingCell">
