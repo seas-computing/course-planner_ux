@@ -990,11 +990,16 @@ html, body {
         font-size: .85em;
     }
     .icon {
-        width: 10%;
+    float: right;
+    margin: -0.5em -1em 0 0;
     }
     
     .roomSelect {
         font-size: .8em
+    }
+
+    hr {
+        width: 80%;
     }
 
 /*#endregion*/
