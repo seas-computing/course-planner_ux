@@ -42,7 +42,6 @@ html, body {
     /* Center align */
     .align-center {
         margin: auto;
-        width: 30%;
     }
 
     .mb-1 {
@@ -572,6 +571,11 @@ html, body {
 
 /* *** Table *** */
 /*#region
+    /* Top align table content */
+
+tbody {
+    vertical-align: top;
+}
     /* Renaming Mark One class .htjfmC to .Table */
     .Table {
         border-collapse: collapse;
@@ -603,7 +607,7 @@ html, body {
         font-weight: 600;
         border-width: 2px;
         border-style: solid;
-        border-color: rgb(152, 152, 152);
+        border-color: rgb(152, 152, 152) rgb(152, 152, 152) rgb(209, 209, 209) rgb(152, 152, 152);
         border-image: initial;
     }
 
