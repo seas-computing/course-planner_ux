@@ -1,6 +1,3 @@
-<!--This version uses opacity to filter courses -->
-<!-- Room view - data from https://registrar.fas.harvard.edu/archived-course-meeting-locations-reports -->
-<!--Added overflow: scroll; to all room instances-->
 <!doctype html>
 
 <html>
@@ -38,13 +35,8 @@
         </header>
 
         <!-- Sliding sidebar button -->
-        <div class="sideNav__Link">
-            <button type="button" class="Button--primary" data-toggle="modal" data-target="#exampleModal">
-                Create new course
-            </button>
-        </div>
             
-        <nav class="navSidenav">
+        <nav class="ml-4">
             <ul class="TabList">
                 <li class="TabListItem">
                     <div class="TabItem"><a href="courses.html" class="StyledLink">Courses</a></div>
@@ -70,7 +62,13 @@
             </ul>
         </nav>
 
-        <div id="outer-grid">
+        <div class="ml-4">
+
+            <div>
+                <button type="button" class="Button--primary mb-1" data-toggle="modal" data-target="#exampleModal">
+                    Create new course
+                </button>
+            </div>
 
             <!-- courses -->
             <div class="courses">
@@ -81,9 +79,21 @@
                     <thead class="TableHead">
                         <tr class="TableHeadingCell">
                             <th scope="col" class="TableHeadingCell">
+                                Area
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Course
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Title
+                            </th>
+                            <th scope="col" class="TableHeadingCell">Edit</th>
+                        </tr>
+                        <tr class="TableHeadingCell">
+                            <td class="TableHeadingCell TextInput--nolabel">
                                 <label for="semesters">Area</label>
                                 <div>
-                                    <select id="semesters" name="semesters" class="Dropdown">
+                                    <select id="semesters" name="semesters" class="Dropdown" aria-describedby="areanote">
                                         <option value="string:All" label="All" selected="selected">All</option>
                                         <option value="string:ACS" label="ACS">ACS</option>
                                         <option value="string:AM" label="AM">AM</option>
@@ -98,27 +108,32 @@
                                         <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
                                         <option value="string:SEM" label="SEM">SEM</option>
                                     </select>
+                                    <span id="areanote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
+                            </td>
+                            <td class="TableHeadingCell TextInput--nolabel">
                                 <label for="course">Course</label>
                                 <div>
-                                    <input id="course" name="course" type="text" class="TextInput" value="" placeholder="Filter by course">
+                                    <input id="course" name="course" type="text" class="TextInput" value=""
+                                        placeholder="Filter by course" aria-describedby="coursenote">
+                                        <span id="coursenote" class="hidden">The table will be filtered as characters are typed in this input form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
+                            </td>
+                            <td class="TableHeadingCell TextInput--nolabel">
                                 <label for="title">Title</label>
                                 <div>
-                                    <input id="title" name="title" type="text" class="TextInput" value="" placeholder="Filter by course title">
+                                    <input id="title" name="title" type="text" class="TextInput" value=""
+                                        placeholder="Filter by course title" aria-describedby="titlenote">
+                                        <span id="titlenote" class="hidden">The table will be filtered as characters are typed in this input form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">Edit</th>
+                            </td>
+                            <td scope="col" class="TableHeadingCell"></td>
                         </tr>
                     </thead>
                     <tbody class="TableBody">
                         <tr class="TableRowOdd">
                             <td class="TableCell acs">ACS</td>
-                            <td class="TableCell ">AC 209a</td>
+                            <th scope="row" class="TableCell">AC 209a</th>
                             <td class="TableCell ">Data Science 1: Introduction to Data Science</td>
                             <td class="TableCell text-center">
                                 <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
@@ -128,7 +143,7 @@
                         </tr>
                         <tr class="TableRowEven">
                             <td class="TableCell acs">ACS</td>
-                            <td class="TableCell ">AC 209b</td>
+                            <th scope="row" class="TableCell">AC 209b</th>
                             <td class="TableCell ">Data Science 2: Advanced Topics in Data Science</td>
                             <td class="TableCell text-center">
                                 <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
@@ -138,7 +153,7 @@
                         </tr>
                         <tr class="TableRowOdd">
                             <td class="TableCell acs">ACS</td>
-                            <td class="TableCell ">AC 221</td>
+                            <th scope="row" class="TableCell">AC 221</th>
                             <td class="TableCell ">Critical Thinking in Data Science</td>
                             <td class="TableCell text-center">
                                 <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
@@ -148,7 +163,7 @@
                         </tr>
                         <tr class="TableRowEven">
                             <td class="TableCell am">AM</td>
-                            <td class="TableCell ">AM 010</td>
+                            <th scope="row" class="TableCell">AM 010</th>
                             <td class="TableCell ">Computing for Science and Engineering</td>
                             <td class="TableCell text-center">
                                 <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
@@ -158,7 +173,7 @@
                         </tr>
                         <tr class="TableRowOdd">
                             <td class="TableCell am">AM</td>
-                            <td class="TableCell ">AM 021a</td>
+                            <th scope="row" class="TableCell">AM 021a</th>
                             <td class="TableCell ">Mathematical Methods in the Sciences</td>
                             <td class="TableCell text-center">
                                 <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
@@ -168,7 +183,7 @@
                         </tr>
                         <tr class="TableRowEven">
                             <td class="TableCell am">AM</td>
-                            <td class="TableCell ">AM 021b</td>
+                            <th scope="row" class="TableCell">AM 021b</th>
                             <td class="TableCell ">Mathematical Methods in the Sciences</td>
                             <td class="TableCell text-center">
                                 <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
@@ -178,7 +193,7 @@
                         </tr>
                         <tr class="TableRowOdd">
                             <td class="TableCell ap">AP</td>
-                            <td class="TableCell ">AC 275</td>
+                            <th scope="row" class="TableCell">AC 275</th>
                             <td class="TableCell ">Computational Design of Materials</td>
                             <td class="TableCell text-center">
                                 <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
@@ -188,7 +203,7 @@
                         </tr>
                         <tr class="TableRowEven">
                             <td class="TableCell ap">AP</td>
-                            <td class="TableCell ">AP 050a</td>
+                            <th scope="row" class="TableCell">AP 050a</th>
                             <td class="TableCell ">Introduction to Computer Science</td>
                             <td class="TableCell text-center">
                                 <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
@@ -198,7 +213,7 @@
                         </tr>
                         <tr class="TableRowOdd">
                             <td class="TableCell ap">AP</td>
-                            <td class="TableCell ">AP 050b</td>
+                            <th scope="row" class="TableCell">AP 050b</th>
                             <td class="TableCell ">Introduction to Computer Science (for concentrators unable to take in fall term)</td>
                             <td class="TableCell text-center">
                                 <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
