@@ -71,40 +71,6 @@
 
         <div id="outer-grid">
 
-            <!--Sliding sidebar filters-->
-            <div class="sideNav-column" hidden>
-                <div id="mySidenav" class="sidenav">
-                    <div class="sideNav--ncm--inside__Link">
-                        <a href="javascript:void(0)" onclick="closeNav()" class="Link">
-                            Settings
-                            <i class="far fa-arrow-alt-circle-left ml-auto"></i>
-                        </a>
-                    </div>
-                    <form>
-                        <hr>
-                        <div>
-                            <button class="Button--secondary">Download courses report</button>
-                        </div>
-                        <hr>
-                        <div>
-                            <label for="views">Customized view</label>
-                            <div>
-                                <select id="views" name="views" class="Dropdown">
-                                    <option value="default">Default</option>
-                                    <option value="myview">My view</option>
-                                    <option value="newview">New view</option>
-                                </select>
-                            </div>
-                            <button class="Button--secondary">Submit</button>
-                        </div>
-                        <hr>
-                        <div>
-                            <button class="Button--secondary">Show retired courses</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
             <!-- courses -->
             <div class="courses">
 
@@ -113,9 +79,44 @@
                     <thead class="TableHead">
                         <tr class="TableHeadingCell">
                             <th scope="col" class="TableHeadingCell">
+                                Area
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Course
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Title
+                            </th>
+                            <th scope="col" class="TableHeadingCell--20">
+                                F'19 instructors
+                            </th>
+                            <th scope="col" class="TableHeadingCell--20">
+                                S'20 instructors
+                            </th>
+                            <th scope="col" class="TableHeadingCell--20">
+                                F'20 instructors
+                            </th>
+                            <th scope="col" class="TableHeadingCell--20">
+                                S'21 instructors
+                            </th>
+                            <th scope="col" class="TableHeadingCell--20">
+                                F'21 instructors
+                            </th>
+                            <th scope="col" class="TableHeadingCell--20">
+                                S'22 instructors
+                            </th>
+                            <th scope="col" class="TableHeadingCell--20">
+                                F'22 instructors
+                            </th>
+                            <th scope="col" class="TableHeadingCell--20">
+                                S'23 instructors
+                            </th>
+                        </tr>
+                        <tr class="TableHeadingCell">
+                            <td class="TableHeadingCell TextInput--nolabel">
                                 <label for="semesters">Area</label>
                                 <div>
-                                    <select id="semesters" name="semesters" class="Dropdown">
+                                    <select id="semesters" name="semesters" class="Dropdown" aria-describedby="areanote">
                                         <option value="string:All" label="All" selected="selected">All</option>
                                         <option value="string:ACS" label="ACS">ACS</option>
                                         <option value="string:AM" label="AM">AM</option>
@@ -130,68 +131,107 @@
                                         <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
                                         <option value="string:SEM" label="SEM">SEM</option>
                                     </select>
+                                    <span id="areanote" class="hidden">The table will be filtered upon the selection from this
+                                        dropdown</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
+                            </td>
+                            <td class="TableHeadingCell TextInput--nolabel">
                                 <label for="course">Course</label>
                                 <div>
-                                    <input id="course" name="course" type="text" class="TextInput" value="" placeholder="Filter by course">
+                                    <input id="course" name="course" type="text" class="TextInput" value="" placeholder="Filter by course"
+                                        aria-describedby="coursenote">
+                                    <span id="coursenote" class="hidden">The table will be filtered as characters are typed in this input
+                                        form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
+                            </td>
+                            <td class="TableHeadingCell TextInput--nolabel">
                                 <label for="title">Title</label>
                                 <div>
-                                    <input id="title" name="title" type="text" class="TextInput" value="" placeholder="Filter by course title">
+                                    <input id="title" name="title" type="text" class="TextInput" value=""
+                                        placeholder="Filter by course title" aria-describedby="titlenote">
+                                    <span id="titlenote" class="hidden">The table will be filtered as characters are typed in this input
+                                        form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell--20">
+                            </td>
+                            <td class="TableHeadingCell--20 TextInput--nolabel">
                                 <label for="f19">F'19 instructors</label>
                                 <div>
-                                    <input id="f19" name="f19" type="text" class="TextInput" value="" placeholder="Filter by instructor">
+                                    <input id="f19" name="f19" type="text" class="TextInput" value="" placeholder="Filter by instructor"
+                                        aria-describedby="f19note">
+                                    <span id="f19note" class="hidden">The table will be filtered as characters are typed in this input
+                                        form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell--20">
+                            </td>
+                            </td>
+                            <td class="TableHeadingCell--20 TextInput--nolabel">
                                 <label for="s20">S'20 instructors</label>
                                 <div>
-                                    <input id="s20" name="s20" type="text" class="TextInput" value="" placeholder="Filter by instructor">
+                                    <input id="s20" name="s20" type="text" class="TextInput" value="" placeholder="Filter by instructor"
+                                        aria-describedby="s20note">
+                                    <span id="s20note" class="hidden">The table will be filtered as characters are typed in this input
+                                        form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell--20">
+                            </td>
+                            </td>
+                            <td class="TableHeadingCell--20 TextInput--nolabel">
                                 <label for="f20">F'20 instructors</label>
                                 <div>
-                                    <input id="f20" name="f20" type="text" class="TextInput" value="" placeholder="Filter by instructor">
+                                    <input id="f20" name="f20" type="text" class="TextInput" value="" placeholder="Filter by instructor"
+                                        aria-describedby="f20note">
+                                    <span id="f20note" class="hidden">The table will be filtered as characters are typed in this input
+                                        form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell--20">
+                            </td>
+                            </td>
+                            <td class="TableHeadingCell--20 TextInput--nolabel">
                                 <label for="s21">S'21 instructors</label>
                                 <div>
-                                    <input id="s21" name="s21" type="text" class="TextInput" value="" placeholder="Filter by instructor">
+                                    <input id="s21" name="s21" type="text" class="TextInput" value="" placeholder="Filter by instructor"
+                                        aria-describedby="s21note">
+                                    <span id="s21note" class="hidden">The table will be filtered as characters are typed in this input
+                                        form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell--20">
+                            </td>
+                            </td>
+                            <td class="TableHeadingCell--20 TextInput--nolabel">
                                 <label for="f21">F'21 instructors</label>
                                 <div>
-                                    <input id="f21" name="f21" type="text" class="TextInput" value="" placeholder="Filter by instructor">
+                                    <input id="f21" name="f21" type="text" class="TextInput" value="" placeholder="Filter by instructor"
+                                        aria-describedby="f21note">
+                                    <span id="f21note" class="hidden">The table will be filtered as characters are typed in this input
+                                        form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell--20">
+                            </td>
+                            </td>
+                            <td class="TableHeadingCell--20 TextInput--nolabel">
                                 <label for="s22">S'22 instructors</label>
                                 <div>
-                                    <input id="s22" name="s22" type="text" class="TextInput" value="" placeholder="Filter by instructor">
+                                    <input id="s22" name="s22" type="text" class="TextInput" value="" placeholder="Filter by instructor"
+                                        aria-describedby="s22note">
+                                    <span id="s22note" class="hidden">The table will be filtered as characters are typed in this input
+                                        form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell--20">
+                            </td>
+                            </td>
+                            <td class="TableHeadingCell--20 TextInput--nolabel">
                                 <label for="f22">F'22 instructors</label>
                                 <div>
-                                    <input id="f22" name="f22" type="text" class="TextInput" value="" placeholder="Filter by instructor">
+                                    <input id="f22" name="f22" type="text" class="TextInput" value="" placeholder="Filter by instructor"
+                                        aria-describedby="f22note">
+                                    <span id="f22note" class="hidden">The table will be filtered as characters are typed in this input
+                                        form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell--20">
+                            </td>
+                            </td>
+                            <td class="TableHeadingCell--20 TextInput--nolabel">
                                 <label for="s23">S'23 instructors</label>
                                 <div>
-                                    <input id="s23" name="s23" type="text" class="TextInput" value="" placeholder="Filter by instructor">
+                                    <input id="s23" name="s23" type="text" class="TextInput" value="" placeholder="Filter by instructor"
+                                        aria-describedby="s23note">
+                                    <span id="s23note" class="hidden">The table will be filtered as characters are typed in this input
+                                        form</span>
                                 </div>
-                            </th>
+                            </td>
                         </tr>
                     </thead>
                     
