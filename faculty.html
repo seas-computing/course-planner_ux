@@ -34,16 +34,8 @@
             <h1 class="PageTitle">Course Planner</h1>
             <div><a href="#" class="StyledLink">Logout</a></div>
         </header>
-
-        <!-- Sliding sidebar button -->
-        <div class="sideNav__Link">
-            <a href="#" class="Link sideNav__Link" onclick="openNav()">
-                Settings
-                <i class="far fa-arrow-alt-circle-right"></i>
-            </a>
-        </div>
             
-        <nav class="navSidenav">
+        <nav class="ml-4">
             <ul class="TabList">
                 <li class="TabListItem">
                     <div class="TabItem"><a href="courses.html" class="StyledLink">Courses</a></div>
@@ -71,27 +63,37 @@
 
         <div id="outer-grid">
 
-            <!--Sliding sidebar filters-->
-            <div class="sideNav-column">
-                <div id="mySidenav" class="sidenav">
-                    <div class="sideNav--ncm--inside__Link">
-                        <a href="javascript:void(0)" onclick="closeNav()" class="Link">
-                            Settings
-                            <i class="far fa-arrow-alt-circle-left ml-auto"></i>
-                        </a>
-                    </div>
-                    <form>
-                        <hr>
-                        <div>
-                            <button class="Button--secondary">Download faculty report</button>
-                        </div>
-                        <hr>
-                        <div>
-                            <button class="Button--secondary">Show "No longer active" faculty</button>
-                        </div>
-                    </form>
-                </div>
+            <!-- Sliding sidebar button -->
+            <div class="sideNav__Link">
+                <a href="#" class="Link sideNav__Link mb-1" onclick="openNav()" aria-describedby="openoptionsnote">
+                    Options
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                </a>
+                <span id="openoptionsnote" class="hidden">This link visually displays the content below</span>
             </div>
+    
+                <!--Sliding sidebar filters-->
+                <div class="sideNav-column">
+                    <div id="mySidenav" class="sidenav">
+                        <div class="sideNav--ncm--inside__Link">
+                            <a href="javascript:void(0)" onclick="closeNav()" class="Link" aria-describedby="closeoptionsnote">
+                                Options
+                                <i class="far fa-arrow-alt-circle-left ml-auto"></i>
+                            </a>
+                            <span id="closeoptionsnote" class="hidden">This link visually hides the content below</span>
+                        </div>
+                        <form>
+                            <hr>
+                            <div>
+                                <button class="Button--secondary">Download faculty report</button>
+                            </div>
+                            <hr>
+                            <div>
+                                <button class="Button--secondary">Show "No longer active" faculty</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
             <!-- courses -->
             <div class="courses">
@@ -109,6 +111,28 @@
 
                     <thead class="TableHead">
                         <tr class="TableHeadingCell">
+                            <td class="TableHeadingCell--blank__left" colspan="5">
+                            </td>
+                            <td class="TableHeadingCell--blank__left" colspan="4">
+                                <div class="align-center mb-1">
+                                    <label for="semesters">Academic year</label>
+                                    <select id="semesters" name="semesters" class="Dropdown_nowidth" aria-describedby="academicyearnote">
+                                        <option value="string:2020-2021" label="Fall 2020 - Spring 2021">Fall 2020 - Spring 2021</option>
+                                        <option value="string:2019-2020" label="Fall 2019 - Spring 2020" selected="selected">Fall 2019 - Spring 2020</option>
+                                        <option value="string:2018-2019" label="Fall 2018 - Spring 2019">Fall 2018 - Spring 2019</option>
+                                        <option value="string:2017-2018" label="Fall 2017 - Spring 2018">Fall 2017 - Spring 2018</option>
+                                        <option value="string:2016-2017" label="Fall 2016 - Spring 2017">Fall 2016 - Spring 2017</option>
+                                        <option value="string:2015-2016" label="Fall 2015 - Spring 2016">Fall 2015 - Spring 2016</option>
+                                        <option value="string:2014-2015" label="Fall 2014 - Spring 2015">Fall 2014 - Spring 2015</option>
+                                        <option value="string:2013-2014" label="Fall 2013 - Spring 2014">Fall 2013 - Spring 2014</option>
+                                    </select>
+                                    <span id="academicyearnote" class="hidden">The table will show the new terms upon the selection of the dropdown</span>
+                                </div>
+                            </td>
+                            <td class="TableHeadingCell--blank__right">
+                            </td>
+                        </tr>
+                        <tr class="TableHeadingCell">
                             <td class="TableHeadingCell TableHeadingCell--blank__left">
                             </td>
                             <td class="TableHeadingCell TableHeadingCell--blank__left">
@@ -120,21 +144,51 @@
                             <td class="TableHeadingCell TableHeadingCell--blank__left">
                             </td>
                             <th scope="colgroup" class="TableHeadingCell--nav" colspan="2">
-                                <button type="button" class="BorderlessButton--primary"><i class="fas fa-arrow-left"></i></button>
                                 Fall 2019
                             </th>
                             <th scope="colgroup" class="TableHeadingCell--nav" colspan="2">
                                 Spring 2020
-                                <button type="button" class="BorderlessButton--primary"><i class="fas fa-arrow-right"></i></button>
                             </th>
                             <th scope="col" class="TableHeadingCell TableHeadingCell--blank__right">
                             </th>
                         </tr>
                         <tr class="TableHeadingCell">
                             <th scope="col" class="TableHeadingCell">
+                                Area
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Last name
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                First name
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Category
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Join with
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Sabbatical leave
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Courses
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Sabbatical leave
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Courses
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Detail
+                            </th>
+                        </tr>
+                        <tr class="TableHeadingCell">
+                            <td class="TableHeadingCell TextInput--nolabel">
                                 <label for="semesters">Area</label>
                                 <div>
-                                    <select id="semesters" name="semesters" class="Dropdown">
+                                    <select id="semesters" name="semesters" class="Dropdown" aria-describedby="areanote">
                                         <option value="string:All" label="All" selected="selected">All</option>
                                         <option value="string:ACS" label="ACS">ACS</option>
                                         <option value="string:AM" label="AM">AM</option>
@@ -149,22 +203,25 @@
                                         <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
                                         <option value="string:SEM" label="SEM">SEM</option>
                                     </select>
+                                    <span id="areanote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                <label for="surname">Last name</label>
+                            </td>
+                            <td class="TableHeadingCell TextInput--nolabel">
+                                <label for="surname" aria-describedby="surnamenote">Last name</label>
                                 <div>
                                     <input id="surname" name="surname" type="text" class="TextInput" value="" placeholder="Filter by last name">
+                                    <span id="surnamenote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                <label for="name">First name</label>
+                            </td>
+                            <td class="TableHeadingCell TextInput--nolabel">
+                                <label for="name" aria-describedby="namenote">First name</label>
                                 <div>
                                     <input id="name" name="name" type="text" class="TextInput" value="" placeholder="Filter by first name">
+                                    <span id="surnamenote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                <label for="category">Category</label>
+                            </td>
+                            <td class="TableHeadingCell TextInput--nolabel">
+                                <label for="category" aria-describedby="categorynote">Category</label>
                                 <div>
                                     <select id="category" name="category" class="Dropdown">
                                         <option value="string:All" label="All" selected="selected">All</option>
@@ -172,13 +229,12 @@
                                         <option value="string:Nonladder" label="Yes">Non-ladder</option>
                                         <option value="string:Nonseasladder" label="No">Non-SEAS ladder</option>
                                     </select>
+                                    <span id="categorynote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Join with
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                <label for="sabbatical">Sabbatical leave</label>
+                            </td>
+                            <td class="TableHeadingCell"></td>
+                            <td class="TableHeadingCell TextInput--nolabel">
+                                <label for="sabbatical" aria-describedby="sabbaticalnote1">Sabbatical leave</label>
                                 <div>
                                     <select id="sabbatical" name="sabbatical" class="Dropdown">
                                         <option value="string:">All</option>
@@ -189,13 +245,12 @@
                                         <option value="string:Parental Leave" label="Parental Leave">Parental Leave</option>
                                         <option value="string:No Longer Active" label="No Longer Active">No Longer Active</option>
                                     </select>
+                                    <span id="sabbaticalnote1" class="hidden">The table will be filtered upon the selection from this dropdown</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Courses
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                <label for="sabbatical">Sabbatical leave</label>
+                            </td>
+                            <td class="TableHeadingCell"></td>
+                            <td class="TableHeadingCell TextInput--nolabel">
+                                <label for="sabbatical" aria-describedby="sabbaticalnote2">Sabbatical leave</label>
                                 <div>
                                     <select id="sabbatical" name="sabbatical" class="Dropdown">
                                         <option value="string:">All</option>
@@ -206,14 +261,11 @@
                                         <option value="string:Parental Leave" label="Parental Leave">Parental Leave</option>
                                         <option value="string:No Longer Active" label="No Longer Active">No Longer Active</option>
                                     </select>
+                                    <span id="sabbaticalnote2" class="hidden">The table will be filtered upon the selection from this dropdown</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Courses
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Detail
-                            </th>
+                            </td>
+                            <td class="TableHeadingCell"></td>
+                            <td class="TableHeadingCell"></td>
                         </tr>
                     </thead>
                     
@@ -226,10 +278,12 @@
                             <td class="TableCell">Non-ladder</td>
                             <td class="TableCell">PHYS (1 FTE SEAS)</td>
                             <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
                                 Sabbatical Eligible
-                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
-                                    <i class="fas fa-edit float-right"></i>
-                                </a>
                             </td>
                             <td class="TableCell">
                                 AM 101
@@ -237,10 +291,12 @@
                                 ES 280 (Pre-Fall)
                             </td>
                             <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
                                 Sabbatical
-                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
-                                    <i class="fas fa-edit float-right"></i>
-                                </a>
                             </td>
                             <td class="TableCell">
                                 AM 101
@@ -261,10 +317,12 @@
                             <td class="TableCell">Non-ladder</td>
                             <td class="TableCell">PHYS (1 FTE SEAS)</td>
                             <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
                                 Sabbatical Eligible
-                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
-                                    <i class="fas fa-edit float-right"></i>
-                                </a>
                             </td>
                             <td class="TableCell">
                                 AM 101
@@ -272,10 +330,12 @@
                                 ES 280 (Pre-Fall)
                             </td>
                             <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
                                 Sabbatical
-                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
-                                    <i class="fas fa-edit float-right"></i>
-                                </a>
                             </td>
                             <td class="TableCell">
                                 AM 101
@@ -296,10 +356,12 @@
                             <td class="TableCell">Non-ladder</td>
                             <td class="TableCell">PHYS (1 FTE SEAS)</td>
                             <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
                                 Sabbatical Eligible
-                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
-                                    <i class="fas fa-edit float-right"></i>
-                                </a>
                             </td>
                             <td class="TableCell">
                                 AM 101
@@ -307,10 +369,12 @@
                                 ES 280 (Pre-Fall)
                             </td>
                             <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
                                 Sabbatical
-                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal">
-                                    <i class="fas fa-edit float-right"></i>
-                                </a>
                             </td>
                             <td class="TableCell">
                                 AM 101
