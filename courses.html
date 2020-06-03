@@ -63,47 +63,49 @@
 
         <div id="outer-grid">
 
-            <!--Sliding sidebar filters-->
-            <div class="sideNav-column">
-                <div id="mySidenav" class="sidenav">
-                    <div class="sideNav--inside__Link">
-                        <a href="javascript:void(0)" onclick="closeNav()" class="Link">
-                            Options
-                            <i class="far fa-arrow-alt-circle-left ml-auto"></i>
-                        </a>
-                    </div>
-                    <form>
-                        <hr>
-                        <div>
-                            <button class="Button--secondary">Download courses report</button>
-                        </div>
-                        <hr>
-                        <div>
-                            <label for="views">Customized view</label>
-                            <div>
-                                <select id="views" name="views" class="Dropdown">
-                                    <option value="default">Default</option>
-                                    <option value="myview">My view</option>
-                                    <option value="newview">New view</option>
-                                </select>
-                            </div>
-                            <button class="Button--secondary">Submit</button>
-                        </div>
-                        <hr>
-                        <div>
-                            <button class="Button--secondary">Show retired courses</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
             <!-- Sliding sidebar button -->
             <div class="sideNav__Link">
-                <a href="#" class="Link sideNav__Link mb-1" onclick="openNav()">
+                <a href="#" class="Link sideNav__Link mb-1" onclick="openNav()" aria-describedby="openoptionsnote">
                     Options
                     <i class="far fa-arrow-alt-circle-right"></i>
                 </a>
+                <span id="openoptionsnote" class="hidden">This link visually displays the content below</span>
             </div>
+    
+                <!--Sliding sidebar filters-->
+                <div class="sideNav-column">
+                    <div id="mySidenav" class="sidenav">
+                        <div class="sideNav--ncm--inside__Link">
+                            <a href="javascript:void(0)" onclick="closeNav()" class="Link" aria-describedby="closeoptionsnote">
+                                Options
+                                <i class="far fa-arrow-alt-circle-left ml-auto"></i>
+                            </a>
+                            <span id="closeoptionsnote" class="hidden">This link visually hides the content below</span>
+                        </div>
+                        <form>
+                            <hr>
+                            <div>
+                                <button class="Button--secondary">Download courses report</button>
+                            </div>
+                            <hr>
+                            <div>
+                                <label for="views">Customized view</label>
+                                <div>
+                                    <select id="views" name="views" class="Dropdown">
+                                        <option value="default">Default</option>
+                                        <option value="myview">My view</option>
+                                        <option value="newview">New view</option>
+                                    </select>
+                                </div>
+                                <button class="Button--secondary">Submit</button>
+                            </div>
+                            <hr>
+                            <div>
+                                <button class="Button--secondary">Show retired courses</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
             <!-- courses -->
             <div class="courses">
