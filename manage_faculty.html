@@ -36,13 +36,6 @@
             <h1 class="PageTitle">Course Planner</h1>
             <div><a href="#" class="StyledLink">Logout</a></div>
         </header>
-
-        <!-- Sliding sidebar button -->
-        <div class="sideNav__Link">
-            <button type="button" class="Button--primary" data-toggle="modal" data-target="#exampleModal">
-                Create new faculty
-            </button>
-        </div>
             
         <nav class="navSidenav">
             <ul class="TabList">
@@ -70,7 +63,13 @@
             </ul>
         </nav>
 
-        <div id="outer-grid">
+        <div class="ml-4">
+
+            <div>
+                <button type="button" class="Button--primary mb-1" data-toggle="modal" data-target="#exampleModal">
+                    Create new faculty
+                </button>
+            </div>
 
             <!-- courses -->
             <div class="courses">
@@ -81,9 +80,26 @@
                     <thead class="TableHead">
                         <tr class="TableHeadingCell">
                             <th scope="col" class="TableHeadingCell">
+                                Area
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                HUID
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Last name
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                First name
+                            </th>
+                            <th scope="col" class="TableHeadingCell">
+                                Edit
+                            </th>
+                        </tr>
+                        <tr class="TableHeadingCell">
+                            <td class="TableHeadingCell TextInput--nolabel">
                                 <label for="semesters">Area</label>
                                 <div>
-                                    <select id="semesters" name="semesters" class="Dropdown">
+                                    <select id="semesters" name="semesters" class="Dropdown" aria-describedby="areanote">
                                         <option value="string:All" label="All" selected="selected">All</option>
                                         <option value="string:ACS" label="ACS">ACS</option>
                                         <option value="string:AM" label="AM">AM</option>
@@ -98,27 +114,34 @@
                                         <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
                                         <option value="string:SEM" label="SEM">SEM</option>
                                     </select>
+                                    <span id="areanote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
+                            </td>
+                            <td class="TableHeadingCell TextInput--nolabel">
                                 <label for="huid">HUID</label>
                                 <div>
-                                    <input id="huid" name="huid" type="text" class="TextInput" value="" placeholder="Filter by HUID">
+                                    <input id="huid" name="huid" type="text" class="TextInput" value="" placeholder="Filter by HUID"
+                                    aria-describedby="huidnote">
+                                        <span id="huidnote" class="hidden">The table will be filtered as characters are typed in this input form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                <label for="surname">Last name</label>
+                            </td>
+                            <td class="TableHeadingCell TextInput--nolabel">
+                                <label for="surename">Last name</label>
                                 <div>
-                                    <input id="surname" name="surname" type="text" class="TextInput" value="" placeholder="Filter by faculty's last name">
+                                    <input id="surename" name="surename" type="text" class="TextInput" value="" placeholder="Filter by faculty's last name"
+                                    aria-describedby="surenamenote">
+                                        <span id="surenamenote" class="hidden">The table will be filtered as characters are typed in this input form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
+                            </td>
+                            <td class="TableHeadingCell TextInput--nolabel">
                                 <label for="name">First name</label>
                                 <div>
-                                    <input id="name" name="name" type="text" class="TextInput" value="" placeholder="Filter by faculty's first name">
+                                    <input id="name" name="name" type="text" class="TextInput" value="" placeholder="Filter by faculty's first name"
+                                    aria-describedby="namenote">
+                                        <span id="namenote" class="hidden">The table will be filtered as characters are typed in this input form</span>
                                 </div>
-                            </th>
-                            <th scope="col" class="TableHeadingCell">Edit</th>
+                            </td>
+                            <td scope="col" class="TableHeadingCell"></td>
                         </tr>
                     </thead>
                     <tbody class="TableBody">
