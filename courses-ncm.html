@@ -91,13 +91,16 @@
                         <div>
                             <label for="views">Customized view</label>
                             <div>
-                                <select id="views" name="views" class="Dropdown">
+                                <select id="views" name="views" class="Dropdown" aria-describedby="customviewnote">
                                     <option value="default">Default</option>
                                     <option value="myview">My view</option>
                                     <option value="newview">New view</option>
                                 </select>
+                                <span id="academicyearnote" class="hidden">The table will update its display upon the selection of the customized view</span>
                             </div>
-                            <button class="Button--secondary">Submit</button>
+                        </div>
+                        <div>
+                            <button class="Button--secondary mt-2">Edit views</button>
                         </div>
                         <hr>
                         <div>
