@@ -1402,7 +1402,7 @@
                                 data-dismiss="modal">Cancel</button>
                             <button type="button" class="Button--danger Button--leftAlign"
                                 data-dismiss="modal">Delete</button>
-                            <button type="button" class="Button--primary" data-dismiss="modal">Save notes</button>
+                            <button type="button" class="Button--primary" data-dismiss="modal">Save</button>
                         </div>
                     </div>
                 </div>
@@ -1514,6 +1514,232 @@
 
                         <div class="modal-footer">
                             <button type="button" class="Button--primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for Room -->
+            <div class="modal fade" id="courseModal1" tabindex="-1" role="dialog" aria-labelledby="courseModal1" aria-hidden="true" style="right: 1%; left: -47%; top: 2em;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" style="width: 70em;">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="courseModal1">Rooms for AC 209a - Data Science 1: Introduction to Data Science</h5>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="row">
+                                <div class="col-md-6 offset-md-6">
+                                    <label for="filter">Filter by:</label>
+                                    <div>
+                                        <input id="filter" name="filter" type="text" class="TextInput" value="" placeholder="Filter by room">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                
+                                <!-- Interface with time and date -->
+                                <div class="col">
+                                    Meeting times for <strong>AC 209a</strong>
+                                    <div class="border p-1 mt-3" style="height: 8.7em;">
+
+                                        <div class="roomSelect">
+
+                                            <label for="dataone" hidden>Date of booked room</label>
+                                            <div class="roomSelect__date">
+                                                <select id="dataone" name="dataone" class="Dropdown Dropdown--disabled">
+                                                    <option value="string:All" label="Monday">Monday</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="roomSelect__icon">
+                                                <i class="far fa-clock iconSecondary icon--disabled"></i>
+                                            </div>
+
+                                            <label for="timestartone" hidden>Time of booked room</label>
+                                            <div class="roomSelect__time">
+                                                <select id="timestartone" name="timestartone" class="Dropdown Dropdown--disabled">
+                                                    <option value="string:All" label="8:30AM-11:30AM">8:30AM-11:30AM</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="roomSelect__room text--disabled">
+                                                Geological Museum 105
+                                            </div>
+
+                                            <div class="roomSelect__edit">
+                                                <button type="button" class="Button--secondary Button--rightAlign">Edit</button>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="roomSelect">
+
+                                            <label for="dataone" hidden>Date of booked room</label>
+                                            <div class="roomSelect__date">
+                                                <select id="dataone" name="dataone" class="Dropdown">
+                                                    <option value="string:All" label="Monday">Monday</option>
+                                                    <option value="string:tuesday" label="Tuesday" selected>Tuesday</option>
+                                                    <option value="string:wednesday" label="wednesday">Wednesday</option>
+                                                    <option value="string:thursday" label="Thursday">Thursday</option>
+                                                    <option value="string:friday" label="Friday">Friday</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="roomSelect__icon">
+                                                <i class="far fa-clock iconSecondary icon--disabled"></i>
+                                            </div>
+
+                                            <label for="timestartone" hidden>Time start of booked room</label>
+                                            <div class="roomSelect__time">
+                                                <select id="timestartone" name="timestartone" class="Dropdown">
+                                                    <option value="string:All" label="8:30AM-11:30AM">8:30AM-11:30AM</option>
+                                                    <option value="string:hour" label="9:00AM-10:15AM">9:00AM-10:15AM</option>
+                                                    <option value="string:hour" label=":00AM-11:45AM">9:00AM-11:45AM</option>
+                                                    <option value="string:hour" label="10:30AM-11:45AM" selected>10:30AM-11:45AM</option>
+                                                    <option value="string:hour" label="2:00PM-1:15PM">12:00PM-1:15PM</option>
+                                                    <option value="string:hour" label="1:15PM-2:30PMv">1:15PM-2:30PM</option>
+                                                    <option value="string:hour" label="1:30PM-2:45PM">1:30PM-2:45PM</option>
+                                                    <option value="string:hour" label="1:30PM-5:45PM">1:30PM-5:45PM</option>
+                                                    <option value="string:hour" label="3:00PM-4:15PM">3:00PM-4:15PM</option>
+                                                    <option value="string:hour" label="3:00PM-5:00PM">3:00PM-5:00PM</option>
+                                                    <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
+                                                    <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
+                                                    <option value="string:hour" label="3:45PM-5:45PM">3:45PM-5:45PM</option>
+                                                    <option value="string:hour" label="4:30PM-5:45PM">4:30PM-5:45PM</option>
+                                                    <option value="string:hour" label="6:00PM-7:15PM">6:00PM-7:15PM</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="roomSelect__room">
+                                                &nbsp;
+                                            </div>
+
+                                            <div class="roomSelect__showroom">
+                                                <button type="button" class="Button--primary Button--rightAlign">Show rooms</button>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="roomSelect">
+                                            <div class="roomSelect__addnewtime">
+                                                <button type="button" class="Button--secondary Button--rightAlign">Add new time</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                                <!-- Table with rooms -->
+                                <div class="col">
+
+                                    <p class="text-center"><strong>Tuesday, 10:30AM to 11:45AM</strong></p>
+                                    
+                                    <table class="Table">
+
+                                        <thead class="TableHead">
+                                            <tr class="TableHeadingCell">
+                                                <th scope="col" class="TableHeadingCell">
+                                                    Campus
+                                                    <a type="button" class="BorderlessButton--ifo" href="#">
+                                                        <i class="fas fa-sort-alpha-up"></i>
+                                                    </a>
+                                                </th>
+                                                <th scope="col" class="TableHeadingCell">
+                                                    <a href="#" class="Link">
+                                                        Room
+                                                    </a>
+                                                </th>
+                                                <th scope="col" class="TableHeadingCell">
+                                                    <a href="#" class="Link">
+                                                        Capacity
+                                                    </a>
+                                                </th>
+                                                <th scope="col" class="TableHeadingCell">
+                                                    <a href="#" class="Link">
+                                                        Class
+                                                    </a>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody class="TableBody">
+                    
+                                            <tr class="TableRowOdd">
+                                                <td class="TableCell">Allston</td>
+                                                <td class="TableCell">Geological Museum 201</td>
+                                                <td class="TableCell">250</td>
+                                                <td class="TableCell">AC 209a</td>
+                                            </tr>
+                    
+                                            <tr class="TableRowEven">
+                                                <td class="TableCell">Allston</td>
+                                                <td class="TableCell">Geological Museum 205</td>
+                                                <td class="TableCell">35</td>
+                                                <td class="TableCell">Available</td>
+                                            </tr>
+                    
+                                            <tr class="TableRowOdd">
+                                                <td class="TableCell">Cambridge</td>
+                                                <td class="TableCell">Harvard Hall 204</td>
+                                                <td class="TableCell">75</td>
+                                                <td class="TableCell">ESE 136</td>
+                                            </tr>
+                    
+                                            <tr class="TableRowEven">
+                                                <td class="TableCell">Cambridge</td>
+                                                <td class="TableCell">Harvard Hall 112</td>
+                                                <td class="TableCell">75</td>
+                                                <td class="TableCell">ES 115</td>
+                                            </tr>
+                    
+                                            <tr class="TableRowOdd">
+                                                <td class="TableCell">Cambridge</td>
+                                                <td class="TableCell">NW B103</td>
+                                                <td class="TableCell">25</td>
+                                                <td class="TableCell">Available</td>
+                                            </tr>
+                    
+                                            <tr class="TableRowEven">
+                                                <td class="TableCell">Cambridge</td>
+                                                <td class="TableCell">P 100F</td>
+                                                <td class="TableCell">125</td>
+                                                <td class="TableCell">AM 218</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                    <!-- Amending Bootstrap styles -->
+                                    <style>
+                                        .page-item.active .page-link {
+                                            z-index: 1;
+                                            color: #000;
+                                            background-color: rgb(209, 209, 209);
+                                            border-color: rgb(209, 209, 209);
+                                        }
+                                    </style>
+                                    <!-- Table pagination -->
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center mt-3">
+                                            <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="Button--primary Button--rightAlign" data-dismiss="modal">Save</button>
                         </div>
                     </div>
                 </div>
