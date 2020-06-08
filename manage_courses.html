@@ -33,8 +33,6 @@
             <h1 class="PageTitle">Course Planner</h1>
             <div><a href="#" class="StyledLink">Logout</a></div>
         </header>
-
-        <!-- Sliding sidebar button -->
             
         <nav class="ml-4">
             <ul class="TabList">
@@ -227,137 +225,111 @@
 
             <!-- Manage courses modal - Create new course -->
     
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true" style="font-size: 1em; right: 18%; left: 23%; top: 7em;">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true" style="font-size: 1em; right: 18%; left: 23%; top: -1em;">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Create new course</h5>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="row">
-                                <div class="col-6">
-    
-                                    <script type="text/javascript">
-                                        function showfield(name){
-                                            if(name=='Other')document.getElementById('div1').innerHTML='<label for="faculty_area_new" class="mt-4">Create a new area</label><input type="text" name="other" id="faculty_area_new" class="form-control" />';
-                                            else document.getElementById('div1').innerHTML='';
-                                        }
-                                    </script>
-    
-                                    <label for="course_area">Area</label>
-                                    <br>
-                                    <select class="Dropdown" id="course_area" onchange="showfield(this.options[this.selectedIndex].value)">
-                                        <option>&nbsp;</option>
-                                        <option>ACS</option>
-                                        <option>AM</option>
-                                        <option>AP</option>
-                                        <option>BE</option>
-                                        <option>CS</option>
-                                        <option>EE</option>
-                                        <option>ESE</option>
-                                        <option>General</option>
-                                        <option>MDE</option>
-                                        <option>MSMBA</option>
-                                        <option>Mat&amp;ME</option>
-                                        <option>SEM</option>
-                                        <option value="Other">New area</option>
-                                    </select>
-                                    <div id="div1"></div>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Create new course</h5>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div style="display: flex;">
+            
+                                    <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
+                                        <label for="coursearea">Select an existing area</label>
+                                        <input id="coursearea" name="coursearea" type="radio" checked>
+                                    </div>
+                                    <div style="flex: 0 0 95%; max-width: 95%;">
+                                        <label for="course_area">Select an existing area</label>
+                                        <div>
+                                            <select class="Dropdown" id="course_area">
+                                                <option>&nbsp;</option>
+                                                <option>ACS</option>
+                                                <option>AM</option>
+                                                <option>AP</option>
+                                                <option>BE</option>
+                                                <option>CS</option>
+                                                <option>EE</option>
+                                                <option>ESE</option>
+                                                <option>General</option>
+                                                <option>MDE</option>
+                                                <option>MSMBA</option>
+                                                <option>Mat&amp;ME</option>
+                                                <option>SEM</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-6">
+
+                                <div style="display: flex;">
+            
+                                    <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
+                                        <label for="coursearea">Create a new area</label>
+                                        <input id="coursearea" name="coursearea" type="radio">
+                                    </div>
+                                    <div style="flex: 0 0 95%; max-width: 95%;">
+                                        <label for="newcoursearea">Create a new area</label>
+                                        <div>
+                                            <input id="newcoursearea" name="newcoursearea" type="text" class="TextInput" value="" placeholder="e.g., AC209">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div><hr></div>
+
+                                <div>
                                     <label for="course">Course number</label>
                                     <div>
                                         <input id="course" name="course" type="text" class="TextInput" value="" placeholder="e.g., AC209">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <hr>
-                                <div class="col-12">
+
+                                <div>
                                     <label for="courseTitle">Title</label>
                                     <div>
                                         <input id="courseTitle" name="courseTitle" type="text" class="TextInput" value="" placeholder="e.g., Data Science">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <hr>
-                                <div class="col-8">
-                                    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-                                    <script>
-                                        $(document).ready(function(){
-                                            var next = 1;
-                                            $(".add-more").click(function(e){
-                                                e.preventDefault();
-                                                var addto = "#field" + next;
-                                                var addRemove = "#field" + (next);
-                                                next = next + 1;
-                                                var newIn = '<input autocomplete="off" class="form-control" style="width: 50%;" id="field' + next + '" name="field' + next + '" type="text">';
-                                                var newInput = $(newIn);
-                                                var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me ml-1 btn-sm"><i class="fas fa-minus"></i></button></div><div id="field">';
-                                                var removeButton = $(removeBtn);
-                                                $(addto).after(newInput);
-                                                $(addRemove).after(removeButton);
-                                                $("#field" + next).attr('data-source',$(addto).attr('data-source'));
-                                                $("#count").val(next);  
-                                                
-                                                    $('.remove-me').click(function(e){
-                                                        e.preventDefault();
-                                                        var fieldNum = this.id.charAt(this.id.length-1);
-                                                        var fieldID = "#field" + fieldNum;
-                                                        $(this).remove();
-                                                        $(fieldID).remove();
-                                                    });
-                                            });                                
-                                        });
-                                    </script>
-                                    <input type="hidden" name="count" value="1" />
-                                    <div class="control-group" id="fields">
-                                        <label for="field1" class="control-label">Same as..</label>
-                                        <div class="controls" id="profs"> 
-                                                <div id="field" class="input-group"><input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="Add 'Same As' course" data-items="8" /><div class="input-group-append"><button id="b1" class="btn btn-secondary add-more ml-1 btn-sm input-group-append" type="button"><i class="fas fa-plus"></i></button></div></div>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <div class="col-4">
-                                    <label for="undergraduate">Undergraduate</label>
+
+                                <div>
+                                    <label for="courseTitle">Same as...</label>
                                     <div>
-                                        <input id="undergraduate" name="courseTitle" type="checkbox">
+                                        <input id="courseTitle" name="courseTitle" type="text" class="TextInput" value="" placeholder="e.g., AC 221, AP 050">
+                                    </div>
+                                </div>
+            
+                                <div>
+                                    <input id="undergraduate" name="courseTitle" type="checkbox">
+                                    <label for="undergraduate">Undergraduate</label>
+                                </div>
+
+                                <div>
+                                    <label for="courseSEAS">In SEAS</label>
+                                    <div>
+                                        <select id="courseSEAS" class="Dropdown">
+                                            <option>Yes</a>
+                                            <option>EPS</a>
+                                            <option>No</option>
+                                        </select>
                                     </div>
                                 </div>
         
-                            </div>
-                            <div class="row">
-                                <hr>
-                                <div class="col-6">
-                                    <label for="courseSEAS">In SEAS</label>
-                                    <br>
-                                    <select id="courseSEAS" class="Dropdown">
-                                        <option>Yes</a>
-                                        <option>EPS</a>
-                                        <option>No</option>
-                                    </select>
-                                </div>
-    
-                                <div class="col-6">
+                                <div>
                                     <label for="termPattern">Term Pattern</label>
-                                    <br>
-                                    <select id="termPattern" class="Dropdown">
-                                        <option>Fall</a>
-                                        <option>Spring</a>
-                                        <option>Both</option>
-                                    </select>
+                                    <div>
+                                        <select id="termPattern" class="Dropdown">
+                                            <option>Fall</a>
+                                            <option>Spring</a>
+                                            <option>Both</option>
+                                        </select>
+                                    </div>
                                 </div>
-    
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="Button--primary" data-dismiss="modal">Create</button>
-                    </div>
+        
+                                <div>
+                                    <button type="button" class="Button--secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="Button--primary Button--rightAlign" data-dismiss="modal">Save</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -499,7 +471,7 @@
                 </div>
             </div>
 
-        </div>
+             </div>
 
         <!-- Optional Bootstrap JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
