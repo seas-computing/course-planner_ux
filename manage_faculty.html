@@ -1,3 +1,4 @@
+
 <!--This version uses opacity to filter courses -->
 <!-- Room view - data from https://registrar.fas.harvard.edu/archived-course-meeting-locations-reports -->
 <!--Added overflow: scroll; to all room instances-->
@@ -404,10 +405,10 @@
 
             <section id="accessibleModal">
                 <div class="dialogs">
-                    <div class="dialog-backdrop">
+                    <div class="Modal">
                         <!-- Because of id="dialog1" referred to by the button that opened the modal, the focus of the screentreader moves into the modal and on the first form - Area -->
                         <div role="dialog" id="dialog1" aria-labelledby="dialog1_label" aria-modal="true" class="hidden">
-                            <h2 id="dialog1_label">Create new faculty</h2>
+                            <div class="ModalHeader"><span id="dialog1_label" class="ModalHeading">Create new faculty</span></div>
                             
                                 <form>
                                     <div>
@@ -465,10 +466,10 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div class="ModalFooter">
                                         <!-- Upon closing the modal, the focus of the screenreader returns to the button that opened the modal -->
-                                        <button type="button" class="Button--secondary" onclick="closeDialog(this)">Cancel</button>
                                         <button type="button" class="Button--primary Button--rightAlign" onclick="closeDialog(this)">Save</button>
+                                        <button type="button" class="Button--secondary" onclick="closeDialog(this)">Cancel</button>
                                     </div>
                                 </form>
                         </div>
