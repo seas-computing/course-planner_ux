@@ -17,6 +17,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        <!--  js and css for this modal example. -->
+        <link href="https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/dialog-modal/css/dialog.css" rel="stylesheet">
+        <script src="https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/js/utils.js" type="text/javascript"></script>
+        <script src="https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/dialog-modal/js/dialog.js" type="text/javascript"></script>
+
         <!-- Mark One CSS -->
         <link rel="stylesheet" href="css/mark-one.css">
 
@@ -66,9 +71,7 @@
         <div class="ml-4">
 
             <div>
-                <button type="button" class="Button--primary mb-1" data-toggle="modal" data-target="#exampleModal">
-                    Create new faculty
-                </button>
+                <button onclick="openDialog('dialog1', this)" class="Button--primary mb-1">Add Delivery Address</button>
             </div>
 
             <!-- courses -->
@@ -396,6 +399,88 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Accessible modal -->
+
+            <section id="accessibleModal">
+                <div class="dialogs">
+                    <div class="dialog-backdrop">
+                        <!-- Because of id="dialog1" referred to by the button that opened the modal, the focus of the screentreader moves into the modal and on the first form - Area -->
+                        <div role="dialog" id="dialog1" aria-labelledby="dialog1_label" aria-modal="true" class="hidden">
+                            <h2 id="dialog1_label">Create new faculty</h2>
+                            
+                                <form>
+                                    <div>
+                                        <label for="faculty_area">Area</label>
+                                        <div>
+                                            <select class="Dropdown" id="faculty_area">
+                                                <option>&nbsp;</option>
+                                                <option>ACS</option>
+                                                <option>AM</option>
+                                                <option>AP</option>
+                                                <option>BE</option>
+                                                <option>CS</option>
+                                                <option>EE</option>
+                                                <option>ESE</option>
+                                                <option>General</option>
+                                                <option>MDE</option>
+                                                <option>MSMBA</option>
+                                                <option>Mat&amp;ME</option>
+                                                <option>SEM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="huid">HUID</label>
+                                        <div>
+                                            <input id="huid" name="huid" type="text" class="TextInput" value="" placeholder="e.g., 12345678">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="firstName">First name</label>
+                                        <div>
+                                            <input id="firstName" name="firstName" type="text" class="TextInput" value="" placeholder="e.g., Jane">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="lastName">Last name</label>
+                                        <div>
+                                            <input id="lastName" name="lastName" type="text" class="TextInput" value="" placeholder="e.g., Smith">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="join">Join with...</label>
+                                        <div>
+                                            <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="facultyCategory">Category</label>
+                                        <div>
+                                            <select id="facultyCategory" class="Dropdown">
+                                                <option>&nbsp;</option>
+                                                <option>Ladder</option>
+                                                <option>Non-ladder</option>
+                                                <option>Non-SEAS ladder</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <!-- Upon closing the modal, the focus of the screenreader returns to the button that opened the modal -->
+                                        <button type="button" class="Button--secondary" onclick="closeDialog(this)">Cancel</button>
+                                        <button type="button" class="Button--primary Button--rightAlign" onclick="closeDialog(this)">Save</button>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    sourceCode.add('sc1', 'ex1');
+                    sourceCode.add('sc1', 'dialog_layer');
+                    sourceCode.make();
+                </script>
+            </section>
 
         </div>
 
