@@ -142,18 +142,18 @@ html, body {
 /*#region
     /* buttonInfo - Styles for interfaces */
     #buttonInfo {
-        color: rgb(0, 0, 0);
+        color: rgb(254, 254, 254);
         cursor: pointer;
         font-size: 1em;
         font-weight: 400;
-        background: rgb(149, 181, 223); /* Info button idle color - info: light */
+        background: rgb(78, 136, 199); /* Info button idle color - info: light */
         border: 1px solid rgb(78, 136, 199); /* Info button idle border color - info: medium */
         padding: 5px 10px;
     }
 
     #buttonInfo:hover {
-        background: rgb(78, 136, 199); /* Info button highlight color - info: medium */
-        border: 1px solid rgb(78, 136, 199); /* Info button highlight border color - info: medium */
+        background: rgb(10, 65, 97); /* Info button highlight color - info: medium */
+        border: 1px solid rgb(10, 65, 97); /* Info button highlight border color - info: medium */
     }
 
 
