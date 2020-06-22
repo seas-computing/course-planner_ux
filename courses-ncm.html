@@ -100,7 +100,10 @@
                             </div>
                         </div>
                         <div>
-                            <button class="Button--secondary mt-2">Edit views</button>
+                            <a type="button" class="Button--secondary mt-2" href="#" data-toggle="modal"
+                                data-target="#editViews">
+                                Edit views
+                            </a>
                         </div>
                     </form>
                 </div>
@@ -1064,6 +1067,135 @@
                         
                         <div class="modal-footer">
                             <button type="button" class="Button--primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for Edit Views -->
+            <div class="modal fade" id="editViews" tabindex="-1" role="dialog" aria-labelledby="editViews" aria-hidden="true" style="right: 1%; left: -47%; top: 2em;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" style="width: 70em;">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="editViews">Edit views</h2>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div style="display: flex;">
+                                    <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
+                                        <label for="edit_view">Edit existing views</label>
+                                        <input id="edit_view" name="editview" type="radio" checked="">
+                                    </div>
+                                    <div>
+                                        <label for="edit_view_selection">Edit existing view</label>
+                                        <div>
+                                            <select class="Dropdown" id="edit_view_selection" aria-describedby="editviewnote">
+                                                <option>My view</option>
+                                                <option>DefaultM</option>
+                                            </select>
+                                        </div>
+
+                                    <div>
+                                        <button type="button" class="Button--danger mt-1">Delete existing view</button>
+                                    </div>
+                                    </div>
+                                    <div>
+                                        <span id="editviewnote" class="hidden">The table below will update its display upon the selection of the edit view</span>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex;">
+                                    <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
+                                        <label for="new_view">Create new view</label>
+                                        <input id="new_view" name="editview" type="radio">
+                                    </div>
+                                    <div style="flex: 0 0 95%; max-width: 45%;">
+                                        <label for="new_view_info">Create new view</label>
+                                        <div>
+                                            <input id="new_view_info" name="newmeetingtitle" type="text" class="TextInput" value="" placeholder="e.g., Faculty meeting" aria-describedby="newviewnote">
+                                            <span id="newviewnote" class="hidden">The table below will update its display upon the selection of the edit view</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div>
+
+                            <div class="mt-2">Select columns to view</div>
+                                <table class="Table mt-3">
+
+                                    <colgroup span="6"></colgroup>
+                                    <colgroup span="4"></colgroup>
+                                    <colgroup span="2"></colgroup>
+
+                                    <thead class="TableHead">
+                                        <tr class="TableHeadingCell">
+                                            <td class="TableHeadingCell TableHeadingCell--blank__left" colspan="6"></td>
+                                            <th scope="colgroup" class="TableHeadingCell" colspan="4">
+                                                Semester
+                                            </th>
+                                            <td class="TableHeadingCell TableHeadingCell--blank__right" colspan="2"></td>
+                                        </tr>
+
+                
+                                        <tr class="TableHeadingCell">
+                                            <th scope="col" class="TableHeadingCell">
+                                                Area
+                                            </th>
+                                            <th scope="col" class="TableHeadingCell">
+                                                Course
+                                            </th>
+                                            <th scope="col" class="TableHeadingCell">
+                                                Title
+                                            </th>
+                                            <th scope="col" class="TableHeadingCell">
+                                                Same as
+                                            </th>
+                                            <th scope="col" class="TableHeadingCell">
+                                                Is SEAS?
+                                            </th>
+                                            <th scope="col" class="TableHeadingCell">
+                                                Is undergrad?
+                                            </th>
+                                            <th scope="col" class="TableHeadingCell">
+                                                Offered
+                                            </th>
+                                            <th scope="col" class="TableHeadingCell">
+                                                Instructors
+                                            </th>
+                                            <th scope="col" class="TableHeadingCell">Room</th>
+
+                                            <th scope="col" class="TableHeadingCell">Enrollment</th>
+                
+                                            <th scope="col" class="TableHeadingCell">Notes</th>
+
+                                            <th scope="col" class="TableHeadingCell">Detail</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="Button--primary Button--rightAlign" data-dismiss="modal">Save</button>
                         </div>
                     </div>
                 </div>
