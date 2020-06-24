@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Course Planning Tool</title>
+    <style type="text/css">
+
+        /* Removed styles to facilitate code review */
+        
+            .dNEgKI {
+            background-color: #fefefe;
+            border: 2px solid #989898;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            max-width: 80%;
+            visibility: inherit;
+        }
+    </style>
+</head>
+
+<body style="overflow: hidden;">
+    <div id="root">
+        <div class="app">
+            <div class="app-content">
+
+                <!-- Removed styles to facilitate code review -->
+                
+                <main class="sc-AxhUy dQsIDC">
+
+                    <div class="create-faculty-button"><button id="createFaculty" class="sc-AxjAm bCnvY">Create New
+                            Faculty</button></div>
+                            
+                </main>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/app.js"></script>
+    <div class="sc-fzoiQi dFhZIz modal-fade-enter-done">
+        <div role="dialog" aria-labelledby="createFaculty" aria-modal="true" class="sc-fzqARJ dNEgKI">
+            <div class="sc-fzoXWK eYoeXm">
+                <h2 class="sc-fznWqX sc-fzoNJl dyNgRc">Create New Faculty</h2>
+            </div>
+            <div class="sc-fzqNqU hyitPS">
+                <form id="createFacultyForm">
+                    <label for="createFacultyCourseArea">
+                        Area
+                        <select id="createFacultyCourseArea" name="createFacultyCourseArea" required=""
+                            class="sc-fzqNJr epxibl">
+                            <option value=""></option>
+                            <option value="ACS">ACS</option>
+                            <option value="AM">AM</option>
+                            <option value="AP">AP</option>
+                            <option value="BE">BE</option>
+                            <option value="CS">CS</option>
+                            <option value="EE">EE</option>
+                            <option value="ESE">ESE</option>
+                            <option value="General">General</option>
+                            <option value="Mat &amp; ME">Mat &amp; ME</option>
+                            <option value="MDE">MDE</option>
+                            <option value="MSMBA">MSMBA</option>
+                            <option value="SEM">SEM</option>
+                        </select>
+                    </label>
+                    <label for="createFacultyHUID" class="sc-fzoXzr fnJVMi">
+                        <span class="sc-fzpjYC fYKimJ">HUID</span>
+                        <input id="createFacultyHUID" name="createFacultyHUID" placeholder="e.g. 12345678" type="text"
+                            label="HUID" required="" class="sc-fznxsB cqxvzo" value=""
+                            style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                    </label>
+                    <label for="createFacultyFirstName" class="sc-fzoXzr fnJVMi">
+                        <span class="sc-fzpjYC fYKimJ">First name</span>
+                        <input id="createFacultyFirstName" name="createFacultyFirstName" placeholder="e.g. Jane" type="text"
+                            label="First name" class="sc-fznxsB cqxvzo" value="">
+                    </label>
+                    <label for="createFacultyLastName" class="sc-fzoXzr fnJVMi">
+                        <span class="sc-fzpjYC fYKimJ">Last name</span>
+                        <input id="createFacultyLastName" name="createFacultyLastName" placeholder="e.g. Smith" type="text"
+                            label="Last name" required="" class="sc-fznxsB cqxvzo" value="">
+                    </label>
+                    <label for="createFacultyCategory">
+                        Category
+                        <select id="createFacultyCategory" name="createFacultyCategory" required="" class="sc-fzqNJr epxibl">
+                            <option value=""></option>
+                            <option value="LADDER">Ladder</option>
+                            <option value="NON_LADDER">Non-Ladder</option>
+                            <option value="NON_SEAS_LADDER">Non-SEAS Ladder</option>
+                        </select>
+                    </label>
+                    <label for="createFacultyJointWith" class="sc-fzoXzr fnJVMi">
+                        <span class="sc-fzpjYC fYKimJ">Joint with...</span>
+                        <input id="createFacultyJointWith" name="createFacultyJointWith"
+                            placeholder="Add 'Joint With' entry" type="text" label="Joint with..." class="sc-fznxsB cqxvzo"
+                            value="">
+                    </label>
+                    <span role="alert" aria-live="assertive" aria-invalid="true" class="sc-fzoLag htQssD"></span>
+                </form>
+            </div>
+            <div class="sc-fzoyTs kpdKiD">
+                <button id="createFacultySubmit" class="sc-AxjAm ediasy">Submit</button>
+                <button class="sc-AxjAm duZMZh">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="sc-fzoiQi dFhZIz"></div>
+</body>
+
+</html>
