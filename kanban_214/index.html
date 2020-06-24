@@ -5,9 +5,9 @@
     <title>Course Planning Tool</title>
     <style type="text/css">
 
-        /* Removed styles to facilitate code review */
-        
-            .dNEgKI {
+/* Removed styles to facilitate code review */
+
+        .dNEgKI {
             background-color: #fefefe;
             border: 2px solid #989898;
             display: -webkit-box;
@@ -21,8 +21,19 @@
             -webkit-justify-content: space-between;
             -ms-flex-pack: justify;
             justify-content: space-between;
-            max-width: 80%;
             visibility: inherit;
+/* Accessible width and height */
+            min-width: 40em;
+            max-width: 40em;
+            max-height: 100%;
+        }
+/* Mark One alert style */
+        .bHXPte {
+            color: rgb(255, 64, 64);
+            font-family: "Open Sans", sans-serif;
+            font-size: 0.7em;
+            font-weight: 600;
+            grid-area: e / e / e / e;
         }
     </style>
 </head>
@@ -36,6 +47,7 @@
                 
                 <main class="sc-AxhUy dQsIDC">
 
+<!-- Accessible modal - refer to https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html under 'Modal Dialog Example' to link this id to the content of the modal -->
                     <div class="create-faculty-button"><button id="createFaculty" class="sc-AxjAm bCnvY">Create New
                             Faculty</button></div>
                             
@@ -44,17 +56,28 @@
         </div>
     </div>
     <script type="text/javascript" src="/app.js"></script>
+
+<!-- Accessible modal - refer to https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html under 'Modal Dialog Example' to place here an id referred by the 'create new faculty' button -->
     <div class="sc-fzoiQi dFhZIz modal-fade-enter-done">
         <div role="dialog" aria-labelledby="createFaculty" aria-modal="true" class="sc-fzqARJ dNEgKI">
             <div class="sc-fzoXWK eYoeXm">
                 <h2 class="sc-fznWqX sc-fzoNJl dyNgRc">Create New Faculty</h2>
             </div>
             <div class="sc-fzqNqU hyitPS">
+
+<!-- Required notice -->
+                <span role="alert" aria-live="assertive" aria-invalid="true" class="sc-EHOje bHXPte">
+                    Note: * denotes required information.
+                </span>
                 <form id="createFacultyForm">
                     <label for="createFacultyCourseArea">
+                        <span role="alert" aria-live="assertive" aria-invalid="true" class="sc-EHOje bHXPte">
+                            *
+                        </span>
                         Area
+<!-- Added aria-required="true"  -->
                         <select id="createFacultyCourseArea" name="createFacultyCourseArea" required=""
-                            class="sc-fzqNJr epxibl">
+                            class="sc-fzqNJr epxibl" aria-required="true">
                             <option value=""></option>
                             <option value="ACS">ACS</option>
                             <option value="AM">AM</option>
@@ -69,12 +92,29 @@
                             <option value="MSMBA">MSMBA</option>
                             <option value="SEM">SEM</option>
                         </select>
+                            
+<!-- Error message from Mark One-->
+                        <span role="alert" aria-live="assertive" aria-invalid="true" class="sc-EHOje bHXPte">
+                            An area is required. Please try again.
+                        </span>
                     </label>
                     <label for="createFacultyHUID" class="sc-fzoXzr fnJVMi">
-                        <span class="sc-fzpjYC fYKimJ">HUID</span>
+                        <span class="sc-fzpjYC fYKimJ">
+                            <span role="alert" aria-live="assertive" aria-invalid="true" class="sc-EHOje bHXPte">
+                                *
+                            </span>
+                            HUID
+                        </span>
+
+<!-- Added aria-required="true"  -->
                         <input id="createFacultyHUID" name="createFacultyHUID" placeholder="e.g. 12345678" type="text"
                             label="HUID" required="" class="sc-fznxsB cqxvzo" value=""
-                            style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                            style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" aria-required="true">
+                            
+<!-- Error message from Mark One-->
+                        <span role="alert" aria-live="assertive" aria-invalid="true" class="sc-EHOje bHXPte">
+                            An HUID is required and must contain 8 digits. Please try again.
+                        </span>
                     </label>
                     <label for="createFacultyFirstName" class="sc-fzoXzr fnJVMi">
                         <span class="sc-fzpjYC fYKimJ">First name</span>
@@ -82,24 +122,48 @@
                             label="First name" class="sc-fznxsB cqxvzo" value="">
                     </label>
                     <label for="createFacultyLastName" class="sc-fzoXzr fnJVMi">
-                        <span class="sc-fzpjYC fYKimJ">Last name</span>
+                        <span class="sc-fzpjYC fYKimJ">
+                            <span role="alert" aria-live="assertive" aria-invalid="true" class="sc-EHOje bHXPte">
+                                *
+                            </span>
+                            Last name
+                        </span>
+
+<!-- Added aria-required="true"  -->
                         <input id="createFacultyLastName" name="createFacultyLastName" placeholder="e.g. Smith" type="text"
-                            label="Last name" required="" class="sc-fznxsB cqxvzo" value="">
+                            label="Last name" required="" class="sc-fznxsB cqxvzo" value="" aria-required="true">
+
+<!-- Error message from Mark One-->
+                        <span role="alert" aria-live="assertive" aria-invalid="true" class="sc-EHOje bHXPte">
+                            A last name is required. Please try again.
+                        </span>
                     </label>
                     <label for="createFacultyCategory">
+                        <span role="alert" aria-live="assertive" aria-invalid="true" class="sc-EHOje bHXPte">
+                            *
+                        </span>
                         Category
-                        <select id="createFacultyCategory" name="createFacultyCategory" required="" class="sc-fzqNJr epxibl">
+
+<!-- Added aria-required="true"  -->
+                        <select id="createFacultyCategory" name="createFacultyCategory" required="" class="sc-fzqNJr epxibl" aria-required="true">
                             <option value=""></option>
                             <option value="LADDER">Ladder</option>
                             <option value="NON_LADDER">Non-Ladder</option>
                             <option value="NON_SEAS_LADDER">Non-SEAS Ladder</option>
                         </select>
+                            
+<!-- Error message from Mark One-->
+                        <span role="alert" aria-live="assertive" aria-invalid="true" class="sc-EHOje bHXPte">
+                            A category is required. Please try again.
+                        </span>
                     </label>
                     <label for="createFacultyJointWith" class="sc-fzoXzr fnJVMi">
                         <span class="sc-fzpjYC fYKimJ">Joint with...</span>
+
+<!-- Added aria-required="true"  -->
                         <input id="createFacultyJointWith" name="createFacultyJointWith"
                             placeholder="Add 'Joint With' entry" type="text" label="Joint with..." class="sc-fznxsB cqxvzo"
-                            value="">
+                            value="" aria-required="true">
                     </label>
                     <span role="alert" aria-live="assertive" aria-invalid="true" class="sc-fzoLag htQssD"></span>
                 </form>
