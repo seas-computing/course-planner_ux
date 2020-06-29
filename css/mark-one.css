@@ -1141,4 +1141,13 @@ tbody {
         border-top: 1px solid #ddd
     }
 
+    /* Required label */
+    .required-label {
+        color: rgb(255, 64, 64);
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.7em;
+        font-weight: 600;
+        grid-area: e / e / e / e;
+    }
+
 /*#endregion*/
