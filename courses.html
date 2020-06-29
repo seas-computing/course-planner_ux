@@ -1765,48 +1765,36 @@
                             <h2 class="modal-title" id="editViews">Edit views</h2>
                         </div>
                         <div class="modal-body">
+
+                            <div class="mt-2"><h2 style="font-size: 1.25em;">Edit or create new view</h2></div>
                             <form>
                                 <div style="display: flex;">
-                                    <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
-                                        <label for="edit_view">Edit existing views</label>
-                                        <input id="edit_view" name="editview" type="radio" checked="">
-                                    </div>
-                                    <div>
-                                        <label for="edit_view_selection">Edit existing view</label>
+                                    <div class="TextInput--nolabel" style="flex: 0 0 20%; max-width: 20%;">
+                                        <label for="edit_view_selection">Create or edit existing view</label>
                                         <div>
                                             <select class="Dropdown" id="edit_view_selection" aria-describedby="editviewnote">
-                                                <option>My view</option>
+                                                <option>Create new view</option>
+                                                <option selected>My view</option>
                                                 <option>DefaultM</option>
                                             </select>
+                                            <span id="editviewnote" class="hidden">The table below will update its display upon the selection of the edit view</span>
                                         </div>
-
-                                    <div>
-                                        <button type="button" class="Button--danger mt-1">Delete existing view</button>
-                                    </div>
-                                    </div>
-                                    <div>
-                                        <span id="editviewnote" class="hidden">The table below will update its display upon the selection of the edit view</span>
-                                    </div>
-                                </div>
-
-                                <div style="display: flex;">
-                                    <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
-                                        <label for="new_view">Create new view</label>
-                                        <input id="new_view" name="editview" type="radio">
-                                    </div>
-                                    <div style="flex: 0 0 95%; max-width: 45%;">
-                                        <label for="new_view_info">Create new view</label>
+                                    </div>  
+                                    <div class="TextInput--nolabel ml-2" style="flex: 0 0 20%; max-width: 20%;">
+                                        <label for="new_view_info">Name new view or edit existing view</label>
                                         <div>
-                                            <input id="new_view_info" name="newmeetingtitle" type="text" class="TextInput" value="" placeholder="e.g., Faculty meeting" aria-describedby="newviewnote">
-                                            <span id="newviewnote" class="hidden">The table below will update its display upon the selection of the edit view</span>
+                                            <input id="new_view_info" name="newmeetingtitle" type="text" class="TextInput" value="My view" placeholder="e.g., Faculty meeting">
                                         </div>
+                                    </div>
+                                    <div style="flex: 0 0 10%; max-width: 10%;" class="ml-2">
+                                        <button type="button" class="Button--danger">Delete view</button>
                                     </div>
                                 </div>
                             </form>
                             <div>
 
-                            <div class="mt-2">Select columns to view</div>
-                                <table class="Table mt-3">
+                            <div class="mt-4"><h2 style="font-size: 1.25em;">Select columns for this view</h2></div>
+                                <table class="Table">
 
                                     <colgroup span="6"></colgroup>
                                     <colgroup span="4"></colgroup>
