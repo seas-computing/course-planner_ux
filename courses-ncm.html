@@ -93,8 +93,7 @@
                             <div>
                                 <select id="views" name="views" class="Dropdown" aria-describedby="customviewnote">
                                     <option value="default">Default</option>
-                                    <option value="myview">My view</option>
-                                    <option value="newview">New view</option>
+                                    <option value="myview" selected>My view</option>
                                 </select>
                                 <span id="academicyearnote" class="hidden">The table will update its display upon the selection of the customized view</span>
                             </div>
@@ -357,7 +356,13 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             </td>
-                            <td class="TableCell"></td>
+                            <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                     <i class="fas fa-folder-open"></i>
@@ -382,7 +387,13 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             </td>
-                            <td class="TableCell"></td>
+                            <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                     <i class="fas fa-folder-open"></i>
@@ -407,7 +418,13 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             </td>
-                            <td class="TableCell"></td>
+                            <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                     <i class="fas fa-folder-open"></i>
@@ -432,7 +449,13 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             </td>
-                            <td class="TableCell"></td>
+                            <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                     <i class="fas fa-folder-open"></i>
@@ -457,7 +480,13 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             </td>
-                            <td class="TableCell"></td>
+                            <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                     <i class="fas fa-folder-open"></i>
@@ -482,7 +511,13 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             </td>
-                            <td class="TableCell"></td>
+                            <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                     <i class="fas fa-folder-open"></i>
@@ -507,7 +542,13 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             </td>
-                            <td class="TableCell"></td>
+                            <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#editnonclassmeetingModal">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                     <i class="fas fa-folder-open"></i>
@@ -521,240 +562,62 @@
             </div><!-- /courses -->
 
             <!-- Modal for new room meeting -->
-            <div class="modal fade" id="newnonclassmeetingModal" tabindex="-1" role="dialog" aria-labelledby="newnonclassmeetingModal" aria-hidden="true" style="right: 1%; left: -47%; top: 0em;">
+            <div class="modal fade" id="newnonclassmeetingModal" tabindex="-1" role="dialog" aria-labelledby="newnonclassmeetingModal" aria-hidden="true" style="font-size: 1em; right: 18%; left: 23%; top: 4em;">
                 <div class="modal-dialog" role="document">
-                    <div class="modal-content" style="width: 70em;">
+                    <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="newnonclassmeetingModal">Rooms for new meetings</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Create new non-class meeting</h5>
                         </div>
                         <div class="modal-body">
+                            <span role="alert" aria-live="assertive" aria-invalid="true" class="required-label">
+                                Note: * denotes required information.
+                            </span>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <form>
-                                        <div style="display: flex;">
-                    
-                                            <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
-                                                <label for="coursearea">Meeting for an existing area</label>
-                                                <input id="coursearea" name="coursearea" type="radio" checked="">
-                                            </div>
-                                            <div style="flex: 0 0 95%; max-width: 95%;">
-                                                <label for="course_area">Meeting for an existing area</label>
-                                                <div>
-                                                    <select class="Dropdown" id="course_area">
-                                                        <option>&nbsp;</option>
-                                                        <option>ACS</option>
-                                                        <option>AM</option>
-                                                        <option>AP</option>
-                                                        <option>BE</option>
-                                                        <option>CS</option>
-                                                        <option>EE</option>
-                                                        <option>ESE</option>
-                                                        <option>General</option>
-                                                        <option>MDE</option>
-                                                        <option>MSMBA</option>
-                                                        <option>Mat&amp;ME</option>
-                                                        <option>SEM</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <div style="display: flex;">
-                    
-                                            <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
-                                                <label for="newmeeting">Meeting not related to a course</label>
-                                                <input id="newmeeting" name="coursearea" type="radio">
-                                            </div>
-                                            <div style="flex: 0 0 95%; max-width: 95%;">
-                                                <label for="newmeetingtitle">Meeting not related to a course</label>
-                                                <div>
-                                                    <input id="newmeetingtitle" name="newmeetingtitle" type="text" class="TextInput" value="" placeholder="e.g., Faculty meeting">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="filter">Filter by:</label>
+                                <div>
+                                    <label for="area">Area</label>
                                     <div>
-                                        <input id="filter" name="filter" type="text" class="TextInput" value="" placeholder="Filter by room">
+                                        <select class="Dropdown" id="area">
+                                            <option>&nbsp;</option>
+                                            <option>ACS</option>
+                                            <option>AM</option>
+                                            <option>AP</option>
+                                            <option>BE</option>
+                                            <option>CS</option>
+                                            <option>EE</option>
+                                            <option>ESE</option>
+                                            <option>General</option>
+                                            <option>MDE</option>
+                                            <option>MSMBA</option>
+                                            <option>Mat&amp;ME</option>
+                                            <option>SEM</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row mt-2">
-                                
-                                <!-- Interface with time and date -->
-                                <div class="col">
-                                    <div class="p-1 mt-3">
 
-                                        <div class="roomSelect TextInput--nolabel">
-
-                                            <label for="dataone">Date of booked room</label>
-                                            <div class="roomSelect__date">
-                                                <select id="dataone" name="dataone" class="Dropdown">
-                                                    <option value="string:All" label="Monday" selected>Monday</option>
-                                                    <option value="string:tuesday" label="Tuesday">Tuesday</option>
-                                                    <option value="string:wednesday" label="wednesday">Wednesday</option>
-                                                    <option value="string:thursday" label="Thursday">Thursday</option>
-                                                    <option value="string:friday" label="Friday">Friday</option>
-                                                </select>
-                                            </div>
-                                            
-                                            <div class="roomSelect__icon">
-                                                <i class="far fa-clock iconSecondary icon--disabled"></i>
-                                            </div>
-
-                                            <label for="timestartone">Time start of booked room</label>
-                                            <div class="roomSelect__time">
-                                                <select id="timestartone" name="timestartone" class="Dropdown">
-                                                    <option value="string:All" label="8:30AM-11:30AM" selected>8:30AM-11:30AM</option>
-                                                    <option value="string:hour" label="9:00AM-10:15AM">9:00AM-10:15AM</option>
-                                                    <option value="string:hour" label=":00AM-11:45AM">9:00AM-11:45AM</option>
-                                                    <option value="string:hour" label="10:30AM-11:45AM">10:30AM-11:45AM</option>
-                                                    <option value="string:hour" label="2:00PM-1:15PM">12:00PM-1:15PM</option>
-                                                    <option value="string:hour" label="1:15PM-2:30PMv">1:15PM-2:30PM</option>
-                                                    <option value="string:hour" label="1:30PM-2:45PM">1:30PM-2:45PM</option>
-                                                    <option value="string:hour" label="1:30PM-5:45PM">1:30PM-5:45PM</option>
-                                                    <option value="string:hour" label="3:00PM-4:15PM">3:00PM-4:15PM</option>
-                                                    <option value="string:hour" label="3:00PM-5:00PM">3:00PM-5:00PM</option>
-                                                    <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
-                                                    <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
-                                                    <option value="string:hour" label="3:45PM-5:45PM">3:45PM-5:45PM</option>
-                                                    <option value="string:hour" label="4:30PM-5:45PM">4:30PM-5:45PM</option>
-                                                    <option value="string:hour" label="6:00PM-7:15PM">6:00PM-7:15PM</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="roomSelect__room">
-                                                &nbsp;
-                                            </div>
-
-                                            <div class="roomSelect__showroom">
-                                                <button type="button" class="Button--primary Button--rightAlign">Show rooms</button>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="roomSelect">
-                                            <div class="roomSelect__addnewtime">
-                                                <button type="button" class="Button--secondary Button--rightAlign">Add new time</button>
-                                            </div>
-                                        </div>
-
+                                <div>
+                                    <label for="course">Course number</label>
+                                    <div>
+                                        <input id="course" name="course" type="text" class="TextInput" value="" placeholder="e.g., AC209">
                                     </div>
                                 </div>
-                                
-                                <!-- Table with rooms -->
-                                <div class="col">
 
-                                    <p class="text-center"><strong>Monday, 8:30AM to 11:30AM</strong></p>
-                                    
-                                    <table class="Table">
-
-                                        <thead class="TableHead">
-                                            <tr class="TableHeadingCell">
-                                                <th scope="col" class="TableHeadingCell">
-                                                    Campus
-                                                    <a type="button" class="BorderlessButton--ifo" href="#">
-                                                        <i class="fas fa-sort-alpha-up"></i>
-                                                    </a>
-                                                </th>
-                                                <th scope="col" class="TableHeadingCell">
-                                                    <a href="#" class="Link">
-                                                        Room
-                                                    </a>
-                                                </th>
-                                                <th scope="col" class="TableHeadingCell">
-                                                    <a href="#" class="Link">
-                                                        Capacity
-                                                    </a>
-                                                </th>
-                                                <th scope="col" class="TableHeadingCell">
-                                                    <a href="#" class="Link">
-                                                        Class
-                                                    </a>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        
-                                        <tbody class="TableBody">
-                    
-                                            <tr class="TableRowOdd">
-                                                <td class="TableCell">Allston</td>
-                                                <td class="TableCell">Geological Museum 201</td>
-                                                <td class="TableCell">250</td>
-                                                <td class="TableCell">AC 209a</td>
-                                            </tr>
-                    
-                                            <tr class="TableRowEven">
-                                                <td class="TableCell">Allston</td>
-                                                <td class="TableCell">Geological Museum 205</td>
-                                                <td class="TableCell">35</td>
-                                                <td class="TableCell">Available</td>
-                                            </tr>
-                    
-                                            <tr class="TableRowOdd">
-                                                <td class="TableCell">Cambridge</td>
-                                                <td class="TableCell">Harvard Hall 204</td>
-                                                <td class="TableCell">75</td>
-                                                <td class="TableCell">ESE 136</td>
-                                            </tr>
-                    
-                                            <tr class="TableRowEven">
-                                                <td class="TableCell">Cambridge</td>
-                                                <td class="TableCell">Harvard Hall 112</td>
-                                                <td class="TableCell">75</td>
-                                                <td class="TableCell">ES 115</td>
-                                            </tr>
-                    
-                                            <tr class="TableRowOdd">
-                                                <td class="TableCell">Cambridge</td>
-                                                <td class="TableCell">NW B103</td>
-                                                <td class="TableCell">25</td>
-                                                <td class="TableCell">Available</td>
-                                            </tr>
-                    
-                                            <tr class="TableRowEven">
-                                                <td class="TableCell">Cambridge</td>
-                                                <td class="TableCell">P 100F</td>
-                                                <td class="TableCell">125</td>
-                                                <td class="TableCell">AM 218</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    
-                                    <!-- Amending Bootstrap styles -->
-                                    <style>
-                                        .page-item.active .page-link {
-                                            z-index: 1;
-                                            color: #000;
-                                            background-color: rgb(209, 209, 209);
-                                            border-color: rgb(209, 209, 209);
-                                        }
-                                    </style>
-                                    <!-- Table pagination -->
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center mt-3">
-                                            <li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                            </li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item">
-                                            <a class="page-link" href="#">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                                <div>
+                                    <label for="courseTitle">
+                                        Title
+                                        <span role="alert" aria-live="assertive" aria-invalid="true" class="required-label">
+                                            *
+                                        </span>
+                                    </label>
+                                    <div>
+                                        <input id="courseTitle" name="courseTitle" type="text" class="TextInput" value="" placeholder="e.g., Data Science" aria-required="true">
+                                    </div>
                                 </div>
-                            </div>
-
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="Button--primary Button--rightAlign" data-dismiss="modal">Save</button>
+        
+                                <div class="mt-4">
+                                    <button type="button" class="Button--secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="Button--primary Button--rightAlign" data-dismiss="modal">Save</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -985,6 +848,81 @@
                     </div>
                 </div>
             </div>
+            <!-- Modal for editing room meeting - demo -->
+            <div class="modal fade" id="editnonclassmeetingModal" tabindex="-1" role="dialog" aria-labelledby="editnonclassmeetingModal" aria-hidden="true" style="font-size: 1em; right: 18%; left: 23%; top: 4em;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit non-class meeting</h5>
+                        </div>
+                        <div class="modal-body">
+                            <span role="alert" aria-live="assertive" aria-invalid="true" class="required-label">
+                                Note: * denotes required information.
+                            </span>
+
+                            <div>
+                                <label for="area">Area</label>
+                                <div>
+                                    <select class="Dropdown" id="area">
+                                        <option>&nbsp;</option>
+                                        <option selected>ACS</option>
+                                        <option>AM</option>
+                                        <option>AP</option>
+                                        <option>BE</option>
+                                        <option>CS</option>
+                                        <option>EE</option>
+                                        <option>ESE</option>
+                                        <option>General</option>
+                                        <option>MDE</option>
+                                        <option>MSMBA</option>
+                                        <option>Mat&amp;ME</option>
+                                        <option>SEM</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="course">Course number</label>
+                                <div>
+                                    <input id="course" name="course" type="text" class="TextInput" value="AC 209a" placeholder="e.g., AC209">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="courseTitle">
+                                    Title
+                                    <span role="alert" aria-live="assertive" aria-invalid="true" class="required-label">
+                                        *
+                                    </span>
+                                </label>
+                                <div>
+                                    <input id="courseTitle" name="courseTitle" type="text" class="TextInput" value="Reading group" placeholder="e.g., Data Science" aria-required="true">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="term">Term</label>
+                                <div>
+                                    <select id="semesters" name="semesters" class="Dropdown_nowidth" aria-describedby="academicyearnote">
+                                        <option>Spring 2021</option>
+                                        <option>Fall 2020</option>
+                                        <option>Spring 2020</option>
+                                        <option selected="selected">Fall 2019</option>
+                                        <option>Spring 2019</option>
+                                        <option>Fall 2018</option>
+                                        <option>Spring 2018</option>
+                                    </select>
+                                </div>
+                            </div>
+    
+                            <div class="mt-4">
+                                <button type="button" class="Button--secondary" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="Button--primary Button--rightAlign" data-dismiss="modal">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Modal for Detail -->
             <div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="right: 18%; left: 13%; top: -1em;">
@@ -1080,48 +1018,36 @@
                             <h2 class="modal-title" id="editViews">Edit views</h2>
                         </div>
                         <div class="modal-body">
+
+                            <div class="mt-2"><h2 style="font-size: 1.25em;">Edit or create new view</h2></div>
                             <form>
                                 <div style="display: flex;">
-                                    <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
-                                        <label for="edit_view">Edit existing views</label>
-                                        <input id="edit_view" name="editview" type="radio" checked="">
-                                    </div>
-                                    <div>
-                                        <label for="edit_view_selection">Edit existing view</label>
+                                    <div class="TextInput--nolabel" style="flex: 0 0 20%; max-width: 20%;">
+                                        <label for="edit_view_selection">Create or edit existing view</label>
                                         <div>
                                             <select class="Dropdown" id="edit_view_selection" aria-describedby="editviewnote">
-                                                <option>My view</option>
+                                                <option>Create new view</option>
+                                                <option selected>My view</option>
                                                 <option>DefaultM</option>
                                             </select>
+                                            <span id="editviewnote" class="hidden">The table below will update its display upon the selection of the edit view</span>
                                         </div>
-
-                                    <div>
-                                        <button type="button" class="Button--danger mt-1">Delete existing view</button>
-                                    </div>
-                                    </div>
-                                    <div>
-                                        <span id="editviewnote" class="hidden">The table below will update its display upon the selection of the edit view</span>
-                                    </div>
-                                </div>
-
-                                <div style="display: flex;">
-                                    <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
-                                        <label for="new_view">Create new view</label>
-                                        <input id="new_view" name="editview" type="radio">
-                                    </div>
-                                    <div style="flex: 0 0 95%; max-width: 45%;">
-                                        <label for="new_view_info">Create new view</label>
+                                    </div>  
+                                    <div class="TextInput--nolabel ml-2" style="flex: 0 0 20%; max-width: 20%;">
+                                        <label for="new_view_info">Name new view or edit existing view</label>
                                         <div>
-                                            <input id="new_view_info" name="newmeetingtitle" type="text" class="TextInput" value="" placeholder="e.g., Faculty meeting" aria-describedby="newviewnote">
-                                            <span id="newviewnote" class="hidden">The table below will update its display upon the selection of the edit view</span>
+                                            <input id="new_view_info" name="newmeetingtitle" type="text" class="TextInput" value="My view" placeholder="e.g., Faculty meeting">
                                         </div>
+                                    </div>
+                                    <div style="flex: 0 0 10%; max-width: 10%;" class="ml-2">
+                                        <button type="button" class="Button--danger">Delete view</button>
                                     </div>
                                 </div>
                             </form>
                             <div>
 
-                            <div class="mt-2">Select columns to view</div>
-                                <table class="Table mt-3">
+                            <div class="mt-4"><h2 style="font-size: 1.25em;">Select columns for this view</h2></div>
+                                <table class="Table">
 
                                     <colgroup span="6"></colgroup>
                                     <colgroup span="4"></colgroup>
@@ -1174,18 +1100,18 @@
 
                                     <tbody>
                                         <tr>
-                                            <td><input type="checkbox" checked></td>
-                                            <td><input type="checkbox" checked></td>
-                                            <td><input type="checkbox" checked></td>
-                                            <td><input type="checkbox" checked></td>
-                                            <td><input type="checkbox" checked></td>
-                                            <td><input type="checkbox" checked></td>
-                                            <td><input type="checkbox" checked></td>
-                                            <td><input type="checkbox" checked></td>
-                                            <td><input type="checkbox" checked></td>
-                                            <td><input type="checkbox" checked></td>
-                                            <td><input type="checkbox" checked></td>
-                                            <td><input type="checkbox" checked></td>
+                                            <td class="text-center"><input type="checkbox" checked></td>
+                                            <td class="text-center"><input type="checkbox" checked></td>
+                                            <td class="text-center"><input type="checkbox" checked></td>
+                                            <td class="text-center"><input type="checkbox"></td>
+                                            <td class="text-center"><input type="checkbox"></td>
+                                            <td class="text-center"><input type="checkbox"></td>
+                                            <td class="text-center"><input type="checkbox"></td>
+                                            <td class="text-center"><input type="checkbox"></td>
+                                            <td class="text-center"><input type="checkbox" checked></td>
+                                            <td class="text-center"><input type="checkbox"></td>
+                                            <td class="text-center"><input type="checkbox"></td>
+                                            <td class="text-center"><input type="checkbox" checked></td>
                                         </tr>
                                     </tbody>
                                 </table>
