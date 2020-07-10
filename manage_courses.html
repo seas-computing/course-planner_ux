@@ -344,36 +344,52 @@
                     </div>
                     <div class="modal-body">
                         <form>
-                            <div>    
-                                <label for="course_area">Area</label>
-                                <br>
-                                <select class="Dropdown" id="course_area" onchange="showfield(this.options[this.selectedIndex].value)">
-                                    <option>&nbsp;</option>
-                                    <option selected>ACS</option>
-                                    <option>AM</option>
-                                    <option>AP</option>
-                                    <option>BE</option>
-                                    <option>CS</option>
-                                    <option>EE</option>
-                                    <option>ESE</option>
-                                    <option>General</option>
-                                    <option>MDE</option>
-                                    <option>MSMBA</option>
-                                    <option>Mat&amp;ME</option>
-                                    <option>SEM</option>
-                                    <option value="Other">New area</option>
-                                </select>
-                            </div>
-                            <div>    
-                                <label for="course">Course number</label>
-                                <div>
-                                    <input id="course" name="course" type="text" class="TextInput" value="AC 207" placeholder="e.g., AC209">
+                            <div style="display: flex;">
+        
+                                <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
+                                    <label for="coursearea">Select an existing area</label>
+                                    <input id="coursearea" name="coursearea" type="radio" checked>
+                                </div>
+                                <div style="flex: 0 0 95%; max-width: 95%;">
+                                    <label for="course_area">Select an existing area</label>
+                                    <div>
+                                        <select class="Dropdown" id="course_area">
+                                            <option>&nbsp;</option>
+                                            <option selected>ACS</option>
+                                            <option>AM</option>
+                                            <option>AP</option>
+                                            <option>BE</option>
+                                            <option>CS</option>
+                                            <option>EE</option>
+                                            <option>ESE</option>
+                                            <option>General</option>
+                                            <option>MDE</option>
+                                            <option>MSMBA</option>
+                                            <option>Mat&amp;ME</option>
+                                            <option>SEM</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div style="display: flex;">
+        
+                                <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
+                                    <label for="coursearea">Create a new area</label>
+                                    <input id="coursearea" name="coursearea" type="radio">
+                                </div>
+                                <div style="flex: 0 0 95%; max-width: 95%;">
+                                    <label for="newcoursearea">Create a new area</label>
+                                    <div>
+                                        <input id="newcoursearea" name="newcoursearea" type="text" class="TextInput" value="" placeholder="e.g., ABC">
+                                    </div>
+                                </div>
+                            </div>
+                            <div><hr></div>
                             <div>    
                                 <label for="courseTitle">Title</label>
                                 <div>
-                                    <input id="courseTitle" name="courseTitle" type="text" class="TextInput" value="Computational Foundations of Data Science" placeholder="e.g., Data Science">
+                                    <input id="courseTitle" name="courseTitle" type="text" class="TextInput" value="Critical Thinking in Data Science" placeholder="e.g., Data Science">
                                 </div>
                             </div>
                             <div>    
