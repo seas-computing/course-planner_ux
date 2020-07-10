@@ -342,9 +342,10 @@
                         <h2 class="modal-title" id="exampleModalLabel">Edit faculty</h2>
                     </div>
                     <div class="modal-body">
+                        <p class="required-label">Note: * denotes required information</p>
                         <form>
                             <div>    
-                                <label for="course_area">Area</label>
+                                <span class="required-label">*</span> <label for="course_area">Area</label>
                                 <div>
                                     <select id="course_area" class="Dropdown">
                                         <option>ACS</option>
@@ -362,31 +363,25 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label for="huid">HUID</label>
+                                    <span class="required-label">*</span> <label for="huid">HUID</label>
                                     <div>
                                         <input id="huid" name="huid" type="text" class="TextInput" value="12345678" placeholder="e.g., 12345678">
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="firstName">First name</label>
+                                    <span class="required-label">*</span> <label for="firstName">First name</label>
                                     <div>
                                         <input id="firstName" name="firstName" type="text" class="TextInput" value="John" placeholder="e.g., Jane">
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="surname">Last name</label>
+                                    <span class="required-label">*</span> <label for="surname">Last name</label>
                                     <div>
                                         <input id="surname" name="surname" type="text" class="TextInput" value="Harvard" placeholder="e.g., Jane">
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="join">Join with...</label>
-                                    <div>
-                                        <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry">
-                                    </div>
-                                </div>
-                                <div>
-                                    <label for="facultyCategory">Category</label>
+                                    <span class="required-label">*</span> <label for="facultyCategory">Category</label>
                                     <div>
                                         <select id="facultyCategory" class="Dropdown">
                                             <option>&nbsp;</option>
@@ -394,6 +389,12 @@
                                             <option selected>Non-ladder</option>
                                             <option>Non-SEAS ladder</option>
                                         </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="join">Join with...</label>
+                                    <div>
+                                        <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry">
                                     </div>
                                 </div>
                                 <div>
@@ -421,10 +422,10 @@
                         <!-- Because of id="dialog1" referred to by the button that opened the modal, the focus of the screentreader moves into the modal and on the first form - Area -->
                         <div role="dialog" id="dialog1" aria-labelledby="dialog1_label" aria-modal="true" class="hidden">
                             <div class="ModalHeader"><span id="dialog1_label" class="ModalHeading">Create new faculty</span></div>
-                            
+                            <p class="required-label">Note: * denotes required information</p>
                                 <form>
                                     <div>
-                                        <label for="faculty_area">Area</label>
+                                        <span class="required-label">*</span> <label for="faculty_area">Area</label>
                                         <div>
                                             <select class="Dropdown" id="faculty_area">
                                                 <option>&nbsp;</option>
@@ -444,31 +445,25 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <label for="huid">HUID</label>
+                                        <span class="required-label">*</span> <label for="huid">HUID</label>
                                         <div>
                                             <input id="huid" name="huid" type="text" class="TextInput" value="" placeholder="e.g., 12345678">
                                         </div>
                                     </div>
                                     <div>
-                                        <label for="firstName">First name</label>
+                                        <span class="required-label">*</span> <label for="firstName">First name</label>
                                         <div>
                                             <input id="firstName" name="firstName" type="text" class="TextInput" value="" placeholder="e.g., Jane">
                                         </div>
                                     </div>
                                     <div>
-                                        <label for="lastName">Last name</label>
+                                        <span class="required-label">*</span> <label for="lastName">Last name</label>
                                         <div>
                                             <input id="lastName" name="lastName" type="text" class="TextInput" value="" placeholder="e.g., Smith">
                                         </div>
                                     </div>
                                     <div>
-                                        <label for="join">Join with...</label>
-                                        <div>
-                                            <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry">
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label for="facultyCategory">Category</label>
+                                        <span class="required-label">*</span> <label for="facultyCategory">Category</label>
                                         <div>
                                             <select id="facultyCategory" class="Dropdown">
                                                 <option>&nbsp;</option>
@@ -476,6 +471,12 @@
                                                 <option>Non-ladder</option>
                                                 <option>Non-SEAS ladder</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="join">Join with...</label>
+                                        <div>
+                                            <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry">
                                         </div>
                                     </div>
                                     <div>
