@@ -1155,3 +1155,365 @@ tbody {
     }
 
 /*#endregion*/
+
+
+
+/* *** Mark One accessible checkboxes and radio *** */
+/*#region*/
+/* **** checkboxes **** */
+
+input[type='checkbox'] + label {
+    display: block          !important;
+    position: relative      !important;
+    padding: .25rem 0rem    !important;
+    }
+
+    /* pseudo-element that acts in place of the primary checkbox */
+    input.primary_check[type='checkbox'] + label::before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: solid 2px rgb(23, 135, 23);
+    vertical-align: middle;
+    }
+
+    /* custom primary checkmark */
+    input.primary_check[type='checkbox']:checked + label::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 3px;
+    border-left: 2px solid rgb(23, 135, 23);
+    border-bottom: 2px solid rgb(23, 135, 23);
+    height: 5px;
+    width: 12px;
+    transform: rotate(-45deg);
+    }
+
+    /* focus styles to the primary pseudo-element */
+    input.primary_check[type='checkbox']:focus + label::before {
+    outline: rgb(23, 135, 23); solid 1px;
+    box-shadow: 0 0px 8px rgb(23, 135, 23);
+    }
+
+    /* pseudo-element that acts in place of the secondary checkbox */
+    input.secondary_check[type='checkbox'] + label::before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: solid 2px rgb(147, 161, 173);
+    vertical-align: middle;
+    }
+
+    /* custom secondary checkmark */
+    input.secondary_check[type='checkbox']:checked + label::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 28px;
+    border-left: 2px solid rgb(147, 161, 173);
+    border-bottom: 2px solid rgb(147, 161, 173);
+    height: 6px;
+    width: 13px;
+    transform: rotate(-45deg);
+    }
+
+    /* focus styles to the secondary pseudo-element */
+    input.secondary_check[type='checkbox']:focus + label::before {
+    outline: rgb(147, 161, 173); solid 1px;
+    box-shadow: 0 0px 8px rgb(147, 161, 173);
+    }
+
+    /* pseudo-element that acts in place of the info checkbox */
+    input.info_check[type='checkbox'] + label::before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: solid 2px rgb(78, 136, 199);
+    vertical-align: middle;
+    }
+
+    /* custom info checkmark */
+    input.info_check[type='checkbox']:checked + label::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 28px;
+    border-left: 2px solid rgb(78, 136, 199);
+    border-bottom: 2px solid rgb(78, 136, 199);
+    height: 6px;
+    width: 13px;
+    transform: rotate(-45deg);
+    }
+
+    /* focus styles to the info pseudo-element */
+    input.info_check[type='checkbox']:focus + label::before {
+    outline: rgb(78, 136, 199); solid 1px;
+    box-shadow: 0 0px 8px rgb(78, 136, 199);
+    }
+
+    /* pseudo-element that acts in place of the danger checkbox */
+    input.danger_check[type='checkbox'] + label::before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: solid 2px rgb(237, 27, 42);
+    vertical-align: middle;
+    }
+
+    /* custom danger checkmark */
+    input.danger_check[type='checkbox']:checked + label::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 28px;
+    border-left: 2px solid rgb(237, 27, 42);
+    border-bottom: 2px solid rgb(237, 27, 42);
+    height: 6px;
+    width: 13px;
+    transform: rotate(-45deg);
+    }
+
+    /* focus styles to the danger pseudo-element */
+    input.danger_check[type='checkbox']:focus + label::before {
+    outline: rgb(237, 27, 42); solid 1px;
+    box-shadow: 0 0px 8px rgb(237, 27, 42);
+    }
+
+    /* styling for the disabled checkboxes */
+    input.disabled_check[type='checkbox'] + label::before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: solid 2px rgb(147, 161, 173);
+    vertical-align: middle;
+    }
+
+    input.disabled_check[type='checkbox'] + label::before {
+    background: rgb(236, 236, 236);
+    border: solid 2px rgb(147, 161, 173);
+    }
+
+    input.disabled_check + label {
+        color: rgb(147, 161, 173);
+    }
+
+    /* hide the original checkbox */
+    input[type='checkbox'] {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    }
+
+    /* checkbox list layout */
+    input[type='checkbox'] {
+    position: absolute;
+    }
+
+    /* **** radio buttons **** */
+
+    /* Inherit box-sizing to make it easier to change the property
+    * for components that leverage other behavior.*/
+    *,
+    *::before,
+    *::after {
+    box-sizing: inherit;
+    }
+
+    /* style form to limit width and highlight the long label */
+    form {
+    margin: 1rem auto;
+    max-width: 750px;
+    }
+
+    /* style wrapper to give some space */
+    .wrapper {
+    position: relative;
+    /* margin: 1rem 0 1rem 1.5rem; */
+    }
+
+    /* style label to give some more space */
+    .wrapper label {
+    display: block;
+    padding: 0px 0 0px 24px;
+    }
+
+    /* style and hide original checkbox */
+    .wrapper input {
+    height: 40px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    }
+
+    /* reveal check for 'on' state */
+    .wrapper input:checked + label::after {
+    opacity: 1;
+    }
+
+    /* primary position */
+    .primary_wrapper input + label::before {
+    border: 2px solid rgb(23, 135, 23);
+    content: "";
+    height: 14px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 14px;
+    border-radius: 50%;
+    }
+
+    /* primary radio pseudo element styles */
+    .primary_wrapper input + label::after {
+    content: "";
+    opacity: 0;
+    border: 4px solid rgb(23, 135, 23);
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    transition: opacity 0.2s ease-in-out;
+    }
+
+    /* primary focus */
+    .primary_wrapper input:focus + label::before {
+    box-shadow: 0 0px 8px rgb(23, 135, 23);  
+    outline: 1px solid transparent;
+    }
+
+    /* secondary position */
+    .secondary_wrapper input + label::before {
+    border: 2px solid rgb(147, 161, 173);
+    content: "";
+    height: 14px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 14px;
+    border-radius: 50%;
+    }
+
+    /* secondary radio pseudo element styles */
+    .secondary_wrapper input + label::after {
+    content: "";
+    opacity: 0;
+    border: 4px solid rgb(147, 161, 173);
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    transition: opacity 0.2s ease-in-out;
+    }
+
+    /* secondary focus */
+    .secondary_wrapper input:focus + label::before {
+    box-shadow: 0 0px 8px rgb(147, 161, 173);  
+    outline: 1px solid transparent;
+    }
+
+    /* info position */
+    .info_wrapper input + label::before {
+    border: 2px solid rgb(78, 136, 199);
+    content: "";
+    height: 16px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 16px;
+    border-radius: 50%;
+    }
+
+    /* info radio pseudo element styles */
+    .info_wrapper input + label::after {
+    content: "";
+    opacity: 0;
+    border: 4px solid rgb(78, 136, 199);
+    border-radius: 50%;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    transition: opacity 0.2s ease-in-out;
+    }
+
+    /* info focus */
+
+    .info_wrapper input:focus + label::before {
+    box-shadow: 0 0px 8px rgb(78, 136, 199);  
+    outline: 1px solid transparent;
+    }
+
+    /* danger position */
+    .danger_wrapper input + label::before {
+    border: 2px solid rgb(237, 27, 42);
+    content: "";
+    height: 14px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 14px;
+    border-radius: 50%;
+    }
+
+    /* danger radio pseudo element styles */
+    .danger_wrapper input + label::after {
+    content: "";
+    opacity: 0;
+    border: 4px solid rgb(237, 27, 42);
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    transition: opacity 0.2s ease-in-out;
+    }
+
+    /* danger focus */
+
+    .danger_wrapper input:focus + label::before {
+    box-shadow: 0 0px 8px rgb(237, 27, 42);  
+    outline: 1px solid transparent;
+    }
+
+    /* disabled position */
+    .disabled_wrapper input + label::before {
+    border: 2px solid rgb(147, 161, 173);
+    content: "";
+    height: 14px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 14px;
+    border-radius: 50%;
+    background-color: rgb(236, 236, 236);
+    }
+
+    /* disabled position */
+    .disabled_wrapper > label {
+    color: rgb(147, 161, 173);
+    }
+
+    /*#endregion*/
