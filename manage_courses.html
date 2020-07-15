@@ -233,14 +233,16 @@
                         </div>
                         <div class="modal-body">
                             <form>
-                                <div style="display: flex;">
+                                <div>
             
-                                    <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
-                                        <label for="coursearea">Select an existing area</label>
-                                        <input id="coursearea" name="coursearea" type="radio" checked>
+                                    <div>
+                                        <div class="wrapper info_wrapper">
+                                            <input id="coursearea" name="coursearea" type="radio" value="info_radio" checked>
+                                            <label for="coursearea">Select an existing area</label>
+                                        </div>
                                     </div>
-                                    <div style="flex: 0 0 95%; max-width: 95%;">
-                                        <label for="course_area">Select an existing area</label>
+                                    <div>
+                                        <label for="course_area" class="hidden">Select an existing area</label>
                                         <div>
                                             <select class="Dropdown" id="course_area">
                                                 <option>&nbsp;</option>
@@ -261,14 +263,16 @@
                                     </div>
                                 </div>
 
-                                <div style="display: flex;">
+                                <div class="mt-3">
             
-                                    <div class="TextInput--nolabel" style="flex: 0 0 5%; max-width: 5%;">
-                                        <label for="coursearea">Create a new area</label>
-                                        <input id="coursearea" name="coursearea" type="radio">
+                                    <div>
+                                        <div class="wrapper info_wrapper">
+                                            <input id="newcoursearea" name="coursearea" type="radio" value="info_radio">
+                                            <label for="newcoursearea">Create a new area</label>
+                                        </div>
                                     </div>
                                     <div style="flex: 0 0 95%; max-width: 95%;">
-                                        <label for="newcoursearea">Create a new area</label>
+                                        <label for="newcoursearea" class="hidden">Create a new area</label>
                                         <div>
                                             <input id="newcoursearea" name="newcoursearea" type="text" class="TextInput" value="" placeholder="e.g., ABC">
                                         </div>
