@@ -1154,6 +1154,16 @@ tbody {
         grid-area: e / e / e / e;
     }
 
+    /* Error message */
+    .ValidationErrorMessage {
+        color: rgb(255, 64, 64);
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.7em;
+        font-weight: 600;
+        grid-area: e / e / e / e;
+        margin-top: 1em;
+    }
+
 /*#endregion*/
 
 
