@@ -584,6 +584,13 @@
                                 </div>
                             </div>
 
+                            <div>
+                                <label for="meetingSize">Expected size</label>
+                                <div>
+                                    <input id="meetingSize" name="meetingSize" type="text" class="TextInput" value="" placeholder="i.e., 20 or TBD">
+                                </div>
+                            </div>
+
                                 <div>
                                     <label for="area">Area</label>
                                     <span role="alert" aria-live="assertive" aria-invalid="true" class="required-label">
@@ -647,13 +654,36 @@
                         <div class="modal-body">
 
                             <div class="row">
-                                <div class="col-md-6 offset-md-6">
-                                    <label for="filter">Filter by:</label>
+                                <div class="col-md-6">
+                                    <h5>Meeting notes</h5> 
+                                </div>
+                                <div class="col-md-6">
+                                    <h5><label for="meetingSize">Expected size</label></h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="meetingNote" class="hidden">Note for this meeting</label>
+                                    <p>
+                                        contactName Surname
+                                        <br>
+                                        <a mailto="#">contactEmail@seas.harvard.edu</a>
+                                        <br>
+                                        1-2345
+                                    </p>
+                                </div>
+                                <div class="col-md-3">
                                     <div>
-                                        <input id="filter" name="filter" type="text" class="TextInput" value="" placeholder="Filter by room">
+                                        <textarea id="meetingNote" name="meetingNote" type="text" placeholder="" rows="3" cols="28">The instructor really wants a projector.</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div>
+                                        <input id="meetingSize" name="meetingSize" type="text" placeholder="" value="35">
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="row">
                                 
                                 <!-- Interface with time and date -->
@@ -788,42 +818,42 @@
                     
                                             <tr class="TableRowOdd">
                                                 <td class="TableCell">Allston</td>
-                                                <td class="TableCell">Geological Museum 201</td>
+                                                <td class="TableCell"><a href="#">Geological Museum 201</a></td>
                                                 <td class="TableCell">250</td>
                                                 <td class="TableCell">AC 209a</td>
                                             </tr>
                     
                                             <tr class="TableRowEven">
                                                 <td class="TableCell">Allston</td>
-                                                <td class="TableCell">Geological Museum 205</td>
+                                                <td class="TableCell"><a href="#">Geological Museum 205</a></td>
                                                 <td class="TableCell">35</td>
                                                 <td class="TableCell">Available</td>
                                             </tr>
                     
                                             <tr class="TableRowOdd">
                                                 <td class="TableCell">Cambridge</td>
-                                                <td class="TableCell">Harvard Hall 204</td>
+                                                <td class="TableCell"><a href="#">Harvard Hall 204</a></td>
                                                 <td class="TableCell">75</td>
-                                                <td class="TableCell">ESE 136</td>
+                                                <td class="TableCell">General</td>
                                             </tr>
                     
                                             <tr class="TableRowEven">
                                                 <td class="TableCell">Cambridge</td>
-                                                <td class="TableCell">Harvard Hall 112</td>
+                                                <td class="TableCell"><a href="#">Harvard Hall 112</a></td>
                                                 <td class="TableCell">75</td>
                                                 <td class="TableCell">ES 115</td>
                                             </tr>
                     
                                             <tr class="TableRowOdd">
-                                                <td class="TableCell">Cambridge</td>
-                                                <td class="TableCell">NW B103</td>
+                                                <td class="TableCell">FAS</td>
+                                                <td class="TableCell"><a href="#">NW B103</a></td>
                                                 <td class="TableCell">25</td>
-                                                <td class="TableCell">Available</td>
+                                                <td class="TableCell">Check FAS availability</td>
                                             </tr>
                     
                                             <tr class="TableRowEven">
                                                 <td class="TableCell">Cambridge</td>
-                                                <td class="TableCell">P 100F</td>
+                                                <td class="TableCell"><a href="#">P 100F</a></td>
                                                 <td class="TableCell">125</td>
                                                 <td class="TableCell">AM 218</td>
                                             </tr>
@@ -859,7 +889,7 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Close</button>
+                            <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Cancel</button>
                             <button type="button" class="Button--primary Button--rightAlign" data-dismiss="modal">Save</button>
                         </div>
                     </div>
