@@ -268,7 +268,7 @@
                         </tr>
 
                         <tr class="TableRowEven">
-                            <td class="TableCell"></td>
+                            <td class="TableCell">General</td>
                             <td class="TableCell"></td>
                             <td class="TableCell">Faculty planning</td>
                             <td class="TableCell">
@@ -556,8 +556,39 @@
                                 Note: * denotes required information.
                             </span>
 
+                            <div>
+                                <label for="contactName">Contact name</label>
+                                <div>
+                                    <input id="contactName" name="contactName" type="text" class="TextInput" value="" placeholder="e.g., Jane Doe">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="contactEmail">Contact email</label>
+                                <div>
+                                    <input id="contactEmail" name="contactEmail" type="text" class="TextInput" value="" placeholder="e.g., JDoe@seas.harvard.edu">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="contactTelephone">Contact telephone</label>
+                                <div>
+                                    <input id="contactTelephone" name="contactTelephone" type="text" class="TextInput" value="" placeholder="e.g., 1-2345">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="meetingNotes">Notes</label>
+                                <div>
+                                    <input id="meetingNotes" name="meetingNotes" type="text" class="TextInput" value="" placeholder="e.g., Must have whiteboard">
+                                </div>
+                            </div>
+
                                 <div>
                                     <label for="area">Area</label>
+                                    <span role="alert" aria-live="assertive" aria-invalid="true" class="required-label">
+                                        *
+                                    </span>
                                     <div>
                                         <select class="Dropdown" id="area">
                                             <option>&nbsp;</option>
