@@ -72,477 +72,665 @@
             <span id="openoptionsnote" class="hidden">This link visually displays the content below</span>
         </div>
 
-            <!--Sliding sidebar filters-->
-            <div class="sideNav-column">
-                <div id="mySidenav" class="sidenav">
-                    <div class="sideNav--ncm--inside__Link">
-                        <a href="javascript:void(0)" onclick="closeNav()" class="Link" aria-describedby="closeoptionsnote">
-                            Options
-                            <i class="far fa-arrow-alt-circle-left ml-auto"></i>
-                        </a>
-                        <span id="closeoptionsnote" class="hidden">This link visually hides the content below</span>
-                    </div>
-                    <form>
-                        <hr>
-                        <div>
-                            <button class="Button--secondary">Download courses report</button>
-                        </div>
-                    </form>
+        <!--Sliding sidebar filters-->
+        <div class="sideNav-column">
+            <div id="mySidenav" class="sidenav">
+                <div class="sideNav--ncm--inside__Link">
+                    <a href="javascript:void(0)" onclick="closeNav()" class="Link" aria-describedby="closeoptionsnote">
+                        Options
+                        <i class="far fa-arrow-alt-circle-left ml-auto"></i>
+                    </a>
+                    <span id="closeoptionsnote" class="hidden">This link visually hides the content below</span>
                 </div>
+                <form>
+                    <hr>
+                    <div>
+                        <button class="Button--secondary">Download courses report</button>
+                    </div>
+                </form>
             </div>
+        </div>
 
-            <!-- courses -->
-            <div class="courses">
-                <table class="Table Table--Sidebar">
+        <!-- table -->
+        <div class="courses">
+            <table class="Table Table--Sidebar">
 
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
 
-                    <thead class="TableHead">
-                        
-                        <tr class="TableHeadingCell">
-                            <td class="TableHeadingCell--blank__left" colspan="3">
-                            <button type="button" class="mb-1" id="buttonInfo" data-toggle="modal" data-target="#newnonclassmeetingModal">
-                                New non-class meeting
-                            </button>
-                            </td>
-                            <td class="TableHeadingCell--blank__left" colspan="2">
-                                <div class="align-center mb-1">
-                                    <label for="semesters">Academic year</label>
-                                    <select id="semesters" name="semesters" class="Dropdown_nowidth" aria-describedby="academicyearnote">
-                                        <option value="string:2020-2021" label="Fall 2020 - Spring 2021">Fall 2020 - Spring 2021</option>
-                                        <option value="string:2019-2020" label="Fall 2019 - Spring 2020" selected="selected">Fall 2019 - Spring 2020</option>
-                                        <option value="string:2018-2019" label="Fall 2018 - Spring 2019">Fall 2018 - Spring 2019</option>
-                                        <option value="string:2017-2018" label="Fall 2017 - Spring 2018">Fall 2017 - Spring 2018</option>
-                                        <option value="string:2016-2017" label="Fall 2016 - Spring 2017">Fall 2016 - Spring 2017</option>
-                                        <option value="string:2015-2016" label="Fall 2015 - Spring 2016">Fall 2015 - Spring 2016</option>
-                                        <option value="string:2014-2015" label="Fall 2014 - Spring 2015">Fall 2014 - Spring 2015</option>
-                                        <option value="string:2013-2014" label="Fall 2013 - Spring 2014">Fall 2013 - Spring 2014</option>
-                                    </select>
-                                    <span id="academicyearnote" class="hidden">The table will show the new terms upon the selection of the dropdown</span>
-                                </div>
-                            </td>
-                            <td class="TableHeadingCell--blank__right">
-                            </td>
-                        </tr>
-                        <tr class="TableHeadingCell" >
-                            <td class="TableHeadingCell TableHeadingCell--blank__left">
-                            </td>
-                            <td class="TableHeadingCell TableHeadingCell--blank__left">
-                            </td>
-                            <td class="TableHeadingCell TableHeadingCell--blank__left">
-                            </td>
-                            <th scope="col" class="TableHeadingCell--nav">
-                                Fall 2019
-                            </th>
-                            <th scope="col" class="TableHeadingCell--nav">
-                                Spring 2020
-                            </th>
-                            <td class="TableHeadingCell TableHeadingCell--blank__right">
-                            </td>
-                        </tr>
-                        <tr class="TableHeadingCell">
-                            <th scope="col" class="TableHeadingCell">
-                                Area
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Course
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Title
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Room
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Room
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Detail
-                            </th>
-                        </tr>
-
-                        <tr class="TableHeadingCell">
-                            <td class="TableHeadingCell TextInput--nolabel">
-                                <label for="semesters">Area</label>
-                                <div>
-                                    <select id="semesters" name="semesters" class="Dropdown" aria-describedby="areanote">
-                                        <option value="string:All" label="All" selected="selected">All</option>
-                                        <option value="string:ACS" label="ACS">ACS</option>
-                                        <option value="string:AM" label="AM">AM</option>
-                                        <option value="string:AP" label="AP">AP</option>
-                                        <option value="string:BE" label="BE">BE</option>
-                                        <option value="string:CS" label="CS">CS</option>
-                                        <option value="string:EE" label="EE">EE</option>
-                                        <option value="string:ESE" label="ESE">ESE</option>
-                                        <option value="string:General" label="General">General</option>
-                                        <option value="string:MDE" label="MDE">MDE</option>
-                                        <option value="string:MSMBA" label="MSMBA">MSMBA</option>
-                                        <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
-                                        <option value="string:SEM" label="SEM">SEM</option>
-                                    </select>
-                                    <span id="areanote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
-                                </div>
-                            </td>
-                            <td class="TableHeadingCell TextInput--nolabel">
-                                <label for="course">Course</label>
-                                <div>
-                                    <input id="course" name="course" type="text" class="TextInput" value=""
-                                        placeholder="Filter by course" aria-describedby="coursenote">
-                                        <span id="coursenote" class="hidden">The table will be filtered as characters are typed in this input form</span>
-                                </div>
-                            </td>
-                            <td class="TableHeadingCell TextInput--nolabel">
-                                <label for="title">Title</label>
-                                <div>
-                                    <input id="title" name="title" type="text" class="TextInput" value=""
-                                        placeholder="Filter by title" aria-describedby="titlenote">
-                                        <span id="titlenote" class="hidden">The table will be filtered as characters are typed in this input form</span>
-                                </div>
-                            </td>
-                            <td class="TableHeadingCell"></td>
-                            <td class="TableHeadingCell"></td>
-                            <td class="TableHeadingCell"></td>
-                        </tr>
-                    </thead>
+                <thead class="TableHead">
                     
-                    <tbody class="TableBody">
+                    <tr class="TableHeadingCell">
+                        <td class="TableHeadingCell--blank__left" colspan="3">
+                        <button type="button" class="mb-1" id="buttonInfo" data-toggle="modal" data-target="#newnonclassmeetingModal" aria-label="New non-class meeeting">
+                            New meeting
+                        </button>
+                        </td>
+                        <td class="TableHeadingCell--blank__left" colspan="8">
+                            <div class="align-center mb-1">
+                                <label for="semesters">Academic year</label>
+                                <select id="semesters" name="semesters" class="Dropdown_nowidth" aria-describedby="academicyearnote">
+                                    <option value="string:2020-2021" label="Fall 2020 - Spring 2021">Fall 2020 - Spring 2021</option>
+                                    <option value="string:2019-2020" label="Fall 2019 - Spring 2020" selected="selected">Fall 2019 - Spring 2020</option>
+                                    <option value="string:2018-2019" label="Fall 2018 - Spring 2019">Fall 2018 - Spring 2019</option>
+                                    <option value="string:2017-2018" label="Fall 2017 - Spring 2018">Fall 2017 - Spring 2018</option>
+                                    <option value="string:2016-2017" label="Fall 2016 - Spring 2017">Fall 2016 - Spring 2017</option>
+                                    <option value="string:2015-2016" label="Fall 2015 - Spring 2016">Fall 2015 - Spring 2016</option>
+                                    <option value="string:2014-2015" label="Fall 2014 - Spring 2015">Fall 2014 - Spring 2015</option>
+                                    <option value="string:2013-2014" label="Fall 2013 - Spring 2014">Fall 2013 - Spring 2014</option>
+                                </select>
+                                <span id="academicyearnote" class="hidden">The table will show the new terms upon the selection of the dropdown</span>
+                            </div>
+                        </td>
+                        <td class="TableHeadingCell--blank__right">
+                        </td>
+                    </tr>
+                    <tr class="TableHeadingCell" >
+                        <td class="TableHeadingCell TableHeadingCell--blank__left">
+                        </td>
+                        <td class="TableHeadingCell TableHeadingCell--blank__left">
+                        </td>
+                        <td class="TableHeadingCell TableHeadingCell--blank__left">
+                        </td>
+                        <th scope="col" class="TableHeadingCell--nav" colspan="4">
+                            Fall 2019
+                        </th>
+                        <th scope="col" class="TableHeadingCell--nav" colspan="4">
+                            Spring 2020
+                        </th>
+                        <td class="TableHeadingCell TableHeadingCell--blank__right">
+                        </td>
+                    </tr>
+                    <tr class="TableHeadingCell">
+                        <th scope="col" class="TableHeadingCell">
+                            Area
+                        </th>
+                        <th scope="col" class="TableHeadingCell">
+                            Course
+                        </th>
+                        <th scope="col" class="TableHeadingCell">
+                            Title
+                        </th>
+                        <th scope="col" class="TableHeadingCell">
+                            Room
+                        </th>
+                        <th scope="col" class="TableHeadingCell">
+                            Expected size
+                        </th>
+                        <th scope="col" class="TableHeadingCell">
+                            Notes
+                        </th>
+                        <th scope="col" class="TableHeadingCell">
+                            Contact info
+                        </th>
+                        <th scope="col" class="TableHeadingCell">
+                            Room
+                        </th>
+                        <th scope="col" class="TableHeadingCell">
+                            Expected size
+                        </th>
+                        <th scope="col" class="TableHeadingCell">
+                            Notes
+                        </th>
+                        <th scope="col" class="TableHeadingCell">
+                            Contact info
+                        </th>
+                        <th scope="col" class="TableHeadingCell">
+                            Detail
+                        </th>
+                    </tr>
 
-                        <tr class="TableRowOdd">
-                            <td class="TableCell acs">ACS</td>
-                            <td class="TableCell ">AC 209a</td>
-                            <td class="TableCell">Reading group</td>
-                            <td class="TableCell">
-                                    <div class="icon">
-                                        <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                            <i class="fas fa-edit float-right"></i>
-                                        </a>
-                                    </div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅐</div>
-                                    <div class="room">Geological Museum 105</div>
+                    <tr class="TableHeadingCell">
+                        <td class="TableHeadingCell TextInput--nolabel">
+                            <label for="semesters">Area</label>
+                            <div>
+                                <select id="semesters" name="semesters" class="Dropdown" aria-describedby="areanote">
+                                    <option value="string:All" label="All" selected="selected">All</option>
+                                    <option value="string:ACS" label="ACS">ACS</option>
+                                    <option value="string:AM" label="AM">AM</option>
+                                    <option value="string:AP" label="AP">AP</option>
+                                    <option value="string:BE" label="BE">BE</option>
+                                    <option value="string:CS" label="CS">CS</option>
+                                    <option value="string:EE" label="EE">EE</option>
+                                    <option value="string:ESE" label="ESE">ESE</option>
+                                    <option value="string:General" label="General">General</option>
+                                    <option value="string:MDE" label="MDE">MDE</option>
+                                    <option value="string:MSMBA" label="MSMBA">MSMBA</option>
+                                    <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
+                                    <option value="string:SEM" label="SEM">SEM</option>
+                                </select>
+                                <span id="areanote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
+                            </div>
+                        </td>
+                        <td class="TableHeadingCell TextInput--nolabel">
+                            <label for="course">Course</label>
+                            <div>
+                                <input id="course" name="course" type="text" class="TextInput" value=""
+                                    placeholder="Filter by course" aria-describedby="coursenote">
+                                    <span id="coursenote" class="hidden">The table will be filtered as characters are typed in this input form</span>
+                            </div>
+                        </td>
+                        <td class="TableHeadingCell TextInput--nolabel">
+                            <label for="title">Title</label>
+                            <div>
+                                <input id="title" name="title" type="text" class="TextInput" value=""
+                                    placeholder="Filter by title" aria-describedby="titlenote">
+                                    <span id="titlenote" class="hidden">The table will be filtered as characters are typed in this input form</span>
+                            </div>
+                        </td>
+                        <td class="TableHeadingCell"></td>
+                        <td class="TableHeadingCell"></td>
+                        <td class="TableHeadingCell"></td>
+                        <td class="TableHeadingCell"></td>
+                        <td class="TableHeadingCell"></td>
+                        <td class="TableHeadingCell"></td>
+                        <td class="TableHeadingCell"></td>
+                        <td class="TableHeadingCell"></td>
+                        <td class="TableHeadingCell"></td>
+                    </tr>
+                </thead>
+                
+                <tbody class="TableBody">
+
+                    <tr class="TableRowOdd">
+                        <td class="TableCell acs">ACS</td>
+                        <td class="TableCell ">AC 209a</td>
+                        <td class="TableCell">Reading group</td>
+                        <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
                                 </div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
 
-                                <div style="clear: left;"><hr></div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Wednesday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅐</div>
-                                    <div class="room">Geological Museum 105</div>
+                            <div style="clear: left;"><hr></div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Wednesday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+
+                        </td>
+
+                        <td class="TableCell">35</td>
+                        <td class="TableCell ">The instructor really wants a projector.</td>
+                        <td class="TableCell">
+                            Name Last
+                            <br>
+                            nlast@seas.harvard.edu
+                            <br>
+                            (123) 435-6789
+                        </td>
+
+                        <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
                                 </div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
 
-                            </td>
-                            <td class="TableCell">
-                                    <div class="icon">
-                                        <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                            <i class="fas fa-edit float-right"></i>
-                                        </a>
-                                    </div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅐</div>
-                                    <div class="room">Geological Museum 105</div>
+                            <div style="clear: left;"><hr></div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Wednesday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+
+                        </td>
+                        
+                        <td class="TableCell">35</td>
+                        <td class="TableCell ">The instructor really wants a projector.</td>
+                        <td class="TableCell">
+                            Name Last
+                            <br>
+                            nlast@seas.harvard.edu
+                            <br>
+                            (123) 435-6789
+                        </td>
+
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
+                                <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowEven">
+                        <td class="TableCell">General</td>
+                        <td class="TableCell"></td>
+                        <td class="TableCell">Faculty planning</td>
+                        <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
                                 </div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
 
-                                <div style="clear: left;"><hr></div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Wednesday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅐</div>
-                                    <div class="room">Geological Museum 105</div>
+                            <div style="clear: left;"><hr></div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Wednesday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+
+                        </td>
+                        
+                        <td class="TableCell">35</td>
+                        <td class="TableCell ">The instructor really wants a projector.</td>
+                        <td class="TableCell">
+                            Name Last
+                            <br>
+                            nlast@seas.harvard.edu
+                            <br>
+                            (123) 435-6789
+                        </td>
+
+                        <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
                                 </div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
 
-                            </td>
-                            <td class="TableCell">
-                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
-                                    <i class="fas fa-folder-open"></i>
+                            <div style="clear: left;"><hr></div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Wednesday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+
+                        </td>
+                        
+                        <td class="TableCell">35</td>
+                        <td class="TableCell ">The instructor really wants a projector.</td>
+                        <td class="TableCell">
+                            Name Last
+                            <br>
+                            nlast@seas.harvard.edu
+                            <br>
+                            (123) 435-6789
+                        </td>
+
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
+                                <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowOdd">
+                        <td class="TableCell acs">ACS</td>
+                        <td class="TableCell ">AC 209b</td>
+                        <td class="TableCell">Office hours</td>
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
                                 </a>
-                            </td>
-                        </tr>
+                            </div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅒</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell">35</td>
+                        <td class="TableCell ">The instructor really wants a projector.</td>
+                        <td class="TableCell">
+                            Name Last
+                            <br>
+                            nlast@seas.harvard.edu
+                            <br>
+                            (123) 435-6789
+                        </td>
 
-                        <tr class="TableRowEven">
-                            <td class="TableCell">General</td>
-                            <td class="TableCell"></td>
-                            <td class="TableCell">Faculty planning</td>
-                            <td class="TableCell">
-                                    <div class="icon">
-                                        <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                            <i class="fas fa-edit float-right"></i>
-                                        </a>
-                                    </div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅐</div>
-                                    <div class="room">Geological Museum 105</div>
-                                </div>
-
-                                <div style="clear: left;"><hr></div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Wednesday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅐</div>
-                                    <div class="room">Geological Museum 105</div>
-                                </div>
-
-                            </td>
-                            <td class="TableCell">
-                                    <div class="icon">
-                                        <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                            <i class="fas fa-edit float-right"></i>
-                                        </a>
-                                    </div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅐</div>
-                                    <div class="room">Geological Museum 105</div>
-                                </div>
-
-                                <div style="clear: left;"><hr></div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Wednesday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅐</div>
-                                    <div class="room">Geological Museum 105</div>
-                                </div>
-
-                            </td>
-                            <td class="TableCell">
-                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
-                                    <i class="fas fa-folder-open"></i>
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
                                 </a>
-                            </td>
-                        </tr>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell"></td>
+                        <td class="TableCell "></td>
+                        <td class="TableCell"></td>
 
-                        <tr class="TableRowOdd">
-                            <td class="TableCell acs">ACS</td>
-                            <td class="TableCell ">AC 209b</td>
-                            <td class="TableCell">Office hours</td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅒</div>
-                                    <div class="room">Geological Museum 105</div>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
-                                    <i class="fas fa-folder-open"></i>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
+                                <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowEven">
+                        <td class="TableCell acs">ACS</td>
+                        <td class="TableCell ">AC 221</td>
+                        <td class="TableCell">Reading group</td>
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
                                 </a>
-                            </td>
-                        </tr>
+                            </div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell">35</td>
+                        <td class="TableCell ">The instructor really wants a projector.</td>
+                        <td class="TableCell">
+                            Name Last
+                            <br>
+                            nlast@seas.harvard.edu
+                            <br>
+                            (123) 435-6789
+                        </td>
 
-                        <tr class="TableRowEven">
-                            <td class="TableCell acs">ACS</td>
-                            <td class="TableCell ">AC 221</td>
-                            <td class="TableCell">Reading group</td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅐</div>
-                                    <div class="room">Geological Museum 105</div>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
-                                    <i class="fas fa-folder-open"></i>
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
                                 </a>
-                            </td>
-                        </tr>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell"></td>
+                        <td class="TableCell "></td>
+                        <td class="TableCell"></td>
 
-                        <tr class="TableRowOdd">
-                            <td class="TableCell am">AM</td>
-                            <td class="TableCell ">AM 010</td>
-                            <td class="TableCell">Faculty meeting</td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅒</div>
-                                    <div class="room">Geological Museum 105</div>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
-                                    <i class="fas fa-folder-open"></i>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
+                                <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowOdd">
+                        <td class="TableCell am">AM</td>
+                        <td class="TableCell ">AM 010</td>
+                        <td class="TableCell">Faculty meeting</td>
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
                                 </a>
-                            </td>
-                        </tr>
+                            </div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅒</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell">35</td>
+                        <td class="TableCell ">The instructor really wants a projector.</td>
+                        <td class="TableCell">
+                            Name Last
+                            <br>
+                            nlast@seas.harvard.edu
+                            <br>
+                            (123) 435-6789
+                        </td>
 
-                        <tr class="TableRowEven">
-                            <td class="TableCell acs">ACS</td>
-                            <td class="TableCell ">AC 021a</td>
-                            <td class="TableCell">TF meeting</td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅐</div>
-                                    <div class="room">Geological Museum 105</div>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
-                                    <i class="fas fa-folder-open"></i>
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
                                 </a>
-                            </td>
-                        </tr>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell"></td>
+                        <td class="TableCell "></td>
+                        <td class="TableCell"></td>
 
-                        <tr class="TableRowOdd">
-                            <td class="TableCell ap">AP</td>
-                            <td class="TableCell ">AP 275</td>
-                            <td class="TableCell">Office hours</td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅐</div>
-                                    <div class="room">Geological Museum 105</div>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
-                                    <i class="fas fa-folder-open"></i>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
+                                <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowEven">
+                        <td class="TableCell acs">ACS</td>
+                        <td class="TableCell ">AC 021a</td>
+                        <td class="TableCell">TF meeting</td>
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
                                 </a>
-                            </td>
-                        </tr>
+                            </div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell">35</td>
+                        <td class="TableCell ">The instructor really wants a projector.</td>
+                        <td class="TableCell">
+                            Name Last
+                            <br>
+                            nlast@seas.harvard.edu
+                            <br>
+                            (123) 435-6789
+                        </td>
 
-                        <tr class="TableRowEven">
-                            <td class="TableCell ap">AP</td>
-                            <td class="TableCell ">AP 050a</td>
-                            <td class="TableCell">Reading group</td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅒</div>
-                                    <div class="room">Geological Museum 105</div>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
-                                    <i class="fas fa-folder-open"></i>
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
                                 </a>
-                            </td>
-                        </tr>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell"></td>
+                        <td class="TableCell "></td>
+                        <td class="TableCell"></td>
 
-                        <tr class="TableRowOdd">
-                            <td class="TableCell ap">AP</td>
-                            <td class="TableCell ">AC 050b</td>
-                            <td class="TableCell">Faculty meeting</td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                                
-                                <div class="roomTimeLocation">
-                                    <div class="date">Monday<br>1:30pm-2:45pm</div>
-                                    <div class`="campus">🅐</div>
-                                    <div class="room">Geological Museum 105</div>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#editnonclassmeetingModal">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                            </td>
-                            <td class="TableCell">
-                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
-                                    <i class="fas fa-folder-open"></i>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
+                                <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowOdd">
+                        <td class="TableCell ap">AP</td>
+                        <td class="TableCell ">AP 275</td>
+                        <td class="TableCell">Office hours</td>
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
                                 </a>
-                            </td>
-                        </tr>
+                            </div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell">35</td>
+                        <td class="TableCell ">The instructor really wants a projector.</td>
+                        <td class="TableCell">
+                            Name Last
+                            <br>
+                            nlast@seas.harvard.edu
+                            <br>
+                            (123) 435-6789
+                        </td>
 
-                    </tbody>
-                </table>
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
+                                </a>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell"></td>
+                        <td class="TableCell "></td>
+                        <td class="TableCell"></td>
 
-            </div><!-- /courses -->
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
+                                <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowEven">
+                        <td class="TableCell ap">AP</td>
+                        <td class="TableCell ">AP 050a</td>
+                        <td class="TableCell">Reading group</td>
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅒</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell">35</td>
+                        <td class="TableCell ">The instructor really wants a projector.</td>
+                        <td class="TableCell">
+                            Name Last
+                            <br>
+                            nlast@seas.harvard.edu
+                            <br>
+                            (123) 435-6789
+                        </td>
+
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
+                                </a>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell"></td>
+                        <td class="TableCell "></td>
+                        <td class="TableCell"></td>
+
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
+                                <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr class="TableRowOdd">
+                        <td class="TableCell ap">AP</td>
+                        <td class="TableCell ">AC 050b</td>
+                        <td class="TableCell">Faculty meeting</td>
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                    <i class="fas fa-edit float-right"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell">35</td>
+                        <td class="TableCell ">The instructor really wants a projector.</td>
+                        <td class="TableCell">
+                            Name Last
+                            <br>
+                            nlast@seas.harvard.edu
+                            <br>
+                            (123) 435-6789
+                        </td>
+
+                        <td class="TableCell">
+                            <div class="icon">
+                                <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#editnonclassmeetingModal">
+                                    <i class="fas fa-edit float-right"></i>
+                                </a>
+                            </div>
+                        </td>
+                        
+                        <td class="TableCell"></td>
+                        <td class="TableCell "></td>
+                        <td class="TableCell"></td>
+
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
+                                <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div><!-- /table -->
+
+        <section id="modals">
 
             <!-- Modal for new room meeting -->
             <div class="modal fade" id="newnonclassmeetingModal" tabindex="-1" role="dialog" aria-labelledby="newnonclassmeetingModal" aria-hidden="true" style="font-size: 1em; right: 18%; left: 23%; top: 4em;">
@@ -652,73 +840,75 @@
                             <h5 class="modal-title" id="courseModal1">Rooms for AC 209a - Data Science 1: Introduction to Data Science</h5>
                         </div>
                         <div class="modal-body">
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h5>Meeting notes</h5> 
-                                </div>
-                                <div class="col-md-6">
-                                    <h5><label for="meetingSize">Expected size</label></h5>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <label for="meetingNote" class="hidden">Note for this meeting</label>
-                                    <p>
-                                        contactName Surname
-                                        <br>
-                                        <a mailto="#">contactEmail@seas.harvard.edu</a>
-                                        <br>
-                                        1-2345
-                                    </p>
-                                </div>
-                                <div class="col-md-3">
-                                    <div>
-                                        <textarea id="meetingNote" name="meetingNote" type="text" placeholder="" rows="3" cols="28">The instructor really wants a projector.</textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div>
-                                        <input id="meetingSize" name="meetingSize" type="text" placeholder="" value="35">
-                                    </div>
-                                </div>
-                            </div>
-                            
                             <div class="row">
                                 
-                                <!-- Interface with time and date -->
-                                <div class="col mt-3">
-                                    <h5>Meeting times for <strong>AC 209a</strong></h5>
-                                    <div class="border p-1 mt-3" style="height: 8.7em;">
+                                <!-- Meeting times and faculty notes -->
+                                <div class="col">
+                                    <div><h5>Meeting times for <strong>AC 209a</strong></h5></div>
+                                    <div class="p-1 mt-3 mb-1" style="height: 14em;">
 
-                                        <div class="roomSelect">
+                                        <div class="roomSelect" style="height: 7em;">
+
+                                            <div class="roomSelect__room">
+                                                <h6>Geological Museum 105</h6>
+                                            </div>
 
                                             <label for="dataone" hidden>Date of booked room</label>
                                             <div class="roomSelect__date">
-                                                <select id="dataone" name="dataone" class="Dropdown Dropdown--disabled">
+                                                <select id="dataone" name="dataone" class="Dropdown">
                                                     <option value="string:All" label="Monday">Monday</option>
+                                                    <option value="string:tuesday" label="Tuesday" selected>Tuesday</option>
+                                                    <option value="string:wednesday" label="wednesday">Wednesday</option>
+                                                    <option value="string:thursday" label="Thursday">Thursday</option>
+                                                    <option value="string:friday" label="Friday">Friday</option>
                                                 </select>
                                             </div>
 
-                                            <label for="timestartone" hidden>Time of booked room</label>
-                                            <div class="roomSelect__time">
-                                                <select id="timestartone" name="timestartone" class="Dropdown Dropdown--disabled">
-                                                    <option value="string:All" label="8:30AM-11:30AM">8:30AM-11:30AM</option>
-                                                </select>
+                                            <div class="input-group mb-3 roomSelect__timeEdit">
+                                                <div class="input-group-prepend dropdown-container">
+                                                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="hidden">Meeting start time</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Start time</a>
+                                                        <a class="dropdown-item" href="#">8:30AM</a>
+                                                        <a class="dropdown-item" href="#">9:00AM</a>
+                                                        <a class="dropdown-item" href="#">10:30AM</a>
+                                                        <a class="dropdown-item" href="#">12:00PM</a>
+                                                        <a class="dropdown-item" href="#">1:15PM</a>
+                                                        <a class="dropdown-item" href="#">1:30PM</a>
+                                                        <a class="dropdown-item" href="#">3:00PM</a>
+                                                        <a class="dropdown-item" href="#">3:45PM</a>
+                                                        <a class="dropdown-item" href="#">4:30PM</a>
+                                                        <a class="dropdown-item" href="#">6:00PM</a>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Meeting start time" value="10:30" style="margin-left: -.25em;">
                                             </div>
 
-                                            <label for="timeEdit" hidden>Editable time of booked room</label>
-                                            <div class="roomSelect__timeEdit">
-                                                <input id="timeEdit" name="facultyA" type="text" class="TextInput" value="8:30AM-12:15PM" placeholder="">
+                                            <div class="input-group mb-3 roomSelect__timeEdit">
+                                                <div class="input-group-prepend dropdown-container">
+                                                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="sr-only">Meeting end time</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">End time</a>
+                                                        <a class="dropdown-item" href="#">10:15AM</a>
+                                                        <a class="dropdown-item" href="#">11:45AM</a>
+                                                        <a class="dropdown-item" href="#">1:15PM</a>
+                                                        <a class="dropdown-item" href="#">2:30PM</a>
+                                                        <a class="dropdown-item" href="#">4:15PM</a>
+                                                        <a class="dropdown-item" href="#">5:00PM</a>
+                                                        <a class="dropdown-item" href="#">5:45PM</a>
+                                                        <a class="dropdown-item" href="#">7:15PM</a>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" value="11:45" style="margin-left: -.25em;">
                                             </div>
 
                                             <div class="roomSelect__edit">
                                                 <button type="button" class="Button--secondary Button--rightAlign">Edit</button>
                                                 <button type="button" class="Button--danger Button--rightAlign">Remove</button>  
-                                            </div>
-
-                                            <div class="roomSelect__room text--disabled">
-                                                Geological Museum 105
                                             </div>
 
                                         </div>
@@ -736,30 +926,123 @@
                                                 </select>
                                             </div>
 
-                                            <label for="timestartone" hidden>Time start of booked room</label>
-                                            <div class="roomSelect__time">
-                                                <select id="timestartone" name="timestartone" class="Dropdown">
-                                                    <option value="string:All" label="8:30AM-11:30AM">8:30AM-11:30AM</option>
-                                                    <option value="string:hour" label="9:00AM-10:15AM">9:00AM-10:15AM</option>
-                                                    <option value="string:hour" label=":00AM-11:45AM">9:00AM-11:45AM</option>
-                                                    <option value="string:hour" label="10:30AM-11:45AM" selected>10:30AM-11:45AM</option>
-                                                    <option value="string:hour" label="2:00PM-1:15PM">12:00PM-1:15PM</option>
-                                                    <option value="string:hour" label="1:15PM-2:30PMv">1:15PM-2:30PM</option>
-                                                    <option value="string:hour" label="1:30PM-2:45PM">1:30PM-2:45PM</option>
-                                                    <option value="string:hour" label="1:30PM-5:45PM">1:30PM-5:45PM</option>
-                                                    <option value="string:hour" label="3:00PM-4:15PM">3:00PM-4:15PM</option>
-                                                    <option value="string:hour" label="3:00PM-5:00PM">3:00PM-5:00PM</option>
-                                                    <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
-                                                    <option value="string:hour" label="3:00PM-5:45PM">3:00PM-5:45PM</option>
-                                                    <option value="string:hour" label="3:45PM-5:45PM">3:45PM-5:45PM</option>
-                                                    <option value="string:hour" label="4:30PM-5:45PM">4:30PM-5:45PM</option>
-                                                    <option value="string:hour" label="6:00PM-7:15PM">6:00PM-7:15PM</option>
-                                                </select>
+                                            <div class="input-group mb-3 roomSelect__timeEdit">
+                                                <div class="input-group-prepend dropdown-container">
+                                                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="hidden">Meeting start time</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Start time</a>
+                                                        <a class="dropdown-item" href="#">8:0AM</a>
+                                                        <a class="dropdown-item" href="#">8:15AM</a>
+                                                        <a class="dropdown-item" href="#">8:30AM</a>
+                                                        <a class="dropdown-item" href="#">8:45AM</a>
+                                                        <a class="dropdown-item" href="#">9:00AM</a>
+                                                        <a class="dropdown-item" href="#">9:15AM</a>
+                                                        <a class="dropdown-item" href="#">9:30AM</a>
+                                                        <a class="dropdown-item" href="#">9:45AM</a>
+                                                        <a class="dropdown-item" href="#">10:00AM</a>
+                                                        <a class="dropdown-item" href="#">10:15AM</a>
+                                                        <a class="dropdown-item" href="#">10:30AM</a>
+                                                        <a class="dropdown-item" href="#">10:45AM</a>
+                                                        <a class="dropdown-item" href="#">11:00AM</a>
+                                                        <a class="dropdown-item" href="#">11:15AM</a>
+                                                        <a class="dropdown-item" href="#">11:30AM</a>
+                                                        <a class="dropdown-item" href="#">11:45AM</a>
+                                                        <a class="dropdown-item" href="#">12:00PM</a>
+                                                        <a class="dropdown-item" href="#">12:15PM</a>
+                                                        <a class="dropdown-item" href="#">12:30PM</a>
+                                                        <a class="dropdown-item" href="#">12:45PM</a>
+                                                        <a class="dropdown-item" href="#">1:00PM</a>
+                                                        <a class="dropdown-item" href="#">1:15PM</a>
+                                                        <a class="dropdown-item" href="#">1:30PM</a>
+                                                        <a class="dropdown-item" href="#">1:45PM</a>
+                                                        <a class="dropdown-item" href="#">2:00PM</a>
+                                                        <a class="dropdown-item" href="#">2:15PM</a>
+                                                        <a class="dropdown-item" href="#">2:30PM</a>
+                                                        <a class="dropdown-item" href="#">2:45PM</a>
+                                                        <a class="dropdown-item" href="#">3:00PM</a>
+                                                        <a class="dropdown-item" href="#">3:15PM</a>
+                                                        <a class="dropdown-item" href="#">3:30PM</a>
+                                                        <a class="dropdown-item" href="#">3:45PM</a>
+                                                        <a class="dropdown-item" href="#">4:00PM</a>
+                                                        <a class="dropdown-item" href="#">4:15PM</a>
+                                                        <a class="dropdown-item" href="#">4:30PM</a>
+                                                        <a class="dropdown-item" href="#">4:45PM</a>
+                                                        <a class="dropdown-item" href="#">5:00PM</a>
+                                                        <a class="dropdown-item" href="#">5:15PM</a>
+                                                        <a class="dropdown-item" href="#">5:30PM</a>
+                                                        <a class="dropdown-item" href="#">5:45PM</a>
+                                                        <a class="dropdown-item" href="#">6:00PM</a>
+                                                        <a class="dropdown-item" href="#">6:15PM</a>
+                                                        <a class="dropdown-item" href="#">6:30PM</a>
+                                                        <a class="dropdown-item" href="#">6:45PM</a>
+                                                        <a class="dropdown-item" href="#">7:00PM</a>
+                                                        <a class="dropdown-item" href="#">7:15PM</a>
+                                                        <a class="dropdown-item" href="#">7:30PM</a>
+                                                        <a class="dropdown-item" href="#">7:45PM</a>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Meeting start time" value="10:30" style="margin-left: -.25em;">
                                             </div>
 
-                                            <label for="timeEdit" hidden>Editable time of booked room</label>
-                                            <div class="roomSelect__timeEdit">
-                                                <input id="timeEdit" name="facultyA" type="text" class="TextInput" value="10:30AM-11:45AM" placeholder="">
+                                            <div class="input-group mb-3 roomSelect__timeEdit">
+                                                <div class="input-group-prepend dropdown-container">
+                                                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="sr-only">Meeting end time</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">End time</a>
+                                                        <a class="dropdown-item" href="#">8:15AM</a>
+                                                        <a class="dropdown-item" href="#">8:30AM</a>
+                                                        <a class="dropdown-item" href="#">8:45AM</a>
+                                                        <a class="dropdown-item" href="#">9:00AM</a>
+                                                        <a class="dropdown-item" href="#">9:15AM</a>
+                                                        <a class="dropdown-item" href="#">9:30AM</a>
+                                                        <a class="dropdown-item" href="#">9:45AM</a>
+                                                        <a class="dropdown-item" href="#">10:00AM</a>
+                                                        <a class="dropdown-item" href="#">10:15AM</a>
+                                                        <a class="dropdown-item" href="#">10:30AM</a>
+                                                        <a class="dropdown-item" href="#">10:45AM</a>
+                                                        <a class="dropdown-item" href="#">11:00AM</a>
+                                                        <a class="dropdown-item" href="#">11:15AM</a>
+                                                        <a class="dropdown-item" href="#">11:30AM</a>
+                                                        <a class="dropdown-item" href="#">11:45AM</a>
+                                                        <a class="dropdown-item" href="#">12:00PM</a>
+                                                        <a class="dropdown-item" href="#">12:15PM</a>
+                                                        <a class="dropdown-item" href="#">12:30PM</a>
+                                                        <a class="dropdown-item" href="#">12:45PM</a>
+                                                        <a class="dropdown-item" href="#">1:00PM</a>
+                                                        <a class="dropdown-item" href="#">1:15PM</a>
+                                                        <a class="dropdown-item" href="#">1:30PM</a>
+                                                        <a class="dropdown-item" href="#">1:45PM</a>
+                                                        <a class="dropdown-item" href="#">2:00PM</a>
+                                                        <a class="dropdown-item" href="#">2:15PM</a>
+                                                        <a class="dropdown-item" href="#">2:30PM</a>
+                                                        <a class="dropdown-item" href="#">2:45PM</a>
+                                                        <a class="dropdown-item" href="#">3:00PM</a>
+                                                        <a class="dropdown-item" href="#">3:15PM</a>
+                                                        <a class="dropdown-item" href="#">3:30PM</a>
+                                                        <a class="dropdown-item" href="#">3:45PM</a>
+                                                        <a class="dropdown-item" href="#">4:00PM</a>
+                                                        <a class="dropdown-item" href="#">4:15PM</a>
+                                                        <a class="dropdown-item" href="#">4:30PM</a>
+                                                        <a class="dropdown-item" href="#">4:45PM</a>
+                                                        <a class="dropdown-item" href="#">5:00PM</a>
+                                                        <a class="dropdown-item" href="#">5:15PM</a>
+                                                        <a class="dropdown-item" href="#">5:30PM</a>
+                                                        <a class="dropdown-item" href="#">5:45PM</a>
+                                                        <a class="dropdown-item" href="#">6:00PM</a>
+                                                        <a class="dropdown-item" href="#">6:15PM</a>
+                                                        <a class="dropdown-item" href="#">6:30PM</a>
+                                                        <a class="dropdown-item" href="#">6:45PM</a>
+                                                        <a class="dropdown-item" href="#">7:00PM</a>
+                                                        <a class="dropdown-item" href="#">7:15PM</a>
+                                                        <a class="dropdown-item" href="#">7:30PM</a>
+                                                        <a class="dropdown-item" href="#">7:45PM</a>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" value="11:45" style="margin-left: -.25em;">
                                             </div>
 
                                             <div class="roomSelect__showroom">
@@ -779,110 +1062,314 @@
                                         </div>
 
                                     </div>
+                                    <div><h5>Meeting notes</h5></div>
+                                    <div>
+                                        contactName Surname
+                                        <br>
+                                        contactEmail@seas.harvard.edu
+                                        <br>
+                                        1-2345
+                                        <div>
+                                            <textarea id="meetingNote" name="meetingNote" type="text" placeholder="" rows="2" cols="62">The instructor really wants a projector.</textarea>
+                                        </div>
+                                    </div>
+                                    <div><h5><label for="meetingSize">Expected size</label></h5></div>
+                                    <div>
+                                        <input id="meetingSize" name="meetingSize" type="text" placeholder="" value="35">
+                                    </div>
                                 </div>
                                 
-                                <!-- Table with rooms -->
+                                <!-- Scrolling div with table -->
                                 <div class="col">
 
-                                    <p class="text-center"><strong>Tuesday, 10:30AM to 11:45AM</strong></p>
-                                    
-                                    <table class="Table">
+                                    <p class="text-center"><strong>Rooms booked on Tuesday, 10:30AM to 11:45AM</strong></p>
 
-                                        <thead class="TableHead">
-                                            <tr class="TableHeadingCell">
-                                                <th scope="col" class="TableHeadingCell">
-                                                    Campus
-                                                    <a type="button" class="BorderlessButton--ifo" href="#">
-                                                        <i class="fas fa-sort-alpha-up"></i>
-                                                    </a>
-                                                </th>
-                                                <th scope="col" class="TableHeadingCell">
-                                                    <a href="#" class="Link">
-                                                        Room
-                                                    </a>
-                                                </th>
-                                                <th scope="col" class="TableHeadingCell">
-                                                    <a href="#" class="Link">
-                                                        Capacity
-                                                    </a>
-                                                </th>
-                                                <th scope="col" class="TableHeadingCell">
-                                                    <a href="#" class="Link">
-                                                        Class
-                                                    </a>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        
-                                        <tbody class="TableBody">
-                    
-                                            <tr class="TableRowOdd">
-                                                <td class="TableCell">Allston</td>
-                                                <td class="TableCell"><a href="#">Geological Museum 201</a></td>
-                                                <td class="TableCell">250</td>
-                                                <td class="TableCell">AC 209a</td>
-                                            </tr>
-                    
-                                            <tr class="TableRowEven">
-                                                <td class="TableCell">Allston</td>
-                                                <td class="TableCell"><a href="#">Geological Museum 205</a></td>
-                                                <td class="TableCell">35</td>
-                                                <td class="TableCell">Available</td>
-                                            </tr>
-                    
-                                            <tr class="TableRowOdd">
-                                                <td class="TableCell">Cambridge</td>
-                                                <td class="TableCell"><a href="#">Harvard Hall 204</a></td>
-                                                <td class="TableCell">75</td>
-                                                <td class="TableCell">General</td>
-                                            </tr>
-                    
-                                            <tr class="TableRowEven">
-                                                <td class="TableCell">Cambridge</td>
-                                                <td class="TableCell"><a href="#">Harvard Hall 112</a></td>
-                                                <td class="TableCell">75</td>
-                                                <td class="TableCell">ES 115</td>
-                                            </tr>
-                    
-                                            <tr class="TableRowOdd">
-                                                <td class="TableCell">FAS</td>
-                                                <td class="TableCell"><a href="#">NW B103</a></td>
-                                                <td class="TableCell">25</td>
-                                                <td class="TableCell">Check FAS availability</td>
-                                            </tr>
-                    
-                                            <tr class="TableRowEven">
-                                                <td class="TableCell">Cambridge</td>
-                                                <td class="TableCell"><a href="#">P 100F</a></td>
-                                                <td class="TableCell">125</td>
-                                                <td class="TableCell">AM 218</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    
-                                    <!-- Amending Bootstrap styles -->
+                                    <!-- Style for persistent scrollbar on overflow-y: scroll; -->
                                     <style>
-                                        .page-item.active .page-link {
-                                            z-index: 1;
-                                            color: #000;
-                                            background-color: rgb(209, 209, 209);
-                                            border-color: rgb(209, 209, 209);
+                                        /* always show scrollbar */
+                                        ::-webkit-scrollbar {
+                                        -webkit-appearance: none;
+                                        width: 7px;
+                                        }
+                                        ::-webkit-scrollbar-thumb {
+                                        border-radius: 4px;
+                                        background-color: rgba(0, 0, 0, .5);
+                                        box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+                                        }
+                                        #scrollarea-container {
+                                        height: 27em;
+                                        /* shorter than the child */
+                                        overflow-y: scroll;
+                                        /* clip height to 30em and scroll to show the rest */
+                                        border: solid 1px #ccc;
+                                        }
+                                        #scrollarea-content {
+                                        height: 40em;
+                                        /* taller than the parent to force scrolling */
                                         }
                                     </style>
-                                    <!-- Table pagination -->
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center mt-3">
-                                            <li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                            </li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item">
-                                            <a class="page-link" href="#">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                                    
+                                    <div id="scrollarea-container">
+                                        <div id="scrollarea-content">
+                                    
+                                            <table class="Table">
+
+                                                <thead class="TableHead">
+                                                    <tr class="TableHeadingCell">
+                                                        <th scope="col" class="TableHeadingCell">
+                                                            Campus
+                                                        </th>
+                                                        <th scope="col" class="TableHeadingCell">
+                                                            Room
+                                                        </th>
+                                                        <th scope="col" class="TableHeadingCell">
+                                                            Capacity
+                                                        </th>
+                                                        <td scope="col" class="TableHeadingCell">
+                                                            Availability
+                                                            <span id="undergradnote" class="hidden">Use the dropdown in the next row to filter meetings by availability.</span>
+                                                        </td>
+                                                        <td scope="col" class="TableHeadingCell">
+                                                            Add
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="TableHeadingCell">
+                                                        <th class="TableHeadingCell">&nbsp</th>
+                                                        <th class="TableHeadingCell">&nbsp</th>
+                                                        <th class="TableHeadingCell">&nbsp</th>
+                                                        <th class="TableHeadingCell TextInput--nolabel">
+                                                            <label for="availability">Availability</label>
+                                                            <div>
+                                                                <select id="availability" name="availability" class="Dropdown" aria-describedby="availability">
+                                                                    <option value="string:All" label="All" selected="selected">All</option>
+                                                                    <option value="string:Yes" label="Availability">Yes</option>
+                                                                    <option value="string:No" label="Unavailability">No</option>
+                                                                </select>
+                                                                <span id="undergradnote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
+                                                            </div>
+                                                        </th>
+                                                        <th class="TableHeadingCell">&nbsp</th>
+                                                    </tr>
+                                                </thead>
+                                                
+                                                <tbody class="TableBody">
+                            
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 201</td>
+                                                        <td class="TableCell">250</td>
+                                                        <td class="TableCell">No (AC 209a)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 205</td>
+                                                        <td class="TableCell">35</td>
+                                                        <td class="TableCell">Yes</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 204</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (Staff meeting)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 112</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (ES 115)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">FAS</td>
+                                                        <td class="TableCell">NW B103</td>
+                                                        <td class="TableCell">25</td>
+                                                        <td class="TableCell">No (Check FAS availability)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">P 100F</td>
+                                                        <td class="TableCell">125</td>
+                                                        <td class="TableCell">No (AM 218)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 205</td>
+                                                        <td class="TableCell">35</td>
+                                                        <td class="TableCell">Yes</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 204</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (Staff meeting)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 112</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (ES 115)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">FAS</td>
+                                                        <td class="TableCell">NW B103</td>
+                                                        <td class="TableCell">25</td>
+                                                        <td class="TableCell">No (Check FAS availability)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">P 100F</td>
+                                                        <td class="TableCell">125</td>
+                                                        <td class="TableCell">No (AM 218)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 205</td>
+                                                        <td class="TableCell">35</td>
+                                                        <td class="TableCell">Yes</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 204</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (Staff meeting)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 112</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (ES 115)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">FAS</td>
+                                                        <td class="TableCell">NW B103</td>
+                                                        <td class="TableCell">25</td>
+                                                        <td class="TableCell">No (Check FAS availability)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">P 100F</td>
+                                                        <td class="TableCell">125</td>
+                                                        <td class="TableCell">No (AM 218)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 205</td>
+                                                        <td class="TableCell">35</td>
+                                                        <td class="TableCell">Yes</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 204</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (Staff meeting)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 112</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (ES 115)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">FAS</td>
+                                                        <td class="TableCell">NW B103</td>
+                                                        <td class="TableCell">25</td>
+                                                        <td class="TableCell">No (Check FAS availability)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">P 100F</td>
+                                                        <td class="TableCell">125</td>
+                                                        <td class="TableCell">No (AM 218)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -961,7 +1448,7 @@
                                     </select>
                                 </div>
                             </div>
-    
+
                             <div class="mt-4">
                                 <button type="button" class="Button--secondary" data-dismiss="modal">Cancel</button>
                                 <button type="button" class="Button--primary Button--rightAlign" data-dismiss="modal">Save</button>
@@ -1056,8 +1543,8 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-        </div>
 
         <!-- Optional Bootstrap JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
