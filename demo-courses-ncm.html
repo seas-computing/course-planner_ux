@@ -251,6 +251,7 @@
                 
                 <tbody class="TableBody">
 
+                    <!-- Style and script for editing an entire row -->
                     <style>
                         #Div2 {
                         display: none;
@@ -359,7 +360,7 @@
                         <td class="TableCell acs">
                             <label for="semesters" class="hidden">Area</label>
                             <div>
-                                <select id="semesters" name="semesters" class="Dropdown" aria-describedby="areanote">
+                                <select id="semesters" name="semesters" class="Dropdown">
                                     <option value="string:ACS" label="ACS" selected="selected">ACS</option>
                                     <option value="string:AM" label="AM">AM</option>
                                     <option value="string:AP" label="AP">AP</option>
@@ -373,7 +374,6 @@
                                     <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
                                     <option value="string:SEM" label="SEM">SEM</option>
                                 </select>
-                                <span id="areanote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
                             </div>
                         </td>
                         <td class="TableCell ">
@@ -386,7 +386,7 @@
                         <td class="TableCell">
                             <label for="title" class="hidden">Title</label>
                             <div>
-                                <input id="title" name="readingGroup" type="text" class="TextInput" value="Reading group"
+                                <input id="title" name="title" type="text" class="TextInput" value="Reading group"
                                     placeholder="e. g., Reading group">
                             </div>
                         </td>
@@ -509,10 +509,244 @@
                         </td>
                     </tr>
 
+                    <!-- Style and script for editing individual table cells -->
+                    <style>
+                        #Cell1edit, #Cell2edit, #Cell3edit, #Cell4edit, #Cell5edit, #Cell6edit, #Cell7edit, #Cell8edit {
+                        display: none;
+                        }
+                    </style>
+                    
+                    <script>
+                        function switchVisible1() {
+                            if (document.getElementById('Cell1')) {
+
+                                if (document.getElementById('Cell1').style.display == 'none') {
+                                    document.getElementById('Cell1').style.display = 'inline-table';
+                                    document.getElementById('Cell1edit').style.display = 'none';
+                                }
+                                else {
+                                    document.getElementById('Cell1').style.display = 'none';
+                                    document.getElementById('Cell1edit').style.display = 'inline-table';
+                                }
+                            }
+                        }
+                        function switchVisible2() {
+                            if (document.getElementById('Cell2')) {
+
+                                if (document.getElementById('Cell2').style.display == 'none') {
+                                    document.getElementById('Cell2').style.display = 'inline-table';
+                                    document.getElementById('Cell2edit').style.display = 'none';
+                                }
+                                else {
+                                    document.getElementById('Cell2').style.display = 'none';
+                                    document.getElementById('Cell2edit').style.display = 'inline-table';
+                                }
+                            }
+                        }
+                        function switchVisible3() {
+                            if (document.getElementById('Cell3')) {
+
+                                if (document.getElementById('Cell3').style.display == 'none') {
+                                    document.getElementById('Cell3').style.display = 'inline-table';
+                                    document.getElementById('Cell3edit').style.display = 'none';
+                                }
+                                else {
+                                    document.getElementById('Cell3').style.display = 'none';
+                                    document.getElementById('Cell3edit').style.display = 'inline-table';
+                                }
+                            }
+                        }
+                        function switchVisible4() {
+                            if (document.getElementById('Cell4')) {
+
+                                if (document.getElementById('Cell4').style.display == 'none') {
+                                    document.getElementById('Cell4').style.display = 'inline-table';
+                                    document.getElementById('Cell4edit').style.display = 'none';
+                                }
+                                else {
+                                    document.getElementById('Cell4').style.display = 'none';
+                                    document.getElementById('Cell4edit').style.display = 'inline-table';
+                                }
+                            }
+                        }
+                        function switchVisible5() {
+                            if (document.getElementById('Cell5')) {
+
+                                if (document.getElementById('Cell5').style.display == 'none') {
+                                    document.getElementById('Cell5').style.display = 'inline-table';
+                                    document.getElementById('Cell5edit').style.display = 'none';
+                                }
+                                else {
+                                    document.getElementById('Cell5').style.display = 'none';
+                                    document.getElementById('Cell5edit').style.display = 'inline-table';
+                                }
+                            }
+                        }
+                        function switchVisible6() {
+                            if (document.getElementById('Cell6')) {
+
+                                if (document.getElementById('Cell6').style.display == 'none') {
+                                    document.getElementById('Cell6').style.display = 'inline-table';
+                                    document.getElementById('Cell6edit').style.display = 'none';
+                                }
+                                else {
+                                    document.getElementById('Cell6').style.display = 'none';
+                                    document.getElementById('Cell6edit').style.display = 'inline-table';
+                                }
+                            }
+                        }
+                        function switchVisible7() {
+                            if (document.getElementById('Cell7')) {
+
+                                if (document.getElementById('Cell7').style.display == 'none') {
+                                    document.getElementById('Cell7').style.display = 'inline-table';
+                                    document.getElementById('Cell7edit').style.display = 'none';
+                                }
+                                else {
+                                    document.getElementById('Cell7').style.display = 'none';
+                                    document.getElementById('Cell7edit').style.display = 'inline-table';
+                                }
+                            }
+                        }
+                        function switchVisible8() {
+                            if (document.getElementById('Cell8')) {
+
+                                if (document.getElementById('Cell8').style.display == 'none') {
+                                    document.getElementById('Cell8').style.display = 'inline-table';
+                                    document.getElementById('Cell8edit').style.display = 'none';
+                                }
+                                else {
+                                    document.getElementById('Cell8').style.display = 'none';
+                                    document.getElementById('Cell8edit').style.display = 'inline-table';
+                                }
+                            }
+                        }
+                    </script>
+
+                    <!-- Edit modes for individual table cells -->
                     <tr class="TableRowEven">
-                        <td class="TableCell">General</td>
+                        <td class="TableCell">
+                            <div class="icon float-right BorderlessButton--info">
+                                <i class="fas fa-edit" onclick="switchVisible1();"></i>
+                            </div>
+                            <div id="Cell1">General</div>
+                            <div id="Cell1edit">
+                                <label for="semesters" class="hidden">Area</label>
+                                <div>
+                                    <select id="semesters" name="semesters" class="Dropdown">
+                                        <option value="string:ACS" label="ACS">ACS</option>
+                                        <option value="string:AM" label="AM">AM</option>
+                                        <option value="string:AP" label="AP">AP</option>
+                                        <option value="string:BE" label="BE">BE</option>
+                                        <option value="string:CS" label="CS">CS</option>
+                                        <option value="string:EE" label="EE">EE</option>
+                                        <option value="string:ESE" label="ESE">ESE</option>
+                                        <option value="string:General" label="General" selected="selected">General</option>
+                                        <option value="string:MDE" label="MDE">MDE</option>
+                                        <option value="string:MSMBA" label="MSMBA">MSMBA</option>
+                                        <option value="string:Mat &amp; ME" label="Mat &amp; ME">Mat &amp; ME</option>
+                                        <option value="string:SEM" label="SEM">SEM</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </td>
                         <td class="TableCell"></td>
-                        <td class="TableCell">Faculty planning</td>
+                        <td class="TableCell">
+                            <div class="icon float-right BorderlessButton--info">
+                                <i class="fas fa-edit" onclick="switchVisible2();"></i>
+                            </div>
+                            <div id="Cell2">
+                                Faculty planning
+                            </div>
+                            <div id="Cell2edit">
+                                <label for="title" class="hidden">Title</label>
+                                <div>
+                                    <input id="title" name="title" type="text" class="TextInput" value="Faculty planning"
+                                        placeholder="e. g., Reading group">
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableCell">
+                                <div class="icon">
+                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
+                                        <i class="fas fa-edit float-right"></i>
+                                    </a>
+                                </div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Monday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+
+                            <div style="clear: left;"><hr></div>
+                            
+                            <div class="roomTimeLocation">
+                                <div class="date">Wednesday<br>1:30pm-2:45pm</div>
+                                <div class`="campus">🅐</div>
+                                <div class="room">Geological Museum 105</div>
+                            </div>
+
+                        </td>
+                        <td class="TableCell">
+                            <div class="icon float-right BorderlessButton--info">
+                                <i class="fas fa-edit" onclick="switchVisible3();"></i>
+                            </div>
+                            <div id="Cell3">
+                                35
+                            </div>
+                            <div id="Cell3edit">
+                                <label for="expectedSize" class="hidden">Expected size of meeting</label>
+                                <div>
+                                    <input id="expectedSize" name="expectedSize" type="text" class="TextInput" value="35"
+                                        placeholder="e. g., 100">
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableCell ">
+                            <div class="icon float-right BorderlessButton--info">
+                                <i class="fas fa-edit" onclick="switchVisible4();"></i>
+                            </div>
+                            <div id="Cell4">
+                                The instructor really wants a projector.
+                            </div>
+                            <div id="Cell4edit">
+                                <label for="meetingNotes" class="hidden">Meeting notes</label>
+                                <div>
+                                    <textarea id="meetingNote" name="meetingNote" type="text" placeholder="e. g., Need a whiteboard" rows="4" style="width: 100%; max-width: 100%;">The instructor really wants a projector.</textarea>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableCell">
+                            <div class="icon float-right BorderlessButton--info">
+                                <i class="fas fa-edit" onclick="switchVisible5();"></i>
+                            </div>
+                            <div id="Cell5">
+                                Name Last
+                                <br>
+                                nlast@seas.harvard.edu
+                                <br>
+                                (123) 435-6789
+                            </div>
+                            <div id="Cell5edit">
+                                <label for="contactName" class="hidden">Contact's name</label>
+                                <div>
+                                    <input id="contactName" name="contactName" type="text" class="TextInput" value="Name Last"
+                                        placeholder="e. g., Jane Doe">
+                                </div>
+                                <label for="contactEmail" class="hidden">Contact's email</label>
+                                <div>
+                                    <input id="contactEmail" name="contactEmail" type="text" class="TextInput" value="nlast@seas.harvard.edu"
+                                        placeholder="e. g., jdoe@seas.harvard.edu">
+                                </div>
+                                <label for="contactPhone" class="hidden">Contact's pbone number</label>
+                                <div>
+                                    <input id="contactPhone" name="contactPhone" type="text" class="TextInput" value="x1234"
+                                        placeholder="e. g., x1234">
+                                </div>
+                            </div>
+                        </td>
+
                         <td class="TableCell">
                                 <div class="icon">
                                     <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
@@ -536,47 +770,64 @@
 
                         </td>
                         
-                        <td class="TableCell">35</td>
-                        <td class="TableCell ">The instructor really wants a projector.</td>
-                        <td class="TableCell">
-                            Name Last
-                            <br>
-                            nlast@seas.harvard.edu
-                            <br>
-                            (123) 435-6789
-                        </td>
-
-                        <td class="TableCell">
-                                <div class="icon">
-                                    <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
-                                        <i class="fas fa-edit float-right"></i>
-                                    </a>
-                                </div>
-                            
-                            <div class="roomTimeLocation">
-                                <div class="date">Monday<br>1:30pm-2:45pm</div>
-                                <div class`="campus">🅐</div>
-                                <div class="room">Geological Museum 105</div>
-                            </div>
-
-                            <div style="clear: left;"><hr></div>
-                            
-                            <div class="roomTimeLocation">
-                                <div class="date">Wednesday<br>1:30pm-2:45pm</div>
-                                <div class`="campus">🅐</div>
-                                <div class="room">Geological Museum 105</div>
-                            </div>
-
-                        </td>
                         
-                        <td class="TableCell">35</td>
-                        <td class="TableCell ">The instructor really wants a projector.</td>
                         <td class="TableCell">
-                            Name Last
-                            <br>
-                            nlast@seas.harvard.edu
-                            <br>
-                            (123) 435-6789
+                            <div class="icon float-right BorderlessButton--info">
+                                <i class="fas fa-edit" onclick="switchVisible6();"></i>
+                            </div>
+                            <div id="Cell6">
+                                35
+                            </div>
+                            <div id="Cell6edit">
+                                <label for="expectedSize" class="hidden">Expected size of meeting</label>
+                                <div>
+                                    <input id="expectedSize" name="expectedSize" type="text" class="TextInput" value="35"
+                                        placeholder="e. g., 100">
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableCell ">
+                            <div class="icon float-right BorderlessButton--info">
+                                <i class="fas fa-edit" onclick="switchVisible7();"></i>
+                            </div>
+                            <div id="Cell7">
+                                The instructor really wants a projector.
+                            </div>
+                            <div id="Cell7edit">
+                                <label for="meetingNotes" class="hidden">Meeting notes</label>
+                                <div>
+                                    <textarea id="meetingNote" name="meetingNote" type="text" placeholder="e. g., Need a whiteboard" rows="4" style="width: 100%; max-width: 100%;">The instructor really wants a projector.</textarea>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableCell">
+                            <div class="icon float-right BorderlessButton--info">
+                                <i class="fas fa-edit" onclick="switchVisible8();"></i>
+                            </div>
+                            <div id="Cell8">
+                                Name Last
+                                <br>
+                                nlast@seas.harvard.edu
+                                <br>
+                                (123) 435-6789
+                            </div>
+                            <div id="Cell8edit">
+                                <label for="contactName" class="hidden">Contact's name</label>
+                                <div>
+                                    <input id="contactName" name="contactName" type="text" class="TextInput" value="Name Last"
+                                        placeholder="e. g., Jane Doe">
+                                </div>
+                                <label for="contactEmail" class="hidden">Contact's email</label>
+                                <div>
+                                    <input id="contactEmail" name="contactEmail" type="text" class="TextInput" value="nlast@seas.harvard.edu"
+                                        placeholder="e. g., jdoe@seas.harvard.edu">
+                                </div>
+                                <label for="contactPhone" class="hidden">Contact's pbone number</label>
+                                <div>
+                                    <input id="contactPhone" name="contactPhone" type="text" class="TextInput" value="x1234"
+                                        placeholder="e. g., x1234">
+                                </div>
+                            </div>
                         </td>
 
                         <td class="TableCell">
@@ -586,9 +837,7 @@
                         </td>
 
                         <td class="TableCell">
-                            <button class="Button--primary" type="button" aria-label="Edit the information on this table row">
-                                Edit
-                            </button>
+                            &nbsp;
                         </td>
                     </tr>
 
