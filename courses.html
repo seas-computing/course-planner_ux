@@ -72,46 +72,46 @@
                 <span id="openoptionsnote" class="hidden">This link visually displays the content below</span>
             </div>
     
-                <!--Sliding sidebar filters-->
-                <div class="sideNav-column">
-                    <div id="mySidenav" class="sidenav">
-                        <div class="sideNav--ncm--inside__Link">
-                            <a href="javascript:void(0)" onclick="closeNav()" class="Link" aria-describedby="closeoptionsnote">
-                                Options
-                                <i class="far fa-arrow-alt-circle-left ml-auto"></i>
-                            </a>
-                            <span id="closeoptionsnote" class="hidden">This link visually hides the content below</span>
-                        </div>
-                        <form>
-                            <hr>
-                            <div>
-                                <button class="Button--secondary">Download courses report</button>
-                            </div>
-                            <hr>
-                            <div>
-                                <label for="views">Customized view</label>
-                                <div>
-                                    <select id="views" name="views" class="Dropdown" aria-describedby="customviewnote">
-                                        <option value="default">Default</option>
-                                        <option value="myview" selected>My view</option>
-                                    </select>
-                                    <span id="academicyearnote" class="hidden">The table will update its display upon the selection of the customized view</span>
-                                </div>
-                            </div>
-                            <div>
-                                <a type="button" class="Button--secondary mt-2" href="#" data-toggle="modal"
-                                    data-target="#editViews">
-                                    Edit views
-                                </a>
-                            </div>
-                            <hr>
-                            <div>
-                                <input type="checkbox" name="primary_check" id="primary_check" class="primary_check" />
-                                <label for="primary_check">Show retired courses</label>
-                            </div>
-                        </form>
+            <!--Sliding sidebar filters-->
+            <div class="sideNav-column">
+                <div id="mySidenav" class="sidenav">
+                    <div class="sideNav--ncm--inside__Link">
+                        <a href="javascript:void(0)" onclick="closeNav()" class="Link" aria-describedby="closeoptionsnote">
+                            Options
+                            <i class="far fa-arrow-alt-circle-left ml-auto"></i>
+                        </a>
+                        <span id="closeoptionsnote" class="hidden">This link visually hides the content below</span>
                     </div>
+                    <form>
+                        <hr>
+                        <div>
+                            <button class="Button--secondary">Download courses report</button>
+                        </div>
+                        <hr>
+                        <div>
+                            <label for="views">Customized view</label>
+                            <div>
+                                <select id="views" name="views" class="Dropdown" aria-describedby="customviewnote">
+                                    <option value="default">Default</option>
+                                    <option value="myview" selected>My view</option>
+                                </select>
+                                <span id="academicyearnote" class="hidden">The table will update its display upon the selection of the customized view</span>
+                            </div>
+                        </div>
+                        <div>
+                            <a type="button" class="Button--secondary mt-2" href="#" data-toggle="modal"
+                                data-target="#editViews">
+                                Edit views
+                            </a>
+                        </div>
+                        <hr>
+                        <div>
+                            <input type="checkbox" name="primary_check" id="primary_check" class="primary_check" />
+                            <label for="primary_check">Show retired courses</label>
+                        </div>
+                    </form>
                 </div>
+            </div>
 
             <!-- courses -->
             <div class="courses">
@@ -121,15 +121,15 @@
                 <table class="Table Table--Sidebar">
 
                     <colgroup span="6"></colgroup>
-                    <colgroup span="9"></colgroup>
-                    <colgroup span="9"></colgroup>
+                    <colgroup span="6"></colgroup>
+                    <colgroup span="6"></colgroup>
                     <colgroup></colgroup>
 
                     <thead class="TableHead">
                         <tr class="TableHeadingCell">
                             <td class="TableHeadingCell--blank__left" colspan="6">
                             </td>
-                            <td class="TableHeadingCell--blank__left" colspan="18">
+                            <td class="TableHeadingCell--blank__left" colspan="12">
                                 <div class="align-center mb-1">
                                     <label for="semesters">Academic year</label>
                                     <select id="semesters" name="semesters" class="Dropdown_nowidth" aria-describedby="academicyearnote">
@@ -161,10 +161,10 @@
                             </td>
                             <td class="TableHeadingCell TableHeadingCell--blank__left">
                             </td>
-                            <th scope="colgroup" class="TableHeadingCell--nav" colspan="9">
+                            <th scope="colgroup" class="TableHeadingCell--nav" colspan="6">
                                 Fall 2019
                             </th>
-                            <th scope="colgroup" class="TableHeadingCell--nav" colspan="9">
+                            <th scope="colgroup" class="TableHeadingCell--nav" colspan="6">
                                 Spring 2020
                             </th>
                             <td class="TableHeadingCell TableHeadingCell--blank__right">
@@ -197,15 +197,6 @@
                                 Instructors
                             </th>
                             <th scope="col" class="TableHeadingCell">Room</th>
-                            <th scope="col" class="TableHeadingCell">
-                                Expected size
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Notes
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Contact info
-                            </th>
                             <td class="TableHeadingCell" colspan="3">Enrollment</td>
 
                             <th scope="col" class="TableHeadingCell">
@@ -215,15 +206,6 @@
                                 Instructors
                             </th>
                             <th scope="col" class="TableHeadingCell">Room</th>
-                            <th scope="col" class="TableHeadingCell">
-                                Expected size
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Notes
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Contact info
-                            </th>
                             <td class="TableHeadingCell" colspan="3">Enrollment</td>
                             <th scope="col" class="TableHeadingCell">Detail</th>
                         </tr>
@@ -311,9 +293,6 @@
                                 </div>
                             </td>
                             <td class="TableHeadingCell"></td>
-                            <td class="TableHeadingCell"></td>
-                            <td class="TableHeadingCell"></td>
-                            <td></td>
                             <th scope="col" class="TableHeadingCell">Pre <span class="hidden">enrollment</span></th>
                             <th scope="col" class="TableHeadingCell">Study card</th>
                             <th scope="col" class="TableHeadingCell">Actual <span class="hidden">enrollment</span></th>
@@ -338,9 +317,6 @@
                                         <span id="instructors2note" class="hidden">The table will be filtered as characters are typed in this input form</span>
                                 </div>
                             </td>
-                            <td class="TableHeadingCell"></td>
-                            <td class="TableHeadingCell"></td>
-                            <td class="TableHeadingCell"></td>
                             <td class="TableHeadingCell"></td>
                             <th scope="col" class="TableHeadingCell">Pre <span class="hidden">enrollment</span></th>
                             <th scope="col" class="TableHeadingCell">Study card</th>
@@ -395,23 +371,6 @@
                                 </div>
                             
                             </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
-                            </td>
 
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -452,23 +411,6 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             
-                            </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -526,23 +468,6 @@
                                 </div>
                             
                             </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
-                            </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -582,23 +507,6 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             
-                            </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -654,23 +562,6 @@
                                 </div>
                             
                             </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
-                            </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -710,23 +601,6 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             
-                            </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -782,23 +656,6 @@
                                 </div>
                             
                             </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
-                            </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -838,23 +695,6 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             
-                            </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -910,23 +750,6 @@
                                 </div>
                             
                             </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
-                            </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -966,23 +789,6 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             
-                            </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -1036,23 +842,6 @@
                                 </div>
                             
                             </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
-                            </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -1089,23 +878,6 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             
-                            </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -1161,23 +933,6 @@
                                 </div>
                             
                             </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
-                            </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -1217,23 +972,6 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             
-                            </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -1289,23 +1027,6 @@
                                 </div>
                             
                             </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
-                            </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -1345,23 +1066,6 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             
-                            </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -1417,23 +1121,6 @@
                                 </div>
                             
                             </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
-                            </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
@@ -1473,23 +1160,6 @@
                                     <div class="room">Geological Museum 105</div>
                                 </div>
                             
-                            </td>
-                            <td class="TableCell ">65</td>
-                            <td class="TableCell ">
-                                <div class="icon float-right">
-                                    <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
-                                    data-target="#courseModal2">
-                                        <i class="far fa-sticky-note float-right"></i>
-                                    </a>
-                                </div>
-                                Same as CS 109a, STATS 121a.
-                            </td>
-                            <td class="TableCell ">
-                                Name Last
-                                <br>
-                                nlast@seas.harvard.edu
-                                <br>
-                                (123) 435-6789
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
