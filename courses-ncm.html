@@ -104,16 +104,18 @@
                 <col>
                 <col>
                 <col>
+                <col>
 
                 <thead class="TableHead">
                     
+                    <!-- Row with side nav and New Meeting buttons, term selection -->
                     <tr class="TableHeadingCell">
                         <td class="TableHeadingCell--blank__left" colspan="3">
                         <button type="button" class="mb-1" id="buttonInfo" data-toggle="modal" data-target="#newnonclassmeetingModal" aria-label="New non-class meeeting">
                             New meeting
                         </button>
                         </td>
-                        <td class="TableHeadingCell--blank__left" colspan="3"></div>
+                        <td class="TableHeadingCell--blank__left" colspan="3"></td>
                         <td class="TableHeadingCell--blank__left" colspan="2">
                             <div class="align-center mb-1">
                                 <label for="semesters">Academic year</label>
@@ -132,8 +134,11 @@
                         </td>
                         <td class="TableHeadingCell--blank__right">
                         </td>
+                        <td class="TableHeadingCell--blank__right">
+                        </td>
                     </tr>
-                    <tr class="TableHeadingCell" >
+                    <!-- Row with term headers -->
+                    <tr class="TableHeadingCell">
                         <td class="TableHeadingCell TableHeadingCell--blank__left">
                         </td>
                         <td class="TableHeadingCell TableHeadingCell--blank__left">
@@ -154,7 +159,10 @@
                         </th>
                         <td class="TableHeadingCell TableHeadingCell--blank__right">
                         </td>
+                        <td class="TableHeadingCell TableHeadingCell--blank__right">
+                        </td>
                     </tr>
+                    <!-- Row with table headers -->
                     <tr class="TableHeadingCell">
                         <th scope="col" class="TableHeadingCell">
                             Area
@@ -183,8 +191,11 @@
                         <th scope="col" class="TableHeadingCell">
                             Detail
                         </th>
+                        <th scope="col" class="TableHeadingCell">
+                            Edit meeting
+                        </th>
                     </tr>
-
+                    <!-- Row with headers forms -->
                     <tr class="TableHeadingCell">
                         <td class="TableHeadingCell TextInput--nolabel">
                             <label for="semesters">Area</label>
@@ -229,6 +240,7 @@
                         <td class="TableHeadingCell"></td>
                         <td class="TableHeadingCell"></td>
                         <td class="TableHeadingCell"></td>
+                        <td class="TableHeadingCell"></td>
                     </tr>
                 </thead>
                 
@@ -238,7 +250,6 @@
                         <td class="TableCell acs">ACS</td>
                         <td class="TableCell ">AC 209a</td>
                         <td class="TableCell">Reading group</td>
-
                         <td class="TableCell">35</td>
                         <td class="TableCell ">The instructor really wants a projector.</td>
                         <td class="TableCell">
@@ -270,7 +281,6 @@
                             </div>
 
                         </td>
-
                         <td class="TableCell">
                                 <div class="icon">
                                     <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal" data-target="#courseModal1">
@@ -293,10 +303,14 @@
                             </div>
 
                         </td>
-
                         <td class="TableCell">
                             <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                 <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#editMeeting">
+                                <i class="fas fa-edit"></i>
                             </a>
                         </td>
                     </tr>
@@ -366,6 +380,11 @@
                                 <i class="fas fa-folder-open"></i>
                             </a>
                         </td>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#editMeeting">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
                     </tr>
 
                     <tr class="TableRowOdd">
@@ -407,6 +426,11 @@
                         <td class="TableCell">
                             <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                 <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#editMeeting">
+                                <i class="fas fa-edit"></i>
                             </a>
                         </td>
                     </tr>
@@ -452,6 +476,11 @@
                                 <i class="fas fa-folder-open"></i>
                             </a>
                         </td>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#editMeeting">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
                     </tr>
 
                     <tr class="TableRowOdd">
@@ -493,6 +522,11 @@
                         <td class="TableCell">
                             <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                 <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#editMeeting">
+                                <i class="fas fa-edit"></i>
                             </a>
                         </td>
                     </tr>
@@ -538,6 +572,11 @@
                                 <i class="fas fa-folder-open"></i>
                             </a>
                         </td>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#editMeeting">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
                     </tr>
 
                     <tr class="TableRowOdd">
@@ -579,6 +618,11 @@
                         <td class="TableCell">
                             <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#courseModal3">
                                 <i class="fas fa-folder-open"></i>
+                            </a>
+                        </td>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#editMeeting">
+                                <i class="fas fa-edit"></i>
                             </a>
                         </td>
                     </tr>
@@ -624,6 +668,11 @@
                                 <i class="fas fa-folder-open"></i>
                             </a>
                         </td>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#editMeeting">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
                     </tr>
 
                     <tr class="TableRowOdd">
@@ -667,6 +716,11 @@
                                 <i class="fas fa-folder-open"></i>
                             </a>
                         </td>
+                        <td class="TableCell">
+                            <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal" data-target="#editMeeting">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
                     </tr>
 
                 </tbody>
@@ -676,7 +730,7 @@
 
         <section id="modals">
 
-            <!-- Modal for new room meeting -->
+            <!-- Modal for creating the information of a new table row -->
             <div class="modal fade" id="newnonclassmeetingModal" tabindex="-1" role="dialog" aria-labelledby="newnonclassmeetingModal" aria-hidden="true" style="font-size: 1em; right: 18%; left: 23%; top: 4em;">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -775,7 +829,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Modal for editing room meeting -->
             <div class="modal fade" id="courseModal1" tabindex="-1" role="dialog" aria-labelledby="courseModal1" aria-hidden="true" style="right: 1%; left: -47%; top: 2em;">
                 <div class="modal-dialog" role="document">
@@ -1401,7 +1454,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Modal for Detail -->
             <div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="right: 18%; left: 13%; top: -1em;">
                 <div class="modal-dialog" role="document">
@@ -1483,6 +1535,105 @@
                         
                         <div class="modal-footer">
                             <button type="button" class="Button--primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal for editing the information of a table row -->
+            <div class="modal fade" id="editMeeting" tabindex="-1" role="dialog" aria-labelledby="editMeeting" aria-hidden="true" style="font-size: 1em; right: 18%; left: 23%; top: 4em;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit meeting for AC 209a</h5>
+                        </div>
+                        <div class="modal-body">
+                            <span role="alert" aria-live="assertive" aria-invalid="true" class="required-label">
+                                Note: * denotes required information.
+                            </span>
+
+                            <div>
+                                <label for="contactName">Contact name</label>
+                                <div>
+                                    <input id="contactName" name="contactName" type="text" class="TextInput" value="Name Surname" placeholder="e.g., Jane Doe">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="contactEmail">Contact email</label>
+                                <div>
+                                    <input id="contactEmail" name="contactEmail" type="text" class="TextInput" value="nlast@seas.harvard.edu" placeholder="e.g., JDoe@seas.harvard.edu">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="contactTelephone">Contact telephone</label>
+                                <div>
+                                    <input id="contactTelephone" name="contactTelephone" type="text" class="TextInput" value="(123) 435-6789" placeholder="e.g., 1-2345">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="meetingNotes">Notes</label>
+                                <div>
+                                    <input id="meetingNotes" name="meetingNotes" type="text" class="TextInput" value="The instructor really wants a projector." placeholder="e.g., Must have whiteboard">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="meetingSize">Expected size</label>
+                                <div>
+                                    <input id="meetingSize" name="meetingSize" type="text" class="TextInput" value="35" placeholder="i.e., 20 or TBD">
+                                </div>
+                            </div>
+
+                                <div>
+                                    <label for="area">Area</label>
+                                    <span role="alert" aria-live="assertive" aria-invalid="true" class="required-label">
+                                        *
+                                    </span>
+                                    <div>
+                                        <select class="Dropdown" id="area">
+                                            <option>General</option>
+                                            <option selected>ACS</option>
+                                            <option>AM</option>
+                                            <option>AP</option>
+                                            <option>BE</option>
+                                            <option>CS</option>
+                                            <option>EE</option>
+                                            <option>ESE</option>
+                                            <option>General</option>
+                                            <option>MDE</option>
+                                            <option>MSMBA</option>
+                                            <option>Mat&amp;ME</option>
+                                            <option>SEM</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="course">Course number</label>
+                                    <div>
+                                        <input id="course" name="course" type="text" class="TextInput" value="AC 209a" placeholder="e.g., AC209">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="courseTitle">
+                                        Title
+                                        <span role="alert" aria-live="assertive" aria-invalid="true" class="required-label">
+                                            *
+                                        </span>
+                                    </label>
+                                    <div>
+                                        <input id="courseTitle" name="courseTitle" type="text" class="TextInput" value="Reading group" placeholder="e.g., Data Science" aria-required="true">
+                                    </div>
+                                </div>
+        
+                                <div class="mt-4">
+                                    <button type="button" class="Button--secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="Button--primary Button--rightAlign" data-dismiss="modal">Save</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
