@@ -816,8 +816,92 @@ tbody {
     font-size: 1.2rem;
 }
 
+.modal-header--borderless {
+    border-bottom: 0px solid #ffffff !important; /* Amending Bootstrap style */
+    width: 100%;
+}
+
+.modal-header--p-0 {
+    padding: .2em 0 0 1em !important; /* Amending Bootstrap style */
+}
+
 .modal-header > h2 {
     font-size: 1.2rem;
+}
+
+.modal-header > h3 {
+    font-size: 1.1rem;
+}
+
+.modal-header > h4 {
+    font-size: 1rem;
+    float: left;
+    margin-top: .4em; /* Align heading with icons */
+    margin-right: auto;
+}
+
+.modal-form {
+    font-size: 1em;
+    margin: 0 1em;
+}
+
+.modal-form > label {
+    margin: .5em 0 -.25em 0 !important; /* Amending Bootstrap style */
+}
+
+#modalForm > div:first-child {
+    margin-bottom: -1.6em;
+}
+
+.roomSelect > h4 {
+    font-size: 1rem;
+    float: left;
+    margin-top: .4em; /* Align heading with icons */
+    margin-left: 2.2em;
+}
+
+.roomSelect--edit > h4 {
+    font-size: 1rem;
+    float: left;
+    margin-top: .4em; /* Align heading with icons */
+}
+
+.modal-header > .BorderlessButton--info { /* Right align edit button */
+    position: relative;
+    display: block;
+}
+
+.roomSelect > .BorderlessButton--danger { /* Left align danger button */
+    position: absolute;
+    left: 2.1em;
+}
+
+.roomSelect--edit > .BorderlessButton--danger { /* Left align danger button */
+    position: relative;
+    float: left;
+    margin-left: .2em;
+}
+
+.roomSelect--edit-row2 { 
+    display: inline-flex;
+}
+
+.input-group-prepend {
+    margin-right: -1px !important; /* Amending Bootstrap style */
+    height: 2.2em !important; /* Amending Bootstrap style */
+}
+
+.input-group>.form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 1.8em !important; /* Amending Bootstrap style */
+}
+
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: .9em !important; /* Amending Bootstrap style */
+    line-height: inherit;
 }
 
 /*#endregion*/
@@ -1070,10 +1154,6 @@ tbody {
     float: right;
     margin: 0em -.2em 0em 0;
     }
-    
-    .roomSelect {
-        font-size: .8em
-    }
 
     hr {
         width: 80%;
@@ -1087,9 +1167,19 @@ tbody {
     /* Not Mark One styles */
     
     .roomSelect {
-        padding: 6px 3px 6px 3px;
-        border-bottom: 1px solid #ddd;
+        height: 3em;
+        font-size: .8em;
+        border-bottom: solid 1px #dddddd;
+    }
+    
+    .roomSelect--incomplete {
         height: 5em;
+    }
+    
+    .roomSelect--edit {
+        height: 6.1em;
+        font-size: .8em;
+        border-bottom: solid 1px #dddddd;
     }
     
     .roomSelect:after {
@@ -1104,7 +1194,9 @@ tbody {
         padding: 0 3px 0 3px;
     }
     .roomSelect__date {
-        width: 15%;
+        width: 17%;
+        margin-left: 2.5em;
+        padding: 0 .2em 0 .2em;
     }
     .roomSelect__icon {
         width: 3%;
@@ -1113,13 +1205,21 @@ tbody {
         width: 30%;
     }
     .roomSelect__timeEdit {
-        width: 30% !important;
+        width: 29% !important;
+        padding: 0 .2em 0 .2em;
+    }
+    .roomSelect__timeEditEnd {
+        width: 20% !important;
+        padding: 0 .2em 0 .2em;
+    }
+    .form-control--timeEnd {
+        height: calc(1.65rem + 2px) !important;
     }
     .roomSelect__room {
-        width: 100%;
+        width: 13%;
     }
     .roomSelect__edit {
-        width: 25%;
+        width: 22%;
     }
     .roomSelect__showroom {
         width: 25%;
@@ -1153,6 +1253,19 @@ tbody {
         font-size: 0.7em;
         font-weight: 600;
         grid-area: e / e / e / e;
+    }
+
+    .roomSelect--validation {
+        width: 100%
+    }
+
+    div.ValidationErrorMessage {
+        margin: -1em 0 0 3.2em;
+        font-size: .9em;
+    }
+
+    span.ValidationErrorMessage {
+        font-size: 1em;
     }
 
     /* Error message */
@@ -1528,3 +1641,4 @@ input[type='checkbox'] + label {
     }
 
     /*#endregion*/
+    roomSelect--incomplete
