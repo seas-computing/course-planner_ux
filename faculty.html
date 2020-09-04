@@ -72,33 +72,33 @@
                 <span id="openoptionsnote" class="hidden">This link visually displays the content below</span>
             </div>
     
-                <!--Sliding sidebar filters-->
-                <div class="sideNav-column">
-                    <div id="mySidenav" class="sidenav">
-                        <div class="sideNav--ncm--inside__Link">
-                            <a href="javascript:void(0)" onclick="closeNav()" class="Link" aria-describedby="closeoptionsnote">
-                                Options
-                                <i class="far fa-arrow-alt-circle-left ml-auto"></i>
-                            </a>
-                            <span id="closeoptionsnote" class="hidden">This link visually hides the content below</span>
-                        </div>
-                        <form>
-                            <hr>
-                            <div>
-                                <button class="Button--secondary">Download faculty report</button>
-                            </div>
-                            <hr>
-                            <div>
-                                <label for="showinactivefaculty">
-                                    Show "No longer active" faculty:
-                                    <input id="showinactivefaculty" name="showretiredcourses" type="checkbox">
-                                </label>
-                            </div>
-                        </form>
+            <!--Sliding sidebar filters-->
+            <div class="sideNav-column">
+                <div id="mySidenav" class="sidenav">
+                    <div class="sideNav--ncm--inside__Link">
+                        <a href="javascript:void(0)" onclick="closeNav()" class="Link" aria-describedby="closeoptionsnote">
+                            Options
+                            <i class="far fa-arrow-alt-circle-left ml-auto"></i>
+                        </a>
+                        <span id="closeoptionsnote" class="hidden">This link visually hides the content below</span>
                     </div>
+                    <form>
+                        <hr>
+                        <div>
+                            <button class="Button--secondary">Download faculty report</button>
+                        </div>
+                        <hr>
+                        <div>
+                            <label for="showinactivefaculty">
+                                Show "No longer active" faculty:
+                                <input id="showinactivefaculty" name="showretiredcourses" type="checkbox">
+                            </label>
+                        </div>
+                    </form>
                 </div>
+            </div>
 
-            <!-- courses -->
+            <!-- table -->
             <div class="courses">
 
                 <table class="Table Table--Sidebar">
@@ -338,7 +338,7 @@
                                         <i class="fas fa-edit float-right"></i>
                                     </a>
                                 </div>
-                                Sabbatical
+                                <span class="hidden">None</span>
                             </td>
                             <td class="TableCell">
                                 AM 101
@@ -395,7 +395,7 @@
 
                 </table>
 
-            </div><!-- /courses -->
+            </div><!-- /table -->
 
             <!-- Modal for Sabbatical/Leave -->
             <div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModal" aria-hidden="true" style="font-size: 1.25em; right: 18%; left: 23%; top: 7em;">
@@ -414,12 +414,12 @@
                                 <option value="string:Research Leave" label="Research Leave">Research Leave</option>
                                 <option value="string:Parental Leave" label="Parental Leave">Parental Leave</option>
                                 <option value="string:No Longer Active" label="No Longer Active">No Longer Active</option>
+                                <option value="string:None" label="None">None</option>
                             </select>
                             
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="Button--danger Button--leftAlign" data-dismiss="modal">Remove</button>
                             <button type="button" class="Button--primary" data-dismiss="modal">Save leave</button>
                         </div>
                     </div>
