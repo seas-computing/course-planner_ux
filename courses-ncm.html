@@ -858,7 +858,7 @@
                                         box-shadow: 0 0 1px rgba(255, 255, 255, .5);
                                         }
                                         #scrollarea-container--mt {
-                                        height:16em;
+                                        height:13em;
                                         /* shorter than the child */
                                         overflow-y: scroll;
                                         /* clip height to 30em and scroll to show the rest */
@@ -866,7 +866,7 @@
                                         padding: .25em;
                                         }
                                         #scrollarea-content--mt {
-                                        height: 26em;
+                                        height: 21em;
                                         /* taller than the parent to force scrolling */
                                         }
                                     </style>
@@ -1046,20 +1046,20 @@
                                                     </div>
                                                 </div>
 
-                                                <div>
-                                                    <div class="roomSelect__addnewtime">
-                                                        <button type="button" class="Button--secondary Button--rightAlign">Add new time</button>
-                                                    </div>
-                                                </div>
-
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="roomSelect__addnewtime">
+                                            <button type="button" class="Button--secondary Button--rightAlign">Add new time</button>
                                         </div>
                                     </div>
 
                                     <!-- Meeting notes -->
                                    <section id="modalForm">
                                     <div class="modal-header modal-header--borderless">
-                                         <h3>Meeting notes</h3>
+                                         <h3><label for="meetingNote"></label>Meeting notes</label></h3>
                                      </div>
                                      <div class="modal-form">
                                         contactName Surname
@@ -1071,11 +1071,11 @@
                                             <textarea id="meetingNote" name="meetingNote" type="text" placeholder="" rows="2" cols="62">The instructor really wants a projector.</textarea>
                                         </div>
                                     </div>
-                                    <div class="modal-header modal-header--borderless">
-                                        <label for="meetingSize">Expected size</label>
-                                     </div>
                                      <div class="modal-form">
-                                        <input id="meetingSize" name="meetingSize" type="text" placeholder="" value="35">
+                                        <label for="meetingSize">Expected size</label>
+                                        <div>
+                                            <input id="meetingSize" name="meetingSize" type="text" placeholder="" value="35">
+                                        </div>
                                     </div>
                                 </div>
                                 
