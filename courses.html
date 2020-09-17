@@ -1479,7 +1479,7 @@
                                         padding: .25em;
                                         }
                                         #scrollarea-content--mt {
-                                        height: 21em;
+                                        height: 18em;
                                         /* taller than the parent to force scrolling */
                                         }
                                     </style>
@@ -1497,7 +1497,7 @@
                                                             </i>
                                                         </button>
                                                         <h4>
-                                                            Geological Museum 105 on Tuesday, 8:30 to 10:15
+                                                            Tuesday, 8:30AM to 10:15AM in Geological Museum 105
                                                         </h4>
                                                         <button class="BorderlessButton--info" aria-pressed="false">
                                                             <i class="fas fa-edit">
@@ -1507,8 +1507,8 @@
                                                     </div>
                                                 </div>
 
-                                                <!-- Unselected, scheduled room  -->
-                                                <div class="roomSelect">
+                                                <!-- Unselected, scheduled room, just edited room  -->
+                                                <div class="roomSelect roomSelect--closed">
                                                     <div class="modal-header modal-header--borderless">
                                                         <button class="BorderlessButton--danger">
                                                             <i class="fas fa-trash">
@@ -1516,7 +1516,7 @@
                                                             </i>
                                                         </button>
                                                         <h4>
-                                                            Harvard Hall 112 on Tuesday, 10:30 to 11:45
+                                                            Tuesday, 10:30AM to 11:45AM in Harvard Hall 112
                                                         </h4>
                                                         <button class="BorderlessButton--info" aria-pressed="false">
                                                             <i class="fas fa-edit">
@@ -1528,19 +1528,17 @@
 
                                                 <!-- Selected room, after selecting "Edit" button -->
                                                 <div class="roomSelect--edit">
-                                                    <button class="BorderlessButton--danger">
-                                                        <i class="fas fa-trash">
-                                                            <span class="sr-only">Delete this meeting</span>
-                                                        </i>
-                                                    </button>
-                                                    <h4>
-                                                        Harvard Hall 112
-                                                    </h4>
-                                                    <div class="roomSelect--edit-row2">
+                                                    <div class="roomSelect--edit-row1">
+                                                        <button class="BorderlessButton--danger">
+                                                            <i class="fas fa-trash">
+                                                                <span class="sr-only">Delete this meeting</span>
+                                                            </i>
+                                                        </button>
 
                                                         <label for="dataone" hidden>Date of booked room</label>
                                                         <div class="roomSelect__date">
                                                             <select id="dataone" name="dataone" class="Dropdown">
+                                                                <option value="string:All" label=""></option>
                                                                 <option value="string:All" label="Monday">Monday</option>
                                                                 <option value="string:tuesday" label="Tuesday" selected>Tuesday</option>
                                                                 <option value="string:wednesday" label="wednesday">Wednesday</option>
@@ -1555,6 +1553,7 @@
                                                                     <span class="hidden">Meeting time</span>
                                                                 </button>
                                                                 <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#"></a>
                                                                     <a class="dropdown-item" href="#">8:30AM-11:30AM</a>
                                                                     <a class="dropdown-item" href="#">9:00AM-10:15AM</a>
                                                                     <a class="dropdown-item" href="#">9:00AM-11:45AM</a>
@@ -1573,18 +1572,26 @@
                                                                 </div>
                                                             </div>
                                                             <input type="text" class="form-control" aria-label="Meeting time" value="12:00PM">
+                                                            <p>to</p>
                                                         </div>
 
                                                         <div class="input-group mb-3 roomSelect__timeEditEnd">
-                                                            <input type="text" class="form-control form-control--timeEnd" aria-label="Text input with segmented dropdown button" value="12:45">
+                                                            <input type="text" class="form-control form-control--timeEnd" aria-label="Text input with segmented dropdown button" value="12:45PM">
                                                         </div>
+                                                    </div>
+                                                    <div class="roomSelect--edit-row2">
+                                                        <div class="modal-header modal-header--borderless">
+                                                            <h4>
+                                                                Room: Harvard Hall 112
+                                                            </h4>
 
-                                                        <div class="roomSelect__showroom">
-                                                            <button type="button" class="Button--primary Button--rightAlign">Show rooms</button>
-                                                        </div>
+                                                            <div class="roomSelect__showroom">
+                                                                <button type="button" class="Button--primary Button--rightAlign">Show rooms</button>
+                                                            </div>
 
-                                                        <div class="roomSelect__room">
-                                                            <button type="button" class="Button--secondary Button--rightAlign">Save</button>
+                                                            <div class="roomSelect__room">
+                                                                <button type="button" class="Button--secondary Button--rightAlign">Close</button>
+                                                            </div>
                                                         </div>
                                                     </div>
 
@@ -1599,7 +1606,7 @@
                                                             </i>
                                                         </button>
                                                         <h4>
-                                                            Harvard Hall 112 on Tuesday, 13:00 to 13:45
+                                                            Tuesday, 13:00PM to 13:45PM in Harvard Hall 112 
                                                         </h4>
                                                         <button class="BorderlessButton--info" aria-pressed="false">
                                                             <i class="fas fa-edit">
@@ -1619,7 +1626,7 @@
                                                         </button>
                                                         <h4>
                                                             <span class="ValidationErrorMessage">*</span>
-                                                            Tuesday, 14:00 to 14:45
+                                                            Tuesday, 14:00PM to 14:45PM
                                                         </h4>
                                                         <button class="BorderlessButton--info" aria-pressed="false">
                                                             <i class="fas fa-edit">
@@ -1629,32 +1636,7 @@
                                                     </div>
                                                     <div class="roomSelect--validation">
                                                         <div class="ValidationErrorMessage">
-                                                            <br>Choose a room for ths meeting
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Unselected, unscheduled room with missing room time  -->
-                                                <div class="roomSelect roomSelect--incomplete">
-                                                    <div class="modal-header modal-header--borderless">
-                                                        <button class="BorderlessButton--danger">
-                                                            <i class="fas fa-trash">
-                                                                <span class="sr-only">Delete this meeting</span>
-                                                            </i>
-                                                        </button>
-                                                        <h4>
-                                                            Harvard Hall 204
-                                                            <span class="ValidationErrorMessage">*</span>
-                                                        </h4>
-                                                        <button class="BorderlessButton--info" aria-pressed="false">
-                                                            <i class="fas fa-edit">
-                                                                <span class="sr-only">Edit this meeting</span>
-                                                            </i>
-                                                        </button>
-                                                    </div>
-                                                    <div class="roomSelect--validation">
-                                                        <div class="ValidationErrorMessage">
-                                                            <br>Choose a time for ths meeting
+                                                            <br>No room selected
                                                         </div>
                                                     </div>
                                                 </div>
