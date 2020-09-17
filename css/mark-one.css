@@ -882,8 +882,34 @@ tbody {
     margin-left: .2em;
 }
 
-.roomSelect--edit-row2 { 
+.roomSelect--edit-row1 { 
     display: inline-flex;
+}
+
+.roomSelect--edit-row1 > .roomSelect__date {
+    margin-top: 1em;
+}
+
+.roomSelect__date > .Dropdown {
+    color: rgb(24, 24, 24);
+    width: 100%;
+    height: 2.6em;
+}
+
+.roomSelect--edit-row1 > .roomSelect__timeEdit {
+    margin-top: 1em;
+}
+
+.roomSelect--edit-row1 > .roomSelect__timeEditEnd {
+    margin-top: 1em;
+}
+
+.roomSelect--edit-row1 > .BorderlessButton--danger {
+    margin-top: -1em;
+}
+
+.roomSelect--edit-row2 { 
+    margin-top: -1.5em;
 }
 
 .input-group-prepend {
@@ -1171,15 +1197,28 @@ textarea {
         font-size: .8em;
         border-bottom: solid 1px #dddddd;
     }
+
+    .roomSelect--closed {
+        height: 3em;
+        font-size: .8em;
+        border: 3px solid #4e88c7;
+    }
     
     .roomSelect--incomplete {
         height: 5em;
     }
     
     .roomSelect--edit {
-        height: 6.1em;
+        height: 7.5em;
         font-size: .8em;
         border-bottom: solid 1px #dddddd;
+    }
+
+    .roomSelect__timeEdit > p {
+        margin-bottom: 0;
+        margin-top: 0;
+        margin-left: .25em;
+        font-size: larger;
     }
     
     .roomSelect:after {
@@ -1195,7 +1234,6 @@ textarea {
     }
     .roomSelect__date {
         width: 17%;
-        margin-left: 2.5em;
         padding: 0 .2em 0 .2em;
     }
     .roomSelect__icon {
