@@ -853,6 +853,15 @@ tbody {
     margin-bottom: -1.6em;
 }
 
+.modal-form > h4 {
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+.modal-form > p {
+    font-size: .90em;
+}
+
 .roomSelect > h4 {
     font-size: 1rem;
     float: left;
