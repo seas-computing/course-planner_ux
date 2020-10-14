@@ -149,7 +149,6 @@ html, body {
         background: rgb(78, 136, 199); /* Info button idle color - info: light */
         border: 1px solid rgb(78, 136, 199); /* Info button idle border color - info: medium */
         padding: 5px 10px;
-        float: right;
     }
 
     #buttonInfo:hover {
