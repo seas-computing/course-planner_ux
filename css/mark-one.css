@@ -635,6 +635,9 @@ tbody {
         border-right: 2px solid rgb(152, 152, 152);
         padding: 5px;
     }
+    .TableCell--huit {
+        text-align: center;
+    }
 
     /* Non existing Mark One class for Courses table header*/
     .TableHeadingCell--blank__left {
@@ -668,16 +671,19 @@ tbody {
     td.acs {
         background: rgba(203, 37, 45, 0.80); /* SEAS academic color with light transparency for the row hover effect */
         color: white;
+        text-align: center;
     }
 
     td.am {
         background: rgba(78, 173, 171, 0.80); /* SEAS academic color with light transparency for the row hover effect */
         color: black;
+        text-align: center;
     }
 
     td.ap {
         background: rgba(206, 219, 81, 0.80); /* SEAS academic color with light transparency for the row hover effect */
         color: black;
+        text-align: center;
     }
 
     /* Define the hover highlight color for the table row */
@@ -1296,8 +1302,16 @@ textarea {
     .required-label {
         color: rgb(255, 64, 64);
         font-family: "Open Sans", sans-serif;
-        font-size: 0.7em;
+        font-size: 1em;
         font-weight: 600;
+        grid-area: e / e / e / e;
+    }
+
+    p.required-label {
+        color: rgb(255, 64, 64);
+        font-family: "Open Sans", sans-serif;
+        font-size: 1em;
+        font-weight: normal;
         grid-area: e / e / e / e;
     }
 
