@@ -7,7 +7,7 @@
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <title>Manage faculty - Course Planner</title>
+        <title>Manage faculty - Course Planning</title>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta name="robots" content="noindex, nofollow">
         <meta name="googlebot" content="noindex, nofollow">
@@ -39,7 +39,7 @@
     <body>
         <header class="Header"><a width="175px" href="#" height="50px" class="Logo">The Link
                 Description</a>
-            <h1 class="PageTitle">Course Planner</h1>
+            <h1 class="PageTitle">Course Planning</h1>
             <div><a href="#" class="StyledLink">Logout</a></div>
         </header>
             
@@ -72,7 +72,7 @@
         <div class="ml-4">
 
             <div>
-                <button onclick="openDialog('dialog1', this)" class="mb-1" id="buttonInfo">Create faculty</button>
+                <button onclick="openDialog('dialog1', this)" class="mb-1" id="buttonInfo">Create New Faculty</button>
             </div>
 
             <!-- courses -->
@@ -90,10 +90,10 @@
                                 HUID
                             </th>
                             <th scope="col" class="TableHeadingCell">
-                                Last name
+                                Last Name
                             </th>
                             <th scope="col" class="TableHeadingCell">
-                                First name
+                                First Name
                             </th>
                             <th scope="col" class="TableHeadingCell">
                                 Edit
@@ -151,18 +151,18 @@
                     <tbody class="TableBody">
                         <tr class="TableRowOdd">
                             <td class="TableCell acs">ACS</td>
-                            <td class="TableCell ">12345678</td>
+                            <td class="TableCell TableCell--huit">12345678</td>
                             <td class="TableCell ">lastName</td>
                             <td class="TableCell ">firstName</td>
                             <td class="TableCell text-center">
-                                <a href="#" data-toggle="modal" data-target="#exampleModal2" class="BorderlessButton--info">
+                                <a href="#" onclick="openDialog('dialog2', this)" class="BorderlessButton--info">
                                     <i class="fas fa-edit"></i>
                                 </a>
                             </td>
                         </tr>
                         <tr class="TableRowEven">
                             <td class="TableCell acs">ACS</td>
-                            <td class="TableCell ">12345678</td>
+                            <td class="TableCell TableCell--huit ">12345678</td>
                             <td class="TableCell ">lastName</td>
                             <td class="TableCell ">firstName</td>
                             <td class="TableCell text-center">
@@ -173,7 +173,7 @@
                         </tr>
                         <tr class="TableRowOdd">
                             <td class="TableCell acs">ACS</td>
-                            <td class="TableCell ">12345678</td>
+                            <td class="TableCell TableCell--huit ">12345678</td>
                             <td class="TableCell ">lastName</td>
                             <td class="TableCell ">firstName</td>
                             <td class="TableCell text-center">
@@ -184,7 +184,7 @@
                         </tr>
                         <tr class="TableRowEven">
                             <td class="TableCell am">AM</td>
-                            <td class="TableCell ">12345678</td>
+                            <td class="TableCell TableCell--huit ">12345678</td>
                             <td class="TableCell ">lastName</td>
                             <td class="TableCell ">firstName</td>
                             <td class="TableCell text-center">
@@ -195,7 +195,7 @@
                         </tr>
                         <tr class="TableRowOdd">
                             <td class="TableCell am">AM</td>
-                            <td class="TableCell ">12345678</td>
+                            <td class="TableCell TableCell--huit ">12345678</td>
                             <td class="TableCell ">lastName</td>
                             <td class="TableCell ">firstName</td>
                             <td class="TableCell text-center">
@@ -206,7 +206,7 @@
                         </tr>
                         <tr class="TableRowEven">
                             <td class="TableCell am">AM</td>
-                            <td class="TableCell ">12345678</td>
+                            <td class="TableCell TableCell--huit ">12345678</td>
                             <td class="TableCell ">lastName</td>
                             <td class="TableCell ">firstName</td>
                             <td class="TableCell text-center">
@@ -217,7 +217,7 @@
                         </tr>
                         <tr class="TableRowOdd">
                             <td class="TableCell ap">AP</td>
-                            <td class="TableCell ">12345678</td>
+                            <td class="TableCell TableCell--huit ">12345678</td>
                             <td class="TableCell ">lastName</td>
                             <td class="TableCell ">firstName</td>
                             <td class="TableCell text-center">
@@ -228,7 +228,7 @@
                         </tr>
                         <tr class="TableRowEven">
                             <td class="TableCell ap">AP</td>
-                            <td class="TableCell ">12345678</td>
+                            <td class="TableCell TableCell--huit ">12345678</td>
                             <td class="TableCell ">lastName</td>
                             <td class="TableCell ">firstName</td>
                             <td class="TableCell text-center">
@@ -239,7 +239,7 @@
                         </tr>
                         <tr class="TableRowOdd">
                             <td class="TableCell ap">AP</td>
-                            <td class="TableCell ">12345678</td>
+                            <td class="TableCell TableCell--huit ">12345678</td>
                             <td class="TableCell ">lastName</td>
                             <td class="TableCell ">firstName</td>
                             <td class="TableCell text-center">
@@ -335,7 +335,7 @@
     
             <!-- Manage faculty modal - Edit faculty -->
     
-            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 40em; height: 41em; top: -3em;">
+            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 40em; height: 41em; top: -3em;" hidden>
                 <div class="modal-dialog" role="document" style="max-width: 90%;">
                     <div class="modal-content">
                     <div class="modal-header">
@@ -345,9 +345,9 @@
                         <p class="required-label">Note: * denotes required information</p>
                         <form>
                             <div>    
-                                <span class="required-label">*</span> <label for="course_area">Area</label>
+                                <label for="course_area">Area</label> <span class="required-label">*</span> 
                                 <div>
-                                    <select id="course_area" class="Dropdown">
+                                    <select id="course_area" class="Dropdown" aria-required="true">
                                         <option>ACS</option>
                                         <option>AM</option>
                                         <option>AP</option>
@@ -363,27 +363,27 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <span class="required-label">*</span> <label for="huid">HUID</label>
+                                    <label for="huid">HUID</label> <span class="required-label">*</span> 
                                     <div>
-                                        <input id="huid" name="huid" type="text" class="TextInput" value="12345678" placeholder="e.g., 12345678">
+                                        <input id="huid" name="huid" type="text" class="TextInput" value="12345678" placeholder="e.g., 12345678" aria-required="true">
                                     </div>
                                 </div>
                                 <div>
-                                    <span class="required-label">*</span> <label for="firstName">First name</label>
+                                    <label for="firstName">First name</label> <span class="required-label">*</span> 
                                     <div>
-                                        <input id="firstName" name="firstName" type="text" class="TextInput" value="John" placeholder="e.g., Jane">
+                                        <input id="firstName" name="firstName" type="text" class="TextInput" value="John" placeholder="e.g., Jane" aria-required="true">
                                     </div>
                                 </div>
                                 <div>
-                                    <span class="required-label">*</span> <label for="surname">Last name</label>
+                                    <label for="surname">Last name</label> <span class="required-label">*</span> 
                                     <div>
-                                        <input id="surname" name="surname" type="text" class="TextInput" value="Harvard" placeholder="e.g., Jane">
+                                        <input id="surname" name="surname" type="text" class="TextInput" value="Harvard" placeholder="e.g., Jane" aria-required="true">
                                     </div>
                                 </div>
                                 <div>
-                                    <span class="required-label">*</span> <label for="facultyCategory">Category</label>
+                                    <label for="facultyCategory">Category</label> <span class="required-label">*</span> 
                                     <div>
-                                        <select id="facultyCategory" class="Dropdown">
+                                        <select id="facultyCategory" class="Dropdown" aria-required="true">
                                             <option>&nbsp;</option>
                                             <option>Ladder</option>
                                             <option selected>Non-ladder</option>
@@ -414,8 +414,92 @@
                 </div>
             </div>
 
-            <!-- Accessible modal -->
+            <!-- Accessible modal for editing faculty-->
+            <section id="accessibleModalEdit">
+                <div class="dialogs">
+                    <div class="Modal">
+                        <!-- Because of id="dialog1" referred to by the button that opened the modal, the focus of the screentreader moves into the modal and on the first form - Area -->
+                        <div role="dialog" id="dialog2" aria-labelledby="dialog1_label" aria-modal="true" class="hidden">
+                            <div class="ModalHeader"><span id="dialog1_label" class="ModalHeading">Edit faculty</span></div>
+                            <p class="required-label">Note: * denotes required information</p>
+                                <form>
+                                    <div>
+                                        <label for="faculty_area">Area</label> <span class="required-label">*</span> 
+                                        <div>
+                                            <select class="Dropdown" id="faculty_area" aria-required="true">
+                                                <option selected>ACS</option>
+                                                <option>AM</option>
+                                                <option>AP</option>
+                                                <option>BE</option>
+                                                <option>CS</option>
+                                                <option>EE</option>
+                                                <option>ESE</option>
+                                                <option>General</option>
+                                                <option>MDE</option>
+                                                <option>MSMBA</option>
+                                                <option>Mat&amp;ME</option>
+                                                <option>SEM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="huid">HUID</label> <span class="required-label">*</span> 
+                                        <div>
+                                            <input id="huid" name="huid" type="text" class="TextInput" value="12345678" placeholder="e.g., 12345678" aria-required="true">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="firstName">First name</label>
+                                        <div>
+                                            <input id="firstName" name="firstName" type="text" class="TextInput" value="John" placeholder="e.g., Jane">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="lastName">Last name</label> <span class="required-label">*</span> 
+                                        <div>
+                                            <input id="lastName" name="lastName" type="text" class="TextInput" value="Harvard" placeholder="e.g., Smith" aria-required="true">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="facultyCategory">Category</label> <span class="required-label">*</span> 
+                                        <div>
+                                            <select id="facultyCategory" class="Dropdown" aria-required="true">
+                                                <option>Ladder</option>
+                                                <option selected>Non-ladder</option>
+                                                <option>Non-SEAS ladder</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="join">Join with...</label>
+                                        <div>
+                                            <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry" aria-required="true">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="facultyNotes">Notes</label>
+                                        <div>
+                                            <input id="facultyNotes" name="facultyNotes" type="text" class="TextInput" value="Likes room X, hates room Y¿" placeholder="e.g., Likes room X, hates room Y">
+                                        </div>
+                                    </div>
+                                    <div class="ModalFooter">
+                                        <!-- Upon closing the modal, the focus of the screenreader returns to the button that opened the modal -->
+                                        <button type="button" class="Button--primary Button--rightAlign" onclick="closeDialog(this)">Submit</button>
+                                        <button type="button" class="Button--secondary" onclick="closeDialog(this)">Cancel</button>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+                </div>
 
+                <script>
+                    sourceCode.add('sc1', 'ex1');
+                    sourceCode.add('sc1', 'dialog_layer');
+                    sourceCode.make();
+                </script>
+            </section>
+
+            <!-- Accessible modal for creating new faculty-->
             <section id="accessibleModal">
                 <div class="dialogs">
                     <div class="Modal">
@@ -425,9 +509,9 @@
                             <p class="required-label">Note: * denotes required information</p>
                                 <form>
                                     <div>
-                                        <span class="required-label">*</span> <label for="faculty_area">Area</label>
+                                        <label for="faculty_area">Area</label> <span class="required-label">*</span> 
                                         <div>
-                                            <select class="Dropdown" id="faculty_area">
+                                            <select class="Dropdown" id="faculty_area" aria-required="true">
                                                 <option>&nbsp;</option>
                                                 <option>ACS</option>
                                                 <option>AM</option>
@@ -445,27 +529,27 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <span class="required-label">*</span> <label for="huid">HUID</label>
+                                        <label for="huid">HUID</label> <span class="required-label">*</span> 
                                         <div>
-                                            <input id="huid" name="huid" type="text" class="TextInput" value="" placeholder="e.g., 12345678">
+                                            <input id="huid" name="huid" type="text" class="TextInput" value="" placeholder="e.g., 12345678" aria-required="true">
                                         </div>
                                     </div>
                                     <div>
-                                        <span class="required-label">*</span> <label for="firstName">First name</label>
+                                        <label for="firstName">First name</label>
                                         <div>
                                             <input id="firstName" name="firstName" type="text" class="TextInput" value="" placeholder="e.g., Jane">
                                         </div>
                                     </div>
                                     <div>
-                                        <span class="required-label">*</span> <label for="lastName">Last name</label>
+                                        <label for="lastName">Last name</label> <span class="required-label">*</span> 
                                         <div>
-                                            <input id="lastName" name="lastName" type="text" class="TextInput" value="" placeholder="e.g., Smith">
+                                            <input id="lastName" name="lastName" type="text" class="TextInput" value="" placeholder="e.g., Smith" aria-required="true">
                                         </div>
                                     </div>
                                     <div>
-                                        <span class="required-label">*</span> <label for="facultyCategory">Category</label>
+                                        <label for="facultyCategory">Category</label> <span class="required-label">*</span> 
                                         <div>
-                                            <select id="facultyCategory" class="Dropdown">
+                                            <select id="facultyCategory" class="Dropdown" aria-required="true">
                                                 <option>&nbsp;</option>
                                                 <option>Ladder</option>
                                                 <option>Non-ladder</option>
@@ -476,7 +560,7 @@
                                     <div>
                                         <label for="join">Join with...</label>
                                         <div>
-                                            <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry">
+                                            <input id="join" name="join" type="text" class="TextInput" value="" placeholder="Add 'Join with' entry" aria-required="true">
                                         </div>
                                     </div>
                                     <div>
@@ -487,7 +571,7 @@
                                     </div>
                                     <div class="ModalFooter">
                                         <!-- Upon closing the modal, the focus of the screenreader returns to the button that opened the modal -->
-                                        <button type="button" class="Button--primary Button--rightAlign" onclick="closeDialog(this)">Save</button>
+                                        <button type="button" class="Button--primary Button--rightAlign" onclick="closeDialog(this)">Submit</button>
                                         <button type="button" class="Button--secondary" onclick="closeDialog(this)">Cancel</button>
                                     </div>
                                 </form>

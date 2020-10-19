@@ -4,7 +4,7 @@
 
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <title>Courses - Course Planner</title>
+        <title>Courses - Course Planning</title>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta name="robots" content="noindex, nofollow">
         <meta name="googlebot" content="noindex, nofollow">
@@ -31,7 +31,7 @@
     <body>
         <header class="Header"><a width="175px" href="#" height="50px" class="Logo">The Link
                 Description</a>
-            <h1 class="PageTitle">Course Planner</h1>
+            <h1 class="PageTitle">Course Planning</h1>
             <div><a href="#" class="StyledLink">Logout</a></div>
         </header>
 
@@ -119,14 +119,15 @@
                 <!-- Mark One table -->
                 <table class="Table Table--Sidebar">
 
+                    <colgroup span="5"></colgroup>
                     <colgroup span="6"></colgroup>
                     <colgroup span="6"></colgroup>
-                    <colgroup span="6"></colgroup>
+                    <colgroup></colgroup>
                     <colgroup></colgroup>
 
                     <thead class="TableHead">
                         <tr class="TableHeadingCell">
-                            <td class="TableHeadingCell--blank__left" colspan="6">
+                            <td class="TableHeadingCell--blank__left" colspan="5">
                             </td>
                             <td class="TableHeadingCell--blank__left" colspan="12">
                                 <div class="align-center mb-1">
@@ -146,10 +147,10 @@
                             </td>
                             <td class="TableHeadingCell--blank__right">
                             </td>
+                            <td class="TableHeadingCell--blank__right">
+                            </td>
                         </tr>
                         <tr class="TableHeadingCell">
-                            <td class="TableHeadingCell TableHeadingCell--blank__left">
-                            </td>
                             <td class="TableHeadingCell TableHeadingCell--blank__left">
                             </td>
                             <td class="TableHeadingCell TableHeadingCell--blank__left">
@@ -168,6 +169,8 @@
                             </th>
                             <td class="TableHeadingCell TableHeadingCell--blank__right">
                             </td>
+                            <td class="TableHeadingCell TableHeadingCell--blank__right">
+                            </td>
                         </tr>
 
                         <tr class="TableHeadingCell">
@@ -181,13 +184,10 @@
                                 Title
                             </th>
                             <th scope="col" class="TableHeadingCell">
-                                Same as
+                                Same As
                             </th>
                             <th scope="col" class="TableHeadingCell">
                                 Is SEAS?
-                            </th>
-                            <th scope="col" class="TableHeadingCell">
-                                Is undergrad?
                             </th>
                             <th scope="col" class="TableHeadingCell">
                                 Offered
@@ -195,7 +195,7 @@
                             <th scope="col" class="TableHeadingCell">
                                 Instructors
                             </th>
-                            <th scope="col" class="TableHeadingCell">Room</th>
+                            <th scope="col" class="TableHeadingCell">Meetings</th>
                             <td class="TableHeadingCell" colspan="3">Enrollment</td>
 
                             <th scope="col" class="TableHeadingCell">
@@ -204,8 +204,9 @@
                             <th scope="col" class="TableHeadingCell">
                                 Instructors
                             </th>
-                            <th scope="col" class="TableHeadingCell">Room</th>
+                            <th scope="col" class="TableHeadingCell">Meetings</th>
                             <td class="TableHeadingCell" colspan="3">Enrollment</td>
+                            <th scope="col" class="TableHeadingCell">Notes</th>
                             <th scope="col" class="TableHeadingCell">Detail</th>
                         </tr>
                         <tr>
@@ -260,17 +261,6 @@
                                 </div>
                             </td>
                             <td class="TableHeadingCell TextInput--nolabel">
-                                <label for="undergrad">Is undergrad?</label>
-                                <div>
-                                    <select id="undergrad" name="seas" class="Dropdown" aria-describedby="undergradnote">
-                                        <option value="string:All" label="All" selected="selected">All</option>
-                                        <option value="string:Yes" label="Yes">Yes</option>
-                                        <option value="string:No" label="No">No</option>
-                                    </select>
-                                    <span id="undergradnote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
-                                </div>
-                            </td>
-                            <td class="TableHeadingCell TextInput--nolabel">
                                 <label for="offered1">Offered</label>
                                 <div>
                                     <select id="offered1" name="offered" class="Dropdown" aria-describedby="offered1note">
@@ -321,6 +311,7 @@
                             <th scope="col" class="TableHeadingCell">Study card</th>
                             <th scope="col" class="TableHeadingCell">Actual <span class="hidden">enrollment</span></th>
                             <td class="TableHeadingCell"></td>
+                            <td class="TableHeadingCell"></td>
                         </tr>
                     </thead>
                     <tbody class="TableBody">
@@ -334,7 +325,6 @@
                                 CS 109a<br>STATS 121a
                             </td>
                             <td class="TableCell ">Yes</td>
-                            <td class="TableCell ">No</td>
                             <td class="TableCell ">Yes</td>
                             <td class="TableCell ">
                                 <div class="icon float-right">
@@ -414,6 +404,12 @@
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
+                                    data-target="#courseModal2">
+                                    <i class="far fa-sticky-note float-right"></i>
+                                </a>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
                                     data-target="#courseModal3">
@@ -431,7 +427,6 @@
                                 CS 109b<br>STATS 121b
                             </td>
                             <td class="TableCell ">Yes</td>
-                            <td class="TableCell ">No</td>
                             <td class="TableCell ">Yes</td>
                             <td class="TableCell ">
                                 <div class="icon float-right">
@@ -510,6 +505,12 @@
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
+                                    data-target="#courseModal2">
+                                    <i class="far fa-sticky-note float-right"></i>
+                                </a>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
                                     data-target="#courseModal3">
@@ -525,7 +526,6 @@
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell ">Yes</td>
-                            <td class="TableCell ">No</td>
                             <td class="TableCell ">Yes</td>
                             <td class="TableCell ">
                                 <div class="icon float-right">
@@ -604,6 +604,12 @@
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
+                                    data-target="#courseModal2">
+                                    <i class="far fa-sticky-note float-right"></i>
+                                </a>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
                                     data-target="#courseModal3">
@@ -619,7 +625,6 @@
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell ">Yes</td>
-                            <td class="TableCell ">No</td>
                             <td class="TableCell ">Yes</td>
                             <td class="TableCell ">
                                 <div class="icon float-right">
@@ -698,6 +703,12 @@
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
+                                    data-target="#courseModal2">
+                                    <i class="far fa-sticky-note float-right"></i>
+                                </a>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
                                     data-target="#courseModal3">
@@ -713,7 +724,6 @@
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell ">Yes</td>
-                            <td class="TableCell ">No</td>
                             <td class="TableCell ">Yes</td>
                             <td class="TableCell ">
                                 <div class="icon float-right">
@@ -794,6 +804,12 @@
                             <td class="TableCell "></td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
+                                    data-target="#courseModal2">
+                                    <i class="far fa-sticky-note float-right"></i>
+                                </a>
+                            </td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
                                     data-target="#courseModal3">
                                     <i class="fas fa-folder-open"></i>
                                 </a>
@@ -807,7 +823,6 @@
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell ">Yes</td>
-                            <td class="TableCell ">No</td>
                             <td class="TableCell ">Yes</td>
                             <td class="TableCell ">
                                 Name Surname
@@ -883,6 +898,12 @@
                             <td class="TableCell "></td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
+                                    data-target="#courseModal2">
+                                    <i class="far fa-sticky-note float-right"></i>
+                                </a>
+                            </td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
                                     data-target="#courseModal3">
                                     <i class="fas fa-folder-open"></i>
                                 </a>
@@ -896,7 +917,6 @@
                             </td>
                             <td class="TableCell ">AP 275</td>
                             <td class="TableCell ">Yes</td>
-                            <td class="TableCell ">No</td>
                             <td class="TableCell ">Yes</td>
                             <td class="TableCell ">
                                 <div class="icon float-right">
@@ -975,6 +995,12 @@
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
+                                    data-target="#courseModal2">
+                                    <i class="far fa-sticky-note float-right"></i>
+                                </a>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
                                     data-target="#courseModal3">
@@ -990,7 +1016,6 @@
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell ">Yes</td>
-                            <td class="TableCell ">No</td>
                             <td class="TableCell ">Yes</td>
                             <td class="TableCell ">
                                 <div class="icon float-right">
@@ -1071,6 +1096,12 @@
                             <td class="TableCell "></td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
+                                    data-target="#courseModal2">
+                                    <i class="far fa-sticky-note float-right"></i>
+                                </a>
+                            </td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
                                     data-target="#courseModal3">
                                     <i class="fas fa-folder-open"></i>
                                 </a>
@@ -1084,7 +1115,6 @@
                             </td>
                             <td class="TableCell "></td>
                             <td class="TableCell ">Yes</td>
-                            <td class="TableCell ">No</td>
                             <td class="TableCell ">Yes</td>
                             <td class="TableCell ">
                                 <div class="icon float-right">
@@ -1163,6 +1193,12 @@
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
                             <td class="TableCell "></td>
+                            <td class="TableCell">
+                                <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
+                                    data-target="#courseModal2">
+                                    <i class="far fa-sticky-note float-right"></i>
+                                </a>
+                            </td>
                             <td class="TableCell">
                                 <a type="button" class="BorderlessButton--info" href="#" data-toggle="modal"
                                     data-target="#courseModal3">
