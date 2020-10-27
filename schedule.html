@@ -2055,2296 +2055,2316 @@ cursor: pointer;  text-decoration: underline; margin-left: 1em;">
     </div>
 
     <!-- Calendar -->
-    <div class="calendar">
 
-        <h3 class="day-head_monday">
-            Monday
-        </h3>
-        <div class="rule-9"></div>
-        <div class="rule-9_15"></div>
-        <div class="rule-9_30"></div>
-        <div class="rule-9_45"></div>
+    <!-- Style for persistent scrollbars -->
+    <style>
+        /* always show scrollbar */
+        ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        height: .75em;
+        width: .75em;
+        }
+        ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, .5);
+        box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+        }
+        #scrollarea-container--mt {
+        padding: .25em;
+        }
+    </style>
+    <div id="scrollarea-container--mt">
+        <div class="calendar">
 
-        <h3 class="hour-head_9am">
-            9am
-        </h3>
-        <!--Monday-9:00am-->
-        <div class="area-cs-mon-9 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course" data-toggle="tooltip" data-html="true" title=""
-                            id="myparagraph">
-                        181
-                    </button>
-                    <!--Assistive technology information-->
-                    <p hidden>CS 181 class schedule: 9:00am - 10:15am</p>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        265
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ese-mon-9 area-ese_bac">
-            <dl>
-                <dt class="area-ese">
-                    ESE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course" data-placement="top"
-                            data-toggle="popover" title="ESE 166"
-                            data-content="9am - 10:15am <br> Room: Allston 123"
-                            data-html="true"
-                            onclick="myFunctionESEbtn()">
-                        166
-                    </button>
-                </dd>
-            </dl>
-        </div>
+                <h3 class="day-head_monday">
+                    Monday
+                </h3>
+                <div class="rule-9"></div>
+                <div class="rule-9_15"></div>
+                <div class="rule-9_30"></div>
+                <div class="rule-9_45"></div>
 
-        <style>
-            .ese-btn_highlight {
-                background-color: #bcefbc;
-                color: #000;
-                font-weight: bold;
-                width: 123%;
-                margin-left: -0.4em;
-                padding-left: .25em;
-            }
-        </style>
-        <script>
-            function myFunctionESEbtn() {
-                var element = document.getElementById("ese-btn_1661");
-                element.classList.toggle("ese-btn_highlight");
-            }
-        </script>
+                <h3 class="hour-head_9am">
+                    9am
+                </h3>
+                <!--Monday-9:00am-->
+                <div class="area-cs-mon-9 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course" data-toggle="tooltip" data-html="true" title=""
+                                    id="myparagraph">
+                                181
+                            </button>
+                            <!--Assistive technology information-->
+                            <p hidden>CS 181 class schedule: 9:00am - 10:15am</p>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                265
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-mon-9 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course" data-placement="top"
+                                    data-toggle="popover" title="ESE 166"
+                                    data-content="9am - 10:15am <br> Room: Allston 123"
+                                    data-html="true"
+                                    onclick="myFunctionESEbtn()">
+                                166
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
 
-        <div class="area-es-mon-9 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd class="es022popover">
-                    <button type="button" class="button-course trigger" id="es-btn_0221"
-                            onclick="myFunctionESbtn()">
-                        022
-                     </button>
-                </dd>
-            </dl>
-        </div>
-
-        <style>
-            .es-btn_highlight {
-                background-color: #d8ec9c;
-                color: #000;
-                font-weight: bold;
-                width: 123%;
-                margin-left: -0.4em;
-                padding-left: .25em;
-            }
-        </style>
-        <script>
-            function myFunctionESbtn() {
-                var element = document.getElementById("es-btn_022");
-                // var element = document.querySelectorAll('.button-course')
-                element.classList.toggle("es-btn_highlight");
-            }
-        </script>
-
-        <div class="rule-10"></div>
-        <div class="rule-10_15"></div>
-        <div class="rule-10_30"></div>
-        <div class="rule-10_45"></div>
-
-        <h3 class="hour-head_10am">
-            10am
-        </h3>
-        <!--Monday-10:00am-->
-        <div class="area-am-mon-1030 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        021
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        012B
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-mon-1030 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        191
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        208
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        260r
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        287
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-mon-10 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        256
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        
-<!-- Adding a style that is the duplicate of ES but with a different name, which will not be called when the opacity is changed in all other styles  -->
-        <style>
-                .area-es_on_bac {
-                    width: 100%;
-                    height: 100%;
-                    background-color: #788a42;
-                    border-radius: 3px;
-                    border: 1px solid #b7d364;
-                    text-align: center;
-                    color: #fff;
-                    padding-left: 3px;
-                    padding-right: 3px;
-                }
-                .button-course_on {
-                    width: 100%;
-                    background-color: #788a42;
-                    border: 0px solid transparent;
-                    font-size: .8em;
-                    color: #fff;
-                    text-align: left;
-                }
+                <style>
+                    .ese-btn_highlight {
+                        background-color: #bcefbc;
+                        color: #000;
+                        font-weight: bold;
+                        width: 123%;
+                        margin-left: -0.4em;
+                        padding-left: .25em;
+                    }
                 </style>
-
-
-<!-- Adding the above class to all the areas that contain 051 -->
-        <div class="area-es-mon-1030 area-es_on_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-
-
-                <!-- Adding button-course_on class to all the instances of ES 051 so that the opacity toggle won't affect them -->
-                <dd>
-                        <button type="button" class="button-course_on" id="es-primary2" onmousedown="toggle_popover()" onmouseup="toggle()"
-                        href="#example" style="position: relative;">
-                            051
-<!-- ES 051 pop-over -->
-                            <div class="popover bs-popover-top" role="tooltip" x-placement="top"
-                            style="position: absolute; margin-top: -10.5em; margin-left: -.5em; width: 14em;">
-                                <div class="arrow" style="left: 5px;"></div>
-                                <h3 class="popover-header" style="color: #000">ES 051</h3>
-                                <div class="popover-body">Monday<br>10:30am - 11:45am <br> Room: MD 203</div>
-                            </div>
-                        </button>
-                    </dd>
-    
-            <style>
-    
-                .popover {
-                    opacity: 0;
-                }
-                
-                .toggle-content {
-                    display: block;
-                }
-    
-                .toggle-content.is-visible {
-                    display: none;
-                }
-    
-                .toggle_popover-content {
-                    display: block;
-                }
-
-                .toggle_popover-content.is-visible {
-                    display: none;
-                }
-            </style>
-    
-            <script>
-    
-                function toggle(selector) {
-                    var nodes = document.querySelectorAll(selector),
-                        node,
-                        styleProperty = function (a, b) {
-                            return window.getComputedStyle ? window.getComputedStyle(a).getPropertyValue(b) : a.currentStyle[b];
-                        };
-    
-                    [].forEach.call(nodes, function (a, b) {
-                        node = a;
-    
-                        node.style.opacity = styleProperty(node, 'opacity') === '1' ? '0.4' : '1';
-                    });
-    
-                }
-    
-                function toggle_popover(selector) {
-                    var nodes = document.querySelectorAll(selector),
-                        node,
-                        styleProperty = function (c, d) {
-                            return window.getComputedStyle ? window.getComputedStyle(c).getPropertyValue(d) : c.currentStyle[d];
-                        };
-
-                    [].forEach.call(nodes, function (c, d) {
-                        node = c;
-
-                        node.style.opacity = styleProperty(node, 'opacity') === '1' ? '0' : '1';
-                    });
-
-                }
-    
-                document.getElementById('es-primary2').onmouseup = function () {
-                    toggle('.area-ac_bac , .area-am_bac , .area-cs_bac , .area-ese_bac , .area-es_bac , .area-sem_bac , .area-ap_bac , .area-be_bac, .button-course');
-                };
-    
-                document.getElementById('es-primary2').onmousedown = function () {
-                    toggle_popover('.popover');
-                };
-    
-            </script>
-
-
-
-
-
-                <dd>
-                    <button type="button" class="button-course">
-                        156
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        123
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        177
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        237
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        277
-                    </button>
-                </dd>
-            </dl>
-        </div>
-
-        <div class="rule-11"></div>
-        <div class="rule-11_15"></div>
-        <div class="rule-11_30"></div>
-        <div class="rule-11_45"></div>
-
-        <h3 class="hour-head_11am">
-            11am
-        </h3>
-
-        <div class="rule-12"></div>
-        <div class="rule-12_15"></div>
-        <div class="rule-12_30"></div>
-        <div class="rule-12_45"></div>
-
-        <h3 class="hour-head_12pm">
-            12pm
-        </h3>
-        <!--Monday-12:00pm-->
-        <div class="area-am-mon-12 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        203
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-mon-12 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        020
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        124
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-mon-12 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        054
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        112
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-sem-mon-12 area-sem_bac">
-            <dl>
-                <dt class="area-sem">
-                    SEM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        CRC
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-mon-12_245 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        096
-                    </button>
-                </dd>
-            </dl>
-        </div>
-
-        <div class="rule-1"></div>
-        <div class="rule-1_15"></div>
-        <div class="rule-1_30"></div>
-        <div class="rule-1_45"></div>
-
-        <h3 class="hour-head_1pm">
-            1pm
-        </h3>
-        <!--Monday-1:00pm-->
-        <div class="area-ac-mon-130 area-ac_bac">
-            <dl>
-                <dt class="area-ac">
-                    AC
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        209b
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-am-mon-130 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        108
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-mon-130 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        020
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        109b
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        245
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        271
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-mon-130 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        054
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        112
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-sem-mon-130 area-sem_bac">
-            <dl>
-                <dt class="area-sem">
-                    SEM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        Theory of Comp
-                    </button>
-                </dd>
-            </dl>
-        </div>
-
-        <div class="rule-2"></div>
-        <div class="rule-2_15"></div>
-        <div class="rule-2_30"></div>
-        <div class="rule-2_45"></div>
-
-        <h3 class="hour-head_2pm">
-            2pm
-        </h3>
-
-        <div class="rule-3"></div>
-        <div class="rule-3_15"></div>
-        <div class="rule-3_30"></div>
-        <div class="rule-3_45"></div>
-
-        <h3 class="hour-head_3pm">
-            3pm
-        </h3>
-        <!--Monday-3:00pm-->
-        <div class="area-am-mon-3 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        221
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-mon-3 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        218
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        291
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-be-mon-3 area-be_bac">
-            <dl>
-                <dt class="area-be">
-                    BE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        129
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ac-mon-3 area-ac_bac">
-            <dl>
-                <dt class="area-ac">
-                    AC
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        144r
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        161
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        244r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-mon-3 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        023
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        128
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-mon-3_545 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        024
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        026
-                    </button>
-                </dd>
-            </dl>
-        </div>
-
-        <div class="rule-4"></div>
-        <div class="rule-4_15"></div>
-        <div class="rule-4_30"></div>
-        <div class="rule-4_45"></div>
-
-        <h3 class="hour-head_4pm">
-            4pm
-        </h3>
-
-        <div class="rule-5"></div>
-        <div class="rule-5_15"></div>
-        <div class="rule-5_30"></div>
-        <div class="rule-5_45"></div>
-
-        <h3 class="hour-head_5pm">
-            5pm
-        </h3>
-        <!--Monday-3:00pm-->
-        <div class="area-cs-mon-5 area-cs_bac">
-            <dl>
-                <dt class="area-am">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        090nbr
-                    </button>
-                </dd>
-            </dl>
-        </div>
-
-        <div class="rule-6"></div>
-        <div class="rule-6_15"></div>
-        <div class="rule-6_30"></div>
-        <div class="rule-6_45"></div>
-
-        <h3 class="hour-head_6pm">
-            6pm
-        </h3>
-
-        <div class="rule-7"></div>
-
-        <h3 class="hour-head_7pm">
-            7pm
-        </h3>
-
-        <h3 class="day-head_tuesday">
-            Tuesday
-        </h3>
-        <!--Tuesday-9am-->
-        <div class="area-am-tue-9 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        050
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-tue-9 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        292
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-be-tue-9 area-be_bac">
-            <dl>
-                <dt class="area-be">
-                    BE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        130
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-tue-9 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        236r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-tue-9 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        183
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        249
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ese-tue-9 area-ese_bac">
-            <dl>
-                <dt class="area-ese">
-                    ESE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        109
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ac-tue-9_1145 area-ac_bac">
-            <dl>
-                <dt class="area-ac">
-                    AC
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        290r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-tue-9_1145 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        050b
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-tue-9_1145 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        028
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Tuesday-10:30am-->
-        <div class="area-am-tue-1030 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        107
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        120
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        231
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-tue-1030 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        295b
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-tue-1030 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        001
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        051
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        229cr
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        252r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-tue-1030 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        151
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        201
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ese-tue-1030 area-ese_bac">
-            <dl>
-                <dt class="area-ese">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        006
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Tuesday-12pm-->
-        <div class="area-ac-tue-12 area-ac_bac">
-            <dl>
-                <dt class="area-ac">
-                    AC
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        221
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        275
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-am-tue-12 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        202
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-tue-12 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        275
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-be-tue-12 area-be_bac">
-            <dl>
-                <dt class="area-be">
-                    BE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        191
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-tue-12 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        179
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        229r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-tue-12 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        150
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        170
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ese-tue-12 area-ese_bac">
-            <dl>
-                <dt class="area-ese">
-                    ESE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        133
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-am-tue-12_245 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        217
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Tuesday-1:30pm-->
-        <div class="area-am-tue-130 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        115
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-be-tue-130 area-be_bac">
-            <dl>
-                <dt class="area-be">
-                    BE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        125
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-tue-130 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        141
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        152
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        205
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        229br
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-tue-130 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        115
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        120
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        203
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        230
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ese-tue-130 area-ese_bac">
-            <dl>
-                <dt class="area-ese">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        136
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-tue-130_545 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        153
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Tuesday-3:000pm-->
-        <div class="area-be-tue-3 area-be_bac">
-            <dl>
-                <dt class="area-be">
-                    BE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        128
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-tue-3 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        095r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Tuesday-5:000pm-->
-        <div class="area-be-tue-5 area-be_bac">
-            <dl>
-                <dt class="area-be">
-                    BE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        090nar
-                    </button>
-                </dd>
-            </dl>
-        </div>
-
-        <h3 class="day-head_wednesday">
-            Wednesday
-        </h3>
-        <h3 class="hour-head_9am">
-            9am
-        </h3>
-        <!--Wednesday-9am-->
-        <div class="area-am-wed-9 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        225
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-wed-9 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        181
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        265
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ese-wed-9 area-ese_bac">
-            <dl>
-                <dt class="area-ese">
-                    ESE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course" id="ese-btn_1661">
-                        166
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-wed-9 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd class="es022popover">
-                    <button type="button" class="button-course trigger" id="es-btn_022"
-                            onclick="myFunctionESbtn2()">
-                        022
-                     </button>
-                </dd>
                 <script>
-                    function myFunctionESbtn2() {
-                        var element = document.getElementById("es-btn_0221");
+                    function myFunctionESEbtn() {
+                        var element = document.getElementById("ese-btn_1661");
+                        element.classList.toggle("ese-btn_highlight");
+                    }
+                </script>
+
+                <div class="area-es-mon-9 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd class="es022popover">
+                            <button type="button" class="button-course trigger" id="es-btn_0221"
+                                    onclick="myFunctionESbtn()">
+                                022
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <style>
+                    .es-btn_highlight {
+                        background-color: #d8ec9c;
+                        color: #000;
+                        font-weight: bold;
+                        width: 123%;
+                        margin-left: -0.4em;
+                        padding-left: .25em;
+                    }
+                </style>
+                <script>
+                    function myFunctionESbtn() {
+                        var element = document.getElementById("es-btn_022");
+                        // var element = document.querySelectorAll('.button-course')
                         element.classList.toggle("es-btn_highlight");
                     }
                 </script>
-            </dl>
-        </div>
-        <!--Wednesday-10:30am-->
-        <div class="area-am-wed-1030 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        021
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        021b
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-wed-1030 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        216
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-wed-1030 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        191
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        260
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        287
-                    </button>
-                </dd>
-            </dl>
-        </div>
+
+                <div class="rule-10"></div>
+                <div class="rule-10_15"></div>
+                <div class="rule-10_30"></div>
+                <div class="rule-10_45"></div>
+
+                <h3 class="hour-head_10am">
+                    10am
+                </h3>
+                <!--Monday-10:00am-->
+                <div class="area-am-mon-1030 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                021
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                012B
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-mon-1030 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                191
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                208
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                260r
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                287
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-10 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                256
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                
+        <!-- Adding a style that is the duplicate of ES but with a different name, which will not be called when the opacity is changed in all other styles  -->
+                <style>
+                        .area-es_on_bac {
+                            width: 100%;
+                            height: 100%;
+                            background-color: #788a42;
+                            border-radius: 3px;
+                            border: 1px solid #b7d364;
+                            text-align: center;
+                            color: #fff;
+                            padding-left: 3px;
+                            padding-right: 3px;
+                        }
+                        .button-course_on {
+                            width: 100%;
+                            background-color: #788a42;
+                            border: 0px solid transparent;
+                            font-size: .8em;
+                            color: #fff;
+                            text-align: left;
+                        }
+                </style>
+
+
+        <!-- Adding the above class to all the areas that contain 051 -->
+                <div class="area-es-mon-1030 area-es_on_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+
+
+                        <!-- Adding button-course_on class to all the instances of ES 051 so that the opacity toggle won't affect them -->
+                        <dd>
+                                <button type="button" class="button-course_on" id="es-primary2" onmousedown="toggle_popover()" onmouseup="toggle()"
+                                href="#example" style="position: relative;">
+                                    051
+        <!-- ES 051 pop-over -->
+                                    <div class="popover bs-popover-top" role="tooltip" x-placement="top"
+                                    style="position: absolute; margin-top: -10.5em; margin-left: -.5em; width: 14em;">
+                                        <div class="arrow" style="left: 5px;"></div>
+                                        <h3 class="popover-header" style="color: #000">ES 051</h3>
+                                        <div class="popover-body">Monday<br>10:30am - 11:45am <br> Room: MD 203</div>
+                                    </div>
+                                </button>
+                            </dd>
+            
+                    <style>
+            
+                        .popover {
+                            opacity: 0;
+                        }
+                        
+                        .toggle-content {
+                            display: block;
+                        }
+            
+                        .toggle-content.is-visible {
+                            display: none;
+                        }
+            
+                        .toggle_popover-content {
+                            display: block;
+                        }
+
+                        .toggle_popover-content.is-visible {
+                            display: none;
+                        }
+                    </style>
+            
+                    <script>
+            
+                        function toggle(selector) {
+                            var nodes = document.querySelectorAll(selector),
+                                node,
+                                styleProperty = function (a, b) {
+                                    return window.getComputedStyle ? window.getComputedStyle(a).getPropertyValue(b) : a.currentStyle[b];
+                                };
+            
+                            [].forEach.call(nodes, function (a, b) {
+                                node = a;
+            
+                                node.style.opacity = styleProperty(node, 'opacity') === '1' ? '0.4' : '1';
+                            });
+            
+                        }
+            
+                        function toggle_popover(selector) {
+                            var nodes = document.querySelectorAll(selector),
+                                node,
+                                styleProperty = function (c, d) {
+                                    return window.getComputedStyle ? window.getComputedStyle(c).getPropertyValue(d) : c.currentStyle[d];
+                                };
+
+                            [].forEach.call(nodes, function (c, d) {
+                                node = c;
+
+                                node.style.opacity = styleProperty(node, 'opacity') === '1' ? '0' : '1';
+                            });
+
+                        }
+            
+                        document.getElementById('es-primary2').onmouseup = function () {
+                            toggle('.area-ac_bac , .area-am_bac , .area-cs_bac , .area-ese_bac , .area-es_bac , .area-sem_bac , .area-ap_bac , .area-be_bac, .button-course');
+                        };
+            
+                        document.getElementById('es-primary2').onmousedown = function () {
+                            toggle_popover('.popover');
+                        };
+            
+                    </script>
+
+
+
+
+
+                        <dd>
+                            <button type="button" class="button-course">
+                                156
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                123
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                177
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                237
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                277
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="rule-11"></div>
+                <div class="rule-11_15"></div>
+                <div class="rule-11_30"></div>
+                <div class="rule-11_45"></div>
+
+                <h3 class="hour-head_11am">
+                    11am
+                </h3>
+
+                <div class="rule-12"></div>
+                <div class="rule-12_15"></div>
+                <div class="rule-12_30"></div>
+                <div class="rule-12_45"></div>
+
+                <h3 class="hour-head_12pm">
+                    12pm
+                </h3>
+                <!--Monday-12:00pm-->
+                <div class="area-am-mon-12 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                203
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-mon-12 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                020
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                124
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-12 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                054
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                112
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-mon-12 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                CRC
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-12_245 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                096
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="rule-1"></div>
+                <div class="rule-1_15"></div>
+                <div class="rule-1_30"></div>
+                <div class="rule-1_45"></div>
+
+                <h3 class="hour-head_1pm">
+                    1pm
+                </h3>
+                <!--Monday-1:00pm-->
+                <div class="area-ac-mon-130 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                209b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-am-mon-130 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                108
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-mon-130 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                020
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                109b
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                245
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                271
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-130 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                054
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                112
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-mon-130 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                Theory of Comp
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="rule-2"></div>
+                <div class="rule-2_15"></div>
+                <div class="rule-2_30"></div>
+                <div class="rule-2_45"></div>
+
+                <h3 class="hour-head_2pm">
+                    2pm
+                </h3>
+
+                <div class="rule-3"></div>
+                <div class="rule-3_15"></div>
+                <div class="rule-3_30"></div>
+                <div class="rule-3_45"></div>
+
+                <h3 class="hour-head_3pm">
+                    3pm
+                </h3>
+                <!--Monday-3:00pm-->
+                <div class="area-am-mon-3 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                221
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-mon-3 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                218
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                291
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-mon-3 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                129
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ac-mon-3 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                144r
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                161
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                244r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-3 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                023
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                128
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-mon-3_545 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                024
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                026
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="rule-4"></div>
+                <div class="rule-4_15"></div>
+                <div class="rule-4_30"></div>
+                <div class="rule-4_45"></div>
+
+                <h3 class="hour-head_4pm">
+                    4pm
+                </h3>
+
+                <div class="rule-5"></div>
+                <div class="rule-5_15"></div>
+                <div class="rule-5_30"></div>
+                <div class="rule-5_45"></div>
+
+                <h3 class="hour-head_5pm">
+                    5pm
+                </h3>
+                <!--Monday-3:00pm-->
+                <div class="area-cs-mon-5 area-cs_bac">
+                    <dl>
+                        <dt class="area-am">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                090nbr
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="rule-6"></div>
+                <div class="rule-6_15"></div>
+                <div class="rule-6_30"></div>
+                <div class="rule-6_45"></div>
+
+                <h3 class="hour-head_6pm">
+                    6pm
+                </h3>
+
+                <div class="rule-7"></div>
+
+                <h3 class="hour-head_7pm">
+                    7pm
+                </h3>
+
+                <h3 class="day-head_tuesday">
+                    Tuesday
+                </h3>
+                <!--Tuesday-9am-->
+                <div class="area-am-tue-9 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                050
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-tue-9 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                292
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-tue-9 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                130
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-tue-9 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                236r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-9 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                183
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                249
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-tue-9 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                109
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ac-tue-9_1145 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                290r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-tue-9_1145 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                050b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-9_1145 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                028
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Tuesday-10:30am-->
+                <div class="area-am-tue-1030 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                107
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                120
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                231
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-tue-1030 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                295b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-tue-1030 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                001
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                051
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229cr
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                252r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-1030 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                151
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                201
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-tue-1030 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                006
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Tuesday-12pm-->
+                <div class="area-ac-tue-12 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                221
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                275
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-am-tue-12 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                202
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-tue-12 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                275
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-tue-12 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                191
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-tue-12 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                179
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-12 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                150
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                170
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-tue-12 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                133
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-am-tue-12_245 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                217
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Tuesday-1:30pm-->
+                <div class="area-am-tue-130 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                115
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-tue-130 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                125
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-tue-130 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                141
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                152
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                205
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229br
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-130 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                115
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                120
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                203
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                230
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-tue-130 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                136
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-130_545 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                153
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Tuesday-3:000pm-->
+                <div class="area-be-tue-3 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                128
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-tue-3 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                095r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Tuesday-5:000pm-->
+                <div class="area-be-tue-5 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                090nar
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <h3 class="day-head_wednesday">
+                    Wednesday
+                </h3>
+                <h3 class="hour-head_9am">
+                    9am
+                </h3>
+                <!--Wednesday-9am-->
+                <div class="area-am-wed-9 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                225
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-wed-9 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                181
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                265
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-wed-9 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course" id="ese-btn_1661">
+                                166
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-9 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd class="es022popover">
+                            <button type="button" class="button-course trigger" id="es-btn_022"
+                                    onclick="myFunctionESbtn2()">
+                                022
+                            </button>
+                        </dd>
+                        <script>
+                            function myFunctionESbtn2() {
+                                var element = document.getElementById("es-btn_0221");
+                                element.classList.toggle("es-btn_highlight");
+                            }
+                        </script>
+                    </dl>
+                </div>
+                <!--Wednesday-10:30am-->
+                <div class="area-am-wed-1030 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                021
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                021b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-wed-1030 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                216
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-wed-1030 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                191
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                260
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                287
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+
+                <!-- Adding the area-es_on_bac class to all the areas that contain 051 -->
+                <div class="area-es-wed-1030 area-es_on_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+
+                        <!-- Adding button-course_on class to all the instances of ES 051 so that the opacity toggle won't affect them -->
+                        <dd>
+                            <button type="button" class="button-course_on" style="position: relative;">
+                                051
+        <!-- ES 051 pop-over -->
+                                    <div class="popover bs-popover-top" role="tooltip" x-placement="top"
+                                    style="position: absolute; margin-top: -10.5em; margin-left: -1em; width: 14em;">
+                                        <div class="arrow" style="left: 5px;"></div>
+                                        <h3 class="popover-header" style="color: #000">ES 051</h3>
+                                        <div class="popover-body">Wednesday<br>10:30am - 11:45am <br> Room: MD 203</div>
+                                    </div>
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                123
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                156
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                237
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Wednesday-12:00pm-->
+                <div class="area-am-wed-12 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                203
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-wed-12 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                020
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                124
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-12 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                054
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                112
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                294cfr
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-wed-12 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                CIQM
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-12_245 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                096
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Wednesday-1:30pm-->
+                <div class="area-ac-wed-130 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                209b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-am-wed-130 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                108
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-wed-130 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                296
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-wed-130 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                109b
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                145
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                245
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                271
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-130 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                221
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                239
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                240
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-130_545 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                153
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Wednesday-3pm-->
+                <div class="area-am-wed-3 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                221
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-wed-3 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                218
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-wed-3 area-be_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                129
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-wed-3 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                144r
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                161
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                244r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-3 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                128
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-wed-3_545 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                024
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Wednesday-4:30pm-->
+                <div class="area-sem-wed-430 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                Applied Mech.
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <h3 class="day-head_thursday">
+                    Thursday
+                </h3>
+                <h3 class="hour-head_9am">
+                    9am
+                </h3>
+                <!--Thursday-9:00am-->
+                <div class="area-am-thu-9 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                050
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-thu-9 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                292
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-thu-9 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                130
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-thu-9 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                236r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-thu-9 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                183
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                249
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-thu-9 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                109
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ac-thu-9 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                290r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-thu-9_1145 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                050b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Thursday-10:30am-->
+                <div class="area-am-thu-1030 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                107
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                120
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                231
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-thu-1030 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                295b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-thu-1030 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                001
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                051
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229cr
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                252r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-thu-1030 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                151
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                201
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-thu-1030 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                006
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Thursday-12:00pm-->
+                <div class="area-ac-thu-12 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                221
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                275
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-am-thu-12 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                202
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-thu-12 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                275
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-thu-12 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                291
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-thu-12 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                179
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-thu-12 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                150
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                170
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-thu-12 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                133
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Thursday-1:30pm-->
+                <div class="area-am-thu-130 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                115
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-be-thu-130 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                125
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-thu-130 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                141
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                152
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                205
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229br
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-thu-130 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                115
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                120
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                203
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                230
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-thu-130 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                136
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-thu-130_545 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                153
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Thursday-3:00pm-->
+                <div class="area-be-thu-3 area-be_bac">
+                    <dl>
+                        <dt class="area-be">
+                            BE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                128
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-thu-3 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                CR Coll.
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem2-thu-3 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                WAM
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ac-thu-3 area-ac_bac">
+                    <dl>
+                        <dt class="area-ac">
+                            AC
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                297r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Thursday-4:30pm-->
+                <div class="area-sem-thu-430 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                Topics in BioE
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+
+                <h3 class="day-head_friday">
+                    Friday
+                </h3>
+                <h3 class="hour-head_9am">
+                    9am
+                </h3>
+                <!--Friday-9:00am-->
+                <div class="area-am-fri-9 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                225
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-fri-9 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                298r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-fri-9 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                189
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                282r
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ese-fri-9 area-ese_bac">
+                    <dl>
+                        <dt class="area-ese">
+                            ESE
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course" id="ese-btn_1662">
+                                166
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Friday-10:30am-->
+                <div class="area-am-fri-1030 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                021
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                021b
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-fri-1030 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                216
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-cs-fri-1030 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                208
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
 
 
         <!-- Adding the area-es_on_bac class to all the areas that contain 051 -->
-        <div class="area-es-wed-1030 area-es_on_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
+                <div class="area-es-fri-1030 area-es_on_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
 
-                <!-- Adding button-course_on class to all the instances of ES 051 so that the opacity toggle won't affect them -->
-                <dd>
-                    <button type="button" class="button-course_on" style="position: relative;">
-                        051
-<!-- ES 051 pop-over -->
-                            <div class="popover bs-popover-top" role="tooltip" x-placement="top"
-                            style="position: absolute; margin-top: -10.5em; margin-left: -1em; width: 14em;">
-                                <div class="arrow" style="left: 5px;"></div>
-                                <h3 class="popover-header" style="color: #000">ES 051</h3>
-                                <div class="popover-body">Wednesday<br>10:30am - 11:45am <br> Room: MD 203</div>
-                            </div>
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        123
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        156
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        237
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Wednesday-12:00pm-->
-        <div class="area-am-wed-12 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        203
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-wed-12 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        020
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        124
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-wed-12 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        054
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        112
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        294cfr
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-sem-wed-12 area-sem_bac">
-            <dl>
-                <dt class="area-sem">
-                    SEM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        CIQM
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-wed-12_245 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        096
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Wednesday-1:30pm-->
-        <div class="area-ac-wed-130 area-ac_bac">
-            <dl>
-                <dt class="area-ac">
-                    AC
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        209b
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-am-wed-130 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        108
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-wed-130 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        296
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-wed-130 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        109b
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        145
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        245
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        271
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-wed-130 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        221
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        229
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        239
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        240
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-wed-130_545 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        153
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Wednesday-3pm-->
-        <div class="area-am-wed-3 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        221
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-wed-3 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        218
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-be-wed-3 area-be_bac">
-            <dl>
-                <dt class="area-ap">
-                    BE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        129
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-wed-3 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        144r
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        161
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        244r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-wed-3 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        128
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-wed-3_545 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        024
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Wednesday-4:30pm-->
-        <div class="area-sem-wed-430 area-sem_bac">
-            <dl>
-                <dt class="area-sem">
-                    SEM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        Applied Mech.
-                    </button>
-                </dd>
-            </dl>
-        </div>
-
-        <h3 class="day-head_thursday">
-            Thursday
-        </h3>
-        <h3 class="hour-head_9am">
-            9am
-        </h3>
-        <!--Thursday-9:00am-->
-        <div class="area-am-thu-9 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        050
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-thu-9 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        292
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-be-thu-9 area-be_bac">
-            <dl>
-                <dt class="area-be">
-                    BE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        130
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-thu-9 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        236r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-thu-9 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        183
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        249
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ese-thu-9 area-ese_bac">
-            <dl>
-                <dt class="area-ese">
-                    ESE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        109
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ac-thu-9 area-ac_bac">
-            <dl>
-                <dt class="area-ac">
-                    AC
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        290r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-thu-9_1145 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        050b
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Thursday-10:30am-->
-        <div class="area-am-thu-1030 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        107
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        120
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        231
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-thu-1030 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        295b
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-be-thu-1030 area-be_bac">
-            <dl>
-                <dt class="area-be">
-                    BE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        001
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        051
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        229cr
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        252r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-thu-1030 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        151
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        201
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ese-thu-1030 area-ese_bac">
-            <dl>
-                <dt class="area-ese">
-                    ESE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        006
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Thursday-12:00pm-->
-        <div class="area-ac-thu-12 area-ac_bac">
-            <dl>
-                <dt class="area-ac">
-                    AC
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        221
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        275
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-am-thu-12 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        202
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-thu-12 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        275
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-be-thu-12 area-be_bac">
-            <dl>
-                <dt class="area-be">
-                    BE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        291
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-thu-12 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        179
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        229r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-thu-12 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        150
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        170
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ese-thu-12 area-ese_bac">
-            <dl>
-                <dt class="area-ese">
-                    ESE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        133
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Thursday-1:30pm-->
-        <div class="area-am-thu-130 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        115
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-be-thu-130 area-be_bac">
-            <dl>
-                <dt class="area-be">
-                    BE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        125
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-thu-130 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        141
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        152
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        205
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        229br
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-thu-130 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        115
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        120
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        203
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        230
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ese-thu-130 area-ese_bac">
-            <dl>
-                <dt class="area-ese">
-                    ESE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        136
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-thu-130_545 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        153
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Thursday-3:00pm-->
-        <div class="area-be-thu-3 area-be_bac">
-            <dl>
-                <dt class="area-be">
-                    BE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        128
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-sem-thu-3 area-sem_bac">
-            <dl>
-                <dt class="area-sem">
-                    SEM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        CR Coll.
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-sem2-thu-3 area-sem_bac">
-            <dl>
-                <dt class="area-sem">
-                    SEM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        WAM
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ac-thu-3 area-ac_bac">
-            <dl>
-                <dt class="area-ac">
-                    AC
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        297r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Thursday-4:30pm-->
-        <div class="area-sem-thu-430 area-sem_bac">
-            <dl>
-                <dt class="area-sem">
-                    SEM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        Topics in BioE
-                    </button>
-                </dd>
-            </dl>
-        </div>
-
-        <h3 class="day-head_friday">
-            Friday
-        </h3>
-        <h3 class="hour-head_9am">
-            9am
-        </h3>
-        <!--Friday-9:00am-->
-        <div class="area-am-fri-9 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        225
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-fri-9 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        298r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-fri-9 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        189
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        282r
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ese-fri-9 area-ese_bac">
-            <dl>
-                <dt class="area-ese">
-                    ESE
-                </dt>
-                <dd>
-                    <button type="button" class="button-course" id="ese-btn_1662">
-                        166
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Friday-10:30am-->
-        <div class="area-am-fri-1030 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        021
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        021b
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-fri-1030 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        216
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-cs-fri-1030 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        208
-                    </button>
-                </dd>
-            </dl>
-        </div>
-
-
-<!-- Adding the area-es_on_bac class to all the areas that contain 051 -->
-        <div class="area-es-fri-1030 area-es_on_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-
-<!-- Adding button-course_on class to all the instances of ES 051 so that the opacity toggle won't affect them -->
-                <dd>
-                    <button type="button" class="button-course_on" style="position: relative;">
-                        051
-<!-- ES 051 pop-over -->
-                            <div class="popover bs-popover-top" role="tooltip" x-placement="top"
-                            style="position: absolute; margin-top: -10.5em; margin-left: -.5em; width: 14em;">
-                                <div class="arrow" style="left: 5px;"></div>
-                                <h3 class="popover-header" style="color: #000">ES 051</h3>
-                                <div class="popover-body">Friday<br>10:30am - 11:45am <br> Room: MD 203</div>
-                            </div>
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        123
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Friday-12:00pm-->
-        <div class="area-cs-fri-12 area-cs_bac">
-            <dl>
-                <dt class="area-cs">
-                    CS
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        020
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-sem-fri-12 area-sem_bac">
-            <dl>
-                <dt class="area-sem">
-                    SEM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        Atmos Chem
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-am-fri-12 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        216
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Friday-1:30pm-->
-        <div class="area-am-fri-130 area-am_bac">
-            <dl>
-                <dt class="area-am">
-                    AM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        108
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-ap-fri-130 area-ap_bac">
-            <dl>
-                <dt class="area-ap">
-                    AP
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        296
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-fri-130 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        231
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        229
-                    </button>
-                </dd>
-                <dd>
-                    <button type="button" class="button-course">
-                        240
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-sem-fri-130 area-sem_bac">
-            <dl>
-                <dt class="area-cs">
-                    SEM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        IACS
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-sem-fri-130_430 area-sem_bac">
-            <dl>
-                <dt class="area-sem">
-                    SEM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        Theory Reading Group
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-fri-130_430 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        023
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <div class="area-es-fri-130_545 area-es_bac">
-            <dl>
-                <dt class="area-es">
-                    ES
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        153
-                    </button>
-                </dd>
-            </dl>
-        </div>
-        <!--Friday-3:00pm-->
-        <div class="area-sem-fri-3 area-sem_bac">
-            <dl>
-                <dt class="area-sem">
-                    SEM
-                </dt>
-                <dd>
-                    <button type="button" class="button-course">
-                        EE
-                    </button>
-                </dd>
-            </dl>
-        </div>
-
-    </div><!-- /calendar -->
+        <!-- Adding button-course_on class to all the instances of ES 051 so that the opacity toggle won't affect them -->
+                        <dd>
+                            <button type="button" class="button-course_on" style="position: relative;">
+                                051
+        <!-- ES 051 pop-over -->
+                                    <div class="popover bs-popover-top" role="tooltip" x-placement="top"
+                                    style="position: absolute; margin-top: -10.5em; margin-left: -.5em; width: 14em;">
+                                        <div class="arrow" style="left: 5px;"></div>
+                                        <h3 class="popover-header" style="color: #000">ES 051</h3>
+                                        <div class="popover-body">Friday<br>10:30am - 11:45am <br> Room: MD 203</div>
+                                    </div>
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                123
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Friday-12:00pm-->
+                <div class="area-cs-fri-12 area-cs_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            CS
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                020
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-fri-12 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                Atmos Chem
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-am-fri-12 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                216
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Friday-1:30pm-->
+                <div class="area-am-fri-130 area-am_bac">
+                    <dl>
+                        <dt class="area-am">
+                            AM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                108
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-ap-fri-130 area-ap_bac">
+                    <dl>
+                        <dt class="area-ap">
+                            AP
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                296
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-fri-130 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                231
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                229
+                            </button>
+                        </dd>
+                        <dd>
+                            <button type="button" class="button-course">
+                                240
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-fri-130 area-sem_bac">
+                    <dl>
+                        <dt class="area-cs">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                IACS
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-sem-fri-130_430 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                Theory Reading Group
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-fri-130_430 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                023
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="area-es-fri-130_545 area-es_bac">
+                    <dl>
+                        <dt class="area-es">
+                            ES
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                153
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+                <!--Friday-3:00pm-->
+                <div class="area-sem-fri-3 area-sem_bac">
+                    <dl>
+                        <dt class="area-sem">
+                            SEM
+                        </dt>
+                        <dd>
+                            <button type="button" class="button-course">
+                                EE
+                            </button>
+                        </dd>
+                    </dl>
+                </div>
+        
+        </div><!-- / calendar" -->
+    </div><!-- / scrollarea-container--mt -->
 
 </div>
 
