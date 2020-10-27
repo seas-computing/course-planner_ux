@@ -1563,427 +1563,521 @@
 
     </nav>
 
-<!--Catalog prefixes-->
-<div>
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            <span class="nav-link" style="margin-right: 3em; cursor: pointer;" onclick="openNav()">
-                Filters
-                <i class="far fa-arrow-alt-circle-right"></i>
-            </span>
-        </li>
-        <li class="nav-item" style="margin-top: .6em;">
-            <h3>
-                Show/hide catalog prefixes
-            </h3>
-        </li>
-        <li class="nav-item">
-            <button type="button" class="btn ac-btn" id="ac-primary" onmousedown="myFunction()" onmouseup="toggle()"
-                    href="#example">AC
-            </button>
-        </li>
-
-        <style>
-            .ac-btn {
-                color: #fff;
-                background-color: #42668a;
-                border-color: #007bff;
-            }
-
-            .ac-primary {
-                color: #fff;
-                background-color: #42668a;
-                border-color: #007bff;
-            }
-
-            .ac-outline-primary {
-                color: #42668a;
-                background-color: transparent;
-                background-image: none;
-                border-color: #42668a;
-            }
-
-            .toggle-content {
-                display: block;
-            }
-
-            .toggle-content.is-visible {
-                display: none;
-            }
-        </style>
-
-        <script>
-
-            function toggle(selector) {
-                var nodes = document.querySelectorAll(selector),
-                    node,
-                    styleProperty = function (a, b) {
-                        return window.getComputedStyle ? window.getComputedStyle(a).getPropertyValue(b) : a.currentStyle[b];
-                    };
-
-                [].forEach.call(nodes, function (a, b) {
-                    node = a;
-
-                    node.style.opacity = styleProperty(node, 'opacity') === '1' ? '0.4' : '1';
-                });
-
-            }
-
-            document.getElementById('ac-primary').onclick = function () {
-                toggle('.area-ac_bac');
-            };
-
-            function myFunction() {
-                var element = document.getElementById("ac-primary");
-                element.classList.toggle("ac-outline-primary");
-            }
-
-        </script>
-
-        <li class="nav-item">
-            <button type="button" class="btn am-btn" id="am-primary" onmousedown="myFunctionAM()" onmouseup="toggleAM()"
-                    href="#example">AM
-            </button>
-        </li>
-
-        <style>
-            .am-btn {
-                color: #fff;
-                background-color: #54428a;
-                border-color: #007bff;
-            }
-
-            .am-primary {
-                color: #fff;
-                background-color: #54428a;
-                border-color: #007bff;
-            }
-
-            .am-outline-primary {
-                color: #54428a;
-                background-color: transparent;
-                background-image: none;
-                border-color: #54428a;
-            }
-
-            .toggleAM-content {
-                display: block;
-            }
-
-            .toggleAM-content.is-visible {
-                display: none;
-            }
-        </style>
-
-        <script>
-
-            document.getElementById('am-primary').onclick = function () {
-                toggle('.area-am_bac');
-            };
-
-            function myFunctionAM() {
-                var element = document.getElementById("am-primary");
-                element.classList.toggle("am-outline-primary");
-            }
-
-        </script>
-
-        <li class="nav-item">
-            <button type="button" class="btn ap-btn" id="ap-primary" onmousedown="myFunctionAP()" onmouseup="toggleAP()"
-                    href="#example">AP
-            </button>
-        </li>
-
-        <style>
-            .ap-btn {
-                color: #fff;
-                background-color: #8a428a;
-                border-color: #8a428a;
-            }
-
-            .ap-primary {
-                color: #fff;
-                background-color: #8a428a;
-                border-color: #8a428a;
-            }
-
-            .ap-outline-primary {
-                color: #8a428a;
-                background-color: transparent;
-                background-image: none;
-                border-color: #8a428a;
-            }
-
-            .toggleAP-content {
-                display: block;
-            }
-
-            .toggleAP-content.is-visible {
-                display: none;
-            }
-        </style>
-
-        <script>
-
-            document.getElementById('ap-primary').onclick = function () {
-                toggle('.area-ap_bac');
-            };
-
-            function myFunctionAP() {
-                var element = document.getElementById("ap-primary");
-                element.classList.toggle("ap-outline-primary");
-            }
-
-        </script>
-
-        <li class="nav-item">
-            <button type="button" class="btn be-btn" id="be-primary" onmousedown="myFunctionBE()" onmouseup="toggleBE()"
-                    href="#example">BE
-            </button>
-        </li>
-
-        <style>
-            .be-btn {
-                color: #fff;
-                background-color: #8a4254;
-                border-color: #8a4254;
-            }
-
-            .be-primary {
-                color: #fff;
-                background-color: #8a4254;
-                border-color: #8a4254;
-            }
-
-            .be-outline-primary {
-                color: #8a4254;
-                background-color: transparent;
-                background-image: none;
-                border-color: #8a4254;
-            }
-
-            .toggleBE-content {
-                display: block;
-            }
-
-            .toggleBE-content.is-visible {
-                display: none;
-            }
-        </style>
-
-        <script>
-
-            document.getElementById('be-primary').onclick = function () {
-                toggle('.area-be_bac');
-            };
-
-            function myFunctionBE() {
-                var element = document.getElementById("be-primary");
-                element.classList.toggle("be-outline-primary");
-            }
-
-        </script>
-
-        <li class="nav-item">
-            <button type="button" class="btn cs-btn" id="cs-primary" onmousedown="myFunctionCS()" onmouseup="toggleCS()"
-                    href="#example">CS
-            </button>
-        </li>
-
-        <style>
-            .cs-btn {
-                color: #fff;
-                background-color: #8a6642;
-                border-color: #8a6642;
-            }
-
-            .cs-primary {
-                color: #fff;
-                background-color: #8a6642;
-                border-color: #8a6642;
-            }
-
-            .cs-outline-primary {
-                color: #8a6642;
-                background-color: transparent;
-                background-image: none;
-                border-color: #8a6642;
-            }
-
-            .toggleCS-content {
-                display: block;
-            }
-
-            .toggleCS-content.is-visible {
-                display: none;
-            }
-        </style>
-
-        <script>
-
-            document.getElementById('cs-primary').onclick = function () {
-                toggle('.area-cs_bac');
-            };
-
-            function myFunctionCS() {
-                var element = document.getElementById("cs-primary");
-                element.classList.toggle("cs-outline-primary");
-            }
-
-        </script>
-
-        <li class="nav-item">
-            <button type="button" class="btn es-btn" id="es-primary" onmousedown="myFunctionES()" onmouseup="toggleES()"
-                    href="#example">ES
-            </button>
-        </li>
-
-        <style>
-            .es-btn {
-                color: #fff;
-                background-color: #788a42;
-                border-color: #788a42;
-            }
-
-            .es-primary {
-                color: #fff;
-                background-color: #788a42;
-                border-color: #788a42;
-            }
-
-            .es-outline-primary {
-                color: #788a42;
-                background-color: transparent;
-                background-image: none;
-                border-color: #788a42;
-            }
-
-            .toggleES-content {
-                display: block;
-            }
-
-            .toggleES-content.is-visible {
-                display: none;
-            }
-        </style>
-
-        <script>
-
-            document.getElementById('es-primary').onclick = function () {
-                toggle('.area-es_bac');
-            };
-
-            function myFunctionES() {
-                var element = document.getElementById("es-primary");
-                element.classList.toggle("es-outline-primary");
-            }
-
-        </script>
-
-        <li class="nav-item">
-            <button type="button" class="btn ese-btn" id="ese-primary" onmousedown="myFunctionESE()"
-                    onmouseup="toggleESE()" href="#example">ESE
-            </button>
-        </li>
-
-        <style>
-            .ese-btn {
-                color: #fff;
-                background-color: #428a42;
-                border-color: #428a42;
-            }
-
-            .ese-outline-primary {
-                color: #fff;
-                background-color: #428a42;
-                border-color: #428a42;
-            }
-
-            .ese-outline-primary {
-                color: #428a42;
-                background-color: transparent;
-                background-image: none;
-                border-color: #428a42;
-            }
-
-            .toggleESE-content {
-                display: block;
-            }
-
-            .toggleESE-content.is-visible {
-                display: none;
-            }
-        </style>
-
-        <script>
-
-            document.getElementById('ese-primary').onclick = function () {
-                toggle('.area-ese_bac');
-            };
-
-            function myFunctionESE() {
-                var element = document.getElementById("ese-primary");
-                element.classList.toggle("ese-outline-primary");
-            }
-
-        </script>
-
-        <li class="nav-item">
-            <button type="button" class="btn sem-btn" id="sem-primary" onmousedown="myFunctionSEM()"
-                    onmouseup="toggleSEM()" href="#example">Seminar
-            </button>
-        </li>
-
-        <style>
-            .sem-btn {
-                color: #fff;
-                background-color: #428a78;
-                border-color: #428a78;
-            }
-
-            .sem-outline-primary {
-                color: #fff;
-                background-color: #428a78;
-                border-color: #428a78;
-            }
-
-            .sem-outline-primary {
-                color: #428a78;
-                background-color: transparent;
-                background-image: none;
-                border-color: #428a78;
-            }
-
-            .toggleSEM-content {
-                display: block;
-            }
-
-            .toggleSEM-content.is-visible {
-                display: none;
-            }
-        </style>
-
-        <script>
-
-            document.getElementById('sem-primary').onclick = function () {
-                toggle('.area-sem_bac');
-            };
-
-            function myFunctionSEM() {
-                var element = document.getElementById("sem-primary");
-                element.classList.toggle("sem-outline-primary");
-            }
-
-        </script>
-
-    </ul>
-</div>
+    <!--Catalog prefixes-->
+    <div>
+        <ul class="nav nav-pills">
+            
+            
+            <!-- Hiding link to filters in side nav. Showing filters above the table. -->
+            <li class="nav-item" hidden>
+                <span class="nav-link" style="margin-right: 3em; cursor: pointer;" onclick="openNav()">
+                    Filters
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                </span>
+            </li>
+            <li class="nav-item" style="margin-top: .6em;">
+                <h3>
+                    Show/hide catalog prefixes
+                </h3>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn ac-btn" id="ac-primary" onmousedown="myFunction()" onmouseup="toggle()"
+                        href="#example">AC
+                </button>
+            </li>
+
+            <style>
+                .ac-btn {
+                    color: #fff;
+                    background-color: #42668a;
+                    border-color: #007bff;
+                }
+
+                .ac-primary {
+                    color: #fff;
+                    background-color: #42668a;
+                    border-color: #007bff;
+                }
+
+                .ac-outline-primary {
+                    color: #42668a;
+                    background-color: transparent;
+                    background-image: none;
+                    border-color: #42668a;
+                }
+
+                .toggle-content {
+                    display: block;
+                }
+
+                .toggle-content.is-visible {
+                    display: none;
+                }
+            </style>
+
+            <script>
+
+                function toggle(selector) {
+                    var nodes = document.querySelectorAll(selector),
+                        node,
+                        styleProperty = function (a, b) {
+                            return window.getComputedStyle ? window.getComputedStyle(a).getPropertyValue(b) : a.currentStyle[b];
+                        };
+
+                    [].forEach.call(nodes, function (a, b) {
+                        node = a;
+
+                        node.style.opacity = styleProperty(node, 'opacity') === '1' ? '0.4' : '1';
+                    });
+
+                }
+
+                document.getElementById('ac-primary').onclick = function () {
+                    toggle('.area-ac_bac');
+                };
+
+                function myFunction() {
+                    var element = document.getElementById("ac-primary");
+                    element.classList.toggle("ac-outline-primary");
+                }
+
+            </script>
+
+            <li class="nav-item">
+                <button type="button" class="btn am-btn" id="am-primary" onmousedown="myFunctionAM()" onmouseup="toggleAM()"
+                        href="#example">AM
+                </button>
+            </li>
+
+            <style>
+                .am-btn {
+                    color: #fff;
+                    background-color: #54428a;
+                    border-color: #007bff;
+                }
+
+                .am-primary {
+                    color: #fff;
+                    background-color: #54428a;
+                    border-color: #007bff;
+                }
+
+                .am-outline-primary {
+                    color: #54428a;
+                    background-color: transparent;
+                    background-image: none;
+                    border-color: #54428a;
+                }
+
+                .toggleAM-content {
+                    display: block;
+                }
+
+                .toggleAM-content.is-visible {
+                    display: none;
+                }
+            </style>
+
+            <script>
+
+                document.getElementById('am-primary').onclick = function () {
+                    toggle('.area-am_bac');
+                };
+
+                function myFunctionAM() {
+                    var element = document.getElementById("am-primary");
+                    element.classList.toggle("am-outline-primary");
+                }
+
+            </script>
+
+            <li class="nav-item">
+                <button type="button" class="btn ap-btn" id="ap-primary" onmousedown="myFunctionAP()" onmouseup="toggleAP()"
+                        href="#example">AP
+                </button>
+            </li>
+
+            <style>
+                .ap-btn {
+                    color: #fff;
+                    background-color: #8a428a;
+                    border-color: #8a428a;
+                }
+
+                .ap-primary {
+                    color: #fff;
+                    background-color: #8a428a;
+                    border-color: #8a428a;
+                }
+
+                .ap-outline-primary {
+                    color: #8a428a;
+                    background-color: transparent;
+                    background-image: none;
+                    border-color: #8a428a;
+                }
+
+                .toggleAP-content {
+                    display: block;
+                }
+
+                .toggleAP-content.is-visible {
+                    display: none;
+                }
+            </style>
+
+            <script>
+
+                document.getElementById('ap-primary').onclick = function () {
+                    toggle('.area-ap_bac');
+                };
+
+                function myFunctionAP() {
+                    var element = document.getElementById("ap-primary");
+                    element.classList.toggle("ap-outline-primary");
+                }
+
+            </script>
+
+            <li class="nav-item">
+                <button type="button" class="btn be-btn" id="be-primary" onmousedown="myFunctionBE()" onmouseup="toggleBE()"
+                        href="#example">BE
+                </button>
+            </li>
+
+            <style>
+                .be-btn {
+                    color: #fff;
+                    background-color: #8a4254;
+                    border-color: #8a4254;
+                }
+
+                .be-primary {
+                    color: #fff;
+                    background-color: #8a4254;
+                    border-color: #8a4254;
+                }
+
+                .be-outline-primary {
+                    color: #8a4254;
+                    background-color: transparent;
+                    background-image: none;
+                    border-color: #8a4254;
+                }
+
+                .toggleBE-content {
+                    display: block;
+                }
+
+                .toggleBE-content.is-visible {
+                    display: none;
+                }
+            </style>
+
+            <script>
+
+                document.getElementById('be-primary').onclick = function () {
+                    toggle('.area-be_bac');
+                };
+
+                function myFunctionBE() {
+                    var element = document.getElementById("be-primary");
+                    element.classList.toggle("be-outline-primary");
+                }
+
+            </script>
+
+            <li class="nav-item">
+                <button type="button" class="btn cs-btn" id="cs-primary" onmousedown="myFunctionCS()" onmouseup="toggleCS()"
+                        href="#example">CS
+                </button>
+            </li>
+
+            <style>
+                .cs-btn {
+                    color: #fff;
+                    background-color: #8a6642;
+                    border-color: #8a6642;
+                }
+
+                .cs-primary {
+                    color: #fff;
+                    background-color: #8a6642;
+                    border-color: #8a6642;
+                }
+
+                .cs-outline-primary {
+                    color: #8a6642;
+                    background-color: transparent;
+                    background-image: none;
+                    border-color: #8a6642;
+                }
+
+                .toggleCS-content {
+                    display: block;
+                }
+
+                .toggleCS-content.is-visible {
+                    display: none;
+                }
+            </style>
+
+            <script>
+
+                document.getElementById('cs-primary').onclick = function () {
+                    toggle('.area-cs_bac');
+                };
+
+                function myFunctionCS() {
+                    var element = document.getElementById("cs-primary");
+                    element.classList.toggle("cs-outline-primary");
+                }
+
+            </script>
+
+            <li class="nav-item">
+                <button type="button" class="btn es-btn" id="es-primary" onmousedown="myFunctionES()" onmouseup="toggleES()"
+                        href="#example">ES
+                </button>
+            </li>
+
+            <style>
+                .es-btn {
+                    color: #fff;
+                    background-color: #788a42;
+                    border-color: #788a42;
+                }
+
+                .es-primary {
+                    color: #fff;
+                    background-color: #788a42;
+                    border-color: #788a42;
+                }
+
+                .es-outline-primary {
+                    color: #788a42;
+                    background-color: transparent;
+                    background-image: none;
+                    border-color: #788a42;
+                }
+
+                .toggleES-content {
+                    display: block;
+                }
+
+                .toggleES-content.is-visible {
+                    display: none;
+                }
+            </style>
+
+            <script>
+
+                document.getElementById('es-primary').onclick = function () {
+                    toggle('.area-es_bac');
+                };
+
+                function myFunctionES() {
+                    var element = document.getElementById("es-primary");
+                    element.classList.toggle("es-outline-primary");
+                }
+
+            </script>
+
+            <li class="nav-item">
+                <button type="button" class="btn ese-btn" id="ese-primary" onmousedown="myFunctionESE()"
+                        onmouseup="toggleESE()" href="#example">ESE
+                </button>
+            </li>
+
+            <style>
+                .ese-btn {
+                    color: #fff;
+                    background-color: #428a42;
+                    border-color: #428a42;
+                }
+
+                .ese-outline-primary {
+                    color: #fff;
+                    background-color: #428a42;
+                    border-color: #428a42;
+                }
+
+                .ese-outline-primary {
+                    color: #428a42;
+                    background-color: transparent;
+                    background-image: none;
+                    border-color: #428a42;
+                }
+
+                .toggleESE-content {
+                    display: block;
+                }
+
+                .toggleESE-content.is-visible {
+                    display: none;
+                }
+            </style>
+
+            <script>
+
+                document.getElementById('ese-primary').onclick = function () {
+                    toggle('.area-ese_bac');
+                };
+
+                function myFunctionESE() {
+                    var element = document.getElementById("ese-primary");
+                    element.classList.toggle("ese-outline-primary");
+                }
+
+            </script>
+
+            <li class="nav-item">
+                <button type="button" class="btn sem-btn" id="sem-primary" onmousedown="myFunctionSEM()"
+                        onmouseup="toggleSEM()" href="#example">Seminar
+                </button>
+            </li>
+
+            <style>
+                .sem-btn {
+                    color: #fff;
+                    background-color: #428a78;
+                    border-color: #428a78;
+                }
+
+                .sem-outline-primary {
+                    color: #fff;
+                    background-color: #428a78;
+                    border-color: #428a78;
+                }
+
+                .sem-outline-primary {
+                    color: #428a78;
+                    background-color: transparent;
+                    background-image: none;
+                    border-color: #428a78;
+                }
+
+                .toggleSEM-content {
+                    display: block;
+                }
+
+                .toggleSEM-content.is-visible {
+                    display: none;
+                }
+            </style>
+
+            <script>
+
+                document.getElementById('sem-primary').onclick = function () {
+                    toggle('.area-sem_bac');
+                };
+
+                function myFunctionSEM() {
+                    var element = document.getElementById("sem-primary");
+                    element.classList.toggle("sem-outline-primary");
+                }
+
+            </script>
+
+        </ul>
+
+
+        <!-- Showing filters above the table. -->
+        <ul class="nav nav-pills" style="margin-top: 1.5em;">
+            <li class="nav-item">
+                <h3>
+                    Filter the schedule
+                </h3>
+            </li>
+            <li class="nav-item">
+                <div class="form-group form-check" style="padding: 0 1em;">
+                    <input type="checkbox" class="form-check-input" id="cambridge" checked>
+                    <label class="form-check-label ml-2" for="cambridge">Cambridge</label>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="form-group form-check" style="padding: 0 1em;">
+                    <input type="checkbox" class="form-check-input" id="allston" checked>
+                    <label class="form-check-label ml-2" for="allston">Allson</label>
+                </div>
+            </li>
+            <style>
+                .hidden {
+                    border: 0; 
+                    clip: rect(0 0 0 0); 
+                    height: 1px; 
+                    margin: -1px;
+                    overflow: hidden;
+                    padding: 0;
+                    position: absolute;
+                    width: 1px;
+                }</style>
+            <li class="nav-item">
+                <div class="form-group form-check" style="padding: 0 1em;">
+                    <label for="filterRoom" class="hidden">Room (*)</label>
+                    <input type="text" class="form-control" id="filterRoom" placeholder="Room search">
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="form-group form-check" style="padding: 0 1em;">
+                    <label for="filterSemester" class="hidden">Semester</label>
+                    <select class="form-control" id="filterSemester">
+                        <option value="string:Fall 2010" label="Fall 2010">Fall 2010</option>
+                        <option value="string:Spring 2011" label="Spring 2011">Spring 2011</option>
+                        <option value="string:Fall 2011" label="Fall 2011">Fall 2011</option>
+                        <option value="string:Spring 2012" label="Spring 2012">Spring 2012</option>
+                        <option value="string:Fall 2012" label="Fall 2012">Fall 2012</option>
+                        <option value="string:Spring 2013" label="Spring 2013">Spring 2013</option>
+                        <option value="string:Fall 2013" label="Fall 2013">Fall 2013</option>
+                        <option value="string:Spring 2014" label="Spring 2014">Spring 2014</option>
+                        <option value="string:Fall 2014" label="Fall 2014">Fall 2014</option>
+                        <option value="string:Spring 2015" label="Spring 2015">Spring 2015</option>
+                        <option value="string:Fall 2015" label="Fall 2015">Fall 2015</option>
+                        <option value="string:Spring 2016" label="Spring 2016">Spring 2016</option>
+                        <option value="string:Fall 2016" label="Fall 2016">Fall 2016</option>
+                        <option value="string:Spring 2017" label="Spring 2017">Spring 2017</option>
+                        <option value="string:Fall 2017" label="Fall 2017">Fall 2017</option>
+                        <option value="string:Spring 2018" label="Spring 2018">Spring 2018</option>
+                        <option value="string:Fall 2018" label="Fall 2018">Fall 2018</option>
+                        <option value="string:Spring 2019" label="Spring 2019" selected="selected">Spring 2019</option>
+                        <option value="string:Fall 2019" label="Fall 2019">Fall 2019</option>
+                        <option value="string:Spring 2020" label="Spring 2020">Spring 2020</option>
+                    </select>
+                </div>
+            </li>
+            
+            <li class="nav-item">
+                <div class="form-group form-check" style="padding: 0 1em;">
+                    <input type="checkbox" class="form-check-input" id="filterStatusUndergraduate" checked>
+                    <label class="form-check-label ml-2" for="filterStatusUndergraduate">Undergraduate</label>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="form-group form-check" style="padding: 0 1em;">
+                    <input type="checkbox" class="form-check-input" id="filterStatusGraduate" checked>
+                    <label class="form-check-label ml-2" for="filterStatusGraduate">Graduate</label>
+                </div>
+            </li>
+            <li class="nav-item text-muted">
+                (Prototype info: Select Monday, ES 022
+to highlight like courses.
+Select Monday, ES 051
+to both highlight
+selected course and
+view details. <a href="schedule_roomView.html" style="font-size: 1em; all: unset;
+cursor: pointer; text-decoration: underline; color: #6c757d!important;">
+						Link to single room view
+					</a>)
+            </li>
+        </ul>
+    </div>
 
 
 <div id="outer-grid">
 
     <!--Sidenav filters-->
-    <div class="sideNav-column">
+    <!-- Hiding filters in side nav. Showing filters above the table. -->
+    <div class="sideNav-column" hidden>
         <div id="mySidenav" class="sidenav" style="white-space: nowrap;">
             <div>
                 <a href="javascript:void(0)" onclick="closeNav()"
@@ -2056,7 +2150,7 @@ cursor: pointer;  text-decoration: underline; margin-left: 1em;">
 
     <!-- Calendar -->
 
-    <!-- Style for persistent scrollbars -->
+    <!-- Styles for persistent scrollbars -->
     <style>
         /* always show scrollbar */
         ::-webkit-scrollbar {
