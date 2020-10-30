@@ -64,7 +64,8 @@
         <div id="outer-grid">
 
             <!-- Sliding sidebar button -->
-            <div class="sideNav__Link">
+            <!-- Hiding side bar. Showing left nav content above table. -->
+            <div class="sideNav__Link" hidden>
                 <a href="#" class="Link sideNav__Link mb-1" onclick="openNav()" aria-describedby="openoptionsnote">
                     Options
                     <i class="far fa-arrow-alt-circle-right"></i>
@@ -73,7 +74,8 @@
             </div>
     
             <!--Sliding sidebar filters-->
-            <div class="sideNav-column">
+            <!-- Hiding side bar. Showing left nav content above table. -->
+            <div class="sideNav-column" hidden>
                 <div id="mySidenav" class="sidenav">
                     <div class="sideNav--ncm--inside__Link">
                         <a href="javascript:void(0)" onclick="closeNav()" class="Link" aria-describedby="closeoptionsnote">
@@ -114,10 +116,37 @@
             </div>
 
             <!-- courses table -->
-            <div class="courses">
+            <div class="courses" style="padding: 0 1em;">
+
+            <!-- Showing left nav content above table. -->
+            <div>
+                <ul class="nav nav-pills" style="margin-top: 0em;">
+                    <li class="nav-item">
+                        <button class="Button--secondary">Download courses report</button>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <label for="views" class="hidden">Customized view</label>
+                        <div>
+                            <select id="views" name="views" class="Dropdown" aria-describedby="customviewnote">
+                                <option value="default">Default</option>
+                                <option value="myview" selected>My view</option>
+                            </select>
+                            <span id="academicyearnote" class="hidden">The table will update its display upon the selection of the customized view</span>
+                        </div>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a type="button" class="Button--secondary" href="#" data-toggle="modal" data-target="#editViews">
+                            Edit views
+                        </a>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <input type="checkbox" name="primary_check" id="primary_check" class="primary_check" />
+                        <label for="primary_check">Show retired courses</label>
+                    </li>
+            </div>
 
                 <!-- Mark One table -->
-                <table class="Table Table--Sidebar">
+                <table class="Table Table--Sidebar" style="margin-top: -2.4em;">
 
                     <colgroup span="5"></colgroup>
                     <colgroup span="6"></colgroup>
@@ -128,6 +157,7 @@
                     <thead class="TableHead">
                         <tr class="TableHeadingCell">
                             <td class="TableHeadingCell--blank__left" colspan="5">
+                                
                             </td>
                             <td class="TableHeadingCell--blank__left" colspan="12">
                                 <div class="align-center mb-1">
@@ -2046,15 +2076,14 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content" style="width: 70em;">
                         <div class="modal-header">
-                            <h2 class="modal-title" id="editViews">Edit views</h2>
+                            <h2 class="modal-title" id="editViews" for="edit_view_selection">Edit or create new view</h2>
                         </div>
                         <div class="modal-body">
 
-                            <div class="mt-2"><h2 style="font-size: 1.25em;">Edit or create new view</h2></div>
-                            <form>
+                            <form style="margin: 1rem;">
                                 <div style="display: flex;">
                                     <div class="TextInput--nolabel" style="flex: 0 0 20%; max-width: 20%;">
-                                        <label for="edit_view_selection">Create or edit existing view</label>
+                                        <label>Create or edit existing view</label>
                                         <div>
                                             <select class="Dropdown" id="edit_view_selection" aria-describedby="editviewnote">
                                                 <option>Create new view</option>
@@ -2070,7 +2099,7 @@
                                             <input id="new_view_info" name="newmeetingtitle" type="text" class="TextInput" value="My view" placeholder="e.g., Faculty meeting">
                                         </div>
                                     </div>
-                                    <div style="flex: 0 0 10%; max-width: 10%;" class="ml-2">
+                                    <div class="ml-2">
                                         <button type="button" class="Button--danger">Delete view</button>
                                     </div>
                                 </div>
@@ -2096,54 +2125,89 @@
                 
                                         <tr class="TableHeadingCell">
                                             <th scope="col" class="TableHeadingCell">
-                                                Area
+                                                <label for="area_view">Area</label>
                                             </th>
                                             <th scope="col" class="TableHeadingCell">
-                                                Course
+                                                <label for="course_view">Course</label>
                                             </th>
                                             <th scope="col" class="TableHeadingCell">
-                                                Title
+                                                <label for="title_view">Title</label>
                                             </th>
                                             <th scope="col" class="TableHeadingCell">
-                                                Same as
+                                                <label for="sameas_view">Same as</label>
                                             </th>
                                             <th scope="col" class="TableHeadingCell">
-                                                Is SEAS?
+                                                <label for="isSeas_view">Is SEAS?</label>
                                             </th>
                                             <th scope="col" class="TableHeadingCell">
-                                                Is undergrad?
+                                                <label for="isUndergrad_view">Is undergrad?</label>
                                             </th>
                                             <th scope="col" class="TableHeadingCell">
-                                                Offered
+                                                <label for="offered_view">Offered</label>
                                             </th>
                                             <th scope="col" class="TableHeadingCell">
-                                                Instructors
+                                                <label for="instructors_view">Instructors</label>
                                             </th>
-                                            <th scope="col" class="TableHeadingCell">Room</th>
+                                            <th scope="col" class="TableHeadingCell"><label for="room_view">Room</label></th>
 
-                                            <th scope="col" class="TableHeadingCell">Enrollment</th>
+                                            <th scope="col" class="TableHeadingCell"><label for="enrollment_view">Enrollment</label></th>
                 
-                                            <th scope="col" class="TableHeadingCell">Notes</th>
+                                            <th scope="col" class="TableHeadingCell"><label for="notes_view">Notes</label></th>
 
-                                            <th scope="col" class="TableHeadingCell">Detail</th>
+                                            <th scope="col" class="TableHeadingCell"><label for="detail_view">Detail</label></th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         <tr>
-                                            
-                                            <td class="text-center"><input type="checkbox" checked></td>
-                                            <td class="text-center"><input type="checkbox" checked></td>
-                                            <td class="text-center"><input type="checkbox" checked></td>
-                                            <td class="text-center"><input type="checkbox" checked></td>
-                                            <td class="text-center"><input type="checkbox" checked></td>
-                                            <td class="text-center"><input type="checkbox" checked></td>
-                                            <td class="text-center"><input type="checkbox" checked></td>
-                                            <td class="text-center"><input type="checkbox" checked></td>
-                                            <td class="text-center"><input type="checkbox" checked></td>
-                                            <td class="text-center"><input type="checkbox" checked></td>
-                                            <td class="text-center"><input type="checkbox" checked></td>
-                                            <td class="text-center"><input type="checkbox" checked></td>
+                                            <td>
+                                                <input type="checkbox" name="area view" id="_view" class="primary_check" checked />
+                                                <label></label>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" name="course view" id="course_view" class="primary_check" checked />
+                                                <label></label>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" name="title view" id="title_view" class="primary_check" checked />
+                                                <label></label>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" name="same as view" id="sameAs_view" class="primary_check" checked />
+                                                <label></label>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" name="is seas view" id="isSeas_view" class="primary_check" checked />
+                                                <label></label>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" name="is undergrad view" id="isUndergrad_view" class="primary_check" checked />
+                                                <label></label>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" name="offered view" id="offered_view" class="primary_check" checked />
+                                                <label></label>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" name="instructors view" id="instructors_view" class="primary_check" checked />
+                                                <label></label>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" name="room view" id="room_view" class="primary_check" checked />
+                                                <label></label>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" name="enrollment view" id="enrollment_view" class="primary_check" checked />
+                                                <label></label>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" name="notes view" id="notes_view" class="primary_check" checked />
+                                                <label></label>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" name="detail view" id="detail_view" class="primary_check" checked />
+                                                <label></label>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
