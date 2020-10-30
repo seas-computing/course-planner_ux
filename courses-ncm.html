@@ -64,7 +64,8 @@
         <div id="outer-grid">
 
         <!-- Sliding sidebar button -->
-        <div class="sideNav__Link">
+        <!-- Hiding side bar. Showng button above table. -->
+        <div class="sideNav__Link" hidden>
             <a href="#" class="Link sideNav__Link mb-1" onclick="openNav()" aria-describedby="openoptionsnote">
                 Options
                 <i class="far fa-arrow-alt-circle-right"></i>
@@ -73,7 +74,8 @@
         </div>
 
         <!--Sliding sidebar filters-->
-        <div class="sideNav-column">
+        <!-- Hiding side bar. Showing left nav button above table. -->
+        <div class="sideNav-column" hidden>
             <div id="mySidenav" class="sidenav">
                 <div class="sideNav--ncm--inside__Link">
                     <a href="javascript:void(0)" onclick="closeNav()" class="Link" aria-describedby="closeoptionsnote">
@@ -92,7 +94,7 @@
         </div>
 
         <!-- table -->
-        <div class="courses">
+        <div class="courses" style="padding: 0 1em;">
             <table class="Table Table--Sidebar">
 
                 <col>
@@ -110,12 +112,15 @@
                     
                     <!-- Row with side nav and New Meeting buttons, term selection -->
                     <tr class="TableHeadingCell">
-                        <td class="TableHeadingCell--blank__left" colspan="3">
-                        <button type="button" class="mb-1" id="buttonInfo" data-toggle="modal" data-target="#newnonclassmeetingModal" aria-label="New non-class meeeting">
-                            New meeting
-                        </button>
+                        <td class="TableHeadingCell--blank__left" colspan="3" style="text-align: left;">
+                        <button class="Button--secondary">Download courses report</button></td>
+                        <td class="TableHeadingCell--blank__left" colspan="3" style="text-align: left;">
+                            
+                            <!-- Showing left nav button above table. -->
+                            <button type="button" class="mb-1" id="buttonInfo" data-toggle="modal" data-target="#newnonclassmeetingModal" aria-label="New non-class meeeting">
+                                New meeting
+                            </button>
                         </td>
-                        <td class="TableHeadingCell--blank__left" colspan="3"></td>
                         <td class="TableHeadingCell--blank__left" colspan="2">
                             <div class="align-center mb-1">
                                 <label for="semesters">Academic year</label>
