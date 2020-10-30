@@ -64,7 +64,8 @@
         <div id="outer-grid">
 
             <!-- Sliding sidebar button -->
-            <div class="sideNav__Link">
+            <!-- Hiding the slide bar. Showing filters above the table. -->
+            <div class="sideNav__Link" hidden>
                 <a href="#" class="Link sideNav__Link mb-1" onclick="openNav()" aria-describedby="openoptionsnote">
                     Options
                     <i class="far fa-arrow-alt-circle-right"></i>
@@ -73,7 +74,8 @@
             </div>
     
             <!--Sliding sidebar filters-->
-            <div class="sideNav-column">
+            <!-- Hiding the slide bar. Showing filters above the table. -->
+            <div class="sideNav-column" hidden>
                 <div id="mySidenav" class="sidenav">
                     <div class="sideNav--ncm--inside__Link">
                         <a href="javascript:void(0)" onclick="closeNav()" class="Link" aria-describedby="closeoptionsnote">
@@ -99,7 +101,7 @@
             </div>
 
             <!-- table -->
-            <div class="courses">
+            <div class="courses" style="padding: 0 1em;">
 
                 <table class="Table Table--Sidebar">
 
@@ -114,7 +116,8 @@
 
                     <thead class="TableHead">
                         <tr class="TableHeadingCell">
-                            <td class="TableHeadingCell--blank__left" colspan="5">
+                            <td class="TableHeadingCell--blank__left" colspan="5" style="text-align: left;">
+                                <button class="Button--secondary">Download faculty report</button>
                             </td>
                             <td class="TableHeadingCell--blank__left" colspan="4">
                                 <div class="align-center mb-1">
