@@ -1369,8 +1369,8 @@ input[type='checkbox'] + label {
     input.primary_check[type='checkbox']:checked + label::after {
     content: '';
     position: absolute;
-    top: 12px;
-    left: 3px;
+    top: 13px;
+    left:3px;
     border-left: 2px solid rgb(23, 135, 23);
     border-bottom: 2px solid rgb(23, 135, 23);
     height: 5px;
