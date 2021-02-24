@@ -944,6 +944,11 @@ textarea {
     line-height: inherit;
 }
 
+#scrollarea-content > h2 {
+    font-size: 1.1rem;
+    padding: 0 .25em;
+}
+
 /*#endregion*/
 
 
@@ -1280,6 +1285,15 @@ textarea {
         width: 100%;
         margin-top: 1em;
     }
+    .roomSelect__newroom {
+        width: 100%;
+    }
+
+    .roomSelect__newroom > .Dropdown {
+    color: rgb(24, 24, 24);
+    width: 100%;
+    height: 2.6em;
+}
 
     /* Disabled state for forms, icons and text */
     .Dropdown--disabled {
@@ -1321,11 +1335,11 @@ textarea {
 
     div.ValidationErrorMessage {
         margin: -1em 0 0 3.2em;
-        font-size: .9em;
+        font-size: 0.7em;
     }
 
     span.ValidationErrorMessage {
-        font-size: 1em;
+        font-size: 0.7em;
     }
 
     /* Error message */
@@ -1701,4 +1715,3 @@ input[type='checkbox'] + label {
     }
 
     /*#endregion*/
-    roomSelect--incomplete
