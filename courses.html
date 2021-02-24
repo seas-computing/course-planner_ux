@@ -118,32 +118,32 @@
             <!-- courses table -->
             <div class="courses" style="padding: 0 1em;">
 
-            <!-- Showing left nav content above table. -->
-            <div>
-                <ul class="nav nav-pills" style="margin-top: 0em;">
-                    <li class="nav-item">
-                        <button class="Button--secondary">Download courses report</button>
-                    </li>
-                    <li class="nav-item ml-3">
-                        <label for="views" class="hidden">Customized view</label>
-                        <div>
-                            <select id="views" name="views" class="Dropdown" aria-describedby="customviewnote">
-                                <option value="default">Default</option>
-                                <option value="myview" selected>My view</option>
-                            </select>
-                            <span id="academicyearnote" class="hidden">The table will update its display upon the selection of the customized view</span>
-                        </div>
-                    </li>
-                    <li class="nav-item ml-3">
-                        <a type="button" class="Button--secondary" href="#" data-toggle="modal" data-target="#editViews">
-                            Edit views
-                        </a>
-                    </li>
-                    <li class="nav-item ml-3">
-                        <input type="checkbox" name="primary_check" id="primary_check" class="primary_check" />
-                        <label for="primary_check">Show retired courses</label>
-                    </li>
-            </div>
+                <!-- Showing left nav content above table. -->
+                <div>
+                    <ul class="nav nav-pills" style="margin-top: 0em;">
+                        <li class="nav-item">
+                            <button class="Button--secondary">Download courses report</button>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <label for="views" class="hidden">Customized view</label>
+                            <div>
+                                <select id="views" name="views" class="Dropdown" aria-describedby="customviewnote">
+                                    <option value="default">Default</option>
+                                    <option value="myview" selected>My view</option>
+                                </select>
+                                <span id="academicyearnote" class="hidden">The table will update its display upon the selection of the customized view</span>
+                            </div>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <a type="button" class="Button--secondary" href="#" data-toggle="modal" data-target="#editViews">
+                                Edit views
+                            </a>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <input type="checkbox" name="primary_check" id="primary_check" class="primary_check" />
+                            <label for="primary_check">Show retired courses</label>
+                        </li>
+                </div>
 
                 <!-- Mark One table -->
                 <table class="Table Table--Sidebar" style="margin-top: -2.4em;">
@@ -1771,6 +1771,62 @@
                                     <div id="scrollarea-container">
                                         <div id="scrollarea-content">
                                     
+                                            <!-- Add new room -->
+                                            <h2>Add new room</h2>
+                                            <table class="Table">
+
+                                                <thead class="TableHead">
+                                                    <tr class="TableHeadingCell">
+                                                        <th scope="col" class="TableHeadingCell">
+                                                            Campus
+                                                        </th>
+                                                        <th scope="col" class="TableHeadingCell">
+                                                            New room name
+                                                        </th>
+                                                        <th scope="col" class="TableHeadingCell">
+                                                            Capacity
+                                                        </th>
+                                                        <td scope="col" class="TableHeadingCell">
+                                                            Add
+                                                        </td>
+                                                    </tr>
+                                                </thead>
+                                                
+                                                <tbody class="TableBody">
+                            
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableHeadingCell TextInput--nolabel">
+                                                            <label for="campus">campus</label>
+                                                            <div class="roomSelect__newroom">
+                                                                <select id="campus" name="campus" class="Dropdown" aria-describedby="campus">
+                                                                    <option value="string:All" label="SEC" selected="selected">SEC</option>
+                                                                    <option value="string:Yes" label="Allston">Allston</option>
+                                                                    <option value="string:No" label="Cambridge">Cambridge</option>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td class="TableHeadingCell TextInput--nolabel">
+                                                            <label for="newroom">new room</label>
+                                                            <div>
+                                                                <input id="newroom" name="newroom" type="text" class="form-control" value="" placeholder="New room">
+                                                            </div>
+                                                        </td>
+                                                        <td class="TableHeadingCell TextInput--nolabel">
+                                                            <label for="capacity">capacity</label>
+                                                            <div>
+                                                                <input id="capacity" name="capacity" type="text" class="form-control" value="" placeholder="i.e., 100">
+                                                            </div>
+                                                        </td>
+                                                        <td class="TableHeadingCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <span role="alert" aria-live="assertive" class="ValidationErrorMessage">Error: This is not a new room. Select this room for the table below.</span>
+
+                                            <h2>Add existing rooms</h2>
                                             <table class="Table">
 
                                                 <thead class="TableHead">
