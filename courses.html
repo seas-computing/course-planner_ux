@@ -2127,7 +2127,7 @@
                                         background-color: rgba(0, 0, 0, .5);
                                         box-shadow: 0 0 1px rgba(255, 255, 255, .5);
                                         }
-                                        #scrollarea-container--mt {
+                                        #scrollarea-container--bare {
                                         height: 3em;
                                         /* shorter than the child */
                                         overflow-y: hidden;
@@ -2135,14 +2135,14 @@
                                         border: solid 1px #ccc;
                                         padding: .25em;
                                         }
-                                        #scrollarea-content--mt {
+                                        #scrollarea-content--bare {
                                         height: 3em;
                                         /* taller than the parent to force scrolling */
                                         }
                                     </style>
                                     
-                                    <div id="scrollarea-container--mt">
-                                        <div id="scrollarea-content--mt">
+                                    <div id="scrollarea-container--bare">
+                                        <div id="scrollarea-content--bare">
                                             <div class="p-1 mb-1" style="height: 3em;">
 
                                                 <!-- Unselected, scheduled room  -->
@@ -2206,27 +2206,27 @@
                                         -webkit-appearance: none;
                                         width: 7px;
                                         }
-                                        ::-webkit-scrollbar-thumb {
+                                        ::-webkit-scrollbar-rooms-thumb {
                                         border-radius: 4px;
                                         background-color: rgba(0, 0, 0, .5);
                                         box-shadow: 0 0 1px rgba(255, 255, 255, .5);
                                         }
-                                        #scrollarea-container {
+                                        #scrollarea-container-rooms--bare {
                                         height: 30.5em;
                                         /* shorter than the child */
-                                        overflow-y: scroll;
+                                        overflow-y: none;
                                         /* clip height to 30em and scroll to show the rest */
                                         border: solid 1px #ccc;
                                         margin-top: -.5em;
                                         }
-                                        #scrollarea-content {
+                                        #scrollarea-content-rooms--bare {
                                         height: 40em;
                                         /* taller than the parent to force scrolling */
                                         }
                                     </style>
                                     
-                                    <div id="scrollarea-container">
-                                        <div id="scrollarea-content">
+                                    <div id="scrollarea-container-rooms--bare">
+                                        <div id="scrollarea-content-rooms--bare">
                                     
                                             <!-- Add new room -->
                                             <h2>Add new room</h2>
