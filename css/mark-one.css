@@ -944,7 +944,7 @@ textarea {
     line-height: inherit;
 }
 
-#scrollarea-content > h2 {
+#scrollarea-content--bare > h2 {
     font-size: 1.1rem;
     padding: 0 .25em;
 }
