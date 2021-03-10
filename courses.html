@@ -1059,7 +1059,7 @@
                             <td class="TableCell">
                                 <div class="icon">
                                     <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal"
-                                        data-target="#courseModal1">
+                                        data-target="#courseModal-newRoom">
                                         <i class="fas fa-edit float-right"></i>
                                     </a>
                                 </div>
@@ -1099,7 +1099,7 @@
                             <td class="TableCell">
                                 <div class="icon">
                                     <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal"
-                                        data-target="#courseModal1">
+                                        data-target="#courseModal-newRoom">
                                         <i class="fas fa-edit float-right"></i>
                                     </a>
                                 </div>
@@ -1158,7 +1158,7 @@
                             <td class="TableCell">
                                 <div class="icon">
                                     <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal"
-                                        data-target="#courseModal1">
+                                        data-target="#courseModalBare-newRoom">
                                         <i class="fas fa-edit float-right"></i>
                                     </a>
                                 </div>
@@ -1198,7 +1198,7 @@
                             <td class="TableCell">
                                 <div class="icon">
                                     <a type="button" class="BorderlessButton--info BorderlessButton--right" href="#" data-toggle="modal"
-                                        data-target="#courseModal1">
+                                        data-target="#courseModalBare-newRoom">
                                         <i class="fas fa-edit float-right"></i>
                                     </a>
                                 </div>
@@ -1521,6 +1521,541 @@
                                 <!-- Meeting time selection and faculty notes -->
                                 <div class="col">
                                     <div class="modal-header modal-header--p-0"><h3>Meeting times for <strong>AC 209a</strong></h3></div>
+                                    
+                                    <!-- Meeting time selection -->
+
+                                    <!-- Style for persistent scrollbar on overflow-y: scroll; for meeting time selection -->
+                                    <style>
+                                        /* always show scrollbar */
+                                        ::-webkit-scrollbar {
+                                        -webkit-appearance: none;
+                                        width: 7px;
+                                        }
+                                        ::-webkit-scrollbar-thumb {
+                                        border-radius: 4px;
+                                        background-color: rgba(0, 0, 0, .5);
+                                        box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+                                        }
+                                        #scrollarea-container--mt {
+                                        height:13em;
+                                        /* shorter than the child */
+                                        overflow-y: scroll;
+                                        /* clip height to 30em and scroll to show the rest */
+                                        border: solid 1px #ccc;
+                                        padding: .25em;
+                                        }
+                                        #scrollarea-content--mt {
+                                        height: 18em;
+                                        /* taller than the parent to force scrolling */
+                                        }
+                                    </style>
+                                    
+                                    <div id="scrollarea-container--mt">
+                                        <div id="scrollarea-content--mt">
+                                            <div class="p-1 mb-1" style="height: 14em;">
+
+                                                <!-- Unselected, scheduled room  -->
+                                                <div class="roomSelect">
+                                                    <div class="modal-header modal-header--borderless">
+                                                        <button class="BorderlessButton--danger">
+                                                            <i class="fas fa-trash">
+                                                                <span class="sr-only">Delete this meeting</span>
+                                                            </i>
+                                                        </button>
+                                                        <h4>
+                                                            Tuesday, 8:30AM to 10:15AM in Geological Museum 105
+                                                        </h4>
+                                                        <button class="BorderlessButton--info" aria-pressed="false">
+                                                            <i class="fas fa-edit">
+                                                                <span class="sr-only">Edit this meeting</span>
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Unselected, scheduled room, just edited room  -->
+                                                <div class="roomSelect roomSelect--closed">
+                                                    <div class="modal-header modal-header--borderless">
+                                                        <button class="BorderlessButton--danger">
+                                                            <i class="fas fa-trash">
+                                                                <span class="sr-only">Delete this meeting</span>
+                                                            </i>
+                                                        </button>
+                                                        <h4>
+                                                            Tuesday, 10:30AM to 11:45AM in Harvard Hall 112
+                                                        </h4>
+                                                        <button class="BorderlessButton--info" aria-pressed="false">
+                                                            <i class="fas fa-edit">
+                                                                <span class="sr-only">Edit this meeting</span>
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Selected room, after selecting "Edit" button -->
+                                                <div class="roomSelect--edit">
+                                                    <div class="roomSelect--edit-row1">
+                                                        <button class="BorderlessButton--danger">
+                                                            <i class="fas fa-trash">
+                                                                <span class="sr-only">Delete this meeting</span>
+                                                            </i>
+                                                        </button>
+
+                                                        <label for="dataone" hidden>Date of booked room</label>
+                                                        <div class="roomSelect__date">
+                                                            <select id="dataone" name="dataone" class="Dropdown">
+                                                                <option value="string:All" label=""></option>
+                                                                <option value="string:All" label="Monday">Monday</option>
+                                                                <option value="string:tuesday" label="Tuesday" selected>Tuesday</option>
+                                                                <option value="string:wednesday" label="wednesday">Wednesday</option>
+                                                                <option value="string:thursday" label="Thursday">Thursday</option>
+                                                                <option value="string:friday" label="Friday">Friday</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="input-group mb-3 roomSelect__timeEdit">
+                                                            <div class="input-group-prepend dropdown-container">
+                                                                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <span class="hidden">Meeting time</span>
+                                                                </button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#"></a>
+                                                                    <a class="dropdown-item" href="#">8:30AM-11:30AM</a>
+                                                                    <a class="dropdown-item" href="#">9:00AM-10:15AM</a>
+                                                                    <a class="dropdown-item" href="#">9:00AM-11:45AM</a>
+                                                                    <a class="dropdown-item" href="#">10:30AM-11:45AM</a>
+                                                                    <a class="dropdown-item" href="#">12:00PM-1:15PM</a>
+                                                                    <a class="dropdown-item" href="#">1:15PM-2:30PM</a>
+                                                                    <a class="dropdown-item" href="#">1:30PM-2:45PM</a>
+                                                                    <a class="dropdown-item" href="#">1:30PM-5:45PM</a>
+                                                                    <a class="dropdown-item" href="#">3:00PM-4:15PM</a>
+                                                                    <a class="dropdown-item" href="#">3:00PM-5:00PM</a>
+                                                                    <a class="dropdown-item" href="#">3:00PM-5:45PM</a>
+                                                                    <a class="dropdown-item" href="#">3:00PM-5:45PM</a>
+                                                                    <a class="dropdown-item" href="#">3:45PM-5:45PM</a>
+                                                                    <a class="dropdown-item" href="#">4:30PM-5:45PM</a>
+                                                                    <a class="dropdown-item" href="#">6:00PM-7:15PM</a>
+                                                                </div>
+                                                            </div>
+                                                            <input type="text" class="form-control" aria-label="Meeting time" value="12:00PM">
+                                                            <p>to</p>
+                                                        </div>
+
+                                                        <div class="input-group mb-3 roomSelect__timeEditEnd">
+                                                            <input type="text" class="form-control form-control--timeEnd" aria-label="Text input with segmented dropdown button" value="12:45PM">
+                                                        </div>
+                                                    </div>
+                                                    <div class="roomSelect--edit-row2">
+                                                        <div class="modal-header modal-header--borderless">
+                                                            <h4>
+                                                                Room: Harvard Hall 112
+                                                            </h4>
+
+                                                            <div class="roomSelect__showroom">
+                                                                <button type="button" class="Button--primary Button--rightAlign">Show rooms</button>
+                                                            </div>
+
+                                                            <div class="roomSelect__room">
+                                                                <button type="button" class="Button--secondary Button--rightAlign">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- Unselected, scheduled room  -->
+                                                <div class="roomSelect">
+                                                    <div class="modal-header modal-header--borderless">
+                                                        <button class="BorderlessButton--danger">
+                                                            <i class="fas fa-trash">
+                                                                <span class="sr-only">Delete this meeting</span>
+                                                            </i>
+                                                        </button>
+                                                        <h4>
+                                                            Tuesday, 13:00PM to 13:45PM in Harvard Hall 112 
+                                                        </h4>
+                                                        <button class="BorderlessButton--info" aria-pressed="false">
+                                                            <i class="fas fa-edit">
+                                                                <span class="sr-only">Edit this meeting</span>
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Unselected, unscheduled room with missing room choice  -->
+                                                <div class="roomSelect roomSelect--incomplete">
+                                                    <div class="modal-header modal-header--borderless">
+                                                        <button class="BorderlessButton--danger">
+                                                            <i class="fas fa-trash">
+                                                                <span class="sr-only">Delete this meeting</span>
+                                                            </i>
+                                                        </button>
+                                                        <h4>
+                                                            <span class="ValidationErrorMessage">*</span>
+                                                            Tuesday, 14:00PM to 14:45PM
+                                                        </h4>
+                                                        <button class="BorderlessButton--info" aria-pressed="false">
+                                                            <i class="fas fa-edit">
+                                                                <span class="sr-only">Edit this meeting</span>
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="roomSelect--validation">
+                                                        <div class="ValidationErrorMessage">
+                                                            <br>No room selected
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="roomSelect__addnewtime">
+                                            <button type="button" class="Button--secondary Button--rightAlign">Add new time</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Faculty notes -->
+                                   <section id="modalForm">
+                                       <div class="modal-header modal-header--borderless">
+                                            <h3>Faculty notes</h3>
+                                        </div>
+                                        <div class="modal-form">
+                                            <h4>First Surname</h4>
+                                            <p>Likes room X, hates room Y</p>
+                                        </div>
+                                        <div class="modal-form">
+                                            <h4>First Surname</h4>
+                                            <p>Must have whiteboard</p>
+                                        </div>
+                                        <div class="modal-form">
+                                            <h4>First Surname</h4>
+                                            <p>Likes room Y, hates room X</p>
+                                        </div>
+                                    </section>
+                                </div>
+                                
+                                <!-- Scrolling div with table -->
+                                <div class="col">
+
+                                    <p class="text-center"><strong>Rooms availability on Tuesday, 12:00PM to 12:45PM</strong></p>
+
+                                    <!-- Style for persistent scrollbar on overflow-y: scroll; for table with time results -->
+                                    <style>
+                                        /* always show scrollbar */
+                                        ::-webkit-scrollbar {
+                                        -webkit-appearance: none;
+                                        width: 7px;
+                                        }
+                                        ::-webkit-scrollbar-thumb {
+                                        border-radius: 4px;
+                                        background-color: rgba(0, 0, 0, .5);
+                                        box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+                                        }
+                                        #scrollarea-container {
+                                        height: 30.5em;
+                                        /* shorter than the child */
+                                        overflow-y: scroll;
+                                        /* clip height to 30em and scroll to show the rest */
+                                        border: solid 1px #ccc;
+                                        margin-top: -.5em;
+                                        }
+                                        #scrollarea-content {
+                                        height: 40em;
+                                        /* taller than the parent to force scrolling */
+                                        }
+                                    </style>
+                                    
+                                    <div id="scrollarea-container">
+                                        <div id="scrollarea-content">
+                                    
+                                            <table class="Table">
+
+                                                <thead class="TableHead">
+                                                    <tr class="TableHeadingCell">
+                                                        <th scope="col" class="TableHeadingCell">
+                                                            Campus
+                                                        </th>
+                                                        <th scope="col" class="TableHeadingCell">
+                                                            Room
+                                                        </th>
+                                                        <th scope="col" class="TableHeadingCell">
+                                                            Capacity
+                                                        </th>
+                                                        <td scope="col" class="TableHeadingCell">
+                                                            Availability
+                                                            <span id="undergradnote" class="hidden">Use the dropdown in the next row to filter meetings by availability.</span>
+                                                        </td>
+                                                        <td scope="col" class="TableHeadingCell">
+                                                            Add
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="TableHeadingCell">
+                                                        <th class="TableHeadingCell">&nbsp</th>
+                                                        <th class="TableHeadingCell">&nbsp</th>
+                                                        <th class="TableHeadingCell">&nbsp</th>
+                                                        <th class="TableHeadingCell TextInput--nolabel">
+                                                            <label for="availability">Availability</label>
+                                                            <div>
+                                                                <select id="availability" name="availability" class="Dropdown" aria-describedby="availability">
+                                                                    <option value="string:All" label="All" selected="selected">All</option>
+                                                                    <option value="string:Yes" label="Availability">Yes</option>
+                                                                    <option value="string:No" label="Unavailability">No</option>
+                                                                    <option value="string:No" label="To be checked">To be checked</option>
+                                                                </select>
+                                                                <span id="undergradnote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
+                                                            </div>
+                                                        </th>
+                                                        <th class="TableHeadingCell">&nbsp</th>
+                                                    </tr>
+                                                </thead>
+                                                
+                                                <tbody class="TableBody">
+                            
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 201</td>
+                                                        <td class="TableCell">250</td>
+                                                        <td class="TableCell">No (AC 209a)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 205</td>
+                                                        <td class="TableCell">35</td>
+                                                        <td class="TableCell">Yes</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 204</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (Staff meeting)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 112</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (ES 115)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">FAS</td>
+                                                        <td class="TableCell">NW B103</td>
+                                                        <td class="TableCell">25</td>
+                                                        <td class="TableCell">Check FAS availability</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">P 100F</td>
+                                                        <td class="TableCell">125</td>
+                                                        <td class="TableCell">No (AM 218)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 205</td>
+                                                        <td class="TableCell">35</td>
+                                                        <td class="TableCell">Yes</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 204</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (Staff meeting)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 112</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (ES 115)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">FAS</td>
+                                                        <td class="TableCell">NW B103</td>
+                                                        <td class="TableCell">25</td>
+                                                        <td class="TableCell">Check FAS availability</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">P 100F</td>
+                                                        <td class="TableCell">125</td>
+                                                        <td class="TableCell">No (AM 218)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 205</td>
+                                                        <td class="TableCell">35</td>
+                                                        <td class="TableCell">Yes</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 204</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (Staff meeting)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 112</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (ES 115)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">FAS</td>
+                                                        <td class="TableCell">NW B103</td>
+                                                        <td class="TableCell">25</td>
+                                                        <td class="TableCell">Check FAS availability</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">P 100F</td>
+                                                        <td class="TableCell">125</td>
+                                                        <td class="TableCell">No (AM 218)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 205</td>
+                                                        <td class="TableCell">35</td>
+                                                        <td class="TableCell">Yes</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 204</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (Staff meeting)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 112</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (ES 115)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">FAS</td>
+                                                        <td class="TableCell">NW B103</td>
+                                                        <td class="TableCell">25</td>
+                                                        <td class="TableCell">Check FAS availability</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">P 100F</td>
+                                                        <td class="TableCell">125</td>
+                                                        <td class="TableCell">No (AM 218)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="modal-footer">
+                            <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="Button--primary Button--rightAlign" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for Room with new room -->
+            <div class="modal fade" id="courseModal-newRoom" tabindex="-1" role="dialog" aria-labelledby="courseModal-newRoom" aria-hidden="true" style="right: 1%; left: -40%; top: 1em;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" style="width: 70em;">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="courseModal-newRoom">Rooms for AP 050a - Physics as a Foundation for Science and Engineering, Part I</h2>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="row">
+                                
+                                <!-- Meeting time selection and faculty notes -->
+                                <div class="col">
+                                    <div class="modal-header modal-header--p-0"><h3>Meeting times for <strong>AP 050a</strong></h3></div>
                                     
                                     <!-- Meeting time selection -->
 
@@ -2098,12 +2633,12 @@
                 </div>
             </div>
 
-            <!-- Modal for Room__bare -->
-            <div class="modal fade" id="courseModalBare" tabindex="-1" role="dialog" aria-labelledby="courseModalBare" aria-hidden="true" style="right: 1%; left: -40%; top: 1em;">
+            <!-- Modal for courseModalBare-newRoom -->
+            <div class="modal fade" id="courseModalBare-newRoom" tabindex="-1" role="dialog" aria-labelledby="courseModalBare-newRoom" aria-hidden="true" style="right: 1%; left: -40%; top: 1em;">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content" style="width: 70em;">
                         <div class="modal-header">
-                            <h2 class="modal-title" id="courseModalBare">Rooms for AC 209b - Data Science 2: Advanced Topics in Data Science</h2>
+                            <h2 class="modal-title" id="courseModalBare-newRoom">Rooms for AP 050b - Physics as a Foundation for Science and Engineering, Part II</h2>
                         </div>
                         <div class="modal-body">
 
@@ -2111,7 +2646,7 @@
                                 
                                 <!-- Meeting time selection and faculty notes -->
                                 <div class="col">
-                                    <div class="modal-header modal-header--p-0"><h3>Meeting times for <strong>AC 209a</strong></h3></div>
+                                    <div class="modal-header modal-header--p-0"><h3>Meeting times for <strong>AP 050b</strong></h3></div>
                                     
                                     <!-- Meeting time selection -->
 
@@ -2127,7 +2662,7 @@
                                         background-color: rgba(0, 0, 0, .5);
                                         box-shadow: 0 0 1px rgba(255, 255, 255, .5);
                                         }
-                                        #scrollarea-container--bare {
+                                        #scrollarea-container--bare-newRoom {
                                         height: 3em;
                                         /* shorter than the child */
                                         overflow-y: hidden;
@@ -2135,14 +2670,14 @@
                                         border: solid 1px #ccc;
                                         padding: .25em;
                                         }
-                                        #scrollarea-content--bare {
+                                        #scrollarea-content--bare-newRoom {
                                         height: 3em;
                                         /* taller than the parent to force scrolling */
                                         }
                                     </style>
                                     
-                                    <div id="scrollarea-container--bare">
-                                        <div id="scrollarea-content--bare">
+                                    <div id="scrollarea-container--bare-newRoom">
+                                        <div id="scrollarea-content--bare-newRoom">
                                             <div class="p-1 mb-1" style="height: 3em;">
 
                                                 <!-- Unselected, scheduled room  -->
@@ -2542,6 +3077,407 @@
 
                                         </div>
                                     </div>
+
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="modal-footer">
+                            <button type="button" class="Button--secondary Button--leftAlign" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="Button--primary Button--rightAlign" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for Room__bare -->
+            <div class="modal fade" id="courseModalBare" tabindex="-1" role="dialog" aria-labelledby="courseModalBare" aria-hidden="true" style="right: 1%; left: -40%; top: 1em;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" style="width: 70em;">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="courseModalBare">Rooms for AC 209b - Data Science 2: Advanced Topics in Data Science</h2>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="row">
+                                
+                                <!-- Meeting time selection and faculty notes -->
+                                <div class="col">
+                                    <div class="modal-header modal-header--p-0"><h3>Meeting times for <strong>AC 209a</strong></h3></div>
+                                    
+                                    <!-- Meeting time selection -->
+
+                                    <!-- Style for persistent scrollbar on overflow-y: scroll; for meeting time selection -->
+                                    <style>
+                                        /* always show scrollbar */
+                                        ::-webkit-scrollbar {
+                                        -webkit-appearance: none;
+                                        width: 7px;
+                                        }
+                                        ::-webkit-scrollbar-thumb {
+                                        border-radius: 4px;
+                                        background-color: rgba(0, 0, 0, .5);
+                                        box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+                                        }
+                                        #scrollarea-container--bare {
+                                        height: 3em;
+                                        /* shorter than the child */
+                                        overflow-y: hidden;
+                                        /* clip height to 30em and scroll to show the rest */
+                                        border: solid 1px #ccc;
+                                        padding: .25em;
+                                        }
+                                        #scrollarea-content--bare {
+                                        height: 3em;
+                                        /* taller than the parent to force scrolling */
+                                        }
+                                    </style>
+                                    
+                                    <div id="scrollarea-container--bare">
+                                        <div id="scrollarea-content--bare">
+                                            <div class="p-1 mb-1" style="height: 3em;">
+
+                                                <!-- Unselected, scheduled room  -->
+                                                <div class="roomSelect">
+                                                    <div class="modal-header modal-header--borderless">
+                                                        <button class="BorderlessButton--secondary" disabled>
+                                                            <i class="fas fa-trash">
+                                                                <span class="sr-only">Delete this meeting</span>
+                                                            </i>
+                                                        </button>
+                                                        <h4>
+                                                            No meetings scheduled for this course
+                                                        </h4>
+                                                        <button class="BorderlessButton--secondary" aria-pressed="false" disabled>
+                                                            <i class="fas fa-edit">
+                                                                <span class="sr-only">Edit this meeting</span>
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="roomSelect__addnewtime">
+                                            <button type="button" class="Button--secondary Button--rightAlign">Add new time</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Faculty notes -->
+                                   <section id="modalForm">
+                                       <div class="modal-header modal-header--borderless">
+                                            <h3>Faculty notes</h3>
+                                        </div>
+                                        <div class="modal-form">
+                                            <h4>First Surname</h4>
+                                            <p>Likes room X, hates room Y</p>
+                                        </div>
+                                        <div class="modal-form">
+                                            <h4>First Surname</h4>
+                                            <p>Must have whiteboard</p>
+                                        </div>
+                                        <div class="modal-form">
+                                            <h4>First Surname</h4>
+                                            <p>Likes room Y, hates room X</p>
+                                        </div>
+                                    </section>
+                                </div>
+                                
+                                <!-- Scrolling div with table -->
+                                <div class="col">
+
+                                    <!-- Style for persistent scrollbar on overflow-y: scroll; for table with time results -->
+                                    <style>
+                                        /* always show scrollbar */
+                                        ::-webkit-scrollbar {
+                                        -webkit-appearance: none;
+                                        width: 7px;
+                                        }
+                                        ::-webkit-scrollbar-rooms-thumb {
+                                        border-radius: 4px;
+                                        background-color: rgba(0, 0, 0, .5);
+                                        box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+                                        }
+                                        #scrollarea-container-rooms--bare {
+                                        height: 3.7em;
+                                        /* shorter than the child */
+                                        overflow-y: none;
+                                        /* clip height to 30em and scroll to show the rest */
+                                        border: solid 1px #ccc;
+                                        margin-top: 2em;
+                                        }
+                                        #scrollarea-content-rooms--bare {
+                                        height: 40em;
+                                        /* taller than the parent to force scrolling */
+                                        }
+                                    </style>
+                                    
+                                    <div id="scrollarea-container-rooms--bare">
+                                        <div id="scrollarea-content-rooms--bare">
+                                            
+                                            <table class="Table">
+
+                                                <thead class="TableHead">
+                                                    <tr class="TableHeadingCell">
+                                                        <th scope="col" class="TableHeadingCell">
+                                                            Campus
+                                                        </th>
+                                                        <th scope="col" class="TableHeadingCell">
+                                                            Room
+                                                        </th>
+                                                        <th scope="col" class="TableHeadingCell">
+                                                            Capacity
+                                                        </th>
+                                                        <td scope="col" class="TableHeadingCell">
+                                                            Availability
+                                                            <span id="undergradnote" class="hidden">Use the dropdown in the next row to filter meetings by availability.</span>
+                                                        </td>
+                                                        <td scope="col" class="TableHeadingCell">
+                                                            Add
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="TableHeadingCell">
+                                                        <th class="TableHeadingCell">&nbsp</th>
+                                                        <th class="TableHeadingCell">&nbsp</th>
+                                                        <th class="TableHeadingCell">&nbsp</th>
+                                                        <th class="TableHeadingCell TextInput--nolabel">
+                                                            <label for="availability">Availability</label>
+                                                            <div>
+                                                                <select id="availability" name="availability" class="Dropdown" aria-describedby="availability" disabled>
+                                                                    <option value="string:All" label="All" selected="selected">All</option>
+                                                                    <option value="string:Yes" label="Availability">Yes</option>
+                                                                    <option value="string:No" label="Unavailability">No</option>
+                                                                    <option value="string:No" label="To be checked">To be checked</option>
+                                                                </select>
+                                                                <span id="undergradnote" class="hidden">The table will be filtered upon the selection from this dropdown</span>
+                                                            </div>
+                                                        </th>
+                                                        <th class="TableHeadingCell">&nbsp</th>
+                                                    </tr>
+                                                </thead>
+                                                
+                                                <tbody class="TableBody" hidden>
+                            
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 201</td>
+                                                        <td class="TableCell">250</td>
+                                                        <td class="TableCell">No (AC 209a)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 205</td>
+                                                        <td class="TableCell">35</td>
+                                                        <td class="TableCell">Yes</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 204</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (Staff meeting)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 112</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (ES 115)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">FAS</td>
+                                                        <td class="TableCell">NW B103</td>
+                                                        <td class="TableCell">25</td>
+                                                        <td class="TableCell">Check FAS availability</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">P 100F</td>
+                                                        <td class="TableCell">125</td>
+                                                        <td class="TableCell">No (AM 218)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 205</td>
+                                                        <td class="TableCell">35</td>
+                                                        <td class="TableCell">Yes</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 204</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (Staff meeting)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 112</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (ES 115)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">FAS</td>
+                                                        <td class="TableCell">NW B103</td>
+                                                        <td class="TableCell">25</td>
+                                                        <td class="TableCell">Check FAS availability</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">P 100F</td>
+                                                        <td class="TableCell">125</td>
+                                                        <td class="TableCell">No (AM 218)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 205</td>
+                                                        <td class="TableCell">35</td>
+                                                        <td class="TableCell">Yes</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 204</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (Staff meeting)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 112</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (ES 115)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">FAS</td>
+                                                        <td class="TableCell">NW B103</td>
+                                                        <td class="TableCell">25</td>
+                                                        <td class="TableCell">Check FAS availability</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">P 100F</td>
+                                                        <td class="TableCell">125</td>
+                                                        <td class="TableCell">No (AM 218)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Allston</td>
+                                                        <td class="TableCell">Geological Museum 205</td>
+                                                        <td class="TableCell">35</td>
+                                                        <td class="TableCell">Yes</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 204</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (Staff meeting)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">Harvard Hall 112</td>
+                                                        <td class="TableCell">75</td>
+                                                        <td class="TableCell">No (ES 115)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowOdd">
+                                                        <td class="TableCell">FAS</td>
+                                                        <td class="TableCell">NW B103</td>
+                                                        <td class="TableCell">25</td>
+                                                        <td class="TableCell">Check FAS availability</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                            
+                                                    <tr class="TableRowEven">
+                                                        <td class="TableCell">Cambridge</td>
+                                                        <td class="TableCell">P 100F</td>
+                                                        <td class="TableCell">125</td>
+                                                        <td class="TableCell">No (AM 218)</td>
+                                                        <td class="TableCell">
+                                                            <button type="button" class="Button--primary" aria-label="Select this room for this meeting">Add</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+
+                                    <p class="text-center" style="margin-top: .82em;"><strong>Add meeting time to view room availability</strong></p>
 
                                 </div>
                             </div>
