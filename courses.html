@@ -1537,7 +1537,7 @@
                                         box-shadow: 0 0 1px rgba(255, 255, 255, .5);
                                         }
                                         #scrollarea-container--mt {
-                                        height:13em;
+                                        height: 30.5em;
                                         /* shorter than the child */
                                         overflow-y: scroll;
                                         /* clip height to 30em and scroll to show the rest */
@@ -1545,14 +1545,14 @@
                                         padding: .25em;
                                         }
                                         #scrollarea-content--mt {
-                                        height: 18em;
+                                        height: 31em;
                                         /* taller than the parent to force scrolling */
                                         }
                                     </style>
                                     
                                     <div id="scrollarea-container--mt">
                                         <div id="scrollarea-content--mt">
-                                            <div class="p-1 mb-1" style="height: 14em;">
+                                            <div class="p-1 mb-1" style="height: 31em;">
 
                                                 <!-- Unselected, scheduled room  -->
                                                 <div class="roomSelect">
@@ -1616,10 +1616,10 @@
                                                         <div class="input-group mb-3 roomSelect__timeEdit">
                                                             <div class="input-group-prepend dropdown-container">
                                                                 <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    <span class="hidden">Meeting time</span>
+                                                                    <span class="hidden">Meeting start time</span>
                                                                 </button>
                                                                 <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#"></a>
+                                                                    <a class="dropdown-item" href="#">start time</a>
                                                                     <a class="dropdown-item" href="#">8:30AM-11:30AM</a>
                                                                     <a class="dropdown-item" href="#">9:00AM-10:15AM</a>
                                                                     <a class="dropdown-item" href="#">9:00AM-11:45AM</a>
@@ -1641,8 +1641,31 @@
                                                             <p>to</p>
                                                         </div>
 
-                                                        <div class="input-group mb-3 roomSelect__timeEditEnd">
-                                                            <input type="text" class="form-control form-control--timeEnd" aria-label="Text input with segmented dropdown button" value="12:45PM">
+                                                        <div class="input-group mb-3 roomSelect__timeEdit">
+                                                            <div class="input-group-prepend dropdown-container">
+                                                                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <span class="hidden">Meeting end time</span>
+                                                                </button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">end time</a>
+                                                                    <a class="dropdown-item" href="#">8:30AM-11:30AM</a>
+                                                                    <a class="dropdown-item" href="#">9:00AM-10:15AM</a>
+                                                                    <a class="dropdown-item" href="#">9:00AM-11:45AM</a>
+                                                                    <a class="dropdown-item" href="#">10:30AM-11:45AM</a>
+                                                                    <a class="dropdown-item" href="#">12:00PM-1:15PM</a>
+                                                                    <a class="dropdown-item" href="#">1:15PM-2:30PM</a>
+                                                                    <a class="dropdown-item" href="#">1:30PM-2:45PM</a>
+                                                                    <a class="dropdown-item" href="#">1:30PM-5:45PM</a>
+                                                                    <a class="dropdown-item" href="#">3:00PM-4:15PM</a>
+                                                                    <a class="dropdown-item" href="#">3:00PM-5:00PM</a>
+                                                                    <a class="dropdown-item" href="#">3:00PM-5:45PM</a>
+                                                                    <a class="dropdown-item" href="#">3:00PM-5:45PM</a>
+                                                                    <a class="dropdown-item" href="#">3:45PM-5:45PM</a>
+                                                                    <a class="dropdown-item" href="#">4:30PM-5:45PM</a>
+                                                                    <a class="dropdown-item" href="#">6:00PM-7:15PM</a>
+                                                                </div>
+                                                            </div>
+                                                            <input type="text" class="form-control" aria-label="Meeting time" value="12:45PM">
                                                         </div>
                                                     </div>
                                                     <div class="roomSelect--edit-row2">
@@ -1707,34 +1730,34 @@
                                                     </div>
                                                 </div>
 
+                                                <div>
+                                                    <div class="roomSelect__addnewtime">
+                                                        <button type="button" class="Button--secondary Button--rightAlign">Add new time</button>
+                                                    </div>
+                                                </div>
+                                    
+                                                    <!-- Faculty notes -->
+                                                <section id="modalForm">
+                                                    <div class="modal-header modal-header--borderless">
+                                                        <h3>Faculty notes</h3>
+                                                    </div>
+                                                    <div class="modal-form">
+                                                        <h4>First Surname</h4>
+                                                        <p>Likes room X, hates room Y</p>
+                                                    </div>
+                                                    <div class="modal-form">
+                                                        <h4>First Surname</h4>
+                                                        <p>Must have whiteboard</p>
+                                                    </div>
+                                                    <div class="modal-form">
+                                                        <h4>First Surname</h4>
+                                                        <p>Likes room Y, hates room X</p>
+                                                    </div>
+                                                </section>
+
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div>
-                                        <div class="roomSelect__addnewtime">
-                                            <button type="button" class="Button--secondary Button--rightAlign">Add new time</button>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Faculty notes -->
-                                   <section id="modalForm">
-                                       <div class="modal-header modal-header--borderless">
-                                            <h3>Faculty notes</h3>
-                                        </div>
-                                        <div class="modal-form">
-                                            <h4>First Surname</h4>
-                                            <p>Likes room X, hates room Y</p>
-                                        </div>
-                                        <div class="modal-form">
-                                            <h4>First Surname</h4>
-                                            <p>Must have whiteboard</p>
-                                        </div>
-                                        <div class="modal-form">
-                                            <h4>First Surname</h4>
-                                            <p>Likes room Y, hates room X</p>
-                                        </div>
-                                    </section>
                                 </div>
                                 
                                 <!-- Scrolling div with table -->
@@ -2072,7 +2095,7 @@
                                         box-shadow: 0 0 1px rgba(255, 255, 255, .5);
                                         }
                                         #scrollarea-container--mt {
-                                        height:13em;
+                                        height: 30.5em;
                                         /* shorter than the child */
                                         overflow-y: scroll;
                                         /* clip height to 30em and scroll to show the rest */
@@ -2080,14 +2103,14 @@
                                         padding: .25em;
                                         }
                                         #scrollarea-content--mt {
-                                        height: 18em;
+                                        height: 31em;
                                         /* taller than the parent to force scrolling */
                                         }
                                     </style>
                                     
                                     <div id="scrollarea-container--mt">
                                         <div id="scrollarea-content--mt">
-                                            <div class="p-1 mb-1" style="height: 14em;">
+                                            <div class="p-1 mb-1" style="height: 31em;">
 
                                                 <!-- Unselected, scheduled room  -->
                                                 <div class="roomSelect">
@@ -3691,8 +3714,6 @@
         <!-- Mark-One JavaScript -->
         <script src="https://seas-computing.github.io/mark-one/assets~main5f947c6db2fbbe4cd0f0.js"></script>
         <script src="https://seas-computing.github.io/mark-one/build/bundle.2043da72.js"></script>
-
-
 
 
     </body>
