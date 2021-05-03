@@ -14,6 +14,13 @@
 
   <title>Course Planner</title>
 
+        <!-- Bootstrap CSS - just for the modal -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+            <!-- Mark One CSS -->
+            <link rel="stylesheet" href="css/mark-one.css">
+
   <style type="text/css">
     svg:not(:root).svg-inline--fa {
       overflow: visible;
@@ -1254,6 +1261,58 @@
     display: none;
 }
 
+/* Input form */
+.dIvmrv {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "i i i"
+        "e e e";
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    gap: 0px;
+}
+.kosa-dN {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0px;
+    border: 0px;
+    grid-area: l / l / l / l;
+    justify-self: end;
+    color: rgb(24, 24, 24);
+}
+.dtmSiq {
+    border: 1px solid rgb(24, 24, 24);
+    width: 100%;
+    padding: 5px 0px 5px 5px;
+    grid-area: i / i / i / i;
+}
+
+/* Buttons */
+.eOkKWR {
+    background: rgb(77, 184, 72);
+    border: none;
+    color: rgb(254, 254, 254);
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    padding: 5px 10px;
+    float: right;
+}
+.eyWpzK {
+    background: rgb(209, 209, 209);
+    border: none;
+    color: rgb(24, 24, 24);
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    padding: 5px 10px;
+}
 
   </style>
 
@@ -1316,7 +1375,7 @@
             <colgroup span="5"></colgroup>
             <colgroup span="6"></colgroup>
             <colgroup span="6"></colgroup>
-            <colgroup span="2"></colgroup>
+            <colgroup span="1"></colgroup>
             <thead class="sc-crzoUp dUzXNn">
               <tr class="sc-iqAbSa iVWRi">
                 <td class="sc-bqGHjH gIHfsz"></td>
@@ -1326,7 +1385,6 @@
                 <td class="sc-bqGHjH gIHfsz"></td>
                 <th colspan="6" scope="colgroup" class="sc-dIsAE dwgqSN">Fall 2018</th>
                 <th colspan="6" scope="colgroup" class="sc-dIsAE dwgqSN">Spring 2019</th>
-                <td class="sc-bqGHjH gIHfsz"></td>
                 <td class="sc-bqGHjH gIHfsz"></td>
               </tr>
               <tr class="sc-iqAbSa juhCvU">
@@ -1343,8 +1401,7 @@
                 <th scope="col" rowspan="1" class="sc-dIsAE esinsp">Instructors</th>
                 <th scope="col" rowspan="1" class="sc-dIsAE esinsp">Meetings</th>
                 <th scope="col" rowspan="1" class="sc-dIsAE esinsp" colspan="3">Enrollment</th>
-                <th scope="col" rowspan="1" class="sc-dIsAE esinsp">Notes</th>
-                <th scope="col" rowspan="1" class="sc-dIsAE esinsp">Details</th>
+                <th scope="col" rowspan="1" class="sc-dIsAE esinsp">Notes and Details</th>
               </tr>
               <tr class="sc-iqAbSa juhCvU">
                 <th scope="col" rowspan="1" class="sc-dIsAE esinsp">&nbsp;</th>
@@ -1364,7 +1421,6 @@
                 <th scope="col" rowspan="1" class="sc-dIsAE esinsp" >Pre</th>
                 <th scope="col" rowspan="1" class="sc-dIsAE esinsp" >Study card</th>
                 <th scope="col" rowspan="1" class="sc-dIsAE esinsp" >Actual</th>
-                <th scope="col" rowspan="1" class="sc-dIsAE esinsp">&nbsp;</th>
                 <th scope="col" rowspan="1" class="sc-dIsAE esinsp">&nbsp;</th>
               </tr>
             </thead>
@@ -1532,25 +1588,15 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-yplIlV11Ha1S" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-yplIlV11Ha1S">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
+                  <div class="sc-cOigif djouPA"><a type="button" class="sc-gtssRu cRmgGu" href="#" data-toggle="modal"
+                    data-target="#courseModal3"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 576 512">
                         <path fill="currentColor"
                           d="M572.694 292.093L500.27 416.248A63.997 63.997 0 0 1 444.989 448H45.025c-18.523 0-30.064-20.093-20.731-36.093l72.424-124.155A64 64 0 0 1 152 256h399.964c18.523 0 30.064 20.093 20.73 36.093zM152 224h328v-48c0-26.51-21.49-48-48-48H272l-64-64H48C21.49 64 0 85.49 0 112v278.046l69.077-118.418C86.214 242.25 117.989 224 152 224z">
                         </path>
-                      </svg></button></div>
+                      </svg></a></div>
                 </td>
               </tr>
               <tr class="sc-iqAbSa doIcPJ">
@@ -1667,17 +1713,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-Y53hh03lpjnd" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-Y53hh03lpjnd">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -1853,17 +1888,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-rrLDojq3KkU0" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-rrLDojq3KkU0">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -2038,17 +2062,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-z8c2SxM0kMjR" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-z8c2SxM0kMjR">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -2197,17 +2210,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-hE9zGYBWPRmM" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-hE9zGYBWPRmM">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -2358,17 +2360,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-Kg2B8XcOjLFh" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-Kg2B8XcOjLFh">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -2517,17 +2508,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-t2nR0rlhmA6Y" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-t2nR0rlhmA6Y">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -2680,17 +2660,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-nGlURB1MymfD" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-nGlURB1MymfD">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -2773,17 +2742,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-U810JreOxzg9" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-U810JreOxzg9">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -2909,17 +2867,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-rEeu6jxh2WKT" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-rEeu6jxh2WKT">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -3071,17 +3018,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-FskhvbU4eN48" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-FskhvbU4eN48">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -3167,17 +3103,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-Of2bSt0YrQtc" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-Of2bSt0YrQtc">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -3260,17 +3185,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-JEWMJLzUgSVt" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-JEWMJLzUgSVt">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -3388,17 +3302,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-iJzOyo7bNvF5" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-iJzOyo7bNvF5">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -3524,17 +3427,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-0VbXdREkxOES" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-0VbXdREkxOES">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -3673,17 +3565,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-KNheUm8v326u" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-KNheUm8v326u">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -3824,17 +3705,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-F5TWGuGsAZNU" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-F5TWGuGsAZNU">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -3941,17 +3811,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-LHV3hOVyEvLD" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-LHV3hOVyEvLD">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -4024,17 +3883,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-h08HGU8EjV7o" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-h08HGU8EjV7o">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -4142,17 +3990,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-NeI676A7lLXR" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-NeI676A7lLXR">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -4272,17 +4109,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-fYgLOV0lnFTn" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-fYgLOV0lnFTn">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -4355,17 +4181,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-1RMs44LV9Wkl" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-1RMs44LV9Wkl">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -4473,17 +4288,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-XFS5DFBXDT8P" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-XFS5DFBXDT8P">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -4556,17 +4360,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-3yHpmkar1kWW" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-3yHpmkar1kWW">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -4673,17 +4466,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-RPoRfqmlNMFt" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-RPoRfqmlNMFt">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -4803,17 +4585,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-edrVusx2Cmox" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-edrVusx2Cmox">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -4919,17 +4690,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-OXKLKegcs5hp" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-OXKLKegcs5hp">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -5051,17 +4811,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-CPq9gwYeIyCf" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-CPq9gwYeIyCf">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -5135,17 +4884,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-h6LlNaOwRqNr" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-h6LlNaOwRqNr">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -5253,17 +4991,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-F8qnnOgr5OU2" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-F8qnnOgr5OU2">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -5370,17 +5097,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-VkMCLEaDjRWX" data-prefix="fas" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-VkMCLEaDjRWX">View/Edit Notes</title>
-                        <path fill="currentColor"
-                          d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -5491,17 +5207,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-fexCfvDb1kVn" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-fexCfvDb1kVn">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -5607,17 +5312,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-iOvCG3bWzlGQ" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-iOvCG3bWzlGQ">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -5843,17 +5537,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-4GvxSErJdOYe" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-4GvxSErJdOYe">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -5948,17 +5631,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-MlSjKoy7kCjG" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-MlSjKoy7kCjG">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -6031,17 +5703,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-aRz4noAaSg5G" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-aRz4noAaSg5G">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -6149,17 +5810,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-K6kllf0uXXe7" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-K6kllf0uXXe7">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -6232,17 +5882,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-yieYULW8gVQJ" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-yieYULW8gVQJ">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -6350,17 +5989,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-yvAdqTdMchhT" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-yvAdqTdMchhT">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -6467,17 +6095,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-KewBKe6nYrxZ" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-KewBKe6nYrxZ">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -6583,17 +6200,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-ivVEBBLW82n8" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-ivVEBBLW82n8">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -6713,17 +6319,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-zW9JiN6tBCjv" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-zW9JiN6tBCjv">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -6829,17 +6424,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-0A4lBeDBac6O" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-0A4lBeDBac6O">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -7160,17 +6744,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-pLW3Ec086shd" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-pLW3Ec086shd">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -7478,17 +7051,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-O9EW2EVGF2KA" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-O9EW2EVGF2KA">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -7561,17 +7123,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-omVZWQNYPPyK" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-omVZWQNYPPyK">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -7646,17 +7197,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-6RpRwGYRkWAV" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-6RpRwGYRkWAV">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -7752,17 +7292,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-7mzkKhTXRuGb" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-7mzkKhTXRuGb">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -8072,17 +7601,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-3Ickr9SWNyys" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-3Ickr9SWNyys">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -8176,17 +7694,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-Pu7TjsC7WqMp" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-Pu7TjsC7WqMp">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -8518,17 +8025,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-7LFqSVMvz8NU" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-7LFqSVMvz8NU">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -8623,17 +8119,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-aGjrFyoroL4v" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-aGjrFyoroL4v">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -9060,17 +8545,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-p4ZEA2FzjNjX" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-p4ZEA2FzjNjX">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -9264,17 +8738,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-4bK0zHXQWrwu" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-4bK0zHXQWrwu">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -9392,17 +8855,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-VFWat5fyJVd6" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-VFWat5fyJVd6">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -9594,17 +9046,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-9C5l9WeyIFbW" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-9C5l9WeyIFbW">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -9710,17 +9151,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-1wT6iNUeFKet" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-1wT6iNUeFKet">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -9945,17 +9375,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-LpooG1jwSLvx" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-LpooG1jwSLvx">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -10179,17 +9598,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-yYCRi8W6wEbX" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-yYCRi8W6wEbX">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -10296,17 +9704,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-4Ki58l5NPK2o" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-4Ki58l5NPK2o">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -10379,17 +9776,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-OevUduqEXXDv" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-OevUduqEXXDv">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -10497,17 +9883,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-CJUGsJAC3nVx" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-CJUGsJAC3nVx">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -10608,17 +9983,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-9c6zZBpOOU42" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-9c6zZBpOOU42">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -10822,17 +10186,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-YWVWjlkXNBdo" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-YWVWjlkXNBdo">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -10938,17 +10291,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-7wZTiTIlvwHA" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-7wZTiTIlvwHA">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -11056,17 +10398,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-aakC2Jrevo82" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-aakC2Jrevo82">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -11172,17 +10503,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-NpixTMUEww1R" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-NpixTMUEww1R">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -11524,17 +10844,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-KF0uabO1ggWT" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-KF0uabO1ggWT">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -11642,17 +10951,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-HvJUuyKl0tg4" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-HvJUuyKl0tg4">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -11758,17 +11056,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-E2bAYNlIzBNx" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-E2bAYNlIzBNx">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -11993,17 +11280,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-eMFJCMwUADU0" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-eMFJCMwUADU0">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -12194,17 +11470,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-GAyL7fsakP0E" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-GAyL7fsakP0E">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -12594,17 +11859,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-Rspg5D2cjQHI" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-Rspg5D2cjQHI">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -12699,17 +11953,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-3LGGpMosbVJF" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-3LGGpMosbVJF">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -12816,17 +12059,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-TvyagFfXkOw5" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-TvyagFfXkOw5">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -13041,17 +12273,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-C89caPBQ2AuW" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-C89caPBQ2AuW">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -13242,17 +12463,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-GJpfri1CCAmZ" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-GJpfri1CCAmZ">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -13359,17 +12569,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-PTVidRDfCM6N" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-PTVidRDfCM6N">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -13444,17 +12643,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-sEfdxb17cGK8" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-sEfdxb17cGK8">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -13528,17 +12716,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-Stq8B3NP3FOY" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-Stq8B3NP3FOY">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -13762,17 +12939,6 @@
                   <td class="sc-pNWxx hqbHzu">
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
-                <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-zZf4yDHcZ9it" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-zZf4yDHcZ9it">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
                 <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
@@ -14304,17 +13470,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-fq6yZ0XlNTZD" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-fq6yZ0XlNTZD">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -14541,17 +13696,6 @@
                     <div class="sc-cOigif djouPA">123</div>
                   </td>
                 <td class="sc-pNWxx hqbHzu">
-                  <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg
-                        aria-labelledby="svg-inline--fa-title-0kX2Th2VzRCt" data-prefix="far" data-icon="sticky-note"
-                        class="svg-inline--fa fa-sticky-note fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <title id="svg-inline--fa-title-0kX2Th2VzRCt">Add Notes</title>
-                        <path fill="currentColor"
-                          d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z">
-                        </path>
-                      </svg></button></div>
-                </td>
-                <td class="sc-pNWxx hqbHzu">
                   <div class="sc-cOigif djouPA"><button class="sc-gtssRu cRmgGu"><svg aria-hidden="true"
                         focusable="false" data-prefix="fas" data-icon="folder-open"
                         class="svg-inline--fa fa-folder-open fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
@@ -14570,6 +13714,111 @@
   </div>
   <!-- <script type="text/javascript" src="./Course Planner_files/assets_main74bda3ffe2f8a5278018.js"></script>
   <script type="text/javascript" src="./Course Planner_files/app.js"></script> -->
+
+    <!-- Modal for Notes and Details -->
+
+    <div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModal3" aria-hidden="true" style="right: 18%; left: 13%; top: -1em;">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content" style="width: 40em;">
+              <div class="modal-header">
+                  <h2 class="modal-title" id="courseModal3">Notes and details for AM 105 - Ordinary and Partial Differential Equations</h2>
+              </div>
+              <div class="modal-body">
+                  <h2>
+                      Course notes
+                  </h2>
+                  <label for="notes" label="Course notes" class="sc-bkbjAj dIvmrv"><span class="sc-iemXMA kosa-dN">Course notes</span><input id="course" name="course" placeholder="Course notes" type="text" label="Course notes" aria-errormessage="notes-error" class="sc-hHEjAm dtmSiq" value="Same as CS 109a, STATS 121a"></label>
+                  <h2>
+                      Course data
+                  </h2>
+                  <div><strong>CCN:</strong></div>
+                  <div><strong>Same as:</strong> CS 109a, STATS 121a</div>
+                  <div><strong>Term pattern:</strong> Fall</div>
+                  <div><strong>Is SEAS?:</strong> Yes</div>
+                  <div><strong>Is undergrad?:</strong> No</div>
+                  <div><strong>Course attributes:</strong> None</div>
+                  <h2 class="border-top mt-3">
+                      Historical data
+                  </h2>
+
+                  <!-- Mark One table -->
+                  <table class="Table Table--noHover">
+                      <thead class="TableHead">
+                          <tr class="TableHeadingCell">
+                              <td class="TableHeadingCell--blank__left"></td>
+                              <td class="TableHeadingCell--blank__left TableHeadingCell--blank__right" colspan="2">
+                                  <div class="align-center mb-1">
+                                      <label for="semesters">Academic year</label>
+                                      <select id="semesters" name="semesters" class="Dropdown_nowidth" aria-describedby="academicyearnote">
+                                          <option value="string:2020-2021" label="Fall 2020 - Spring 2021">Fall 2020 - Spring 2021</option>
+                                          <option value="string:2019-2020" label="Fall 2019 - Spring 2020" selected="selected">Fall 2019 - Spring 2020</option>
+                                          <option value="string:2018-2019" label="Fall 2018 - Spring 2019">Fall 2018 - Spring 2019</option>
+                                          <option value="string:2017-2018" label="Fall 2017 - Spring 2018">Fall 2017 - Spring 2018</option>
+                                          <option value="string:2016-2017" label="Fall 2016 - Spring 2017">Fall 2016 - Spring 2017</option>
+                                          <option value="string:2015-2016" label="Fall 2015 - Spring 2016">Fall 2015 - Spring 2016</option>
+                                          <option value="string:2014-2015" label="Fall 2014 - Spring 2015">Fall 2014 - Spring 2015</option>
+                                          <option value="string:2013-2014" label="Fall 2013 - Spring 2014">Fall 2013 - Spring 2014</option>
+                                      </select>
+                                      <span id="academicyearnote" class="hidden">The table will show the new terms upon the selection of the dropdown</span>
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr class="TableHeadingCell">
+                              <td class="TableHeadingCell TableHeadingCell--blank__left">
+                              </td>
+                              <th scope="col" class="TableHeadingCell--nav">
+                                  Fall 2019
+                              </th>
+                              <th scope="col" class="TableHeadingCell--nav">
+                                  Spring 2020
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody class="TableBody">
+                          <tr class="TableRowEven">
+                              <th class="TableCell" scope="row">Instructors</td>
+                              <td class="TableCell ">&nbsp;</td>
+                              <td class="TableCell ">
+                                  Protopapas, Pavlos
+                                  <br>
+                                  Rader, Kevin
+                              </td>
+                          </tr>
+                          <tr class="TableRowEven">
+                              <th class="TableCell" scope="row">Times</td>
+                              <td class="TableCell ">&nbsp;</td>
+                              <td class="TableCell ">MW 1:00pm-2:30pm</td>
+                          </tr>
+                          <tr class="TableRowEven">
+                              <th class="TableCell" scope="row">Room</td>
+                              <td class="TableCell ">&nbsp;</td>
+                              <td class="TableCell ">🅐 Geological Museum 105</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              
+              <div style="padding: 1rem">
+                  <button type="button" class="sc-AxirZ eyWpzK" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="sc-AxirZ eOkKWR" data-dismiss="modal">Save</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Optional Bootstrap JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+  
 </body>
 
 </html>
