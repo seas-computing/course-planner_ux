@@ -5,7 +5,8 @@
 1. font-family "Open Sans", sans-serif; instead of "Roboto Mono", monospace;
 2. padding consistent in all columns
 3. reduced horizontal padding
-4. line-height for wrapping text -->
+4. line-height for wrapping text
+5. Floating top navigation and tabs -->
 
 <html>
 
@@ -847,17 +848,36 @@
 .jqxpYr {
     margin: 10px;
 }
+
+/* 5. Floating top navigation and tabs */
 .ktWfNu {
     -webkit-box-align: baseline;
     align-items: baseline;
-    background-color: transparent;
+    background-color: #fff; /* changed transparent to white */
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
     padding: 15px 10px;
     width: 100%;
+    position: fixed; /* new style */
+    left: 0; /* new style */
+    top: 0; /* new style */
+    z-index: 1030; /* new style */
 }
+
 /* Nav */
+
+/* 5. Floating top navigation and tabs */
+nav {
+    display: block;
+    position: fixed; /* new style */
+    top: 4.25em; /* new style */
+    z-index: 1030; /* new style */
+    background-color: #fff; /* new style */
+    padding-bottom: .15em; /* new style */
+    width: 100%; /* new style */
+}
+
 .knnrxv {
     margin-bottom: -1px;
     padding: 0px 1em;
@@ -919,10 +939,13 @@
     /* 2. padding consistent in all columns */
     /* padding: 5px; */
 }
+
+/* 5. Floating top navigation and tabs */
 .dKNGUJ {
     border-collapse: collapse;
     padding: 5px 10px;
     width: 100%;
+    margin-top: 11em; /* new style */
 }
 .doIcPJ {
     background: rgb(236, 236, 236);
