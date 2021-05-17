@@ -1603,7 +1603,7 @@
 
                                                         <label for="dataone" hidden>Date of booked room</label>
                                                         <div class="roomSelect__date">
-                                                            <select id="dataone" name="dataone" class="Dropdown">
+                                                            <select id="dataone" name="dataone" class="Dropdown-modal">
                                                                 <option value="string:All" label=""></option>
                                                                 <option value="string:All" label="Monday">Monday</option>
                                                                 <option value="string:tuesday" label="Tuesday" selected>Tuesday</option>
@@ -1614,9 +1614,10 @@
                                                         </div>
 
                                                         <div class="input-group mb-3 roomSelect__timeEdit">
-                                                            <div class="input-group-prepend dropdown-container">
-                                                                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    <span class="hidden">Meeting start time</span>
+                                                            <div class="dropdown-container">
+                                                                <button type="button" class="btn btn-outline-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="far fa-clock"></i>
+                                                                    <span class="hidden">Meeting time</span>
                                                                 </button>
                                                                 <div class="dropdown-menu">
                                                                     <a class="dropdown-item" href="#">start time</a>
@@ -1637,35 +1638,19 @@
                                                                     <a class="dropdown-item" href="#">6:00PM-7:15PM</a>
                                                                 </div>
                                                             </div>
-                                                            <input type="text" class="form-control" aria-label="Meeting time" value="12:00PM">
-                                                            <p>to</p>
                                                         </div>
 
-                                                        <div class="input-group mb-3 roomSelect__timeEdit">
-                                                            <div class="input-group-prepend dropdown-container">
-                                                                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    <span class="hidden">Meeting end time</span>
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">end time</a>
-                                                                    <a class="dropdown-item" href="#">8:30AM-11:30AM</a>
-                                                                    <a class="dropdown-item" href="#">9:00AM-10:15AM</a>
-                                                                    <a class="dropdown-item" href="#">9:00AM-11:45AM</a>
-                                                                    <a class="dropdown-item" href="#">10:30AM-11:45AM</a>
-                                                                    <a class="dropdown-item" href="#">12:00PM-1:15PM</a>
-                                                                    <a class="dropdown-item" href="#">1:15PM-2:30PM</a>
-                                                                    <a class="dropdown-item" href="#">1:30PM-2:45PM</a>
-                                                                    <a class="dropdown-item" href="#">1:30PM-5:45PM</a>
-                                                                    <a class="dropdown-item" href="#">3:00PM-4:15PM</a>
-                                                                    <a class="dropdown-item" href="#">3:00PM-5:00PM</a>
-                                                                    <a class="dropdown-item" href="#">3:00PM-5:45PM</a>
-                                                                    <a class="dropdown-item" href="#">3:00PM-5:45PM</a>
-                                                                    <a class="dropdown-item" href="#">3:45PM-5:45PM</a>
-                                                                    <a class="dropdown-item" href="#">4:30PM-5:45PM</a>
-                                                                    <a class="dropdown-item" href="#">6:00PM-7:15PM</a>
-                                                                </div>
-                                                            </div>
-                                                            <input type="text" class="form-control" aria-label="Meeting time" value="12:45PM">
+                                                        <div class="mb-3 roomSelect__timeEditStart">
+                                                            <input type="text" class="form-control" aria-label="Meeting start time" value="12:00PM">
+                                                        </div>
+
+                                                        <div class="mb-3 roomSelect__timeEditEnd">
+                                                            <input type="text" class="form-control" aria-label="Meeting end time" value="12:45PM">
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="ValidationErrorMessage">
+                                                            Error message when end time is earlier than start time
                                                         </div>
                                                     </div>
                                                     <div class="roomSelect--edit-row2">
