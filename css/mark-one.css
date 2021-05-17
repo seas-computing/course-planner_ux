@@ -476,6 +476,12 @@ html, body {
     .Dropdown_nowidth {
         color: rgb(24, 24, 24);
     }
+    .Dropdown-modal {
+        color: rgb(24, 24, 24);
+        width: 100%;
+        font-size: initial;
+        padding: 0.5em;
+    }
     
     select:not(:-internal-list-box) {
         overflow: visible !important;
@@ -1228,7 +1234,7 @@ textarea {
     }
     
     .roomSelect--edit {
-        height: 7.5em;
+        height: 9.5em;
         font-size: .8em;
         border-bottom: solid 1px #dddddd;
     }
@@ -1252,7 +1258,7 @@ textarea {
         padding: 0 3px 0 3px;
     }
     .roomSelect__date {
-        width: 17%;
+        width: 27%;
         padding: 0 .2em 0 .2em;
     }
     .roomSelect__icon {
@@ -1262,11 +1268,15 @@ textarea {
         width: 30%;
     }
     .roomSelect__timeEdit {
-        width: 29% !important;
-        padding: 0 .2em 0 .2em;
+        width: 9% !important;
+        margin: 0 0 0 .27em;
+    }
+    .roomSelect__timeEditStart {
+        width: 23% !important;
+        padding: 1em .2em 0 .2em;
     }
     .roomSelect__timeEditEnd {
-        width: 20% !important;
+        width: 23% !important;
         padding: 0 .2em 0 .2em;
     }
     .form-control--timeEnd {
