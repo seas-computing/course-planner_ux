@@ -1258,8 +1258,8 @@ textarea {
         padding: 0 3px 0 3px;
     }
     .roomSelect__date {
-        width: 27%;
-        padding: 0 .2em 0 .2em;
+        width: 26%;
+        padding: 0;
     }
     .roomSelect__icon {
         width: 3%;
@@ -1268,7 +1268,7 @@ textarea {
         width: 30%;
     }
     .roomSelect__timeEdit {
-        width: 9% !important;
+        width: 44% !important;
         margin: 0 0 0 .27em;
     }
     .roomSelect__timeEditStart {
@@ -1344,8 +1344,8 @@ textarea {
     }
 
     div.ValidationErrorMessage {
-        margin: -1em 0 0 3.2em;
-        font-size: 0.7em;
+        margin: -1em 0 0 1em;
+        font-size: 0.95em;
     }
 
     span.ValidationErrorMessage {
