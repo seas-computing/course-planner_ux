@@ -1258,8 +1258,8 @@ textarea {
         padding: 0 3px 0 3px;
     }
     .roomSelect__date {
-        width: 26%;
-        padding: 0;
+        width: 34%;
+        padding: 0 .5em 0 0;
     }
     .roomSelect__icon {
         width: 3%;
@@ -1268,7 +1268,7 @@ textarea {
         width: 30%;
     }
     .roomSelect__timeEdit {
-        width: 44% !important;
+        width: 9% !important;
         margin: 0 0 0 .27em;
     }
     .roomSelect__timeEditStart {
