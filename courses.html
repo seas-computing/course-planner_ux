@@ -1615,7 +1615,9 @@
 
                                                         <div class="input-group mb-3 roomSelect__timeEdit">
                                                             <div class="dropdown-container">
-                                                                <button type="button" class="btn btn-outline-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: rgb(248, 248, 248); border-color: rgb(166, 166, 166);">
+                                                                <button type="button" class="btn btn-outline-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: rgb(248, 248, 248); border-color: rgb(166, 166, 166); 
+                                                                border-top-right-radius: 0;
+                                                                border-bottom-right-radius: 0; margin-left: 1em;">
                                                                     <i class="fas fa-chevron-down" style="font-size: .75em; color: #000;"></i>
                                                                     <span class="hidden">Meeting time</span>
                                                                 </button>
@@ -1640,11 +1642,14 @@
                                                         </div>
 
                                                         <div class="mb-3 roomSelect__timeEditStart">
-                                                            <input type="text" class="form-control" aria-label="Meeting start time" value="12:00PM">
+                                                            <input type="text" class="form-control" aria-label="Meeting start time" value="12:00PM" style="
+                                                            border-radius: 0; margin-left: -0em;">
                                                         </div>
 
                                                         <div class="mb-3 roomSelect__timeEditEnd">
-                                                            <input type="text" class="form-control" aria-label="Meeting end time" value="12:45PM">
+                                                            <input type="text" class="form-control" aria-label="Meeting end time" value="12:45PM" style="
+                                                            border-top-left-radius: 0;
+                                                            border-bottom-left-radius: 0; margin-left: -.4em;">
                                                         </div>
                                                     </div>
                                                     <div>
@@ -1656,6 +1661,7 @@
                                                         <div class="modal-header modal-header--borderless">
                                                             <h4>
                                                                 Room: Harvard Hall 112
+                                                                <i class="far fa-times-circle" style="color: red;"></i>
                                                             </h4>
 
                                                             <div class="roomSelect__showroom">
@@ -2187,6 +2193,7 @@
                                                             <input type="text" class="form-control form-control--timeEnd" aria-label="Text input with segmented dropdown button" value="12:45PM">
                                                         </div>
                                                     </div>
+                                                    
                                                     <div class="roomSelect--edit-row2">
                                                         <div class="modal-header modal-header--borderless">
                                                             <h4>
