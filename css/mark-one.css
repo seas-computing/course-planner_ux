@@ -106,6 +106,8 @@ html, body {
         border-color: initial;
         border-image: initial;
         padding: 5px 10px;
+        height: 2.1em;
+        margin-top: 0.25em;
     }
 
     .Button--secondary:hover {
@@ -472,6 +474,13 @@ html, body {
     .Dropdown {
         color: rgb(24, 24, 24);
         width: 100%;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(24, 24, 24);
+        border-image: initial;
+        padding: 5px 0px 5px 5px;
+        grid-area: i / i / i / i;
+        font-size: inherit;
     }
     .Dropdown_nowidth {
         color: rgb(24, 24, 24);
@@ -1136,7 +1145,7 @@ textarea {
     }
 
     .Table--Sidebar {
-        width: 95%;
+        width: 100%;
     }
 
     .sidenav {
@@ -1208,6 +1217,7 @@ textarea {
         float: left;
         word-break: break-all;
         padding: 0 3px 0 3px;
+        margin-right: 0.25em;
     }
     .date {
         width: 40%;
