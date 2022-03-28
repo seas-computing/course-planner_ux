@@ -62,6 +62,11 @@ html, body {
         position: absolute;
         width: 1px;
     }
+    label {
+        display: inline-block;
+        white-space: nowrap;
+        margin: 0.5em;
+    }
 
 /*#endregion*/
   
@@ -1416,6 +1421,7 @@ input[type='checkbox'] + label {
     background: white;
     border: solid 2px rgb(23, 135, 23);
     vertical-align: middle;
+    margin: 0.35em 0.5em;
     }
 
     /* custom primary checkmark */
