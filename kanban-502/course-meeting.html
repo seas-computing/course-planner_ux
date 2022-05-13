@@ -2,13 +2,14 @@
     .kdhfxT {
       display: grid;
       grid-template-areas: "time campus room";
-      grid-template-columns: 2fr 2em 3fr 2em;
+      grid-template-columns: 39% 2em auto; /* Just 3 columns with new values */
       -webkit-column-gap: 5px;
       column-gap: 5px;
       -webkit-align-items: baseline;
       -webkit-box-align: baseline;
       -ms-flex-align: baseline;
       align-items: baseline;
+      padding-right: 0.5em; /* Prevent div to overlap the campus icon on smaller displays */
     }
 
     .hEZlkF {
@@ -16,7 +17,9 @@
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
-      display: flex;
+      /* display: flex; */
+      display: grid; /* Use display:gid; instead */
+
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
@@ -24,4 +27,16 @@
       -webkit-box-align: flex-start;
       -ms-flex-align: flex-start;
       align-items: flex-start;
+
+      grid-template-columns: repeat(auto-fit, minmax(6em, auto)); /* Responsive css-grid - Meeting weekday and time inline on wide display */
+    }
+    
+    /* Padding between week day and time */
+      .hEZlkF > div:first-child {
+      padding-right: 0.5em;
+    }
+
+    /* Padding between time and campus icon */
+      .hEZlkF div:nth-child(2) {
+      word-break: break-word;
     }
