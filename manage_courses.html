@@ -296,8 +296,27 @@
 
                                 <div>
                                     <label for="courseTitle">Same as...</label>
-                                    <div>
-                                        <input id="courseTitle" name="courseTitle" type="text" class="TextInput" value="" placeholder="e.g., AC 221, AP 050">
+                                    <div class="modal-body" style="padding: 0 !important;">
+                                        <div style="display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: end; justify-content: flex-end; border-bottom: solid 1px #ccc;">
+                                            <div><button type="button" class="BorderlessButton--danger Button--leftAlign"><i class="fas fa-trash-alt"></i></button></div>
+                                            <div class="Button--leftAlign">AC 209a</div>
+                                        </div>
+                                        <div style="display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: end; justify-content: flex-end; border-bottom: solid 1px #ccc;">
+                                            <div><button type="button" class="BorderlessButton--danger Button--leftAlign"><i class="fas fa-trash-alt"></i></button></div>
+                                            <div class="Button--leftAlign">AC 209b</div>
+                                        </div>
+                                        <div style="display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: end; justify-content: flex-end; border-bottom: solid 1px #ccc;">
+                                            <div><button type="button" class="BorderlessButton--danger Button--leftAlign"><i class="fas fa-trash-alt"></i></button></div>
+                                            <div class="Button--leftAlign">AC 221</div>
+                                        </div>
+                                        <div style="padding: .25em 0 .25em 0">
+                                            <div class="row TextInput--nolabel">
+                                                <label for="search">Add Same As course</label>
+                                                <input id="search" name="search" type="text" class="TextInput TextInput--modal" value="" placeholder="e.g., AC 221" style="margin-left: 3em;">
+                                                <input type="submit" class="Button--primary" value="Add" style="margin: auto;">
+                                            </div>
+                                        </div>
+                
                                     </div>
                                 </div>
             
@@ -404,12 +423,20 @@
                                     <input id="courseTitle" name="courseTitle" type="text" class="TextInput" value="Critical Thinking in Data Science" placeholder="e.g., Data Science">
                                 </div>
                             </div>
-                            <div>    
-                                <label for="Sameas" class="control-label">Same as...</label>
+
                                 <div>
-                                    <input id="Sameas" name="Sameas" type="text" class="TextInput" value="" placeholder="Add 'Same As' course">
+                                    <label for="courseTitle">Same as...</label>
+                                    <div class="modal-body" style="padding: 0 !important;">
+                                        <div style="padding: .25em 0 .25em 0">
+                                            <div class="row TextInput--nolabel">
+                                                <label for="search">Add Same As course</label>
+                                                <input id="search" name="search" type="text" class="TextInput TextInput--modal" value="" placeholder="e.g., AC 221" style="margin-left: 3em;">
+                                                <input type="submit" class="Button--primary" value="Add" style="margin: auto;">
+                                            </div>
+                                        </div>
+                
+                                    </div>
                                 </div>
-                            </div>
                             <div>
                                 <input id="undergraduate" name="courseTitle" type="checkbox" checked>
                                 <label for="undergraduate">Undergraduate</label>
