@@ -1,10 +1,22 @@
 <!-- Faculty tab at https://planning-qa.seas.harvard.edu/courses/faculty
 Aligning cademic Year drop down similarly with Courses
-Current implementation -->
+Proposed implementation -->
 
 <div class="sc-dUrmIn ccFFzG">
     <div class="sc-eLgNKc crImn">
-        <label for="academic-year-selector" class="sc-fKFxtB jzmEes">
+        <!-- Switching "Academic Year" drop down with "Show "No Longer Active" Faculty" -->
+        <label for="showRetiredFaculty" class="sc-iJuVqt kObjiB">
+            <span
+                class="sc-giImIA ibGOVT">Show "No Longer Active" Faculty
+            </span>
+            <input id="showRetiredFaculty" type="checkbox" name="showRetiredFaculty" class="sc-kLgnNl hQvKQQ" value="">
+            <span role="checkbox" class="sc-bYEvvW kdOGFp">
+                <svg viewBox="0 0 60 60" class="sc-ezredP ja-dtkq">
+                    <polyline points="10 25 25 40 50 7"></polyline>
+                </svg>
+            </span>
+        </label>
+        <label for="academic-year-selector" class="sc-fKFxtB jzmEes" style="margin: auto; margin-right: 25%;"> <!-- Aligning drop down with semesters -->
             <span
                 class="sc-bBXrwG hNskiO">Academic Year
             </span>
@@ -25,17 +37,6 @@ Current implementation -->
                 <option value="2024">Fall 2023 - Spring 2024</option>
                 <option value="2025">Fall 2024 - Spring 2025</option>
             </select>
-        </label>
-        <label for="showRetiredFaculty" class="sc-iJuVqt kObjiB">
-            <span
-                class="sc-giImIA ibGOVT">Show "No Longer Active" Faculty
-            </span>
-            <input id="showRetiredFaculty" type="checkbox" name="showRetiredFaculty" class="sc-kLgnNl hQvKQQ" value="">
-            <span role="checkbox" class="sc-bYEvvW kdOGFp">
-                <svg viewBox="0 0 60 60" class="sc-ezredP ja-dtkq">
-                    <polyline points="10 25 25 40 50 7"></polyline>
-                </svg>
-            </span>
         </label>
     </div>
 </div> 
