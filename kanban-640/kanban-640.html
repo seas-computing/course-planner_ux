@@ -1,6 +1,30 @@
 <!-- Bottom of table on https://planning-qa.seas.harvard.edu/courses/courses -->
-<!-- Current code without footer with policy links -->
+<!-- Current code with footer with policy links -->
 
+<style>
+ul {
+    display: flex;
+    list-style-type: none;
+    font-size: 0.9em;
+    font-weight: 400;
+    justify-content: center;
+    padding: 1em;
+}
+li:before {
+    content: "|"; /* Character prior to each list item, except for the first one */
+    padding: 0em 1em;
+}
+</style>
+
+                <footer> <!-- No "footer" in Mark One, aside from for the modal -->
+                    <ul>
+                        <lt>© 2023 President and Fellows of Harvard College</lt> <!-- Changing this list item to "lt", unless you prefer to assign a first-child property for removing ":before" or "content: "|";"  -->
+                        <li><a href="https://seas.harvard.edu/office-diversity-inclusion-and-belonging/about-us" rel="nofollow">Diversity Mission</a></li>
+                        <li><a href="https://trademark.harvard.edu/pages/trademark-notice" rel="nofollow">Trademark Notice</a></li>
+                        <li><a href="https://accessibility.huit.harvard.edu/digital-accessibility-policy" rel="nofollow">Accessibility Policy</a></li>
+                        <li><a href="https://seas.harvard.edu/privacy-policy" rel="nofollow">Privacy Policy</a></li>
+                    </ul>
+                </footer>
             </body>
         </table>
     </div>
